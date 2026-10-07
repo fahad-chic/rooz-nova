@@ -7,21 +7,38 @@ pages_build_output_dir = "dist"
 name = "rooz-store"
 
 # =====================================================================
-# ملاحظة أمنية مهمة:
-# لا تُخزَّن هنا أي مفاتيح أو كلمات مرور أو أسرار أو بيانات بنكية أو
-# أرقام تواصل. تُضبط جميع الأسرار في:
-#   Cloudflare Pages → Settings → Environment variables
-#   (اختر Production ثم أضف المتغيّرات المذكورة في القسم أدناه)
+# ملاحظة: هذا الملف يدير متغيّرات البناء (vars) تلقائياً في Cloudflare.
+# كل متغيّر يبدأ بـ VITE_ يظهر في حزمة الموقع للزوّار بطبيعته (تصميم Vite)،
+# لذا لا تُكتب هنا أي أسرار حقيقية — مكانها قسم Secrets في اللوحة.
 # =====================================================================
 
 [env.production.vars]
 # --- معرّفات Firebase العامة (ليست أسراراً — تظهر في أي تطبيق ويب) ---
+VITE_FIREBASE_API_KEY = "AIzaSyAHwlog-j66yWIOphisbm_an_QHO2FRdyM"
 VITE_FIREBASE_AUTH_DOMAIN = "anaqa-chic-4e437.firebaseapp.com"
 VITE_FIREBASE_PROJECT_ID = "anaqa-chic-4e437"
 VITE_FIREBASE_STORAGE_BUCKET = "anaqa-chic-4e437.appspot.com"
 VITE_FIREBASE_MESSAGING_SENDER_ID = "173599362251"
 VITE_FIREBASE_APP_ID = "1:173599362251:web:83a32b32a0da157bcd1f4e"
 VITE_FIREBASE_MEASUREMENT_ID = "G-NDLJXV8KD8"
+
+# --- بيانات التواصل (أرقام صاحب الموقع والواتساب) ---
+VITE_OWNER_EMAILS = "kal6667222@gmail.com,f882771f@gmail.com"
+VITE_ADMIN_EMAILS = "kal6667222@gmail.com,f882771f@gmail.com"
+VITE_PHONE_1 = "966536667222"
+VITE_PHONE_2 = "966507882771"
+VITE_CONTACT_WHATSAPP_1 = "966536667222"
+VITE_CONTACT_WHATSAPP_2 = "966507882771"
+VITE_CONTACT_EMAIL = "kal6667222@gmail.com"
+VITE_ALIAA_CONTACTS = "واتساب: 0536667222 | الإيميل: kal6667222@gmail.com"
+
+# --- الحسابات البنكية لصاحب الموقع ---
+VITE_BANK_RAJHI_NAME = "بنك الراجحي"
+VITE_BANK_RAJHI_IBAN = "SA0980000509608010069017"
+VITE_BANK_RAJHI_ACCOUNT = "09608010069017"
+VITE_BANK_ARABI_NAME = "البنك العربي"
+VITE_BANK_ARABI_IBAN = "SA9830400108088851870011"
+VITE_BANK_ARABI_ACCOUNT = "0108088851870011"
 
 # --- إعدادات عامة غير حسّاسة ---
 VITE_OWNER_SOUND_URL = "/sounds/welcome.mp3"
@@ -55,19 +72,11 @@ STORE_POLICY = "الاستبدال خلال 7 أيام – الشحن لجميع
 STORE_WORKING_HOURS = "من 10 صباحًا إلى 11 مساءً"
 
 # =====================================================================
-# المتغيّرات السرّية التالية أُزيلت من هذا الملف ويجب إضافتها يدوياً في
-# Cloudflare Pages → Settings → Environment variables (Production):
+# الأسرار المشفّرة (Secrets) تُضاف من:
+#   Cloudflare Pages → Settings → Variables and secrets → Add → Secret
+# لا تُكتب هنا مطلقاً لأنها لا تظهر مشفّرة في اللوحة، ولا يجوز نشرها:
 #
-#   VITE_FIREBASE_API_KEY        (مفتاح Firebase — إلزامي، بدونه لا يعمل الدخول)
-#   VITE_OWNER_EMAILS            (بريد المالك/المشرف)
-#   VITE_ADMIN_EMAILS            (بريد المشرف)
 #   VITE_OWNER_SECRET_CODE       (الرمز السري لبوابة المالك المخفية)
-#   VITE_PHONE_1, VITE_PHONE_2
-#   VITE_CONTACT_WHATSAPP_1, VITE_CONTACT_WHATSAPP_2
-#   VITE_ALIAA_CONTACTS
-#   VITE_BANK_RAJHI_NAME, VITE_BANK_RAJHI_IBAN, VITE_BANK_RAJHI_ACCOUNT
-#   VITE_BANK_ARABI_NAME, VITE_BANK_ARABI_IBAN, VITE_BANK_ARABI_ACCOUNT
-#   VITE_CONTACT_EMAIL
 #   GROQ_API_KEY                 (سري — لخدمة الذكاء الاصطناعي)
 #   RESEND_API_KEY               (سري — لخدمة إرسال البريد/OTP)
 # =====================================================================
