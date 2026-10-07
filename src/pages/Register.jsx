@@ -454,7 +454,7 @@ const page = {
   minHeight: '100vh',
   width: '100%',
   background:
-    'radial-gradient(circle at top, rgb(59, 130, 246,0.12), transparent 35%), linear-gradient(135deg, #0b1220 0%, #0b1017 48%, #0e1626 100%)',
+    'radial-gradient(circle at top, rgb(37, 99, 235,0.10), transparent 40%), linear-gradient(135deg, #eceff4 0%, #f5f7fa 50%, #e6ebf2 100%)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -464,15 +464,14 @@ const page = {
 };
 
 const card = {
-  background:
-    'linear-gradient(145deg, rgb(22, 27, 37,0.98), rgb(18, 23, 31,0.98))',
+  background: '#ffffff',
   padding: '30px 26px',
   borderRadius: 22,
   width: '100%',
   maxWidth: 430,
-  border: '1px solid rgb(59, 130, 246,0.3)',
+  border: '1px solid rgb(15, 23, 42,0.08)',
   boxShadow:
-    '0 22px 70px rgb(11, 18, 32,0.55), inset 0 1px 0 rgb(255, 255, 255,0.04)',
+    '0 22px 60px rgb(15, 23, 42,0.12), inset 0 1px 0 rgb(255, 255, 255,0.6)',
   textAlign: 'center',
   boxSizing: 'border-box',
 };
@@ -486,29 +485,29 @@ const brandMark = {
   alignItems: 'center',
   justifyContent: 'center',
   background:
-    'linear-gradient(145deg, #8ab3f5 0%, #3b82f6 45%, #1e40af 100%)',
-  color: '#111',
+    'linear-gradient(145deg, #3b82f6 0%, #2563eb 55%, #1d4ed8 100%)',
+  color: '#ffffff',
   fontSize: 25,
   fontWeight: 900,
   boxShadow: '0 8px 24px rgb(59, 130, 246,0.2)',
 };
 
 const title = {
-  color: '#a7c6f7',
+  color: '#0b1017',
   fontSize: 26,
-  fontWeight: 800,
+  fontWeight: 900,
   margin: '0 0 6px',
   letterSpacing: '-0.3px',
 };
 
 const subtitle = {
-  color: '#9f9f9f',
+  color: '#475569',
   fontSize: 13,
   margin: '0 0 22px',
 };
 
 const label = {
-  color: '#b2ccf7',
+  color: '#0f172a',
   fontSize: 14,
   fontWeight: 700,
   textAlign: 'right',
@@ -536,10 +535,10 @@ const input = {
   minHeight: 48,
   padding: '12px 14px 12px 42px',
   borderRadius: 12,
-  border: '1px solid rgb(59, 130, 246,0.2)',
+  border: '1px solid rgb(15, 23, 42,0.14)',
   outline: 'none',
-  background: 'rgb(25, 32, 43,0.95)',
-  color: '#fff',
+  background: '#f8fafc',
+  color: '#0b1017',
   fontSize: 15,
   fontFamily: 'Tajawal, Tajawal, sans-serif',
   boxSizing: 'border-box',
@@ -589,20 +588,20 @@ const spinner = {
 
 const switchForm = {
   margin: '21px 0 0',
-  color: '#969696',
+  color: '#475569',
   fontSize: 14,
 };
 
 const link = {
-  color: '#6495e3',
+  color: '#2563eb',
   fontWeight: 800,
   textDecoration: 'none',
 };
 
 const alertError = {
-  background: 'rgb(136, 20, 41,0.22)',
-  border: '1px solid rgb(240, 121, 143,0.2)',
-  color: '#f6cdd5',
+  background: '#fef2f2',
+  border: '1px solid rgb(225, 29, 72,0.25)',
+  color: '#b91c1c',
   padding: '11px 12px',
   borderRadius: 11,
   marginBottom: 17,
@@ -615,9 +614,9 @@ const alertError = {
 };
 
 const alertSuccess = {
-  background: 'rgb(30, 39, 53,0.22)',
-  border: '1px solid rgb(45, 218, 205,0.18)',
-  color: '#b7f5f1',
+  background: '#f0fdf9',
+  border: '1px solid rgb(14, 165, 164,0.25)',
+  color: '#0f766e',
   padding: '11px 12px',
   borderRadius: 11,
   marginBottom: 17,
