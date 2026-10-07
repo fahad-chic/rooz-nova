@@ -10,19 +10,15 @@
   width: 100% !important;
   min-height: 100vh !important;
   min-height: 100dvh !important;
-  padding: 20px 14px 34px !important;
+  padding: 22px 14px 34px !important;
   box-sizing: border-box !important;
   overflow-x: hidden !important;
   overflow-y: auto !important;
   font-family: 'Tajawal', system-ui, sans-serif !important;
   color: #1f1116 !important;
   text-align: center !important;
-  background: #fdfbf7 !important;
-  background-image:
-    linear-gradient(#fdfbf7 1px, transparent 1px),
-    linear-gradient(90deg, #fdfbf7 1px, transparent 1px) !important;
-  background-size: 40px 40px, 40px 40px !important;
-  background-position: -1px -1px !important;
+  background: #f9f9f9 !important;
+  background-image: none !important;
 }
 
 .rl-wrap {
@@ -35,34 +31,36 @@
 }
 
 /* ===== الترويسة ===== */
-.rl-head { padding: 4px 0 !important; }
-.rl-crown-ic { width: 84px !important; margin: 0 auto !important; }
+.rl-head { padding: 2px 0 !important; }
+.rl-crown-ic { width: 96px !important; margin: 0 auto !important; }
 .rl-crown-ic img {
-  width: 84px !important;
-  height: 84px !important;
-  border-radius: 22px !important;
-  object-fit: cover !important;
-  border: 1px solid #fdfbf7 !important;
-  box-shadow: 0 12px 30px -16px rgba(31, 17, 22, 0.4) !important;
+  width: 96px !important;
+  height: 96px !important;
+  border-radius: 0 !important;
+  object-fit: contain !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 .rl-tag {
-  margin-top: 12px !important;
+  margin-top: 8px !important;
   font-size: 0.78rem !important;
   font-weight: 800 !important;
   color: #6b1d2f !important;
   letter-spacing: 0.02em !important;
 }
 
-/* ===== بطاقات نوع الدخول (شريط مقسّم) ===== */
+/* ===== بطاقات نوع الدخول: المالك عنصر رئيسي أعلى، والمشرفون أصغر أسفله ===== */
 .rl-cards {
-  display: grid !important;
-  grid-template-columns: 1.35fr 1fr !important;
-  gap: 10px !important;
-  align-items: stretch !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
 }
 .rl-card {
+  width: 100% !important;
   background: #ffffff !important;
-  border: 1px solid #fdfbf7 !important;
+  border: 1px solid #ececec !important;
   border-radius: 16px !important;
   padding: 14px 12px !important;
   cursor: pointer !important;
@@ -71,7 +69,7 @@
   gap: 4px !important;
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease !important;
   text-align: center !important;
-  box-shadow: 0 6px 22px -16px rgba(31, 17, 22, 0.4) !important;
+  box-shadow: 0 6px 22px -16px rgba(31, 17, 22, 0.35) !important;
 }
 .rl-card:hover {
   transform: translateY(-2px) !important;
@@ -79,30 +77,40 @@
 }
 .rl-card--active {
   border-color: #6b1d2f !important;
-  box-shadow: 0 0 0 3px rgba(61, 15, 24, 0.18) !important;
+  box-shadow: 0 0 0 3px rgba(107, 29, 47, 0.18) !important;
 }
+/* المالك: البطاقة الفخمة الرئيسية بعرض كامل */
 .rl-card--big {
-  padding: 16px 14px !important;
+  padding: 20px 16px !important;
   background: #1f1116 !important;
   border: 1px solid #1f1116 !important;
   box-shadow: 0 18px 40px -22px rgba(31, 17, 22, 0.7) !important;
   position: relative !important;
 }
+/* المشرفون: بطاقة مصغّرة متمركزة، لا تزاحم الأعلى، تبدأ من أسفل المالك */
+.rl-card:not(.rl-card--big) {
+  width: 62% !important;
+  min-height: 92px !important;
+  padding: 10px 12px !important;
+  margin-top: -2px !important;
+}
 .rl-card--big::before { content: none !important; }
 .rl-card-logo {
-  width: 46px !important;
-  height: 46px !important;
-  border-radius: 14px !important;
-  object-fit: cover !important;
-  border: 1px solid #fdfbf7 !important;
-  margin: 0 auto 6px !important;
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 0 !important;
+  object-fit: contain !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  margin: 0 auto 4px !important;
   display: block !important;
 }
 .rl-card--big .rl-card-logo {
-  width: 58px !important;
-  height: 58px !important;
-  border-color: rgba(255, 255, 255, 0.2) !important;
-  box-shadow: 0 8px 20px -10px rgba(61, 15, 24, 0.8) !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 .rl-card-crown-line { display: flex !important; justify-content: center !important; margin-bottom: 2px !important; }
 .rl-card-title {
@@ -143,10 +151,10 @@
 /* ===== بطاقة النموذج ===== */
 .rl-form-card {
   background: #ffffff !important;
-  border: 1px solid #fdfbf7 !important;
+  border: 1px solid #ececec !important;
   border-radius: 20px !important;
   padding: 20px 18px !important;
-  box-shadow: 0 20px 48px -30px rgba(31, 17, 22, 0.55) !important;
+  box-shadow: 0 20px 48px -32px rgba(31, 17, 22, 0.45) !important;
   text-align: center !important;
 }
 .rl-form-title {
@@ -156,67 +164,96 @@
   color: #1f1116 !important;
 }
 .rl-form-divider {
-  display: flex !important; align-items: center !important; gap: 8px !important; margin: 12px 0 !important;
+  display: flex !important; align-items: center !important; gap: 8px !important; margin: 10px 0 !important;
   color: #8a5560 !important; font-size: 0.68rem !important; font-weight: 400 !important;
 }
 .rl-form-divider::before, .rl-form-divider::after {
   content: '' !important; flex: 1 !important; height: 1px !important;
-  background: #fdfbf7 !important;
+  background: #ececec !important;
 }
 .rl-label {
-  display: block !important; text-align: right !important; font-size: 0.74rem !important; font-weight: 800 !important;
-  color: #1f1116 !important; margin-bottom: 5px !important;
+  display: block !important; text-align: right !important; font-size: 0.78rem !important; font-weight: 800 !important;
+  color: #1f1116 !important; margin-bottom: 4px !important;
 }
 .rl-input-wrap {
   display: flex !important; align-items: center !important; gap: 8px !important;
-  background: #fdfbf7 !important;
-  border: 1px solid #fdfbf7 !important;
-  border-radius: 12px !important; padding: 0 12px !important; min-height: 46px !important;
+  background: #ffffff !important;
+  border: 1px solid #e2e2e2 !important;
+  border-radius: 8px !important; padding: 0 12px !important; min-height: 44px !important;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
 }
 .rl-input-wrap:focus-within {
-  border-color: #6b1d2f !important;
+  border-color: #c9a24b !important;
   background: #ffffff !important;
-  box-shadow: 0 0 0 3px rgba(61, 15, 24, 0.15) !important;
+  box-shadow: 0 0 0 3px rgba(201, 162, 75, 0.16) !important;
 }
 .rl-input {
   flex: 1 !important; border: none !important; outline: none !important; background: transparent !important;
-  color: #1f1116 !important; font-size: 0.9rem !important; font-weight: 400 !important; min-height: 44px !important;
+  color: #1f1116 !important; font-size: 0.9rem !important; font-weight: 400 !important; min-height: 42px !important;
   text-align: right !important;
 }
-.rl-input::placeholder { color: #8a5560 !important; }
+.rl-input::placeholder { color: #9a9a9a !important; }
 .rl-input-ic { color: #6b1d2f !important; flex-shrink: 0 !important; }
-.rl-fields-box { display: flex !important; flex-direction: column !important; gap: 12px !important; }
-.rl-submit, button.rl-submit {
-  width: 100% !important; margin-top: 14px !important; min-height: 48px !important; border: none !important; border-radius: 12px !important;
-  cursor: pointer !important; font-family: inherit !important; font-size: 0.94rem !important; font-weight: 900 !important;
+.rl-fields-box { display: flex !important; flex-direction: column !important; gap: 10px !important; }
+
+/* زر الدخول الرئيسي */
+.rl-btn {
+  width: 100% !important; margin-top: 14px !important; min-height: 46px !important; border: none !important; border-radius: 8px !important;
+  cursor: pointer !important; font-family: inherit !important; font-size: 0.92rem !important; font-weight: 900 !important;
   color: #ffffff !important;
   background: #6b1d2f !important;
-  box-shadow: 0 12px 26px -14px rgba(61, 15, 24, 0.8) !important;
+  box-shadow: 0 12px 26px -16px rgba(107, 29, 47, 0.8) !important;
+  transition: background 0.18s ease, transform 0.18s ease !important;
 }
-.rl-secondary-grid, .rl-links {
-  display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 8px !important; margin-top: 10px !important;
+.rl-btn:hover:not(:disabled) { background: #571627 !important; }
+.rl-btn:disabled { opacity: 0.62 !important; cursor: not-allowed !important; }
+
+/* شبكة الروابط والأزرار: ثنائية بحجم 13px */
+.rl-actions {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 8px !important;
+  margin-top: 12px !important;
 }
-.rl-secondary-grid button, .rl-links a, .rl-google, .rl-link-btn {
+.rl-link, .rl-google {
   display: flex !important; align-items: center !important; justify-content: center !important; gap: 5px !important;
-  min-height: 40px !important; padding: 8px !important; border-radius: 10px !important;
-  border: 1px solid #fdfbf7 !important; background: #ffffff !important;
-  color: #1f1116 !important; font-size: 0.72rem !important; font-weight: 800 !important;
+  min-height: 38px !important; padding: 6px 8px !important; border-radius: 8px !important;
+  border: 1px solid #e2e2e2 !important; background: #ffffff !important;
+  color: #1f1116 !important; font-size: 13px !important; font-weight: 700 !important;
   cursor: pointer !important; text-decoration: none !important; text-align: center !important;
+  font-family: inherit !important;
+  transition: border-color 0.18s ease, color 0.18s ease !important;
 }
-.rl-secondary-grid button:hover, .rl-links a:hover, .rl-google:hover {
+.rl-link:hover:not(:disabled), .rl-google:hover:not(:disabled) {
   border-color: #6b1d2f !important; color: #6b1d2f !important;
 }
-.rl-alert { border-radius: 10px !important; padding: 10px !important; font-size: 0.76rem !important; font-weight: 700 !important; margin-bottom: 8px !important; text-align: center !important; }
-.rl-alert-err { background: #fdecef !important; border: 1px solid #f3e0dd !important; color: #6b1d2f !important; }
-.rl-alert-ok { background: #eae3d9 !important; border: 1px solid #4a3a3f !important; color: #4a3a3f !important; }
+.rl-link:disabled, .rl-google:disabled { opacity: 0.55 !important; cursor: not-allowed !important; }
+
+/* زر حراج أونلاين أسفل الشبكة */
+.rl-haraj-gate {
+  display: flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important;
+  width: 100% !important; margin-top: 10px !important; min-height: 42px !important; padding: 8px 12px !important;
+  border-radius: 8px !important; border: 1px solid rgba(107, 29, 47, 0.28) !important;
+  background: rgba(107, 29, 47, 0.06) !important; color: #6b1d2f !important;
+  font-size: 13px !important; font-weight: 800 !important; cursor: pointer !important; font-family: inherit !important;
+}
+.rl-haraj-gate:hover { background: rgba(107, 29, 47, 0.12) !important; }
+.rl-cancel-link {
+  display: inline-block !important; margin-top: 10px !important; background: none !important; border: none !important;
+  color: #8a5560 !important; font-size: 13px !important; font-weight: 700 !important; cursor: pointer !important;
+  font-family: inherit !important; text-decoration: underline !important;
+}
+.rl-alert { border-radius: 8px !important; padding: 10px !important; font-size: 0.78rem !important; font-weight: 700 !important; margin-bottom: 8px !important; text-align: center !important; }
+.rl-alert-err { background: #fdecef !important; border: 1px solid #f3d3da !important; color: #6b1d2f !important; }
+.rl-alert-ok { background: #eef7f1 !important; border: 1px solid #cfe6d8 !important; color: #2f7d5b !important; }
 .rl-guest-access {
   margin-top: 10px !important; padding: 14px !important; border-radius: 12px !important;
-  border: 1px dashed #fdfbf7 !important; background: #fdfbf7 !important;
+  border: 1px dashed #e2e2e2 !important; background: #ffffff !important;
   text-align: center !important;
 }
-.rl-guest-access-head { font-size: 0.8rem !important; font-weight: 900 !important; color: #6b1d2f !important; }
-.rl-guest-access p { font-size: 0.7rem !important; font-weight: 300 !important; color: #8a5560 !important; }
-.rl-foot { font-size: 0.68rem !important; font-weight: 300 !important; color: #8a5560 !important; margin-top: 10px !important; }
+.rl-guest-access-head { font-size: 0.82rem !important; font-weight: 900 !important; color: #6b1d2f !important; }
+.rl-guest-access p { font-size: 0.72rem !important; font-weight: 400 !important; color: #8a5560 !important; }
+.rl-foot { font-size: 0.7rem !important; font-weight: 400 !important; color: #8a5560 !important; margin-top: 10px !important; }
 
 /* الحقول داخل المودالات المصغّرة */
 .rl-root input[type="text"],
@@ -227,7 +264,8 @@
 }
 
 @media (max-width: 400px) {
-  .rl-card-title { font-size: 0.76rem !important; }
-  .rl-card--big .rl-card-title { font-size: 0.92rem !important; }
+  .rl-card-title { font-size: 0.78rem !important; }
+  .rl-card--big .rl-card-title { font-size: 0.94rem !important; }
+  .rl-card:not(.rl-card--big) { width: 74% !important; }
   .rl-form-card { padding: 16px 14px !important; }
 }

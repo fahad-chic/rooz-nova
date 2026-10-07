@@ -6,16 +6,24 @@ pages_build_output_dir = "dist"
 [env.production]
 name = "fahad-chic"
 
+# =====================================================================
+# ملاحظة أمنية مهمة:
+# لا تُخزَّن هنا أي مفاتيح أو كلمات مرور أو أسرار أو بيانات بنكية أو
+# أرقام تواصل. تُضبط جميع الأسرار في:
+#   Cloudflare Pages → Settings → Environment variables
+#   (اختر Production ثم أضف المتغيّرات المذكورة في القسم أدناه)
+# =====================================================================
+
 [env.production.vars]
-VITE_FIREBASE_API_KEY = "AIzaSyAHwlog-j66yWIOphisbm_an_QHO2FRdyM"
+# --- معرّفات Firebase العامة (ليست أسراراً — تظهر في أي تطبيق ويب) ---
 VITE_FIREBASE_AUTH_DOMAIN = "anaqa-chic-4e437.firebaseapp.com"
 VITE_FIREBASE_PROJECT_ID = "anaqa-chic-4e437"
 VITE_FIREBASE_STORAGE_BUCKET = "anaqa-chic-4e437.appspot.com"
 VITE_FIREBASE_MESSAGING_SENDER_ID = "173599362251"
 VITE_FIREBASE_APP_ID = "1:173599362251:web:83a32b32a0da157bcd1f4e"
 VITE_FIREBASE_MEASUREMENT_ID = "G-NDLJXV8KD8"
-VITE_ADMIN_EMAILS = "kal6667222@gmail.com,f882771f@gmail.com"
-VITE_OWNER_EMAILS = "kal6667222@gmail.com,f882771f@gmail.com"
+
+# --- إعدادات عامة غير حسّاسة ---
 VITE_OWNER_SOUND_URL = "/sounds/welcome.mp3"
 VITE_RIBBON_DURATION_SECONDS = "60"
 VITE_SOUND_DURATION_SECONDS = "45"
@@ -28,17 +36,6 @@ VITE_ALIAA_PERSONALITY = "أنثوية ناعمة + راقية + ذكية + دي
 VITE_ALIAA_OWNER = "فهد"
 VITE_ALIAA_ESTABLISHED = "2024"
 VITE_ALIAA_LOCATION = "السعودية - حفرالباطن"
-VITE_ALIAA_CONTACTS = "واتساب: 0536667222 | الإيميل: kal6667222@gmail.com"
-VITE_BANK_RAJHI_NAME = "بنك الراجحي"
-VITE_BANK_RAJHI_IBAN = "SA0980000509608010069017"
-VITE_BANK_RAJHI_ACCOUNT = "09608010069017"
-VITE_BANK_ARABI_NAME = "البنك العربي"
-VITE_BANK_ARABI_IBAN = "SA9830400108088851870011"
-VITE_BANK_ARABI_ACCOUNT = "0108088851870011"
-VITE_PHONE_1 = "966536667222"
-VITE_PHONE_2 = "966507882771"
-VITE_CONTACT_WHATSAPP_1 = "966536667222"
-VITE_CONTACT_WHATSAPP_2 = "966507882771"
 VITE_STORE_NAME = "أناقة ROOZ"
 VITE_STORE_DESCRIPTION = "متجر فساتين راقية مختصة بالذوق الفخم والستايل العصري"
 VITE_SHIPPING_FEE = "20"
@@ -52,11 +49,28 @@ ALIAA_PERSONALITY = "أنثوية ناعمة + راقية + ذكية + دينا�
 ALIAA_OWNER = "فهد"
 ALIAA_ESTABLISHED = "2024"
 ALIAA_LOCATION = "السعودية - حفرالباطن"
-ALIAA_CONTACTS = "واتساب: 0536667222 | الإيميل: kal6667222@gmail.com"
 STORE_NAME = "أناقة ROOZ"
 STORE_DESCRIPTION = "متجر فساتين راقية مختصة بالذوق الفخم والستايل العصري"
 STORE_POLICY = "الاستبدال خلال 7 أيام – الشحن لجميع مناطق المملكة"
 STORE_WORKING_HOURS = "من 10 صباحًا إلى 11 مساءً"
+
+# =====================================================================
+# المتغيّرات السرّية التالية أُزيلت من هذا الملف ويجب إضافتها يدوياً في
+# Cloudflare Pages → Settings → Environment variables (Production):
+#
+#   VITE_FIREBASE_API_KEY        (مفتاح Firebase — إلزامي، بدونه لا يعمل الدخول)
+#   VITE_OWNER_EMAILS            (بريد المالك/المشرف)
+#   VITE_ADMIN_EMAILS            (بريد المشرف)
+#   VITE_OWNER_SECRET_CODE       (الرمز السري لبوابة المالك المخفية)
+#   VITE_PHONE_1, VITE_PHONE_2
+#   VITE_CONTACT_WHATSAPP_1, VITE_CONTACT_WHATSAPP_2
+#   VITE_ALIAA_CONTACTS
+#   VITE_BANK_RAJHI_NAME, VITE_BANK_RAJHI_IBAN, VITE_BANK_RAJHI_ACCOUNT
+#   VITE_BANK_ARABI_NAME, VITE_BANK_ARABI_IBAN, VITE_BANK_ARABI_ACCOUNT
+#   VITE_CONTACT_EMAIL
+#   GROQ_API_KEY                 (سري — لخدمة الذكاء الاصطناعي)
+#   RESEND_API_KEY               (سري — لخدمة إرسال البريد/OTP)
+# =====================================================================
 
 [[env.production.d1_databases]]
 binding = "DB"

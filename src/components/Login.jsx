@@ -107,8 +107,21 @@ const Login = () => {
   // لا يُخزّن الاختيار — كل تحديث للصفحة يعود للوضع المحايد.
   const [selectedRole, setSelectedRole] = useState(null);
 
-  // سجل تشخيص الطرد الصامت — يُقرأ مرة عند فتح الصفحة ويُعرض أسفل النموذج
+  // سجل تشخيص الطرد الصامت — يُقرأ مرة عند فتح الصفحة ويُطبع في الـ Console
   const [kickEntries] = useState(() => readKickLog());
+
+  useEffect(() => {
+    if (kickEntries.length > 0) {
+      console.info(
+        '[ROOZ] آخر أسباب الرجوع لصفحة الدخول:',
+        kickEntries.slice(-3).reverse().map((entry) => ({
+          at: new Date(entry.at).toLocaleTimeString('ar-SA'),
+          reason: kickReasonLabel(entry.reason),
+          path: entry.path || '',
+        }))
+      );
+    }
+  }, [kickEntries]);
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -1044,14 +1057,8 @@ const Login = () => {
     <div
       className="rl-root"
       style={{
-        background:
-          'linear-gradient(150deg, rgba(255, 255, 255,0.02) 0%, transparent 45%, rgba(255, 255, 255,0.01) 65%, transparent 100%), ' +
-          'radial-gradient(1100px 600px at 80% -15%, rgba(61, 15, 24,0.16), transparent 60%), ' +
-          'radial-gradient(700px 400px at 15% 25%, rgba(61, 15, 24,0.10), transparent 55%), ' +
-          'repeating-linear-gradient(115deg, rgba(255, 255, 255,0.03) 0 1px, transparent 1px 4px), ' +
-          'repeating-linear-gradient(25deg, rgba(255, 255, 255,0.02) 0 1px, transparent 1px 6px), ' +
-          'linear-gradient(180deg, #1f1116 0%, #1f1116 40%, #1f1116 75%, #1f1116 100%)',
-        }}
+        background: '#f9f9f9',
+      }}
     >
       <div className="rl-wrap">
         <header className="rl-head">
@@ -1084,8 +1091,6 @@ const Login = () => {
               selectedRole === r.role
                 ? 'rl-card--active'
                 : '',
-              // ⭐ إضافة الفخامة الملكية
-              'shadow-royal3d bg-glassUltra backdrop-blur-xl border border-royal-gold rounded-royal transition-all duration-300 hover:scale-[1.03]',
             ].join(' ')}
             onClick={() =>
               handleRoleSelect(r.role)
@@ -1345,79 +1350,8 @@ const Login = () => {
           </button>
         </form>
 
-      {selectedRole === 'owner' && (
-        <>
-          <div
-            style={{
-              marginTop: 14,
-              textAlign: 'center',
-              fontSize: 11,
-              color: '#6b1d2f',
-              direction: 'ltr',
-              userSelect: 'all',
-            }}
-          >
-            إصدار الواجهة:{' '}
-            {typeof __BUILD_STAMP__ !==
-            'undefined'
-              ? __BUILD_STAMP__
-              : 'dev'}
-          </div>
-
-          {kickEntries.length > 0 && (
-            <div
-              style={{
-                marginTop: 10,
-                padding: '8px 10px',
-                borderRadius: 8,
-                border:
-                  '1px solid rgba(61, 15, 24,0.45)',
-                background:
-                  'rgba(61, 15, 24,0.08)',
-                fontSize: 11,
-                color: '#6b1d2f',
-                textAlign: 'right',
-                direction: 'rtl',
-                userSelect: 'all',
-              }}
-            >
-              <div
-                style={{
-                  fontWeight: 700,
-                  marginBottom: 4,
-                }}
-              >
-                سجل التشخيص — آخر أسباب الرجوع لصفحة الدخول:
-              </div>
-
-              {kickEntries
-                .slice(-3)
-                .reverse()
-                .map((entry, idx) => (
-                  <div
-                    key={idx}
-                    style={{
-                      marginTop: 2,
-                    }}
-                  >
-                    {new Date(
-                      entry.at
-                    ).toLocaleTimeString(
-                      'ar-SA'
-                    )}{' '}
-                    —{' '}
-                    {kickReasonLabel(
-                      entry.reason
-                    )}
-                    {entry.path
-                      ? ` (من: ${entry.path})`
-                      : ''}
-                  </div>
-                ))}
-            </div>
-          )}
-        </>
-      )}
+        {/* سجل التشخيص وإصدار الواجهة كانا يُعرضان هنا — نُقلا إلى الـ Console
+            (انظر useEffect أعلاه) لإزالة العنصر الرمادي من الواجهة. */}
 
         {googleUserObj && (
           <div className="rl-google-confirm">
@@ -1516,19 +1450,9 @@ const Login = () => {
           </div>
         )}
 
-        {/* شبكة 2×2 مرتبة: يمين (إنشاء + نسيت) | يسار (زوار + Google) */}
+        {/* شبكة 2×2: السطر الأول (نسيت كلمة المرور | إنشاء حساب جديد)
+            والسطر الثاني (Google | دخول الزوار المؤقت) */}
         <div className="rl-actions">
-          <button
-            type="button"
-            className="rl-link"
-            onClick={() =>
-              navigate('/register')
-            }
-            disabled={loading}
-          >
-            إنشاء حساب جديد
-          </button>
-
           <button
             type="button"
             className="rl-link"
@@ -1545,14 +1469,12 @@ const Login = () => {
           <button
             type="button"
             className="rl-link"
-            onClick={() => {
-              setError('');
-              setSuccess('');
-              setGuestEntryOpen(true);
-            }}
+            onClick={() =>
+              navigate('/register')
+            }
             disabled={loading}
           >
-            دخول الزوار المؤقت
+            إنشاء حساب جديد
           </button>
 
           <button
@@ -1565,6 +1487,19 @@ const Login = () => {
             }
           >
             الدخول عن طريق Google
+          </button>
+
+          <button
+            type="button"
+            className="rl-link"
+            onClick={() => {
+              setError('');
+              setSuccess('');
+              setGuestEntryOpen(true);
+            }}
+            disabled={loading}
+          >
+            دخول الزوار المؤقت
           </button>
         </div>
 

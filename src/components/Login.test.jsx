@@ -152,7 +152,7 @@ describe('الدخول الرسمي لإيميلات المالك', () => {
   });
 });
 
-describe('سجل التشخيص وإصدار الواجهة لصاحب الموقع فقط', () => {
+describe('سجل التشخيص وإصدار الواجهة لا يظهران في الواجهة إطلاقاً', () => {
   it('يخفي إصدار الواجهة وسجل التشخيص في الوضع المحايد (زائر)', () => {
     renderLogin();
     expect(screen.queryByText(/إصدار الواجهة/)).toBeNull();
@@ -167,7 +167,7 @@ describe('سجل التشخيص وإصدار الواجهة لصاحب المو�
     expect(screen.queryByText(/سجل التشخيص/)).toBeNull();
   });
 
-  it('يظهر إصدار الواجهة وسجل التشخيص فقط عند اختيار بطاقة صاحب الموقع', () => {
+  it('يبقى سجل التشخيص في الـConsole فقط حتى لصاحب الموقع (لا يُعرض في الواجهة)', () => {
     sessionStorage.setItem(
       'rooz_kick_log',
       JSON.stringify([
@@ -177,11 +177,12 @@ describe('سجل التشخيص وإصدار الواجهة لصاحب المو�
     renderLogin();
     const ownerCard = screen.getByText(/دخول صاحب موقع/);
     fireEvent.click(ownerCard);
-    expect(screen.getByText(/إصدار الواجهة/)).toBeTruthy();
+    // لوحة التشخيص أُزيلت من الواجهة نهائياً — لا تظهر لأي دور.
+    expect(screen.queryByText(/إصدار الواجهة/)).toBeNull();
     expect(
       screen.queryByText(
         'سجل التشخيص — آخر أسباب الرجوع لصفحة الدخول:'
       )
-    ).toBeTruthy();
+    ).toBeNull();
   });
 });

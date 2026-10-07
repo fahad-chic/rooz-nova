@@ -1,0 +1,38 @@
+/* ============================================================
+   ROOZ — تنظيف الشعارات (Transparent Logos)
+   يُطبّق على كل الشعارات في الموقع: إزالة أي خلفية/إطار/ظل/حواف
+   حتى يختفي "المربع" تماماً ويندمج الشعار مع الصفحة.
+   الشعارات نفسها شفافة (PNG بلا خلفية) — هنا نُلغي ستايل الحاويات.
+   ============================================================ */
+
+img[src*="/assets/logo"],
+img[src*="/assets/emblem"],
+img[src*="logo-v2"],
+.navbar-brand-logo,
+.rl-crown-ic img,
+.rl-card-logo,
+.nov-hero-logo,
+.nov-brand-logo,
+.rh-hero-logo,
+.rh-brand-logo,
+.rh-logo-large,
+.rh-logo-small,
+.ch-hero-logo,
+.ch-footer-logo,
+.ch-hero-logo-ring {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  outline: none !important;
+  object-fit: contain !important;
+}
+
+/* حلقة الشعار في الصفحة القديمة كانت تلوّن الشعار بخلفية — تُلغى كلياً */
+.ch-hero-logo-ring::before,
+.ch-hero-logo-ring::after {
+  content: none !important;
+  display: none !important;
+}
