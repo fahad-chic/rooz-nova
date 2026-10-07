@@ -39,7 +39,7 @@ const C = {
   goldDark: '#1e40af',
   ink: '#0e1626',
   inkSoft: '#143873',
-  cream: '#e3dbf4',
+  cream: '#f5f7fa',
   creamLight: '#eae5f6',
   card: '#f8f6fb',
   line: '#cbbcee',
@@ -312,7 +312,7 @@ export default function AdDetailsPage() {
       dir="rtl"
       style={{
         minHeight: '100vh',
-        background: `linear-gradient(180deg, ${C.cream} 0%, #dbd0f2 55%, #d9ccf1 100%)`,
+        background: `linear-gradient(180deg, ${C.cream} 0%, #eceff4 55%, #e6ebf2 100%)`,
         fontFamily: 'Tajawal, sans-serif',
         color: C.ink,
         padding: '1rem',

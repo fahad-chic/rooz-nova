@@ -1209,7 +1209,7 @@ function AppContent() {
         background:
           location.pathname === '/login'
             ? 'transparent'
-            : 'linear-gradient(180deg, #e3dbf4 0%, #dbd0f2 55%, #d9ccf1 100%)',
+            : 'linear-gradient(180deg, #f5f7fa 0%, #eceff4 55%, #e6ebf2 100%)',
         color: '#1d2532',
         fontFamily: 'Tajawal',
         position: 'relative',

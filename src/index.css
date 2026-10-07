@@ -45,8 +45,8 @@ body {
   background: linear-gradient(
     150deg,
     var(--bg-deep) 0%,
-    #dfd7f1 55%,
-    #d9ccf1 100%
+    #e6ebf2 55%,
+    #e6ebf2 100%
   );
   color: var(--text-primary);
   min-height: 100vh;

@@ -597,7 +597,7 @@
 .ch-ad-img {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: linear-gradient(150deg, #d5c8f2 0%, #a7c1eb 100%);
+  background: linear-gradient(150deg, #eceff4 0%, #a7c1eb 100%);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -778,7 +778,7 @@
   display: grid;
   place-items: center;
   color: var(--ch-ink);
-  background: linear-gradient(160deg, #f7f6fb, #dacef4);
+  background: linear-gradient(160deg, #f7f6fb, #e6ebf2);
   box-shadow:
     0 0 0 2.5px var(--ch-gold),
     0 0 0 5px rgb(59, 130, 246, 0.25),
@@ -1072,7 +1072,7 @@
   display: grid;
   place-items: center;
   color: var(--ch-ink);
-  background: linear-gradient(160deg, #f7f6fb, #dacef4);
+  background: linear-gradient(160deg, #f7f6fb, #e6ebf2);
   box-shadow:
     0 0 0 1.5px var(--ch-gold),
     0 4px 12px rgb(37, 99, 235, 0.3);

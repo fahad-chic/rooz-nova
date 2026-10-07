@@ -45,7 +45,7 @@ const BANK_ACCOUNTS = [
 ];
 
 const GOLD = '#2563eb';
-const GOLD_LIGHT = '#c7dbfe';
+const GOLD_LIGHT = '#0f172a';
 const DARK = '#0b1220';
 
 const buttonBaseStyle = {
@@ -143,8 +143,8 @@ const ContactPage = () => {
 
   const cardStyle = {
     background:
-      'linear-gradient(145deg, rgb(24, 31, 42, 0.95) 0%, rgb(19, 24, 33, 0.98) 100%)',
-    border: '1px solid rgb(83, 138, 226, 0.2)',
+      '#ffffff',
+    border: '1px solid rgb(15, 23, 42, 0.08)',
     borderRadius: 16,
   };
 
@@ -156,7 +156,7 @@ const ContactPage = () => {
         width: '100%',
         boxSizing: 'border-box',
         background:
-          'linear-gradient(180deg, #0b1220 0%, #0e1626 30%, #101a2b 50%, #0e1626 100%)',
+          'linear-gradient(180deg, #f5f7fa 0%, #eceff4 50%, #e6ebf2 100%)',
         padding: 'clamp(1rem, 4vw, 1.5rem)',
         fontFamily: 'Tajawal, Arial, sans-serif',
         color: GOLD_LIGHT,
@@ -188,8 +188,8 @@ const ContactPage = () => {
               width: 46,
               height: 46,
               flexShrink: 0,
-              background: 'rgb(83, 138, 226, 0.15)',
-              border: '1px solid rgb(83, 138, 226, 0.3)',
+              background: 'rgb(37, 99, 235, 0.10)',
+              border: '1px solid rgb(37, 99, 235, 0.25)',
               borderRadius: 12,
               color: GOLD,
             }}
@@ -217,9 +217,9 @@ const ContactPage = () => {
             marginBottom: '2rem',
             padding: 'clamp(1.25rem, 4vw, 1.5rem)',
             background:
-              'linear-gradient(145deg, rgb(83, 138, 226, 0.08) 0%, transparent 100%)',
+              '#ffffff',
             borderRadius: 20,
-            border: '1px solid rgb(83, 138, 226, 0.15)',
+            border: '1px solid rgb(15, 23, 42, 0.08)',
           }}
         >
           <div
@@ -255,7 +255,7 @@ const ContactPage = () => {
             style={{
               margin: '0.5rem 0 0',
               fontSize: '0.9rem',
-              color: '#a0a3b0',
+              color: '#64748b',
               lineHeight: 1.7,
             }}
           >
@@ -322,8 +322,8 @@ const ContactPage = () => {
                         ...buttonBaseStyle,
                         width: 42,
                         height: 42,
-                        background: 'rgb(83, 138, 226, 0.15)',
-                        border: '1px solid rgb(83, 138, 226, 0.3)',
+                        background: 'rgb(37, 99, 235, 0.10)',
+                        border: '1px solid rgb(37, 99, 235, 0.25)',
                         borderRadius: 10,
                         color: GOLD,
                       }}
@@ -561,8 +561,8 @@ const ContactPage = () => {
                 width: 42,
                 height: 42,
                 flexShrink: 0,
-                background: 'rgb(83, 138, 226, 0.15)',
-                border: '1px solid rgb(83, 138, 226, 0.3)',
+                background: 'rgb(37, 99, 235, 0.10)',
+                border: '1px solid rgb(37, 99, 235, 0.25)',
                 borderRadius: 10,
               }}
             >
@@ -862,8 +862,8 @@ const ContactPage = () => {
                 marginTop: '0.75rem',
                 width: '100%',
                 minHeight: 44,
-                background: 'rgb(83, 138, 226, 0.15)',
-                border: '1px solid rgb(83, 138, 226, 0.3)',
+                background: 'rgb(37, 99, 235, 0.10)',
+                border: '1px solid rgb(37, 99, 235, 0.25)',
                 borderRadius: 10,
                 color: GOLD,
                 gap: '0.5rem',

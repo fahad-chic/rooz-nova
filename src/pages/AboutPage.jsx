@@ -38,21 +38,21 @@ export const AboutPage = () => {
           margin-bottom: 1rem;
           padding: 1.4rem 1rem;
           border-radius: 16px;
-          background: linear-gradient(135deg, #0b1017 0%, #101a2b 100%);
-          border: 1px solid rgb(59, 130, 246,0.35);
-          box-shadow: 0 6px 18px rgb(255, 255, 255,0.05);
+          background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+          border: 1px solid rgb(15, 23, 42,0.10);
+          box-shadow: 0 6px 18px rgb(15, 23, 42,0.06);
         }
 
         .about-title {
           font-size: 1.7rem;
           font-weight: 900;
-          color: #3b82f6;
+          color: #0b1017;
           margin-bottom: 0.4rem;
         }
 
         .about-subtitle {
           font-size: 0.85rem;
-          color: #a8bce0;
+          color: #475569;
           max-width: 650px;
           margin: 0 auto;
           line-height: 1.6;
@@ -69,18 +69,18 @@ export const AboutPage = () => {
         }
 
         .about-card {
-          background: #111;
-          border: 1px solid rgb(59, 130, 246,0.25);
+          background: #ffffff;
+          border: 1px solid rgb(15, 23, 42,0.08);
           border-radius: 14px;
           padding: 1rem;
-          box-shadow: 0 6px 18px rgb(255, 255, 255,0.05);
+          box-shadow: 0 6px 18px rgb(15, 23, 42,0.06);
           margin-bottom: 0.8rem;
         }
 
         .about-card-title {
           font-size: 1rem;
           font-weight: 800;
-          color: #c7dbfe;
+          color: #0f172a;
           margin-bottom: 0.6rem;
           display: flex;
           align-items: center;
@@ -88,7 +88,7 @@ export const AboutPage = () => {
         }
 
         .about-card-content {
-          color: #a8bce0;
+          color: #475569;
           line-height: 1.6;
           font-size: 0.82rem;
         }
@@ -101,8 +101,8 @@ export const AboutPage = () => {
         }
 
         .stat-box {
-          background: #101a2b;
-          border: 1px solid rgb(59, 130, 246,0.25);
+          background: #f8fafc;
+          border: 1px solid rgb(15, 23, 42,0.08);
           padding: 0.8rem;
           border-radius: 12px;
           text-align: center;
@@ -115,7 +115,7 @@ export const AboutPage = () => {
         }
 
         .stat-label {
-          color: #a8bce0;
+          color: #475569;
           font-size: 0.75rem;
         }
 
@@ -127,31 +127,31 @@ export const AboutPage = () => {
         }
 
         .partner-box {
-          background: #101a2b;
+          background: #f8fafc;
           border-radius: 10px;
-          border: 1px solid rgb(59, 130, 246,0.25);
+          border: 1px solid rgb(15, 23, 42,0.08);
           padding: 0.7rem;
         }
 
         .partner-name {
-          color: #c7dbfe;
+          color: #0f172a;
           font-weight: 800;
           font-size: 0.85rem;
         }
 
         .partner-type {
-          color: #a8bce0;
+          color: #475569;
           font-size: 0.75rem;
         }
 
         .footer {
           margin-top: 1.5rem;
           padding: 1rem;
-          background: #111;
+          background: #ffffff;
           border-radius: 14px;
-          border: 1px solid rgb(59, 130, 246,0.25);
+          border: 1px solid rgb(15, 23, 42,0.08);
           text-align: center;
-          color: #a8bce0;
+          color: #475569;
           font-size: 0.8rem;
         }
 
