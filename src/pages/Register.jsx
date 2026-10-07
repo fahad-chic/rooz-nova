@@ -454,25 +454,25 @@ const page = {
   minHeight: '100vh',
   width: '100%',
   background:
-    'radial-gradient(circle at top, rgba(201,169,97,0.12), transparent 35%), linear-gradient(135deg, #0a0a0a 0%, #111111 48%, #181818 100%)',
+    'radial-gradient(circle at top, rgb(123, 81, 217,0.12), transparent 35%), linear-gradient(135deg, #0a071e 0%, #0b0823 48%, #0d0928 100%)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   padding: '24px 16px',
   boxSizing: 'border-box',
-  fontFamily: 'Tajawal, Cairo, sans-serif',
+  fontFamily: 'Cairo, Cairo, sans-serif',
 };
 
 const card = {
   background:
-    'linear-gradient(145deg, rgba(20,20,20,0.98), rgba(12,12,12,0.98))',
+    'linear-gradient(145deg, rgb(12, 9, 37,0.98), rgb(10, 7, 31,0.98))',
   padding: '30px 26px',
   borderRadius: 22,
   width: '100%',
   maxWidth: 430,
-  border: '1px solid rgba(201,169,97,0.3)',
+  border: '1px solid rgb(123, 81, 217,0.3)',
   boxShadow:
-    '0 22px 70px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.04)',
+    '0 22px 70px rgb(9, 6, 27,0.55), inset 0 1px 0 rgb(255, 255, 255,0.04)',
   textAlign: 'center',
   boxSizing: 'border-box',
 };
@@ -486,15 +486,15 @@ const brandMark = {
   alignItems: 'center',
   justifyContent: 'center',
   background:
-    'linear-gradient(145deg, #f4d98b 0%, #c9a961 45%, #8d6d1d 100%)',
+    'linear-gradient(145deg, #a78af5 0%, #7b51d9 45%, #3a1496 100%)',
   color: '#111',
   fontSize: 25,
   fontWeight: 900,
-  boxShadow: '0 8px 24px rgba(201,169,97,0.2)',
+  boxShadow: '0 8px 24px rgb(123, 81, 217,0.2)',
 };
 
 const title = {
-  color: '#f4dfaa',
+  color: '#bea7f7',
   fontSize: 26,
   fontWeight: 800,
   margin: '0 0 6px',
@@ -508,7 +508,7 @@ const subtitle = {
 };
 
 const label = {
-  color: '#f4e4b5',
+  color: '#c4b2f7',
   fontSize: 14,
   fontWeight: 700,
   textAlign: 'right',
@@ -526,7 +526,7 @@ const inputIcon = {
   top: '50%',
   left: 13,
   transform: 'translateY(-50%)',
-  color: '#c9a961',
+  color: '#7b51d9',
   zIndex: 1,
   pointerEvents: 'none',
 };
@@ -536,12 +536,12 @@ const input = {
   minHeight: 48,
   padding: '12px 14px 12px 42px',
   borderRadius: 12,
-  border: '1px solid rgba(201,169,97,0.2)',
+  border: '1px solid rgb(123, 81, 217,0.2)',
   outline: 'none',
-  background: 'rgba(28,28,28,0.95)',
+  background: 'rgb(14, 10, 43,0.95)',
   color: '#fff',
   fontSize: 15,
-  fontFamily: 'Tajawal, Cairo, sans-serif',
+  fontFamily: 'Cairo, Cairo, sans-serif',
   boxSizing: 'border-box',
   transition: 'border-color 160ms ease, box-shadow 160ms ease',
 };
@@ -551,16 +551,16 @@ const submitBtn = {
   minHeight: 50,
   padding: '13px 14px',
   background:
-    'linear-gradient(135deg, #e6c96f 0%, #c9a961 48%, #8d6d1d 100%)',
+    'linear-gradient(135deg, #8b68ed 0%, #7b51d9 48%, #3a1496 100%)',
   color: '#111',
-  border: '1px solid rgba(255,232,158,0.45)',
+  border: '1px solid rgb(186, 165, 248,0.45)',
   borderRadius: 12,
   fontWeight: 800,
   cursor: 'pointer',
   marginTop: 5,
   fontSize: 15,
-  fontFamily: 'Tajawal, Cairo, sans-serif',
-  boxShadow: '0 8px 24px rgba(201,169,97,0.16)',
+  fontFamily: 'Cairo, Cairo, sans-serif',
+  boxShadow: '0 8px 24px rgb(123, 81, 217,0.16)',
   transition: 'transform 160ms ease, opacity 160ms ease',
 };
 
@@ -581,7 +581,7 @@ const spinner = {
   width: 15,
   height: 15,
   borderRadius: '50%',
-  border: '2px solid rgba(17,17,17,0.25)',
+  border: '2px solid rgb(11, 8, 35,0.25)',
   borderTopColor: '#111',
   display: 'inline-block',
   animation: 'roozRegisterSpin 700ms linear infinite',
@@ -594,15 +594,15 @@ const switchForm = {
 };
 
 const link = {
-  color: '#d7bb70',
+  color: '#8864e3',
   fontWeight: 800,
   textDecoration: 'none',
 };
 
 const alertError = {
-  background: 'rgba(127,29,29,0.22)',
-  border: '1px solid rgba(248,113,113,0.2)',
-  color: '#ffc4c4',
+  background: 'rgb(136, 20, 41,0.22)',
+  border: '1px solid rgb(240, 121, 143,0.2)',
+  color: '#f6cdd5',
   padding: '11px 12px',
   borderRadius: 11,
   marginBottom: 17,
@@ -615,9 +615,9 @@ const alertError = {
 };
 
 const alertSuccess = {
-  background: 'rgba(6,78,59,0.22)',
-  border: '1px solid rgba(52,211,153,0.18)',
-  color: '#b8f4dc',
+  background: 'rgb(17, 12, 53,0.22)',
+  border: '1px solid rgb(45, 218, 205,0.18)',
+  color: '#b7f5f1',
   padding: '11px 12px',
   borderRadius: 11,
   marginBottom: 17,

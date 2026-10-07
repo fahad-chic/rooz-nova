@@ -40,10 +40,10 @@ const HomePrefsFloat = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(135deg, #0f766e, #14b8a6);
+          background: linear-gradient(135deg, #0b477a, #0f6fbd);
           color: #fff;
           cursor: pointer;
-          box-shadow: 0 6px 18px rgba(15,118,110,0.4);
+          box-shadow: 0 6px 18px rgb(11, 71, 122,0.4);
           transition: transform 0.2s ease;
         }
         .hpf-btn:hover { transform: scale(1.08); }
@@ -53,13 +53,13 @@ const HomePrefsFloat = () => {
           right: 16px;
           z-index: 80;
           width: min(280px, calc(100vw - 32px));
-          background: #fffdf6;
-          border: 1.5px solid #c47a3a;
+          background: #f7f6fb;
+          border: 1.5px solid #7b29d5;
           border-radius: 16px;
-          box-shadow: 0 14px 40px rgba(60,40,10,0.25);
+          box-shadow: 0 14px 40px rgb(15, 11, 48,0.25);
           padding: 14px;
           direction: rtl;
-          font-family: Tajawal, sans-serif;
+          font-family: Cairo, sans-serif;
         }
         .hpf-title {
           display: flex;
@@ -67,14 +67,14 @@ const HomePrefsFloat = () => {
           justify-content: space-between;
           font-weight: 900;
           font-size: 0.95rem;
-          color: #0b0a09;
+          color: #0a071e;
           margin-bottom: 10px;
         }
         .hpf-close {
           background: none;
           border: none;
           cursor: pointer;
-          color: #6b5a33;
+          color: #3e247a;
           display: flex;
           padding: 2px;
         }
@@ -84,10 +84,10 @@ const HomePrefsFloat = () => {
           justify-content: space-between;
           gap: 8px;
           padding: 7px 0;
-          border-top: 1px dashed rgba(176,138,62,0.3);
+          border-top: 1px dashed rgb(93, 43, 195,0.3);
           font-size: 0.85rem;
           font-weight: 700;
-          color: #3a2f18;
+          color: #110c34;
         }
         .hpf-switch {
           flex-shrink: 0;
@@ -97,10 +97,10 @@ const HomePrefsFloat = () => {
           border: none;
           cursor: pointer;
           position: relative;
-          background: #d8cbb0;
+          background: #b9a4e4;
           transition: background 0.2s ease;
         }
-        .hpf-switch.on { background: #0f766e; }
+        .hpf-switch.on { background: #0b477a; }
         .hpf-switch::after {
           content: '';
           position: absolute;
@@ -116,24 +116,24 @@ const HomePrefsFloat = () => {
         .hpf-fonts { display: flex; gap: 6px; }
         .hpf-font {
           flex: 1;
-          border: 1.5px solid #c47a3a;
+          border: 1.5px solid #7b29d5;
           background: #fff;
-          color: #6b5a33;
+          color: #3e247a;
           border-radius: 10px;
           padding: 5px 0;
           font-size: 0.78rem;
           font-weight: 800;
           cursor: pointer;
-          font-family: Tajawal, sans-serif;
+          font-family: Cairo, sans-serif;
         }
-        .hpf-font.active { background: #c47a3a; color: #fff; }
+        .hpf-font.active { background: #7b29d5; color: #fff; }
         .hpf-more {
           display: block;
           text-align: center;
           margin-top: 10px;
           font-size: 0.8rem;
           font-weight: 800;
-          color: #0f766e;
+          color: #0b477a;
           text-decoration: none;
         }
       `}</style>

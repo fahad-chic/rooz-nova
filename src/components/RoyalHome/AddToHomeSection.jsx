@@ -35,17 +35,17 @@ const AddToHomeSection = () => {
         marginTop: '0.6rem',
         padding: '0.75rem 0.85rem',
         boxSizing: 'border-box',
-        background: 'linear-gradient(145deg, #fffdf8 0%, #f7efdd 55%, #f2e7d0 100%)',
-        border: '1px solid rgba(184, 134, 11, 0.3)',
+        background: 'linear-gradient(145deg, #f8f6fb 0%, #e6dff5 55%, #dacff3 100%)',
+        border: '1px solid rgb(64, 15, 180, 0.3)',
         borderRadius: 14,
-        boxShadow: '0 4px 14px rgba(140, 105, 25, 0.08)',
+        boxShadow: '0 4px 14px rgb(57, 17, 148, 0.08)',
         textAlign: 'center',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
       }}
     >
       <Smartphone
         size={22}
-        color="#b8860b"
+        color="#400fb4"
         style={{ margin: '0 auto 0.3rem', display: 'block' }}
       />
       <h2
@@ -54,7 +54,7 @@ const AddToHomeSection = () => {
           margin: '0 0 0.2rem',
           fontSize: '0.95rem',
           fontWeight: 800,
-          color: '#4a3a12',
+          color: '#200d4f',
         }}
       >
         أضف المتجر لشاشة هاتفك
@@ -64,7 +64,7 @@ const AddToHomeSection = () => {
           margin: '0 auto 0.55rem',
           maxWidth: 400,
           fontSize: '0.78rem',
-          color: '#7c6a3a',
+          color: '#45298d',
           lineHeight: 1.5,
         }}
       >
@@ -78,16 +78,16 @@ const AddToHomeSection = () => {
           padding: '0.45rem 1.1rem',
           borderRadius: 10,
           border: 'none',
-          background: 'linear-gradient(135deg, #c47a3a 0%, #a8842c 100%)',
-          color: '#1a1206',
+          background: 'linear-gradient(135deg, #7b29d5 0%, #4b1fb5 100%)',
+          color: '#0b0822',
           fontWeight: 800,
           fontSize: '0.8rem',
           cursor: 'pointer',
-          fontFamily: 'Tajawal, sans-serif',
+          fontFamily: 'Cairo, sans-serif',
           display: 'inline-flex',
           alignItems: 'center',
           gap: 6,
-          boxShadow: '0 3px 10px rgba(168, 132, 44, 0.3)',
+          boxShadow: '0 3px 10px rgb(75, 31, 181, 0.3)',
         }}
       >
         <PlusSquare size={14} />
@@ -103,7 +103,7 @@ const AddToHomeSection = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(40, 30, 5, 0.55)',
+            background: 'rgb(13, 9, 39, 0.55)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -114,8 +114,8 @@ const AddToHomeSection = () => {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: 'linear-gradient(145deg, #faf6f0, #f6ecd6)',
-              border: '1px solid rgba(184, 134, 11, 0.45)',
+              background: 'linear-gradient(145deg, #f4f1f9, #e0d7f5)',
+              border: '1px solid rgb(64, 15, 180, 0.45)',
               borderRadius: 18,
               padding: '1.2rem 1.1rem',
               maxWidth: 400,
@@ -123,7 +123,7 @@ const AddToHomeSection = () => {
               maxHeight: '85vh',
               overflowY: 'auto',
               textAlign: 'right',
-              boxShadow: '0 20px 50px rgba(60, 45, 5, 0.35)',
+              boxShadow: '0 20px 50px rgb(15, 11, 46, 0.35)',
             }}
           >
             <div
@@ -139,7 +139,7 @@ const AddToHomeSection = () => {
                   margin: 0,
                   fontSize: '1rem',
                   fontWeight: 800,
-                  color: '#4a3a12',
+                  color: '#200d4f',
                 }}
               >
                 خطوات التثبيت
@@ -149,8 +149,8 @@ const AddToHomeSection = () => {
                 aria-label="إغلاق"
                 onClick={() => setOpen(false)}
                 style={{
-                  background: 'rgba(184, 134, 11, 0.12)',
-                  border: '1px solid rgba(184, 134, 11, 0.35)',
+                  background: 'rgb(64, 15, 180, 0.12)',
+                  border: '1px solid rgb(64, 15, 180, 0.35)',
                   borderRadius: '50%',
                   width: 30,
                   height: 30,
@@ -158,7 +158,7 @@ const AddToHomeSection = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#6b5313',
+                  color: '#290d71',
                 }}
               >
                 <X size={15} />
@@ -169,8 +169,8 @@ const AddToHomeSection = () => {
               <div
                 key={os}
                 style={{
-                  background: 'rgba(255, 255, 255, 0.65)',
-                  border: '1px solid rgba(184, 134, 11, 0.25)',
+                  background: 'rgb(255, 255, 255, 0.65)',
+                  border: '1px solid rgb(64, 15, 180, 0.25)',
                   borderRadius: 12,
                   padding: '0.7rem 0.85rem',
                   marginBottom: '0.55rem',
@@ -184,7 +184,7 @@ const AddToHomeSection = () => {
                     margin: '0 0 0.35rem',
                     fontWeight: 800,
                     fontSize: '0.85rem',
-                    color: '#8d6d1d',
+                    color: '#3a1496',
                   }}
                 >
                   <Icon size={14} />
@@ -194,7 +194,7 @@ const AddToHomeSection = () => {
                   style={{
                     margin: 0,
                     paddingInlineStart: '1.1rem',
-                    color: '#5c4a20',
+                    color: '#2e1666',
                     fontSize: '0.8rem',
                     lineHeight: 1.7,
                   }}
@@ -210,7 +210,7 @@ const AddToHomeSection = () => {
               style={{
                 margin: '0.55rem 0 0',
                 fontSize: '0.75rem',
-                color: '#8a7a52',
+                color: '#5839a3',
                 textAlign: 'center',
               }}
             >

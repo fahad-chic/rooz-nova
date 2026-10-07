@@ -88,31 +88,31 @@ const MarqueeBanner = ({
   const palette = isFirstStyle
     ? {
         background:
-          "linear-gradient(118deg, #071827 0%, #103653 48%, #08253b 100%)",
-        border: "rgba(112, 221, 212, 0.42)",
-        text: "#f4fbff",
-        textShadow: "0 1px 8px rgba(0, 0, 0, 0.42)",
-        label: "#9dece2",
-        icon: "#7ff2df",
-        arrow: "rgba(211, 255, 250, 0.82)",
-        separator: "rgba(159, 244, 233, 0.30)",
-        iconBackground: "rgba(112, 238, 219, 0.13)",
-        iconBorder: "rgba(156, 255, 240, 0.26)",
-        glow: "rgba(76, 222, 202, 0.34)",
+          "linear-gradient(118deg, #0d0927 0%, #0b2058 48%, #0f0b2f 100%)",
+        border: "rgb(102, 172, 231, 0.42)",
+        text: "#f6f8fb",
+        textShadow: "0 1px 8px rgb(9, 6, 27, 0.42)",
+        label: "#97caf2",
+        icon: "#7dc2f4",
+        arrow: "rgb(219, 235, 247, 0.82)",
+        separator: "rgb(156, 207, 247, 0.30)",
+        iconBackground: "rgb(107, 185, 243, 0.13)",
+        iconBorder: "rgb(163, 212, 248, 0.26)",
+        glow: "rgb(66, 160, 232, 0.34)",
       }
     : {
         background:
-          "linear-gradient(118deg, #261020 0%, #572441 50%, #35142c 100%)",
-        border: "rgba(244, 157, 203, 0.40)",
-        text: "#fff7fb",
-        textShadow: "0 1px 8px rgba(21, 4, 15, 0.44)",
-        label: "#ffbedb",
-        icon: "#ffb5d5",
-        arrow: "rgba(255, 226, 239, 0.84)",
-        separator: "rgba(255, 188, 218, 0.30)",
-        iconBackground: "rgba(255, 173, 211, 0.13)",
-        iconBorder: "rgba(255, 207, 229, 0.28)",
-        glow: "rgba(229, 96, 163, 0.36)",
+          "linear-gradient(118deg, #0e0a2a 0%, #461c5f 50%, #100b31 100%)",
+        border: "rgb(212, 157, 244, 0.40)",
+        text: "#fbf6f7",
+        textShadow: "0 1px 8px rgb(10, 7, 32, 0.44)",
+        label: "#f6c7d0",
+        icon: "#f7bdc8",
+        arrow: "rgb(248, 233, 236, 0.84)",
+        separator: "rgb(246, 197, 206, 0.30)",
+        iconBackground: "rgb(247, 181, 193, 0.13)",
+        iconBorder: "rgb(246, 216, 222, 0.28)",
+        glow: "rgb(181, 93, 232, 0.36)",
       };
 
   const shouldScroll = scrollDistance > 2;
@@ -156,14 +156,14 @@ const MarqueeBanner = ({
         @keyframes roozBadgePulse {
           0%, 100% {
             box-shadow:
-              0 7px 18px rgba(2, 9, 19, 0.27),
-              0 0 0 1px rgba(255, 255, 255, 0.035) inset,
+              0 7px 18px rgb(10, 7, 30, 0.27),
+              0 0 0 1px rgb(255, 255, 255, 0.035) inset,
               0 0 15px var(--rooz-glow);
           }
           50% {
             box-shadow:
-              0 10px 23px rgba(2, 9, 19, 0.34),
-              0 0 0 1px rgba(255, 255, 255, 0.055) inset,
+              0 10px 23px rgb(10, 7, 30, 0.34),
+              0 0 0 1px rgb(255, 255, 255, 0.055) inset,
               0 0 24px var(--rooz-glow);
           }
         }
@@ -329,7 +329,7 @@ const MarqueeBanner = ({
             bottom: "-35%",
             width: "28%",
             background:
-              "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent)",
+              "linear-gradient(90deg, transparent, rgb(255, 255, 255, 0.16), transparent)",
             pointerEvents: "none",
             zIndex: 0,
           }}
@@ -343,8 +343,8 @@ const MarqueeBanner = ({
             position: "absolute",
             inset: 0,
             background: isFirstStyle
-              ? "linear-gradient(115deg, rgba(6, 19, 34, 0.96), rgba(18, 74, 91, 0.94), rgba(7, 38, 59, 0.97), rgba(12, 52, 66, 0.94))"
-              : "linear-gradient(115deg, rgba(37, 13, 31, 0.97), rgba(106, 38, 75, 0.94), rgba(52, 18, 46, 0.97), rgba(126, 49, 87, 0.92))",
+              ? "linear-gradient(115deg, rgb(12, 9, 37, 0.96), rgb(13, 44, 96, 0.94), rgb(15, 11, 46, 0.97), rgb(16, 12, 51, 0.94))"
+              : "linear-gradient(115deg, rgb(13, 10, 41, 0.97), rgb(83, 30, 114, 0.94), rgb(15, 11, 48, 0.97), rgb(141, 34, 54, 0.92))",
             pointerEvents: "none",
             zIndex: 0,
           }}
@@ -379,7 +379,7 @@ const MarqueeBanner = ({
               top: -4,
               left: -4,
               color: "#ffffff",
-              filter: "drop-shadow(0 1px 3px rgba(0, 0, 0, 0.35))",
+              filter: "drop-shadow(0 1px 3px rgb(9, 6, 27, 0.35))",
             }}
           />
         </span>
@@ -388,7 +388,7 @@ const MarqueeBanner = ({
         <span
           className="rooz-badge-label"
           style={{
-            fontFamily: "Cairo, Tajawal, Arial, sans-serif",
+            fontFamily: "Cairo, Cairo, Arial, sans-serif",
             fontSize: "0.62rem",
             fontWeight: 800,
             color: palette.label,
@@ -439,7 +439,7 @@ const MarqueeBanner = ({
             }`}
             style={{
               "--rooz-scroll-distance": `${scrollDistance}px`,
-              fontFamily: "Cairo, Tajawal, Arial, sans-serif",
+              fontFamily: "Cairo, Cairo, Arial, sans-serif",
               fontSize: "0.93rem",
               fontWeight: 950,
               color: palette.text,

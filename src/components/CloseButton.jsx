@@ -82,13 +82,13 @@ const CloseButton = ({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 14,
-    border: '1.5px solid rgba(176,138,62,0.5)',
-    background: 'linear-gradient(145deg, #faf6f0, #f0e2c2)',
-    color: '#6d4c14',
+    border: '1.5px solid rgb(93, 43, 195,0.5)',
+    background: 'linear-gradient(145deg, #f4f1f9, #cebef4)',
+    color: '#320e73',
     cursor: 'pointer',
-    boxShadow: '0 8px 22px rgba(60,40,10,0.28)',
+    boxShadow: '0 8px 22px rgb(15, 11, 48,0.28)',
     transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-    fontFamily: 'Tajawal, sans-serif',
+    fontFamily: 'Cairo, sans-serif',
     ...cornerStyle,
   };
 

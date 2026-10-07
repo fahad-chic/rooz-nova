@@ -35,14 +35,14 @@ import {
 const ADMIN_NUMBER = '0536667222';
 
 const C = {
-  gold: '#D4AF37',
-  goldDark: '#B8860B',
-  ink: '#241B08',
-  inkSoft: '#6B521C',
-  cream: '#F4ECDB',
-  creamLight: '#F8F2E3',
-  card: '#FFFDF8',
-  line: '#E7DCC3',
+  gold: '#592ae1',
+  goldDark: '#400fb4',
+  ink: '#0c0926',
+  inkSoft: '#321473',
+  cream: '#e3dbf4',
+  creamLight: '#eae5f6',
+  card: '#f8f6fb',
+  line: '#cbbcee',
 };
 
 const timeAgo = (timestamp) => {
@@ -287,7 +287,7 @@ export default function AdDetailsPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.inkSoft, fontFamily: 'Tajawal, sans-serif' }}>
+      <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.inkSoft, fontFamily: 'Cairo, sans-serif' }}>
         جاري تحميل الإعلان...
       </div>
     );
@@ -295,7 +295,7 @@ export default function AdDetailsPage() {
 
   if (!ad) {
     return (
-      <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, fontFamily: 'Tajawal, sans-serif', color: C.ink }}>
+      <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, fontFamily: 'Cairo, sans-serif', color: C.ink }}>
         <p style={{ fontSize: 18, fontWeight: 700 }}>الإعلان غير موجود أو تم حذفه</p>
         <button type="button" onClick={() => navigate('/haraj')} style={goldBtn}>
           العودة إلى الحراج
@@ -312,8 +312,8 @@ export default function AdDetailsPage() {
       dir="rtl"
       style={{
         minHeight: '100vh',
-        background: `linear-gradient(180deg, ${C.cream} 0%, #F0E6D2 55%, #EEE3CF 100%)`,
-        fontFamily: 'Tajawal, sans-serif',
+        background: `linear-gradient(180deg, ${C.cream} 0%, #dbd0f2 55%, #d9ccf1 100%)`,
+        fontFamily: 'Cairo, sans-serif',
         color: C.ink,
         padding: '1rem',
       }}
@@ -348,13 +348,13 @@ export default function AdDetailsPage() {
             border: `1px solid ${C.line}`,
             borderRadius: 20,
             overflow: 'hidden',
-            boxShadow: '0 8px 30px rgba(90,70,30,0.12)',
+            boxShadow: '0 8px 30px rgb(47, 21, 99,0.12)',
           }}
         >
           <div
             style={{
               height: 320,
-              background: `linear-gradient(135deg, ${C.creamLight}, #EDE1C8)`,
+              background: `linear-gradient(135deg, ${C.creamLight}, #d2c3f2)`,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -385,7 +385,7 @@ export default function AdDetailsPage() {
                   borderRadius: 999,
                   fontSize: 12,
                   fontWeight: 800,
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                  boxShadow: '0 4px 12px rgb(9, 6, 27,0.2)',
                 }}
               >
                 {ad.condition === true ? 'جديد' : ad.condition}
@@ -424,7 +424,7 @@ export default function AdDetailsPage() {
             padding: 20,
             marginTop: 14,
             textAlign: 'center',
-            boxShadow: '0 8px 30px rgba(90,70,30,0.10)',
+            boxShadow: '0 8px 30px rgb(47, 21, 99,0.10)',
           }}
         >
           <h1 style={{ margin: '0 0 8px', fontSize: 'clamp(1.4rem, 4vw, 2rem)', fontWeight: 800 }}>
@@ -458,7 +458,7 @@ export default function AdDetailsPage() {
             borderRadius: 20,
             padding: 20,
             marginTop: 14,
-            boxShadow: '0 8px 30px rgba(90,70,30,0.10)',
+            boxShadow: '0 8px 30px rgb(47, 21, 99,0.10)',
           }}
         >
           <h3 style={{ margin: '0 0 14px', fontSize: 18, fontWeight: 800, textAlign: 'center', color: C.ink }}>
@@ -511,7 +511,7 @@ export default function AdDetailsPage() {
             padding: 20,
             marginTop: 14,
             marginBottom: 30,
-            boxShadow: '0 8px 30px rgba(90,70,30,0.10)',
+            boxShadow: '0 8px 30px rgb(47, 21, 99,0.10)',
           }}
         >
           <h3 style={{ margin: '0 0 6px', fontSize: 18, fontWeight: 800, textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
@@ -559,7 +559,7 @@ export default function AdDetailsPage() {
                   </p>
                 )}
                 {chatError && (
-                  <p style={{ textAlign: 'center', color: '#B91C1C', fontSize: 13 }}>{chatError}</p>
+                  <p style={{ textAlign: 'center', color: '#c01535', fontSize: 13 }}>{chatError}</p>
                 )}
                 {messages.map((m) => {
                   const mine = m.senderKey === buyerKey;
@@ -571,14 +571,14 @@ export default function AdDetailsPage() {
                         maxWidth: '80%',
                         background: mine
                           ? `linear-gradient(135deg, ${C.gold}, ${C.goldDark})`
-                          : '#FFFFFF',
+                          : '#ffffff',
                         color: mine ? '#fff' : C.ink,
                         border: mine ? 'none' : `1px solid ${C.line}`,
                         borderRadius: 14,
                         padding: '8px 14px',
                         fontSize: 14,
                         lineHeight: 1.7,
-                        boxShadow: '0 2px 8px rgba(90,70,30,0.10)',
+                        boxShadow: '0 2px 8px rgb(47, 21, 99,0.10)',
                       }}
                     >
                       {m.text}
@@ -637,8 +637,8 @@ const infoRow = {
   display: 'flex',
   alignItems: 'center',
   gap: 10,
-  background: '#FBF6EA',
-  border: '1px solid #E7DCC3',
+  background: '#f0edf8',
+  border: '1px solid #cbbcee',
   borderRadius: 12,
   padding: '10px 14px',
 };
@@ -646,8 +646,8 @@ const infoRow = {
 const goldBtn = {
   width: '100%',
   padding: 14,
-  background: 'linear-gradient(135deg, #D4AF37 0%, #B8860B 55%, #D4AF37 100%)',
-  color: '#241B08',
+  background: 'linear-gradient(135deg, #592ae1 0%, #400fb4 55%, #592ae1 100%)',
+  color: '#0c0926',
   border: 'none',
   borderRadius: 12,
   fontWeight: 800,
@@ -658,14 +658,14 @@ const goldBtn = {
   justifyContent: 'center',
   gap: 8,
   fontFamily: 'inherit',
-  boxShadow: '0 6px 20px rgba(184,134,11,0.35), inset 0 1px 0 rgba(255,255,255,0.5)',
+  boxShadow: '0 6px 20px rgb(64, 15, 180,0.35), inset 0 1px 0 rgb(255, 255, 255,0.5)',
 };
 
 const ghostBtn = {
   padding: '10px 14px',
   background: '#fff',
-  color: '#241B08',
-  border: '1px solid #E7DCC3',
+  color: '#0c0926',
+  border: '1px solid #cbbcee',
   borderRadius: 12,
   fontWeight: 700,
   fontSize: 13,

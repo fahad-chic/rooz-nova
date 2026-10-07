@@ -58,19 +58,19 @@ class ErrorBoundary extends React.Component {
           style={{
             padding: '2rem',
             textAlign: 'center',
-            fontFamily: 'Tajawal',
+            fontFamily: 'Cairo',
             direction: 'rtl',
-            background: '#0d0f16',
-            color: '#f7efd2',
+            background: '#0b0823',
+            color: '#dcd4f5',
             minHeight: '100vh'
           }}
         >
-          <h2 style={{ color: '#c47a3a' }}> حدث خطأ غير متوقع</h2>
+          <h2 style={{ color: '#7b29d5' }}> حدث خطأ غير متوقع</h2>
 
           <p
             style={{
-              color: '#721c24',
-              background: '#f8d7da',
+              color: '#7a1426',
+              background: '#f6d9df',
               padding: '1rem',
               borderRadius: '8px',
               marginTop: '1rem'
@@ -91,8 +91,8 @@ class ErrorBoundary extends React.Component {
               marginTop: '1rem',
               padding: '0.6rem 1.2rem',
               cursor: 'pointer',
-              background: '#c47a3a',
-              color: '#120c02',
+              background: '#7b29d5',
+              color: '#0a071e',
               border: 'none',
               borderRadius: '8px',
               fontWeight: 'bold'
@@ -107,11 +107,11 @@ class ErrorBoundary extends React.Component {
                 textAlign: 'left',
                 maxHeight: 250,
                 overflow: 'auto',
-                background: '#1a1d29',
+                background: '#0f0b2f',
                 padding: 10,
                 marginTop: '1rem',
                 borderRadius: '8px',
-                color: '#f7efd2'
+                color: '#dcd4f5'
               }}
             >
               {this.state.error?.stack}
@@ -124,7 +124,7 @@ class ErrorBoundary extends React.Component {
               style={{
                 padding: '0.8rem 1.5rem',
                 cursor: 'pointer',
-                background: '#8d6d1d',
+                background: '#3a1496',
                 color: '#fff',
                 border: 'none',
                 borderRadius: '8px',

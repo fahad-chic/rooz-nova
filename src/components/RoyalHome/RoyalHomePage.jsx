@@ -104,12 +104,12 @@ const RoyalHomePage = () => {
             padding: 0 0.4rem;
           }
           .rh-icon-card {
-            background: linear-gradient(145deg, #faf6f0, #f3ede4);
-            border: 1.5px solid rgba(176,138,62,0.42);
+            background: linear-gradient(145deg, #f4f1f9, #eae4f3);
+            border: 1.5px solid rgb(93, 43, 195,0.42);
             border-radius: 14px;
             padding: 0.65rem 0.4rem;
             text-align: center;
-            box-shadow: 0 3px 12px rgba(60,45,5,0.08);
+            box-shadow: 0 3px 12px rgb(15, 11, 46,0.08);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             min-height: 88px;
             display: flex;
@@ -126,7 +126,7 @@ const RoyalHomePage = () => {
             margin: 0;
             font-size: 0.78rem;
             font-weight: 800;
-            color: #12100e;
+            color: #0b0822;
             line-height: 1.3;
             word-break: break-word;
             overflow-wrap: anywhere;
@@ -136,7 +136,7 @@ const RoyalHomePage = () => {
           .rh-icon-card p {
             margin: 0;
             font-size: 0.62rem;
-            color: #5a4a32;
+            color: #3d2369;
             line-height: 1.35;
             word-break: break-word;
             overflow-wrap: anywhere;
@@ -145,8 +145,8 @@ const RoyalHomePage = () => {
           }
           .rh-icon-btn {
             margin-top: 0.2rem;
-            background: linear-gradient(135deg, #c47a3a, #a8842c);
-            color: #1a1206;
+            background: linear-gradient(135deg, #7b29d5, #4b1fb5);
+            color: #0b0822;
             border: none;
             border-radius: 7px;
             padding: 0.22rem 0.45rem;
@@ -181,7 +181,7 @@ const RoyalHomePage = () => {
           banners={MARQUEE_BANNERS_2}
           editableKeys={['marquee4', 'marquee5', 'marquee6']}
           label="عروض ROOZ"
-          barBg="linear-gradient(90deg, #3f2a10 0%, #6b4a17 50%, #3f2a10 100%)"
+          barBg="linear-gradient(90deg, #110c33 0%, #341072 50%, #110c33 100%)"
         />
       </div>
 
@@ -223,17 +223,17 @@ const RoyalHomePage = () => {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '5px',
-              border: '2.2px double #8c6d31',
+              border: '2.2px double #4a229b',
               borderRadius: '50px',
               padding: '3px 11px',
-              boxShadow: 'inset 0 0 3px rgba(140,109,49,0.2), 0 1px 3px rgba(0,0,0,0.05)',
+              boxShadow: 'inset 0 0 3px rgb(74, 34, 155,0.2), 0 1px 3px rgb(9, 6, 27,0.05)',
               backgroundColor: 'transparent',
               whiteSpace: 'nowrap'
             }}
           >
-            <span style={{ color: '#8c6d31', fontSize: '0.8em', fontWeight: 'bold' }}>®</span>
+            <span style={{ color: '#4a229b', fontSize: '0.8em', fontWeight: 'bold' }}>®</span>
             أنــآقـة تليق بـكم
-            <span style={{ color: '#8c6d31', fontSize: '0.8em', fontWeight: 'bold' }}>®</span>
+            <span style={{ color: '#4a229b', fontSize: '0.8em', fontWeight: 'bold' }}>®</span>
           </h1>
         </div>
       </section>
@@ -242,13 +242,13 @@ const RoyalHomePage = () => {
 
       <div className="rh-icon-row">
         <div className="rh-icon-card">
-          <Crown size={18} color="#c47a3a" strokeWidth={1.7} />
+          <Crown size={18} color="#7b29d5" strokeWidth={1.7} />
           <h4>لأنكم تستاهلون</h4>
           <p>مسابقة ذهب عيار 21 قريباً</p>
         </div>
 
         <div className="rh-icon-card">
-          <Smartphone size={18} color="#8c6d31" strokeWidth={1.7} />
+          <Smartphone size={18} color="#4a229b" strokeWidth={1.7} />
           <h4>أضف للمتجر</h4>
           <p>ثبّته كتطبيق على هاتفك</p>
           <button
@@ -262,7 +262,7 @@ const RoyalHomePage = () => {
         </div>
 
         <div className="rh-icon-card">
-          <Mail size={18} color="#8c6d31" strokeWidth={1.7} />
+          <Mail size={18} color="#4a229b" strokeWidth={1.7} />
           <h4>عروضنا توصلك</h4>
           <p>اشترك ليصلك الجديد</p>
 
@@ -277,7 +277,7 @@ const RoyalHomePage = () => {
                 fontSize: '0.58rem',
                 padding: '0.22rem 0.3rem',
                 borderRadius: 6,
-                border: '1px solid rgba(176,138,62,0.35)',
+                border: '1px solid rgb(93, 43, 195,0.35)',
                 background: '#fff',
                 textAlign: 'center',
                 marginBottom: 2,
@@ -301,7 +301,7 @@ const RoyalHomePage = () => {
             <span
               style={{
                 fontSize: '0.55rem',
-                color: emailStatus.includes('نجاح') ? '#2e7d32' : '#c62828'
+                color: emailStatus.includes('نجاح') ? '#247e87' : '#d21c3d'
               }}
             >
               {emailStatus}
@@ -325,21 +325,21 @@ const RoyalHomePage = () => {
             gap: 8,
             padding: '0.7rem 0.9rem',
             borderRadius: 14,
-            border: '1.5px solid #c47a3a',
-            background: 'linear-gradient(145deg, #faf6f0, #f3ede4)',
-            color: '#12100e',
+            border: '1.5px solid #7b29d5',
+            background: 'linear-gradient(145deg, #f4f1f9, #eae4f3)',
+            color: '#0b0822',
             fontWeight: 900,
             fontSize: '0.92rem',
             fontFamily: 'inherit',
             cursor: 'pointer',
-            boxShadow: '0 2px 10px rgba(176,138,62,0.15)',
+            boxShadow: '0 2px 10px rgb(93, 43, 195,0.15)',
             marginBottom: sectionsPanelOpen ? 10 : 0,
           }}
         >
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
             أقسام متجر أناقة ROOZ
             <span style={{
-              background: '#c47a3a', color: '#fff', fontSize: '0.68rem',
+              background: '#7b29d5', color: '#fff', fontSize: '0.68rem',
               fontWeight: 900, padding: '2px 8px', borderRadius: 999,
             }}>{catalogSections.length}</span>
           </span>
@@ -365,7 +365,7 @@ const RoyalHomePage = () => {
                   <OwnerEditBadge to="/admin" label="تعديل" />
                   <div
                     className="rh-card-icon"
-                    style={{ background: `linear-gradient(145deg, ${section.color || '#e8a35c'}, #8f5528)` }}
+                    style={{ background: `linear-gradient(145deg, ${section.color || '#9955ef'}, #5b1c9b)` }}
                   >
                     <Icon size={22} />
                   </div>
@@ -384,9 +384,9 @@ const RoyalHomePage = () => {
                       gap: 4,
                       padding: '0.4rem 0.65rem',
                       borderRadius: 10,
-                      border: '1.5px solid rgba(176,138,62,0.45)',
-                      background: isOpen ? 'rgba(217,177,102,0.35)' : '#faf6f0',
-                      color: '#12100e',
+                      border: '1.5px solid rgb(93, 43, 195,0.45)',
+                      background: isOpen ? 'rgb(137, 91, 228,0.35)' : '#f4f1f9',
+                      color: '#0b0822',
                       fontWeight: 800,
                       fontSize: '0.75rem',
                       fontFamily: 'inherit',
@@ -408,7 +408,7 @@ const RoyalHomePage = () => {
                         onClick={() => openBranch(branch)}
                       >
                         <span>{branch.name}</span>
-                        <ArrowLeft size={14} color="#8f5528" />
+                        <ArrowLeft size={14} color="#5b1c9b" />
                       </button>
                     ))}
                   </div>
@@ -560,7 +560,7 @@ const RoyalHomePage = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(40,30,5,0.55)',
+            background: 'rgb(13, 9, 39,0.55)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -571,15 +571,15 @@ const RoyalHomePage = () => {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: 'linear-gradient(145deg,#faf6f0,#f6ecd6)',
-              border: '1px solid rgba(184,134,11,0.45)',
+              background: 'linear-gradient(145deg,#f4f1f9,#e0d7f5)',
+              border: '1px solid rgb(64, 15, 180,0.45)',
               borderRadius: 16,
               padding: '1.2rem 1rem',
               maxWidth: 340,
               width: '100%',
               textAlign: 'right',
-              boxShadow: '0 18px 45px rgba(60,45,5,0.35)',
-              fontFamily: 'Tajawal,sans-serif'
+              boxShadow: '0 18px 45px rgb(15, 11, 46,0.35)',
+              fontFamily: 'Cairo,sans-serif'
             }}
           >
             <div
@@ -596,7 +596,7 @@ const RoyalHomePage = () => {
                   margin: 0,
                   fontSize: '1rem',
                   fontWeight: 800,
-                  color: '#4a3a12'
+                  color: '#200d4f'
                 }}
               >
                 كيف تضيف المتجر لشاشة هاتفك؟
@@ -607,7 +607,7 @@ const RoyalHomePage = () => {
                 onClick={() => setShowAddHelp(false)}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgba(0,0,0,0.06)',
+                  background: 'rgb(9, 6, 27,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -617,7 +617,7 @@ const RoyalHomePage = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#5c4a20',
+                  color: '#2e1666',
                 }}
               >
                 <X size={16} />
@@ -629,7 +629,7 @@ const RoyalHomePage = () => {
                 margin: 0,
                 paddingRight: '1.1rem',
                 fontSize: '0.82rem',
-                color: '#5c4a20',
+                color: '#2e1666',
                 lineHeight: 1.7
               }}
             >
@@ -645,8 +645,8 @@ const RoyalHomePage = () => {
               style={{
                 marginTop: '0.9rem',
                 width: '100%',
-                background: 'linear-gradient(135deg,#c47a3a,#a8842c)',
-                color: '#1a1206',
+                background: 'linear-gradient(135deg,#7b29d5,#4b1fb5)',
+                color: '#0b0822',
                 border: 'none',
                 borderRadius: 10,
                 padding: '0.5rem',

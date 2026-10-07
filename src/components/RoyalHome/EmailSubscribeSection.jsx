@@ -61,17 +61,17 @@ const EmailSubscribeSection = () => {
         marginTop: '0.55rem',
         padding: '0.75rem 0.85rem',
         boxSizing: 'border-box',
-        background: 'linear-gradient(145deg, #fffdf8 0%, #f6eeda 55%, #f1e5cc 100%)',
-        border: '1px solid rgba(184, 134, 11, 0.3)',
+        background: 'linear-gradient(145deg, #f8f6fb 0%, #e3dbf5 55%, #d7caf3 100%)',
+        border: '1px solid rgb(64, 15, 180, 0.3)',
         borderRadius: 14,
-        boxShadow: '0 4px 14px rgba(140, 105, 25, 0.08)',
+        boxShadow: '0 4px 14px rgb(57, 17, 148, 0.08)',
         textAlign: 'center',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
       }}
     >
       <Mail
         size={22}
-        color="#b8860b"
+        color="#400fb4"
         style={{ margin: '0 auto 0.3rem', display: 'block' }}
       />
       <h2
@@ -80,7 +80,7 @@ const EmailSubscribeSection = () => {
           margin: '0 0 0.2rem',
           fontSize: '0.95rem',
           fontWeight: 800,
-          color: '#4a3a12',
+          color: '#200d4f',
         }}
       >
         عروضنا توصلك أول بأول
@@ -90,7 +90,7 @@ const EmailSubscribeSection = () => {
           margin: '0 auto 0.55rem',
           maxWidth: 400,
           fontSize: '0.78rem',
-          color: '#7c6a3a',
+          color: '#45298d',
           lineHeight: 1.5,
         }}
       >
@@ -126,11 +126,11 @@ const EmailSubscribeSection = () => {
             minWidth: 0,
             padding: '0.45rem 0.75rem',
             borderRadius: 10,
-            border: '1px solid rgba(184, 134, 11, 0.35)',
-            background: '#fffefb',
+            border: '1px solid rgb(64, 15, 180, 0.35)',
+            background: '#f7f6fb',
             fontSize: '0.8rem',
-            fontFamily: 'Tajawal, sans-serif',
-            color: '#4a3a12',
+            fontFamily: 'Cairo, sans-serif',
+            color: '#200d4f',
             outline: 'none',
           }}
         />
@@ -141,16 +141,16 @@ const EmailSubscribeSection = () => {
             padding: '0.45rem 0.95rem',
             borderRadius: 10,
             border: 'none',
-            background: 'linear-gradient(135deg, #c47a3a 0%, #a8842c 100%)',
-            color: '#1a1206',
+            background: 'linear-gradient(135deg, #7b29d5 0%, #4b1fb5 100%)',
+            color: '#0b0822',
             fontWeight: 800,
             fontSize: '0.8rem',
             cursor: state === 'loading' ? 'default' : 'pointer',
-            fontFamily: 'Tajawal, sans-serif',
+            fontFamily: 'Cairo, sans-serif',
             display: 'inline-flex',
             alignItems: 'center',
             gap: 5,
-            boxShadow: '0 3px 10px rgba(168, 132, 44, 0.3)',
+            boxShadow: '0 3px 10px rgb(75, 31, 181, 0.3)',
           }}
         >
           {state === 'loading' ? (
@@ -174,7 +174,7 @@ const EmailSubscribeSection = () => {
             gap: 5,
             fontSize: '0.78rem',
             fontWeight: 700,
-            color: isSuccess ? '#2e7d32' : '#b3402e',
+            color: isSuccess ? '#247e87' : '#c1203e',
           }}
         >
           {isSuccess && <CheckCircle2 size={13} />}

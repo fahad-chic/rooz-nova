@@ -113,7 +113,7 @@ export const BranchesManagement = () => {
           padding: 1rem;
           max-width: 1200px;
           margin: 0 auto;
-          font-family: 'Tajawal', sans-serif;
+          font-family: 'Cairo', sans-serif;
         }
 
         .management-header {
@@ -122,23 +122,23 @@ export const BranchesManagement = () => {
           align-items: center;
           margin-bottom: 1rem;
           padding: 1rem 1.1rem;
-          background: #0f0f0f;
-          border: 1px solid rgba(201,169,97,0.25);
+          background: #0b0821;
+          border: 1px solid rgb(123, 81, 217,0.25);
           border-radius: 16px;
-          box-shadow: 0 2px 12px rgba(255,255,255,0.05);
+          box-shadow: 0 2px 12px rgb(255, 255, 255,0.05);
         }
 
         .management-title {
           font-size: 1.5rem;
           font-weight: 700;
-          color: #C9A961;
+          color: #7b51d9;
         }
 
         .add-btn {
           display: flex;
           align-items: center;
           gap: 0.4rem;
-          background: linear-gradient(135deg, #C9A961, #8d6d1d);
+          background: linear-gradient(135deg, #7b51d9, #3a1496);
           color: #fff;
           border: none;
           padding: 0.65rem 1rem;
@@ -150,10 +150,10 @@ export const BranchesManagement = () => {
 
         .table-wrapper {
           background: #111;
-          border: 1px solid rgba(201,169,97,0.25);
+          border: 1px solid rgb(123, 81, 217,0.25);
           border-radius: 16px;
           overflow-x: auto;
-          box-shadow: 0 2px 12px rgba(255,255,255,0.05);
+          box-shadow: 0 2px 12px rgb(255, 255, 255,0.05);
         }
 
         table {
@@ -164,27 +164,27 @@ export const BranchesManagement = () => {
         }
 
         th {
-          background: #1a1a1a;
+          background: #0d0a29;
           padding: 0.9rem;
           font-size: 0.9rem;
-          color: #C9A961;
+          color: #7b51d9;
           text-align: left;
         }
 
         td {
           padding: 0.8rem;
-          border-bottom: 1px solid rgba(255,255,255,0.05);
+          border-bottom: 1px solid rgb(255, 255, 255,0.05);
         }
 
         .branch-name {
           font-weight: 700;
-          color: #f8e9bb;
+          color: #cbbaf9;
         }
 
         .type-badge {
           display: inline-block;
-          background: rgba(201,169,97,0.15);
-          color: #C9A961;
+          background: rgb(123, 81, 217,0.15);
+          color: #7b51d9;
           padding: 0.24rem 0.6rem;
           border-radius: 999px;
           font-size: 0.76rem;
@@ -199,9 +199,9 @@ export const BranchesManagement = () => {
           font-weight: 700;
         }
 
-        .status-active { background: rgba(16,185,129,0.2); color: #10B981; }
-        .status-warning { background: rgba(234,179,8,0.2); color: #eab308; }
-        .status-danger { background: rgba(239,68,68,0.2); color: #ef4444; }
+        .status-active { background: rgb(20, 181, 167,0.2); color: #14b5a7; }
+        .status-warning { background: rgb(72, 18, 224,0.2); color: #4812e0; }
+        .status-danger { background: rgb(235, 72, 102,0.2); color: #eb4866; }
 
         .action-cell {
           display: flex;
@@ -221,15 +221,15 @@ export const BranchesManagement = () => {
           font-size: 0.8rem;
         }
 
-        .action-btn-edit { background: rgba(59,130,246,0.15); color: #cfe3ff; }
-        .action-btn-delete { background: rgba(239,68,68,0.16); color: #ffd0d0; }
-        .action-btn-share { background: rgba(255,255,255,0.08); color: #fff; }
-        .action-btn-copy { background: rgba(255,255,255,0.08); color: #fff; }
+        .action-btn-edit { background: rgb(65, 97, 240,0.15); color: #d7def7; }
+        .action-btn-delete { background: rgb(235, 72, 102,0.16); color: #f6d9de; }
+        .action-btn-share { background: rgb(255, 255, 255,0.08); color: #fff; }
+        .action-btn-copy { background: rgb(255, 255, 255,0.08); color: #fff; }
 
         .modal-overlay {
           position: fixed;
           inset: 0;
-          background: rgba(0,0,0,0.6);
+          background: rgb(9, 6, 27,0.6);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -238,19 +238,19 @@ export const BranchesManagement = () => {
         }
 
         .modal {
-          background: #0f0f0f;
-          border: 1px solid rgba(201,169,97,0.25);
+          background: #0b0821;
+          border: 1px solid rgb(123, 81, 217,0.25);
           border-radius: 16px;
           padding: 1.1rem;
           max-width: 500px;
           width: 100%;
-          box-shadow: 0 2px 12px rgba(255,255,255,0.05);
+          box-shadow: 0 2px 12px rgb(255, 255, 255,0.05);
         }
 
         .modal-header {
           font-size: 1.2rem;
           font-weight: 700;
-          color: #C9A961;
+          color: #7b51d9;
           margin-bottom: 0.9rem;
         }
 
@@ -262,15 +262,15 @@ export const BranchesManagement = () => {
         }
 
         label {
-          color: #f8e9bb;
+          color: #cbbaf9;
           font-size: 0.85rem;
         }
 
         input, select {
           padding: 0.6rem;
           border-radius: 8px;
-          border: 1px solid rgba(255,255,255,0.1);
-          background: #1a1a1a;
+          border: 1px solid rgb(255, 255, 255,0.1);
+          background: #0d0a29;
           color: #fff;
           font-size: 0.9rem;
         }
@@ -290,13 +290,13 @@ export const BranchesManagement = () => {
         }
 
         .modal-btn-submit {
-          background: linear-gradient(135deg, #C9A961, #8d6d1d);
+          background: linear-gradient(135deg, #7b51d9, #3a1496);
           color: #fff;
         }
 
         .modal-btn-cancel {
-          background: rgba(255,255,255,0.08);
-          color: #f6ebc7;
+          background: rgb(255, 255, 255,0.08);
+          color: #d3c7f6;
         }
       `}</style>
 
@@ -393,7 +393,7 @@ export const BranchesManagement = () => {
                 onClick={() => { setShowForm(false); setEditingBranch(null); }}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgba(0,0,0,0.06)',
+                  background: 'rgb(9, 6, 27,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -403,7 +403,7 @@ export const BranchesManagement = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#0f172a',
+                  color: '#0e0a2b',
                 }}
               >
                 <X size={17} />
