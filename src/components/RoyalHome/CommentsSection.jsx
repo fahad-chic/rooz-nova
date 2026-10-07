@@ -271,7 +271,7 @@ const CommentsSection = () => {
             height: 42,
             borderRadius: 11,
             background: 'linear-gradient(90deg, #0b0823 0%, #0e0a2c 40%, #0b0823 100%)',
-            border: '1px solid rgb(89, 42, 225, 0.35)',
+            border: '1px solid rgb(37, 99, 235, 0.35)',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
@@ -292,7 +292,7 @@ const CommentsSection = () => {
             <span
               style={{
                 flexShrink: 0,
-                background: 'linear-gradient(135deg, #7b29d5, #3e0ead)',
+                background: 'linear-gradient(135deg, #2563eb, #3e0ead)',
                 color: '#0b0822',
                 fontSize: '0.65rem',
                 fontWeight: 800,
@@ -370,7 +370,7 @@ const CommentsSection = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg, #f8f6fb, #e0d7f5)',
-              border: '1.5px solid rgb(64, 15, 180, 0.45)',
+              border: '1.5px solid rgb(30, 58, 138, 0.45)',
               borderRadius: 18,
               padding: '1.1rem',
               maxWidth: 420,
@@ -519,7 +519,7 @@ const CommentsSection = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg, #f8f6fb, #e0d7f5)',
-              border: '1.5px solid rgb(64, 15, 180, 0.45)',
+              border: '1.5px solid rgb(30, 58, 138, 0.45)',
               borderRadius: 18,
               padding: '1.25rem 1.1rem',
               maxWidth: 360,
@@ -543,7 +543,7 @@ const CommentsSection = () => {
                   style={{
                     marginTop: 16,
                     width: '100%',
-                    background: 'linear-gradient(135deg, #7b29d5, #4b1fb5)',
+                    background: 'linear-gradient(135deg, #2563eb, #1d4ed8)',
                     color: '#0b0822',
                     border: 'none',
                     borderRadius: 10,
@@ -672,7 +672,7 @@ const CommentsSection = () => {
                       width: '100%',
                       background:
                         form.name.trim() && form.text.trim() && !isSubmitting
-                          ? 'linear-gradient(135deg, #7b29d5, #4b1fb5)'
+                          ? 'linear-gradient(135deg, #2563eb, #1d4ed8)'
                           : '#cdbceb',
                       color: '#0b0822',
                       border: 'none',
@@ -719,7 +719,7 @@ const CommentsSection = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg, #f8f6fb, #e0d7f5)',
-              border: '1.5px solid rgb(64, 15, 180, 0.45)',
+              border: '1.5px solid rgb(30, 58, 138, 0.45)',
               borderRadius: 16,
               padding: '1.15rem 1rem',
               maxWidth: 340,

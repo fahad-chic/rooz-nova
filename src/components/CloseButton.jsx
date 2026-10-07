@@ -82,7 +82,7 @@ const CloseButton = ({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 14,
-    border: '1.5px solid rgb(93, 43, 195,0.5)',
+    border: '1.5px solid rgb(37, 99, 235,0.5)',
     background: 'linear-gradient(145deg, #f4f1f9, #cebef4)',
     color: '#320e73',
     cursor: 'pointer',

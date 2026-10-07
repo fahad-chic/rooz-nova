@@ -88,7 +88,7 @@ const MarqueeBanner = ({
   const palette = isFirstStyle
     ? {
         background:
-          "linear-gradient(118deg, #0d0927 0%, #0b2058 48%, #0f0b2f 100%)",
+          "linear-gradient(118deg, #0e1626 0%, #0b2058 48%, #0f0b2f 100%)",
         border: "rgb(102, 172, 231, 0.42)",
         text: "#f6f8fb",
         textShadow: "0 1px 8px rgb(9, 6, 27, 0.42)",

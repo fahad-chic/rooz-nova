@@ -377,7 +377,7 @@ const AdFormPage = () => {
       >
         <div
           style={{
-            color: '#7b29d5',
+            color: '#2563eb',
             fontSize: '1.2rem',
             display: 'flex',
             alignItems: 'center',
@@ -422,7 +422,7 @@ const AdFormPage = () => {
               width: 64,
               height: 64,
               background:
-                'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)',
+                'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
@@ -457,7 +457,7 @@ const AdFormPage = () => {
             onClick={() => navigate('/haraj')}
             style={{
               background:
-                'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)',
+                'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
               border: 'none',
               borderRadius: 12,
               padding: '1rem 2rem',
@@ -541,7 +541,7 @@ const AdFormPage = () => {
             onClick={() => navigate('/haraj')}
             style={{
               background:
-                'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)',
+                'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
               border: 'none',
               borderRadius: 12,
               padding: '1rem 2rem',
@@ -628,7 +628,7 @@ const AdFormPage = () => {
             display: 'flex',
           }}
         >
-          <ArrowRight size={20} color="#7b29d5" />
+          <ArrowRight size={20} color="#2563eb" />
         </button>
         <h1
           style={{
@@ -880,7 +880,7 @@ const AdFormPage = () => {
                     right: '1rem',
                     top: '50%',
                     transform: 'translateY(-50%)',
-                    color: '#7b29d5',
+                    color: '#2563eb',
                   }}
                 />
                 <select
@@ -956,7 +956,7 @@ const AdFormPage = () => {
                       flex: 1,
                       background:
                         formData.condition === option.value
-                          ? 'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)'
+                          ? 'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)'
                           : 'rgb(9, 6, 27, 0.3)',
                       border:
                         formData.condition === option.value
@@ -1177,7 +1177,7 @@ const AdFormPage = () => {
               style={{
                 width: '100%',
                 background:
-                  'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)',
+                  'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
                 border: 'none',
                 borderRadius: 12,
                 padding: '1rem',
@@ -1214,7 +1214,7 @@ const AdFormPage = () => {
                 width: 64,
                 height: 64,
                 background:
-                  'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)',
+                  'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -1338,7 +1338,7 @@ const AdFormPage = () => {
                   margin: '0 0 0.75rem',
                   fontSize: '0.9rem',
                   fontWeight: 700,
-                  color: '#7b29d5',
+                  color: '#2563eb',
                 }}
               >
                 ملخص الإعلان:
@@ -1391,7 +1391,7 @@ const AdFormPage = () => {
                   margin: '0 0 0.75rem',
                   fontSize: '1rem',
                   fontWeight: 800,
-                  color: '#7b29d5',
+                  color: '#2563eb',
                 }}
               >
                 إقرار وتعهد رسمي قبل النشر
@@ -1422,11 +1422,11 @@ const AdFormPage = () => {
               >
                 <li>
                   سلعة <strong>جديدة</strong>: نسبة الموقع{' '}
-                  <strong style={{ color: '#7b29d5' }}>2%</strong> من قيمة البيع
+                  <strong style={{ color: '#2563eb' }}>2%</strong> من قيمة البيع
                 </li>
                 <li>
                   سلعة <strong>مستعملة</strong>: نسبة الموقع{' '}
-                  <strong style={{ color: '#7b29d5' }}>1%</strong> من قيمة البيع
+                  <strong style={{ color: '#2563eb' }}>1%</strong> من قيمة البيع
                 </li>
               </ul>
 
@@ -1495,7 +1495,7 @@ const AdFormPage = () => {
               style={{
                 width: '100%',
                 background: agreed
-                  ? 'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)'
+                  ? 'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)'
                   : 'rgb(127, 83, 226, 0.2)',
                 border: 'none',
                 borderRadius: 12,

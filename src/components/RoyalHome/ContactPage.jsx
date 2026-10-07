@@ -44,7 +44,7 @@ const BANK_ACCOUNTS = [
   },
 ];
 
-const GOLD = '#7b29d5';
+const GOLD = '#2563eb';
 const GOLD_LIGHT = '#cbbaf9';
 const DARK = '#0a0720';
 
@@ -227,7 +227,7 @@ const ContactPage = () => {
               width: 64,
               height: 64,
               background:
-                'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)',
+                'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
@@ -344,7 +344,7 @@ const ContactPage = () => {
                         minHeight: 42,
                         padding: '0.6rem 1rem',
                         background:
-                          'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)',
+                          'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
                         borderRadius: 10,
                         gap: '0.5rem',
                         color: '#0b0822',

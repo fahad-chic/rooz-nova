@@ -170,7 +170,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
 
   if (!isAuthenticated) {
     return (
-      <div style={{ textAlign: 'center', padding: 40, color: '#6114ec' }}>
+      <div style={{ textAlign: 'center', padding: 40, color: '#1d4ed8' }}>
         يرجى تسجيل الدخول لعرض هذه المحادثة.
       </div>
     );
@@ -192,7 +192,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
           <button
             type="button"
             onClick={() => setCurrentPage('dashboard')}
-            style={{ marginTop: 16, padding: '10px 22px', borderRadius: 10, border: 'none', background: 'linear-gradient(135deg,#7b29d5,#4b1fb5)', color: '#0b0822', fontWeight: 800, cursor: 'pointer' }}
+            style={{ marginTop: 16, padding: '10px 22px', borderRadius: 10, border: 'none', background: 'linear-gradient(135deg,#2563eb,#1d4ed8)', color: '#0b0822', fontWeight: 800, cursor: 'pointer' }}
           >
             العودة للرئيسية
           </button>

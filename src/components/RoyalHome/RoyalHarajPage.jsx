@@ -56,8 +56,8 @@ import OwnerEditBadge from '../OwnerEditBadge';
 import '../../styles/RoyalHome.css';
 
 const C = {
-  gold: '#7b29d5',
-  goldLight: '#5b1c9b',
+  gold: '#2563eb',
+  goldLight: '#1e40af',
   goldDark: '#321473',
   black: '#0a071e',
   blackLight: '#0f0b2e',
@@ -116,7 +116,7 @@ const HARAJ_SECTIONS = [
     id: 'watches',
     name: 'ساعات',
     icon: Watch,
-    color: '#6114ec',
+    color: '#1d4ed8',
   },
   {
     id: 'bags',
@@ -228,7 +228,7 @@ const AdCard = ({
   const getConditionColor = () => {
     if (conditionText === 'جديد') return C.green;
     if (conditionText === 'ممتازة') return '#14b5a7';
-    return '#6114ec';
+    return '#1d4ed8';
   };
 
   const imageSource = ad.images?.[0] || ad.image;
@@ -646,7 +646,7 @@ const BankCard = ({ bank }) => {
     <div
       style={{
         background: 'linear-gradient(145deg, #f4f1f9 0%, #eae4f3 100%)',
-        border: '1.5px solid #7b29d5',
+        border: '1.5px solid #2563eb',
         borderRadius: 14,
         padding: '0.7rem 0.8rem',
         position: 'relative',
@@ -723,7 +723,7 @@ const BankCard = ({ bank }) => {
             alignItems: 'center',
             justifyContent: 'space-between',
             background: 'linear-gradient(135deg, #cfc0f4, #a991eb)',
-            border: '1px solid #7b29d5',
+            border: '1px solid #2563eb',
             borderRadius: 10,
             padding: '0.4rem 0.6rem',
             gap: 8,
@@ -793,7 +793,7 @@ const BankCard = ({ bank }) => {
             alignItems: 'center',
             justifyContent: 'space-between',
             background: 'linear-gradient(135deg, #cfc0f4, #a991eb)',
-            border: '1px solid #7b29d5',
+            border: '1px solid #2563eb',
             borderRadius: 10,
             padding: '0.4rem 0.6rem',
             gap: 8,
@@ -1360,7 +1360,7 @@ const RoyalHarajPage = () => {
               alignItems: 'center',
               justifyContent: 'center',
               background: 'rgb(255, 255, 255,0.16)',
-              border: '1.5px solid rgb(89, 42, 225,0.7)',
+              border: '1.5px solid rgb(37, 99, 235,0.7)',
             }}
           >
             <Sparkles size={22} color="#a382f5" aria-hidden="true" />
@@ -1599,7 +1599,7 @@ const RoyalHarajPage = () => {
               width: '100%',
               marginBottom: sectionsOpen ? '0.75rem' : 0,
               background: 'linear-gradient(145deg, #f4f1f9, #eae4f3)',
-              border: '1.5px solid #7b29d5',
+              border: '1.5px solid #2563eb',
               borderRadius: 14,
               padding: '0.85rem 1rem',
               cursor: 'pointer',
@@ -1611,14 +1611,14 @@ const RoyalHarajPage = () => {
               fontSize: '0.95rem',
               fontWeight: 900,
               fontFamily: 'Cairo, sans-serif',
-              boxShadow: '0 2px 10px rgb(93, 43, 195,0.15)',
+              boxShadow: '0 2px 10px rgb(37, 99, 235,0.15)',
             }}
           >
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-              <Crown size={18} color="#7b29d5" />
+              <Crown size={18} color="#2563eb" />
               أقسام الحراج
               <span style={{
-                background: '#7b29d5',
+                background: '#2563eb',
                 color: '#fff',
                 fontSize: '0.7rem',
                 fontWeight: 900,
@@ -1747,7 +1747,7 @@ const RoyalHarajPage = () => {
                 fontWeight: 800,
                 fontFamily:
                   'Cairo, sans-serif',
-                boxShadow: '0 6px 18px rgb(58, 20, 150,0.25)',
+                boxShadow: '0 6px 18px rgb(30, 58, 138,0.25)',
               }}
             >
               عرض المزيد من الإعلانات (
@@ -1793,11 +1793,11 @@ const RoyalHarajPage = () => {
 
             <div
               style={{
-                background: 'linear-gradient(145deg, #9955ef 0%, #7b29d5 55%, #5b1c9b 100%)',
+                background: 'linear-gradient(145deg, #3b82f6 0%, #2563eb 55%, #1e40af 100%)',
                 borderRadius: 12,
                 padding: '0.55rem 0.75rem',
-                border: '1.5px solid #5b1c9b',
-                boxShadow: '0 2px 8px rgb(93, 43, 195,0.25)',
+                border: '1.5px solid #1e40af',
+                boxShadow: '0 2px 8px rgb(37, 99, 235,0.25)',
                 display: 'inline-block',
                 width: '100%',
                 maxWidth: 320,

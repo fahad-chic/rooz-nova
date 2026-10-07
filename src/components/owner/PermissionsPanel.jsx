@@ -132,13 +132,13 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
   const textSub = darkMode ? 'text-[#a186d9]' : 'text-[#0f0b2e]';
   const textMuted = darkMode ? 'text-[#7f5ec2]' : 'text-[#291648]';
   const chipInactive = darkMode
-    ? 'bg-[#0d0927] text-[#cdb8ed] border-[#5f2cc4]/35 hover:bg-[#5f2cc4]/15'
+    ? 'bg-[#0e1626] text-[#cdb8ed] border-[#5f2cc4]/35 hover:bg-[#5f2cc4]/15'
     : 'bg-[#f6f4fb] text-[#0f0b2e] border-[#5f2cc4]/30 hover:bg-[#5f2cc4]/10';
   const rowBgOn = darkMode
     ? 'bg-[#0f0b30] border-[#5f2cc4]/45 shadow-sm shadow-black/20'
     : 'bg-[#f4f1fa] border-[#5f2cc4]/45 shadow-sm shadow-[#5f2cc4]/10';
   const rowBgOff = darkMode
-    ? 'bg-[#0d0927] border-[#5f2cc4]/20 hover:border-[#5f2cc4]/40'
+    ? 'bg-[#0e1626] border-[#5f2cc4]/20 hover:border-[#5f2cc4]/40'
     : 'bg-[#f6f4fb] border-[#5f2cc4]/20 hover:border-[#5f2cc4]/35';
   const noticeBg = darkMode
     ? 'text-[#e9e4f4] bg-[#5f2cc4]/20 border-[#5f2cc4]/40'

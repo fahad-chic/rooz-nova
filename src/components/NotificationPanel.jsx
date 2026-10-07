@@ -32,8 +32,8 @@ const toolButtonStyle = {
   display: 'inline-flex',
   alignItems: 'center',
   gap: 6,
-  background: 'rgb(64, 15, 180, 0.1)',
-  border: '1px solid rgb(64, 15, 180, 0.35)',
+  background: 'rgb(30, 58, 138, 0.1)',
+  border: '1px solid rgb(30, 58, 138, 0.35)',
   color: '#290d71',
   borderRadius: 999,
   padding: '7px 13px',
@@ -46,8 +46,8 @@ const toolButtonStyle = {
 };
 
 const bannerStyle = {
-  background: 'rgb(64, 15, 180, 0.12)',
-  border: '1px solid rgb(64, 15, 180, 0.3)',
+  background: 'rgb(30, 58, 138, 0.12)',
+  border: '1px solid rgb(30, 58, 138, 0.3)',
   borderRadius: 12,
   padding: '0.75rem 1rem',
   color: '#290d71',
@@ -225,7 +225,7 @@ const NotificationPanel = () => {
             color: '#5839a3',
             background: 'rgb(247, 246, 251,0.6)',
             borderRadius: 16,
-            border: '1px solid rgb(64, 15, 180,0.18)',
+            border: '1px solid rgb(30, 58, 138,0.18)',
           }}
         >
           <Bell size={48} color="#9074d9" style={{ margin: '0 auto 1rem' }} />
@@ -258,7 +258,7 @@ const NotificationPanel = () => {
                   background: isUnread
                     ? 'linear-gradient(145deg, #f4f1f9, #e3dbf6)'
                     : 'rgb(255, 255, 255, 0.72)',
-                  border: `1px solid ${isUnread ? 'rgb(64, 15, 180, 0.45)' : 'rgb(64, 15, 180, 0.2)'}`,
+                  border: `1px solid ${isUnread ? 'rgb(30, 58, 138, 0.45)' : 'rgb(30, 58, 138, 0.2)'}`,
                   borderRadius: 14,
                   padding: '0.9rem 1rem',
                   boxShadow: isUnread
@@ -300,7 +300,7 @@ const NotificationPanel = () => {
                     style={{
                       fontSize: '0.78rem',
                       fontWeight: 700,
-                      color: '#3a1496',
+                      color: '#1e40af',
                     }}
                   >
                     {item.title || TYPE_LABELS[item.type] || 'إشعار'}

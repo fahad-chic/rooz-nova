@@ -69,7 +69,7 @@ function FAQ() {
           align-items: center;
           justify-content: center;
           border-radius: 14px;
-          color: #7b29d5;
+          color: #2563eb;
           background: rgb(127, 83, 226, 0.12);
           border: 1px solid rgb(127, 83, 226, 0.3);
         }
@@ -139,7 +139,7 @@ function FAQ() {
           align-items: center;
           justify-content: center;
           border-radius: 10px;
-          color: #3a1496;
+          color: #1e40af;
           background: rgb(115, 75, 214, 0.11);
           transition: transform 0.25s ease, background 0.25s ease;
         }

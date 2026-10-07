@@ -1,8 +1,8 @@
 /* ROOZ NOVA Login — Obsidian × Copper — من الصفر */
 .rl-root {
-  --rl-gold: #7b29d5;
-  --rl-gold-bright: #9955ef;
-  --rl-gold-soft: #c39cf4;
+  --rl-gold: #2563eb;
+  --rl-gold-bright: #3b82f6;
+  --rl-gold-soft: #93c5fd;
   --rl-ink: #f4f1f9;
   position: relative;
   width: 100%;
@@ -17,8 +17,8 @@
   color: var(--rl-ink);
   text-align: center;
   background:
-    radial-gradient(800px 360px at 85% 0%, rgb(153, 85, 239,0.16), transparent 55%),
-    radial-gradient(600px 300px at 10% 100%, rgb(123, 41, 213,0.1), transparent 50%),
+    radial-gradient(800px 360px at 85% 0%, rgb(59, 130, 246,0.16), transparent 55%),
+    radial-gradient(600px 300px at 10% 100%, rgb(37, 99, 235,0.1), transparent 50%),
     linear-gradient(165deg, #0a071e 0%, #0c0824 45%, #0d0a29 100%);
 }
 .rl-veil { display: none; }
@@ -34,9 +34,9 @@
 .rl-crown-ic { width: 92px; margin: 0 auto; }
 .rl-crown-ic img {
   width: 92px; height: 92px; border-radius: 50%; object-fit: cover;
-  border: 2px solid #7b29d5;
-  box-shadow: 0 0 0 5px rgb(123, 41, 213,0.15), 0 14px 36px rgb(9, 6, 27,0.5),
-    inset 0 0 20px rgb(153, 85, 239,0.15);
+  border: 2px solid #2563eb;
+  box-shadow: 0 0 0 5px rgb(37, 99, 235,0.15), 0 14px 36px rgb(9, 6, 27,0.5),
+    inset 0 0 20px rgb(59, 130, 246,0.15);
 }
 .rl-tag {
   margin-top: 10px;
@@ -53,7 +53,7 @@
 }
 .rl-card {
   background: linear-gradient(165deg, #0d0a29, #0b0822);
-  border: 1px solid rgb(123, 41, 213,0.28);
+  border: 1px solid rgb(37, 99, 235,0.28);
   border-radius: 16px;
   padding: 10px 8px;
   cursor: pointer;
@@ -63,16 +63,16 @@
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   text-align: center;
 }
-.rl-card:hover { transform: translateY(-2px); border-color: #7b29d5; }
+.rl-card:hover { transform: translateY(-2px); border-color: #2563eb; }
 .rl-card--active {
-  border-color: #9955ef;
-  box-shadow: 0 0 0 1px #7b29d5, 0 12px 32px rgb(123, 41, 213,0.22);
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px #2563eb, 0 12px 32px rgb(37, 99, 235,0.22);
 }
 .rl-card--big {
   padding: 16px 12px;
   background: linear-gradient(155deg, #0f0b2e 0%, #0c0824 55%, #0a0820 100%);
-  border: 1.5px solid rgb(153, 85, 239,0.45);
-  box-shadow: 0 16px 40px rgb(9, 6, 27,0.4), inset 0 1px 0 rgb(153, 85, 239,0.12);
+  border: 1.5px solid rgb(59, 130, 246,0.45);
+  box-shadow: 0 16px 40px rgb(9, 6, 27,0.4), inset 0 1px 0 rgb(59, 130, 246,0.12);
   position: relative;
 }
 .rl-card--big::before {
@@ -81,21 +81,21 @@
   inset: 0;
   border-radius: 16px;
   pointer-events: none;
-  background: linear-gradient(135deg, rgb(153, 85, 239,0.08), transparent 40%);
+  background: linear-gradient(135deg, rgb(59, 130, 246,0.08), transparent 40%);
 }
 .rl-card-logo {
   width: 48px;
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1.5px solid rgb(153, 85, 239,0.5);
+  border: 1.5px solid rgb(59, 130, 246,0.5);
   margin: 0 auto 4px;
   display: block;
 }
 .rl-card--big .rl-card-logo {
   width: 64px;
   height: 64px;
-  box-shadow: 0 6px 18px rgb(123, 41, 213,0.3);
+  box-shadow: 0 6px 18px rgb(37, 99, 235,0.3);
 }
 .rl-card-crown-line {
   display: flex;
@@ -105,10 +105,10 @@
 .rl-card-title {
   font-size: 0.78rem;
   font-weight: 900;
-  color: #9955ef;
+  color: #3b82f6;
   line-height: 1.3;
 }
-.rl-card--big .rl-card-title { font-size: 1rem; color: #c39cf4; }
+.rl-card--big .rl-card-title { font-size: 1rem; color: #93c5fd; }
 .rl-card-sub {
   font-size: 0.66rem;
   font-weight: 700;
@@ -125,26 +125,26 @@
 .rl-owner-badge {
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;
   margin: 6px auto 0; padding: 4px 12px; border-radius: 999px;
-  background: linear-gradient(135deg, #9955ef, #7b29d5 60%, #5b1c9b);
+  background: linear-gradient(135deg, #3b82f6, #2563eb 60%, #1e40af);
   color: #0a071e; font-size: 0.7rem; font-weight: 900;
-  box-shadow: 0 4px 14px rgb(123, 41, 213,0.35);
+  box-shadow: 0 4px 14px rgb(37, 99, 235,0.35);
 }
 .rl-contact-owner {
   display: flex; align-items: center; justify-content: center; gap: 6px;
   width: 100%; margin-top: 8px; padding: 7px 8px; border-radius: 999px;
-  border: 1px solid rgb(123, 41, 213,0.4); background: rgb(123, 41, 213,0.1);
-  color: #c39cf4; font-size: 0.68rem; font-weight: 800; cursor: pointer;
+  border: 1px solid rgb(37, 99, 235,0.4); background: rgb(37, 99, 235,0.1);
+  color: #93c5fd; font-size: 0.68rem; font-weight: 800; cursor: pointer;
 }
 .rl-form-card {
-  background: linear-gradient(180deg, #0d0927, #0b0822);
-  border: 1px solid rgb(123, 41, 213,0.3);
+  background: linear-gradient(180deg, #0e1626, #0b0822);
+  border: 1px solid rgb(37, 99, 235,0.3);
   border-radius: 20px;
   padding: 14px;
   box-shadow: 0 20px 48px rgb(9, 6, 27,0.45);
   text-align: center;
 }
 .rl-form-title {
-  margin: 0 0 6px; font-size: 1.05rem; font-weight: 900; color: #9955ef;
+  margin: 0 0 6px; font-size: 1.05rem; font-weight: 900; color: #3b82f6;
 }
 .rl-form-divider {
   display: flex; align-items: center; gap: 8px; margin: 8px 0;
@@ -152,7 +152,7 @@
 }
 .rl-form-divider::before, .rl-form-divider::after {
   content: ''; flex: 1; height: 1px;
-  background: linear-gradient(90deg, transparent, rgb(123, 41, 213,0.35), transparent);
+  background: linear-gradient(90deg, transparent, rgb(37, 99, 235,0.35), transparent);
 }
 .rl-label {
   display: block; text-align: right; font-size: 0.72rem; font-weight: 800;
@@ -161,12 +161,12 @@
 .rl-input-wrap {
   display: flex; align-items: center; gap: 8px;
   background: rgb(10, 7, 30,0.75);
-  border: 1px solid rgb(123, 41, 213,0.28);
+  border: 1px solid rgb(37, 99, 235,0.28);
   border-radius: 12px; padding: 0 10px; min-height: 42px;
 }
 .rl-input-wrap:focus-within {
-  border-color: #7b29d5;
-  box-shadow: 0 0 0 3px rgb(123, 41, 213,0.15);
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgb(37, 99, 235,0.15);
 }
 .rl-input {
   flex: 1; border: none; outline: none; background: transparent;
@@ -174,14 +174,14 @@
   text-align: right;
 }
 .rl-input::placeholder { color: rgb(244, 241, 249,0.3); }
-.rl-input-ic { color: #7b29d5; flex-shrink: 0; }
+.rl-input-ic { color: #2563eb; flex-shrink: 0; }
 .rl-fields-box { display: flex; flex-direction: column; gap: 8px; }
 .rl-submit, button.rl-submit {
   width: 100%; margin-top: 10px; min-height: 44px; border: none; border-radius: 999px;
   cursor: pointer; font-family: inherit; font-size: 0.92rem; font-weight: 900;
   color: #0a071e;
-  background: linear-gradient(135deg, #9955ef, #7b29d5 50%, #5b1c9b);
-  box-shadow: 0 10px 24px rgb(123, 41, 213,0.35);
+  background: linear-gradient(135deg, #3b82f6, #2563eb 50%, #1e40af);
+  box-shadow: 0 10px 24px rgb(37, 99, 235,0.35);
 }
 .rl-secondary-grid, .rl-links {
   display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px;
@@ -189,7 +189,7 @@
 .rl-secondary-grid button, .rl-links a, .rl-google, .rl-link-btn {
   display: flex; align-items: center; justify-content: center; gap: 4px;
   min-height: 36px; padding: 6px 8px; border-radius: 11px;
-  border: 1px solid rgb(123, 41, 213,0.28); background: rgb(255, 255, 255,0.03);
+  border: 1px solid rgb(37, 99, 235,0.28); background: rgb(255, 255, 255,0.03);
   color: rgb(244, 241, 249,0.85); font-size: 0.7rem; font-weight: 700;
   cursor: pointer; text-decoration: none; text-align: center;
 }
@@ -198,10 +198,10 @@
 .rl-alert-ok { background: rgb(37, 132, 132,0.2); border: 1px solid rgb(37, 132, 132,0.4); color: #b4f0f2; }
 .rl-guest-access {
   margin-top: 8px; padding: 10px; border-radius: 12px;
-  border: 1px dashed rgb(123, 41, 213,0.3); background: rgb(123, 41, 213,0.05);
+  border: 1px dashed rgb(37, 99, 235,0.3); background: rgb(37, 99, 235,0.05);
   text-align: center;
 }
-.rl-guest-access-head { font-size: 0.78rem; font-weight: 800; color: #9955ef; }
+.rl-guest-access-head { font-size: 0.78rem; font-weight: 800; color: #3b82f6; }
 .rl-guest-access p { font-size: 0.68rem; color: rgb(244, 241, 249,0.55); }
 .rl-foot { font-size: 0.66rem; color: rgb(244, 241, 249,0.35); margin-top: 8px; }
 @media (max-width: 400px) {

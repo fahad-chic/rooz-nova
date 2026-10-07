@@ -233,7 +233,7 @@ const HeroBanner = () => {
               width: 12,
               height: 12,
               borderRadius: '50%',
-              background: '#6330c5',
+              background: '#2563eb',
               border: '2px solid #e2d8f4',
               boxSizing: 'border-box',
             }}

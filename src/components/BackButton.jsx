@@ -63,14 +63,14 @@ const BackButton = () => {
         height: 40,
         padding: '0 12px',
         borderRadius: 12,
-        border: '1.5px solid #7b29d5',
+        border: '1.5px solid #2563eb',
         background: '#f4f1f9',
         color: '#0b0822',
         fontWeight: 800,
         fontSize: '0.82rem',
         fontFamily: 'Cairo, sans-serif',
         cursor: 'pointer',
-        boxShadow: '0 2px 10px rgb(93, 43, 195,0.2)',
+        boxShadow: '0 2px 10px rgb(37, 99, 235,0.2)',
         WebkitTapHighlightColor: 'transparent',
       }}
     >

@@ -310,11 +310,11 @@ const CatalogPage = () => {
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem',
-            background: 'rgb(123, 41, 213, 0.12)',
-            border: '1px solid rgb(123, 41, 213, 0.35)',
+            background: 'rgb(37, 99, 235, 0.12)',
+            border: '1px solid rgb(37, 99, 235, 0.35)',
             borderRadius: 12,
             padding: '0.45rem 0.9rem',
-            color: '#5b1c9b',
+            color: '#1e40af',
             fontSize: '0.85rem',
             cursor: 'pointer',
             marginBottom: '0.75rem',
@@ -331,13 +331,13 @@ const CatalogPage = () => {
           style={{
             background:
               'linear-gradient(145deg, rgb(247, 246, 251, 0.98), rgb(221, 209, 244, 0.92))',
-            border: `1px solid rgb(93, 43, 195, 0.35)`,
+            border: `1px solid rgb(37, 99, 235, 0.35)`,
             borderRadius: 20,
             padding: '1.5rem',
             textAlign: 'center',
             overflowX: 'hidden',
             boxShadow: `0 8px 32px ${
-              catalogInfo?.sectionColor || '#7b29d5'
+              catalogInfo?.sectionColor || '#2563eb'
             }20`,
           }}
         >
@@ -346,7 +346,7 @@ const CatalogPage = () => {
               margin: 0,
               fontSize: '2rem',
               fontWeight: 900,
-              background: 'linear-gradient(180deg, #804fe0, #5b1c9b)',
+              background: 'linear-gradient(180deg, #804fe0, #1e40af)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               fontFamily: 'Cairo, sans-serif',
@@ -435,7 +435,7 @@ const CatalogPage = () => {
                     borderRadius: 8,
                     cursor: 'pointer',
                     color:
-                      cardStyle === key ? '#7b29d5' : '#888',
+                      cardStyle === key ? '#2563eb' : '#888',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.3rem',
@@ -505,7 +505,7 @@ const CatalogPage = () => {
                 gap: '0.5rem',
                 padding: '0.6rem 1.2rem',
                 background:
-                  'linear-gradient(135deg, #7b29d5, #400fb4)',
+                  'linear-gradient(135deg, #2563eb, #400fb4)',
                 border: 'none',
                 borderRadius: 12,
                 color: '#000',
@@ -574,7 +574,7 @@ const CatalogPage = () => {
                 marginTop: '1rem',
                 padding: '0.75rem 1.5rem',
                 background:
-                  'linear-gradient(135deg, #7b29d5, #400fb4)',
+                  'linear-gradient(135deg, #2563eb, #400fb4)',
                 border: 'none',
                 borderRadius: 12,
                 color: '#000',
@@ -687,7 +687,7 @@ const DisplaySettingsModal = ({
         style={{
           background:
             'linear-gradient(145deg, #100b30, #110c35)',
-          border: '2px solid #7b29d5',
+          border: '2px solid #2563eb',
           borderRadius: 24,
           padding: '2rem',
           maxWidth: 500,
@@ -701,7 +701,7 @@ const DisplaySettingsModal = ({
           <h2
             style={{
               margin: 0,
-              color: '#7b29d5',
+              color: '#2563eb',
               fontSize: '1.3rem',
               fontFamily: 'Cairo, sans-serif',
               display: 'flex',
@@ -727,7 +727,7 @@ const DisplaySettingsModal = ({
               border: '1px solid rgb(127, 83, 226,0.4)',
               borderRadius: 10,
               cursor: 'pointer',
-              color: '#7b29d5',
+              color: '#2563eb',
             }}
           >
             <X size={18} />
@@ -776,12 +776,12 @@ const DisplaySettingsModal = ({
                           : 'rgb(255, 255, 255,0.05)',
                       border:
                         localSettings.displayStyle === key
-                          ? '2px solid #7b29d5'
+                          ? '2px solid #2563eb'
                           : '1px solid rgb(255, 255, 255,0.2)',
                       borderRadius: 12,
                       color:
                         localSettings.displayStyle === key
-                          ? '#7b29d5'
+                          ? '#2563eb'
                           : '#aaa',
                       cursor: 'pointer',
                       display: 'flex',
@@ -877,7 +877,7 @@ const DisplaySettingsModal = ({
               flex: 1,
               padding: '0.85rem',
               background:
-                'linear-gradient(135deg, #7b29d5, #400fb4)',
+                'linear-gradient(135deg, #2563eb, #400fb4)',
               border: 'none',
               borderRadius: 12,
               color: '#000',
@@ -1050,7 +1050,7 @@ const AddProductModal = ({
         style={{
           background:
             'linear-gradient(145deg, #100b30, #110c35)',
-          border: '2px solid #7b29d5',
+          border: '2px solid #2563eb',
           borderRadius: 24,
           padding: '2rem',
           maxWidth: 550,
@@ -1064,7 +1064,7 @@ const AddProductModal = ({
           <h2
             style={{
               margin: 0,
-              color: '#7b29d5',
+              color: '#2563eb',
               fontSize: '1.3rem',
               fontFamily: 'Cairo, sans-serif',
             }}
@@ -1088,7 +1088,7 @@ const AddProductModal = ({
               border: '1px solid rgb(127, 83, 226,0.4)',
               borderRadius: 10,
               cursor: 'pointer',
-              color: '#7b29d5',
+              color: '#2563eb',
             }}
           >
             <X size={18} />
@@ -1103,7 +1103,7 @@ const AddProductModal = ({
               borderRadius: 10,
               marginBottom: '1rem',
               textAlign: 'center',
-              color: '#7b29d5',
+              color: '#2563eb',
               fontFamily: 'Cairo, sans-serif',
               fontSize: '0.9rem',
             }}
@@ -1299,7 +1299,7 @@ const AddProductModal = ({
                 padding: '0.85rem',
                 background: saving
                   ? 'rgb(127, 83, 226,0.5)'
-                  : 'linear-gradient(135deg, #7b29d5, #400fb4)',
+                  : 'linear-gradient(135deg, #2563eb, #400fb4)',
                 border: 'none',
                 borderRadius: 12,
                 color: '#000',

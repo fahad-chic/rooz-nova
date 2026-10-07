@@ -65,7 +65,7 @@ class ErrorBoundary extends React.Component {
             minHeight: '100vh'
           }}
         >
-          <h2 style={{ color: '#7b29d5' }}> حدث خطأ غير متوقع</h2>
+          <h2 style={{ color: '#2563eb' }}> حدث خطأ غير متوقع</h2>
 
           <p
             style={{
@@ -91,7 +91,7 @@ class ErrorBoundary extends React.Component {
               marginTop: '1rem',
               padding: '0.6rem 1.2rem',
               cursor: 'pointer',
-              background: '#7b29d5',
+              background: '#2563eb',
               color: '#0a071e',
               border: 'none',
               borderRadius: '8px',
@@ -124,7 +124,7 @@ class ErrorBoundary extends React.Component {
               style={{
                 padding: '0.8rem 1.5rem',
                 cursor: 'pointer',
-                background: '#3a1496',
+                background: '#1e40af',
                 color: '#fff',
                 border: 'none',
                 borderRadius: '8px',

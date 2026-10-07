@@ -227,7 +227,7 @@ export default function AIChat() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label={`فتح مساعد ${AI_NAME}`}
-        className="fixed bottom-5 left-5 bg-gradient-to-br from-[#b39af7] via-[#7b29d5] to-[#3a1496] text-[#0b0821] p-4 rounded-full shadow-2xl z-50 hover:scale-110 transition-all duration-300 border border-[#cbbaf9]/60"
+        className="fixed bottom-5 left-5 bg-gradient-to-br from-[#b39af7] via-[#2563eb] to-[#1e40af] text-[#0b0821] p-4 rounded-full shadow-2xl z-50 hover:scale-110 transition-all duration-300 border border-[#cbbaf9]/60"
       >
         <Sparkles size={24} />
       </button>
@@ -240,7 +240,7 @@ export default function AIChat() {
         >
 
           {/* الهيدر */}
-          <div className="bg-gradient-to-r from-[#0c0926] via-[#0e0a2d] to-[#3a1496] p-3 rounded-t-2xl flex justify-between items-center border-b border-[#7b29d5]/60">
+          <div className="bg-gradient-to-r from-[#0c0926] via-[#0e0a2d] to-[#1e40af] p-3 rounded-t-2xl flex justify-between items-center border-b border-[#2563eb]/60">
             <h3 className="font-bold text-[#cbbaf9] flex items-center gap-2">
               <Sparkles size={16} /> {AI_NAME}
             </h3>
@@ -255,12 +255,12 @@ export default function AIChat() {
           </div>
 
           {/* رسالة الأمان */}
-          <div className="p-2 bg-[#e1d7f4] text-[10px] text-[#3c1976] flex items-start gap-2 border-b border-[#7b29d5]/40">
+          <div className="p-2 bg-[#e1d7f4] text-[10px] text-[#3c1976] flex items-start gap-2 border-b border-[#2563eb]/40">
             <ShieldCheck size={14} className="text-[#4419a6] shrink-0" />
             <p>
               تخضع جميع بيانات المستخدمين والزائرين والرسائل الخاصة والمعاملات الداخلية لحماية صارمة 
               وتشفير عالمي متقدم 
-              <span className="text-[#3a1496] font-bold">(تشفير بموجب بروتوكولات عالمية محمية وسرية ومتعددة الطبقات)</span>.
+              <span className="text-[#1e40af] font-bold">(تشفير بموجب بروتوكولات عالمية محمية وسرية ومتعددة الطبقات)</span>.
               <br />
               <span className="text-[#5d3b94] italic">
                 All user and visitor data is fully encrypted and cannot be accessed by any unauthorized party.
@@ -275,8 +275,8 @@ export default function AIChat() {
                 key={m.id}
                 className={`p-3 rounded-lg text-sm whitespace-pre-wrap break-words ${
                   m.role === "user"
-                    ? "bg-gradient-to-r from-[#3a1496] to-[#7b51d9] text-[#f8f6fb] ml-10 shadow-md"
-                    : "bg-[#f6f4fb] text-[#291648] mr-10 border border-[#7b29d5]/30 shadow-sm"
+                    ? "bg-gradient-to-r from-[#1e40af] to-[#7b51d9] text-[#f8f6fb] ml-10 shadow-md"
+                    : "bg-[#f6f4fb] text-[#291648] mr-10 border border-[#2563eb]/30 shadow-sm"
                 }`}
               >
                 {m.text}
@@ -291,7 +291,7 @@ export default function AIChat() {
           </div>
 
           {/* صندوق الإرسال */}
-          <div className="p-2 flex gap-2 border-t border-[#7b29d5]/40 bg-[#f6f4fb]">
+          <div className="p-2 flex gap-2 border-t border-[#2563eb]/40 bg-[#f6f4fb]">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -303,14 +303,14 @@ export default function AIChat() {
               }}
               placeholder="اسألني عن أي منتج أو مقاس أو أي سؤال في الدنيا"
               disabled={loading}
-              className="flex-1 bg-[#e1d7f4] text-[#0e0a2d] placeholder:text-[#6340a6] p-2 rounded-lg text-sm outline-none border border-[#7b29d5]/30 focus:border-[#7b29d5] disabled:opacity-60"
+              className="flex-1 bg-[#e1d7f4] text-[#0e0a2d] placeholder:text-[#6340a6] p-2 rounded-lg text-sm outline-none border border-[#2563eb]/30 focus:border-[#2563eb] disabled:opacity-60"
             />
             <button
               type="button"
               onClick={sendMessage}
               disabled={loading || !input.trim()}
               aria-label="إرسال الرسالة"
-              className="bg-gradient-to-br from-[#7b29d5] to-[#3a1496] text-[#0b0821] p-2 rounded-lg hover:brightness-110 disabled:opacity-50 transition shadow-md"
+              className="bg-gradient-to-br from-[#2563eb] to-[#1e40af] text-[#0b0821] p-2 rounded-lg hover:brightness-110 disabled:opacity-50 transition shadow-md"
             >
               <Send size={16} />
             </button>

@@ -148,7 +148,7 @@ const brandMark = {
 };
 
 const title = {
-  color: '#7b29d5',
+  color: '#2563eb',
   fontSize: 26,
   fontWeight: 800,
   margin: '0 0 10px'
@@ -200,7 +200,7 @@ const input = {
 const submitBtn = {
   width: '100%',
   padding: 14,
-  background: 'linear-gradient(135deg, #7b29d5, #3a1496)',
+  background: 'linear-gradient(135deg, #2563eb, #1e40af)',
   color: '#fff',
   border: 'none',
   borderRadius: 10,

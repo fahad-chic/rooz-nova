@@ -23,7 +23,7 @@ import {
 
 /* ── الألوان حسب الدور ── */
 const ROLE_LABELS = {
-  owner: { label: 'صاحب الموقع', color: '#7b29d5' },
+  owner: { label: 'صاحب الموقع', color: '#2563eb' },
   admin: { label: 'مشرف', color: '#6785f3' },
   employee: { label: 'موظف', color: '#85f0f0' },
 }
@@ -42,7 +42,7 @@ const safePercentage = (value) => {
 const safeText = (value) => (typeof value === 'string' ? value : '')
 
 /* ── بطاقة إحصاء ── */
-const StatCard = ({ icon: Icon, label, value, sub, color = '#7b29d5', onClick }) => (
+const StatCard = ({ icon: Icon, label, value, sub, color = '#2563eb', onClick }) => (
   <div
     onClick={onClick}
     role={onClick ? 'button' : undefined}
@@ -107,7 +107,7 @@ const StatCard = ({ icon: Icon, label, value, sub, color = '#7b29d5', onClick })
         {label}
       </div>
       {sub && (
-        <div style={{ fontSize: '0.74rem', color: '#7b29d5', marginTop: 2 }}>
+        <div style={{ fontSize: '0.74rem', color: '#2563eb', marginTop: 2 }}>
           {sub}
         </div>
       )}
@@ -121,7 +121,7 @@ const BranchCard = ({ branch, onClick }) => {
   const rating = safeNumber(branch?.rating)
   const employees = safeNumber(branch?.employees)
   const barColor =
-    completion >= 90 ? '#1ec9c9' : completion >= 70 ? '#7b29d5' : '#eb4866'
+    completion >= 90 ? '#1ec9c9' : completion >= 70 ? '#2563eb' : '#eb4866'
 
   return (
     <div
@@ -269,10 +269,10 @@ const BranchCard = ({ branch, onClick }) => {
               alignItems: 'center',
               gap: 3,
               fontSize: '0.76rem',
-              color: '#7b29d5',
+              color: '#2563eb',
             }}
           >
-            <Star size={12} fill="#7b29d5" />
+            <Star size={12} fill="#2563eb" />
             {rating > 0 ? rating.toFixed(1) : '—'}
           </div>
         </div>
@@ -281,7 +281,7 @@ const BranchCard = ({ branch, onClick }) => {
             display: 'flex',
             alignItems: 'center',
             gap: 4,
-            color: '#7b29d5',
+            color: '#2563eb',
             fontSize: '0.78rem',
             fontWeight: 600,
           }}
@@ -501,7 +501,7 @@ const Dashboard = () => {
           >
             <span
               style={{
-                background: 'linear-gradient(135deg, #7b29d5, #3a1496)',
+                background: 'linear-gradient(135deg, #2563eb, #1e40af)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 fontSize: '1.55rem',
@@ -584,7 +584,7 @@ const Dashboard = () => {
               type="button"
               onClick={() => navigate('/complaints')}
               style={{
-                background: 'linear-gradient(135deg, #7b29d5, #3a1496)',
+                background: 'linear-gradient(135deg, #2563eb, #1e40af)',
                 color: '#0a071e',
                 border: 'none',
                 padding: '0.6rem 1.1rem',
@@ -638,7 +638,7 @@ const Dashboard = () => {
           flexWrap: 'wrap',
         }}
       >
-        <Activity size={18} color="#7b29d5" />
+        <Activity size={18} color="#2563eb" />
         <span
           style={{ fontSize: '0.82rem', color: '#cbbaf9', fontWeight: 600 }}
         >
@@ -660,7 +660,7 @@ const Dashboard = () => {
           label="إجمالي الفروع"
           value={stats.totalBranches}
           sub={`${stats.activeBranches} فرع نشط`}
-          color="#7b29d5"
+          color="#2563eb"
           onClick={() => navigate('/branches')}
         />
         <StatCard
@@ -734,7 +734,7 @@ const Dashboard = () => {
                 fontWeight: 700,
                 fontSize: '0.84rem',
                 background: active
-                  ? 'linear-gradient(135deg, #7b29d5, #3a1496)'
+                  ? 'linear-gradient(135deg, #2563eb, #1e40af)'
                   : 'transparent',
                 color: active ? '#0a071e' : '#a091d0',
                 border: 'none',
@@ -802,7 +802,7 @@ const Dashboard = () => {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#7b29d5',
+                  color: '#2563eb',
                   fontSize: '0.8rem',
                   fontWeight: 600,
                   cursor: 'pointer',
@@ -856,7 +856,7 @@ const Dashboard = () => {
                           borderRadius: 10,
                           flexShrink: 0,
                           background:
-                            'linear-gradient(135deg, rgb(127, 83, 226,0.2), rgb(58, 20, 150,0.15))',
+                            'linear-gradient(135deg, rgb(127, 83, 226,0.2), rgb(30, 58, 138,0.15))',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
@@ -892,7 +892,7 @@ const Dashboard = () => {
                       <div style={{ textAlign: 'center', flexShrink: 0 }}>
                         <div
                           style={{
-                            color: '#7b29d5',
+                            color: '#2563eb',
                             fontWeight: 700,
                             fontSize: '0.85rem',
                           }}
@@ -953,7 +953,7 @@ const Dashboard = () => {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#7b29d5',
+                  color: '#2563eb',
                   fontSize: '0.8rem',
                   fontWeight: 600,
                   cursor: 'pointer',
@@ -1081,7 +1081,7 @@ const Dashboard = () => {
               type="button"
               onClick={() => navigate('/branches')}
               style={{
-                background: 'linear-gradient(135deg, #7b29d5, #3a1496)',
+                background: 'linear-gradient(135deg, #2563eb, #1e40af)',
                 color: '#0a071e',
                 border: 'none',
                 padding: '0.65rem 1.1rem',

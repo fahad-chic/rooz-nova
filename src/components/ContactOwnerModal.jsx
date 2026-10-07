@@ -71,7 +71,7 @@ const ContactOwnerModal = ({ onClose }) => {
         style={{
           width: 'min(440px, 100%)',
           background: 'linear-gradient(160deg, #f7f6fb, #e3dbf5)',
-          border: '2px solid #7b29d5',
+          border: '2px solid #2563eb',
           borderRadius: 20,
           boxShadow: '0 24px 60px rgb(15, 11, 48,0.35)',
           overflow: 'hidden',

@@ -68,7 +68,7 @@ export const EmployeesPage = () => {
         }
 
         .employees-title { font-size: 1.35rem; font-weight: 700; color: #cbbaf9; }
-        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #7b29d5, #3a1496); color:#0a071e; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; cursor:pointer; }
+        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #2563eb, #1e40af); color:#0a071e; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; cursor:pointer; }
 
         .tabs {
           display: flex;
@@ -93,8 +93,8 @@ export const EmployeesPage = () => {
         }
 
         .tab-btn.active {
-          color: #7b29d5;
-          border-bottom-color: #7b29d5;
+          color: #2563eb;
+          border-bottom-color: #2563eb;
         }
 
         .table-wrapper {
@@ -113,14 +113,14 @@ export const EmployeesPage = () => {
 
         thead {
           background: #0e0a2b;
-          color: #7b29d5;
+          color: #2563eb;
         }
 
         th {
           padding: 1.25rem;
           text-align: right;
           font-weight: 600;
-          border-bottom: 2px solid #7b29d5;
+          border-bottom: 2px solid #2563eb;
         }
 
         td {
@@ -140,7 +140,7 @@ export const EmployeesPage = () => {
         .role-badge {
           display: inline-block;
           background: rgb(115, 75, 214, 0.1);
-          color: #7b29d5;
+          color: #2563eb;
           padding: 0.25rem 0.75rem;
           border-radius: 4px;
           font-size: 0.85rem;
@@ -289,7 +289,7 @@ export const EmployeesPage = () => {
         }
 
         .modal-btn-submit {
-          background: linear-gradient(135deg, #7b29d5, #3a1496);
+          background: linear-gradient(135deg, #2563eb, #1e40af);
           color: #0a071e;
         }
 

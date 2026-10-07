@@ -10,14 +10,14 @@
   --nv-ivory: #f4f1f9;
   --nv-ivory-2: #eae4f3;
   --nv-ivory-3: #ddd2ef;
-  --nv-copper: #7b29d5;
-  --nv-copper-bright: #9955ef;
-  --nv-copper-deep: #5b1c9b;
-  --nv-copper-glow: rgb(123, 41, 213, 0.28);
+  --nv-copper: #2563eb;
+  --nv-copper-bright: #3b82f6;
+  --nv-copper-deep: #1e40af;
+  --nv-copper-glow: rgb(37, 99, 235, 0.28);
   --nv-ink: #0b0822;
   --nv-ink-2: #100c33;
   --nv-mist: #686b7a;
-  --nv-line: rgb(123, 41, 213, 0.32);
+  --nv-line: rgb(37, 99, 235, 0.32);
   --nv-line-soft: rgb(11, 8, 34, 0.08);
   --nv-success: #258484;
   --nv-danger: #c42945;
@@ -129,7 +129,7 @@ button, input, select, textarea { font-family: inherit; }
   gap: 4px;
   padding: 0.2rem 0.65rem;
   border-radius: 999px;
-  background: rgb(123, 41, 213,0.12);
+  background: rgb(37, 99, 235,0.12);
   color: var(--nv-copper-deep);
   font-size: 0.72rem;
   font-weight: 800;
@@ -214,9 +214,9 @@ html, body {
 
 body {
   background-image:
-    radial-gradient(1100px 620px at 88% -8%, rgba(124, 58, 237, 0.18), transparent 60%),
+    radial-gradient(1100px 620px at 88% -8%, rgba(59, 130, 246, 0.18), transparent 60%),
     radial-gradient(900px 560px at 6% 4%, rgba(6, 182, 212, 0.15), transparent 58%),
-    radial-gradient(760px 620px at 50% 112%, rgba(79, 70, 229, 0.14), transparent 62%),
+    radial-gradient(760px 620px at 50% 112%, rgba(37, 99, 235, 0.14), transparent 62%),
     linear-gradient(154deg, #eef0fb 0%, #e7e3f6 52%, #ded8f2 100%) !important;
   background-attachment: fixed !important;
 }
@@ -228,23 +228,23 @@ body::before {
   inset: 0 0 auto 0;
   height: 4px;
   z-index: 4000;
-  background: linear-gradient(90deg, #4f46e5 0%, #7c3aed 38%, #06b6d4 74%, #22d3ee 100%);
-  box-shadow: 0 2px 18px rgba(124, 58, 237, 0.45);
+  background: linear-gradient(90deg, #2563eb 0%, #3b82f6 38%, #06b6d4 74%, #38bdf8 100%);
+  box-shadow: 0 2px 18px rgba(59, 130, 246, 0.45);
   pointer-events: none;
 }
 
 /* أزرار أساسية بأورورا */
 .nv-btn {
-  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 52%, #06b6d4 120%) !important;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 52%, #06b6d4 120%) !important;
   color: #fff !important;
 }
 .nv-btn-ghost {
   background: rgba(255, 255, 255, 0.72) !important;
   color: #241f47 !important;
-  border: 1.5px solid rgba(79, 70, 229, 0.35) !important;
+  border: 1.5px solid rgba(37, 99, 235, 0.35) !important;
 }
 .nv-card, .nv-frame-3d {
   background: linear-gradient(160deg, #ffffff 0%, #f4f3fc 100%) !important;
-  border-color: rgba(124, 58, 237, 0.22) !important;
+  border-color: rgba(59, 130, 246, 0.22) !important;
 }
 

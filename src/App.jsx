@@ -153,7 +153,7 @@ const LoadingScreen = () => (
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
-      color: '#7b29d5',
+      color: '#2563eb',
       fontSize: '1.5rem',
       fontFamily: 'Cairo',
       direction: 'rtl',
@@ -217,7 +217,7 @@ const UnauthorizedPage = () => {
           width: '100%',
           textAlign: 'center',
           background: 'linear-gradient(160deg, #f7f6fb, #e3dbf5)',
-          border: '2px solid #7b29d5',
+          border: '2px solid #2563eb',
           borderRadius: 20,
           padding: '2.2rem 1.6rem',
           boxShadow: '0 18px 50px rgb(15, 11, 48,0.22)',
@@ -1385,9 +1385,9 @@ function AppContent() {
         }
 
 @keyframes roozCrown3D {
-  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgb(62, 19, 236,0.9)); }
-  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgb(62, 19, 236,1)); }
-  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgb(62, 19, 236,0.9)); }
+  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgb(37, 99, 235,0.9)); }
+  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgb(37, 99, 235,1)); }
+  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgb(37, 99, 235,0.9)); }
 }
 
 @keyframes roozStar3D {
@@ -1451,7 +1451,7 @@ function AppContent() {
               background:
                 'linear-gradient(150deg, #0a071f, #000)',
               border:
-                '1px solid rgb(62, 19, 236, 0.55)',
+                '1px solid rgb(37, 99, 235, 0.55)',
               borderRadius: 16,
               padding:
                 '18px 20px',
@@ -1675,7 +1675,7 @@ function AppContent() {
                   width: '100%',
                   padding: '13px',
                   background:
-                    'linear-gradient(135deg, #7b51d9, #3a1496)',
+                    'linear-gradient(135deg, #7b51d9, #1e40af)',
                   color: '#fff',
                   border: 'none',
                   borderRadius: 10,
@@ -1829,7 +1829,7 @@ function AppContent() {
               background: 'linear-gradient(90deg, #09061b 0%, #0b0821 40%, #0c0824 60%, #09061b 100%)',
               borderTop: '2px solid #3e13ec',
               borderBottom: '2px solid #3e13ec',
-              boxShadow: '0 12px 32px rgb(9, 6, 27,0.6), 0 0 22px rgb(62, 19, 236,0.25)',
+              boxShadow: '0 12px 32px rgb(9, 6, 27,0.6), 0 0 22px rgb(37, 99, 235,0.25)',
               zIndex: 80,
               flexShrink: 0,
             }}

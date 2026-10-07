@@ -28,7 +28,7 @@ import OtpModal from './OtpModal';
 import ContactOwnerModal from './ContactOwnerModal';
 import { markManualSignOut, readKickLog, kickReasonLabel } from '../utils/kickLog';
 import '../styles/global.css';
-import '../styles/Login.css';
+import '../styles/LoginNova.css';
 
 const OWNER_MARQUEE = 'تم تسجيل دخول صاحب موقع "أناقة ROOZ" ويُرحّب بكم جميعاً ويتمنى لكم تجربة تسوّق ممتعة ترضي ذائقتكم الرفيعة. يُذكِّركم بأن من لديه اقتراح أو ملاحظة أو شكوى على أحد موظفي الموقع أو على أي شخص بسبب النصب أو الاحتيال، يتوجّه إلى غرفة صاحب موقع "أناقة ROOZ" ويتقدّم برسالة مفصّلة. وفي حال كانت الشكوى نصب واحتيال فسيتم اتخاذ الإجراءات اللازمة فوراً، سواء من قِبَل صاحب الموقع أو بإحالة الموضوع إلى الجهات الأمنية المختصّة بشكل عاجل، حفاظاً على حقوقكم وسلامة تعاملاتكم. أناقة ROOZ — حيث الأناقة تلتقي بالثقة.';
 const OWNER_SOUND_URL = '/sounds/welcome.mp3';
@@ -145,7 +145,7 @@ const Login = () => {
     const previous = document.body.style.background;
 
     document.body.style.background =
-      'linear-gradient(150deg, rgb(255, 255, 255,0.02) 0%, transparent 45%, rgb(255, 255, 255,0.01) 65%, transparent 100%), radial-gradient(1100px 600px at 80% -15%, rgb(62, 19, 236,0.16), transparent  60%), radial-gradient(700px 400px at 15% 25%, rgb(89, 42, 225,0.10), transparent  55%), repeating-linear-gradient(115deg, rgb(255, 255, 255,0.03) 0 1px, transparent  1px 4px), repeating-linear-gradient(25deg, rgb(255, 255, 255,0.02) 0 1px, transparent  1px 6px), linear-gradient(180deg, #000 0%, #09061b 40%, #09061b 75%, #09061b 100%)';
+      'linear-gradient(150deg, rgb(255, 255, 255,0.02) 0%, transparent 45%, rgb(255, 255, 255,0.01) 65%, transparent 100%), radial-gradient(1100px 600px at 80% -15%, rgb(37, 99, 235,0.16), transparent  60%), radial-gradient(700px 400px at 15% 25%, rgb(37, 99, 235,0.10), transparent  55%), repeating-linear-gradient(115deg, rgb(255, 255, 255,0.03) 0 1px, transparent  1px 4px), repeating-linear-gradient(25deg, rgb(255, 255, 255,0.02) 0 1px, transparent  1px 6px), linear-gradient(180deg, #000 0%, #09061b 40%, #09061b 75%, #09061b 100%)';
 
     return () => {
       document.body.style.background = previous;
@@ -860,7 +860,7 @@ const Login = () => {
     width: '100%',
     padding: '12px 14px',
     borderRadius: 12,
-    border: '1px solid rgb(62, 19, 236, 0.5)',
+    border: '1px solid rgb(37, 99, 235, 0.5)',
     background: 'rgb(9, 6, 27,0.6)',
     color: '#fff',
     fontSize: 15,
@@ -1031,8 +1031,8 @@ const Login = () => {
       style={{
         background:
           'linear-gradient(150deg, rgb(255, 255, 255,0.02) 0%, transparent 45%, rgb(255, 255, 255,0.01) 65%, transparent 100%), ' +
-          'radial-gradient(1100px 600px at 80% -15%, rgb(62, 19, 236,0.16), transparent 60%), ' +
-          'radial-gradient(700px 400px at 15% 25%, rgb(89, 42, 225,0.10), transparent 55%), ' +
+          'radial-gradient(1100px 600px at 80% -15%, rgb(37, 99, 235,0.16), transparent 60%), ' +
+          'radial-gradient(700px 400px at 15% 25%, rgb(37, 99, 235,0.10), transparent 55%), ' +
           'repeating-linear-gradient(115deg, rgb(255, 255, 255,0.03) 0 1px, transparent 1px 4px), ' +
           'repeating-linear-gradient(25deg, rgb(255, 255, 255,0.02) 0 1px, transparent 1px 6px), ' +
           'linear-gradient(180deg, #09061b 0%, #09061b 40%, #09061b 75%, #09061b 100%)',
@@ -1141,7 +1141,7 @@ const Login = () => {
                     marginTop: 6,
                     fontSize: 11,
                     color:
-                      'rgb(62, 19, 236, 0.55)',
+                      'rgb(37, 99, 235, 0.55)',
                     letterSpacing: 1,
                   }}
                 >
@@ -1356,7 +1356,7 @@ const Login = () => {
                 padding: '8px 10px',
                 borderRadius: 8,
                 border:
-                  '1px solid rgb(93, 43, 195,0.45)',
+                  '1px solid rgb(37, 99, 235,0.45)',
                 background:
                   'rgb(127, 83, 226,0.08)',
                 fontSize: 11,
@@ -1602,7 +1602,7 @@ const Login = () => {
                 background:
                   'linear-gradient(150deg, #0a071f, #000)',
                 border:
-                  '1px solid rgb(62, 19, 236, 0.6)',
+                  '1px solid rgb(37, 99, 235, 0.6)',
                 borderRadius: 16,
                 padding:
                   '22px 22px 18px',
@@ -1748,7 +1748,7 @@ const Login = () => {
                     border:
                       '1px solid rgb(203, 186, 249,0.5)',
                     background:
-                      'linear-gradient(135deg, #cbbaf9, #7b29d5 55%, #3a1496)',
+                      'linear-gradient(135deg, #cbbaf9, #2563eb 55%, #1e40af)',
                     color: '#0b0821',
                     fontSize: 15,
                     fontWeight: 900,
@@ -1825,7 +1825,7 @@ const Login = () => {
                 background:
                   'linear-gradient(150deg, #0a071f, #000)',
                 border:
-                  '1px solid rgb(62, 19, 236, 0.6)',
+                  '1px solid rgb(37, 99, 235, 0.6)',
                 borderRadius: 18,
                 padding:
                   '24px 20px 18px',
@@ -1937,7 +1937,7 @@ const Login = () => {
                       borderRadius: 10,
                       border: 'none',
                       background:
-                        'linear-gradient(135deg, #3e13ec, #3a1496)',
+                        'linear-gradient(135deg, #3e13ec, #1e40af)',
                       color: '#0b0821',
                       fontWeight: 900,
                       fontSize: 14,

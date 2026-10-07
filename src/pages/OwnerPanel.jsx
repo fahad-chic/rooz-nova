@@ -404,7 +404,7 @@ const btnGlass = {
 };
 
 const btnRoyal = {
-  background: 'linear-gradient(135deg, #7b29d5, #3a1496)',
+  background: 'linear-gradient(135deg, #2563eb, #1e40af)',
   color: '#0a071e',
   padding: '10px 14px',
   borderRadius: 12,

@@ -6,7 +6,7 @@ export const ROYAL_SECTIONS = [
     id: 'dresses',
     title: 'فساتين حفلات أنيقة وفخمة',
     icon: 'dress',
-    color: '#6330c5',
+    color: '#2563eb',
     branches: [
       {
         id: 'dresses-wedding',
@@ -40,7 +40,7 @@ export const ROYAL_SECTIONS = [
     id: 'wedding-dresses',
     title: 'فساتين أعراس',
     icon: 'wedding',
-    color: '#6e3bc2',
+    color: '#2563eb',
     branches: [
       {
         id: 'wedding-luxury',
@@ -69,7 +69,7 @@ export const ROYAL_SECTIONS = [
     id: 'girls-dresses',
     title: 'فساتين بنات صغار',
     icon: 'girls',
-    color: '#854ccb',
+    color: '#3b82f6',
     branches: [
       {
         id: 'girls-parties',

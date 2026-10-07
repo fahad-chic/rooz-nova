@@ -11,11 +11,11 @@
   --rh-cream-3: #cdb8ed;
   --rh-cream-4: #b69ee9;
 
-  --rh-gold: #7b29d5;
-  --rh-gold-deep: #5b1c9b;
-  --rh-gold-bright: #9955ef;
+  --rh-gold: #2563eb;
+  --rh-gold-deep: #1e40af;
+  --rh-gold-bright: #3b82f6;
   --rh-gold-soft: #dfd2f2;
-  --rh-gold-glow: rgb(93, 43, 195, 0.4);
+  --rh-gold-glow: rgb(37, 99, 235, 0.4);
 
   --rh-brown: #0b0822;
   --rh-brown-2: #281545;
@@ -48,14 +48,14 @@
 .rh-root button {
   background: linear-gradient(
     135deg,
-    #9955ef 0%,
-    #7b29d5 50%,
-    #5b1c9b 100%
+    #3b82f6 0%,
+    #2563eb 50%,
+    #1e40af 100%
   ) !important;
   color: #f1edf9 !important;
-  border: 1px solid rgb(93, 43, 195, 0.5) !important;
+  border: 1px solid rgb(37, 99, 235, 0.5) !important;
   box-shadow:
-    0 4px 14px rgb(93, 43, 195, 0.35),
+    0 4px 14px rgb(37, 99, 235, 0.35),
     inset 0 1px 0 rgb(255, 255, 255, 0.4),
     0 0 0 1px rgb(229, 222, 247, 0.25) !important;
   text-shadow: 0 1px 2px rgb(9, 6, 27, 0.2);
@@ -66,7 +66,7 @@
 .rh-root button:hover {
   transform: translateY(-2px) scale(1.02) !important;
   box-shadow:
-    0 8px 24px rgb(93, 43, 195, 0.5),
+    0 8px 24px rgb(37, 99, 235, 0.5),
     inset 0 1px 0 rgb(255, 255, 255, 0.5),
     0 0 20px rgb(128, 79, 224, 0.4) !important;
   background: linear-gradient(
@@ -88,12 +88,12 @@
   background: linear-gradient(
     135deg,
     #a586f4 0%,
-    #9955ef 30%,
-    #7b29d5 70%,
-    #5b1c9b 100%
+    #3b82f6 30%,
+    #2563eb 70%,
+    #1e40af 100%
   ) !important;
   box-shadow:
-    0 6px 20px rgb(93, 43, 195, 0.45),
+    0 6px 20px rgb(37, 99, 235, 0.45),
     inset 0 1px 0 rgb(255, 255, 255, 0.5),
     0 0 30px rgb(128, 79, 224, 0.3) !important;
 }
@@ -105,7 +105,7 @@
   font-size: clamp(2.2rem, 5vw, 3.2rem) !important;
   font-weight: 800 !important;
   text-align: center !important;
-  background: linear-gradient(135deg, #804fe0, #5b1c9b) !important;
+  background: linear-gradient(135deg, #804fe0, #1e40af) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
@@ -321,8 +321,8 @@
   font-weight: 800;
   white-space: nowrap;
   color: var(--rh-gold-deep);
-  background: rgb(93, 43, 195, 0.1);
-  border: 1px solid rgb(93, 43, 195, 0.26);
+  background: rgb(37, 99, 235, 0.1);
+  border: 1px solid rgb(37, 99, 235, 0.26);
 }
 
 .rh-icon-btn {
@@ -330,7 +330,7 @@
   height: 40px;
   padding: 0;
   border-radius: 12px;
-  border: 1px solid rgb(93, 43, 195, 0.26);
+  border: 1px solid rgb(37, 99, 235, 0.26);
   background: rgb(248, 246, 251, 0.9);
   color: var(--rh-gold-deep);
   cursor: pointer;
@@ -434,7 +434,7 @@
   font-weight: 800;
   color: var(--rh-gold-deep);
   background: rgb(248, 246, 251, 0.9);
-  border: 1px solid rgb(93, 43, 195, 0.3);
+  border: 1px solid rgb(37, 99, 235, 0.3);
   box-shadow: 0 6px 18px rgb(51, 22, 97, 0.1);
 }
 
@@ -461,7 +461,7 @@
 .rh-sections-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, rgb(93, 43, 195, 0.5), transparent);
+  background: linear-gradient(90deg, rgb(37, 99, 235, 0.5), transparent);
 }
 
 .rh-sections-count {
@@ -492,7 +492,7 @@
     rgb(247, 246, 251, 0.98) 0%,
     rgb(228, 220, 245, 0.92) 100%
   );
-  border: 1px solid rgb(93, 43, 195, 0.22);
+  border: 1px solid rgb(37, 99, 235, 0.22);
   box-shadow:
     0 10px 26px rgb(51, 22, 97, 0.08),
     inset 0 1px 0 rgb(255, 255, 255, 0.9);
@@ -518,7 +518,7 @@
 
 .rh-card:hover {
   transform: translateY(-4px);
-  border-color: rgb(93, 43, 195, 0.55);
+  border-color: rgb(37, 99, 235, 0.55);
   box-shadow:
     0 18px 40px rgb(51, 22, 97, 0.16),
     0 0 0 3px rgb(128, 79, 224, 0.14),
@@ -600,8 +600,8 @@
   align-items: center;
   justify-content: center;
   color: var(--rh-gold-deep);
-  background: rgb(93, 43, 195, 0.12);
-  border: 1px solid rgb(93, 43, 195, 0.24);
+  background: rgb(37, 99, 235, 0.12);
+  border: 1px solid rgb(37, 99, 235, 0.24);
   transition: transform 0.2s ease;
 }
 
@@ -614,7 +614,7 @@
   display: grid;
   gap: 0.4rem;
   padding-top: 0.6rem;
-  border-top: 1px dashed rgb(93, 43, 195, 0.3);
+  border-top: 1px dashed rgb(37, 99, 235, 0.3);
 }
 
 .rh-branch-btn {
@@ -629,7 +629,7 @@
   font-weight: 700;
   color: var(--rh-brown);
   background: linear-gradient(145deg, #f4f1f9, #ebe5f6);
-  border: 1px solid rgb(93, 43, 195, 0.28);
+  border: 1px solid rgb(37, 99, 235, 0.28);
   cursor: pointer;
   text-align: right;
   min-width: 0;
@@ -648,7 +648,7 @@
 
 .rh-branch-btn:hover {
   background: #f8f6fb;
-  border-color: rgb(93, 43, 195, 0.5);
+  border-color: rgb(37, 99, 235, 0.5);
   color: #0b0822;
 }
 
@@ -665,7 +665,7 @@
       rgb(228, 220, 245, 0.96) 55%,
       rgb(208, 193, 243, 0.96) 100%
     );
-  border: 1px solid rgb(93, 43, 195, 0.42);
+  border: 1px solid rgb(37, 99, 235, 0.42);
   box-shadow:
     0 18px 44px rgb(51, 22, 97, 0.16),
     0 0 34px rgb(118, 69, 214, 0.14),
@@ -728,7 +728,7 @@
       rgb(247, 246, 251, 0.98),
       rgb(228, 220, 245, 0.92)
     );
-  border: 1px solid rgb(93, 43, 195, 0.3);
+  border: 1px solid rgb(37, 99, 235, 0.3);
   color: var(--rh-brown);
   box-shadow:
     0 7px 20px rgb(51, 22, 97, 0.08),
@@ -872,13 +872,13 @@
 }
 .rh-root .rh-contest-crown {
   color: #400fb4;
-  filter: drop-shadow(0 2px 6px rgb(64, 15, 180, 0.5));
+  filter: drop-shadow(0 2px 6px rgb(30, 58, 138, 0.5));
 }
 .rh-root .rh-contest-title {
   margin: 0.5rem 0 0.25rem;
   font-size: clamp(1.5rem, 5vw, 2.2rem);
   font-weight: 800;
-  background: linear-gradient(135deg, #804fe0, #5b1c9b);
+  background: linear-gradient(135deg, #804fe0, #1e40af);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -890,7 +890,7 @@
   line-height: 1.9;
 }
 .rh-root .rh-contest-text strong {
-  color: #5b1c9b;
+  color: #1e40af;
   font-weight: 800;
 }
 .rh-root .rh-contest-soon {
@@ -903,6 +903,6 @@
   font-weight: 800;
   font-size: 1.05rem;
   box-shadow:
-    0 6px 18px rgb(64, 15, 180, 0.4),
+    0 6px 18px rgb(30, 58, 138, 0.4),
     inset 0 1px 0 rgb(255, 255, 255, 0.5);
 }

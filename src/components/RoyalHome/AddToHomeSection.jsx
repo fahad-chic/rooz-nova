@@ -36,7 +36,7 @@ const AddToHomeSection = () => {
         padding: '0.75rem 0.85rem',
         boxSizing: 'border-box',
         background: 'linear-gradient(145deg, #f8f6fb 0%, #e6dff5 55%, #dacff3 100%)',
-        border: '1px solid rgb(64, 15, 180, 0.3)',
+        border: '1px solid rgb(30, 58, 138, 0.3)',
         borderRadius: 14,
         boxShadow: '0 4px 14px rgb(57, 17, 148, 0.08)',
         textAlign: 'center',
@@ -78,7 +78,7 @@ const AddToHomeSection = () => {
           padding: '0.45rem 1.1rem',
           borderRadius: 10,
           border: 'none',
-          background: 'linear-gradient(135deg, #7b29d5 0%, #4b1fb5 100%)',
+          background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
           color: '#0b0822',
           fontWeight: 800,
           fontSize: '0.8rem',
@@ -115,7 +115,7 @@ const AddToHomeSection = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg, #f4f1f9, #e0d7f5)',
-              border: '1px solid rgb(64, 15, 180, 0.45)',
+              border: '1px solid rgb(30, 58, 138, 0.45)',
               borderRadius: 18,
               padding: '1.2rem 1.1rem',
               maxWidth: 400,
@@ -149,8 +149,8 @@ const AddToHomeSection = () => {
                 aria-label="إغلاق"
                 onClick={() => setOpen(false)}
                 style={{
-                  background: 'rgb(64, 15, 180, 0.12)',
-                  border: '1px solid rgb(64, 15, 180, 0.35)',
+                  background: 'rgb(30, 58, 138, 0.12)',
+                  border: '1px solid rgb(30, 58, 138, 0.35)',
                   borderRadius: '50%',
                   width: 30,
                   height: 30,
@@ -170,7 +170,7 @@ const AddToHomeSection = () => {
                 key={os}
                 style={{
                   background: 'rgb(255, 255, 255, 0.65)',
-                  border: '1px solid rgb(64, 15, 180, 0.25)',
+                  border: '1px solid rgb(30, 58, 138, 0.25)',
                   borderRadius: 12,
                   padding: '0.7rem 0.85rem',
                   marginBottom: '0.55rem',
@@ -184,7 +184,7 @@ const AddToHomeSection = () => {
                     margin: '0 0 0.35rem',
                     fontWeight: 800,
                     fontSize: '0.85rem',
-                    color: '#3a1496',
+                    color: '#1e40af',
                   }}
                 >
                   <Icon size={14} />

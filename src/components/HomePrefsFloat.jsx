@@ -54,7 +54,7 @@ const HomePrefsFloat = () => {
           z-index: 80;
           width: min(280px, calc(100vw - 32px));
           background: #f7f6fb;
-          border: 1.5px solid #7b29d5;
+          border: 1.5px solid #2563eb;
           border-radius: 16px;
           box-shadow: 0 14px 40px rgb(15, 11, 48,0.25);
           padding: 14px;
@@ -84,7 +84,7 @@ const HomePrefsFloat = () => {
           justify-content: space-between;
           gap: 8px;
           padding: 7px 0;
-          border-top: 1px dashed rgb(93, 43, 195,0.3);
+          border-top: 1px dashed rgb(37, 99, 235,0.3);
           font-size: 0.85rem;
           font-weight: 700;
           color: #110c34;
@@ -116,7 +116,7 @@ const HomePrefsFloat = () => {
         .hpf-fonts { display: flex; gap: 6px; }
         .hpf-font {
           flex: 1;
-          border: 1.5px solid #7b29d5;
+          border: 1.5px solid #2563eb;
           background: #fff;
           color: #3e247a;
           border-radius: 10px;
@@ -126,7 +126,7 @@ const HomePrefsFloat = () => {
           cursor: pointer;
           font-family: Cairo, sans-serif;
         }
-        .hpf-font.active { background: #7b29d5; color: #fff; }
+        .hpf-font.active { background: #2563eb; color: #fff; }
         .hpf-more {
           display: block;
           text-align: center;

@@ -46,12 +46,12 @@ const SECTION_ICONS = {
 };
 
 const TILE_GRADIENTS = [
-  'linear-gradient(140deg,#4f46e5,#06b6d4)',
-  'linear-gradient(140deg,#7c3aed,#4f46e5)',
-  'linear-gradient(140deg,#06b6d4,#22d3ee)',
-  'linear-gradient(140deg,#6d28d9,#0e7c98)',
-  'linear-gradient(140deg,#4338ca,#7c3aed)',
-  'linear-gradient(140deg,#0891b2,#6366f1)',
+  'linear-gradient(140deg,#2563eb,#06b6d4)',
+  'linear-gradient(140deg,#3b82f6,#2563eb)',
+  'linear-gradient(140deg,#06b6d4,#38bdf8)',
+  'linear-gradient(140deg,#2563eb,#0e7c98)',
+  'linear-gradient(140deg,#1d4ed8,#3b82f6)',
+  'linear-gradient(140deg,#0ea5e9,#6366f1)',
 ];
 
 const NovHomePage = () => {
@@ -218,7 +218,7 @@ const NovHomePage = () => {
                   style={{
                     background:
                       section.color
-                        ? `linear-gradient(140deg, ${section.color}, #4f46e5)`
+                        ? `linear-gradient(140deg, ${section.color}, #2563eb)`
                         : TILE_GRADIENTS[idx % TILE_GRADIENTS.length],
                   }}
                 >
@@ -348,7 +348,7 @@ const NovHomePage = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg,#ffffff,#eee9fb)',
-              border: '1px solid rgb(79, 70, 229,0.4)',
+              border: '1px solid rgb(37, 99, 235,0.4)',
               borderRadius: 18,
               padding: '1.2rem 1rem',
               maxWidth: 340,
@@ -359,7 +359,7 @@ const NovHomePage = () => {
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: '0.6rem' }}>
-              <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 800, color: '#1a1147' }}>
+              <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 800, color: '#0b1c3a' }}>
                 كيف تضيف المتجر لشاشة هاتفك؟
               </h3>
               <button
@@ -377,7 +377,7 @@ const NovHomePage = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#4f46e5',
+                  color: '#2563eb',
                 }}
               >
                 <X size={16} />

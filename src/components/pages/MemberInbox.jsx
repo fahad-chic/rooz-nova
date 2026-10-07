@@ -124,7 +124,7 @@ const MemberInbox = () => {
           fontSize: '1.35rem',
         }}
       >
-        <Mail size={24} style={{ color: '#7b29d5' }} aria-hidden="true" />
+        <Mail size={24} style={{ color: '#2563eb' }} aria-hidden="true" />
         بريد العضو الوارد
       </div>
 

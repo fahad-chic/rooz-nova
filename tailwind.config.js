@@ -8,14 +8,14 @@ export default {
   theme: {
     extend: {
       colors: {
-        luxury: { gold: '#7b29d5' },
+        luxury: { gold: '#2563eb' },
 
         royal: {
           black: "#0a071e",
           marble: "#0e0a2b",
-          gold: "#7b29d5",
-          goldSoft: "#5122d8",
-          goldDim: "#3e209d",
+          gold: "#2563eb",
+          goldSoft: "#1d4ed8",
+          goldDim: "#1e3a8a",
           white: "#f5f5f5",
         },
 
@@ -26,9 +26,9 @@ export default {
         },
 
         // إضافات خاصة لمربع صاحب الموقع
-        "royal-gold": "#7b29d5",
-        "royal-goldBright": "#a388f4",
-        "royal-goldSoft": "#5122d8",
+        "royal-gold": "#2563eb",
+        "royal-goldBright": "#93c5fd",
+        "royal-goldSoft": "#1d4ed8",
         "royal-white": "#f8f8f8",
         "royal-black": "#0d0a29",
 
@@ -51,12 +51,12 @@ export default {
       },
 
       boxShadow: {
-        royal: "0 0 20px rgb(89, 42, 225,0.30)",
+        royal: "0 0 20px rgb(37, 99, 235,0.30)",
         marble: "0 6px 20px rgb(9, 6, 27,0.40)",
         glass: "0 4px 14px rgb(255, 255, 255,0.12)",
 
         // ظل ملكي ثلاثي خاص لمربع صاحب الموقع
-        royal3d: "0 12px 28px rgb(89, 42, 225,0.45)",
+        royal3d: "0 12px 28px rgb(37, 99, 235,0.45)",
       },
 
       backdropBlur: {

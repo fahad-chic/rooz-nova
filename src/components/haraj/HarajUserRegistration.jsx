@@ -143,7 +143,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
       }}>
         {/* Header */}
         <div style={{
-          background: 'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)',
+          background: 'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
           padding: '1.5rem',
           textAlign: 'center',
           borderRadius: '24px 24px 0 0',
@@ -214,7 +214,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               marginBottom: '0.5rem',
               fontFamily: 'Cairo, sans-serif',
             }}>
-              <User size={16} color="#7b29d5" />
+              <User size={16} color="#2563eb" />
               الاسم الحقيقي *
             </label>
             <input
@@ -253,7 +253,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               marginBottom: '0.5rem',
               fontFamily: 'Cairo, sans-serif',
             }}>
-              <Phone size={16} color="#7b29d5" />
+              <Phone size={16} color="#2563eb" />
               رقم الهاتف الحقيقي *
             </label>
             <input
@@ -294,7 +294,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               marginBottom: '0.5rem',
               fontFamily: 'Cairo, sans-serif',
             }}>
-              <Mail size={16} color="#7b29d5" />
+              <Mail size={16} color="#2563eb" />
               البريد الإلكتروني *
             </label>
             <input
@@ -335,7 +335,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               marginBottom: '0.5rem',
               fontFamily: 'Cairo, sans-serif',
             }}>
-              <MapPin size={16} color="#7b29d5" />
+              <MapPin size={16} color="#2563eb" />
               المنطقة *
             </label>
             <select
@@ -415,7 +415,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
             style={{
               width: '100%',
               background: agreed 
-                ? 'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)'
+                ? 'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)'
                 : 'rgb(127, 83, 226, 0.2)',
               border: 'none',
               borderRadius: 12,

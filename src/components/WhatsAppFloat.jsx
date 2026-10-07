@@ -36,7 +36,7 @@ const WhatsAppFloat = () => {
             alignItems: 'center',
             gap: 10,
             background: 'linear-gradient(145deg, #f7f6fb, #e6dff5)',
-            border: '1px solid rgb(64, 15, 180, 0.35)',
+            border: '1px solid rgb(30, 58, 138, 0.35)',
             borderRadius: 14,
             padding: '10px 14px',
             boxShadow: '0 10px 30px rgb(48, 14, 126, 0.25)',

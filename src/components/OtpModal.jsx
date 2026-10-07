@@ -298,7 +298,7 @@ const OtpModal = ({ email, purpose = 'login', onVerified, onClose, loading = fal
               background:
                 busy || code.length !== 6
                   ? '#271262'
-                  : 'linear-gradient(135deg, #7b51d9, #3a1496)',
+                  : 'linear-gradient(135deg, #7b51d9, #1e40af)',
               color: '#fff',
               border: 'none',
               borderRadius: 10,

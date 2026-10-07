@@ -105,7 +105,7 @@ const RoyalHomePage = () => {
           }
           .rh-icon-card {
             background: linear-gradient(145deg, #f4f1f9, #eae4f3);
-            border: 1.5px solid rgb(93, 43, 195,0.42);
+            border: 1.5px solid rgb(37, 99, 235,0.42);
             border-radius: 14px;
             padding: 0.65rem 0.4rem;
             text-align: center;
@@ -145,7 +145,7 @@ const RoyalHomePage = () => {
           }
           .rh-icon-btn {
             margin-top: 0.2rem;
-            background: linear-gradient(135deg, #7b29d5, #4b1fb5);
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
             color: #0b0822;
             border: none;
             border-radius: 7px;
@@ -223,7 +223,7 @@ const RoyalHomePage = () => {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '5px',
-              border: '2.2px double #4a229b',
+              border: '2.2px double #1e40af',
               borderRadius: '50px',
               padding: '3px 11px',
               boxShadow: 'inset 0 0 3px rgb(74, 34, 155,0.2), 0 1px 3px rgb(9, 6, 27,0.05)',
@@ -231,9 +231,9 @@ const RoyalHomePage = () => {
               whiteSpace: 'nowrap'
             }}
           >
-            <span style={{ color: '#4a229b', fontSize: '0.8em', fontWeight: 'bold' }}>®</span>
+            <span style={{ color: '#1e40af', fontSize: '0.8em', fontWeight: 'bold' }}>®</span>
             أنــآقـة تليق بـكم
-            <span style={{ color: '#4a229b', fontSize: '0.8em', fontWeight: 'bold' }}>®</span>
+            <span style={{ color: '#1e40af', fontSize: '0.8em', fontWeight: 'bold' }}>®</span>
           </h1>
         </div>
       </section>
@@ -242,13 +242,13 @@ const RoyalHomePage = () => {
 
       <div className="rh-icon-row">
         <div className="rh-icon-card">
-          <Crown size={18} color="#7b29d5" strokeWidth={1.7} />
+          <Crown size={18} color="#2563eb" strokeWidth={1.7} />
           <h4>لأنكم تستاهلون</h4>
           <p>مسابقة ذهب عيار 21 قريباً</p>
         </div>
 
         <div className="rh-icon-card">
-          <Smartphone size={18} color="#4a229b" strokeWidth={1.7} />
+          <Smartphone size={18} color="#1e40af" strokeWidth={1.7} />
           <h4>أضف للمتجر</h4>
           <p>ثبّته كتطبيق على هاتفك</p>
           <button
@@ -262,7 +262,7 @@ const RoyalHomePage = () => {
         </div>
 
         <div className="rh-icon-card">
-          <Mail size={18} color="#4a229b" strokeWidth={1.7} />
+          <Mail size={18} color="#1e40af" strokeWidth={1.7} />
           <h4>عروضنا توصلك</h4>
           <p>اشترك ليصلك الجديد</p>
 
@@ -277,7 +277,7 @@ const RoyalHomePage = () => {
                 fontSize: '0.58rem',
                 padding: '0.22rem 0.3rem',
                 borderRadius: 6,
-                border: '1px solid rgb(93, 43, 195,0.35)',
+                border: '1px solid rgb(37, 99, 235,0.35)',
                 background: '#fff',
                 textAlign: 'center',
                 marginBottom: 2,
@@ -325,21 +325,21 @@ const RoyalHomePage = () => {
             gap: 8,
             padding: '0.7rem 0.9rem',
             borderRadius: 14,
-            border: '1.5px solid #7b29d5',
+            border: '1.5px solid #2563eb',
             background: 'linear-gradient(145deg, #f4f1f9, #eae4f3)',
             color: '#0b0822',
             fontWeight: 900,
             fontSize: '0.92rem',
             fontFamily: 'inherit',
             cursor: 'pointer',
-            boxShadow: '0 2px 10px rgb(93, 43, 195,0.15)',
+            boxShadow: '0 2px 10px rgb(37, 99, 235,0.15)',
             marginBottom: sectionsPanelOpen ? 10 : 0,
           }}
         >
           <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
             أقسام متجر أناقة ROOZ
             <span style={{
-              background: '#7b29d5', color: '#fff', fontSize: '0.68rem',
+              background: '#2563eb', color: '#fff', fontSize: '0.68rem',
               fontWeight: 900, padding: '2px 8px', borderRadius: 999,
             }}>{catalogSections.length}</span>
           </span>
@@ -365,7 +365,7 @@ const RoyalHomePage = () => {
                   <OwnerEditBadge to="/admin" label="تعديل" />
                   <div
                     className="rh-card-icon"
-                    style={{ background: `linear-gradient(145deg, ${section.color || '#9955ef'}, #5b1c9b)` }}
+                    style={{ background: `linear-gradient(145deg, ${section.color || '#3b82f6'}, #1e40af)` }}
                   >
                     <Icon size={22} />
                   </div>
@@ -384,8 +384,8 @@ const RoyalHomePage = () => {
                       gap: 4,
                       padding: '0.4rem 0.65rem',
                       borderRadius: 10,
-                      border: '1.5px solid rgb(93, 43, 195,0.45)',
-                      background: isOpen ? 'rgb(137, 91, 228,0.35)' : '#f4f1f9',
+                      border: '1.5px solid rgb(37, 99, 235,0.45)',
+                      background: isOpen ? 'rgb(59, 130, 246,0.35)' : '#f4f1f9',
                       color: '#0b0822',
                       fontWeight: 800,
                       fontSize: '0.75rem',
@@ -408,7 +408,7 @@ const RoyalHomePage = () => {
                         onClick={() => openBranch(branch)}
                       >
                         <span>{branch.name}</span>
-                        <ArrowLeft size={14} color="#5b1c9b" />
+                        <ArrowLeft size={14} color="#1e40af" />
                       </button>
                     ))}
                   </div>
@@ -572,7 +572,7 @@ const RoyalHomePage = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg,#f4f1f9,#e0d7f5)',
-              border: '1px solid rgb(64, 15, 180,0.45)',
+              border: '1px solid rgb(30, 58, 138,0.45)',
               borderRadius: 16,
               padding: '1.2rem 1rem',
               maxWidth: 340,
@@ -645,7 +645,7 @@ const RoyalHomePage = () => {
               style={{
                 marginTop: '0.9rem',
                 width: '100%',
-                background: 'linear-gradient(135deg,#7b29d5,#4b1fb5)',
+                background: 'linear-gradient(135deg,#2563eb,#1d4ed8)',
                 color: '#0b0822',
                 border: 'none',
                 borderRadius: 10,

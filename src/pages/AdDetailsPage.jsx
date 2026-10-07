@@ -348,7 +348,7 @@ export default function AdDetailsPage() {
             border: `1px solid ${C.line}`,
             borderRadius: 20,
             overflow: 'hidden',
-            boxShadow: '0 8px 30px rgb(47, 21, 99,0.12)',
+            boxShadow: '0 8px 30px rgb(21, 42, 92,0.12)',
           }}
         >
           <div
@@ -424,7 +424,7 @@ export default function AdDetailsPage() {
             padding: 20,
             marginTop: 14,
             textAlign: 'center',
-            boxShadow: '0 8px 30px rgb(47, 21, 99,0.10)',
+            boxShadow: '0 8px 30px rgb(21, 42, 92,0.10)',
           }}
         >
           <h1 style={{ margin: '0 0 8px', fontSize: 'clamp(1.4rem, 4vw, 2rem)', fontWeight: 800 }}>
@@ -458,7 +458,7 @@ export default function AdDetailsPage() {
             borderRadius: 20,
             padding: 20,
             marginTop: 14,
-            boxShadow: '0 8px 30px rgb(47, 21, 99,0.10)',
+            boxShadow: '0 8px 30px rgb(21, 42, 92,0.10)',
           }}
         >
           <h3 style={{ margin: '0 0 14px', fontSize: 18, fontWeight: 800, textAlign: 'center', color: C.ink }}>
@@ -511,7 +511,7 @@ export default function AdDetailsPage() {
             padding: 20,
             marginTop: 14,
             marginBottom: 30,
-            boxShadow: '0 8px 30px rgb(47, 21, 99,0.10)',
+            boxShadow: '0 8px 30px rgb(21, 42, 92,0.10)',
           }}
         >
           <h3 style={{ margin: '0 0 6px', fontSize: 18, fontWeight: 800, textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
@@ -578,7 +578,7 @@ export default function AdDetailsPage() {
                         padding: '8px 14px',
                         fontSize: 14,
                         lineHeight: 1.7,
-                        boxShadow: '0 2px 8px rgb(47, 21, 99,0.10)',
+                        boxShadow: '0 2px 8px rgb(21, 42, 92,0.10)',
                       }}
                     >
                       {m.text}
@@ -658,7 +658,7 @@ const goldBtn = {
   justifyContent: 'center',
   gap: 8,
   fontFamily: 'inherit',
-  boxShadow: '0 6px 20px rgb(64, 15, 180,0.35), inset 0 1px 0 rgb(255, 255, 255,0.5)',
+  boxShadow: '0 6px 20px rgb(30, 58, 138,0.35), inset 0 1px 0 rgb(255, 255, 255,0.5)',
 };
 
 const ghostBtn = {

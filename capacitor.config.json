@@ -13,7 +13,7 @@
     },
     "StatusBar": {
       "style": "DARK",
-      "backgroundColor": "#7b29d5"
+      "backgroundColor": "#2563eb"
     }
   },
   "android": {

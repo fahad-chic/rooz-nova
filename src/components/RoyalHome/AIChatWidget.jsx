@@ -228,7 +228,7 @@ const AIChatWidget = ({
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',
-                textShadow: '0 1px 8px rgb(64, 15, 180, 0.25)',
+                textShadow: '0 1px 8px rgb(30, 58, 138, 0.25)',
               }}
             >
               المساعد الذكي

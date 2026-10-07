@@ -61,7 +61,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
           width: 26,
           height: 26,
           borderRadius: 8,
-          border: '1.5px solid rgb(89, 42, 225,0.85)',
+          border: '1.5px solid rgb(37, 99, 235,0.85)',
           background: 'linear-gradient(135deg, #0c0926, #100c31)',
           color: '#8a63ef',
           display: 'flex',
@@ -103,7 +103,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
             style={{
               width: 'min(430px, 100%)',
               background: 'linear-gradient(160deg, #f7f6fb, #e3dbf5)',
-              border: '2px solid #7b29d5',
+              border: '2px solid #2563eb',
               borderRadius: 18,
               boxShadow: '0 22px 55px rgb(15, 11, 48,0.35)',
               overflow: 'hidden',
@@ -198,8 +198,8 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
                   justifyContent: 'center',
                   gap: 7,
                   color: '#fff',
-                  background: 'linear-gradient(135deg, #7b29d5, #5b1c9b)',
-                  boxShadow: '0 6px 16px rgb(93, 43, 195,0.35)',
+                  background: 'linear-gradient(135deg, #2563eb, #1e40af)',
+                  boxShadow: '0 6px 16px rgb(37, 99, 235,0.35)',
                   opacity: saving || !value.trim() ? 0.6 : 1,
                 }}
               >

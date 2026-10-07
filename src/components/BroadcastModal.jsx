@@ -104,7 +104,7 @@ const BroadcastModal = ({ onClose }) => {
               fontWeight: 800,
             }}
           >
-            <Megaphone size={20} color="#4b1fb5" />
+            <Megaphone size={20} color="#1d4ed8" />
             رسالة البث
           </strong>
           <button
@@ -159,7 +159,7 @@ const BroadcastModal = ({ onClose }) => {
             alignItems: 'center',
             justifyContent: 'center',
             gap: 8,
-            background: 'linear-gradient(135deg, #7b29d5 0%, #4b1fb5 100%)',
+            background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
             color: '#0b0821',
             border: 'none',
             borderRadius: 12,

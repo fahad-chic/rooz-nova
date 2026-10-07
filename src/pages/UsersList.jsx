@@ -313,7 +313,7 @@ const titleIcon = {
   justifyContent: 'center',
   color: '#111',
   background:
-    'linear-gradient(135deg, #8f6dec 0%, #7b51d9 48%, #3a1496 100%)',
+    'linear-gradient(135deg, #8f6dec 0%, #7b51d9 48%, #1e40af 100%)',
   boxShadow: '0 6px 18px rgb(123, 81, 217,0.14)',
   flexShrink: 0,
 };
@@ -444,7 +444,7 @@ const avatarInitials = {
   alignItems: 'center',
   justifyContent: 'center',
   background:
-    'linear-gradient(135deg, #8863e9 0%, #7b51d9 50%, #3a1496 100%)',
+    'linear-gradient(135deg, #8863e9 0%, #7b51d9 50%, #1e40af 100%)',
   color: '#111',
   fontWeight: 900,
   fontSize: 17,

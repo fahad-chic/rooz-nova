@@ -486,7 +486,7 @@ const brandMark = {
   alignItems: 'center',
   justifyContent: 'center',
   background:
-    'linear-gradient(145deg, #a78af5 0%, #7b51d9 45%, #3a1496 100%)',
+    'linear-gradient(145deg, #a78af5 0%, #7b51d9 45%, #1e40af 100%)',
   color: '#111',
   fontSize: 25,
   fontWeight: 900,
@@ -551,7 +551,7 @@ const submitBtn = {
   minHeight: 50,
   padding: '13px 14px',
   background:
-    'linear-gradient(135deg, #8b68ed 0%, #7b51d9 48%, #3a1496 100%)',
+    'linear-gradient(135deg, #8b68ed 0%, #7b51d9 48%, #1e40af 100%)',
   color: '#111',
   border: '1px solid rgb(186, 165, 248,0.45)',
   borderRadius: 12,

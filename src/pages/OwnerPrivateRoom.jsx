@@ -1117,7 +1117,7 @@ const OwnerPrivateRoom = () => {
           background:
             radial-gradient(circle at top right, rgb(95, 44, 196,.12), transparent 36%),
             radial-gradient(circle at bottom left, rgb(65, 28, 132,.08), transparent 32%),
-            linear-gradient(160deg, #0c0824 0%, #0d0927 50%, #0b0823 100%) !important;
+            linear-gradient(160deg, #0c0824 0%, #0e1626 50%, #0b0823 100%) !important;
           color: #e9e4f4 !important;
         }
 
@@ -2704,7 +2704,7 @@ const MessagesPanel = ({
       </span>
     </div>
 
-    <div className="royal-surface rounded-xl p-4 border royal-border" style={{ background: 'rgb(93, 43, 195,0.08)' }}>
+    <div className="royal-surface rounded-xl p-4 border royal-border" style={{ background: 'rgb(37, 99, 235,0.08)' }}>
       <p className="text-[#0b0822] flex items-center gap-2 text-sm font-medium">
         <Shield size={18} />
         الرسائل الخاصة محمية: المشاركون فقط يتراسلون، وأنت كمالك تراقب لحماية الموقع دون علمهم.
@@ -2730,7 +2730,7 @@ const MessagesPanel = ({
               type="button"
               onClick={() => openChat(chat)}
               className="px-3 py-1.5 rounded-lg text-xs font-bold"
-              style={{ background: 'linear-gradient(135deg,#9955ef,#7b29d5)', color: '#0b0822', border: 'none', cursor: 'pointer' }}
+              style={{ background: 'linear-gradient(135deg,#3b82f6,#2563eb)', color: '#0b0822', border: 'none', cursor: 'pointer' }}
             >
               فتح المحادثة
             </button>
@@ -2743,7 +2743,7 @@ const MessagesPanel = ({
     </div>
 
     {selectedChat && (
-      <div className="royal-surface rounded-xl p-4 border royal-border" style={{ borderColor: '#7b29d5' }}>
+      <div className="royal-surface rounded-xl p-4 border royal-border" style={{ borderColor: '#2563eb' }}>
         <div className="flex items-center justify-between mb-3">
           <h3 className="font-bold royal-text">محادثة: {selectedChat.adTitle || selectedChat.id}</h3>
           <button type="button" onClick={() => { setSelectedChat(null); setChatMessages([]) }} className="text-xs font-bold royal-muted">إغلاق</button>
@@ -2751,7 +2751,7 @@ const MessagesPanel = ({
         <div className="space-y-2 max-h-80 overflow-y-auto">
           {chatMessages.length === 0 && <p className="text-sm royal-muted">لا رسائل أو جاري التحميل...</p>}
           {chatMessages.map((m) => (
-            <div key={m.id} className="p-2 rounded-lg" style={{ background: '#f4f1f9', border: '1px solid rgb(93, 43, 195,0.2)' }}>
+            <div key={m.id} className="p-2 rounded-lg" style={{ background: '#f4f1f9', border: '1px solid rgb(37, 99, 235,0.2)' }}>
               <p className="text-[11px] royal-muted font-medium">{m.senderName || m.senderKey || '—'}</p>
               <p className="royal-text text-sm break-words font-medium">{m.text || m.content || '—'}</p>
             </div>

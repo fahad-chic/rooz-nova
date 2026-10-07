@@ -153,7 +153,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
         style={{
           width: 'min(430px, 100%)',
           background: 'linear-gradient(160deg, #f7f6fb, #e3dbf5)',
-          border: '2px solid #7b29d5',
+          border: '2px solid #2563eb',
           borderRadius: 20,
           boxShadow: '0 24px 60px rgb(15, 11, 48,0.35)',
           overflow: 'hidden'
@@ -192,7 +192,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
             <div style={{ textAlign: 'center' }}>
               <p style={{ color: '#93162d', fontWeight: 800, marginBottom: 14 }}>{error}</p>
               <div style={{ display: 'flex', gap: 8 }}>
-                <button type="button" onClick={retry} style={btnStyle('#7b29d5')}>
+                <button type="button" onClick={retry} style={btnStyle('#2563eb')}>
                   <RefreshCw size={15} aria-hidden="true" /> إعادة المحاولة
                 </button>
                 <button type="button" onClick={onCancel} style={btnStyle('#545869')}>عودة</button>
@@ -229,7 +229,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
                 style={{ ...inputStyle, marginTop: 10 }}
               />
               {error && <p style={errorStyle}>{error}</p>}
-              <button type="submit" disabled={busy} style={{ ...btnStyle('#7b29d5'), width: '100%', marginTop: 12 }}>
+              <button type="submit" disabled={busy} style={{ ...btnStyle('#2563eb'), width: '100%', marginTop: 12 }}>
                 {busy ? 'جاري الإنشاء…' : 'إنشاء الرمز السري'}
               </button>
             </form>
@@ -255,7 +255,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
                 style={inputStyle}
               />
               {error && <p style={errorStyle}>{error}</p>}
-              <button type="submit" disabled={busy || pin.length < 4} style={{ ...btnStyle('#7b29d5'), width: '100%', marginTop: 12 }}>
+              <button type="submit" disabled={busy || pin.length < 4} style={{ ...btnStyle('#2563eb'), width: '100%', marginTop: 12 }}>
                 {busy ? 'جاري التحقق…' : 'فتح الغرفة'}
               </button>
             </form>

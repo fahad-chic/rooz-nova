@@ -12,9 +12,9 @@ import { Crown, X } from 'lucide-react'
 const C = {
   ivory: '#f7f6fb',
   ivoryDeep: '#e2d9f5',
-  line: 'rgb(93, 43, 195, 0.45)',
-  lineSoft: 'rgb(93, 43, 195, 0.22)',
-  gold: '#7b29d5',
+  line: 'rgb(37, 99, 235, 0.45)',
+  lineSoft: 'rgb(37, 99, 235, 0.22)',
+  gold: '#2563eb',
   goldDeep: '#321473',
   ink: '#0c0926',
   inkSoft: '#3e247a',
@@ -95,7 +95,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
         .ocm-trigger:active { transform: scale(0.96); }
         .ocm-trigger[aria-expanded="true"] {
           color: #fff;
-          background: linear-gradient(150deg, #7b29d5, ${C.gold} 65%, #5b1c9b);
+          background: linear-gradient(150deg, #2563eb, ${C.gold} 65%, #1e40af);
           box-shadow:
             inset 0 0 0 1.5px rgb(255, 255, 255, 0.5),
             0 8px 20px rgb(50, 20, 115, 0.32);
@@ -111,7 +111,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           height: 19px;
           border-radius: 50%;
           color: ${C.ink};
-          background: linear-gradient(140deg, #b295f4, #7b29d5 60%, #7b29d5);
+          background: linear-gradient(140deg, #b295f4, #2563eb 60%, #2563eb);
           box-shadow: 0 2px 6px rgb(50, 20, 115, 0.35);
         }
 
@@ -148,7 +148,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           flex: 0 0 32px;
           border-radius: 11px;
           color: ${C.ink};
-          background: linear-gradient(140deg, #b295f4, #7b29d5 60%, #7b29d5);
+          background: linear-gradient(140deg, #b295f4, #2563eb 60%, #2563eb);
         }
         .ocm-head-text { margin-inline-end: auto; min-width: 0; }
         .ocm-head-title {
@@ -241,7 +241,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
 
         /* الخيار المحدد — خلفية ذهبية وأيقونة معاكسة بارزة */
         .ocm-item.is-active {
-          background: linear-gradient(140deg, #b295f4, #7b29d5 60%, #7b29d5);
+          background: linear-gradient(140deg, #b295f4, #2563eb 60%, #2563eb);
           border-color: ${C.gold};
           box-shadow: 0 8px 20px rgb(50, 20, 115, 0.22);
         }

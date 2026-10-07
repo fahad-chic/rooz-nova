@@ -138,7 +138,7 @@ export const BranchesManagement = () => {
           display: flex;
           align-items: center;
           gap: 0.4rem;
-          background: linear-gradient(135deg, #7b51d9, #3a1496);
+          background: linear-gradient(135deg, #7b51d9, #1e40af);
           color: #fff;
           border: none;
           padding: 0.65rem 1rem;
@@ -290,7 +290,7 @@ export const BranchesManagement = () => {
         }
 
         .modal-btn-submit {
-          background: linear-gradient(135deg, #7b51d9, #3a1496);
+          background: linear-gradient(135deg, #7b51d9, #1e40af);
           color: #fff;
         }
 
