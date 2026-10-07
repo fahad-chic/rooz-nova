@@ -40,7 +40,7 @@ const AddToHomeSection = () => {
         borderRadius: 14,
         boxShadow: '0 4px 14px rgba(61, 15, 24, 0.08)',
         textAlign: 'center',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
       }}
     >
       <Smartphone
@@ -83,7 +83,7 @@ const AddToHomeSection = () => {
           fontWeight: 800,
           fontSize: '0.8rem',
           cursor: 'pointer',
-          fontFamily: 'Tajawal, sans-serif',
+          fontFamily: 'Cairo, sans-serif',
           display: 'inline-flex',
           alignItems: 'center',
           gap: 6,

@@ -92,7 +92,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
             justifyContent: 'center',
             padding: '1rem',
             direction: 'rtl',
-            fontFamily: 'Tajawal, sans-serif',
+            fontFamily: 'Cairo, sans-serif',
           }}
         >
           <div
@@ -169,7 +169,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
                   border: '1.5px solid #6b1d2f',
                   background: '#fdfbf7',
                   padding: '10px 12px',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                   fontSize: '0.92rem',
                   fontWeight: 600,
                   color: '#1f1116',
@@ -189,7 +189,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
                   border: 'none',
                   borderRadius: 12,
                   padding: '11px',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                   fontWeight: 900,
                   fontSize: '0.92rem',
                   cursor: saving || !value.trim() ? 'not-allowed' : 'pointer',

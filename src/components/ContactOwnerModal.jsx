@@ -61,7 +61,7 @@ const ContactOwnerModal = ({ onClose }) => {
         justifyContent: 'center',
         padding: '1rem',
         direction: 'rtl',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
       }}
     >
       <div
@@ -123,7 +123,7 @@ const ContactOwnerModal = ({ onClose }) => {
                   border: '1.5px solid #6b1d2f',
                   background: '#fdfbf7',
                   padding: '12px 14px',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                   fontSize: '0.95rem',
                   fontWeight: 600,
                   color: '#1f1116',
@@ -149,7 +149,7 @@ const ContactOwnerModal = ({ onClose }) => {
                   border: 'none',
                   borderRadius: 12,
                   padding: '12px',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                   fontWeight: 900,
                   fontSize: '0.98rem',
                   cursor: text.trim() ? 'pointer' : 'not-allowed',

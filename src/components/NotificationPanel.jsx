@@ -40,7 +40,7 @@ const toolButtonStyle = {
   fontSize: '0.78rem',
   fontWeight: 700,
   cursor: 'pointer',
-  fontFamily: 'Tajawal, sans-serif',
+  fontFamily: 'Cairo, sans-serif',
   minHeight: 40,
   transition: 'background 0.2s ease',
 };
@@ -139,7 +139,7 @@ const NotificationPanel = () => {
         margin: '0 auto',
         padding: '1.5rem 1rem 2.5rem',
         minHeight: '70vh',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
       }}
     >
       {/* العنوان + أدوات التحكم */}

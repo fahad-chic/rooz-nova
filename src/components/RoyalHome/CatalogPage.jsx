@@ -318,7 +318,7 @@ const CatalogPage = () => {
             fontSize: '0.85rem',
             cursor: 'pointer',
             marginBottom: '0.75rem',
-            fontFamily: 'Tajawal, sans-serif',
+            fontFamily: 'Cairo, sans-serif',
             fontWeight: 800,
           }}
         >
@@ -349,7 +349,7 @@ const CatalogPage = () => {
               background: 'linear-gradient(180deg, #6b1d2f, #6b1d2f)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}
           >
             {catalogInfo?.name || CATALOG_NAME_MAP[catalogId] || catalogId?.replace(/-/g, ' ')}
@@ -361,7 +361,7 @@ const CatalogPage = () => {
                 margin: '0.5rem 0 0',
                 color: '#6b1d2f',
                 fontSize: '0.9rem',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               {catalogInfo.section}
@@ -400,7 +400,7 @@ const CatalogPage = () => {
               color: '#888',
               fontSize: '0.85rem',
               marginLeft: '0.5rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}
           >
             شكل العرض:
@@ -439,7 +439,7 @@ const CatalogPage = () => {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.3rem',
-                    fontFamily: 'Tajawal, sans-serif',
+                    fontFamily: 'Cairo, sans-serif',
                     fontSize: '0.8rem',
                   }}
                 >
@@ -456,7 +456,7 @@ const CatalogPage = () => {
           style={{
             color: '#888',
             fontSize: '0.9rem',
-            fontFamily: 'Tajawal, sans-serif',
+            fontFamily: 'Cairo, sans-serif',
             margin: 0,
           }}
         >
@@ -487,7 +487,7 @@ const CatalogPage = () => {
                 fontWeight: 600,
                 fontSize: '0.85rem',
                 cursor: 'pointer',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               <Settings size={16} />
@@ -512,7 +512,7 @@ const CatalogPage = () => {
                 fontWeight: 700,
                 fontSize: '0.9rem',
                 cursor: 'pointer',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               <Plus size={18} />
@@ -529,7 +529,7 @@ const CatalogPage = () => {
             textAlign: 'center',
             padding: '4rem',
             color: '#888',
-            fontFamily: 'Tajawal, sans-serif',
+            fontFamily: 'Cairo, sans-serif',
           }}
         >
           جاري التحميل...
@@ -560,7 +560,7 @@ const CatalogPage = () => {
             style={{
               margin: 0,
               fontSize: '1.1rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}
           >
             لا توجد منتجات في هذا القسم حالياً
@@ -580,7 +580,7 @@ const CatalogPage = () => {
                 color: '#000',
                 fontWeight: 700,
                 cursor: 'pointer',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               أضف أول منتج
@@ -711,7 +711,7 @@ const DisplaySettingsModal = ({
               margin: 0,
               color: '#6b1d2f',
               fontSize: '1.3rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
@@ -748,7 +748,7 @@ const DisplaySettingsModal = ({
               display: 'block',
               color: '#aaa',
               marginBottom: '0.5rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}
           >
             شكل عرض المنتجات:
@@ -796,7 +796,7 @@ const DisplaySettingsModal = ({
                       flexDirection: 'column',
                       alignItems: 'center',
                       gap: '0.3rem',
-                      fontFamily: 'Tajawal, sans-serif',
+                      fontFamily: 'Cairo, sans-serif',
                       fontSize: '0.8rem',
                     }}
                   >
@@ -824,7 +824,7 @@ const DisplaySettingsModal = ({
               gap: '0.5rem',
               color: '#fff',
               cursor: 'pointer',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}
           >
             <input
@@ -851,7 +851,7 @@ const DisplaySettingsModal = ({
               gap: '0.5rem',
               color: '#fff',
               cursor: 'pointer',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}
           >
             <input
@@ -892,7 +892,7 @@ const DisplaySettingsModal = ({
               fontWeight: 700,
               fontSize: '1rem',
               cursor: 'pointer',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -916,7 +916,7 @@ const DisplaySettingsModal = ({
               fontWeight: 600,
               fontSize: '1rem',
               cursor: 'pointer',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}
           >
             إلغاء
@@ -1035,7 +1035,7 @@ const AddProductModal = ({
     borderRadius: 12,
     color: '#fff',
     fontSize: '1rem',
-    fontFamily: 'Tajawal, sans-serif',
+    fontFamily: 'Cairo, sans-serif',
     boxSizing: 'border-box',
   };
 
@@ -1074,7 +1074,7 @@ const AddProductModal = ({
               margin: 0,
               color: '#6b1d2f',
               fontSize: '1.3rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}
           >
             {editingProduct
@@ -1127,7 +1127,7 @@ const AddProductModal = ({
                 display: 'block',
                 color: '#aaa',
                 marginBottom: '0.3rem',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               اسم المنتج *
@@ -1162,7 +1162,7 @@ const AddProductModal = ({
                   display: 'block',
                   color: '#aaa',
                   marginBottom: '0.3rem',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                 }}
               >
                 السعر (ر.س) *
@@ -1191,7 +1191,7 @@ const AddProductModal = ({
                   display: 'block',
                   color: '#aaa',
                   marginBottom: '0.3rem',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                 }}
               >
                 المقاس
@@ -1218,7 +1218,7 @@ const AddProductModal = ({
                 display: 'block',
                 color: '#aaa',
                 marginBottom: '0.3rem',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               رابط الصورة
@@ -1244,7 +1244,7 @@ const AddProductModal = ({
                 display: 'block',
                 color: '#aaa',
                 marginBottom: '0.3rem',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               الوصف
@@ -1273,7 +1273,7 @@ const AddProductModal = ({
                 display: 'block',
                 color: '#aaa',
                 marginBottom: '0.3rem',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               رقم واتساب للشراء
@@ -1314,7 +1314,7 @@ const AddProductModal = ({
                 fontWeight: 700,
                 fontSize: '1rem',
                 cursor: saving ? 'not-allowed' : 'pointer',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               {saving
@@ -1338,7 +1338,7 @@ const AddProductModal = ({
                 fontWeight: 600,
                 fontSize: '1rem',
                 cursor: saving ? 'not-allowed' : 'pointer',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               إلغاء

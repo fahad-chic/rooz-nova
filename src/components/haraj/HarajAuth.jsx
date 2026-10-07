@@ -197,7 +197,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
             color: C.gold, 
             margin: 0, 
             fontSize: 22,
-            fontFamily: 'Tajawal, sans-serif',
+            fontFamily: 'Cairo, sans-serif',
           }}>
             {mode === 'choose' && 'تسجيل الدخول لمنصة الإعلانات'}
             {mode === 'login' && 'تسجيل الدخول'}
@@ -224,7 +224,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
             fontSize: 14,
             marginBottom: 16,
             textAlign: 'center',
-            fontFamily: 'Tajawal, sans-serif',
+            fontFamily: 'Cairo, sans-serif',
           }}>
             {error}
           </div>
@@ -247,7 +247,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 10,
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               <Phone size={20} /> تسجيل دخول
@@ -273,7 +273,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 10,
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               <User size={20} /> إنشاء حساب جديد
@@ -289,7 +289,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 color: '#d4a5a5',
                 fontSize: 14,
                 cursor: 'pointer',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               متابعة كمستخدم عادي
@@ -312,7 +312,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 border: `1px solid ${C.gold}40`,
                 color: C.white,
                 fontSize: 16,
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             />
             <button
@@ -327,7 +327,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 fontSize: 16,
                 fontWeight: 700,
                 cursor: loading ? 'wait' : 'pointer',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               {loading ? 'جاري الدخول...' : 'تسجيل الدخول'}
@@ -340,7 +340,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 color: C.gold,
                 cursor: 'pointer',
                 fontSize: 14,
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
                رجوع
@@ -363,7 +363,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 border: `1px solid ${C.gold}40`,
                 color: C.white,
                 fontSize: 16,
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             />
             <input
@@ -379,7 +379,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 border: `1px solid ${C.gold}40`,
                 color: C.white,
                 fontSize: 16,
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             />
             <button
@@ -394,7 +394,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 fontSize: 16,
                 fontWeight: 700,
                 cursor: loading ? 'wait' : 'pointer',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
               {loading ? 'جاري التسجيل...' : 'إنشاء الحساب'}
@@ -407,7 +407,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 color: C.gold,
                 cursor: 'pointer',
                 fontSize: 14,
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
               }}
             >
                رجوع

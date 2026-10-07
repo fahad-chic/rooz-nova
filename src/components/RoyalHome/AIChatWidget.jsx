@@ -183,7 +183,7 @@ const AIChatWidget = ({
           flexDirection: 'column',
           zIndex: 999,
           overflow: 'hidden',
-          fontFamily: 'Tajawal, Arial, sans-serif',
+          fontFamily: 'Cairo, Arial, sans-serif',
         }}
       >
         {/* Header */}

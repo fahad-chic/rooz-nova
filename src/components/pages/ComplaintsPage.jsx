@@ -312,7 +312,7 @@ const handleMarquee = async () => {
 
 if (userRole !== 'owner') {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center text-center text-red-500 font-Tajawal">
+    <div className="min-h-screen w-full flex items-center justify-center text-center text-red-500 font-Cairo">
       <div className="glass-morphism-gold p-6 rounded-xl">
         <h2 className="text-2xl font-bold mb-2">ممنوع الدخول </h2>
         <p className="text-gray-300 text-sm">

@@ -160,7 +160,7 @@ export const BranchDetail = () => {
           background: linear-gradient(135deg, #1f1116 0%, #1f1116 100%);
           min-height: calc(100vh - 70px);
           color: #fff;
-          font-family: 'Tajawal', sans-serif;
+          font-family: 'Cairo', sans-serif;
         }
 
         .back-button {
@@ -269,7 +269,7 @@ export const BranchDetail = () => {
           background: #111;
           padding: 2rem;
           border-radius: 12px;
-          box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
+          box-shadow: 0 2px 12px rgb(255, 255, 255, 0.05);
           margin-bottom: 2rem;
         }
 
@@ -311,7 +311,7 @@ export const BranchDetail = () => {
           background: #111;
           padding: 1.5rem;
           border-radius: 12px;
-          box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
+          box-shadow: 0 2px 12px rgb(255, 255, 255, 0.05);
         }
 
         .action-btn {

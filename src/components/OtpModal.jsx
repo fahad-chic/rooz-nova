@@ -130,7 +130,7 @@ const OtpModal = ({ email, purpose = 'login', onVerified, onClose, loading = fal
         justifyContent: 'center',
         zIndex: 10000,
         padding: 16,
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
       }}
     >
       <div

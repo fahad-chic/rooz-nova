@@ -46,7 +46,7 @@ const WhatsAppFloat = () => {
         >
           <span
             style={{
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
               fontSize: 13,
               fontWeight: 700,
               color: '#1f1116',

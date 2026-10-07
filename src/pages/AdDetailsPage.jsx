@@ -287,7 +287,7 @@ export default function AdDetailsPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.inkSoft, fontFamily: 'Tajawal, sans-serif' }}>
+      <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.inkSoft, fontFamily: 'Cairo, sans-serif' }}>
         جاري تحميل الإعلان...
       </div>
     );
@@ -295,7 +295,7 @@ export default function AdDetailsPage() {
 
   if (!ad) {
     return (
-      <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, fontFamily: 'Tajawal, sans-serif', color: C.ink }}>
+      <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, fontFamily: 'Cairo, sans-serif', color: C.ink }}>
         <p style={{ fontSize: 18, fontWeight: 700 }}>الإعلان غير موجود أو تم حذفه</p>
         <button type="button" onClick={() => navigate('/haraj')} style={goldBtn}>
           العودة إلى الحراج

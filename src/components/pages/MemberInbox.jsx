@@ -110,7 +110,7 @@ const MemberInbox = () => {
         maxWidth: 720,
         margin: '0 auto',
         padding: '1rem',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
       }}
     >
       <div
@@ -214,7 +214,7 @@ const MemberInbox = () => {
               border: '1.5px solid #6b1d2f',
               background: '#fdfbf7',
               padding: '0.6rem 0.8rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
               fontSize: '0.95rem',
               fontWeight: 600,
               color: '#1f1116',
@@ -237,7 +237,7 @@ const MemberInbox = () => {
               border: 'none',
               borderRadius: 12,
               padding: '0.7rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
               fontWeight: 900,
               fontSize: '0.95rem',
               cursor: text.trim() && !sending ? 'pointer' : 'not-allowed',

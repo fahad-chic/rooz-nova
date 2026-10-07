@@ -399,7 +399,7 @@
   font-weight: 900;
   line-height: 1.3;
   color: var(--rh-brown);
-  text-shadow: 0 2px 0 rgba(255, 255, 255, 0.6);
+  text-shadow: 0 2px 0 rgb(255, 255, 255, 0.6);
 }
 
 .rh-hero-title .gold {

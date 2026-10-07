@@ -155,7 +155,7 @@ const LoadingScreen = () => (
       height: '100vh',
       color: '#6b1d2f',
       fontSize: '1.5rem',
-      fontFamily: 'Tajawal',
+      fontFamily: 'Cairo',
       direction: 'rtl',
     }}
   >
@@ -207,7 +207,7 @@ const UnauthorizedPage = () => {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '2rem 1rem',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
         direction: 'rtl',
       }}
     >
@@ -1549,7 +1549,7 @@ function AppContent() {
               boxShadow:
                 '0 2px 10px rgba(31, 17, 22,0.3)',
               fontFamily:
-                'Tajawal, sans-serif',
+                'Cairo, sans-serif',
               boxSizing: 'border-box',
             }}
           >
@@ -1593,7 +1593,7 @@ function AppContent() {
               zIndex: 15000,
               padding: 16,
               fontFamily:
-                'Tajawal, sans-serif',
+                'Cairo, sans-serif',
             }}
           >
             <div
@@ -1866,7 +1866,7 @@ function AppContent() {
                     flexShrink: 0,
                     padding: '0 60px',
                     whiteSpace: 'nowrap',
-                    fontFamily: 'Tajawal, "Noto Sans Arabic", Tahoma, sans-serif',
+                    fontFamily: 'Cairo, "Noto Sans Arabic", Tahoma, sans-serif',
                     fontSize: 'clamp(1.15rem, 2.5vw, 1.55rem)',
                     fontWeight: 900,
                     WebkitTextStroke: '0.4px rgba(61, 15, 24,0.5)',

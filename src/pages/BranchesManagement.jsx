@@ -113,7 +113,7 @@ export const BranchesManagement = () => {
           padding: 1rem;
           max-width: 1200px;
           margin: 0 auto;
-          font-family: 'Tajawal', sans-serif;
+          font-family: 'Cairo', sans-serif;
         }
 
         .management-header {

@@ -59,7 +59,7 @@ const HomePrefsFloat = () => {
           box-shadow: 0 14px 40px rgba(31, 17, 22,0.25);
           padding: 14px;
           direction: rtl;
-          font-family: Tajawal, sans-serif;
+          font-family: Cairo, sans-serif;
         }
         .hpf-title {
           display: flex;
@@ -124,7 +124,7 @@ const HomePrefsFloat = () => {
           font-size: 0.78rem;
           font-weight: 800;
           cursor: pointer;
-          font-family: Tajawal, sans-serif;
+          font-family: Cairo, sans-serif;
         }
         .hpf-font.active { background: #6b1d2f; color: #fff; }
         .hpf-more {

@@ -214,7 +214,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
         boxShadow: '0 4px 20px rgba(255, 255, 255,0.08)',
         border: '1px solid rgba(61, 15, 24,0.25)',
         overflow: 'hidden',
-        fontFamily: 'Tajawal, sans-serif'
+        fontFamily: 'Cairo, sans-serif'
       }}
     >
       <div

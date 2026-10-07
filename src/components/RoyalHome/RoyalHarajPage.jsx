@@ -1094,7 +1094,7 @@ const RoyalHarajPage = () => {
         width: '100%',
         background: 'transparent',
         fontFamily:
-          'Tajawal, sans-serif',
+          'Cairo, sans-serif',
         direction: 'rtl',
         position: 'relative',
         overflowX: 'hidden',
@@ -1542,7 +1542,7 @@ const RoyalHarajPage = () => {
               caretColor: '#1f1116',
               fontSize: '0.9rem',
               fontFamily:
-                'Tajawal, sans-serif',
+                'Cairo, sans-serif',
               outline: 'none',
               fontWeight: 600,
             }}
@@ -1568,7 +1568,7 @@ const RoyalHarajPage = () => {
               color: '#1f1116',
               fontSize: '0.9rem',
               fontFamily:
-                'Tajawal, sans-serif',
+                'Cairo, sans-serif',
               outline: 'none',
               cursor: 'pointer',
               fontWeight: 600,
@@ -1699,7 +1699,7 @@ const RoyalHarajPage = () => {
                 borderRadius: 16,
                 color: '#8a5560',
                 fontFamily:
-                  'Tajawal, sans-serif',
+                  'Cairo, sans-serif',
               }}
             >
               لا توجد إعلانات متاحة حاليًا
@@ -1883,7 +1883,7 @@ const RoyalHarajPage = () => {
                   fontSize: '0.8rem',
                   color: C.grayMid,
                   fontFamily:
-                    'Tajawal, sans-serif',
+                    'Cairo, sans-serif',
                 }}
               >
                 وتعتبر هذه النسبة في ذمة المعلن عند بيع السلعة
@@ -1959,7 +1959,7 @@ const RoyalHarajPage = () => {
               lineHeight: 1.8,
               color: C.cream,
               fontFamily:
-                'Tajawal, sans-serif',
+                'Cairo, sans-serif',
               textAlign: 'justify',
             }}
           >
@@ -2020,7 +2020,7 @@ const RoyalHarajPage = () => {
               fontSize: '0.8rem',
               color: C.grayMid,
               fontFamily:
-                'Tajawal, sans-serif',
+                'Cairo, sans-serif',
             }}
           >
             جميع الحقوق محفوظة © أناقة ROOZ 2026
@@ -2058,7 +2058,7 @@ const RoyalHarajPage = () => {
               fontSize: '0.85rem',
               fontWeight: 600,
               fontFamily:
-                'Tajawal, sans-serif',
+                'Cairo, sans-serif',
               whiteSpace: 'nowrap',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
@@ -2088,7 +2088,7 @@ const RoyalHarajPage = () => {
               fontSize: '0.78rem',
               fontWeight: 800,
               cursor: 'pointer',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
               whiteSpace: 'nowrap',
             }}
           >

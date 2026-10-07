@@ -212,7 +212,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               fontWeight: 600,
               color: '#f3e0dd',
               marginBottom: '0.5rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}>
               <User size={16} color="#6b1d2f" />
               الاسم الحقيقي *
@@ -231,7 +231,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
                 padding: '0.85rem 1rem',
                 color: '#fdfbf7',
                 fontSize: '0.95rem',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
                 outline: 'none',
                 boxSizing: 'border-box',
               }}
@@ -251,7 +251,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               fontWeight: 600,
               color: '#f3e0dd',
               marginBottom: '0.5rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}>
               <Phone size={16} color="#6b1d2f" />
               رقم الهاتف الحقيقي *
@@ -271,7 +271,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
                 padding: '0.85rem 1rem',
                 color: '#fdfbf7',
                 fontSize: '0.95rem',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
                 outline: 'none',
                 boxSizing: 'border-box',
                 textAlign: 'right',
@@ -292,7 +292,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               fontWeight: 600,
               color: '#f3e0dd',
               marginBottom: '0.5rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}>
               <Mail size={16} color="#6b1d2f" />
               البريد الإلكتروني *
@@ -312,7 +312,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
                 padding: '0.85rem 1rem',
                 color: '#fdfbf7',
                 fontSize: '0.95rem',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
                 outline: 'none',
                 boxSizing: 'border-box',
                 textAlign: 'left',
@@ -333,7 +333,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               fontWeight: 600,
               color: '#f3e0dd',
               marginBottom: '0.5rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
             }}>
               <MapPin size={16} color="#6b1d2f" />
               المنطقة *
@@ -350,7 +350,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
                 padding: '0.85rem 1rem',
                 color: formData.region ? '#fdfbf7' : '#888',
                 fontSize: '0.95rem',
-                fontFamily: 'Tajawal, sans-serif',
+                fontFamily: 'Cairo, sans-serif',
                 outline: 'none',
                 cursor: 'pointer',
                 boxSizing: 'border-box',

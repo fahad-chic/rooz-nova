@@ -116,7 +116,7 @@ const page = {
   alignItems: 'center',
   justifyContent: 'center',
   padding: 20,
-  fontFamily: 'Tajawal, sans-serif',
+  fontFamily: 'Cairo, sans-serif',
   direction: 'rtl',
   boxSizing: 'border-box'
 };

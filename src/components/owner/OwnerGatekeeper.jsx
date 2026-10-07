@@ -144,7 +144,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
         justifyContent: 'center',
         background: 'linear-gradient(160deg, #fdfbf7, #f3e0dd)',
         padding: '1rem',
-        fontFamily: 'Tajawal, sans-serif'
+        fontFamily: 'Cairo, sans-serif'
       }}
     >
       <div
@@ -273,7 +273,7 @@ const inputStyle = {
   border: '1.5px solid #6b1d2f',
   background: '#fdfbf7',
   padding: '12px 14px',
-  fontFamily: 'Tajawal, sans-serif',
+  fontFamily: 'Cairo, sans-serif',
   fontSize: '1.05rem',
   fontWeight: 800,
   letterSpacing: '0.35em',
@@ -288,7 +288,7 @@ const btnStyle = (bg) => ({
   border: 'none',
   borderRadius: 12,
   padding: '11px 16px',
-  fontFamily: 'Tajawal, sans-serif',
+  fontFamily: 'Cairo, sans-serif',
   fontWeight: 900,
   fontSize: '0.92rem',
   cursor: 'pointer',

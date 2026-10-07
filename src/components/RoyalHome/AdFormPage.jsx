@@ -372,7 +372,7 @@ const AdFormPage = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontFamily: 'Tajawal, sans-serif',
+          fontFamily: 'Cairo, sans-serif',
         }}
       >
         <div
@@ -402,7 +402,7 @@ const AdFormPage = () => {
           alignItems: 'center',
           justifyContent: 'center',
           padding: '2rem',
-          fontFamily: 'Tajawal, sans-serif',
+          fontFamily: 'Cairo, sans-serif',
         }}
       >
         <div
@@ -486,7 +486,7 @@ const AdFormPage = () => {
           alignItems: 'center',
           justifyContent: 'center',
           padding: '2rem',
-          fontFamily: 'Tajawal, sans-serif',
+          fontFamily: 'Cairo, sans-serif',
         }}
       >
         <div
@@ -566,7 +566,7 @@ const AdFormPage = () => {
         background:
           'linear-gradient(180deg, #fdfbf7 0%, #faf6f1 55%, #f5efe8 100%)',
         padding: '1.5rem',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
       }}
     >
       <style>

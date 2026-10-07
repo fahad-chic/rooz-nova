@@ -54,7 +54,7 @@ const buttonBaseStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  fontFamily: 'Tajawal, Arial, sans-serif',
+  fontFamily: 'Cairo, Arial, sans-serif',
   WebkitTapHighlightColor: 'transparent',
 };
 
@@ -138,7 +138,7 @@ const ContactPage = () => {
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
-    fontFamily: 'Tajawal, Arial, sans-serif',
+    fontFamily: 'Cairo, Arial, sans-serif',
   };
 
   const cardStyle = {
@@ -158,7 +158,7 @@ const ContactPage = () => {
         background:
           'linear-gradient(180deg, #fdfbf7 0%, #fdfbf7 50%, #fdfbf7 100%)',
         padding: 'clamp(1rem, 4vw, 1.5rem)',
-        fontFamily: 'Tajawal, Arial, sans-serif',
+        fontFamily: 'Cairo, Arial, sans-serif',
         color: GOLD_LIGHT,
       }}
     >
@@ -836,7 +836,7 @@ const ContactPage = () => {
                 margin: 0,
                 whiteSpace: 'pre-wrap',
                 wordBreak: 'break-word',
-                fontFamily: 'Tajawal, Arial, sans-serif',
+                fontFamily: 'Cairo, Arial, sans-serif',
                 fontSize: '0.88rem',
                 lineHeight: 2,
                 color: GOLD_LIGHT,

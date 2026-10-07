@@ -33,7 +33,7 @@ const OwnerEditBadge = ({ to, label = 'تعديل' }) => {
         border: '1.5px solid #6b1d2f',
         borderRadius: 999,
         padding: '5px 11px',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
         fontWeight: 800,
         fontSize: '0.72rem',
         cursor: 'pointer',

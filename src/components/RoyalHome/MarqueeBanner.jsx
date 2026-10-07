@@ -329,7 +329,7 @@ const MarqueeBanner = ({
             bottom: "-35%",
             width: "28%",
             background:
-              "linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent)",
+              "linear-gradient(90deg, transparent, rgb(255, 255, 255, 0.16), transparent)",
             pointerEvents: "none",
             zIndex: 0,
           }}

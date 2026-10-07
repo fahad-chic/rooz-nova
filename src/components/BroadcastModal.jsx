@@ -69,7 +69,7 @@ const BroadcastModal = ({ onClose }) => {
         background: 'rgba(31, 17, 22, 0.72)',
         backdropFilter: 'blur(8px)',
         padding: '1rem',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
       }}
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose?.();

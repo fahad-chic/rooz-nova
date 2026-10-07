@@ -32,7 +32,7 @@ const ProductCard = ({
               alignItems: 'center',
               justifyContent: 'center',
               zIndex: 15000,
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
               padding: '1rem',
             }}
             onClick={() => setGuestBlocked(false)}
@@ -176,7 +176,7 @@ const ProductCard = ({
     alignItems: 'center',
     justifyContent: 'center',
     gap: '0.5rem',
-    fontFamily: 'Tajawal, sans-serif',
+    fontFamily: 'Cairo, sans-serif',
     transition: 'all 0.3s ease',
     boxShadow: '0 5px 14px rgba(61, 15, 24, 0.2)',
   };
@@ -286,7 +286,7 @@ const ProductCard = ({
                   cursor: 'pointer',
                   fontSize: '0.7rem',
                   color: '#fff',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                 }}
               >
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
@@ -446,7 +446,7 @@ const ProductCard = ({
                   cursor: 'pointer',
                   fontSize: '0.7rem',
                   color: '#fff',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                 }}
               >
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
@@ -648,7 +648,7 @@ const ProductCard = ({
                   cursor: 'pointer',
                   fontSize: '0.65rem',
                   color: '#fff',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                 }}
               >
                 <Pencil size={12} color="#fff" />

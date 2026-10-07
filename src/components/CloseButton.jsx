@@ -88,7 +88,7 @@ const CloseButton = ({
     cursor: 'pointer',
     boxShadow: '0 8px 22px rgba(31, 17, 22,0.28)',
     transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-    fontFamily: 'Tajawal, sans-serif',
+    fontFamily: 'Cairo, sans-serif',
     ...cornerStyle,
   };
 

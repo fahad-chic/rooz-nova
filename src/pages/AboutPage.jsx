@@ -30,7 +30,7 @@ export const AboutPage = () => {
           max-width: 1180px;
           margin: 0 auto;
           min-height: calc(100vh - 70px);
-          font-family: 'Tajawal', sans-serif;
+          font-family: 'Cairo', sans-serif;
         }
 
         .about-header {

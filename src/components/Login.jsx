@@ -1612,7 +1612,7 @@ const Login = () => {
                 boxShadow:
                   '0 20px 60px rgba(31, 17, 22,0.6)',
                 fontFamily:
-                  'Tajawal, sans-serif',
+                  'Cairo, sans-serif',
               }}
               onClick={(e) =>
                 e.stopPropagation()
@@ -1814,7 +1814,7 @@ const Login = () => {
               zIndex: 15000,
               padding: 16,
               fontFamily:
-                'Tajawal, sans-serif',
+                'Cairo, sans-serif',
             }}
             onClick={() =>
               setGuestEntryOpen(false)

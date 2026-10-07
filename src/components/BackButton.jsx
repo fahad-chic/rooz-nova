@@ -68,7 +68,7 @@ const BackButton = () => {
         color: '#1f1116',
         fontWeight: 800,
         fontSize: '0.82rem',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
         cursor: 'pointer',
         boxShadow: '0 2px 10px rgba(61, 15, 24,0.2)',
         WebkitTapHighlightColor: 'transparent',

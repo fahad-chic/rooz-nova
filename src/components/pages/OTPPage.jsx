@@ -39,7 +39,7 @@ const OTPPage = () => {
   }
 
   return (
-    <div className="min-h-screen w-full marble-bg p-4 font-Tajawal" dir="rtl">
+    <div className="min-h-screen w-full marble-bg p-4 font-Cairo" dir="rtl">
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <h1
           style={{
