@@ -1,0 +1,421 @@
+/* src/styles/NovHome.css
+   ROOZ NOVA — تخطيط جديد كلياً للصفحة الرئيسية
+   بنية مختلفة: هيرو عريض + شريط مزايا + شبكة أقسام تفاعلية */
+
+.nov-home {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 0.75rem 1rem;
+}
+
+/* ===== الهيرو العريض ===== */
+.nov-hero {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  margin: 0.75rem 0 1rem;
+  padding: 1.6rem 1.4rem 1.5rem;
+  background:
+    radial-gradient(120% 140% at 12% 0%, rgba(6, 182, 212, 0.42), transparent 55%),
+    radial-gradient(120% 140% at 100% 100%, rgba(124, 58, 237, 0.55), transparent 55%),
+    linear-gradient(135deg, #1a1147 0%, #2b1a6b 48%, #0e1030 100%);
+  box-shadow: 0 26px 60px -22px rgba(43, 22, 108, 0.75);
+  color: #f2f0ff;
+}
+
+.nov-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 22px 22px;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.nov-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.1rem;
+  align-items: center;
+}
+
+.nov-hero-logo {
+  width: 112px;
+  height: 112px;
+  object-fit: contain;
+  border-radius: 26px;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 12px 32px rgba(6, 182, 212, 0.32);
+}
+
+.nov-hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  padding: 4px 12px;
+  border-radius: 999px;
+  color: #d7fbff;
+  background: rgba(6, 182, 212, 0.2);
+  border: 1px solid rgba(6, 182, 212, 0.5);
+}
+
+.nov-hero-title {
+  margin: 0.5rem 0 0.3rem;
+  font-size: clamp(1.5rem, 4.4vw, 2.35rem);
+  font-weight: 900;
+  line-height: 1.15;
+  background: linear-gradient(100deg, #ffffff 0%, #cbbaf9 45%, #7de7f7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.nov-hero-sub {
+  margin: 0 0 0.9rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #d7d2f0;
+  max-width: 46ch;
+}
+
+.nov-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.nov-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.6rem 1.15rem;
+  border-radius: 14px;
+  border: none;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.nov-btn:active {
+  transform: scale(0.97);
+}
+
+.nov-btn-primary {
+  color: #fff;
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 55%, #06b6d4 130%);
+  box-shadow: 0 12px 26px -8px rgba(79, 70, 229, 0.7);
+}
+
+.nov-btn-ghost {
+  color: #f2f0ff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+}
+
+/* ===== شريط المزايا ===== */
+.nov-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.nov-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 0.85rem 0.75rem;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(124, 58, 237, 0.18);
+  box-shadow: 0 10px 26px -18px rgba(43, 22, 108, 0.5);
+  text-align: right;
+}
+
+.nov-feature-ico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+  color: #fff;
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+}
+
+.nov-feature h4 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: #1a1147;
+}
+
+.nov-feature p {
+  margin: 0;
+  font-size: 0.7rem;
+  color: #5b5680;
+  line-height: 1.5;
+}
+
+.nov-feature input {
+  width: 100%;
+  margin-top: 0.15rem;
+  padding: 0.4rem 0.55rem;
+  border-radius: 10px;
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  background: #f7f6fd;
+  font-family: inherit;
+  font-size: 0.68rem;
+  text-align: center;
+}
+
+.nov-feature .nov-mini-btn {
+  margin-top: 0.3rem;
+  width: 100%;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0.35rem;
+  font-size: 0.72rem;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  background: linear-gradient(135deg, #7c3aed, #4f46e5);
+}
+
+.nov-feature-status {
+  font-size: 0.62rem;
+  font-weight: 700;
+}
+
+/* ===== عنوان قسم ===== */
+.nov-sec-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin: 0.4rem 0 0.7rem;
+}
+
+.nov-sec-head h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #1a1147;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.nov-sec-head h2::before {
+  content: "";
+  width: 8px;
+  height: 22px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #4f46e5, #06b6d4);
+}
+
+.nov-sec-count {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #4f46e5;
+  background: rgba(79, 70, 229, 0.1);
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+/* ===== شبكة الأقسام ===== */
+.nov-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.6rem;
+}
+
+.nov-tile {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(124, 58, 237, 0.16);
+  box-shadow: 0 12px 30px -22px rgba(43, 22, 108, 0.6);
+  cursor: pointer;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+  text-align: right;
+  font-family: inherit;
+}
+
+.nov-tile:hover {
+  transform: translateY(-3px);
+  border-color: rgba(79, 70, 229, 0.5);
+  box-shadow: 0 18px 34px -20px rgba(79, 70, 229, 0.55);
+}
+
+.nov-tile[data-open="true"] {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.35);
+}
+
+.nov-tile-ico {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  color: #fff;
+}
+
+.nov-tile-body {
+  min-width: 0;
+  flex: 1;
+}
+
+.nov-tile-body h3 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 900;
+  color: #1a1147;
+  line-height: 1.3;
+}
+
+.nov-tile-body span {
+  font-size: 0.66rem;
+  color: #6f6a91;
+  font-weight: 700;
+}
+
+/* ===== لوحة الفروع الموسّعة ===== */
+.nov-branch-panel {
+  margin-top: 0.7rem;
+  padding: 0.9rem;
+  border-radius: 20px;
+  background: linear-gradient(150deg, #ffffff, #f3f1fc);
+  border: 1px solid rgba(124, 58, 237, 0.22);
+  box-shadow: 0 18px 40px -26px rgba(43, 22, 108, 0.7);
+}
+
+.nov-branch-panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.nov-branch-panel-head h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #1a1147;
+}
+
+.nov-branch-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  border: none;
+  cursor: pointer;
+  color: #4f46e5;
+  background: rgba(79, 70, 229, 0.1);
+}
+
+.nov-branch-chips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.5rem;
+}
+
+.nov-branch-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: 12px;
+  border: 1px solid rgba(79, 70, 229, 0.2);
+  background: #ffffff;
+  color: #241f47;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.15s ease;
+}
+
+.nov-branch-chip:hover {
+  background: linear-gradient(135deg, #4f46e5, #06b6d4);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===== شريط حراج ===== */
+.nov-haraj {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin: 1rem 0;
+  padding: 1rem 1.1rem;
+  border-radius: 22px;
+  color: #fff;
+  background: linear-gradient(120deg, #0e1030 0%, #3b1690 55%, #0e7c98 120%);
+  box-shadow: 0 20px 44px -26px rgba(43, 22, 108, 0.8);
+}
+
+.nov-haraj h3 {
+  margin: 0 0 0.15rem;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.nov-haraj p {
+  margin: 0;
+  font-size: 0.74rem;
+  color: #cfc9ee;
+}
+
+@media (max-width: 640px) {
+  .nov-hero {
+    padding: 1.2rem 1rem;
+    border-radius: 22px;
+  }
+  .nov-hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .nov-hero-logo {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto;
+  }
+  .nov-hero-cta {
+    justify-content: center;
+  }
+  .nov-features {
+    grid-template-columns: 1fr;
+  }
+  .nov-haraj {
+    flex-direction: column;
+    text-align: center;
+  }
+}

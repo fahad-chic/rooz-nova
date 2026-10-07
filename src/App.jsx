@@ -85,7 +85,7 @@ window.addEventListener('load', () => {
 
 const Dashboard = safeLazy(() => import('./pages/Dashboard'));
 const RoyalHomePage = safeLazy(() =>
-  import('./components/RoyalHome/RoyalHomePage')
+  import('./components/RoyalHome/NovHomePage')
 );
 const CatalogPage = safeLazy(() =>
   import('./components/RoyalHome/CatalogPage')
