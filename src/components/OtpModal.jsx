@@ -124,13 +124,13 @@ const OtpModal = ({ email, purpose = 'login', onVerified, onClose, loading = fal
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgb(9, 6, 27,0.75)',
+        background: 'rgb(11, 18, 32,0.75)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         zIndex: 10000,
         padding: 16,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Tajawal, sans-serif',
       }}
     >
       <div
@@ -138,11 +138,11 @@ const OtpModal = ({ email, purpose = 'login', onVerified, onClose, loading = fal
           width: '100%',
           maxWidth: 440,
           background: '#111',
-          border: '1px solid rgb(123, 81, 217,0.3)',
+          border: '1px solid rgb(59, 130, 246,0.3)',
           borderRadius: 16,
           padding: '1.75rem 1.5rem',
           position: 'relative',
-          boxShadow: '0 20px 60px rgb(9, 6, 27,0.5)',
+          boxShadow: '0 20px 60px rgb(11, 18, 32,0.5)',
         }}
       >
         <button
@@ -170,20 +170,20 @@ const OtpModal = ({ email, purpose = 'login', onVerified, onClose, loading = fal
               height: 64,
               margin: '0 auto 12px',
               borderRadius: '50%',
-              background: 'rgb(123, 81, 217,0.12)',
+              background: 'rgb(59, 130, 246,0.12)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
             }}
           >
-            <Mail size={30} color="#7b51d9" />
+            <Mail size={30} color="#3b82f6" />
           </div>
-          <h2 style={{ color: '#7b51d9', fontSize: 22, fontWeight: 700, margin: '0 0 6px' }}>
+          <h2 style={{ color: '#3b82f6', fontSize: 22, fontWeight: 700, margin: '0 0 6px' }}>
             أدخل كود التحقق
           </h2>
           <p
             style={{
-              color: '#cbbaf9',
+              color: '#c7dbfe',
               fontSize: 17,
               fontWeight: 800,
               margin: '0 0 8px',
@@ -197,15 +197,15 @@ const OtpModal = ({ email, purpose = 'login', onVerified, onClose, loading = fal
           <p style={{ color: '#bbb', fontSize: 14, margin: '0 0 10px' }}>
             أرسلنا كوداً من 6 أرقام إلى:
             <br />
-            <b style={{ color: '#cbbaf9', wordBreak: 'break-all' }}>{email}</b>
+            <b style={{ color: '#c7dbfe', wordBreak: 'break-all' }}>{email}</b>
           </p>
           <p
             style={{
-              color: '#997ad9',
+              color: '#7a9ed9',
               fontSize: 13,
               margin: '0 0 16px',
-              background: 'rgb(123, 81, 217,0.08)',
-              border: '1px solid rgb(123, 81, 217,0.2)',
+              background: 'rgb(59, 130, 246,0.08)',
+              border: '1px solid rgb(59, 130, 246,0.2)',
               borderRadius: 10,
               padding: '8px 10px',
               lineHeight: 1.7,
@@ -280,8 +280,8 @@ const OtpModal = ({ email, purpose = 'login', onVerified, onClose, loading = fal
                   fontSize: 24,
                   fontWeight: 700,
                   color: '#fff',
-                  background: '#0d0a29',
-                  border: '1px solid rgb(123, 81, 217,0.4)',
+                  background: '#101a2b',
+                  border: '1px solid rgb(59, 130, 246,0.4)',
                   borderRadius: 10,
                   outline: 'none',
                 }}
@@ -297,8 +297,8 @@ const OtpModal = ({ email, purpose = 'login', onVerified, onClose, loading = fal
               padding: '13px',
               background:
                 busy || code.length !== 6
-                  ? '#271262'
-                  : 'linear-gradient(135deg, #7b51d9, #1e40af)',
+                  ? '#364662'
+                  : 'linear-gradient(135deg, #3b82f6, #1e40af)',
               color: '#fff',
               border: 'none',
               borderRadius: 10,
@@ -326,7 +326,7 @@ const OtpModal = ({ email, purpose = 'login', onVerified, onClose, loading = fal
         <div style={{ textAlign: 'center', marginTop: 14, fontSize: 14, color: '#aaa' }}>
           {resendTimer > 0 ? (
             <span>
-              إعادة الإرسال بعد <b style={{ color: '#7b51d9' }}>{resendTimer}</b> ثانية
+              إعادة الإرسال بعد <b style={{ color: '#3b82f6' }}>{resendTimer}</b> ثانية
             </span>
           ) : (
             <button
@@ -336,7 +336,7 @@ const OtpModal = ({ email, purpose = 'login', onVerified, onClose, loading = fal
               style={{
                 background: 'none',
                 border: 'none',
-                color: '#7b51d9',
+                color: '#3b82f6',
                 cursor: busy ? 'not-allowed' : 'pointer',
                 fontWeight: 700,
                 fontSize: 14,

@@ -4,7 +4,7 @@
   "description": "منصة تجارة فاخرة معتمدة - أزياء راقية من أناقة ROOZ",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#100b30",
+  "background_color": "#eceff4",
   "theme_color": "#2563eb",
   "orientation": "portrait",
   "scope": "/",

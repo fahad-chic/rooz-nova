@@ -11,8 +11,8 @@ export default {
         luxury: { gold: '#2563eb' },
 
         royal: {
-          black: "#0a071e",
-          marble: "#0e0a2b",
+          black: "#0b1220",
+          marble: "#101a2b",
           gold: "#2563eb",
           goldSoft: "#1d4ed8",
           goldDim: "#1e3a8a",
@@ -30,7 +30,7 @@ export default {
         "royal-goldBright": "#93c5fd",
         "royal-goldSoft": "#1d4ed8",
         "royal-white": "#f8f8f8",
-        "royal-black": "#0d0a29",
+        "royal-black": "#101a2b",
 
         glassUltra: "rgb(255, 255, 255,0.15)",
         glassMedium: "rgb(255, 255, 255,0.25)",
@@ -52,7 +52,7 @@ export default {
 
       boxShadow: {
         royal: "0 0 20px rgb(37, 99, 235,0.30)",
-        marble: "0 6px 20px rgb(9, 6, 27,0.40)",
+        marble: "0 6px 20px rgb(11, 18, 32,0.40)",
         glass: "0 4px 14px rgb(255, 255, 255,0.12)",
 
         // ظل ملكي ثلاثي خاص لمربع صاحب الموقع

@@ -72,7 +72,7 @@
   font-size: clamp(1.5rem, 4.4vw, 2.35rem);
   font-weight: 900;
   line-height: 1.15;
-  background: linear-gradient(100deg, #ffffff 0%, #cbbaf9 45%, #7de7f7 100%);
+  background: linear-gradient(100deg, #ffffff 0%, #c7dbfe 45%, #7de7f7 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -164,7 +164,7 @@
 .nov-feature p {
   margin: 0;
   font-size: 0.7rem;
-  color: #5b5680;
+  color: #566680;
   line-height: 1.5;
 }
 
@@ -297,7 +297,7 @@
 
 .nov-tile-body span {
   font-size: 0.66rem;
-  color: #6f6a91;
+  color: #6a7991;
   font-weight: 700;
 }
 
@@ -354,7 +354,7 @@
   border-radius: 12px;
   border: 1px solid rgba(37, 99, 235, 0.2);
   background: #ffffff;
-  color: #241f47;
+  color: #313947;
   font-family: inherit;
   font-size: 0.75rem;
   font-weight: 800;
@@ -378,7 +378,7 @@
   padding: 1rem 1.1rem;
   border-radius: 22px;
   color: #fff;
-  background: linear-gradient(120deg, #08111f 0%, #3b1690 55%, #0e7c98 120%);
+  background: linear-gradient(120deg, #08111f 0%, #164590 55%, #0e7c98 120%);
   box-shadow: 0 20px 44px -26px rgba(15, 42, 105, 0.8);
 }
 

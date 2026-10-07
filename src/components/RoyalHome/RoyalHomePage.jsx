@@ -104,12 +104,12 @@ const RoyalHomePage = () => {
             padding: 0 0.4rem;
           }
           .rh-icon-card {
-            background: linear-gradient(145deg, #f4f1f9, #eae4f3);
+            background: linear-gradient(145deg, #f5f7fa, #e6ebf2);
             border: 1.5px solid rgb(37, 99, 235,0.42);
             border-radius: 14px;
             padding: 0.65rem 0.4rem;
             text-align: center;
-            box-shadow: 0 3px 12px rgb(15, 11, 46,0.08);
+            box-shadow: 0 3px 12px rgb(27, 34, 46,0.08);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             min-height: 88px;
             display: flex;
@@ -126,7 +126,7 @@ const RoyalHomePage = () => {
             margin: 0;
             font-size: 0.78rem;
             font-weight: 800;
-            color: #0b0822;
+            color: #0b1017;
             line-height: 1.3;
             word-break: break-word;
             overflow-wrap: anywhere;
@@ -136,7 +136,7 @@ const RoyalHomePage = () => {
           .rh-icon-card p {
             margin: 0;
             font-size: 0.62rem;
-            color: #3d2369;
+            color: #475569;
             line-height: 1.35;
             word-break: break-word;
             overflow-wrap: anywhere;
@@ -146,7 +146,7 @@ const RoyalHomePage = () => {
           .rh-icon-btn {
             margin-top: 0.2rem;
             background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            color: #0b0822;
+            color: #0b1017;
             border: none;
             border-radius: 7px;
             padding: 0.22rem 0.45rem;
@@ -181,7 +181,7 @@ const RoyalHomePage = () => {
           banners={MARQUEE_BANNERS_2}
           editableKeys={['marquee4', 'marquee5', 'marquee6']}
           label="عروض ROOZ"
-          barBg="linear-gradient(90deg, #110c33 0%, #341072 50%, #110c33 100%)"
+          barBg="linear-gradient(90deg, #1e2533 0%, #103672 50%, #1e2533 100%)"
         />
       </div>
 
@@ -218,7 +218,7 @@ const RoyalHomePage = () => {
               color: '#000',
               fontSize: 'clamp(0.98rem, 3vw, 1.35rem)',
               fontWeight: 800,
-              fontFamily: "'Cairo', 'Amiri', serif",
+              fontFamily: "'Tajawal', 'Amiri', serif",
               letterSpacing: '0.02em',
               display: 'inline-flex',
               alignItems: 'center',
@@ -226,7 +226,7 @@ const RoyalHomePage = () => {
               border: '2.2px double #1e40af',
               borderRadius: '50px',
               padding: '3px 11px',
-              boxShadow: 'inset 0 0 3px rgb(74, 34, 155,0.2), 0 1px 3px rgb(9, 6, 27,0.05)',
+              boxShadow: 'inset 0 0 3px rgb(34, 80, 155,0.2), 0 1px 3px rgb(11, 18, 32,0.05)',
               backgroundColor: 'transparent',
               whiteSpace: 'nowrap'
             }}
@@ -326,8 +326,8 @@ const RoyalHomePage = () => {
             padding: '0.7rem 0.9rem',
             borderRadius: 14,
             border: '1.5px solid #2563eb',
-            background: 'linear-gradient(145deg, #f4f1f9, #eae4f3)',
-            color: '#0b0822',
+            background: 'linear-gradient(145deg, #f5f7fa, #e6ebf2)',
+            color: '#0b1017',
             fontWeight: 900,
             fontSize: '0.92rem',
             fontFamily: 'inherit',
@@ -385,8 +385,8 @@ const RoyalHomePage = () => {
                       padding: '0.4rem 0.65rem',
                       borderRadius: 10,
                       border: '1.5px solid rgb(37, 99, 235,0.45)',
-                      background: isOpen ? 'rgb(59, 130, 246,0.35)' : '#f4f1f9',
-                      color: '#0b0822',
+                      background: isOpen ? 'rgb(59, 130, 246,0.35)' : '#f5f7fa',
+                      color: '#0b1017',
                       fontWeight: 800,
                       fontSize: '0.75rem',
                       fontFamily: 'inherit',
@@ -560,7 +560,7 @@ const RoyalHomePage = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgb(13, 9, 39,0.55)',
+            background: 'rgb(22, 29, 39,0.55)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -571,15 +571,15 @@ const RoyalHomePage = () => {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: 'linear-gradient(145deg,#f4f1f9,#e0d7f5)',
+              background: 'linear-gradient(145deg,#f5f7fa,#e0d7f5)',
               border: '1px solid rgb(30, 58, 138,0.45)',
               borderRadius: 16,
               padding: '1.2rem 1rem',
               maxWidth: 340,
               width: '100%',
               textAlign: 'right',
-              boxShadow: '0 18px 45px rgb(15, 11, 46,0.35)',
-              fontFamily: 'Cairo,sans-serif'
+              boxShadow: '0 18px 45px rgb(27, 34, 46,0.35)',
+              fontFamily: 'Tajawal,sans-serif'
             }}
           >
             <div
@@ -596,7 +596,7 @@ const RoyalHomePage = () => {
                   margin: 0,
                   fontSize: '1rem',
                   fontWeight: 800,
-                  color: '#200d4f'
+                  color: '#14274d'
                 }}
               >
                 كيف تضيف المتجر لشاشة هاتفك؟
@@ -607,7 +607,7 @@ const RoyalHomePage = () => {
                 onClick={() => setShowAddHelp(false)}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(9, 6, 27,0.06)',
+                  background: 'rgb(11, 18, 32,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -617,7 +617,7 @@ const RoyalHomePage = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#2e1666',
+                  color: '#152a54',
                 }}
               >
                 <X size={16} />
@@ -629,7 +629,7 @@ const RoyalHomePage = () => {
                 margin: 0,
                 paddingRight: '1.1rem',
                 fontSize: '0.82rem',
-                color: '#2e1666',
+                color: '#152a54',
                 lineHeight: 1.7
               }}
             >
@@ -646,7 +646,7 @@ const RoyalHomePage = () => {
                 marginTop: '0.9rem',
                 width: '100%',
                 background: 'linear-gradient(135deg,#2563eb,#1d4ed8)',
-                color: '#0b0822',
+                color: '#0b1017',
                 border: 'none',
                 borderRadius: 10,
                 padding: '0.5rem',

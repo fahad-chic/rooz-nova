@@ -54,8 +54,8 @@ async function sendEmail(env, email, code, purpose) {
         : "التحقق";
 
   const html = `
-    <div dir="rtl" style="font-family:Arial,Tahoma,sans-serif;max-width:480px;margin:auto;padding:24px;background:#0b0821;color:#cbbaf9;border:1px solid rgb(123, 81, 217,.3);border-radius:12px">
-      <h2 style="color:#7b51d9;text-align:center;margin-top:0">
+    <div dir="rtl" style="font-family:Arial,Tahoma,sans-serif;max-width:480px;margin:auto;padding:24px;background:#0b1017;color:#c7dbfe;border:1px solid rgb(59, 130, 246,.3);border-radius:12px">
+      <h2 style="color:#3b82f6;text-align:center;margin-top:0">
         أناقة ROOZ 
       </h2>
 
@@ -64,7 +64,7 @@ async function sendEmail(env, email, code, purpose) {
       </p>
 
       <div style="text-align:center;margin:24px 0">
-        <span style="display:inline-block;font-size:36px;font-weight:bold;letter-spacing:8px;color:#fff;background:#0d0a29;padding:16px 24px;border-radius:10px;border:1px solid #7b51d9">
+        <span style="display:inline-block;font-size:36px;font-weight:bold;letter-spacing:8px;color:#fff;background:#101a2b;padding:16px 24px;border-radius:10px;border:1px solid #3b82f6">
           ${code}
         </span>
       </div>

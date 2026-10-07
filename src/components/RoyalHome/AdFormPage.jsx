@@ -368,11 +368,11 @@ const AdFormPage = () => {
         style={{
           minHeight: '100vh',
           background:
-            'linear-gradient(180deg, #0a0720 0%, #0d0928 30%, #100b30 50%, #0c0925 100%)',
+            'linear-gradient(180deg, #0b1220 0%, #0e1626 30%, #101a2b 50%, #0e1626 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          fontFamily: 'Cairo, sans-serif',
+          fontFamily: 'Tajawal, sans-serif',
         }}
       >
         <div
@@ -397,20 +397,20 @@ const AdFormPage = () => {
         style={{
           minHeight: '100vh',
           background:
-            'linear-gradient(180deg, #0a0720 0%, #0d0928 30%, #100b30 50%, #0c0925 100%)',
+            'linear-gradient(180deg, #0b1220 0%, #0e1626 30%, #101a2b 50%, #0e1626 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           padding: '2rem',
-          fontFamily: 'Cairo, sans-serif',
+          fontFamily: 'Tajawal, sans-serif',
         }}
       >
         <div
           style={{
             textAlign: 'center',
             background:
-              'linear-gradient(145deg, rgb(14, 10, 42, 0.95) 0%, rgb(11, 8, 33, 0.98) 100%)',
-            border: '1px solid rgb(127, 83, 226, 0.3)',
+              'linear-gradient(145deg, rgb(24, 31, 42, 0.95) 0%, rgb(19, 24, 33, 0.98) 100%)',
+            border: '1px solid rgb(83, 138, 226, 0.3)',
             borderRadius: 24,
             padding: '2rem',
             maxWidth: 400,
@@ -422,7 +422,7 @@ const AdFormPage = () => {
               width: 64,
               height: 64,
               background:
-                'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
+                'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
@@ -430,14 +430,14 @@ const AdFormPage = () => {
               margin: '0 auto 1.5rem',
             }}
           >
-            <Shield size={32} color="#0a0720" />
+            <Shield size={32} color="#0b1220" />
           </div>
           <h2
             style={{
               margin: '0 0 1rem',
               fontSize: '1.25rem',
               fontWeight: 800,
-              color: '#cbbaf9',
+              color: '#c7dbfe',
             }}
           >
             تسجيل الدخول مطلوب
@@ -446,7 +446,7 @@ const AdFormPage = () => {
             style={{
               margin: '0 0 1.5rem',
               fontSize: '0.95rem',
-              color: '#c8b6f4',
+              color: '#b6cef4',
               lineHeight: 1.7,
             }}
           >
@@ -457,14 +457,14 @@ const AdFormPage = () => {
             onClick={() => navigate('/haraj')}
             style={{
               background:
-                'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
+                'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
               border: 'none',
               borderRadius: 12,
               padding: '1rem 2rem',
               cursor: 'pointer',
               fontSize: '1rem',
               fontWeight: 700,
-              color: '#0a0720',
+              color: '#0b1220',
               fontFamily: 'inherit',
             }}
           >
@@ -481,20 +481,20 @@ const AdFormPage = () => {
         style={{
           minHeight: '100vh',
           background:
-            'linear-gradient(180deg, #0a0720 0%, #0d0928 30%, #100b30 50%, #0c0925 100%)',
+            'linear-gradient(180deg, #0b1220 0%, #0e1626 30%, #101a2b 50%, #0e1626 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           padding: '2rem',
-          fontFamily: 'Cairo, sans-serif',
+          fontFamily: 'Tajawal, sans-serif',
         }}
       >
         <div
           style={{
             textAlign: 'center',
             background:
-              'linear-gradient(145deg, rgb(14, 10, 42, 0.95) 0%, rgb(11, 8, 33, 0.98) 100%)',
-            border: '1px solid rgb(127, 83, 226, 0.3)',
+              'linear-gradient(145deg, rgb(24, 31, 42, 0.95) 0%, rgb(19, 24, 33, 0.98) 100%)',
+            border: '1px solid rgb(83, 138, 226, 0.3)',
             borderRadius: 24,
             padding: '3rem 2rem',
             maxWidth: 500,
@@ -521,7 +521,7 @@ const AdFormPage = () => {
               margin: '0 0 1rem',
               fontSize: '1.5rem',
               fontWeight: 800,
-              color: '#cbbaf9',
+              color: '#c7dbfe',
             }}
           >
             تم إرسال إعلانك بنجاح!
@@ -530,7 +530,7 @@ const AdFormPage = () => {
             style={{
               margin: '0 0 2rem',
               fontSize: '1rem',
-              color: '#c8b6f4',
+              color: '#b6cef4',
               lineHeight: 1.8,
             }}
           >
@@ -541,14 +541,14 @@ const AdFormPage = () => {
             onClick={() => navigate('/haraj')}
             style={{
               background:
-                'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
+                'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
               border: 'none',
               borderRadius: 12,
               padding: '1rem 2rem',
               cursor: 'pointer',
               fontSize: '1rem',
               fontWeight: 700,
-              color: '#0a0720',
+              color: '#0b1220',
               fontFamily: 'inherit',
             }}
           >
@@ -564,9 +564,9 @@ const AdFormPage = () => {
       style={{
         minHeight: '100vh',
         background:
-          'linear-gradient(180deg, #0a0720 0%, #0d0928 30%, #100b30 50%, #0c0925 100%)',
+          'linear-gradient(180deg, #0b1220 0%, #0e1626 30%, #101a2b 50%, #0e1626 100%)',
         padding: '1.5rem',
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Tajawal, sans-serif',
       }}
     >
       <style>
@@ -620,8 +620,8 @@ const AdFormPage = () => {
             step === 1 ? navigate('/haraj') : setStep(1)
           }
           style={{
-            background: 'rgb(127, 83, 226, 0.15)',
-            border: '1px solid rgb(127, 83, 226, 0.3)',
+            background: 'rgb(83, 138, 226, 0.15)',
+            border: '1px solid rgb(83, 138, 226, 0.3)',
             borderRadius: 12,
             padding: '0.75rem',
             cursor: 'pointer',
@@ -635,7 +635,7 @@ const AdFormPage = () => {
             margin: 0,
             fontSize: '1.5rem',
             fontWeight: 800,
-            color: '#cbbaf9',
+            color: '#c7dbfe',
           }}
         >
           {step === 1 ? 'إضافة إعلان جديد' : 'تأكيد النشر'}
@@ -668,8 +668,8 @@ const AdFormPage = () => {
           <div
             style={{
               background:
-                'linear-gradient(145deg, rgb(14, 10, 42, 0.95) 0%, rgb(11, 8, 33, 0.98) 100%)',
-              border: '1px solid rgb(127, 83, 226, 0.2)',
+                'linear-gradient(145deg, rgb(24, 31, 42, 0.95) 0%, rgb(19, 24, 33, 0.98) 100%)',
+              border: '1px solid rgb(83, 138, 226, 0.2)',
               borderRadius: 24,
               padding: '2rem',
             }}
@@ -680,7 +680,7 @@ const AdFormPage = () => {
                   display: 'block',
                   fontSize: '0.9rem',
                   fontWeight: 600,
-                  color: '#cbbaf9',
+                  color: '#c7dbfe',
                   marginBottom: '0.5rem',
                 }}
               >
@@ -694,10 +694,10 @@ const AdFormPage = () => {
                 placeholder="مثال: ساعة رولكس ذهبية"
                 style={{
                   width: '100%',
-                  background: 'rgb(9, 6, 27, 0.3)',
+                  background: 'rgb(11, 18, 32, 0.3)',
                   border: errors.name
                     ? '1px solid #eb4866'
-                    : '1px solid rgb(127, 83, 226, 0.2)',
+                    : '1px solid rgb(83, 138, 226, 0.2)',
                   borderRadius: 12,
                   padding: '0.85rem 1rem',
                   color: '#dbd4ed',
@@ -725,7 +725,7 @@ const AdFormPage = () => {
                   display: 'block',
                   fontSize: '0.9rem',
                   fontWeight: 600,
-                  color: '#cbbaf9',
+                  color: '#c7dbfe',
                   marginBottom: '0.5rem',
                 }}
               >
@@ -737,10 +737,10 @@ const AdFormPage = () => {
                 onChange={handleChange}
                 style={{
                   width: '100%',
-                  background: 'rgb(9, 6, 27, 0.3)',
+                  background: 'rgb(11, 18, 32, 0.3)',
                   border: errors.category
                     ? '1px solid #eb4866'
-                    : '1px solid rgb(127, 83, 226, 0.2)',
+                    : '1px solid rgb(83, 138, 226, 0.2)',
                   borderRadius: 12,
                   padding: '0.85rem 1rem',
                   color: formData.category ? '#dbd4ed' : '#888',
@@ -785,7 +785,7 @@ const AdFormPage = () => {
                     display: 'block',
                     fontSize: '0.9rem',
                     fontWeight: 600,
-                    color: '#cbbaf9',
+                    color: '#c7dbfe',
                     marginBottom: '0.5rem',
                   }}
                 >
@@ -799,8 +799,8 @@ const AdFormPage = () => {
                   placeholder="مثال: L, 42, كبير"
                   style={{
                     width: '100%',
-                    background: 'rgb(9, 6, 27, 0.3)',
-                    border: '1px solid rgb(127, 83, 226, 0.2)',
+                    background: 'rgb(11, 18, 32, 0.3)',
+                    border: '1px solid rgb(83, 138, 226, 0.2)',
                     borderRadius: 12,
                     padding: '0.85rem 1rem',
                     color: '#dbd4ed',
@@ -817,7 +817,7 @@ const AdFormPage = () => {
                     display: 'block',
                     fontSize: '0.9rem',
                     fontWeight: 600,
-                    color: '#cbbaf9',
+                    color: '#c7dbfe',
                     marginBottom: '0.5rem',
                   }}
                 >
@@ -834,10 +834,10 @@ const AdFormPage = () => {
                   inputMode="decimal"
                   style={{
                     width: '100%',
-                    background: 'rgb(9, 6, 27, 0.3)',
+                    background: 'rgb(11, 18, 32, 0.3)',
                     border: errors.price
                       ? '1px solid #eb4866'
-                      : '1px solid rgb(127, 83, 226, 0.2)',
+                      : '1px solid rgb(83, 138, 226, 0.2)',
                     borderRadius: 12,
                     padding: '0.85rem 1rem',
                     color: '#dbd4ed',
@@ -866,7 +866,7 @@ const AdFormPage = () => {
                   display: 'block',
                   fontSize: '0.9rem',
                   fontWeight: 600,
-                  color: '#cbbaf9',
+                  color: '#c7dbfe',
                   marginBottom: '0.5rem',
                 }}
               >
@@ -889,10 +889,10 @@ const AdFormPage = () => {
                   onChange={handleChange}
                   style={{
                     width: '100%',
-                    background: 'rgb(9, 6, 27, 0.3)',
+                    background: 'rgb(11, 18, 32, 0.3)',
                     border: errors.location
                       ? '1px solid #eb4866'
-                      : '1px solid rgb(127, 83, 226, 0.2)',
+                      : '1px solid rgb(83, 138, 226, 0.2)',
                     borderRadius: 12,
                     padding: '0.85rem 1rem',
                     paddingRight: '2.8rem',
@@ -932,7 +932,7 @@ const AdFormPage = () => {
                   display: 'block',
                   fontSize: '0.9rem',
                   fontWeight: 600,
-                  color: '#cbbaf9',
+                  color: '#c7dbfe',
                   marginBottom: '0.5rem',
                 }}
               >
@@ -956,12 +956,12 @@ const AdFormPage = () => {
                       flex: 1,
                       background:
                         formData.condition === option.value
-                          ? 'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)'
-                          : 'rgb(9, 6, 27, 0.3)',
+                          ? 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)'
+                          : 'rgb(11, 18, 32, 0.3)',
                       border:
                         formData.condition === option.value
                           ? 'none'
-                          : '1px solid rgb(127, 83, 226, 0.2)',
+                          : '1px solid rgb(83, 138, 226, 0.2)',
                       borderRadius: 12,
                       padding: '0.85rem',
                       cursor: 'pointer',
@@ -969,7 +969,7 @@ const AdFormPage = () => {
                       fontWeight: 600,
                       color:
                         formData.condition === option.value
-                          ? '#0a0720'
+                          ? '#0b1220'
                           : '#dbd4ed',
                       fontFamily: 'inherit',
                     }}
@@ -985,7 +985,7 @@ const AdFormPage = () => {
                   display: 'block',
                   fontSize: '0.9rem',
                   fontWeight: 600,
-                  color: '#cbbaf9',
+                  color: '#c7dbfe',
                   marginBottom: '0.5rem',
                 }}
               >
@@ -1006,8 +1006,8 @@ const AdFormPage = () => {
                       style={{
                         position: 'relative',
                         minHeight: 150,
-                        background: 'rgb(9, 6, 27, 0.3)',
-                        border: '2px dashed rgb(127, 83, 226, 0.3)',
+                        background: 'rgb(11, 18, 32, 0.3)',
+                        border: '2px dashed rgb(83, 138, 226, 0.3)',
                         borderRadius: 12,
                         overflow: 'hidden',
                       }}
@@ -1098,7 +1098,7 @@ const AdFormPage = () => {
                   display: 'block',
                   fontSize: '0.9rem',
                   fontWeight: 600,
-                  color: '#cbbaf9',
+                  color: '#c7dbfe',
                   marginBottom: '0.5rem',
                 }}
               >
@@ -1112,10 +1112,10 @@ const AdFormPage = () => {
                 rows={4}
                 style={{
                   width: '100%',
-                  background: 'rgb(9, 6, 27, 0.3)',
+                  background: 'rgb(11, 18, 32, 0.3)',
                   border: errors.description
                     ? '1px solid #eb4866'
-                    : '1px solid rgb(127, 83, 226, 0.2)',
+                    : '1px solid rgb(83, 138, 226, 0.2)',
                   borderRadius: 12,
                   padding: '0.85rem 1rem',
                   color: '#dbd4ed',
@@ -1144,7 +1144,7 @@ const AdFormPage = () => {
                   display: 'block',
                   fontSize: '0.9rem',
                   fontWeight: 600,
-                  color: '#cbbaf9',
+                  color: '#c7dbfe',
                   marginBottom: '0.5rem',
                 }}
               >
@@ -1158,8 +1158,8 @@ const AdFormPage = () => {
                 rows={2}
                 style={{
                   width: '100%',
-                  background: 'rgb(9, 6, 27, 0.3)',
-                  border: '1px solid rgb(127, 83, 226, 0.2)',
+                  background: 'rgb(11, 18, 32, 0.3)',
+                  border: '1px solid rgb(83, 138, 226, 0.2)',
                   borderRadius: 12,
                   padding: '0.85rem 1rem',
                   color: '#dbd4ed',
@@ -1177,14 +1177,14 @@ const AdFormPage = () => {
               style={{
                 width: '100%',
                 background:
-                  'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
+                  'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
                 border: 'none',
                 borderRadius: 12,
                 padding: '1rem',
                 cursor: 'pointer',
                 fontSize: '1rem',
                 fontWeight: 700,
-                color: '#0a0720',
+                color: '#0b1220',
                 fontFamily: 'inherit',
               }}
             >
@@ -1202,8 +1202,8 @@ const AdFormPage = () => {
           <div
             style={{
               background:
-                'linear-gradient(145deg, rgb(14, 10, 42, 0.95) 0%, rgb(11, 8, 33, 0.98) 100%)',
-              border: '1px solid rgb(127, 83, 226, 0.2)',
+                'linear-gradient(145deg, rgb(24, 31, 42, 0.95) 0%, rgb(19, 24, 33, 0.98) 100%)',
+              border: '1px solid rgb(83, 138, 226, 0.2)',
               borderRadius: 24,
               padding: '2rem',
               textAlign: 'center',
@@ -1214,7 +1214,7 @@ const AdFormPage = () => {
                 width: 64,
                 height: 64,
                 background:
-                  'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
+                  'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
@@ -1222,12 +1222,12 @@ const AdFormPage = () => {
                 margin: '0 auto 1.5rem',
               }}
             >
-              <Crown size={32} color="#0a0720" />
+              <Crown size={32} color="#0b1220" />
             </div>
             <div
               style={{
-                background: 'rgb(9, 6, 27, 0.3)',
-                border: '1px solid rgb(127, 83, 226, 0.2)',
+                background: 'rgb(11, 18, 32, 0.3)',
+                border: '1px solid rgb(83, 138, 226, 0.2)',
                 borderRadius: 16,
                 padding: '1.5rem',
                 marginBottom: '1.5rem',
@@ -1256,7 +1256,7 @@ const AdFormPage = () => {
               >
                 <div
                   style={{
-                    background: 'rgb(127, 83, 226, 0.1)',
+                    background: 'rgb(83, 138, 226, 0.1)',
                     borderRadius: 12,
                     padding: '1rem 1.5rem',
                     flex: 1,
@@ -1267,7 +1267,7 @@ const AdFormPage = () => {
                       margin: 0,
                       fontSize: '1.6rem',
                       fontWeight: 900,
-                      color: '#beaaf8',
+                      color: '#aac8f8',
                     }}
                   >
                     1%
@@ -1277,7 +1277,7 @@ const AdFormPage = () => {
                       margin: '0.25rem 0 0',
                       fontSize: '0.95rem',
                       fontWeight: 700,
-                      color: '#cbbaf9',
+                      color: '#c7dbfe',
                     }}
                   >
                     للسلع المستخدمة
@@ -1285,7 +1285,7 @@ const AdFormPage = () => {
                 </div>
                 <div
                   style={{
-                    background: 'rgb(127, 83, 226, 0.1)',
+                    background: 'rgb(83, 138, 226, 0.1)',
                     borderRadius: 12,
                     padding: '1rem 1.5rem',
                     flex: 1,
@@ -1296,7 +1296,7 @@ const AdFormPage = () => {
                       margin: 0,
                       fontSize: '1.6rem',
                       fontWeight: 900,
-                      color: '#beaaf8',
+                      color: '#aac8f8',
                     }}
                   >
                     2%
@@ -1306,7 +1306,7 @@ const AdFormPage = () => {
                       margin: '0.25rem 0 0',
                       fontSize: '0.95rem',
                       fontWeight: 700,
-                      color: '#cbbaf9',
+                      color: '#c7dbfe',
                     }}
                   >
                     للسلع الجديدة
@@ -1317,7 +1317,7 @@ const AdFormPage = () => {
                 style={{
                   margin: 0,
                   fontSize: '1rem',
-                  color: '#cbbaf9',
+                  color: '#c7dbfe',
                   lineHeight: 2,
                 }}
               >
@@ -1326,7 +1326,7 @@ const AdFormPage = () => {
             </div>
             <div
               style={{
-                background: 'rgb(127, 83, 226, 0.1)',
+                background: 'rgb(83, 138, 226, 0.1)',
                 borderRadius: 12,
                 padding: '1rem',
                 marginBottom: '1.5rem',
@@ -1380,8 +1380,8 @@ const AdFormPage = () => {
                 marginBottom: '1.25rem',
                 padding: '1.25rem',
                 background:
-                  'linear-gradient(145deg, rgb(127, 83, 226, 0.08) 0%, rgb(9, 6, 27,0.3) 100%)',
-                border: '1px solid rgb(127, 83, 226, 0.3)',
+                  'linear-gradient(145deg, rgb(83, 138, 226, 0.08) 0%, rgb(11, 18, 32,0.3) 100%)',
+                border: '1px solid rgb(83, 138, 226, 0.3)',
                 borderRadius: 14,
                 textAlign: 'right',
               }}
@@ -1416,7 +1416,7 @@ const AdFormPage = () => {
                   paddingRight: '1.25rem',
                   fontSize: '0.88rem',
                   lineHeight: 2,
-                  color: '#cbbaf9',
+                  color: '#c7dbfe',
                   fontWeight: 700,
                 }}
               >
@@ -1436,7 +1436,7 @@ const AdFormPage = () => {
                   fontSize: '0.82rem',
                   lineHeight: 2,
                   color: '#d97a8b',
-                  borderTop: '1px solid rgb(127, 83, 226,0.15)',
+                  borderTop: '1px solid rgb(83, 138, 226,0.15)',
                                                 paddingTop: '0.75rem',
                             }}
                           >
@@ -1457,7 +1457,7 @@ const AdFormPage = () => {
                 cursor: 'pointer',
                 marginBottom: '1.5rem',
                 padding: '1rem',
-                background: 'rgb(9, 6, 27, 0.2)',
+                background: 'rgb(11, 18, 32, 0.2)',
                 borderRadius: 12,
                 textAlign: 'right',
               }}
@@ -1495,8 +1495,8 @@ const AdFormPage = () => {
               style={{
                 width: '100%',
                 background: agreed
-                  ? 'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)'
-                  : 'rgb(127, 83, 226, 0.2)',
+                  ? 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)'
+                  : 'rgb(83, 138, 226, 0.2)',
                 border: 'none',
                 borderRadius: 12,
                 padding: '1rem',
@@ -1506,7 +1506,7 @@ const AdFormPage = () => {
                     : 'not-allowed',
                 fontSize: '1rem',
                 fontWeight: 700,
-                color: agreed ? '#0a0720' : '#888',
+                color: agreed ? '#0b1220' : '#888',
                 fontFamily: 'inherit',
                 display: 'flex',
                 alignItems: 'center',

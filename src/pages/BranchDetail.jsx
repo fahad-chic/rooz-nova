@@ -60,7 +60,7 @@ export const BranchDetail = () => {
 
   if (loading) {
     return (
-      <div style={{ padding: '2rem', textAlign: 'center', color: '#7b51d9' }}>
+      <div style={{ padding: '2rem', textAlign: 'center', color: '#3b82f6' }}>
         <p>جاري تحميل بيانات الفرع...</p>
       </div>
     );
@@ -75,7 +75,7 @@ export const BranchDetail = () => {
           style={{
             marginTop: '1rem',
             padding: '0.75rem 1.5rem',
-            background: '#7b51d9',
+            background: '#3b82f6',
             border: 'none',
             borderRadius: '6px',
             cursor: 'pointer',
@@ -157,17 +157,17 @@ export const BranchDetail = () => {
       <style>{`
         .branch-detail-container {
           padding: 2rem;
-          background: linear-gradient(135deg, #0b0821 0%, #0d0a29 100%);
+          background: linear-gradient(135deg, #0b1017 0%, #101a2b 100%);
           min-height: calc(100vh - 70px);
           color: #fff;
-          font-family: 'Cairo', sans-serif;
+          font-family: 'Tajawal', sans-serif;
         }
 
         .back-button {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          background: #7b51d9;
+          background: #3b82f6;
           color: #fff;
           border: none;
           padding: 0.75rem 1.5rem;
@@ -180,7 +180,7 @@ export const BranchDetail = () => {
         }
 
         .back-button:hover {
-          background: #4016c1;
+          background: #1658c1;
           transform: translateY(-2px);
         }
 
@@ -190,13 +190,13 @@ export const BranchDetail = () => {
           padding: 2rem;
           margin-bottom: 2rem;
           box-shadow: 0 2px 12px rgb(255, 255, 255, 0.05);
-          border-left: 4px solid #7b51d9;
+          border-left: 4px solid #3b82f6;
         }
 
         .detail-title {
           font-size: 2rem;
           font-weight: 700;
-          color: #7b51d9;
+          color: #3b82f6;
           margin-bottom: 1rem;
         }
 
@@ -216,12 +216,12 @@ export const BranchDetail = () => {
         .meta-icon {
           width: 45px;
           height: 45px;
-          background: rgb(123, 81, 217, 0.15);
+          background: rgb(59, 130, 246, 0.15);
           border-radius: 10px;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #7b51d9;
+          color: #3b82f6;
           flex-shrink: 0;
         }
 
@@ -249,14 +249,14 @@ export const BranchDetail = () => {
           padding: 1.5rem;
           border-radius: 12px;
           box-shadow: 0 2px 12px rgb(255, 255, 255, 0.05);
-          border-top: 3px solid #7b51d9;
+          border-top: 3px solid #3b82f6;
           text-align: center;
         }
 
         .stat-number {
           font-size: 2.5rem;
           font-weight: 700;
-          color: #7b51d9;
+          color: #3b82f6;
           margin-bottom: 0.5rem;
         }
 
@@ -285,7 +285,7 @@ export const BranchDetail = () => {
         }
 
         .progress-label-value {
-          color: #7b51d9;
+          color: #3b82f6;
           font-weight: 700;
         }
 
@@ -299,7 +299,7 @@ export const BranchDetail = () => {
 
         .progress-fill {
           height: 100%;
-          background: linear-gradient(90deg, #7b51d9, #b299ef);
+          background: linear-gradient(90deg, #3b82f6, #99baef);
           border-radius: 6px;
           transition: width 0.3s ease;
         }
@@ -328,12 +328,12 @@ export const BranchDetail = () => {
         }
 
         .action-btn-edit {
-          background: #7b51d9;
+          background: #3b82f6;
           color: #fff;
         }
 
         .action-btn-edit:hover {
-          background: #4016c1;
+          background: #1658c1;
           transform: translateY(-2px);
         }
 

@@ -56,10 +56,10 @@ const HomePrefsFloat = () => {
           background: #f7f6fb;
           border: 1.5px solid #2563eb;
           border-radius: 16px;
-          box-shadow: 0 14px 40px rgb(15, 11, 48,0.25);
+          box-shadow: 0 14px 40px rgb(28, 35, 48,0.25);
           padding: 14px;
           direction: rtl;
-          font-family: Cairo, sans-serif;
+          font-family: Tajawal, sans-serif;
         }
         .hpf-title {
           display: flex;
@@ -67,14 +67,14 @@ const HomePrefsFloat = () => {
           justify-content: space-between;
           font-weight: 900;
           font-size: 0.95rem;
-          color: #0a071e;
+          color: #0b1220;
           margin-bottom: 10px;
         }
         .hpf-close {
           background: none;
           border: none;
           cursor: pointer;
-          color: #3e247a;
+          color: #24457a;
           display: flex;
           padding: 2px;
         }
@@ -87,7 +87,7 @@ const HomePrefsFloat = () => {
           border-top: 1px dashed rgb(37, 99, 235,0.3);
           font-size: 0.85rem;
           font-weight: 700;
-          color: #110c34;
+          color: #1e2634;
         }
         .hpf-switch {
           flex-shrink: 0;
@@ -97,7 +97,7 @@ const HomePrefsFloat = () => {
           border: none;
           cursor: pointer;
           position: relative;
-          background: #b9a4e4;
+          background: #a4bde4;
           transition: background 0.2s ease;
         }
         .hpf-switch.on { background: #0b477a; }
@@ -118,13 +118,13 @@ const HomePrefsFloat = () => {
           flex: 1;
           border: 1.5px solid #2563eb;
           background: #fff;
-          color: #3e247a;
+          color: #24457a;
           border-radius: 10px;
           padding: 5px 0;
           font-size: 0.78rem;
           font-weight: 800;
           cursor: pointer;
-          font-family: Cairo, sans-serif;
+          font-family: Tajawal, sans-serif;
         }
         .hpf-font.active { background: #2563eb; color: #fff; }
         .hpf-more {

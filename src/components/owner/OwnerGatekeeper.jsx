@@ -144,7 +144,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
         justifyContent: 'center',
         background: 'linear-gradient(160deg, #ebe5f6, #d3c4f3)',
         padding: '1rem',
-        fontFamily: 'Cairo, sans-serif'
+        fontFamily: 'Tajawal, sans-serif'
       }}
     >
       <div
@@ -155,13 +155,13 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
           background: 'linear-gradient(160deg, #f7f6fb, #e3dbf5)',
           border: '2px solid #2563eb',
           borderRadius: 20,
-          boxShadow: '0 24px 60px rgb(15, 11, 48,0.35)',
+          boxShadow: '0 24px 60px rgb(28, 35, 48,0.35)',
           overflow: 'hidden'
         }}
       >
         <div style={{
-          background: 'linear-gradient(120deg, #ebe5f6, #c4aff0)',
-          color: '#0a071e',
+          background: 'linear-gradient(120deg, #ebe5f6, #afc8f0)',
+          color: '#0b1220',
           padding: '16px 18px',
           display: 'flex',
           alignItems: 'center',
@@ -175,7 +175,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
             type="button"
             onClick={onCancel}
             aria-label="إلغاء والعودة"
-            style={{ background: 'none', border: 'none', color: '#0a071e', cursor: 'pointer', display: 'flex', padding: 2 }}
+            style={{ background: 'none', border: 'none', color: '#0b1220', cursor: 'pointer', display: 'flex', padding: 2 }}
           >
             <X size={18} />
           </button>
@@ -183,7 +183,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
 
         <div style={{ padding: '20px 18px' }}>
           {phase === 'checking' && (
-            <p style={{ textAlign: 'center', fontWeight: 700, color: '#0a071e', padding: '1.5rem 0' }}>
+            <p style={{ textAlign: 'center', fontWeight: 700, color: '#0b1220', padding: '1.5rem 0' }}>
               جاري فحص حالة الحارس الأمني…
             </p>
           )}
@@ -202,10 +202,10 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
 
           {phase === 'setup' && (
             <form onSubmit={handleSetup}>
-              <p style={{ fontWeight: 800, color: '#0a071e', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6 }}>
+              <p style={{ fontWeight: 800, color: '#0b1220', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6 }}>
                 <KeyRound size={17} aria-hidden="true" /> إنشاء الرمز السري لأول مرة
               </p>
-              <p style={{ fontSize: '0.82rem', color: '#0a071e', fontWeight: 600, marginBottom: 14, lineHeight: 1.8 }}>
+              <p style={{ fontSize: '0.82rem', color: '#0b1220', fontWeight: 600, marginBottom: 14, lineHeight: 1.8 }}>
                 هذا الرمز يُطلب قبل فتح الغرفة في كل مرة حتى مع بقاء تسجيل الدخول —
                 اختر 4 إلى 8 أرقام واحفظها، فهي لا تُسترجع.
               </p>
@@ -237,10 +237,10 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
 
           {phase === 'verify' && (
             <form onSubmit={handleVerify}>
-              <p style={{ fontWeight: 800, color: '#0a071e', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6 }}>
+              <p style={{ fontWeight: 800, color: '#0b1220', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6 }}>
                 <Lock size={17} aria-hidden="true" /> أدخل الرمز السري لفتح الغرفة
               </p>
-              <p style={{ fontSize: '0.82rem', color: '#0a071e', fontWeight: 600, marginBottom: 14, lineHeight: 1.8 }}>
+              <p style={{ fontSize: '0.82rem', color: '#0b1220', fontWeight: 600, marginBottom: 14, lineHeight: 1.8 }}>
                 حماية إضافية: 5 محاولات خاطئة تقفل الحساب 15 دقيقة وتُسجَّل أمنياً.
               </p>
               {info && <p style={{ color: '#17706c', fontWeight: 800, fontSize: '0.85rem', marginBottom: 10 }}>{info}</p>}
@@ -270,15 +270,15 @@ const inputStyle = {
   width: '100%',
   boxSizing: 'border-box',
   borderRadius: 12,
-  border: '1.5px solid #8f6bdc',
+  border: '1.5px solid #7aa5ee',
   background: '#f7f6fb',
   padding: '12px 14px',
-  fontFamily: 'Cairo, sans-serif',
+  fontFamily: 'Tajawal, sans-serif',
   fontSize: '1.05rem',
   fontWeight: 800,
   letterSpacing: '0.35em',
   textAlign: 'center',
-  color: '#0a071e',
+  color: '#0b1220',
   outline: 'none'
 };
 
@@ -288,7 +288,7 @@ const btnStyle = (bg) => ({
   border: 'none',
   borderRadius: 12,
   padding: '11px 16px',
-  fontFamily: 'Cairo, sans-serif',
+  fontFamily: 'Tajawal, sans-serif',
   fontWeight: 900,
   fontSize: '0.92rem',
   cursor: 'pointer',

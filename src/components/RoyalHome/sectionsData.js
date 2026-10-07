@@ -98,7 +98,7 @@ export const ROYAL_SECTIONS = [
     id: 'abayas',
     title: 'العبايات بأنواعها',
     icon: 'abaya',
-    color: '#58358e',
+    color: '#35578e',
     branches: [
       {
         id: 'abayas-luxury',
@@ -132,7 +132,7 @@ export const ROYAL_SECTIONS = [
     id: 'bags',
     title: 'الشنط والحقائب',
     icon: 'bag',
-    color: '#5e29b8',
+    color: '#2960b8',
     branches: [
       {
         id: 'bags-brands',
@@ -166,7 +166,7 @@ export const ROYAL_SECTIONS = [
     id: 'shoes',
     title: 'الأحذية',
     icon: 'shoes',
-    color: '#5d2f9f',
+    color: '#2f5a9f',
     branches: [
       {
         id: 'shoes-heels',
@@ -200,7 +200,7 @@ export const ROYAL_SECTIONS = [
     id: 'used-dresses',
     title: 'فساتين فاخرة مستعملة',
     icon: 'preowned',
-    color: '#683cb4',
+    color: '#3c6ab4',
     branches: [
       {
         id: 'used-dresses-wedding',
@@ -229,7 +229,7 @@ export const ROYAL_SECTIONS = [
     id: 'perfumes',
     title: 'العطورات والبخور',
     icon: 'perfume',
-    color: '#6832b2',
+    color: '#3263b2',
     branches: [
       {
         id: 'perfumes-women',
@@ -263,7 +263,7 @@ export const ROYAL_SECTIONS = [
     id: 'golden-mothers',
     title: 'أمهاتنا — الجيل الذهبي',
     icon: 'heritage',
-    color: '#592bad',
+    color: '#2b5dad',
     branches: [
       {
         id: 'golden-jalabiyas',
@@ -292,7 +292,7 @@ export const ROYAL_SECTIONS = [
     id: 'jewelry',
     title: 'المجوهرات والإكسسوارات',
     icon: 'jewelry',
-    color: '#6532bf',
+    color: '#3268bf',
     branches: [
       {
         id: 'jewelry-gold',
@@ -321,7 +321,7 @@ export const ROYAL_SECTIONS = [
     id: 'home-products',
     title: 'الأسر المنتجة',
     icon: 'home',
-    color: '#5a2bad',
+    color: '#2b5dad',
     branches: [
       {
         id: 'home-food',
@@ -355,7 +355,7 @@ export const ROYAL_SECTIONS = [
     id: 'haraj',
     title: 'موقع حراج ',
     icon: 'store',
-    color: '#4e20a8',
+    color: '#1d4ed8',
     isAction: true,
     actionPath: '/haraj',
   },
@@ -373,7 +373,7 @@ export const MARQUEE_BANNERS_2 = [
   {
     id: 1,
     text: 'سوق حراج ROOZ — انشر إعلانك مجاناً ووصّل بضاعتك لآلاف الزوار يومياً',
-    bgColor: 'linear-gradient(135deg, #152493, #10185b)',
+    bgColor: 'linear-gradient(135deg, #154593, #32415b)',
   },
 ];
 
@@ -391,12 +391,12 @@ export const HARAJ_BANNERS = [
   {
     id: 3,
     text: 'تعامل بثقة — جميع الإعلانات تُراجع قبل النشر حمايةً لك من الاحتيال',
-    bgColor: 'linear-gradient(135deg, #5e0eaf, #490b7c)',
+    bgColor: 'linear-gradient(135deg, #0e4caf, #0b367c)',
   },
   {
     id: 4,
     text: 'تواصل مباشر مع البائع عبر واتساب أو الاتصال — بدون وسطاء',
-    bgColor: 'linear-gradient(135deg, #3128da, #152493)',
+    bgColor: 'linear-gradient(135deg, #286cda, #154593)',
   },
 ];
 

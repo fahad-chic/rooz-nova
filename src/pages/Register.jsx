@@ -454,25 +454,25 @@ const page = {
   minHeight: '100vh',
   width: '100%',
   background:
-    'radial-gradient(circle at top, rgb(123, 81, 217,0.12), transparent 35%), linear-gradient(135deg, #0a071e 0%, #0b0823 48%, #0d0928 100%)',
+    'radial-gradient(circle at top, rgb(59, 130, 246,0.12), transparent 35%), linear-gradient(135deg, #0b1220 0%, #0b1017 48%, #0e1626 100%)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   padding: '24px 16px',
   boxSizing: 'border-box',
-  fontFamily: 'Cairo, Cairo, sans-serif',
+  fontFamily: 'Tajawal, Tajawal, sans-serif',
 };
 
 const card = {
   background:
-    'linear-gradient(145deg, rgb(12, 9, 37,0.98), rgb(10, 7, 31,0.98))',
+    'linear-gradient(145deg, rgb(22, 27, 37,0.98), rgb(18, 23, 31,0.98))',
   padding: '30px 26px',
   borderRadius: 22,
   width: '100%',
   maxWidth: 430,
-  border: '1px solid rgb(123, 81, 217,0.3)',
+  border: '1px solid rgb(59, 130, 246,0.3)',
   boxShadow:
-    '0 22px 70px rgb(9, 6, 27,0.55), inset 0 1px 0 rgb(255, 255, 255,0.04)',
+    '0 22px 70px rgb(11, 18, 32,0.55), inset 0 1px 0 rgb(255, 255, 255,0.04)',
   textAlign: 'center',
   boxSizing: 'border-box',
 };
@@ -486,15 +486,15 @@ const brandMark = {
   alignItems: 'center',
   justifyContent: 'center',
   background:
-    'linear-gradient(145deg, #a78af5 0%, #7b51d9 45%, #1e40af 100%)',
+    'linear-gradient(145deg, #8ab3f5 0%, #3b82f6 45%, #1e40af 100%)',
   color: '#111',
   fontSize: 25,
   fontWeight: 900,
-  boxShadow: '0 8px 24px rgb(123, 81, 217,0.2)',
+  boxShadow: '0 8px 24px rgb(59, 130, 246,0.2)',
 };
 
 const title = {
-  color: '#bea7f7',
+  color: '#a7c6f7',
   fontSize: 26,
   fontWeight: 800,
   margin: '0 0 6px',
@@ -508,7 +508,7 @@ const subtitle = {
 };
 
 const label = {
-  color: '#c4b2f7',
+  color: '#b2ccf7',
   fontSize: 14,
   fontWeight: 700,
   textAlign: 'right',
@@ -526,7 +526,7 @@ const inputIcon = {
   top: '50%',
   left: 13,
   transform: 'translateY(-50%)',
-  color: '#7b51d9',
+  color: '#3b82f6',
   zIndex: 1,
   pointerEvents: 'none',
 };
@@ -536,12 +536,12 @@ const input = {
   minHeight: 48,
   padding: '12px 14px 12px 42px',
   borderRadius: 12,
-  border: '1px solid rgb(123, 81, 217,0.2)',
+  border: '1px solid rgb(59, 130, 246,0.2)',
   outline: 'none',
-  background: 'rgb(14, 10, 43,0.95)',
+  background: 'rgb(25, 32, 43,0.95)',
   color: '#fff',
   fontSize: 15,
-  fontFamily: 'Cairo, Cairo, sans-serif',
+  fontFamily: 'Tajawal, Tajawal, sans-serif',
   boxSizing: 'border-box',
   transition: 'border-color 160ms ease, box-shadow 160ms ease',
 };
@@ -551,16 +551,16 @@ const submitBtn = {
   minHeight: 50,
   padding: '13px 14px',
   background:
-    'linear-gradient(135deg, #8b68ed 0%, #7b51d9 48%, #1e40af 100%)',
+    'linear-gradient(135deg, #689bed 0%, #3b82f6 48%, #1e40af 100%)',
   color: '#111',
-  border: '1px solid rgb(186, 165, 248,0.45)',
+  border: '1px solid rgb(165, 197, 248,0.45)',
   borderRadius: 12,
   fontWeight: 800,
   cursor: 'pointer',
   marginTop: 5,
   fontSize: 15,
-  fontFamily: 'Cairo, Cairo, sans-serif',
-  boxShadow: '0 8px 24px rgb(123, 81, 217,0.16)',
+  fontFamily: 'Tajawal, Tajawal, sans-serif',
+  boxShadow: '0 8px 24px rgb(59, 130, 246,0.16)',
   transition: 'transform 160ms ease, opacity 160ms ease',
 };
 
@@ -581,7 +581,7 @@ const spinner = {
   width: 15,
   height: 15,
   borderRadius: '50%',
-  border: '2px solid rgb(11, 8, 35,0.25)',
+  border: '2px solid rgb(20, 26, 35,0.25)',
   borderTopColor: '#111',
   display: 'inline-block',
   animation: 'roozRegisterSpin 700ms linear infinite',
@@ -594,7 +594,7 @@ const switchForm = {
 };
 
 const link = {
-  color: '#8864e3',
+  color: '#6495e3',
   fontWeight: 800,
   textDecoration: 'none',
 };
@@ -615,7 +615,7 @@ const alertError = {
 };
 
 const alertSuccess = {
-  background: 'rgb(17, 12, 53,0.22)',
+  background: 'rgb(30, 39, 53,0.22)',
   border: '1px solid rgb(45, 218, 205,0.18)',
   color: '#b7f5f1',
   padding: '11px 12px',

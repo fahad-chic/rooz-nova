@@ -38,14 +38,14 @@ const AddToHomeSection = () => {
         background: 'linear-gradient(145deg, #f8f6fb 0%, #e6dff5 55%, #dacff3 100%)',
         border: '1px solid rgb(30, 58, 138, 0.3)',
         borderRadius: 14,
-        boxShadow: '0 4px 14px rgb(57, 17, 148, 0.08)',
+        boxShadow: '0 4px 14px rgb(17, 67, 148, 0.08)',
         textAlign: 'center',
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Tajawal, sans-serif',
       }}
     >
       <Smartphone
         size={22}
-        color="#400fb4"
+        color="#1e40af"
         style={{ margin: '0 auto 0.3rem', display: 'block' }}
       />
       <h2
@@ -54,7 +54,7 @@ const AddToHomeSection = () => {
           margin: '0 0 0.2rem',
           fontSize: '0.95rem',
           fontWeight: 800,
-          color: '#200d4f',
+          color: '#14274d',
         }}
       >
         أضف المتجر لشاشة هاتفك
@@ -64,7 +64,7 @@ const AddToHomeSection = () => {
           margin: '0 auto 0.55rem',
           maxWidth: 400,
           fontSize: '0.78rem',
-          color: '#45298d',
+          color: '#294f8d',
           lineHeight: 1.5,
         }}
       >
@@ -79,15 +79,15 @@ const AddToHomeSection = () => {
           borderRadius: 10,
           border: 'none',
           background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-          color: '#0b0822',
+          color: '#0b1017',
           fontWeight: 800,
           fontSize: '0.8rem',
           cursor: 'pointer',
-          fontFamily: 'Cairo, sans-serif',
+          fontFamily: 'Tajawal, sans-serif',
           display: 'inline-flex',
           alignItems: 'center',
           gap: 6,
-          boxShadow: '0 3px 10px rgb(75, 31, 181, 0.3)',
+          boxShadow: '0 3px 10px rgb(31, 89, 181, 0.3)',
         }}
       >
         <PlusSquare size={14} />
@@ -103,7 +103,7 @@ const AddToHomeSection = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgb(13, 9, 39, 0.55)',
+            background: 'rgb(22, 29, 39, 0.55)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -114,7 +114,7 @@ const AddToHomeSection = () => {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: 'linear-gradient(145deg, #f4f1f9, #e0d7f5)',
+              background: 'linear-gradient(145deg, #f5f7fa, #e0d7f5)',
               border: '1px solid rgb(30, 58, 138, 0.45)',
               borderRadius: 18,
               padding: '1.2rem 1.1rem',
@@ -123,7 +123,7 @@ const AddToHomeSection = () => {
               maxHeight: '85vh',
               overflowY: 'auto',
               textAlign: 'right',
-              boxShadow: '0 20px 50px rgb(15, 11, 46, 0.35)',
+              boxShadow: '0 20px 50px rgb(27, 34, 46, 0.35)',
             }}
           >
             <div
@@ -139,7 +139,7 @@ const AddToHomeSection = () => {
                   margin: 0,
                   fontSize: '1rem',
                   fontWeight: 800,
-                  color: '#200d4f',
+                  color: '#14274d',
                 }}
               >
                 خطوات التثبيت
@@ -158,7 +158,7 @@ const AddToHomeSection = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#290d71',
+                  color: '#0d3371',
                 }}
               >
                 <X size={15} />
@@ -194,7 +194,7 @@ const AddToHomeSection = () => {
                   style={{
                     margin: 0,
                     paddingInlineStart: '1.1rem',
-                    color: '#2e1666',
+                    color: '#152a54',
                     fontSize: '0.8rem',
                     lineHeight: 1.7,
                   }}
@@ -210,7 +210,7 @@ const AddToHomeSection = () => {
               style={{
                 margin: '0.55rem 0 0',
                 fontSize: '0.75rem',
-                color: '#5839a3',
+                color: '#3962a3',
                 textAlign: 'center',
               }}
             >

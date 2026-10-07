@@ -35,10 +35,10 @@ import {
 const ADMIN_NUMBER = '0536667222';
 
 const C = {
-  gold: '#592ae1',
-  goldDark: '#400fb4',
-  ink: '#0c0926',
-  inkSoft: '#321473',
+  gold: '#2563eb',
+  goldDark: '#1e40af',
+  ink: '#0e1626',
+  inkSoft: '#143873',
   cream: '#e3dbf4',
   creamLight: '#eae5f6',
   card: '#f8f6fb',
@@ -287,7 +287,7 @@ export default function AdDetailsPage() {
 
   if (loading) {
     return (
-      <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.inkSoft, fontFamily: 'Cairo, sans-serif' }}>
+      <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', color: C.inkSoft, fontFamily: 'Tajawal, sans-serif' }}>
         جاري تحميل الإعلان...
       </div>
     );
@@ -295,7 +295,7 @@ export default function AdDetailsPage() {
 
   if (!ad) {
     return (
-      <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, fontFamily: 'Cairo, sans-serif', color: C.ink }}>
+      <div style={{ minHeight: '60vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 16, fontFamily: 'Tajawal, sans-serif', color: C.ink }}>
         <p style={{ fontSize: 18, fontWeight: 700 }}>الإعلان غير موجود أو تم حذفه</p>
         <button type="button" onClick={() => navigate('/haraj')} style={goldBtn}>
           العودة إلى الحراج
@@ -313,7 +313,7 @@ export default function AdDetailsPage() {
       style={{
         minHeight: '100vh',
         background: `linear-gradient(180deg, ${C.cream} 0%, #dbd0f2 55%, #d9ccf1 100%)`,
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Tajawal, sans-serif',
         color: C.ink,
         padding: '1rem',
       }}
@@ -385,7 +385,7 @@ export default function AdDetailsPage() {
                   borderRadius: 999,
                   fontSize: 12,
                   fontWeight: 800,
-                  boxShadow: '0 4px 12px rgb(9, 6, 27,0.2)',
+                  boxShadow: '0 4px 12px rgb(11, 18, 32,0.2)',
                 }}
               >
                 {ad.condition === true ? 'جديد' : ad.condition}
@@ -646,8 +646,8 @@ const infoRow = {
 const goldBtn = {
   width: '100%',
   padding: 14,
-  background: 'linear-gradient(135deg, #592ae1 0%, #400fb4 55%, #592ae1 100%)',
-  color: '#0c0926',
+  background: 'linear-gradient(135deg, #2563eb 0%, #1e40af 55%, #2563eb 100%)',
+  color: '#0e1626',
   border: 'none',
   borderRadius: 12,
   fontWeight: 800,
@@ -664,7 +664,7 @@ const goldBtn = {
 const ghostBtn = {
   padding: '10px 14px',
   background: '#fff',
-  color: '#0c0926',
+  color: '#0e1626',
   border: '1px solid #cbbcee',
   borderRadius: 12,
   fontWeight: 700,

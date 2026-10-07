@@ -5,41 +5,41 @@
    ===================================================== */
 
 .ch-root {
-  --ch-bg-0: #f4f1f9;
-  --ch-bg-1: #eae4f3;
-  --ch-bg-2: #ddd2ef;
+  --ch-bg-0: #f5f7fa;
+  --ch-bg-1: #e6ebf2;
+  --ch-bg-2: #dbe3ee;
   --ch-card: #f7f6fb;
   --ch-card-2: #efebf8;
 
-  --ch-ink: #0b0822;
-  --ch-ink-2: #0f0b2e;
+  --ch-ink: #0b1017;
+  --ch-ink-2: #101a2b;
   --ch-ink-soft: #686b7a;
 
   --ch-gold: #2563eb;
   --ch-gold-deep: #1e40af;
   --ch-gold-bright: #3b82f6;
-  --ch-gold-shine: #b295f4;
+  --ch-gold-shine: #93c5fd;
   --ch-gold-line: rgb(37, 99, 235, 0.42);
   --ch-gold-glow: rgb(37, 99, 235, 0.35);
 
-  --ch-font: 'Cairo', 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif;
+  --ch-font: 'Tajawal', 'Segoe UI', Tahoma, Arial, sans-serif;
 
   /* ألias لمتغيرات RoyalHome.css حتى تعمل أصناف rh-* (شبكة الأقسام/المسابقة)
      داخل ch-root بنفس الهوية البيجية */
-  --rh-cream-0: #f4f1f9;
-  --rh-cream-1: #eae4f3;
-  --rh-cream-2: #ddd2ef;
-  --rh-cream-3: #cdb8ed;
-  --rh-cream-4: #b69ee9;
+  --rh-cream-0: #f5f7fa;
+  --rh-cream-1: #e6ebf2;
+  --rh-cream-2: #dbe3ee;
+  --rh-cream-3: #cbd9f0;
+  --rh-cream-4: #b8cdf0;
   --rh-gold: #2563eb;
   --rh-gold-deep: #1e40af;
   --rh-gold-bright: #3b82f6;
-  --rh-gold-soft: #dfd2f2;
+  --rh-gold-soft: #dbe3ee;
   --rh-gold-glow: rgb(37, 99, 235, 0.4);
-  --rh-brown: #0b0822;
-  --rh-brown-2: #281545;
+  --rh-brown: #0b1017;
+  --rh-brown-2: #334155;
   --rh-brown-3: #686b7a;
-  --rh-red: #8330b0;
+  --rh-red: #e11d48;
   --rh-font: var(--ch-font);
 
   min-height: 100vh;
@@ -53,7 +53,7 @@
   background:
     radial-gradient(900px 400px at 100% 0%, rgb(37, 99, 235,0.12), transparent 55%),
     radial-gradient(700px 320px at 0% 30%, rgb(37, 99, 235,0.07), transparent 50%),
-    linear-gradient(180deg, #f4f1f9 0%, #eae4f3 50%, #ddd2ef 100%);
+    linear-gradient(180deg, #f5f7fa 0%, #e6ebf2 50%, #dbe3ee 100%);
 }
 
 .ch-root *,
@@ -66,10 +66,10 @@
 .ch-ink-gloss {
   background: linear-gradient(
     180deg,
-    #110c34 0%,
-    #0a071e 45%,
-    #09061b 55%,
-    #2b1854 100%
+    #1e2634 0%,
+    #0b1220 45%,
+    #0b1220 55%,
+    #333f54 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -81,11 +81,11 @@
 .ch-gold-gloss {
   background: linear-gradient(
     120deg,
-    #400fb4 0%,
-    #3e13ec 25%,
-    #bca7f8 50%,
-    #3e13ec 75%,
-    #400fb4 100%
+    #1e40af 0%,
+    #1d4ed8 25%,
+    #a7c6f8 50%,
+    #1d4ed8 75%,
+    #1e40af 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -165,9 +165,9 @@
   background: conic-gradient(
     from 120deg,
     #1e40af,
-    #b295f4,
+    #93c5fd,
     #2563eb,
-    #c1adf7,
+    #adc9f7,
     #1e40af
   );
   padding: 4px;
@@ -184,17 +184,17 @@
   height: clamp(120px, 30vw, 200px);
   object-fit: cover;
   border-radius: 50%;
-  background: #0a071f;
+  background: #0b1220;
   box-shadow:
-    inset 0 0 0 3px rgb(178, 149, 244, 0.5),
-    0 14px 40px rgb(11, 8, 34, 0.25);
+    inset 0 0 0 3px rgb(147, 197, 253, 0.5),
+    0 14px 40px rgb(11, 16, 23, 0.25);
 }
 
 .ch-hero-title {
   margin: 0 0 0.5rem;
   font-size: clamp(1.15rem, 3.5vw, 1.55rem);
   font-weight: 900;
-  -webkit-text-stroke: 0.5px rgb(117, 75, 240, 0.55);
+  -webkit-text-stroke: 0.5px rgb(75, 138, 240, 0.55);
   line-height: 1.35;
   text-wrap: balance;
   letter-spacing: -0.01em;
@@ -221,7 +221,7 @@
   border-radius: 999px;
   padding: 0.35rem 0.4rem 0.35rem 1.1rem;
   box-shadow:
-    0 12px 32px rgb(11, 8, 34, 0.08),
+    0 12px 32px rgb(11, 16, 23, 0.08),
     0 0 0 4px rgb(59, 130, 246, 0.05),
     inset 0 1px 0 rgb(255, 255, 255, 0.9);
   transition:
@@ -233,7 +233,7 @@
 .ch-search:focus-within {
   border-color: rgb(37, 99, 235, 0.7);
   box-shadow:
-    0 14px 36px rgb(11, 8, 34, 0.1),
+    0 14px 36px rgb(11, 16, 23, 0.1),
     0 0 0 4px rgb(59, 130, 246, 0.12),
     inset 0 1px 0 rgb(255, 255, 255, 0.9);
 }
@@ -252,7 +252,7 @@
 }
 
 .ch-search input::placeholder {
-  color: #724ebc;
+  color: #4e78bc;
 }
 
 .ch-search-btn {
@@ -266,10 +266,10 @@
   cursor: pointer;
   display: grid;
   place-items: center;
-  color: #0d0a29;
+  color: #101a2b;
   background: linear-gradient(
     135deg,
-    #b295f4 0%,
+    #93c5fd 0%,
     #3b82f6 40%,
     #2563eb 100%
   );
@@ -342,7 +342,7 @@
   padding: 0.6rem 0.3rem;
   min-width: 0;
   box-shadow:
-    0 6px 16px rgb(11, 8, 34, 0.05),
+    0 6px 16px rgb(11, 16, 23, 0.05),
     inset 0 1px 0 rgb(255, 255, 255, 0.9);
   transition:
     transform 0.25s ease,
@@ -486,7 +486,7 @@
 }
 
 .ch-link-all:hover {
-  background: var(--ch-gold-soft, #dfd2f2);
+  background: var(--ch-gold-soft, #dbe3ee);
   box-shadow: 0 4px 14px rgb(37, 99, 235, 0.3);
 }
 
@@ -578,7 +578,7 @@
   overflow: hidden;
   cursor: pointer;
   box-shadow:
-    0 7px 22px rgb(11, 8, 34, 0.07),
+    0 7px 22px rgb(11, 16, 23, 0.07),
     inset 0 1px 0 rgb(255, 255, 255, 0.9);
   transition:
     transform 0.28s ease,
@@ -597,7 +597,7 @@
 .ch-ad-img {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: linear-gradient(150deg, #d5c8f2 0%, #bca7eb 100%);
+  background: linear-gradient(150deg, #d5c8f2 0%, #a7c1eb 100%);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -628,10 +628,10 @@
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 900;
-  color: #0d0a29;
+  color: #101a2b;
   background: linear-gradient(
     135deg,
-    #b295f4,
+    #93c5fd,
     #3b82f6 55%,
     #2563eb
   );
@@ -730,7 +730,7 @@
   border: 1px solid rgb(37, 99, 235, 0.3);
   border-radius: 24px;
   box-shadow:
-    0 12px 36px rgb(11, 8, 34, 0.07),
+    0 12px 36px rgb(11, 16, 23, 0.07),
     inset 0 1px 0 rgb(255, 255, 255, 0.9);
 }
 
@@ -858,12 +858,12 @@
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 900;
-  color: #0d0a29;
+  color: #101a2b;
   padding: 0.7rem 2.2rem;
   border-radius: 999px;
   background: linear-gradient(
     135deg,
-    #b295f4 0%,
+    #93c5fd 0%,
     #3b82f6 40%,
     #2563eb 100%
   );
@@ -963,7 +963,7 @@
   height: clamp(44px, 10vw, 52px);
   border-radius: 50%;
   object-fit: cover;
-  background: #0a071f;
+  background: #0b1220;
   box-shadow:
     0 0 0 2px var(--ch-gold),
     0 4px 14px rgb(37, 99, 235, 0.4);

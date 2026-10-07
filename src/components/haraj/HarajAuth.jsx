@@ -31,16 +31,16 @@ async function findHarajUser(phone) {
 }
 
 const C = {
-  gold: '#592ae1',
-  goldLight: '#a185ef',
-  goldDark: '#400fb4',
-  black: '#0a0720',
-  blackLight: '#0d0928',
-  gray: '#100c32',
-  grayLight: '#1e1d4b',
-  grayMid: '#29295f',
+  gold: '#2563eb',
+  goldLight: '#85aeef',
+  goldDark: '#1e40af',
+  black: '#0b1220',
+  blackLight: '#0e1626',
+  gray: '#1d2532',
+  grayLight: '#323b4b',
+  grayMid: '#414c5f',
   white: '#f7f7fa',
-  cream: '#cbbaf9',
+  cream: '#c7dbfe',
   green: '#1ec9c9',
   red: '#eb4866',
 };
@@ -154,7 +154,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgb(9, 6, 27,0.85)',
+        background: 'rgb(11, 18, 32,0.85)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -171,7 +171,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
           maxWidth: 400,
           width: '100%',
           border: `1px solid ${C.gold}40`,
-          boxShadow: `0 20px 60px rgb(9, 6, 27,0.5)`,
+          boxShadow: `0 20px 60px rgb(11, 18, 32,0.5)`,
           position: 'relative',
         }}
         onClick={e => e.stopPropagation()}
@@ -197,7 +197,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
             color: C.gold, 
             margin: 0, 
             fontSize: 22,
-            fontFamily: 'Cairo, sans-serif',
+            fontFamily: 'Tajawal, sans-serif',
           }}>
             {mode === 'choose' && 'تسجيل الدخول لمنصة الإعلانات'}
             {mode === 'login' && 'تسجيل الدخول'}
@@ -224,7 +224,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
             fontSize: 14,
             marginBottom: 16,
             textAlign: 'center',
-            fontFamily: 'Cairo, sans-serif',
+            fontFamily: 'Tajawal, sans-serif',
           }}>
             {error}
           </div>
@@ -247,7 +247,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 10,
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
               }}
             >
               <Phone size={20} /> تسجيل دخول
@@ -273,7 +273,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 alignItems: 'center',
                 justifyContent: 'center',
                 gap: 10,
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
               }}
             >
               <User size={20} /> إنشاء حساب جديد
@@ -289,7 +289,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 color: '#bdaedd',
                 fontSize: 14,
                 cursor: 'pointer',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
               }}
             >
               متابعة كمستخدم عادي
@@ -312,7 +312,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 border: `1px solid ${C.gold}40`,
                 color: C.white,
                 fontSize: 16,
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
               }}
             />
             <button
@@ -327,7 +327,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 fontSize: 16,
                 fontWeight: 700,
                 cursor: loading ? 'wait' : 'pointer',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
               }}
             >
               {loading ? 'جاري الدخول...' : 'تسجيل الدخول'}
@@ -340,7 +340,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 color: C.gold,
                 cursor: 'pointer',
                 fontSize: 14,
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
               }}
             >
                رجوع
@@ -363,7 +363,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 border: `1px solid ${C.gold}40`,
                 color: C.white,
                 fontSize: 16,
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
               }}
             />
             <input
@@ -379,7 +379,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 border: `1px solid ${C.gold}40`,
                 color: C.white,
                 fontSize: 16,
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
               }}
             />
             <button
@@ -394,7 +394,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 fontSize: 16,
                 fontWeight: 700,
                 cursor: loading ? 'wait' : 'pointer',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
               }}
             >
               {loading ? 'جاري التسجيل...' : 'إنشاء الحساب'}
@@ -407,7 +407,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 color: C.gold,
                 cursor: 'pointer',
                 fontSize: 14,
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
               }}
             >
                رجوع

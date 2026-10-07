@@ -58,9 +58,9 @@ class ErrorBoundary extends React.Component {
           style={{
             padding: '2rem',
             textAlign: 'center',
-            fontFamily: 'Cairo',
+            fontFamily: 'Tajawal',
             direction: 'rtl',
-            background: '#0b0823',
+            background: '#0b1017',
             color: '#dcd4f5',
             minHeight: '100vh'
           }}
@@ -92,7 +92,7 @@ class ErrorBoundary extends React.Component {
               padding: '0.6rem 1.2rem',
               cursor: 'pointer',
               background: '#2563eb',
-              color: '#0a071e',
+              color: '#0b1220',
               border: 'none',
               borderRadius: '8px',
               fontWeight: 'bold'
@@ -107,7 +107,7 @@ class ErrorBoundary extends React.Component {
                 textAlign: 'left',
                 maxHeight: 250,
                 overflow: 'auto',
-                background: '#0f0b2f',
+                background: '#1b222f',
                 padding: 10,
                 marginTop: '1rem',
                 borderRadius: '8px',

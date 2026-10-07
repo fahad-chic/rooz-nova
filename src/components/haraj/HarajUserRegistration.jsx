@@ -123,7 +123,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
       left: 0,
       right: 0,
       bottom: 0,
-      background: 'rgb(9, 6, 27, 0.85)',
+      background: 'rgb(11, 18, 32, 0.85)',
       backdropFilter: 'blur(8px)',
       display: 'flex',
       alignItems: 'center',
@@ -132,8 +132,8 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
       padding: '1rem',
     }}>
       <div style={{
-        background: 'linear-gradient(180deg, #100b30 0%, #0c0925 100%)',
-        border: '1px solid rgb(127, 83, 226, 0.3)',
+        background: 'linear-gradient(180deg, #101a2b 0%, #0e1626 100%)',
+        border: '1px solid rgb(83, 138, 226, 0.3)',
         borderRadius: 24,
         width: '100%',
         maxWidth: 480,
@@ -143,7 +143,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
       }}>
         {/* Header */}
         <div style={{
-          background: 'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
+          background: 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
           padding: '1.5rem',
           textAlign: 'center',
           borderRadius: '24px 24px 0 0',
@@ -154,7 +154,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               position: 'absolute',
               top: '1rem',
               left: '1rem',
-              background: 'rgb(9, 6, 27, 0.2)',
+              background: 'rgb(11, 18, 32, 0.2)',
               border: 'none',
               borderRadius: '50%',
               width: 32,
@@ -171,30 +171,30 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
           <div style={{
             width: 64,
             height: 64,
-            background: 'rgb(9, 6, 27, 0.2)',
+            background: 'rgb(11, 18, 32, 0.2)',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             margin: '0 auto 1rem',
           }}>
-            <Crown size={32} color="#0a0720" />
+            <Crown size={32} color="#0b1220" />
           </div>
 
           <h2 style={{
             margin: 0,
             fontSize: '1.25rem',
             fontWeight: 800,
-            color: '#0a0720',
-            fontFamily: 'Cairo, sans-serif',
+            color: '#0b1220',
+            fontFamily: 'Tajawal, sans-serif',
           }}>
             تسجيل مستخدم الحراج
           </h2>
           <p style={{
             margin: '0.5rem 0 0',
             fontSize: '0.85rem',
-            color: 'rgb(9, 6, 27, 0.7)',
-            fontFamily: 'Cairo, sans-serif',
+            color: 'rgb(11, 18, 32, 0.7)',
+            fontFamily: 'Tajawal, sans-serif',
           }}>
             للتواصل مع المعلن بالشكل الصحيح
           </p>
@@ -210,9 +210,9 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               gap: '0.5rem',
               fontSize: '0.9rem',
               fontWeight: 600,
-              color: '#cbbaf9',
+              color: '#c7dbfe',
               marginBottom: '0.5rem',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal, sans-serif',
             }}>
               <User size={16} color="#2563eb" />
               الاسم الحقيقي *
@@ -225,13 +225,13 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               placeholder="أدخل اسمك الحقيقي"
               style={{
                 width: '100%',
-                background: 'rgb(9, 6, 27, 0.3)',
-                border: errors.name ? '1px solid #eb4866' : '1px solid rgb(127, 83, 226, 0.2)',
+                background: 'rgb(11, 18, 32, 0.3)',
+                border: errors.name ? '1px solid #eb4866' : '1px solid rgb(83, 138, 226, 0.2)',
                 borderRadius: 12,
                 padding: '0.85rem 1rem',
                 color: '#dbd4ed',
                 fontSize: '0.95rem',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
                 outline: 'none',
                 boxSizing: 'border-box',
               }}
@@ -249,9 +249,9 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               gap: '0.5rem',
               fontSize: '0.9rem',
               fontWeight: 600,
-              color: '#cbbaf9',
+              color: '#c7dbfe',
               marginBottom: '0.5rem',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal, sans-serif',
             }}>
               <Phone size={16} color="#2563eb" />
               رقم الهاتف الحقيقي *
@@ -265,13 +265,13 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               dir="ltr"
               style={{
                 width: '100%',
-                background: 'rgb(9, 6, 27, 0.3)',
-                border: errors.phone ? '1px solid #eb4866' : '1px solid rgb(127, 83, 226, 0.2)',
+                background: 'rgb(11, 18, 32, 0.3)',
+                border: errors.phone ? '1px solid #eb4866' : '1px solid rgb(83, 138, 226, 0.2)',
                 borderRadius: 12,
                 padding: '0.85rem 1rem',
                 color: '#dbd4ed',
                 fontSize: '0.95rem',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
                 outline: 'none',
                 boxSizing: 'border-box',
                 textAlign: 'right',
@@ -290,9 +290,9 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               gap: '0.5rem',
               fontSize: '0.9rem',
               fontWeight: 600,
-              color: '#cbbaf9',
+              color: '#c7dbfe',
               marginBottom: '0.5rem',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal, sans-serif',
             }}>
               <Mail size={16} color="#2563eb" />
               البريد الإلكتروني *
@@ -306,13 +306,13 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               dir="ltr"
               style={{
                 width: '100%',
-                background: 'rgb(9, 6, 27, 0.3)',
-                border: errors.email ? '1px solid #eb4866' : '1px solid rgb(127, 83, 226, 0.2)',
+                background: 'rgb(11, 18, 32, 0.3)',
+                border: errors.email ? '1px solid #eb4866' : '1px solid rgb(83, 138, 226, 0.2)',
                 borderRadius: 12,
                 padding: '0.85rem 1rem',
                 color: '#dbd4ed',
                 fontSize: '0.95rem',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
                 outline: 'none',
                 boxSizing: 'border-box',
                 textAlign: 'left',
@@ -331,9 +331,9 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               gap: '0.5rem',
               fontSize: '0.9rem',
               fontWeight: 600,
-              color: '#cbbaf9',
+              color: '#c7dbfe',
               marginBottom: '0.5rem',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal, sans-serif',
             }}>
               <MapPin size={16} color="#2563eb" />
               المنطقة *
@@ -344,13 +344,13 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               onChange={handleChange}
               style={{
                 width: '100%',
-                background: 'rgb(9, 6, 27, 0.3)',
-                border: errors.region ? '1px solid #eb4866' : '1px solid rgb(127, 83, 226, 0.2)',
+                background: 'rgb(11, 18, 32, 0.3)',
+                border: errors.region ? '1px solid #eb4866' : '1px solid rgb(83, 138, 226, 0.2)',
                 borderRadius: 12,
                 padding: '0.85rem 1rem',
                 color: formData.region ? '#dbd4ed' : '#888',
                 fontSize: '0.95rem',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal, sans-serif',
                 outline: 'none',
                 cursor: 'pointer',
                 boxSizing: 'border-box',
@@ -378,7 +378,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
             cursor: 'pointer',
             marginBottom: '1.5rem',
             padding: '1rem',
-            background: 'rgb(9, 6, 27, 0.2)',
+            background: 'rgb(11, 18, 32, 0.2)',
             borderRadius: 12,
           }}>
             <div
@@ -388,7 +388,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
                 height: 24,
                 borderRadius: 6,
                 background: agreed ? 'linear-gradient(135deg, #1ec9c9 0%, #14a5a5 100%)' : 'transparent',
-                border: agreed ? 'none' : '2px solid rgb(127, 83, 226, 0.4)',
+                border: agreed ? 'none' : '2px solid rgb(83, 138, 226, 0.4)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -401,7 +401,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
             <span style={{
               fontSize: '0.85rem',
               color: '#a0a3b0',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal, sans-serif',
               lineHeight: 1.6,
             }}>
               أوافق على أن بياناتي صحيحة وأنني المسؤول عن أي معلومة خاطئة
@@ -415,16 +415,16 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
             style={{
               width: '100%',
               background: agreed 
-                ? 'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)'
-                : 'rgb(127, 83, 226, 0.2)',
+                ? 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)'
+                : 'rgb(83, 138, 226, 0.2)',
               border: 'none',
               borderRadius: 12,
               padding: '1rem',
               cursor: agreed ? 'pointer' : 'not-allowed',
               fontSize: '1rem',
               fontWeight: 700,
-              color: agreed ? '#0a0720' : '#888',
-              fontFamily: 'Cairo, sans-serif',
+              color: agreed ? '#0b1220' : '#888',
+              fontFamily: 'Tajawal, sans-serif',
               transition: 'all 0.2s ease',
               display: 'flex',
               alignItems: 'center',

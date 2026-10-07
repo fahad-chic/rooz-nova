@@ -64,14 +64,14 @@ const EmailSubscribeSection = () => {
         background: 'linear-gradient(145deg, #f8f6fb 0%, #e3dbf5 55%, #d7caf3 100%)',
         border: '1px solid rgb(30, 58, 138, 0.3)',
         borderRadius: 14,
-        boxShadow: '0 4px 14px rgb(57, 17, 148, 0.08)',
+        boxShadow: '0 4px 14px rgb(17, 67, 148, 0.08)',
         textAlign: 'center',
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Tajawal, sans-serif',
       }}
     >
       <Mail
         size={22}
-        color="#400fb4"
+        color="#1e40af"
         style={{ margin: '0 auto 0.3rem', display: 'block' }}
       />
       <h2
@@ -80,7 +80,7 @@ const EmailSubscribeSection = () => {
           margin: '0 0 0.2rem',
           fontSize: '0.95rem',
           fontWeight: 800,
-          color: '#200d4f',
+          color: '#14274d',
         }}
       >
         عروضنا توصلك أول بأول
@@ -90,7 +90,7 @@ const EmailSubscribeSection = () => {
           margin: '0 auto 0.55rem',
           maxWidth: 400,
           fontSize: '0.78rem',
-          color: '#45298d',
+          color: '#294f8d',
           lineHeight: 1.5,
         }}
       >
@@ -129,8 +129,8 @@ const EmailSubscribeSection = () => {
             border: '1px solid rgb(30, 58, 138, 0.35)',
             background: '#f7f6fb',
             fontSize: '0.8rem',
-            fontFamily: 'Cairo, sans-serif',
-            color: '#200d4f',
+            fontFamily: 'Tajawal, sans-serif',
+            color: '#14274d',
             outline: 'none',
           }}
         />
@@ -142,15 +142,15 @@ const EmailSubscribeSection = () => {
             borderRadius: 10,
             border: 'none',
             background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-            color: '#0b0822',
+            color: '#0b1017',
             fontWeight: 800,
             fontSize: '0.8rem',
             cursor: state === 'loading' ? 'default' : 'pointer',
-            fontFamily: 'Cairo, sans-serif',
+            fontFamily: 'Tajawal, sans-serif',
             display: 'inline-flex',
             alignItems: 'center',
             gap: 5,
-            boxShadow: '0 3px 10px rgb(75, 31, 181, 0.3)',
+            boxShadow: '0 3px 10px rgb(31, 89, 181, 0.3)',
           }}
         >
           {state === 'loading' ? (

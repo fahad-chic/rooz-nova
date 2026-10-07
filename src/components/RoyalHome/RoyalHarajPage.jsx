@@ -58,17 +58,17 @@ import '../../styles/RoyalHome.css';
 const C = {
   gold: '#2563eb',
   goldLight: '#1e40af',
-  goldDark: '#321473',
-  black: '#0a071e',
-  blackLight: '#0f0b2e',
-  darkBg: '#e3dbf4',
-  gray: '#e7e1f4',
-  grayLight: '#e4e0f0',
-  grayMid: '#6340a6',
-  white: '#f8f6fb',
-  cream: '#0c0926',
-  green: '#1aa29f',
-  red: '#e43b5a',
+  goldDark: '#1e3a8a',
+  black: '#0b1220',
+  blackLight: '#101a2b',
+  darkBg: '#e6ebf2',
+  gray: '#e9edf3',
+  grayLight: '#eceff4',
+  grayMid: '#64748b',
+  white: '#ffffff',
+  cream: '#0b1017',
+  green: '#0ea5a4',
+  red: '#e11d48',
 };
 
 
@@ -98,13 +98,13 @@ const HARAJ_SECTIONS = [
     id: 'electronics',
     name: 'أجهزة كهربائية',
     icon: Zap,
-    color: '#4161f0',
+    color: '#4184f0',
   },
   {
     id: 'bedrooms',
     name: 'غرف نوم',
     icon: BedDouble,
-    color: '#bb64ee',
+    color: '#6499ee',
   },
   {
     id: 'cars',
@@ -134,7 +134,7 @@ const HARAJ_SECTIONS = [
     id: 'realestate',
     name: 'عقارات',
     icon: House,
-    color: '#6262f2',
+    color: '#6299f2',
   },
   {
     id: 'jobs',
@@ -146,7 +146,7 @@ const HARAJ_SECTIONS = [
     id: 'furniture',
     name: 'أثاث',
     icon: Armchair,
-    color: '#8a22ed',
+    color: '#2270ed',
   },
   {
     id: 'homeware',
@@ -158,19 +158,19 @@ const HARAJ_SECTIONS = [
     id: 'mobiles',
     name: 'جوالات',
     icon: Smartphone,
-    color: '#b95fed',
+    color: '#5f95ed',
   },
   {
     id: 'laptops',
     name: 'حواسب',
     icon: Laptop,
-    color: '#4659a9',
+    color: '#466ca9',
   },
   {
     id: 'kids',
     name: 'أطفال',
     icon: Baby,
-    color: '#c376f0',
+    color: '#76a5f0',
   },
   {
     id: 'women',
@@ -360,7 +360,7 @@ const AdCard = ({
               borderRadius: 12,
               fontSize: '10px',
               fontWeight: 600,
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal, sans-serif',
             }}
           >
             {conditionText}
@@ -386,7 +386,7 @@ const AdCard = ({
             fontSize: '14px',
             fontWeight: 700,
             color: C.cream,
-            fontFamily: 'Cairo, sans-serif',
+            fontFamily: 'Tajawal, sans-serif',
             lineHeight: 1.35,
             display: '-webkit-box',
             WebkitLineClamp: 2,
@@ -423,7 +423,7 @@ const AdCard = ({
               alignItems: 'center',
               gap: '3px',
               fontSize: '12px',
-              color: '#3d2369',
+              color: '#475569',
               minWidth: 0,
             }}
           >
@@ -465,7 +465,7 @@ const AdCard = ({
               alignItems: 'center',
               justifyContent: 'center',
               gap: '3px',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal, sans-serif',
             }}
           >
             <MessageCircle
@@ -489,7 +489,7 @@ const AdCard = ({
             onClick={handleCall}
             style={{
               background:
-                'linear-gradient(135deg, #592ae1 0%, #400fb4 100%)',
+                'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
               border: 'none',
               borderRadius: 8,
               padding: '6px 4px',
@@ -498,7 +498,7 @@ const AdCard = ({
               alignItems: 'center',
               justifyContent: 'center',
               gap: '3px',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal, sans-serif',
             }}
           >
             <Phone
@@ -557,7 +557,7 @@ const SectionCard = ({
           : 'translateY(0)',
         boxShadow: isHovered
           ? `0 8px 20px ${section.color}20`
-          : '0 2px 6px rgb(9, 6, 27,0.2)',
+          : '0 2px 6px rgb(11, 18, 32,0.2)',
         width: '100%',
         height: '70px',
         boxSizing: 'border-box',
@@ -591,8 +591,8 @@ const SectionCard = ({
         style={{
           fontSize: '11px',
           fontWeight: 700,
-          color: '#0b0822',
-          fontFamily: 'Cairo, sans-serif',
+          color: '#0b1017',
+          fontFamily: 'Tajawal, sans-serif',
           textAlign: 'center',
           lineHeight: 1.2,
           maxWidth: '100%',
@@ -645,7 +645,7 @@ const BankCard = ({ bank }) => {
   return (
     <div
       style={{
-        background: 'linear-gradient(145deg, #f4f1f9 0%, #eae4f3 100%)',
+        background: 'linear-gradient(145deg, #f5f7fa 0%, #e6ebf2 100%)',
         border: '1.5px solid #2563eb',
         borderRadius: 14,
         padding: '0.7rem 0.8rem',
@@ -698,8 +698,8 @@ const BankCard = ({ bank }) => {
             margin: 0,
             fontSize: '0.95rem',
             fontWeight: 900,
-            color: '#0b0822',
-            fontFamily: 'Cairo, sans-serif',
+            color: '#0b1017',
+            fontFamily: 'Tajawal, sans-serif',
           }}
         >
           {bank.name}
@@ -711,7 +711,7 @@ const BankCard = ({ bank }) => {
           style={{
             margin: '0 0 0.25rem',
             fontSize: '0.7rem',
-            color: '#3d2369',
+            color: '#475569',
           }}
         >
           IBAN
@@ -722,7 +722,7 @@ const BankCard = ({ bank }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            background: 'linear-gradient(135deg, #cfc0f4, #a991eb)',
+            background: 'linear-gradient(135deg, #cfc0f4, #91b4eb)',
             border: '1px solid #2563eb',
             borderRadius: 10,
             padding: '0.4rem 0.6rem',
@@ -733,7 +733,7 @@ const BankCard = ({ bank }) => {
             style={{
               fontSize: '0.78rem',
               fontWeight: 800,
-              color: '#0b0822',
+              color: '#0b1017',
               fontFamily: 'monospace',
               direction: 'ltr',
               overflow: 'hidden',
@@ -781,7 +781,7 @@ const BankCard = ({ bank }) => {
           style={{
             margin: '0 0 0.25rem',
             fontSize: '0.7rem',
-            color: '#3d2369',
+            color: '#475569',
           }}
         >
           رقم الحساب
@@ -792,7 +792,7 @@ const BankCard = ({ bank }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            background: 'linear-gradient(135deg, #cfc0f4, #a991eb)',
+            background: 'linear-gradient(135deg, #cfc0f4, #91b4eb)',
             border: '1px solid #2563eb',
             borderRadius: 10,
             padding: '0.4rem 0.6rem',
@@ -803,7 +803,7 @@ const BankCard = ({ bank }) => {
             style={{
               fontSize: '0.78rem',
               fontWeight: 800,
-              color: '#0b0822',
+              color: '#0b1017',
               fontFamily: 'monospace',
               direction: 'ltr',
               whiteSpace: 'nowrap',
@@ -1099,7 +1099,7 @@ const RoyalHarajPage = () => {
         width: '100%',
         background: 'transparent',
         fontFamily:
-          'Cairo, sans-serif',
+          'Tajawal, sans-serif',
         direction: 'rtl',
         position: 'relative',
         overflowX: 'hidden',
@@ -1108,7 +1108,7 @@ const RoyalHarajPage = () => {
       <div className="rh-bg" aria-hidden="true" />
       <div className="rh-topline" aria-hidden="true" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&display=swap"
         rel="stylesheet"
       />
 
@@ -1223,9 +1223,9 @@ const RoyalHarajPage = () => {
 
         /* لافتة «أعلن الآن» — تتغلب على قاعدة الأزرار الذهبية العامة */
         .haraj-page .haraj-cta-banner {
-          background: linear-gradient(120deg, #3128da 0%, #aa3ee9 45%, #a7132e 100%) !important;
+          background: linear-gradient(120deg, #1d4ed8 0%, #2563eb 55%, #0ea5e9 100%) !important;
           border: none !important;
-          box-shadow: 0 10px 28px rgb(49, 40, 218, 0.35), inset 0 1px 0 rgb(255, 255, 255, 0.25) !important;
+          box-shadow: 0 10px 28px rgb(37, 99, 235, 0.35), inset 0 1px 0 rgb(255, 255, 255, 0.25) !important;
           font-weight: 800 !important;
         }
       `}</style>
@@ -1287,7 +1287,7 @@ const RoyalHarajPage = () => {
                 fontWeight: 800,
                 color: C.cream,
                 fontFamily:
-                  'Cairo, sans-serif',
+                  'Tajawal, sans-serif',
                 display: 'flex',
                 alignItems: 'center',
                 gap: '8px',
@@ -1301,7 +1301,7 @@ const RoyalHarajPage = () => {
                   height: 48,
                   objectFit: 'contain',
                   clipPath: 'circle(48%)',
-                  background: '#0a071f',
+                  background: '#0b1220',
                   borderRadius: '50%',
                   border: `2px solid ${C.gold}`,
                   boxShadow: `0 0 12px ${C.gold}60`,
@@ -1346,7 +1346,7 @@ const RoyalHarajPage = () => {
             gap: '0.85rem',
             direction: 'rtl',
             color: '#ffffff',
-            fontFamily: 'Cairo, sans-serif',
+            fontFamily: 'Tajawal, sans-serif',
             textAlign: 'right',
           }}
         >
@@ -1363,10 +1363,10 @@ const RoyalHarajPage = () => {
               border: '1.5px solid rgb(37, 99, 235,0.7)',
             }}
           >
-            <Sparkles size={22} color="#a382f5" aria-hidden="true" />
+            <Sparkles size={22} color="#93c5fd" aria-hidden="true" />
           </span>
           <span style={{ flex: 1, minWidth: 0 }}>
-            <span style={{ display: 'block', fontWeight: 900, fontSize: '1.02rem', textShadow: '0 1px 3px rgb(9, 6, 27,0.3)' }}>
+            <span style={{ display: 'block', fontWeight: 900, fontSize: '1.02rem', textShadow: '0 1px 3px rgb(11, 18, 32,0.3)' }}>
               أعلن عن سلعتك الآن — مجاناً
             </span>
             <span style={{ display: 'block', fontWeight: 600, fontSize: '0.8rem', opacity: 0.92, marginTop: 2 }}>
@@ -1375,7 +1375,7 @@ const RoyalHarajPage = () => {
           </span>
           <Plus
             size={20}
-            color="#a382f5"
+            color="#93c5fd"
             aria-hidden="true"
             style={{ flexShrink: 0 }}
           />
@@ -1497,7 +1497,7 @@ const RoyalHarajPage = () => {
               fontWeight: 800,
               color: C.black,
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal, sans-serif',
               position: 'relative',
             }}
           >
@@ -1537,15 +1537,15 @@ const RoyalHarajPage = () => {
             style={{
               width: '100%',
               background: `linear-gradient(145deg, #ffffff 0%, #eae5f6 100%)`,
-              border: `1px solid #8566d9`,
+              border: `1px solid #6692d9`,
               borderRadius: 14,
               padding:
                 '0.85rem 1rem 0.85rem 3rem',
-              color: '#0b0822',
-              caretColor: '#0b0822',
+              color: '#0b1017',
+              caretColor: '#0b1017',
               fontSize: '0.9rem',
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal, sans-serif',
               outline: 'none',
               fontWeight: 600,
             }}
@@ -1565,13 +1565,13 @@ const RoyalHarajPage = () => {
             style={{
               width: '100%',
               background: '#ffffff',
-              border: `1px solid #8566d9`,
+              border: `1px solid #6692d9`,
               borderRadius: 14,
               padding: '0.75rem 1rem',
-              color: '#0b0822',
+              color: '#0b1017',
               fontSize: '0.9rem',
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal, sans-serif',
               outline: 'none',
               cursor: 'pointer',
               fontWeight: 600,
@@ -1581,7 +1581,7 @@ const RoyalHarajPage = () => {
               <option
                 key={category}
                 value={category}
-                style={{ color: '#0b0822', background: '#ffffff' }}
+                style={{ color: '#0b1017', background: '#ffffff' }}
               >
                 {category}
               </option>
@@ -1598,7 +1598,7 @@ const RoyalHarajPage = () => {
             style={{
               width: '100%',
               marginBottom: sectionsOpen ? '0.75rem' : 0,
-              background: 'linear-gradient(145deg, #f4f1f9, #eae4f3)',
+              background: 'linear-gradient(145deg, #f5f7fa, #e6ebf2)',
               border: '1.5px solid #2563eb',
               borderRadius: 14,
               padding: '0.85rem 1rem',
@@ -1607,10 +1607,10 @@ const RoyalHarajPage = () => {
               alignItems: 'center',
               justifyContent: 'space-between',
               gap: '0.5rem',
-              color: '#0b0822',
+              color: '#0b1017',
               fontSize: '0.95rem',
               fontWeight: 900,
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal, sans-serif',
               boxShadow: '0 2px 10px rgb(37, 99, 235,0.15)',
             }}
           >
@@ -1634,7 +1634,7 @@ const RoyalHarajPage = () => {
 
           {sectionsOpen && (
             <>
-              <p style={{ margin: '0 0 0.75rem', fontSize: '0.78rem', color: '#3d2369', fontWeight: 600 }}>
+              <p style={{ margin: '0 0 0.75rem', fontSize: '0.78rem', color: '#475569', fontWeight: 600 }}>
                 اختر قسماً لتصفية الإعلانات حسب النوع
               </p>
               <div className="sections-grid">
@@ -1700,9 +1700,9 @@ const RoyalHarajPage = () => {
                 background: `linear-gradient(145deg, #ffffff 0%, #eae5f6 100%)`,
                 border: `1px solid ${C.grayLight}`,
                 borderRadius: 16,
-                color: '#3d2369',
+                color: '#475569',
                 fontFamily:
-                  'Cairo, sans-serif',
+                  'Tajawal, sans-serif',
               }}
             >
               لا توجد إعلانات متاحة حاليًا
@@ -1737,16 +1737,16 @@ const RoyalHarajPage = () => {
               style={{
                 width: '100%',
                 marginTop: '1.5rem',
-                background: `linear-gradient(135deg, ${C.gold} 0%, #8f6bdc 100%)`,
+                background: `linear-gradient(135deg, ${C.gold} 0%, #7aa5ee 100%)`,
                 border: `1px solid ${C.gold}`,
                 borderRadius: 14,
                 padding: '1rem',
                 cursor: 'pointer',
-                color: '#0c0824',
+                color: '#0e1626',
                 fontSize: '0.9rem',
                 fontWeight: 800,
                 fontFamily:
-                  'Cairo, sans-serif',
+                  'Tajawal, sans-serif',
                 boxShadow: '0 6px 18px rgb(30, 58, 138,0.25)',
               }}
             >
@@ -1776,7 +1776,7 @@ const RoyalHarajPage = () => {
               style={{
                 fontSize: '1rem',
                 fontWeight: 800,
-                color: '#0b0822',
+                color: '#0b1017',
                 marginBottom: '1rem',
                 display: 'flex',
                 alignItems: 'center',
@@ -1822,7 +1822,7 @@ const RoyalHarajPage = () => {
                       margin: 0,
                       fontSize: '1.15rem',
                       fontWeight: 900,
-                      color: '#09071c',
+                      color: '#10151c',
                     }}
                   >
                     1%
@@ -1834,7 +1834,7 @@ const RoyalHarajPage = () => {
                         '0.25rem 0 0',
                       fontSize:
                         '0.75rem',
-                      color: '#0b0822',
+                      color: '#0b1017',
                     }}
                   >
                     المستخدمة
@@ -1886,7 +1886,7 @@ const RoyalHarajPage = () => {
                   fontSize: '0.8rem',
                   color: C.grayMid,
                   fontFamily:
-                    'Cairo, sans-serif',
+                    'Tajawal, sans-serif',
                 }}
               >
                 وتعتبر هذه النسبة في ذمة المعلن عند بيع السلعة
@@ -1899,7 +1899,7 @@ const RoyalHarajPage = () => {
           style={{
             marginBottom: '0.85rem',
             padding: '0.75rem 0.85rem',
-            background: `linear-gradient(135deg, ${C.darkBg} 0%, rgb(115, 75, 214,0.1) 100%)`,
+            background: `linear-gradient(135deg, ${C.darkBg} 0%, rgb(75, 128, 214,0.1) 100%)`,
             borderRadius: '16px',
             border: `1px solid ${C.gold}40`,
           }}
@@ -1962,7 +1962,7 @@ const RoyalHarajPage = () => {
               lineHeight: 1.8,
               color: C.cream,
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal, sans-serif',
               textAlign: 'justify',
             }}
           >
@@ -2023,7 +2023,7 @@ const RoyalHarajPage = () => {
               fontSize: '0.8rem',
               color: C.grayMid,
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal, sans-serif',
             }}
           >
             جميع الحقوق محفوظة © أناقة ROOZ 2026
@@ -2061,7 +2061,7 @@ const RoyalHarajPage = () => {
               fontSize: '0.85rem',
               fontWeight: 600,
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal, sans-serif',
               whiteSpace: 'nowrap',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
@@ -2083,7 +2083,7 @@ const RoyalHarajPage = () => {
             aria-label="تسجيل الخروج"
             style={{
               marginInlineStart: '0.5rem',
-              background: 'rgb(9, 6, 27,0.25)',
+              background: 'rgb(11, 18, 32,0.25)',
               border: '1px solid rgb(255, 255, 255,0.4)',
               color: 'white',
               borderRadius: 999,
@@ -2091,7 +2091,7 @@ const RoyalHarajPage = () => {
               fontSize: '0.78rem',
               fontWeight: 800,
               cursor: 'pointer',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal, sans-serif',
               whiteSpace: 'nowrap',
             }}
           >

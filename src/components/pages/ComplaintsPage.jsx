@@ -312,7 +312,7 @@ const handleMarquee = async () => {
 
 if (userRole !== 'owner') {
   return (
-    <div className="min-h-screen w-full flex items-center justify-center text-center text-red-500 font-Cairo">
+    <div className="min-h-screen w-full flex items-center justify-center text-center text-red-500 font-Tajawal">
       <div className="glass-morphism-gold p-6 rounded-xl">
         <h2 className="text-2xl font-bold mb-2">ممنوع الدخول </h2>
         <p className="text-gray-300 text-sm">
@@ -335,8 +335,8 @@ const tabs = [
 ];
 
 return (
-  <div className="min-h-screen w-full" style={{ background: '#09071c', padding: 20 }}>
-    <h1 className="text-3xl font-bold mb-4" style={{ color: '#a788f5' }}>
+  <div className="min-h-screen w-full" style={{ background: '#10151c', padding: 20 }}>
+    <h1 className="text-3xl font-bold mb-4" style={{ color: '#93c5fd' }}>
        المطبخ الخلفي
     </h1>
 
@@ -373,7 +373,7 @@ return (
       {activeTab === 'products' && (
         <>
           <div className="flex justify-between items-center mb-4">
-            <h2 style={{ color: '#a788f5' }}>إدارة السلع والاسعار</h2>
+            <h2 style={{ color: '#93c5fd' }}>إدارة السلع والاسعار</h2>
             <button
               onClick={() => setShowForm(!showForm)}
               className="btn-gold flex items-center gap-2 text-xs"
@@ -446,7 +446,7 @@ return (
 
       {activeTab === 'users' && (
         <>
-          <h2 style={{ color: '#a788f5', marginBottom: 10 }}>إدارة المستخدمين</h2>
+          <h2 style={{ color: '#93c5fd', marginBottom: 10 }}>إدارة المستخدمين</h2>
           <table className="w-full text-xs glass-morphism-gold rounded-lg">
             <thead>
               <tr>
@@ -501,7 +501,7 @@ return (
 
       {activeTab === 'monitoring' && (
         <div className="glass-morphism-gold rounded-lg p-6 text-xs">
-          <h2 style={{ color: '#a788f5' }} className="mb-4">
+          <h2 style={{ color: '#93c5fd' }} className="mb-4">
             مراقبة الرسائل والاعلانات
           </h2>
 
@@ -543,7 +543,7 @@ return (
 
       {activeTab === 'settings' && (
         <div className="glass-morphism-gold rounded-lg p-4 mb-6 text-xs">
-          <h2 style={{ color: '#a788f5' }}>الشريط المتحرك لكل الموقع</h2>
+          <h2 style={{ color: '#93c5fd' }}>الشريط المتحرك لكل الموقع</h2>
           <input
             value={marqueeText}
             onChange={(e) => setMarqueeText(e.target.value)}
@@ -558,12 +558,12 @@ return (
 
       {activeTab === 'logs' && (
         <div className="glass-morphism-gold rounded-lg p-4 my-6 text-xs">
-          <h2 style={{ color: '#a788f5' }}>سجل الاحداث الحية</h2>
+          <h2 style={{ color: '#93c5fd' }}>سجل الاحداث الحية</h2>
           <div style={{ height: 200, overflowY: 'scroll' }}>
             {logs.map((l) => (
-              <p key={l.id} style={{ fontSize: 12, color: '#9379d8' }}>
+              <p key={l.id} style={{ fontSize: 12, color: '#799dd8' }}>
                 [{l.time?.toDate().toLocaleString('ar-SA')}] {l.byEmail}:{' '}
-                <b style={{ color: '#a788f5' }}>{l.action}</b> - {l.target}
+                <b style={{ color: '#93c5fd' }}>{l.action}</b> - {l.target}
               </p>
             ))}
           </div>

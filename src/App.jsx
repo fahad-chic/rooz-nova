@@ -155,7 +155,7 @@ const LoadingScreen = () => (
       height: '100vh',
       color: '#2563eb',
       fontSize: '1.5rem',
-      fontFamily: 'Cairo',
+      fontFamily: 'Tajawal',
       direction: 'rtl',
     }}
   >
@@ -207,7 +207,7 @@ const UnauthorizedPage = () => {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '2rem 1rem',
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Tajawal, sans-serif',
         direction: 'rtl',
       }}
     >
@@ -220,7 +220,7 @@ const UnauthorizedPage = () => {
           border: '2px solid #2563eb',
           borderRadius: 20,
           padding: '2.2rem 1.6rem',
-          boxShadow: '0 18px 50px rgb(15, 11, 48,0.22)',
+          boxShadow: '0 18px 50px rgb(28, 35, 48,0.22)',
         }}
       >
         <div
@@ -254,7 +254,7 @@ const UnauthorizedPage = () => {
         <p
           style={{
             margin: 0,
-            color: '#110c34',
+            color: '#1e2634',
             fontWeight: 600,
             lineHeight: 1.9,
             fontSize: '0.95rem',
@@ -1210,8 +1210,8 @@ function AppContent() {
           location.pathname === '/login'
             ? 'transparent'
             : 'linear-gradient(180deg, #e3dbf4 0%, #dbd0f2 55%, #d9ccf1 100%)',
-        color: '#100c32',
-        fontFamily: 'Cairo',
+        color: '#1d2532',
+        fontFamily: 'Tajawal',
         position: 'relative',
       }}
     >
@@ -1228,7 +1228,7 @@ function AppContent() {
             width: "100%",
             height: "100%",
             background:
-              "rgb(9, 6, 27,0.5)",
+              "rgb(11, 18, 32,0.5)",
             display: "flex",
             justifyContent:
               "center",
@@ -1255,7 +1255,7 @@ function AppContent() {
               maxWidth: "380px",
               textAlign: "center",
               boxShadow:
-                "0 0 15px rgb(9, 6, 27,0.2)",
+                "0 0 15px rgb(11, 18, 32,0.2)",
               color: "#000",
             }}
             onClick={(event) =>
@@ -1268,7 +1268,7 @@ function AppContent() {
                 onClick={closeWelcomeModal}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(9, 6, 27,0.06)',
+                  background: 'rgb(11, 18, 32,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -1449,17 +1449,17 @@ function AppContent() {
               maxWidth: 420,
               marginInline: 'auto',
               background:
-                'linear-gradient(150deg, #0a071f, #000)',
+                'linear-gradient(150deg, #0b1220, #000)',
               border:
                 '1px solid rgb(37, 99, 235, 0.55)',
               borderRadius: 16,
               padding:
                 '18px 20px',
               fontFamily:
-                'Cairo, sans-serif',
-              color: '#cbbaf9',
+                'Tajawal, sans-serif',
+              color: '#c7dbfe',
               boxShadow:
-                '0 18px 50px rgb(9, 6, 27,0.65)',
+                '0 18px 50px rgb(11, 18, 32,0.65)',
             }}
           >
             <div
@@ -1472,11 +1472,11 @@ function AppContent() {
             >
               <Clock
                 size={30}
-                color="#3e13ec"
+                color="#1d4ed8"
               />
               <strong
                 style={{
-                  color: '#3e13ec',
+                  color: '#1d4ed8',
                   fontSize: 15,
                   fontWeight: 900,
                 }}
@@ -1505,7 +1505,7 @@ function AppContent() {
                   display: 'block',
                   marginTop: 8,
                   fontSize: 12,
-                  color: '#7b51d9',
+                  color: '#3b82f6',
                 }}
               >
                 سيتم إخراجك تلقائياً عند انتهاء الوقت.
@@ -1547,9 +1547,9 @@ function AppContent() {
               fontWeight: 800,
               fontSize: '0.9rem',
               boxShadow:
-                '0 2px 10px rgb(9, 6, 27,0.3)',
+                '0 2px 10px rgb(11, 18, 32,0.3)',
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal, sans-serif',
               boxSizing: 'border-box',
             }}
           >
@@ -1585,7 +1585,7 @@ function AppContent() {
               position: 'fixed',
               inset: 0,
               background:
-                'rgb(9, 6, 27,0.8)',
+                'rgb(11, 18, 32,0.8)',
               display: 'flex',
               alignItems: 'center',
               justifyContent:
@@ -1593,23 +1593,23 @@ function AppContent() {
               zIndex: 15000,
               padding: 16,
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal, sans-serif',
             }}
           >
             <div
               style={{
                 background: '#111',
                 border:
-                  '1px solid rgb(123, 81, 217,0.4)',
+                  '1px solid rgb(59, 130, 246,0.4)',
                 borderRadius: 16,
                 padding:
                   '2rem 1.5rem',
                 maxWidth: 420,
                 width: '100%',
                 textAlign: 'center',
-                color: '#cbbaf9',
+                color: '#c7dbfe',
                 boxShadow:
-                  '0 20px 60px rgb(9, 6, 27,0.6)',
+                  '0 20px 60px rgb(11, 18, 32,0.6)',
               }}
             >
               <div
@@ -1623,13 +1623,13 @@ function AppContent() {
               >
                 <Clock
                   size={48}
-                  color="#7b51d9"
+                  color="#3b82f6"
                 />
               </div>
 
               <h2
                 style={{
-                  color: '#7b51d9',
+                  color: '#3b82f6',
                   fontSize: 22,
                   fontWeight: 700,
                   marginBottom: 12,
@@ -1675,7 +1675,7 @@ function AppContent() {
                   width: '100%',
                   padding: '13px',
                   background:
-                    'linear-gradient(135deg, #7b51d9, #1e40af)',
+                    'linear-gradient(135deg, #3b82f6, #1e40af)',
                   color: '#fff',
                   border: 'none',
                   borderRadius: 10,
@@ -1707,9 +1707,9 @@ function AppContent() {
                   padding: '13px',
                   background:
                     'transparent',
-                  color: '#7b51d9',
+                  color: '#3b82f6',
                   border:
-                    '1px solid rgb(123, 81, 217,0.4)',
+                    '1px solid rgb(59, 130, 246,0.4)',
                   borderRadius: 10,
                   fontWeight: 700,
                   fontSize: 15,
@@ -1826,10 +1826,10 @@ function AppContent() {
               height: '60px',
               overflow: 'hidden',
               display: 'block',
-              background: 'linear-gradient(90deg, #09061b 0%, #0b0821 40%, #0c0824 60%, #09061b 100%)',
-              borderTop: '2px solid #3e13ec',
-              borderBottom: '2px solid #3e13ec',
-              boxShadow: '0 12px 32px rgb(9, 6, 27,0.6), 0 0 22px rgb(37, 99, 235,0.25)',
+              background: 'linear-gradient(90deg, #0b1220 0%, #0b1017 40%, #0e1626 60%, #0b1220 100%)',
+              borderTop: '2px solid #1d4ed8',
+              borderBottom: '2px solid #1d4ed8',
+              boxShadow: '0 12px 32px rgb(11, 18, 32,0.6), 0 0 22px rgb(37, 99, 235,0.25)',
               zIndex: 80,
               flexShrink: 0,
             }}
@@ -1866,15 +1866,15 @@ function AppContent() {
                     flexShrink: 0,
                     padding: '0 60px',
                     whiteSpace: 'nowrap',
-                    fontFamily: 'Cairo, "Noto Sans Arabic", Tahoma, sans-serif',
+                    fontFamily: 'Tajawal, "Noto Sans Arabic", Tahoma, sans-serif',
                     fontSize: 'clamp(1.15rem, 2.5vw, 1.55rem)',
                     fontWeight: 900,
-                    WebkitTextStroke: '0.4px rgb(117, 75, 240,0.5)',
+                    WebkitTextStroke: '0.4px rgb(75, 138, 240,0.5)',
                     lineHeight: '60px',
                     direction: 'rtl',
                     unicodeBidi: 'isolate',
-                    color: '#3e13ec',
-                    WebkitTextFillColor: '#3e13ec',
+                    color: '#1d4ed8',
+                    WebkitTextFillColor: '#1d4ed8',
                     textShadow: '0 1px 2px #000',
                   }}
                 >

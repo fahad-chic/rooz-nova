@@ -165,13 +165,13 @@ const HeroBanner = () => {
         overflow: 'hidden',
         boxSizing: 'border-box',
         background:
-          'linear-gradient(135deg, #e2d8f4 0%, #cab6f0 48%, #eae4f5 100%)',
+          'linear-gradient(135deg, #e2d8f4 0%, #b6ccf0 48%, #eae4f5 100%)',
         borderTop:
           '1px solid rgb(255, 255, 255,0.85)',
         borderBottom:
-          '1px solid rgb(79, 33, 157,0.22)',
+          '1px solid rgb(33, 81, 157,0.22)',
         boxShadow:
-          '0 6px 22px rgb(51, 22, 100,0.09), inset 0 1px 0 rgb(255, 255, 255,0.9)',
+          '0 6px 22px rgb(57, 73, 100,0.09), inset 0 1px 0 rgb(255, 255, 255,0.9)',
       }}
     >
       {/* الخط العلوي */}
@@ -181,7 +181,7 @@ const HeroBanner = () => {
           height: 2,
           width: '100%',
           background:
-            'linear-gradient(90deg, transparent, #5e29b8 25%, #865ee1 50%, #5e29b8 75%, transparent)',
+            'linear-gradient(90deg, transparent, #2960b8 25%, #5e90e1 50%, #2960b8 75%, transparent)',
         }}
       />
 
@@ -211,12 +211,12 @@ const HeroBanner = () => {
             alignItems: 'center',
             justifyContent: 'center',
             background:
-              'linear-gradient(145deg, #f7f5fb 0%, #ac8deb 100%)',
+              'linear-gradient(145deg, #f7f5fb 0%, #8db1eb 100%)',
             border:
-              '1px solid rgb(79, 33, 157,0.28)',
-            color: '#4e219c',
+              '1px solid rgb(33, 81, 157,0.28)',
+            color: '#21509c',
             boxShadow:
-              '0 6px 16px rgb(51, 22, 100,0.13), inset 0 1px 0 rgb(255, 255, 255,0.95)',
+              '0 6px 16px rgb(57, 73, 100,0.13), inset 0 1px 0 rgb(255, 255, 255,0.95)',
             flexShrink: 0,
           }}
         >
@@ -258,9 +258,9 @@ const HeroBanner = () => {
               display: 'flex',
               alignItems: 'center',
               gap: 6,
-              color: '#451f7f',
+              color: '#1f447f',
               fontFamily:
-                'Cairo, Cairo, Arial, sans-serif',
+                'Tajawal, Tajawal, Arial, sans-serif',
             }}
           >
             <Sparkles
@@ -280,9 +280,9 @@ const HeroBanner = () => {
 
           <strong
             style={{
-              color: '#291842',
+              color: '#2b3342',
               fontFamily:
-                'Cairo, Cairo, Arial, sans-serif',
+                'Tajawal, Tajawal, Arial, sans-serif',
               fontSize: '0.88rem',
               lineHeight: 1.5,
               fontWeight: 800,
@@ -366,9 +366,9 @@ const HeroBanner = () => {
                   boxSizing: 'border-box',
                   padding:
                     '0 55px',
-                  color: '#42276a',
+                  color: '#27416a',
                   fontFamily:
-                    'Cairo, Cairo, Arial, sans-serif',
+                    'Tajawal, Tajawal, Arial, sans-serif',
                   fontSize: '0.82rem',
                   lineHeight: 1.7,
                   fontWeight: 600,
@@ -403,7 +403,7 @@ const HeroBanner = () => {
               '1px solid rgb(25, 89, 86,0.28)',
             color: '#ffffff',
             fontFamily:
-              'Cairo, Cairo, Arial, sans-serif',
+              'Tajawal, Tajawal, Arial, sans-serif',
             fontSize: '0.78rem',
             fontWeight: 800,
             boxShadow:
@@ -458,7 +458,7 @@ const HeroBanner = () => {
         style={{
           height: 1,
           background:
-            'linear-gradient(90deg, transparent, rgb(94, 41, 184,0.42), transparent)',
+            'linear-gradient(90deg, transparent, rgb(41, 96, 184,0.42), transparent)',
         }}
       />
 

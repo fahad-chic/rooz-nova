@@ -30,7 +30,7 @@ const OTPPage = () => {
   if (!isOwner || forbidden) {
     return (
       <div className="min-h-screen w-full marble-bg flex items-center justify-center p-4">
-        <div style={{ textAlign: 'center', color: '#7b51d9' }}>
+        <div style={{ textAlign: 'center', color: '#3b82f6' }}>
           <ShieldX size={48} style={{ margin: '0 auto 12px' }} />
           <p>سجلات التحقق متاحة لصاحب الموقع فقط</p>
         </div>
@@ -39,11 +39,11 @@ const OTPPage = () => {
   }
 
   return (
-    <div className="min-h-screen w-full marble-bg p-4 font-Cairo" dir="rtl">
+    <div className="min-h-screen w-full marble-bg p-4 font-Tajawal" dir="rtl">
       <div style={{ maxWidth: 760, margin: '0 auto' }}>
         <h1
           style={{
-            color: '#7b51d9',
+            color: '#3b82f6',
             fontSize: 22,
             fontWeight: 900,
             display: 'flex',
@@ -57,14 +57,14 @@ const OTPPage = () => {
 
         <div
           className="glass-morphism-gold"
-          style={{ padding: 12, borderRadius: 10, fontSize: 12, color: '#cbbaf9', marginBottom: 16 }}
+          style={{ padding: 12, borderRadius: 10, fontSize: 12, color: '#c7dbfe', marginBottom: 16 }}
         >
           <ShieldCheck size={14} style={{ verticalAlign: 'middle', marginLeft: 6 }} />
           تعرض هذه الصفحة آخر 100 عملية مسجّلة في سجل الموقع — للمالك فقط.
         </div>
 
         {logs.length === 0 && (
-          <p style={{ color: '#aa99d8', textAlign: 'center', padding: 24 }}>
+          <p style={{ color: '#a8bce0', textAlign: 'center', padding: 24 }}>
             لا توجد سجلات بعد
           </p>
         )}
@@ -76,8 +76,8 @@ const OTPPage = () => {
               className="glass-morphism-gold"
               style={{ padding: '10px 14px', borderRadius: 10, fontSize: 13 }}
             >
-              <div style={{ color: '#7b51d9', fontWeight: 700 }}>{log.action || 'حدث'}</div>
-              <div style={{ color: '#cbbaf9', marginTop: 2 }}>{log.target || '—'}</div>
+              <div style={{ color: '#3b82f6', fontWeight: 700 }}>{log.action || 'حدث'}</div>
+              <div style={{ color: '#c7dbfe', marginTop: 2 }}>{log.target || '—'}</div>
               <div style={{ color: '#72768a', fontSize: 11, marginTop: 4 }}>
                 {log.by ? `بواسطة: ${log.by} — ` : ''}
                 {log.time?.toDate

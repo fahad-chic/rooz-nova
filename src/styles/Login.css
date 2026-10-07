@@ -3,7 +3,7 @@
   --rl-gold: #2563eb;
   --rl-gold-bright: #3b82f6;
   --rl-gold-soft: #93c5fd;
-  --rl-ink: #f4f1f9;
+  --rl-ink: #f5f7fa;
   position: relative;
   width: 100%;
   min-height: 100vh;
@@ -13,13 +13,13 @@
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  font-family: 'Cairo', system-ui, sans-serif;
+  font-family: 'Tajawal', system-ui, sans-serif;
   color: var(--rl-ink);
   text-align: center;
   background:
     radial-gradient(800px 360px at 85% 0%, rgb(59, 130, 246,0.16), transparent 55%),
     radial-gradient(600px 300px at 10% 100%, rgb(37, 99, 235,0.1), transparent 50%),
-    linear-gradient(165deg, #0a071e 0%, #0c0824 45%, #0d0a29 100%);
+    linear-gradient(165deg, #0b1220 0%, #0e1626 45%, #101a2b 100%);
 }
 .rl-veil { display: none; }
 .rl-wrap {
@@ -35,7 +35,7 @@
 .rl-crown-ic img {
   width: 92px; height: 92px; border-radius: 50%; object-fit: cover;
   border: 2px solid #2563eb;
-  box-shadow: 0 0 0 5px rgb(37, 99, 235,0.15), 0 14px 36px rgb(9, 6, 27,0.5),
+  box-shadow: 0 0 0 5px rgb(37, 99, 235,0.15), 0 14px 36px rgb(11, 18, 32,0.5),
     inset 0 0 20px rgb(59, 130, 246,0.15);
 }
 .rl-tag {
@@ -52,7 +52,7 @@
   align-items: stretch;
 }
 .rl-card {
-  background: linear-gradient(165deg, #0d0a29, #0b0822);
+  background: linear-gradient(165deg, #101a2b, #0b1017);
   border: 1px solid rgb(37, 99, 235,0.28);
   border-radius: 16px;
   padding: 10px 8px;
@@ -70,9 +70,9 @@
 }
 .rl-card--big {
   padding: 16px 12px;
-  background: linear-gradient(155deg, #0f0b2e 0%, #0c0824 55%, #0a0820 100%);
+  background: linear-gradient(155deg, #101a2b 0%, #0e1626 55%, #0b1220 100%);
   border: 1.5px solid rgb(59, 130, 246,0.45);
-  box-shadow: 0 16px 40px rgb(9, 6, 27,0.4), inset 0 1px 0 rgb(59, 130, 246,0.12);
+  box-shadow: 0 16px 40px rgb(11, 18, 32,0.4), inset 0 1px 0 rgb(59, 130, 246,0.12);
   position: relative;
 }
 .rl-card--big::before {
@@ -126,7 +126,7 @@
   display: inline-flex; align-items: center; justify-content: center; gap: 4px;
   margin: 6px auto 0; padding: 4px 12px; border-radius: 999px;
   background: linear-gradient(135deg, #3b82f6, #2563eb 60%, #1e40af);
-  color: #0a071e; font-size: 0.7rem; font-weight: 900;
+  color: #0b1220; font-size: 0.7rem; font-weight: 900;
   box-shadow: 0 4px 14px rgb(37, 99, 235,0.35);
 }
 .rl-contact-owner {
@@ -136,11 +136,11 @@
   color: #93c5fd; font-size: 0.68rem; font-weight: 800; cursor: pointer;
 }
 .rl-form-card {
-  background: linear-gradient(180deg, #0e1626, #0b0822);
+  background: linear-gradient(180deg, #0e1626, #0b1017);
   border: 1px solid rgb(37, 99, 235,0.3);
   border-radius: 20px;
   padding: 14px;
-  box-shadow: 0 20px 48px rgb(9, 6, 27,0.45);
+  box-shadow: 0 20px 48px rgb(11, 18, 32,0.45);
   text-align: center;
 }
 .rl-form-title {
@@ -160,7 +160,7 @@
 }
 .rl-input-wrap {
   display: flex; align-items: center; gap: 8px;
-  background: rgb(10, 7, 30,0.75);
+  background: rgb(11, 18, 32,0.75);
   border: 1px solid rgb(37, 99, 235,0.28);
   border-radius: 12px; padding: 0 10px; min-height: 42px;
 }
@@ -170,7 +170,7 @@
 }
 .rl-input {
   flex: 1; border: none; outline: none; background: transparent;
-  color: #f4f1f9; font-size: 0.86rem; font-weight: 600; min-height: 40px;
+  color: #f5f7fa; font-size: 0.86rem; font-weight: 600; min-height: 40px;
   text-align: right;
 }
 .rl-input::placeholder { color: rgb(244, 241, 249,0.3); }
@@ -179,7 +179,7 @@
 .rl-submit, button.rl-submit {
   width: 100%; margin-top: 10px; min-height: 44px; border: none; border-radius: 999px;
   cursor: pointer; font-family: inherit; font-size: 0.92rem; font-weight: 900;
-  color: #0a071e;
+  color: #0b1220;
   background: linear-gradient(135deg, #3b82f6, #2563eb 50%, #1e40af);
   box-shadow: 0 10px 24px rgb(37, 99, 235,0.35);
 }

@@ -111,24 +111,24 @@ export default ForgotPassword;
 const page = {
   minHeight: '100vh',
   background:
-    'radial-gradient(circle at 50% 20%, rgb(123, 81, 217,0.10), transparent 35%), linear-gradient(135deg, #0a071f, #0d0928)',
+    'radial-gradient(circle at 50% 20%, rgb(59, 130, 246,0.10), transparent 35%), linear-gradient(135deg, #0b1220, #0e1626)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   padding: 20,
-  fontFamily: 'Cairo, sans-serif',
+  fontFamily: 'Tajawal, sans-serif',
   direction: 'rtl',
   boxSizing: 'border-box'
 };
 
 const card = {
-  background: 'linear-gradient(145deg, #0c0926, #0a0820)',
+  background: 'linear-gradient(145deg, #0e1626, #0b1220)',
   padding: '2rem',
   borderRadius: 20,
   width: '100%',
   maxWidth: 420,
-  border: '1px solid rgb(123, 81, 217,0.28)',
-  boxShadow: '0 20px 55px rgb(9, 6, 27,0.45), inset 0 1px 0 rgb(255, 255, 255,0.04)',
+  border: '1px solid rgb(59, 130, 246,0.28)',
+  boxShadow: '0 20px 55px rgb(11, 18, 32,0.45), inset 0 1px 0 rgb(255, 255, 255,0.04)',
   textAlign: 'center',
   boxSizing: 'border-box'
 };
@@ -141,10 +141,10 @@ const brandMark = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '#926eeb',
-  background: 'rgb(123, 81, 217,0.10)',
-  border: '1px solid rgb(123, 81, 217,0.28)',
-  boxShadow: '0 8px 24px rgb(123, 81, 217,0.08)'
+  color: '#6e9eeb',
+  background: 'rgb(59, 130, 246,0.10)',
+  border: '1px solid rgb(59, 130, 246,0.28)',
+  boxShadow: '0 8px 24px rgb(59, 130, 246,0.08)'
 };
 
 const title = {
@@ -162,7 +162,7 @@ const subtitle = {
 };
 
 const label = {
-  color: '#cbbaf9',
+  color: '#c7dbfe',
   fontSize: 14,
   fontWeight: 600,
   textAlign: 'right',
@@ -180,7 +180,7 @@ const inputIcon = {
   top: '50%',
   left: 12,
   transform: 'translateY(-50%)',
-  color: '#7b51d9',
+  color: '#3b82f6',
   pointerEvents: 'none'
 };
 
@@ -188,8 +188,8 @@ const input = {
   width: '100%',
   padding: '12px 12px 12px 40px',
   borderRadius: 10,
-  border: '1px solid rgb(123, 81, 217,0.22)',
-  background: '#0d0a29',
+  border: '1px solid rgb(59, 130, 246,0.22)',
+  background: '#101a2b',
   color: '#fff',
   fontSize: 15,
   fontFamily: 'inherit',
@@ -221,7 +221,7 @@ const backBtn = {
   margin: '20px auto 0',
   background: 'none',
   border: 'none',
-  color: '#7b51d9',
+  color: '#3b82f6',
   fontWeight: 700,
   cursor: 'pointer',
   display: 'flex',

@@ -3,30 +3,30 @@
    تصميم من الصفر — لا بيج ولا ذهب الموقع القديم
    ============================================================ */
 :root {
-  --nv-void: #0a071e;
-  --nv-surface: #0c0824;
-  --nv-elevated: #0d0a29;
-  --nv-panel: #0e0a2c;
-  --nv-ivory: #f4f1f9;
-  --nv-ivory-2: #eae4f3;
-  --nv-ivory-3: #ddd2ef;
+  --nv-void: #0b1220;
+  --nv-surface: #0e1626;
+  --nv-elevated: #101a2b;
+  --nv-panel: #19202c;
+  --nv-ivory: #f5f7fa;
+  --nv-ivory-2: #e6ebf2;
+  --nv-ivory-3: #dbe3ee;
   --nv-copper: #2563eb;
   --nv-copper-bright: #3b82f6;
   --nv-copper-deep: #1e40af;
   --nv-copper-glow: rgb(37, 99, 235, 0.28);
-  --nv-ink: #0b0822;
-  --nv-ink-2: #100c33;
+  --nv-ink: #0b1017;
+  --nv-ink-2: #1e2533;
   --nv-mist: #686b7a;
   --nv-line: rgb(37, 99, 235, 0.32);
-  --nv-line-soft: rgb(11, 8, 34, 0.08);
+  --nv-line-soft: rgb(11, 16, 23, 0.08);
   --nv-success: #258484;
   --nv-danger: #c42945;
   --nv-radius: 18px;
   --nv-radius-sm: 12px;
   --nv-radius-xs: 8px;
-  --nv-font: 'Cairo', system-ui, sans-serif;
-  --nv-shadow: 0 10px 30px rgb(10, 7, 30, 0.12);
-  --nv-shadow-lg: 0 20px 50px rgb(10, 7, 30, 0.18);
+  --nv-font: 'Tajawal', system-ui, sans-serif;
+  --nv-shadow: 0 10px 30px rgb(11, 18, 32, 0.12);
+  --nv-shadow-lg: 0 20px 50px rgb(11, 18, 32, 0.18);
   --nav-height: 56px;
 
   /* جسر توافق للمكوّنات القديمة دون ألوان الموقع السابق */
@@ -110,7 +110,7 @@ button, input, select, textarea { font-family: inherit; }
 }
 
 .nv-btn-dark {
-  background: linear-gradient(145deg, #100c31, #0b0822);
+  background: linear-gradient(145deg, #1d2431, #0b1017);
   color: var(--nv-ivory);
   border: 1px solid var(--nv-line);
 }
@@ -171,7 +171,7 @@ button, input, select, textarea { font-family: inherit; }
   border-radius: var(--nv-radius);
   box-shadow:
     0 1px 0 rgb(255, 255, 255,0.9) inset,
-    0 10px 28px rgb(10, 7, 30,0.1),
+    0 10px 28px rgb(11, 18, 32,0.1),
     0 2px 0 var(--nv-copper-deep);
   transform: translateZ(0);
 }
@@ -194,7 +194,7 @@ button:not(.rl-submit):not([class*="nv-"]):not(.nav-item):not(.nav-section-btn):
 
 /* شريط علوي */
 .navbar {
-  background: rgb(10, 7, 30, 0.95) !important;
+  background: rgb(11, 18, 32, 0.95) !important;
   border-bottom: 1px solid var(--nv-line) !important;
 }
 
@@ -240,7 +240,7 @@ body::before {
 }
 .nv-btn-ghost {
   background: rgba(255, 255, 255, 0.72) !important;
-  color: #241f47 !important;
+  color: #313947 !important;
   border: 1.5px solid rgba(37, 99, 235, 0.35) !important;
 }
 .nv-card, .nv-frame-3d {

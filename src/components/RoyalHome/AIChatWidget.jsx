@@ -175,15 +175,15 @@ const AIChatWidget = ({
           minHeight: 400,
           background:
             'linear-gradient(145deg, #f8f6fb 0%, #eae4f6 100%)',
-          border: '1px solid rgb(94, 43, 184, 0.24)',
+          border: '1px solid rgb(43, 97, 184, 0.24)',
           borderRadius: 22,
           boxShadow:
-            '0 24px 70px rgb(15, 11, 47, 0.22), 0 5px 18px rgb(15, 11, 47, 0.08)',
+            '0 24px 70px rgb(27, 34, 47, 0.22), 0 5px 18px rgb(27, 34, 47, 0.08)',
           display: 'flex',
           flexDirection: 'column',
           zIndex: 999,
           overflow: 'hidden',
-          fontFamily: 'Cairo, Arial, sans-serif',
+          fontFamily: 'Tajawal, Arial, sans-serif',
         }}
       >
         {/* Header */}
@@ -192,12 +192,12 @@ const AIChatWidget = ({
             flexShrink: 0,
             padding: '0.95rem 1rem',
             background:
-              'linear-gradient(135deg, #0c0926 0%, #100c31 55%, #0b0823 100%)',
-            color: '#8a63ef',
+              'linear-gradient(135deg, #0e1626 0%, #1d2431 55%, #0b1017 100%)',
+            color: '#6399ef',
             display: 'flex',
             alignItems: 'center',
             gap: '0.7rem',
-            boxShadow: '0 3px 14px rgb(50, 20, 94, 0.10)',
+            boxShadow: '0 3px 14px rgb(53, 68, 94, 0.10)',
           }}
         >
           <div
@@ -205,16 +205,16 @@ const AIChatWidget = ({
               width: 40,
               height: 40,
               borderRadius: 13,
-              background: 'linear-gradient(145deg, #3a3a3a 0%, #0a071f 55%, #0f0b30 100%)',
-              border: '1.5px solid rgb(173, 139, 246, 0.85)',
-              boxShadow: '0 4px 12px rgb(9, 6, 27,0.45), inset 0 1px 1px rgb(255, 255, 255,0.28)',
+              background: 'linear-gradient(145deg, #3a3a3a 0%, #0b1220 55%, #1c2330 100%)',
+              border: '1.5px solid rgb(139, 180, 246, 0.85)',
+              boxShadow: '0 4px 12px rgb(11, 18, 32,0.45), inset 0 1px 1px rgb(255, 255, 255,0.28)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0,
             }}
           >
-            <Bot size={21} strokeWidth={2.1} color="#8a63ef" />
+            <Bot size={21} strokeWidth={2.1} color="#6399ef" />
           </div>
 
           <div style={{ flex: 1, minWidth: 0 }}>
@@ -224,7 +224,7 @@ const AIChatWidget = ({
                 fontSize: '0.98rem',
                 fontWeight: 900,
                 lineHeight: 1.4,
-                background: 'linear-gradient(120deg, #dad1f7 0%, #8a63ef 35%, #400fb4 60%, #c2aff8 100%)',
+                background: 'linear-gradient(120deg, #dad1f7 0%, #6399ef 35%, #1e40af 60%, #afcbf8 100%)',
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',
@@ -238,7 +238,7 @@ const AIChatWidget = ({
               style={{
                 margin: '0.12rem 0 0',
                 fontSize: '0.7rem',
-                color: 'rgb(138, 99, 239, 0.85)',
+                color: 'rgb(99, 153, 239, 0.85)',
                 fontWeight: 700,
                 opacity: 1,
               }}
@@ -304,7 +304,7 @@ const AIChatWidget = ({
             flexDirection: 'column',
             gap: '0.8rem',
             scrollbarWidth: 'thin',
-            scrollbarColor: '#875cd7 transparent',
+            scrollbarColor: '#5c8bd7 transparent',
           }}
         >
           {messages.map((message) => {
@@ -328,7 +328,7 @@ const AIChatWidget = ({
                       borderRadius: 10,
                       flexShrink: 0,
                       background:
-                        'linear-gradient(145deg, #8f68e1, #652ec0)',
+                        'linear-gradient(145deg, #6896e1, #2e66c0)',
                       color: '#f6f4fb',
                       display: 'flex',
                       alignItems: 'center',
@@ -347,13 +347,13 @@ const AIChatWidget = ({
                     borderTopRightRadius: isUser ? 16 : 5,
                     borderTopLeftRadius: isUser ? 5 : 16,
                     background: isUser
-                      ? 'linear-gradient(145deg, #8256d8, #612abb)'
+                      ? 'linear-gradient(145deg, #5688d8, #2a62bb)'
                       : 'rgb(255, 255, 255,0.82)',
                     border: isUser
-                      ? '1px solid rgb(86, 35, 168, 0.2)'
-                      : '1px solid rgb(94, 43, 184, 0.13)',
-                    color: isUser ? '#f6f4fb' : '#361b57',
-                    boxShadow: '0 4px 13px rgb(47, 17, 90, 0.06)',
+                      ? '1px solid rgb(35, 86, 168, 0.2)'
+                      : '1px solid rgb(43, 97, 184, 0.13)',
+                    color: isUser ? '#f6f4fb' : '#364257',
+                    boxShadow: '0 4px 13px rgb(50, 65, 90, 0.06)',
                   }}
                 >
                   <p
@@ -376,8 +376,8 @@ const AIChatWidget = ({
                       height: 32,
                       borderRadius: 10,
                       flexShrink: 0,
-                      background: 'rgb(94, 43, 184, 0.12)',
-                      color: '#5827ab',
+                      background: 'rgb(43, 97, 184, 0.12)',
+                      color: '#275aab',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'center',
@@ -405,7 +405,7 @@ const AIChatWidget = ({
                   height: 32,
                   borderRadius: 10,
                   background:
-                    'linear-gradient(145deg, #8f68e1, #652ec0)',
+                    'linear-gradient(145deg, #6896e1, #2e66c0)',
                   color: '#f6f4fb',
                   display: 'flex',
                   alignItems: 'center',
@@ -421,11 +421,11 @@ const AIChatWidget = ({
                   borderRadius: 15,
                   borderTopLeftRadius: 5,
                   background: 'rgb(255, 255, 255,0.82)',
-                  border: '1px solid rgb(94, 43, 184, 0.13)',
+                  border: '1px solid rgb(43, 97, 184, 0.13)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 7,
-                  color: '#582b9e',
+                  color: '#2b579e',
                 }}
               >
                 <Sparkles size={15} />
@@ -450,7 +450,7 @@ const AIChatWidget = ({
           style={{
             flexShrink: 0,
             padding: '0.8rem',
-            borderTop: '1px solid rgb(94, 43, 184, 0.16)',
+            borderTop: '1px solid rgb(43, 97, 184, 0.16)',
             background: 'rgb(255, 255, 255,0.55)',
           }}
         >
@@ -460,10 +460,10 @@ const AIChatWidget = ({
               alignItems: 'center',
               gap: '0.55rem',
               background: '#f8f6fb',
-              border: '1px solid rgb(94, 43, 184, 0.20)',
+              border: '1px solid rgb(43, 97, 184, 0.20)',
               borderRadius: 14,
               padding: '0.35rem',
-              boxShadow: '0 4px 14px rgb(47, 17, 90, 0.05)',
+              boxShadow: '0 4px 14px rgb(50, 65, 90, 0.05)',
             }}
           >
             <input
@@ -483,7 +483,7 @@ const AIChatWidget = ({
                 outline: 'none',
                 background: 'transparent',
                 padding: '0.65rem 0.7rem',
-                color: '#110c35',
+                color: '#13203a',
                 fontFamily: 'inherit',
                 fontSize: '0.84rem',
                 direction: 'rtl',
@@ -503,7 +503,7 @@ const AIChatWidget = ({
                 borderRadius: 11,
                 background:
                   input.trim() && !isLoading
-                    ? 'linear-gradient(145deg, #7f52d8, #5f27ba)'
+                    ? 'linear-gradient(145deg, #5285d8, #275fba)'
                     : '#cdbde8',
                 color: '#f6f4fb',
                 cursor:

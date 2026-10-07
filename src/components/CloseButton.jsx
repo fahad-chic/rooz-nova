@@ -83,12 +83,12 @@ const CloseButton = ({
     justifyContent: 'center',
     borderRadius: 14,
     border: '1.5px solid rgb(37, 99, 235,0.5)',
-    background: 'linear-gradient(145deg, #f4f1f9, #cebef4)',
-    color: '#320e73',
+    background: 'linear-gradient(145deg, #f5f7fa, #bed3f4)',
+    color: '#0e3573',
     cursor: 'pointer',
-    boxShadow: '0 8px 22px rgb(15, 11, 48,0.28)',
+    boxShadow: '0 8px 22px rgb(28, 35, 48,0.28)',
     transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Tajawal, sans-serif',
     ...cornerStyle,
   };
 

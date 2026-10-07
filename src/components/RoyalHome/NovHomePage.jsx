@@ -51,7 +51,7 @@ const TILE_GRADIENTS = [
   'linear-gradient(140deg,#06b6d4,#38bdf8)',
   'linear-gradient(140deg,#2563eb,#0e7c98)',
   'linear-gradient(140deg,#1d4ed8,#3b82f6)',
-  'linear-gradient(140deg,#0ea5e9,#6366f1)',
+  'linear-gradient(140deg,#0ea5e9,#6399f1)',
 ];
 
 const NovHomePage = () => {
@@ -93,7 +93,7 @@ const NovHomePage = () => {
           banners={MARQUEE_BANNERS_2}
           editableKeys={['marquee4', 'marquee5', 'marquee6']}
           label="عروض ROOZ"
-          barBg="linear-gradient(90deg, #110c33 0%, #341072 50%, #110c33 100%)"
+          barBg="linear-gradient(90deg, #1e2533 0%, #103672 50%, #1e2533 100%)"
         />
       </div>
 
@@ -336,7 +336,7 @@ const NovHomePage = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgb(13, 9, 39,0.55)',
+            background: 'rgb(22, 29, 39,0.55)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -354,8 +354,8 @@ const NovHomePage = () => {
               maxWidth: 340,
               width: '100%',
               textAlign: 'right',
-              boxShadow: '0 18px 45px rgb(15, 11, 46,0.35)',
-              fontFamily: 'Cairo,sans-serif',
+              boxShadow: '0 18px 45px rgb(27, 34, 46,0.35)',
+              fontFamily: 'Tajawal,sans-serif',
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: '0.6rem' }}>
@@ -367,7 +367,7 @@ const NovHomePage = () => {
                 onClick={() => setShowAddHelp(false)}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(9, 6, 27,0.06)',
+                  background: 'rgb(11, 18, 32,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -383,7 +383,7 @@ const NovHomePage = () => {
                 <X size={16} />
               </button>
             </div>
-            <ol style={{ margin: 0, paddingRight: '1.1rem', fontSize: '0.82rem', color: '#241f47', lineHeight: 1.7 }}>
+            <ol style={{ margin: 0, paddingRight: '1.1rem', fontSize: '0.82rem', color: '#313947', lineHeight: 1.7 }}>
               <li>افتح الموقع في المتصفح</li>
               <li>اضغط قائمة المشاركة أو القائمة</li>
               <li>اختر «إضافة إلى الشاشة الرئيسية»</li>

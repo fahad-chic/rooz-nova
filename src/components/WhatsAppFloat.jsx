@@ -39,23 +39,23 @@ const WhatsAppFloat = () => {
             border: '1px solid rgb(30, 58, 138, 0.35)',
             borderRadius: 14,
             padding: '10px 14px',
-            boxShadow: '0 10px 30px rgb(48, 14, 126, 0.25)',
+            boxShadow: '0 10px 30px rgb(14, 57, 126, 0.25)',
             textDecoration: 'none',
             maxWidth: 240,
           }}
         >
           <span
             style={{
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal, sans-serif',
               fontSize: 13,
               fontWeight: 700,
-              color: '#200d4f',
+              color: '#14274d',
               lineHeight: 1.5,
             }}
           >
             تحتاج مساعدة؟
             <br />
-            <span style={{ fontWeight: 400, color: '#45298d' }}>
+            <span style={{ fontWeight: 400, color: '#294f8d' }}>
               راسلنا واتساب وسنرد عليك بسرعة
             </span>
           </span>
@@ -72,7 +72,7 @@ const WhatsAppFloat = () => {
               cursor: 'pointer',
               padding: 4,
               display: 'flex',
-              color: '#603fb6',
+              color: '#3f6db6',
             }}
           >
             <X size={14} />

@@ -45,8 +45,8 @@ const BANK_ACCOUNTS = [
 ];
 
 const GOLD = '#2563eb';
-const GOLD_LIGHT = '#cbbaf9';
-const DARK = '#0a0720';
+const GOLD_LIGHT = '#c7dbfe';
+const DARK = '#0b1220';
 
 const buttonBaseStyle = {
   border: 'none',
@@ -54,7 +54,7 @@ const buttonBaseStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  fontFamily: 'Cairo, Arial, sans-serif',
+  fontFamily: 'Tajawal, Arial, sans-serif',
   WebkitTapHighlightColor: 'transparent',
 };
 
@@ -138,13 +138,13 @@ const ContactPage = () => {
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
-    fontFamily: 'Cairo, Arial, sans-serif',
+    fontFamily: 'Tajawal, Arial, sans-serif',
   };
 
   const cardStyle = {
     background:
-      'linear-gradient(145deg, rgb(14, 10, 42, 0.95) 0%, rgb(11, 8, 33, 0.98) 100%)',
-    border: '1px solid rgb(127, 83, 226, 0.2)',
+      'linear-gradient(145deg, rgb(24, 31, 42, 0.95) 0%, rgb(19, 24, 33, 0.98) 100%)',
+    border: '1px solid rgb(83, 138, 226, 0.2)',
     borderRadius: 16,
   };
 
@@ -156,9 +156,9 @@ const ContactPage = () => {
         width: '100%',
         boxSizing: 'border-box',
         background:
-          'linear-gradient(180deg, #0a0720 0%, #0d0928 30%, #100b30 50%, #0c0925 100%)',
+          'linear-gradient(180deg, #0b1220 0%, #0e1626 30%, #101a2b 50%, #0e1626 100%)',
         padding: 'clamp(1rem, 4vw, 1.5rem)',
-        fontFamily: 'Cairo, Arial, sans-serif',
+        fontFamily: 'Tajawal, Arial, sans-serif',
         color: GOLD_LIGHT,
       }}
     >
@@ -188,8 +188,8 @@ const ContactPage = () => {
               width: 46,
               height: 46,
               flexShrink: 0,
-              background: 'rgb(127, 83, 226, 0.15)',
-              border: '1px solid rgb(127, 83, 226, 0.3)',
+              background: 'rgb(83, 138, 226, 0.15)',
+              border: '1px solid rgb(83, 138, 226, 0.3)',
               borderRadius: 12,
               color: GOLD,
             }}
@@ -217,9 +217,9 @@ const ContactPage = () => {
             marginBottom: '2rem',
             padding: 'clamp(1.25rem, 4vw, 1.5rem)',
             background:
-              'linear-gradient(145deg, rgb(127, 83, 226, 0.08) 0%, transparent 100%)',
+              'linear-gradient(145deg, rgb(83, 138, 226, 0.08) 0%, transparent 100%)',
             borderRadius: 20,
-            border: '1px solid rgb(127, 83, 226, 0.15)',
+            border: '1px solid rgb(83, 138, 226, 0.15)',
           }}
         >
           <div
@@ -227,13 +227,13 @@ const ContactPage = () => {
               width: 64,
               height: 64,
               background:
-                'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
+                'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 1rem',
-              boxShadow: '0 8px 24px rgb(127, 83, 226, 0.3)',
+              boxShadow: '0 8px 24px rgb(83, 138, 226, 0.3)',
             }}
           >
             <Crown size={32} color={DARK} aria-hidden="true" />
@@ -322,8 +322,8 @@ const ContactPage = () => {
                         ...buttonBaseStyle,
                         width: 42,
                         height: 42,
-                        background: 'rgb(127, 83, 226, 0.15)',
-                        border: '1px solid rgb(127, 83, 226, 0.3)',
+                        background: 'rgb(83, 138, 226, 0.15)',
+                        border: '1px solid rgb(83, 138, 226, 0.3)',
                         borderRadius: 10,
                         color: GOLD,
                       }}
@@ -344,17 +344,17 @@ const ContactPage = () => {
                         minHeight: 42,
                         padding: '0.6rem 1rem',
                         background:
-                          'linear-gradient(135deg, #2563eb 0%, #400fb4 100%)',
+                          'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',
                         borderRadius: 10,
                         gap: '0.5rem',
-                        color: '#0b0822',
+                        color: '#0b1017',
                       }}
                     >
                       <Phone size={18} aria-hidden="true" />
 
                       <span
                         style={{
-                          color: '#0b0822',
+                          color: '#0b1017',
                           fontWeight: 700,
                           fontSize: '0.85rem',
                         }}
@@ -461,7 +461,7 @@ const ContactPage = () => {
         {/* Snapchat */}
         <section style={{ marginBottom: '2rem' }}>
           <h3 style={sectionTitleStyle}>
-            <Camera size={20} color="#2713ec" aria-hidden="true" />
+            <Camera size={20} color="#1366ec" aria-hidden="true" />
             سناب شات
           </h3>
 
@@ -473,12 +473,12 @@ const ContactPage = () => {
               width: '100%',
               minHeight: 88,
               background:
-                'linear-gradient(135deg, #2713ec 0%, #2211d5 100%)',
+                'linear-gradient(135deg, #1366ec 0%, #115cd5 100%)',
               borderRadius: 16,
               padding: '1.25rem',
               gap: '1rem',
               color: '#000',
-              boxShadow: '0 8px 24px rgb(39, 19, 236, 0.3)',
+              boxShadow: '0 8px 24px rgb(19, 102, 236, 0.3)',
             }}
           >
             <Camera
@@ -509,7 +509,7 @@ const ContactPage = () => {
                 style={{
                   margin: '0.25rem 0 0',
                   fontSize: '0.85rem',
-                  color: 'rgb(9, 6, 27,0.7)',
+                  color: 'rgb(11, 18, 32,0.7)',
                 }}
               >
                 @{CONTACT_INFO.snapchat.username}
@@ -561,8 +561,8 @@ const ContactPage = () => {
                 width: 42,
                 height: 42,
                 flexShrink: 0,
-                background: 'rgb(127, 83, 226, 0.15)',
-                border: '1px solid rgb(127, 83, 226, 0.3)',
+                background: 'rgb(83, 138, 226, 0.15)',
+                border: '1px solid rgb(83, 138, 226, 0.3)',
                 borderRadius: 10,
               }}
             >
@@ -667,7 +667,7 @@ const ContactPage = () => {
                     style={{
                       margin: '0 0 0.25rem',
                       fontSize: '0.75rem',
-                      color: '#b6a1f0',
+                      color: '#a1bff0',
                       fontWeight: 700,
                     }}
                   >
@@ -680,7 +680,7 @@ const ContactPage = () => {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       gap: '0.5rem',
-                      background: 'linear-gradient(145deg, rgb(127, 83, 226, 0.16), rgb(75, 31, 181, 0.26))',
+                      background: 'linear-gradient(145deg, rgb(83, 138, 226, 0.16), rgb(31, 89, 181, 0.26))',
                       borderRadius: 10,
                       padding: '0.6rem 0.85rem',
                     }}
@@ -743,7 +743,7 @@ const ContactPage = () => {
                     style={{
                       margin: '0 0 0.25rem',
                       fontSize: '0.75rem',
-                      color: '#b6a1f0',
+                      color: '#a1bff0',
                       fontWeight: 700,
                     }}
                   >
@@ -756,7 +756,7 @@ const ContactPage = () => {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       gap: '0.5rem',
-                      background: 'linear-gradient(145deg, rgb(127, 83, 226, 0.16), rgb(75, 31, 181, 0.26))',
+                      background: 'linear-gradient(145deg, rgb(83, 138, 226, 0.16), rgb(31, 89, 181, 0.26))',
                       borderRadius: 10,
                       padding: '0.6rem 0.85rem',
                     }}
@@ -836,7 +836,7 @@ const ContactPage = () => {
                 margin: 0,
                 whiteSpace: 'pre-wrap',
                 wordBreak: 'break-word',
-                fontFamily: 'Cairo, Arial, sans-serif',
+                fontFamily: 'Tajawal, Arial, sans-serif',
                 fontSize: '0.88rem',
                 lineHeight: 2,
                 color: GOLD_LIGHT,
@@ -862,8 +862,8 @@ const ContactPage = () => {
                 marginTop: '0.75rem',
                 width: '100%',
                 minHeight: 44,
-                background: 'rgb(127, 83, 226, 0.15)',
-                border: '1px solid rgb(127, 83, 226, 0.3)',
+                background: 'rgb(83, 138, 226, 0.15)',
+                border: '1px solid rgb(83, 138, 226, 0.3)',
                 borderRadius: 10,
                 color: GOLD,
                 gap: '0.5rem',
@@ -887,14 +887,14 @@ const ContactPage = () => {
             textAlign: 'center',
             marginTop: '2rem',
             padding: '1.5rem 0.5rem',
-            borderTop: '1px solid rgb(127, 83, 226, 0.15)',
+            borderTop: '1px solid rgb(83, 138, 226, 0.15)',
           }}
         >
           <p
             style={{
               margin: 0,
               fontSize: '0.85rem',
-              color: '#b6a1f0',
+              color: '#a1bff0',
                       fontWeight: 700,
               lineHeight: 1.7,
             }}

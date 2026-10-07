@@ -86,9 +86,9 @@ const RoyalKings = () => {
         borderRadius: 26,
         background:
           'linear-gradient(145deg, #f8f6fb 0%, #e3d9f4 48%, #d2c0f2 100%)',
-        border: '1px solid rgb(83, 34, 167,0.22)',
+        border: '1px solid rgb(34, 85, 167,0.22)',
         boxShadow:
-          '0 14px 38px rgb(51, 22, 100,0.10), inset 0 1px 0 rgb(255, 255, 255,0.95)',
+          '0 14px 38px rgb(57, 73, 100,0.10), inset 0 1px 0 rgb(255, 255, 255,0.95)',
       }}
     >
       {/* زخرفة خلفية هادئة */}
@@ -102,7 +102,7 @@ const RoyalKings = () => {
           height: 280,
           borderRadius: '50%',
           background:
-            'radial-gradient(circle, rgb(105, 51, 205,0.13) 0%, rgb(105, 51, 205,0.04) 42%, transparent 72%)',
+            'radial-gradient(circle, rgb(51, 110, 205,0.13) 0%, rgb(51, 110, 205,0.04) 42%, transparent 72%)',
           pointerEvents: 'none',
         }}
       />
@@ -117,7 +117,7 @@ const RoyalKings = () => {
           height: 340,
           borderRadius: '50%',
           background:
-            'radial-gradient(circle, rgb(105, 51, 205,0.10) 0%, transparent 68%)',
+            'radial-gradient(circle, rgb(51, 110, 205,0.10) 0%, transparent 68%)',
           pointerEvents: 'none',
         }}
       />
@@ -133,7 +133,7 @@ const RoyalKings = () => {
           gap: 16,
           paddingBottom: 18,
           marginBottom: 18,
-          borderBottom: '1px solid rgb(83, 34, 167,0.16)',
+          borderBottom: '1px solid rgb(34, 85, 167,0.16)',
         }}
       >
         <div
@@ -154,11 +154,11 @@ const RoyalKings = () => {
               alignItems: 'center',
               justifyContent: 'center',
               background:
-                'linear-gradient(145deg, #f6f4fb 0%, #a687e9 100%)',
-              color: '#4f219f',
-              border: '1px solid rgb(83, 34, 167,0.28)',
+                'linear-gradient(145deg, #f6f4fb 0%, #87ade9 100%)',
+              color: '#21519f',
+              border: '1px solid rgb(34, 85, 167,0.28)',
               boxShadow:
-                '0 6px 16px rgb(51, 22, 100,0.12), inset 0 1px 0 rgb(255, 255, 255,0.95)',
+                '0 6px 16px rgb(57, 73, 100,0.12), inset 0 1px 0 rgb(255, 255, 255,0.95)',
             }}
           >
             <Sparkles size={23} strokeWidth={1.7} />
@@ -169,8 +169,8 @@ const RoyalKings = () => {
               style={{
                 margin: 0,
                 marginBottom: 2,
-                color: '#4e20a8',
-                fontFamily: 'Cairo, Cairo, Arial, sans-serif',
+                color: '#1d4ed8',
+                fontFamily: 'Tajawal, Tajawal, Arial, sans-serif',
                 fontSize: '0.72rem',
                 fontWeight: 800,
                 letterSpacing: '0.02em',
@@ -183,8 +183,8 @@ const RoyalKings = () => {
               id="chic-experience-title"
               style={{
                 margin: 0,
-                color: '#110c35',
-                fontFamily: 'Cairo, Cairo, Arial, sans-serif',
+                color: '#13203a',
+                fontFamily: 'Tajawal, Tajawal, Arial, sans-serif',
                 fontSize: 'clamp(1.08rem, 2.5vw, 1.4rem)',
                 lineHeight: 1.55,
                 fontWeight: 900,
@@ -204,9 +204,9 @@ const RoyalKings = () => {
             padding: '7px 11px',
             borderRadius: 999,
             background: 'rgb(255, 255, 255,0.58)',
-            border: '1px solid rgb(83, 34, 167,0.18)',
-            color: '#471f8d',
-            fontFamily: 'Cairo, Cairo, Arial, sans-serif',
+            border: '1px solid rgb(34, 85, 167,0.18)',
+            color: '#1f498d',
+            fontFamily: 'Tajawal, Tajawal, Arial, sans-serif',
             fontSize: '0.72rem',
             fontWeight: 800,
           }}
@@ -239,9 +239,9 @@ const RoyalKings = () => {
                 borderRadius: 17,
                 background:
                   'rgb(248, 246, 251,0.72)',
-                border: '1px solid rgb(83, 34, 167,0.16)',
+                border: '1px solid rgb(34, 85, 167,0.16)',
                 boxShadow:
-                  '0 5px 16px rgb(51, 22, 100,0.055), inset 0 1px 0 rgb(255, 255, 255,0.85)',
+                  '0 5px 16px rgb(57, 73, 100,0.055), inset 0 1px 0 rgb(255, 255, 255,0.85)',
                 transition:
                   'transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease',
               }}
@@ -249,17 +249,17 @@ const RoyalKings = () => {
                 event.currentTarget.style.transform =
                   'translateY(-3px)';
                 event.currentTarget.style.boxShadow =
-                  '0 10px 24px rgb(51, 22, 100,0.11), inset 0 1px 0 rgb(255, 255, 255,0.9)';
+                  '0 10px 24px rgb(57, 73, 100,0.11), inset 0 1px 0 rgb(255, 255, 255,0.9)';
                 event.currentTarget.style.borderColor =
-                  'rgb(83, 34, 167,0.30)';
+                  'rgb(34, 85, 167,0.30)';
               }}
               onMouseLeave={(event) => {
                 event.currentTarget.style.transform =
                   'translateY(0)';
                 event.currentTarget.style.boxShadow =
-                  '0 5px 16px rgb(51, 22, 100,0.055), inset 0 1px 0 rgb(255, 255, 255,0.85)';
+                  '0 5px 16px rgb(57, 73, 100,0.055), inset 0 1px 0 rgb(255, 255, 255,0.85)';
                 event.currentTarget.style.borderColor =
-                  'rgb(83, 34, 167,0.16)';
+                  'rgb(34, 85, 167,0.16)';
               }}
             >
               <div
@@ -272,9 +272,9 @@ const RoyalKings = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   background:
-                    'linear-gradient(145deg, #f6f4fb, #c6b1f0)',
-                  color: '#4f21a4',
-                  border: '1px solid rgb(83, 34, 167,0.20)',
+                    'linear-gradient(145deg, #f6f4fb, #b1c9f0)',
+                  color: '#2153a4',
+                  border: '1px solid rgb(34, 85, 167,0.20)',
                 }}
               >
                 <Icon size={19} strokeWidth={1.75} />
@@ -283,9 +283,9 @@ const RoyalKings = () => {
               <h3
                 style={{
                   margin: '0 0 5px',
-                  color: '#2d1b48',
+                  color: '#2f3848',
                   fontFamily:
-                    'Cairo, Cairo, Arial, sans-serif',
+                    'Tajawal, Tajawal, Arial, sans-serif',
                   fontSize: '0.9rem',
                   lineHeight: 1.55,
                   fontWeight: 800,
@@ -297,9 +297,9 @@ const RoyalKings = () => {
               <p
                 style={{
                   margin: 0,
-                  color: '#5a3a8e',
+                  color: '#3a5a8e',
                   fontFamily:
-                    'Cairo, Cairo, Arial, sans-serif',
+                    'Tajawal, Tajawal, Arial, sans-serif',
                   fontSize: '0.76rem',
                   lineHeight: 1.85,
                   fontWeight: 500,
@@ -321,8 +321,8 @@ const RoyalKings = () => {
           padding: '1rem',
           borderRadius: 18,
           background:
-            'linear-gradient(135deg, rgb(79, 33, 157,0.08), rgb(255, 255, 255,0.45))',
-          border: '1px solid rgb(83, 34, 167,0.14)',
+            'linear-gradient(135deg, rgb(33, 81, 157,0.08), rgb(255, 255, 255,0.45))',
+          border: '1px solid rgb(34, 85, 167,0.14)',
         }}
       >
         <div
@@ -338,9 +338,9 @@ const RoyalKings = () => {
             <h3
               style={{
                 margin: 0,
-                color: '#321b52',
+                color: '#343f52',
                 fontFamily:
-                  'Cairo, Cairo, Arial, sans-serif',
+                  'Tajawal, Tajawal, Arial, sans-serif',
                 fontSize: '0.92rem',
                 fontWeight: 800,
               }}
@@ -351,9 +351,9 @@ const RoyalKings = () => {
             <p
               style={{
                 margin: '3px 0 0',
-                color: '#6d44a8',
+                color: '#446aa8',
                 fontFamily:
-                  'Cairo, Cairo, Arial, sans-serif',
+                  'Tajawal, Tajawal, Arial, sans-serif',
                 fontSize: '0.7rem',
                 fontWeight: 500,
               }}
@@ -365,7 +365,7 @@ const RoyalKings = () => {
           <ArrowLeft
             size={19}
             strokeWidth={1.7}
-            color="#5624b2"
+            color="#245ab2"
             aria-hidden="true"
           />
         </div>
@@ -393,7 +393,7 @@ const RoyalKings = () => {
                   borderRadius: 13,
                   background: 'rgb(255, 255, 255,0.52)',
                   border:
-                    '1px solid rgb(83, 34, 167,0.11)',
+                    '1px solid rgb(34, 85, 167,0.11)',
                 }}
               >
                 <div
@@ -406,9 +406,9 @@ const RoyalKings = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     background: '#dbcff4',
-                    color: '#5022a1',
+                    color: '#2253a1',
                     border:
-                      '1px solid rgb(83, 34, 167,0.16)',
+                      '1px solid rgb(34, 85, 167,0.16)',
                   }}
                 >
                   <Icon size={15} strokeWidth={1.8} />
@@ -425,9 +425,9 @@ const RoyalKings = () => {
                   >
                     <span
                       style={{
-                        color: '#6432bf',
+                        color: '#3268bf',
                         fontFamily:
-                          'Cairo, Cairo, Arial, sans-serif',
+                          'Tajawal, Tajawal, Arial, sans-serif',
                         fontSize: '0.62rem',
                         fontWeight: 800,
                       }}
@@ -437,9 +437,9 @@ const RoyalKings = () => {
 
                     <strong
                       style={{
-                        color: '#361d58',
+                        color: '#384358',
                         fontFamily:
-                          'Cairo, Cairo, Arial, sans-serif',
+                          'Tajawal, Tajawal, Arial, sans-serif',
                         fontSize: '0.75rem',
                         fontWeight: 800,
                       }}
@@ -451,9 +451,9 @@ const RoyalKings = () => {
                   <p
                     style={{
                       margin: 0,
-                      color: '#6941a0',
+                      color: '#4165a0',
                       fontFamily:
-                        'Cairo, Cairo, Arial, sans-serif',
+                        'Tajawal, Tajawal, Arial, sans-serif',
                       fontSize: '0.65rem',
                       lineHeight: 1.7,
                       fontWeight: 500,
