@@ -1,0 +1,1345 @@
+// src/components/RoyalHome/CatalogPage.jsx
+// صفحة الكاتالوج الديناميكية — النسخة النهائية
+
+import React, { useState, useEffect, useContext } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import {
+  ArrowRight,
+  Plus,
+  Grid,
+  LayoutGrid,
+  Circle,
+  Columns,
+  Image,
+  Sparkles,
+  Settings,
+  Save,
+  X,
+} from 'lucide-react';
+
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  orderBy,
+  doc,
+  updateDoc,
+  addDoc,
+  setDoc,
+  serverTimestamp,
+  getDoc,
+} from 'firebase/firestore';
+
+import { db } from '../../firebase/config';
+import { AuthContext } from '../../context/AuthContext';
+import ProductCard from './ProductCard';
+import { ROYAL_SECTIONS } from './sectionsData';
+import '../../styles/RoyalHome.css';
+
+const WHATSAPP_NUMBER = '966507882771';
+
+const DEFAULT_CATALOG_SETTINGS = {
+  displayStyle: 'square',
+  productsPerRow: 4,
+  showPrices: true,
+  showDescriptions: true,
+};
+
+// خريطة عربية احتياطية لأسماء الأقسام — تُستخدم عندما لا يكون للقسم اسم محفوظ في Firestore
+const CATALOG_NAME_MAP = ROYAL_SECTIONS.reduce((map, section) => {
+  map[section.id] = section.title;
+  (section.branches || []).forEach((branch) => {
+    if (branch.catalogId) map[branch.catalogId] = branch.name || section.title;
+  });
+  return map;
+}, {});
+
+const DISPLAY_STYLES = {
+  square: {
+    icon: Grid,
+    label: 'مربع',
+    cols: 'repeat(auto-fill, minmax(220px, 1fr))',
+    gap: '1.5rem',
+  },
+  wide: {
+    icon: LayoutGrid,
+    label: 'مستطيل',
+    cols: '1fr',
+    gap: '1.5rem',
+    direction: 'column',
+  },
+  circle: {
+    icon: Circle,
+    label: 'دائري',
+    cols: 'repeat(auto-fill, minmax(160px, 1fr))',
+    gap: '2rem',
+    center: true,
+  },
+  masonry: {
+    icon: Columns,
+    label: 'شبكي',
+    cols: 'repeat(auto-fill, minmax(220px, 1fr))',
+    gap: '1rem',
+  },
+  horizontal: {
+    icon: Image,
+    label: 'طولي',
+    cols: 'repeat(auto-fill, minmax(160px, 1fr))',
+    gap: '1rem',
+    compact: true,
+  },
+  featured: {
+    icon: Sparkles,
+    label: 'مميز',
+    cols: 'repeat(3, 1fr)',
+    gap: '1.5rem',
+    featured: true,
+  },
+};
+
+const CatalogPage = () => {
+  const { catalogId } = useParams();
+  const navigate = useNavigate();
+  const { user, userRole } = useContext(AuthContext);
+
+  const isOwner = userRole === 'owner';
+  // أزرار التعديل والحذف للمالك فقط — محجوبة عن المشرفين والجميع
+  const isAdmin = userRole === 'owner';
+
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [catalogInfo, setCatalogInfo] = useState(null);
+
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [editingProduct, setEditingProduct] = useState(null);
+
+  const [cardStyle, setCardStyle] = useState('square');
+  const [showSettings, setShowSettings] = useState(false);
+
+  const [catalogSettings, setCatalogSettings] = useState(
+    DEFAULT_CATALOG_SETTINGS
+  );
+
+  // البحث عن معلومات القسم محلياً من sectionsData
+  useEffect(() => {
+    const findCatalogInfo = () => {
+      for (const section of ROYAL_SECTIONS) {
+        for (const branch of section.branches || []) {
+          if (branch.catalogId === catalogId) {
+            return {
+              ...branch,
+              section: section.title,
+              sectionColor: section.color,
+            };
+          }
+        }
+      }
+
+      return null;
+    };
+
+    setCatalogInfo(findCatalogInfo());
+  }, [catalogId]);
+
+  // جلب إعدادات الكاتالوج
+  useEffect(() => {
+    const fetchSettings = async () => {
+      if (!catalogId) return;
+
+      try {
+        const settingsRef = doc(db, 'catalogSettings', catalogId);
+        const settingsSnap = await getDoc(settingsRef);
+
+        if (settingsSnap.exists()) {
+          const savedSettings = {
+            ...DEFAULT_CATALOG_SETTINGS,
+            ...settingsSnap.data(),
+          };
+
+          setCatalogSettings(savedSettings);
+          setCardStyle(savedSettings.displayStyle || 'square');
+        } else {
+          setCatalogSettings(DEFAULT_CATALOG_SETTINGS);
+          setCardStyle(DEFAULT_CATALOG_SETTINGS.displayStyle);
+        }
+      } catch (error) {
+        console.error('Error fetching catalog settings:', error);
+
+        setCatalogSettings(DEFAULT_CATALOG_SETTINGS);
+        setCardStyle(DEFAULT_CATALOG_SETTINGS.displayStyle);
+      }
+    };
+
+    fetchSettings();
+  }, [catalogId]);
+
+  // جلب المنتجات
+  useEffect(() => {
+    const fetchProducts = async () => {
+      if (!catalogId) {
+        setProducts([]);
+        setLoading(false);
+        return;
+      }
+
+      setLoading(true);
+
+      try {
+        const productsQuery = query(
+          collection(db, 'products'),
+          where('catalogId', '==', catalogId),
+          orderBy('createdAt', 'desc')
+        );
+
+        const snapshot = await getDocs(productsQuery);
+
+        const loadedProducts = snapshot.docs.map((productDoc) => ({
+          id: productDoc.id,
+          ...productDoc.data(),
+        }));
+
+        setProducts(loadedProducts);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+        setProducts([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [catalogId]);
+
+  // حفظ إعدادات العرض
+  const saveDisplaySettings = async (newSettings) => {
+    if (!isOwner || !catalogId) return;
+
+    try {
+      const settingsRef = doc(db, 'catalogSettings', catalogId);
+
+      // setDoc مع merge يمنع فشل الحفظ إذا لم يكن المستند موجوداً
+      await setDoc(
+        settingsRef,
+        {
+          ...DEFAULT_CATALOG_SETTINGS,
+          ...newSettings,
+          updatedAt: serverTimestamp(),
+        },
+        { merge: true }
+      );
+
+      const finalSettings = {
+        ...DEFAULT_CATALOG_SETTINGS,
+        ...newSettings,
+      };
+
+      setCatalogSettings(finalSettings);
+      setCardStyle(finalSettings.displayStyle || 'square');
+      setShowSettings(false);
+    } catch (error) {
+      console.error('Error saving catalog settings:', error);
+      alert('حدث خطأ أثناء حفظ إعدادات العرض');
+    }
+  };
+
+  // فتح نافذة إضافة منتج
+  const openAddProduct = () => {
+    setEditingProduct(null);
+    setShowAddModal(true);
+  };
+
+  // فتح نافذة تعديل منتج
+  const openEditProduct = (product) => {
+    setEditingProduct(product);
+    setShowAddModal(true);
+  };
+
+  // بعد حفظ المنتج يتم تحديث القائمة بدون إعادة تحميل الصفحة
+  const handleProductSaved = (savedProduct, wasEditing) => {
+    if (!savedProduct) return;
+
+    if (wasEditing) {
+      setProducts((currentProducts) =>
+        currentProducts.map((product) =>
+          product.id === savedProduct.id ? savedProduct : product
+        )
+      );
+    } else {
+      setProducts((currentProducts) => [
+        savedProduct,
+        ...currentProducts,
+      ]);
+    }
+
+    setShowAddModal(false);
+    setEditingProduct(null);
+  };
+
+  const closeProductModal = () => {
+    setShowAddModal(false);
+    setEditingProduct(null);
+  };
+
+  const currentDisplayStyle =
+    DISPLAY_STYLES[cardStyle] || DISPLAY_STYLES.square;
+
+  return (
+    <div
+      dir="rtl"
+      className="rh-root"
+      style={{
+        minHeight: '100vh',
+        padding: '1.5rem 0.75rem',
+      }}
+    >
+      <div className="rh-bg" aria-hidden="true" />
+      <div className="rh-topline" aria-hidden="true" />
+      {/* رأس الصفحة */}
+      <div
+        style={{
+          maxWidth: 1200,
+          margin: '0 auto',
+          marginBottom: '2rem',
+        }}
+      >
+        <button
+          onClick={() => navigate('/')}
+          type="button"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '0.5rem',
+            background: 'rgba(196, 122, 58, 0.12)',
+            border: '1px solid rgba(196, 122, 58, 0.35)',
+            borderRadius: 12,
+            padding: '0.45rem 0.9rem',
+            color: '#8f5528',
+            fontSize: '0.85rem',
+            cursor: 'pointer',
+            marginBottom: '0.75rem',
+            fontFamily: 'Tajawal, sans-serif',
+            fontWeight: 800,
+          }}
+        >
+          الرئيسية
+        </button>
+
+
+        {/* عنوان الكاتالوج */}
+        <div
+          style={{
+            background:
+              'linear-gradient(145deg, rgba(255, 253, 247, 0.98), rgba(244, 232, 209, 0.92))',
+            border: `1px solid rgba(176, 138, 62, 0.35)`,
+            borderRadius: 20,
+            padding: '1.5rem',
+            textAlign: 'center',
+            overflowX: 'hidden',
+            boxShadow: `0 8px 32px ${
+              catalogInfo?.sectionColor || '#c47a3a'
+            }20`,
+          }}
+        >
+          <h1
+            style={{
+              margin: 0,
+              fontSize: '2rem',
+              fontWeight: 900,
+              background: 'linear-gradient(180deg, #d3aa5c, #8f5528)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              fontFamily: 'Tajawal, sans-serif',
+            }}
+          >
+            {catalogInfo?.name || CATALOG_NAME_MAP[catalogId] || catalogId?.replace(/-/g, ' ')}
+          </h1>
+
+          {catalogInfo?.section && (
+            <p
+              style={{
+                margin: '0.5rem 0 0',
+                color: '#7a6647',
+                fontSize: '0.9rem',
+                fontFamily: 'Tajawal, sans-serif',
+              }}
+            >
+              {catalogInfo.section}
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* شريط التحكم */}
+      <div
+        style={{
+          maxWidth: 1200,
+          margin: '0 auto',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '1rem',
+          marginBottom: '2rem',
+          background: 'rgba(255, 252, 245, 0.85)',
+          padding: '1rem',
+          borderRadius: 16,
+        }}
+      >
+        {/* اختيار شكل العرض */}
+        <div
+          style={{
+            display: 'flex',
+            gap: '0.5rem',
+            alignItems: 'center',
+            flexWrap: 'wrap',
+          }}
+        >
+          <span
+            style={{
+              color: '#888',
+              fontSize: '0.85rem',
+              marginLeft: '0.5rem',
+              fontFamily: 'Tajawal, sans-serif',
+            }}
+          >
+            شكل العرض:
+          </span>
+
+          <div
+            style={{
+              display: 'flex',
+              gap: '0.3rem',
+              background: 'rgba(255,255,255,0.05)',
+              padding: '0.3rem',
+              borderRadius: 12,
+              flexWrap: 'wrap',
+            }}
+          >
+            {Object.entries(DISPLAY_STYLES).map(([key, style]) => {
+              const Icon = style.icon;
+
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => setCardStyle(key)}
+                  title={style.label}
+                  style={{
+                    padding: '0.5rem 0.8rem',
+                    background:
+                      cardStyle === key
+                        ? 'rgba(214, 177, 95, 0.3)'
+                        : 'transparent',
+                    border: 'none',
+                    borderRadius: 8,
+                    cursor: 'pointer',
+                    color:
+                      cardStyle === key ? '#c47a3a' : '#888',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.3rem',
+                    fontFamily: 'Tajawal, sans-serif',
+                    fontSize: '0.8rem',
+                  }}
+                >
+                  <Icon size={16} />
+                  <span>{style.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* عدد المنتجات */}
+        <p
+          style={{
+            color: '#888',
+            fontSize: '0.9rem',
+            fontFamily: 'Tajawal, sans-serif',
+            margin: 0,
+          }}
+        >
+          {products.length} منتج
+        </p>
+
+        {/* أزرار الإدارة */}
+        <div
+          style={{
+            display: 'flex',
+            gap: '0.5rem',
+            flexWrap: 'wrap',
+          }}
+        >
+          {isOwner && (
+            <button
+              type="button"
+              onClick={() => setShowSettings(true)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.6rem 1rem',
+                background: 'rgba(59, 130, 246, 0.2)',
+                border: '1px solid rgba(59, 130, 246, 0.4)',
+                borderRadius: 12,
+                color: '#60a5fa',
+                fontWeight: 600,
+                fontSize: '0.85rem',
+                cursor: 'pointer',
+                fontFamily: 'Tajawal, sans-serif',
+              }}
+            >
+              <Settings size={16} />
+              إعدادات العرض
+            </button>
+          )}
+
+          {isAdmin && (
+            <button
+              type="button"
+              onClick={openAddProduct}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                padding: '0.6rem 1.2rem',
+                background:
+                  'linear-gradient(135deg, #c47a3a, #b8860b)',
+                border: 'none',
+                borderRadius: 12,
+                color: '#000',
+                fontWeight: 700,
+                fontSize: '0.9rem',
+                cursor: 'pointer',
+                fontFamily: 'Tajawal, sans-serif',
+              }}
+            >
+              <Plus size={18} />
+              إضافة منتج
+            </button>
+          )}
+        </div>
+      </div>
+
+      {/* المنتجات */}
+      {loading ? (
+        <div
+          style={{
+            textAlign: 'center',
+            padding: '4rem',
+            color: '#888',
+            fontFamily: 'Tajawal, sans-serif',
+          }}
+        >
+          جاري التحميل...
+        </div>
+      ) : products.length === 0 ? (
+        <div
+          style={{
+            maxWidth: 1200,
+            margin: '0 auto',
+            textAlign: 'center',
+            padding: '4rem',
+            color: '#888',
+            background: 'rgba(255,255,255,0.02)',
+            borderRadius: 16,
+            border: '2px dashed rgba(255,255,255,0.1)',
+          }}
+        >
+          <p
+            style={{
+              fontSize: '4rem',
+              margin: '0 0 1rem',
+            }}
+          >
+            
+          </p>
+
+          <p
+            style={{
+              margin: 0,
+              fontSize: '1.1rem',
+              fontFamily: 'Tajawal, sans-serif',
+            }}
+          >
+            لا توجد منتجات في هذا القسم حالياً
+          </p>
+
+          {isAdmin && (
+            <button
+              type="button"
+              onClick={openAddProduct}
+              style={{
+                marginTop: '1rem',
+                padding: '0.75rem 1.5rem',
+                background:
+                  'linear-gradient(135deg, #c47a3a, #b8860b)',
+                border: 'none',
+                borderRadius: 12,
+                color: '#000',
+                fontWeight: 700,
+                cursor: 'pointer',
+                fontFamily: 'Tajawal, sans-serif',
+              }}
+            >
+              أضف أول منتج
+            </button>
+          )}
+        </div>
+      ) : (
+        <div
+          style={{
+            maxWidth: 1200,
+            margin: '0 auto',
+          }}
+        >
+          <div
+            style={{
+              display:
+                currentDisplayStyle.direction === 'column'
+                  ? 'flex'
+                  : 'grid',
+
+              flexDirection:
+                currentDisplayStyle.direction || undefined,
+
+              gridTemplateColumns:
+                currentDisplayStyle.cols ||
+                'repeat(auto-fill, minmax(220px, 1fr))',
+
+              gap: currentDisplayStyle.gap || '1.5rem',
+
+              justifyItems: currentDisplayStyle.center
+                ? 'center'
+                : 'stretch',
+            }}
+          >
+            {products.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                style={cardStyle}
+                compact={currentDisplayStyle.compact}
+                isOwner={isAdmin}
+                showPrices={catalogSettings.showPrices}
+                showDescriptions={catalogSettings.showDescriptions}
+                onEdit={openEditProduct}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* إعدادات العرض */}
+      {showSettings && isOwner && (
+        <DisplaySettingsModal
+          settings={catalogSettings}
+          onSave={saveDisplaySettings}
+          onClose={() => setShowSettings(false)}
+        />
+      )}
+
+      {/* إضافة / تعديل */}
+      {showAddModal && (
+        <AddProductModal
+          catalogId={catalogId}
+          catalogName={catalogInfo?.name || CATALOG_NAME_MAP[catalogId]}
+          editingProduct={editingProduct}
+          onClose={closeProductModal}
+          onSave={handleProductSaved}
+        />
+      )}
+    </div>
+  );
+};
+
+// ═══════════════════════════════════════════
+// مودال إعدادات العرض
+// ═══════════════════════════════════════════
+
+const DisplaySettingsModal = ({
+  settings,
+  onSave,
+  onClose,
+}) => {
+  const [localSettings, setLocalSettings] = useState({
+    ...DEFAULT_CATALOG_SETTINGS,
+    ...settings,
+  });
+
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0,0,0,0.85)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 10000,
+        padding: '1rem',
+      }}
+      onClick={onClose}
+    >
+      <div
+        dir="rtl"
+        style={{
+          background:
+            'linear-gradient(145deg, #1a1a2e, #16213e)',
+          border: '2px solid #c47a3a',
+          borderRadius: 24,
+          padding: '2rem',
+          maxWidth: 500,
+          width: '100%',
+          maxHeight: '90vh',
+          overflow: 'auto',
+        }}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', marginBottom: '1.5rem' }}>
+          <h2
+            style={{
+              margin: 0,
+              color: '#c47a3a',
+              fontSize: '1.3rem',
+              fontFamily: 'Tajawal, sans-serif',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
+            <Settings size={24} />
+            إعدادات العرض
+          </h2>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="إغلاق"
+            style={{
+              width: 36,
+              height: 36,
+              flex: '0 0 36px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'rgba(214,177,95,0.15)',
+              border: '1px solid rgba(214,177,95,0.4)',
+              borderRadius: 10,
+              cursor: 'pointer',
+              color: '#c47a3a',
+            }}
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        <div style={{ marginBottom: '1.5rem' }}>
+          <label
+            style={{
+              display: 'block',
+              color: '#aaa',
+              marginBottom: '0.5rem',
+              fontFamily: 'Tajawal, sans-serif',
+            }}
+          >
+            شكل عرض المنتجات:
+          </label>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns:
+                'repeat(3, minmax(0, 1fr))',
+              gap: '0.5rem',
+            }}
+          >
+            {Object.entries(DISPLAY_STYLES).map(
+              ([key, style]) => {
+                const Icon = style.icon;
+
+                return (
+                  <button
+                    key={key}
+                    type="button"
+                    onClick={() =>
+                      setLocalSettings((current) => ({
+                        ...current,
+                        displayStyle: key,
+                      }))
+                    }
+                    style={{
+                      padding: '0.75rem',
+                      background:
+                        localSettings.displayStyle === key
+                          ? 'rgba(214, 177, 95, 0.3)'
+                          : 'rgba(255,255,255,0.05)',
+                      border:
+                        localSettings.displayStyle === key
+                          ? '2px solid #c47a3a'
+                          : '1px solid rgba(255,255,255,0.2)',
+                      borderRadius: 12,
+                      color:
+                        localSettings.displayStyle === key
+                          ? '#c47a3a'
+                          : '#aaa',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      alignItems: 'center',
+                      gap: '0.3rem',
+                      fontFamily: 'Tajawal, sans-serif',
+                      fontSize: '0.8rem',
+                    }}
+                  >
+                    <Icon size={24} />
+                    {style.label}
+                  </button>
+                );
+              }
+            )}
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '1rem',
+            marginBottom: '1.5rem',
+          }}
+        >
+          <label
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              color: '#fff',
+              cursor: 'pointer',
+              fontFamily: 'Tajawal, sans-serif',
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={Boolean(localSettings.showPrices)}
+              onChange={(event) =>
+                setLocalSettings((current) => ({
+                  ...current,
+                  showPrices: event.target.checked,
+                }))
+              }
+              style={{
+                width: 20,
+                height: 20,
+              }}
+            />
+            عرض الأسعار
+          </label>
+
+          <label
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              color: '#fff',
+              cursor: 'pointer',
+              fontFamily: 'Tajawal, sans-serif',
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={Boolean(localSettings.showDescriptions)}
+              onChange={(event) =>
+                setLocalSettings((current) => ({
+                  ...current,
+                  showDescriptions: event.target.checked,
+                }))
+              }
+              style={{
+                width: 20,
+                height: 20,
+              }}
+            />
+            عرض الوصف
+          </label>
+        </div>
+
+        <div
+          style={{
+            display: 'flex',
+            gap: '1rem',
+          }}
+        >
+          <button
+            type="button"
+            onClick={() => onSave(localSettings)}
+            style={{
+              flex: 1,
+              padding: '0.85rem',
+              background:
+                'linear-gradient(135deg, #c47a3a, #b8860b)',
+              border: 'none',
+              borderRadius: 12,
+              color: '#000',
+              fontWeight: 700,
+              fontSize: '1rem',
+              cursor: 'pointer',
+              fontFamily: 'Tajawal, sans-serif',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+            }}
+          >
+            <Save size={18} />
+            حفظ الإعدادات
+          </button>
+
+          <button
+            type="button"
+            onClick={onClose}
+            style={{
+              flex: 1,
+              padding: '0.85rem',
+              background: 'transparent',
+              border: '1px solid #666',
+              borderRadius: 12,
+              color: '#aaa',
+              fontWeight: 600,
+              fontSize: '1rem',
+              cursor: 'pointer',
+              fontFamily: 'Tajawal, sans-serif',
+            }}
+          >
+            إلغاء
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ═══════════════════════════════════════════
+// مودال إضافة / تعديل المنتج
+// ═══════════════════════════════════════════
+
+const AddProductModal = ({
+  catalogId,
+  catalogName,
+  editingProduct,
+  onClose,
+  onSave,
+}) => {
+  const [form, setForm] = useState({
+    name: editingProduct?.name || '',
+    price:
+      editingProduct?.price !== undefined
+        ? editingProduct.price
+        : '',
+    size: editingProduct?.size || '',
+    description: editingProduct?.description || '',
+    image: editingProduct?.image || '',
+    whatsapp:
+      editingProduct?.whatsapp || WHATSAPP_NUMBER,
+  });
+
+  const [saving, setSaving] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (saving) return;
+
+    setSaving(true);
+
+    try {
+      const productData = {
+        name: form.name.trim(),
+        price: Number(form.price),
+        size: form.size.trim(),
+        description: form.description.trim(),
+        image: form.image.trim(),
+        whatsapp: form.whatsapp.replace(/[^0-9]/g, ''),
+      };
+
+      let savedProduct;
+
+      // تعديل منتج موجود في Firestore
+      if (
+        editingProduct?.id &&
+        !String(editingProduct.id).startsWith('sample-')
+      ) {
+        const productRef = doc(
+          db,
+          'products',
+          editingProduct.id
+        );
+
+        await updateDoc(productRef, {
+          ...productData,
+          updatedAt: serverTimestamp(),
+        });
+
+        savedProduct = {
+          ...editingProduct,
+          ...productData,
+        };
+      } else {
+        // إضافة منتج جديد
+        const productRef = await addDoc(
+          collection(db, 'products'),
+          {
+            ...productData,
+            catalogId,
+            catalogName: catalogName || '',
+            createdAt: serverTimestamp(),
+          }
+        );
+
+        savedProduct = {
+          id: productRef.id,
+          ...productData,
+          catalogId,
+          catalogName: catalogName || '',
+        };
+      }
+
+      onSave(
+        savedProduct,
+        Boolean(
+          editingProduct?.id &&
+            !String(editingProduct.id).startsWith('sample-')
+        )
+      );
+    } catch (error) {
+      console.error('Error saving product:', error);
+      alert('حدث خطأ أثناء حفظ المنتج');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const inputStyle = {
+    width: '100%',
+    padding: '0.85rem',
+    background: 'rgba(255,255,255,0.05)',
+    border: '1px solid rgba(255,255,255,0.2)',
+    borderRadius: 12,
+    color: '#fff',
+    fontSize: '1rem',
+    fontFamily: 'Tajawal, sans-serif',
+    boxSizing: 'border-box',
+  };
+
+  return (
+    <div
+      style={{
+        position: 'fixed',
+        inset: 0,
+        background: 'rgba(0,0,0,0.85)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        zIndex: 10000,
+        padding: '1rem',
+      }}
+      onClick={onClose}
+    >
+      <div
+        dir="rtl"
+        style={{
+          background:
+            'linear-gradient(145deg, #1a1a2e, #16213e)',
+          border: '2px solid #c47a3a',
+          borderRadius: 24,
+          padding: '2rem',
+          maxWidth: 550,
+          width: '100%',
+          maxHeight: '90vh',
+          overflow: 'auto',
+        }}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem', marginBottom: '1.5rem' }}>
+          <h2
+            style={{
+              margin: 0,
+              color: '#c47a3a',
+              fontSize: '1.3rem',
+              fontFamily: 'Tajawal, sans-serif',
+            }}
+          >
+            {editingProduct
+              ? 'تعديل المنتج'
+              : 'إضافة منتج جديد'}
+          </h2>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="إغلاق"
+            style={{
+              width: 36,
+              height: 36,
+              flex: '0 0 36px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              background: 'rgba(214,177,95,0.15)',
+              border: '1px solid rgba(214,177,95,0.4)',
+              borderRadius: 10,
+              cursor: 'pointer',
+              color: '#c47a3a',
+            }}
+          >
+            <X size={18} />
+          </button>
+        </div>
+
+        {catalogName && (
+          <div
+            style={{
+              background: 'rgba(214, 177, 95, 0.1)',
+              padding: '0.75rem',
+              borderRadius: 10,
+              marginBottom: '1rem',
+              textAlign: 'center',
+              color: '#c47a3a',
+              fontFamily: 'Tajawal, sans-serif',
+              fontSize: '0.9rem',
+            }}
+          >
+            القسم: {catalogName}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit}>
+          <div style={{ marginBottom: '1rem' }}>
+            <label
+              style={{
+                display: 'block',
+                color: '#aaa',
+                marginBottom: '0.3rem',
+                fontFamily: 'Tajawal, sans-serif',
+              }}
+            >
+              اسم المنتج *
+            </label>
+
+            <input
+              type="text"
+              value={form.name}
+              onChange={(event) =>
+                setForm((current) => ({
+                  ...current,
+                  name: event.target.value,
+                }))
+              }
+              required
+              style={inputStyle}
+              placeholder="مثال: فستان سهرة فاخر"
+            />
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr 1fr',
+              gap: '1rem',
+              marginBottom: '1rem',
+            }}
+          >
+            <div>
+              <label
+                style={{
+                  display: 'block',
+                  color: '#aaa',
+                  marginBottom: '0.3rem',
+                  fontFamily: 'Tajawal, sans-serif',
+                }}
+              >
+                السعر (ر.س) *
+              </label>
+
+              <input
+                type="number"
+                min="0"
+                step="0.01"
+                value={form.price}
+                onChange={(event) =>
+                  setForm((current) => ({
+                    ...current,
+                    price: event.target.value,
+                  }))
+                }
+                required
+                style={inputStyle}
+                placeholder="850"
+              />
+            </div>
+
+            <div>
+              <label
+                style={{
+                  display: 'block',
+                  color: '#aaa',
+                  marginBottom: '0.3rem',
+                  fontFamily: 'Tajawal, sans-serif',
+                }}
+              >
+                المقاس
+              </label>
+
+              <input
+                type="text"
+                value={form.size}
+                onChange={(event) =>
+                  setForm((current) => ({
+                    ...current,
+                    size: event.target.value,
+                  }))
+                }
+                style={inputStyle}
+                placeholder="M, L, XL"
+              />
+            </div>
+          </div>
+
+          <div style={{ marginBottom: '1rem' }}>
+            <label
+              style={{
+                display: 'block',
+                color: '#aaa',
+                marginBottom: '0.3rem',
+                fontFamily: 'Tajawal, sans-serif',
+              }}
+            >
+              رابط الصورة
+            </label>
+
+            <input
+              type="url"
+              value={form.image}
+              onChange={(event) =>
+                setForm((current) => ({
+                  ...current,
+                  image: event.target.value,
+                }))
+              }
+              style={inputStyle}
+              placeholder="https://..."
+            />
+          </div>
+
+          <div style={{ marginBottom: '1rem' }}>
+            <label
+              style={{
+                display: 'block',
+                color: '#aaa',
+                marginBottom: '0.3rem',
+                fontFamily: 'Tajawal, sans-serif',
+              }}
+            >
+              الوصف
+            </label>
+
+            <textarea
+              value={form.description}
+              onChange={(event) =>
+                setForm((current) => ({
+                  ...current,
+                  description: event.target.value,
+                }))
+              }
+              rows={3}
+              style={{
+                ...inputStyle,
+                resize: 'vertical',
+              }}
+              placeholder="وصف المنتج..."
+            />
+          </div>
+
+          <div style={{ marginBottom: '1.5rem' }}>
+            <label
+              style={{
+                display: 'block',
+                color: '#aaa',
+                marginBottom: '0.3rem',
+                fontFamily: 'Tajawal, sans-serif',
+              }}
+            >
+              رقم واتساب للشراء
+            </label>
+
+            <input
+              type="text"
+              value={form.whatsapp}
+              onChange={(event) =>
+                setForm((current) => ({
+                  ...current,
+                  whatsapp: event.target.value,
+                }))
+              }
+              style={inputStyle}
+              placeholder="966500000000"
+            />
+          </div>
+
+          <div
+            style={{
+              display: 'flex',
+              gap: '1rem',
+            }}
+          >
+            <button
+              type="submit"
+              disabled={saving}
+              style={{
+                flex: 1,
+                padding: '0.85rem',
+                background: saving
+                  ? 'rgba(214,177,95,0.5)'
+                  : 'linear-gradient(135deg, #c47a3a, #b8860b)',
+                border: 'none',
+                borderRadius: 12,
+                color: '#000',
+                fontWeight: 700,
+                fontSize: '1rem',
+                cursor: saving ? 'not-allowed' : 'pointer',
+                fontFamily: 'Tajawal, sans-serif',
+              }}
+            >
+              {saving
+                ? 'جاري الحفظ...'
+                : editingProduct
+                ? 'حفظ التعديلات'
+                : 'إضافة المنتج'}
+            </button>
+
+            <button
+              type="button"
+              onClick={onClose}
+              disabled={saving}
+              style={{
+                flex: 1,
+                padding: '0.85rem',
+                background: 'transparent',
+                border: '1px solid #666',
+                borderRadius: 12,
+                color: '#aaa',
+                fontWeight: 600,
+                fontSize: '1rem',
+                cursor: saving ? 'not-allowed' : 'pointer',
+                fontFamily: 'Tajawal, sans-serif',
+              }}
+            >
+              إلغاء
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default CatalogPage;

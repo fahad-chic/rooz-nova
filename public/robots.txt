@@ -1,0 +1,35 @@
+# أناقة ROOZ - robots.txt# https://fahad-chic.pages.dev
+
+User-agent: *
+Allow: /
+
+# Admin & Private Pages - Block All Bots (لحماية لوحتك السرية)
+Disallow: /admin
+Disallow: /owner
+Disallow: /settings
+Disallow: /dashboard
+Disallow: /complaints
+Disallow: /notifications
+Disallow: /otp
+Disallow: /users
+Disallow: /chat
+Disallow: /ai-chat
+
+# API Routes
+Disallow: /api/
+
+# السماح لجميع روبوتات الذكاء الاصطناعي ومحركات البحث بالقراءة والإعلان عن موقعك
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+Sitemap: https://fahad-chic.pages.dev/sitemap.xml
+

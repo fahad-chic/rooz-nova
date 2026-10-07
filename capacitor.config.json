@@ -1,0 +1,30 @@
+{
+  "appId": "com.anakachic.app",
+  "appName": "أناقة ROOZ",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 2000,
+      "backgroundColor": "#f4ecdb",
+      "showSpinner": false
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#c47a3a"
+    }
+  },
+  "android": {
+    "backgroundColor": "#f4ecdb",
+    "allowMixedContent": true,
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false
+  },
+  "ios": {
+    "contentInset": "automatic",
+    "backgroundColor": "#f4ecdb",
+    "allowsLinkPreview": true
+  }
+}

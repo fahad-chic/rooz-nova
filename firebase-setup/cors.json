@@ -1,0 +1,29 @@
+[
+  {
+    "origin": [
+      "https://fahad-chic.pages.dev",
+      "https://www.fahad-chic.pages.dev",
+      "https://chic.roozstore.com",
+      "http://localhost:5173",
+      "http://localhost:12000"
+    ],
+    "method": [
+      "GET",
+      "PUT",
+      "POST",
+      "HEAD",
+      "DELETE"
+    ],
+    "responseHeader": [
+      "Content-Type",
+      "Content-Length",
+      "Content-Range",
+      "Access-Control-Allow-Headers",
+      "X-Firebase-Storage-Version",
+      "X-Goog-Upload-Command",
+      "X-Goog-Upload-Header-Content-Length",
+      "X-Goog-Upload-Header-Content-Type"
+    ],
+    "maxAgeSeconds": 3600
+  }
+]

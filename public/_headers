@@ -1,0 +1,38 @@
+# Cloudflare Pages Headers - Maximum Performance & Security
+# index.html must NOT be cached immutably so new deploys are picked up
+# immediately. Only hashed /assets/* are safe to cache forever.
+# Note: Cache-Control is intentionally set only on specific path blocks below
+# (not on the global /* block) to avoid emitting duplicate/contradictory
+# Cache-Control headers on /assets/* (Cloudflare merges /* into /assets/*).
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Vary: Accept-Encoding
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://apis.google.com https://www.gstatic.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://*.firebaseio.com https://*.googleapis.com wss://*.firebaseio.com https://api.cloudflare.com https://firestore.googleapis.com https://firebasestorage.googleapis.com https://identitytoolkit.googleapis.com https://cloudflareinsights.com; frame-src 'self' https://accounts.google.com https://apis.google.com https://anaqa-chic-4e437.firebaseapp.com; frame-ancestors 'none'
+
+# HTML entry — always revalidate (references change every deploy)
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Root entry document — always revalidate
+/
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Service Worker — يجب ألا يُخزَّن إطلاقاً حتى يصل أي تحديث فوراً
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# ملف اللوغو والبيانات العامة — إعادة تحقق دائماً
+/manifest.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Static assets - Forever cache (immutable) — safe because of content hashing
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Sounds - cache but allow revalidation
+/sounds/*
+  Cache-Control: public, max-age=3600, must-revalidate
