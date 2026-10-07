@@ -142,9 +142,9 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'linear-gradient(160deg, #f8f1e3, #efe3c8)',
+        background: 'linear-gradient(160deg, #ebe5f6, #d3c4f3)',
         padding: '1rem',
-        fontFamily: 'Tajawal, sans-serif'
+        fontFamily: 'Cairo, sans-serif'
       }}
     >
       <div
@@ -152,16 +152,16 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
         aria-label="حارس غرفة صاحب الموقع"
         style={{
           width: 'min(430px, 100%)',
-          background: 'linear-gradient(160deg, #fffdf6, #f6eeda)',
-          border: '2px solid #c47a3a',
+          background: 'linear-gradient(160deg, #f7f6fb, #e3dbf5)',
+          border: '2px solid #7b29d5',
           borderRadius: 20,
-          boxShadow: '0 24px 60px rgba(60,40,10,0.35)',
+          boxShadow: '0 24px 60px rgb(15, 11, 48,0.35)',
           overflow: 'hidden'
         }}
       >
         <div style={{
-          background: 'linear-gradient(120deg, #f8f1e3, #ead9b5)',
-          color: '#0b0a09',
+          background: 'linear-gradient(120deg, #ebe5f6, #c4aff0)',
+          color: '#0a071e',
           padding: '16px 18px',
           display: 'flex',
           alignItems: 'center',
@@ -175,7 +175,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
             type="button"
             onClick={onCancel}
             aria-label="إلغاء والعودة"
-            style={{ background: 'none', border: 'none', color: '#0b0a09', cursor: 'pointer', display: 'flex', padding: 2 }}
+            style={{ background: 'none', border: 'none', color: '#0a071e', cursor: 'pointer', display: 'flex', padding: 2 }}
           >
             <X size={18} />
           </button>
@@ -183,29 +183,29 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
 
         <div style={{ padding: '20px 18px' }}>
           {phase === 'checking' && (
-            <p style={{ textAlign: 'center', fontWeight: 700, color: '#0b0a09', padding: '1.5rem 0' }}>
+            <p style={{ textAlign: 'center', fontWeight: 700, color: '#0a071e', padding: '1.5rem 0' }}>
               جاري فحص حالة الحارس الأمني…
             </p>
           )}
 
           {phase === 'error' && (
             <div style={{ textAlign: 'center' }}>
-              <p style={{ color: '#8a1f1f', fontWeight: 800, marginBottom: 14 }}>{error}</p>
+              <p style={{ color: '#93162d', fontWeight: 800, marginBottom: 14 }}>{error}</p>
               <div style={{ display: 'flex', gap: 8 }}>
-                <button type="button" onClick={retry} style={btnStyle('#c47a3a')}>
+                <button type="button" onClick={retry} style={btnStyle('#7b29d5')}>
                   <RefreshCw size={15} aria-hidden="true" /> إعادة المحاولة
                 </button>
-                <button type="button" onClick={onCancel} style={btnStyle('#6b6252')}>عودة</button>
+                <button type="button" onClick={onCancel} style={btnStyle('#545869')}>عودة</button>
               </div>
             </div>
           )}
 
           {phase === 'setup' && (
             <form onSubmit={handleSetup}>
-              <p style={{ fontWeight: 800, color: '#0b0a09', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6 }}>
+              <p style={{ fontWeight: 800, color: '#0a071e', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6 }}>
                 <KeyRound size={17} aria-hidden="true" /> إنشاء الرمز السري لأول مرة
               </p>
-              <p style={{ fontSize: '0.82rem', color: '#0b0a09', fontWeight: 600, marginBottom: 14, lineHeight: 1.8 }}>
+              <p style={{ fontSize: '0.82rem', color: '#0a071e', fontWeight: 600, marginBottom: 14, lineHeight: 1.8 }}>
                 هذا الرمز يُطلب قبل فتح الغرفة في كل مرة حتى مع بقاء تسجيل الدخول —
                 اختر 4 إلى 8 أرقام واحفظها، فهي لا تُسترجع.
               </p>
@@ -229,7 +229,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
                 style={{ ...inputStyle, marginTop: 10 }}
               />
               {error && <p style={errorStyle}>{error}</p>}
-              <button type="submit" disabled={busy} style={{ ...btnStyle('#c47a3a'), width: '100%', marginTop: 12 }}>
+              <button type="submit" disabled={busy} style={{ ...btnStyle('#7b29d5'), width: '100%', marginTop: 12 }}>
                 {busy ? 'جاري الإنشاء…' : 'إنشاء الرمز السري'}
               </button>
             </form>
@@ -237,13 +237,13 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
 
           {phase === 'verify' && (
             <form onSubmit={handleVerify}>
-              <p style={{ fontWeight: 800, color: '#0b0a09', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6 }}>
+              <p style={{ fontWeight: 800, color: '#0a071e', marginBottom: 6, display: 'flex', alignItems: 'center', gap: 6 }}>
                 <Lock size={17} aria-hidden="true" /> أدخل الرمز السري لفتح الغرفة
               </p>
-              <p style={{ fontSize: '0.82rem', color: '#0b0a09', fontWeight: 600, marginBottom: 14, lineHeight: 1.8 }}>
+              <p style={{ fontSize: '0.82rem', color: '#0a071e', fontWeight: 600, marginBottom: 14, lineHeight: 1.8 }}>
                 حماية إضافية: 5 محاولات خاطئة تقفل الحساب 15 دقيقة وتُسجَّل أمنياً.
               </p>
-              {info && <p style={{ color: '#1c6b45', fontWeight: 800, fontSize: '0.85rem', marginBottom: 10 }}>{info}</p>}
+              {info && <p style={{ color: '#17706c', fontWeight: 800, fontSize: '0.85rem', marginBottom: 10 }}>{info}</p>}
               <input
                 ref={inputRef}
                 type="password"
@@ -255,7 +255,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
                 style={inputStyle}
               />
               {error && <p style={errorStyle}>{error}</p>}
-              <button type="submit" disabled={busy || pin.length < 4} style={{ ...btnStyle('#c47a3a'), width: '100%', marginTop: 12 }}>
+              <button type="submit" disabled={busy || pin.length < 4} style={{ ...btnStyle('#7b29d5'), width: '100%', marginTop: 12 }}>
                 {busy ? 'جاري التحقق…' : 'فتح الغرفة'}
               </button>
             </form>
@@ -270,25 +270,25 @@ const inputStyle = {
   width: '100%',
   boxSizing: 'border-box',
   borderRadius: 12,
-  border: '1.5px solid #cdb27a',
-  background: '#fffef9',
+  border: '1.5px solid #8f6bdc',
+  background: '#f7f6fb',
   padding: '12px 14px',
-  fontFamily: 'Tajawal, sans-serif',
+  fontFamily: 'Cairo, sans-serif',
   fontSize: '1.05rem',
   fontWeight: 800,
   letterSpacing: '0.35em',
   textAlign: 'center',
-  color: '#0b0a09',
+  color: '#0a071e',
   outline: 'none'
 };
 
-const errorStyle = { color: '#8a1f1f', fontWeight: 800, fontSize: '0.85rem', marginTop: 10 };
+const errorStyle = { color: '#93162d', fontWeight: 800, fontSize: '0.85rem', marginTop: 10 };
 
 const btnStyle = (bg) => ({
   border: 'none',
   borderRadius: 12,
   padding: '11px 16px',
-  fontFamily: 'Tajawal, sans-serif',
+  fontFamily: 'Cairo, sans-serif',
   fontWeight: 900,
   fontSize: '0.92rem',
   cursor: 'pointer',

@@ -5,41 +5,41 @@
    ===================================================== */
 
 .ch-root {
-  --ch-bg-0: #faf6f0;
-  --ch-bg-1: #f3ede4;
-  --ch-bg-2: #ebe3d6;
-  --ch-card: #fffefb;
-  --ch-card-2: #fbf5e8;
+  --ch-bg-0: #f4f1f9;
+  --ch-bg-1: #eae4f3;
+  --ch-bg-2: #ddd2ef;
+  --ch-card: #f7f6fb;
+  --ch-card-2: #efebf8;
 
-  --ch-ink: #12100e;
-  --ch-ink-2: #2e2513;
-  --ch-ink-soft: #7a7268;
+  --ch-ink: #0b0822;
+  --ch-ink-2: #0f0b2e;
+  --ch-ink-soft: #686b7a;
 
-  --ch-gold: #c47a3a;
-  --ch-gold-deep: #8f5528;
-  --ch-gold-bright: #e8a35c;
-  --ch-gold-shine: #f0d79a;
-  --ch-gold-line: rgba(176, 138, 62, 0.42);
-  --ch-gold-glow: rgba(176, 138, 62, 0.35);
+  --ch-gold: #7b29d5;
+  --ch-gold-deep: #5b1c9b;
+  --ch-gold-bright: #9955ef;
+  --ch-gold-shine: #b295f4;
+  --ch-gold-line: rgb(93, 43, 195, 0.42);
+  --ch-gold-glow: rgb(93, 43, 195, 0.35);
 
-  --ch-font: 'Tajawal', 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif;
+  --ch-font: 'Cairo', 'Cairo', 'Segoe UI', Tahoma, Arial, sans-serif;
 
   /* ألias لمتغيرات RoyalHome.css حتى تعمل أصناف rh-* (شبكة الأقسام/المسابقة)
      داخل ch-root بنفس الهوية البيجية */
-  --rh-cream-0: #faf6f0;
-  --rh-cream-1: #f3ede4;
-  --rh-cream-2: #ebe3d6;
-  --rh-cream-3: #e5d5c0;
-  --rh-cream-4: #dfcda8;
-  --rh-gold: #c47a3a;
-  --rh-gold-deep: #8f5528;
-  --rh-gold-bright: #e8a35c;
-  --rh-gold-soft: #f0e4d4;
-  --rh-gold-glow: rgba(176, 138, 62, 0.4);
-  --rh-brown: #12100e;
-  --rh-brown-2: #3c2f1e;
-  --rh-brown-3: #7a7268;
-  --rh-red: #9b5845;
+  --rh-cream-0: #f4f1f9;
+  --rh-cream-1: #eae4f3;
+  --rh-cream-2: #ddd2ef;
+  --rh-cream-3: #cdb8ed;
+  --rh-cream-4: #b69ee9;
+  --rh-gold: #7b29d5;
+  --rh-gold-deep: #5b1c9b;
+  --rh-gold-bright: #9955ef;
+  --rh-gold-soft: #dfd2f2;
+  --rh-gold-glow: rgb(93, 43, 195, 0.4);
+  --rh-brown: #0b0822;
+  --rh-brown-2: #281545;
+  --rh-brown-3: #686b7a;
+  --rh-red: #8330b0;
   --rh-font: var(--ch-font);
 
   min-height: 100vh;
@@ -51,9 +51,9 @@
   font-family: var(--ch-font);
   color: var(--ch-ink);
   background:
-    radial-gradient(900px 400px at 100% 0%, rgba(196,122,58,0.12), transparent 55%),
-    radial-gradient(700px 320px at 0% 30%, rgba(196,122,58,0.07), transparent 50%),
-    linear-gradient(180deg, #faf6f0 0%, #f3ede4 50%, #ebe3d6 100%);
+    radial-gradient(900px 400px at 100% 0%, rgb(123, 41, 213,0.12), transparent 55%),
+    radial-gradient(700px 320px at 0% 30%, rgb(123, 41, 213,0.07), transparent 50%),
+    linear-gradient(180deg, #f4f1f9 0%, #eae4f3 50%, #ddd2ef 100%);
 }
 
 .ch-root *,
@@ -66,26 +66,26 @@
 .ch-ink-gloss {
   background: linear-gradient(
     180deg,
-    #3a2f18 0%,
-    #0b0a09 45%,
-    #000000 55%,
-    #4a3d22 100%
+    #110c34 0%,
+    #0a071e 45%,
+    #09061b 55%,
+    #2b1854 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  text-shadow: 0 1px 0 rgba(255, 248, 230, 0.35);
+  text-shadow: 0 1px 0 rgb(240, 236, 249, 0.35);
 }
 
 /* ---------- ذهب لامع ---------- */
 .ch-gold-gloss {
   background: linear-gradient(
     120deg,
-    #b8860b 0%,
-    #ffd700 25%,
-    #ffe9a0 50%,
-    #ffd700 75%,
-    #b8860b 100%
+    #400fb4 0%,
+    #3e13ec 25%,
+    #bca7f8 50%,
+    #3e13ec 75%,
+    #400fb4 100%
   );
   -webkit-background-clip: text;
   background-clip: text;
@@ -120,14 +120,14 @@
   0%,
   100% {
     box-shadow:
-      0 0 0 0 rgba(217, 177, 102, 0.45),
-      0 10px 34px rgba(176, 138, 62, 0.28);
+      0 0 0 0 rgb(137, 91, 228, 0.45),
+      0 10px 34px rgb(93, 43, 195, 0.28);
   }
 
   50% {
     box-shadow:
-      0 0 0 14px rgba(217, 177, 102, 0),
-      0 10px 40px rgba(176, 138, 62, 0.4);
+      0 0 0 14px rgb(137, 91, 228, 0),
+      0 10px 40px rgb(93, 43, 195, 0.4);
   }
 }
 
@@ -164,11 +164,11 @@
   border-radius: 50%;
   background: conic-gradient(
     from 120deg,
-    #8f5528,
-    #f0d79a,
-    #c47a3a,
-    #f4e2b0,
-    #8f5528
+    #5b1c9b,
+    #b295f4,
+    #7b29d5,
+    #c1adf7,
+    #5b1c9b
   );
   padding: 4px;
   -webkit-mask:
@@ -184,17 +184,17 @@
   height: clamp(120px, 30vw, 200px);
   object-fit: cover;
   border-radius: 50%;
-  background: #141003;
+  background: #0a071f;
   box-shadow:
-    inset 0 0 0 3px rgba(240, 215, 154, 0.5),
-    0 14px 40px rgba(23, 18, 8, 0.25);
+    inset 0 0 0 3px rgb(178, 149, 244, 0.5),
+    0 14px 40px rgb(11, 8, 34, 0.25);
 }
 
 .ch-hero-title {
   margin: 0 0 0.5rem;
   font-size: clamp(1.15rem, 3.5vw, 1.55rem);
   font-weight: 900;
-  -webkit-text-stroke: 0.5px rgba(255, 210, 60, 0.55);
+  -webkit-text-stroke: 0.5px rgb(117, 75, 240, 0.55);
   line-height: 1.35;
   text-wrap: balance;
   letter-spacing: -0.01em;
@@ -216,14 +216,14 @@
   width: 100%;
   max-width: 620px;
   margin: 0 auto 0.75rem;
-  background: rgba(255, 253, 247, 0.96);
+  background: rgb(247, 246, 251, 0.96);
   border: 1.5px solid var(--ch-gold-line);
   border-radius: 999px;
   padding: 0.35rem 0.4rem 0.35rem 1.1rem;
   box-shadow:
-    0 12px 32px rgba(23, 18, 8, 0.08),
-    0 0 0 4px rgba(217, 177, 102, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 12px 32px rgb(11, 8, 34, 0.08),
+    0 0 0 4px rgb(137, 91, 228, 0.05),
+    inset 0 1px 0 rgb(255, 255, 255, 0.9);
   transition:
     border-color 0.25s ease,
     box-shadow 0.25s ease,
@@ -231,11 +231,11 @@
 }
 
 .ch-search:focus-within {
-  border-color: rgba(176, 138, 62, 0.7);
+  border-color: rgb(93, 43, 195, 0.7);
   box-shadow:
-    0 14px 36px rgba(23, 18, 8, 0.1),
-    0 0 0 4px rgba(217, 177, 102, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 14px 36px rgb(11, 8, 34, 0.1),
+    0 0 0 4px rgb(137, 91, 228, 0.12),
+    inset 0 1px 0 rgb(255, 255, 255, 0.9);
 }
 
 .ch-search input {
@@ -252,7 +252,7 @@
 }
 
 .ch-search input::placeholder {
-  color: #a08e6a;
+  color: #724ebc;
 }
 
 .ch-search-btn {
@@ -266,17 +266,17 @@
   cursor: pointer;
   display: grid;
   place-items: center;
-  color: #2a1f08;
+  color: #0d0a29;
   background: linear-gradient(
     135deg,
-    #f0d79a 0%,
-    #e8a35c 40%,
-    #c47a3a 100%
+    #b295f4 0%,
+    #9955ef 40%,
+    #7b29d5 100%
   );
   box-shadow:
-    0 7px 20px rgba(176, 138, 62, 0.45),
-    0 0 0 2px rgba(255, 255, 255, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    0 7px 20px rgb(93, 43, 195, 0.45),
+    0 0 0 2px rgb(255, 255, 255, 0.25),
+    inset 0 1px 0 rgb(255, 255, 255, 0.65);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -285,9 +285,9 @@
 .ch-search-btn:hover {
   transform: scale(1.07);
   box-shadow:
-    0 9px 26px rgba(176, 138, 62, 0.6),
-    0 0 0 3px rgba(217, 177, 102, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    0 9px 26px rgb(93, 43, 195, 0.6),
+    0 0 0 3px rgb(137, 91, 228, 0.12),
+    inset 0 1px 0 rgb(255, 255, 255, 0.7);
 }
 
 .ch-search-btn::after {
@@ -299,7 +299,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.55),
+    rgb(255, 255, 255, 0.55),
     transparent
   );
   animation: chShine 3.4s ease-in-out infinite;
@@ -332,8 +332,8 @@
   gap: 0.45rem;
   background: linear-gradient(
     165deg,
-    rgba(255, 253, 247, 0.97) 0%,
-    rgba(248, 241, 227, 0.88) 100%
+    rgb(247, 246, 251, 0.97) 0%,
+    rgb(235, 229, 246, 0.88) 100%
   );
   border: 1px solid var(--ch-gold-line);
   border-radius: 16px;
@@ -342,8 +342,8 @@
   padding: 0.6rem 0.3rem;
   min-width: 0;
   box-shadow:
-    0 6px 16px rgba(23, 18, 8, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 6px 16px rgb(11, 8, 34, 0.05),
+    inset 0 1px 0 rgb(255, 255, 255, 0.9);
   transition:
     transform 0.25s ease,
     border-color 0.25s ease,
@@ -354,10 +354,10 @@
 .ch-cat:hover {
   transform: translateY(-4px);
   border-color: var(--ch-gold);
-  background: #fffdf8;
+  background: #f8f6fb;
   box-shadow:
-    0 12px 28px rgba(176, 138, 62, 0.2),
-    0 0 0 3px rgba(217, 177, 102, 0.08);
+    0 12px 28px rgb(93, 43, 195, 0.2),
+    0 0 0 3px rgb(137, 91, 228, 0.08);
 }
 
 .ch-cat-icon {
@@ -369,13 +369,13 @@
   display: grid;
   place-items: center;
   color: var(--ch-ink);
-  background: linear-gradient(160deg, #fffefb 0%, #f6ecd6 100%);
+  background: linear-gradient(160deg, #f7f6fb 0%, #e0d7f5 100%);
   border: 2px solid transparent;
   background-clip: padding-box;
   box-shadow:
     0 0 0 2px var(--ch-gold),
-    0 6px 16px rgba(176, 138, 62, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 6px 16px rgb(93, 43, 195, 0.28),
+    inset 0 1px 0 rgb(255, 255, 255, 0.9);
   transition:
     box-shadow 0.25s ease,
     transform 0.25s ease;
@@ -385,9 +385,9 @@
   transform: scale(1.03);
   box-shadow:
     0 0 0 2px var(--ch-gold-bright),
-    0 10px 26px rgba(176, 138, 62, 0.45),
-    0 0 18px rgba(217, 177, 102, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 10px 26px rgb(93, 43, 195, 0.45),
+    0 0 18px rgb(137, 91, 228, 0.5),
+    inset 0 1px 0 rgb(255, 255, 255, 0.9);
 }
 
 .ch-cat-icon::after {
@@ -399,7 +399,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(217, 177, 102, 0.35),
+    rgb(137, 91, 228, 0.35),
     transparent
   );
   animation: chShine 4.2s ease-in-out infinite;
@@ -464,7 +464,7 @@
 
 .ch-section-title .ch-title-icon {
   color: var(--ch-gold-deep);
-  filter: drop-shadow(0 2px 4px rgba(176, 138, 62, 0.45));
+  filter: drop-shadow(0 2px 4px rgb(93, 43, 195, 0.45));
 }
 
 .ch-link-all {
@@ -481,13 +481,13 @@
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
   border: 1px solid var(--ch-gold-line);
-  background: rgba(255, 253, 247, 0.7);
+  background: rgb(247, 246, 251, 0.7);
   transition: all 0.25s ease;
 }
 
 .ch-link-all:hover {
-  background: var(--ch-gold-soft, #f0e4d4);
-  box-shadow: 0 4px 14px rgba(176, 138, 62, 0.3);
+  background: var(--ch-gold-soft, #dfd2f2);
+  box-shadow: 0 4px 14px rgb(93, 43, 195, 0.3);
 }
 
 /* توسيط رأس قسم «تصفح الأقسام» المحفوظ (rh-sections) داخل التصميم الجديد */
@@ -515,18 +515,18 @@
   background: linear-gradient(
     90deg,
     transparent,
-    #e8a35c 25%,
-    #c47a3a 50%,
-    #e8a35c 75%,
+    #9955ef 25%,
+    #7b29d5 50%,
+    #9955ef 75%,
     transparent
   );
-  box-shadow: 0 1px 6px rgba(176, 138, 62, 0.35);
+  box-shadow: 0 1px 6px rgb(93, 43, 195, 0.35);
 }
 
 .ch-divider-gem {
-  color: #8f5528;
+  color: #5b1c9b;
   flex-shrink: 0;
-  filter: drop-shadow(0 0 6px rgba(217, 177, 102, 0.7));
+  filter: drop-shadow(0 0 6px rgb(137, 91, 228, 0.7));
 }
 
 @media (max-width: 560px) {
@@ -570,16 +570,16 @@
   min-width: 0;
   background: linear-gradient(
     165deg,
-    rgba(255, 253, 247, 0.98) 0%,
-    rgba(250, 245, 234, 0.96) 100%
+    rgb(247, 246, 251, 0.98) 0%,
+    rgb(240, 236, 248, 0.96) 100%
   );
-  border: 1px solid rgba(176, 138, 62, 0.28);
+  border: 1px solid rgb(93, 43, 195, 0.28);
   border-radius: 18px;
   overflow: hidden;
   cursor: pointer;
   box-shadow:
-    0 7px 22px rgba(23, 18, 8, 0.07),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 7px 22px rgb(11, 8, 34, 0.07),
+    inset 0 1px 0 rgb(255, 255, 255, 0.9);
   transition:
     transform 0.28s ease,
     box-shadow 0.28s ease,
@@ -590,14 +590,14 @@
   transform: translateY(-5px);
   border-color: var(--ch-gold);
   box-shadow:
-    0 16px 38px rgba(176, 138, 62, 0.24),
-    0 0 0 3px rgba(217, 177, 102, 0.07);
+    0 16px 38px rgb(93, 43, 195, 0.24),
+    0 0 0 3px rgb(137, 91, 228, 0.07);
 }
 
 .ch-ad-img {
   position: relative;
   aspect-ratio: 4 / 3;
-  background: linear-gradient(150deg, #efe4cb 0%, #e2d3b0 100%);
+  background: linear-gradient(150deg, #d5c8f2 0%, #bca7eb 100%);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -628,16 +628,16 @@
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 900;
-  color: #2a1f08;
+  color: #0d0a29;
   background: linear-gradient(
     135deg,
-    #f0d79a,
-    #e8a35c 55%,
-    #c47a3a
+    #b295f4,
+    #9955ef 55%,
+    #7b29d5
   );
   box-shadow:
-    0 3px 10px rgba(176, 138, 62, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    0 3px 10px rgb(93, 43, 195, 0.5),
+    inset 0 1px 0 rgb(255, 255, 255, 0.6);
 }
 
 .ch-heart {
@@ -648,8 +648,8 @@
   width: clamp(28px, 7vw, 34px);
   height: clamp(28px, 7vw, 34px);
   border-radius: 50%;
-  border: 1px solid rgba(176, 138, 62, 0.4);
-  background: rgba(255, 253, 247, 0.92);
+  border: 1px solid rgb(93, 43, 195, 0.4);
+  background: rgb(247, 246, 251, 0.92);
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -659,12 +659,12 @@
 
 .ch-heart:hover {
   transform: scale(1.12);
-  box-shadow: 0 4px 12px rgba(176, 138, 62, 0.4);
+  box-shadow: 0 4px 12px rgb(93, 43, 195, 0.4);
 }
 
 .ch-heart.active {
-  color: #b03535;
-  border-color: rgba(176, 53, 53, 0.45);
+  color: #c02541;
+  border-color: rgb(192, 37, 65, 0.45);
 }
 
 .ch-ad-body {
@@ -719,19 +719,19 @@
   background:
     radial-gradient(
       500px 160px at 50% 0%,
-      rgba(217, 177, 102, 0.12),
+      rgb(137, 91, 228, 0.12),
       transparent 72%
     ),
     linear-gradient(
       160deg,
-      rgba(255, 253, 247, 0.96),
-      rgba(246, 236, 214, 0.92)
+      rgb(247, 246, 251, 0.96),
+      rgb(224, 215, 245, 0.92)
     );
-  border: 1px solid rgba(176, 138, 62, 0.3);
+  border: 1px solid rgb(93, 43, 195, 0.3);
   border-radius: 24px;
   box-shadow:
-    0 12px 36px rgba(23, 18, 8, 0.07),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 12px 36px rgb(11, 8, 34, 0.07),
+    inset 0 1px 0 rgb(255, 255, 255, 0.9);
 }
 
 .ch-why-title {
@@ -778,12 +778,12 @@
   display: grid;
   place-items: center;
   color: var(--ch-ink);
-  background: linear-gradient(160deg, #fffefb, #f3e8cf);
+  background: linear-gradient(160deg, #f7f6fb, #dacef4);
   box-shadow:
     0 0 0 2.5px var(--ch-gold),
-    0 0 0 5px rgba(217, 177, 102, 0.25),
-    0 8px 22px rgba(176, 138, 62, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 0 0 5px rgb(137, 91, 228, 0.25),
+    0 8px 22px rgb(93, 43, 195, 0.3),
+    inset 0 1px 0 rgb(255, 255, 255, 0.9);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
@@ -793,10 +793,10 @@
   transform: translateY(-4px) scale(1.05);
   box-shadow:
     0 0 0 2.5px var(--ch-gold-bright),
-    0 0 0 6px rgba(217, 177, 102, 0.35),
-    0 12px 30px rgba(176, 138, 62, 0.45),
-    0 0 24px rgba(217, 177, 102, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 0 0 6px rgb(137, 91, 228, 0.35),
+    0 12px 30px rgb(93, 43, 195, 0.45),
+    0 0 24px rgb(137, 91, 228, 0.55),
+    inset 0 1px 0 rgb(255, 255, 255, 0.9);
 }
 
 .ch-why-name {
@@ -829,18 +829,18 @@
   background:
     radial-gradient(
       600px 200px at 50% -30%,
-      rgba(217, 177, 102, 0.35),
+      rgb(137, 91, 228, 0.35),
       transparent 70%
     ),
-    linear-gradient(160deg, #fffefb 0%, #f6ecd6 100%);
+    linear-gradient(160deg, #f7f6fb 0%, #e0d7f5 100%);
   box-shadow:
-    0 16px 42px rgba(176, 138, 62, 0.2),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 16px 42px rgb(93, 43, 195, 0.2),
+    inset 0 1px 0 rgb(255, 255, 255, 0.9);
 }
 
 .ch-cta-gem {
   color: var(--ch-gold-deep);
-  filter: drop-shadow(0 0 14px rgba(217, 177, 102, 0.8));
+  filter: drop-shadow(0 0 14px rgb(137, 91, 228, 0.8));
   margin-bottom: 0.6rem;
 }
 
@@ -858,19 +858,19 @@
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 900;
-  color: #2a1f08;
+  color: #0d0a29;
   padding: 0.7rem 2.2rem;
   border-radius: 999px;
   background: linear-gradient(
     135deg,
-    #f0d79a 0%,
-    #e8a35c 40%,
-    #c47a3a 100%
+    #b295f4 0%,
+    #9955ef 40%,
+    #7b29d5 100%
   );
   box-shadow:
-    0 8px 26px rgba(176, 138, 62, 0.5),
-    0 0 0 2px rgba(255, 255, 255, 0.18),
-    inset 0 1px 0 rgba(255, 255, 255, 0.65);
+    0 8px 26px rgb(93, 43, 195, 0.5),
+    0 0 0 2px rgb(255, 255, 255, 0.18),
+    inset 0 1px 0 rgb(255, 255, 255, 0.65);
   transition:
     transform 0.25s ease,
     box-shadow 0.25s ease;
@@ -879,9 +879,9 @@
 .ch-cta-btn:hover {
   transform: translateY(-3px) scale(1.03);
   box-shadow:
-    0 12px 34px rgba(176, 138, 62, 0.65),
-    0 0 0 3px rgba(217, 177, 102, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    0 12px 34px rgb(93, 43, 195, 0.65),
+    0 0 0 3px rgb(137, 91, 228, 0.12),
+    inset 0 1px 0 rgb(255, 255, 255, 0.7);
 }
 
 .ch-cta-btn::after {
@@ -893,7 +893,7 @@
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.55),
+    rgb(255, 255, 255, 0.55),
     transparent
   );
   animation: chShine 3s ease-in-out infinite;
@@ -908,13 +908,13 @@
   background:
     radial-gradient(
       700px 180px at 50% 0%,
-      rgba(217, 177, 102, 0.1),
+      rgb(137, 91, 228, 0.1),
       transparent 70%
     ),
     linear-gradient(
       180deg,
-      rgba(255, 253, 247, 0.9),
-      rgba(242, 233, 213, 0.98)
+      rgb(247, 246, 251, 0.9),
+      rgb(222, 212, 243, 0.98)
     );
 }
 
@@ -963,10 +963,10 @@
   height: clamp(44px, 10vw, 52px);
   border-radius: 50%;
   object-fit: cover;
-  background: #141003;
+  background: #0a071f;
   box-shadow:
     0 0 0 2px var(--ch-gold),
-    0 4px 14px rgba(176, 138, 62, 0.4);
+    0 4px 14px rgb(93, 43, 195, 0.4);
 }
 
 .ch-footer-name {
@@ -1072,10 +1072,10 @@
   display: grid;
   place-items: center;
   color: var(--ch-ink);
-  background: linear-gradient(160deg, #fffefb, #f3e8cf);
+  background: linear-gradient(160deg, #f7f6fb, #dacef4);
   box-shadow:
     0 0 0 1.5px var(--ch-gold),
-    0 4px 12px rgba(176, 138, 62, 0.3);
+    0 4px 12px rgb(93, 43, 195, 0.3);
   transition: all 0.25s ease;
 }
 
@@ -1083,12 +1083,12 @@
   transform: translateY(-3px);
   box-shadow:
     0 0 0 1.5px var(--ch-gold-bright),
-    0 8px 20px rgba(176, 138, 62, 0.5),
-    0 0 16px rgba(217, 177, 102, 0.5);
+    0 8px 20px rgb(93, 43, 195, 0.5),
+    0 0 16px rgb(137, 91, 228, 0.5);
 }
 
 .ch-footer-bottom {
-  border-top: 1px solid rgba(176, 138, 62, 0.25);
+  border-top: 1px solid rgb(93, 43, 195, 0.25);
   padding: 0.9rem 1.25rem;
   text-align: center;
   font-size: 0.74rem;
@@ -1108,7 +1108,7 @@
   border-radius: 18px;
   color: var(--ch-ink-soft);
   font-weight: 700;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  box-shadow: inset 0 1px 0 rgb(255, 255, 255, 0.8);
 }
 
 .ch-spinner {

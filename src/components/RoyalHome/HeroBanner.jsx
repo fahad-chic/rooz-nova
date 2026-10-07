@@ -165,13 +165,13 @@ const HeroBanner = () => {
         overflow: 'hidden',
         boxSizing: 'border-box',
         background:
-          'linear-gradient(135deg, #f4ead8 0%, #ead9bc 48%, #f7efe2 100%)',
+          'linear-gradient(135deg, #e2d8f4 0%, #cab6f0 48%, #eae4f5 100%)',
         borderTop:
-          '1px solid rgba(255,255,255,0.85)',
+          '1px solid rgb(255, 255, 255,0.85)',
         borderBottom:
-          '1px solid rgba(143,105,47,0.22)',
+          '1px solid rgb(79, 33, 157,0.22)',
         boxShadow:
-          '0 6px 22px rgba(91,67,31,0.09), inset 0 1px 0 rgba(255,255,255,0.9)',
+          '0 6px 22px rgb(51, 22, 100,0.09), inset 0 1px 0 rgb(255, 255, 255,0.9)',
       }}
     >
       {/* الخط العلوي */}
@@ -181,7 +181,7 @@ const HeroBanner = () => {
           height: 2,
           width: '100%',
           background:
-            'linear-gradient(90deg, transparent, #a67c3b 25%, #d4b46b 50%, #a67c3b 75%, transparent)',
+            'linear-gradient(90deg, transparent, #5e29b8 25%, #865ee1 50%, #5e29b8 75%, transparent)',
         }}
       />
 
@@ -211,12 +211,12 @@ const HeroBanner = () => {
             alignItems: 'center',
             justifyContent: 'center',
             background:
-              'linear-gradient(145deg, #fffaf1 0%, #e3c995 100%)',
+              'linear-gradient(145deg, #f7f5fb 0%, #ac8deb 100%)',
             border:
-              '1px solid rgba(143,105,47,0.28)',
-            color: '#8e692f',
+              '1px solid rgb(79, 33, 157,0.28)',
+            color: '#4e219c',
             boxShadow:
-              '0 6px 16px rgba(91,67,31,0.13), inset 0 1px 0 rgba(255,255,255,0.95)',
+              '0 6px 16px rgb(51, 22, 100,0.13), inset 0 1px 0 rgb(255, 255, 255,0.95)',
             flexShrink: 0,
           }}
         >
@@ -233,8 +233,8 @@ const HeroBanner = () => {
               width: 12,
               height: 12,
               borderRadius: '50%',
-              background: '#b08a45',
-              border: '2px solid #f4ead8',
+              background: '#6330c5',
+              border: '2px solid #e2d8f4',
               boxSizing: 'border-box',
             }}
           />
@@ -258,9 +258,9 @@ const HeroBanner = () => {
               display: 'flex',
               alignItems: 'center',
               gap: 6,
-              color: '#72542c',
+              color: '#451f7f',
               fontFamily:
-                'Cairo, Tajawal, Arial, sans-serif',
+                'Cairo, Cairo, Arial, sans-serif',
             }}
           >
             <Sparkles
@@ -280,9 +280,9 @@ const HeroBanner = () => {
 
           <strong
             style={{
-              color: '#382e22',
+              color: '#291842',
               fontFamily:
-                'Cairo, Tajawal, Arial, sans-serif',
+                'Cairo, Cairo, Arial, sans-serif',
               fontSize: '0.88rem',
               lineHeight: 1.5,
               fontWeight: 800,
@@ -319,7 +319,7 @@ const HeroBanner = () => {
               zIndex: 2,
               pointerEvents: 'none',
               background:
-                'linear-gradient(90deg, transparent, #f0e3cd)',
+                'linear-gradient(90deg, transparent, #d9cbf2)',
             }}
           />
 
@@ -335,7 +335,7 @@ const HeroBanner = () => {
               zIndex: 2,
               pointerEvents: 'none',
               background:
-                'linear-gradient(270deg, transparent, #f0e3cd)',
+                'linear-gradient(270deg, transparent, #d9cbf2)',
             }}
           />
 
@@ -366,9 +366,9 @@ const HeroBanner = () => {
                   boxSizing: 'border-box',
                   padding:
                     '0 55px',
-                  color: '#594a37',
+                  color: '#42276a',
                   fontFamily:
-                    'Cairo, Tajawal, Arial, sans-serif',
+                    'Cairo, Cairo, Arial, sans-serif',
                   fontSize: '0.82rem',
                   lineHeight: 1.7,
                   fontWeight: 600,
@@ -398,16 +398,16 @@ const HeroBanner = () => {
             gap: 8,
             textDecoration: 'none',
             background:
-              'linear-gradient(135deg, #3d8060 0%, #286347 100%)',
+              'linear-gradient(135deg, #2f8e89 0%, #1f6c68 100%)',
             border:
-              '1px solid rgba(32,82,59,0.28)',
+              '1px solid rgb(25, 89, 86,0.28)',
             color: '#ffffff',
             fontFamily:
-              'Cairo, Tajawal, Arial, sans-serif',
+              'Cairo, Cairo, Arial, sans-serif',
             fontSize: '0.78rem',
             fontWeight: 800,
             boxShadow:
-              '0 6px 16px rgba(40,99,71,0.20)',
+              '0 6px 16px rgb(31, 108, 104,0.20)',
             transition:
               'transform 0.2s ease, box-shadow 0.2s ease',
           }}
@@ -416,18 +416,18 @@ const HeroBanner = () => {
               'translateY(-2px)';
 
             event.currentTarget.style.boxShadow =
-              '0 9px 20px rgba(40,99,71,0.26)';
+              '0 9px 20px rgb(31, 108, 104,0.26)';
           }}
           onMouseLeave={(event) => {
             event.currentTarget.style.transform =
               'translateY(0)';
 
             event.currentTarget.style.boxShadow =
-              '0 6px 16px rgba(40,99,71,0.20)';
+              '0 6px 16px rgb(31, 108, 104,0.20)';
           }}
           onFocus={(event) => {
             event.currentTarget.style.outline =
-              '3px solid rgba(40,99,71,0.22)';
+              '3px solid rgb(31, 108, 104,0.22)';
             event.currentTarget.style.outlineOffset =
               '2px';
           }}
@@ -458,14 +458,14 @@ const HeroBanner = () => {
         style={{
           height: 1,
           background:
-            'linear-gradient(90deg, transparent, rgba(166,124,59,0.42), transparent)',
+            'linear-gradient(90deg, transparent, rgb(94, 41, 184,0.42), transparent)',
         }}
       />
 
       <style>{`
         .hero-banner-whatsapp:hover {
           transform: translateY(-2px);
-          box-shadow: 0 9px 20px rgba(40,99,71,0.26) !important;
+          box-shadow: 0 9px 20px rgb(31, 108, 104,0.26) !important;
         }
 
         .hero-banner-whatsapp:active {

@@ -107,7 +107,7 @@ export default function SettingsPage() {
   }
 
   return (
-    <div className="min-h-screen w-full marble-bg overflow-y-auto no-scroll font-Tajawal">
+    <div className="min-h-screen w-full marble-bg overflow-y-auto no-scroll font-Cairo">
       <div className="max-w-2xl mx-auto p-4 md:p-8">
 
         {/* الرسالة الأمنية الملكية الجديدة */}

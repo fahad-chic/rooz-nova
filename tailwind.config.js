@@ -8,32 +8,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        luxury: { gold: '#c47a3a' },
+        luxury: { gold: '#7b29d5' },
 
         royal: {
-          black: "#0a0a0a",
-          marble: "#1c1c1c",
-          gold: "#c47a3a",
-          goldSoft: "#c9a531",
-          goldDim: "#8f7a2e",
+          black: "#0a071e",
+          marble: "#0e0a2b",
+          gold: "#7b29d5",
+          goldSoft: "#5122d8",
+          goldDim: "#3e209d",
           white: "#f5f5f5",
         },
 
         glass: {
-          light: "rgba(255,255,255,0.06)",
-          medium: "rgba(255,255,255,0.12)",
-          strong: "rgba(255,255,255,0.18)",
+          light: "rgb(255, 255, 255,0.06)",
+          medium: "rgb(255, 255, 255,0.12)",
+          strong: "rgb(255, 255, 255,0.18)",
         },
 
         // إضافات خاصة لمربع صاحب الموقع
-        "royal-gold": "#c47a3a",
-        "royal-goldBright": "#f0d98c",
-        "royal-goldSoft": "#c9a531",
+        "royal-gold": "#7b29d5",
+        "royal-goldBright": "#a388f4",
+        "royal-goldSoft": "#5122d8",
         "royal-white": "#f8f8f8",
-        "royal-black": "#1a1a1a",
+        "royal-black": "#0d0a29",
 
-        glassUltra: "rgba(255,255,255,0.15)",
-        glassMedium: "rgba(255,255,255,0.25)",
+        glassUltra: "rgb(255, 255, 255,0.15)",
+        glassMedium: "rgb(255, 255, 255,0.25)",
       },
 
       fontFamily: {
@@ -51,12 +51,12 @@ export default {
       },
 
       boxShadow: {
-        royal: "0 0 20px rgba(212,175,55,0.30)",
-        marble: "0 6px 20px rgba(0,0,0,0.40)",
-        glass: "0 4px 14px rgba(255,255,255,0.12)",
+        royal: "0 0 20px rgb(89, 42, 225,0.30)",
+        marble: "0 6px 20px rgb(9, 6, 27,0.40)",
+        glass: "0 4px 14px rgb(255, 255, 255,0.12)",
 
         // ظل ملكي ثلاثي خاص لمربع صاحب الموقع
-        royal3d: "0 12px 28px rgba(212,175,55,0.45)",
+        royal3d: "0 12px 28px rgb(89, 42, 225,0.45)",
       },
 
       backdropBlur: {

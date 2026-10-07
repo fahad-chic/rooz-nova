@@ -153,9 +153,9 @@ const LoadingScreen = () => (
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
-      color: '#c47a3a',
+      color: '#7b29d5',
       fontSize: '1.5rem',
-      fontFamily: 'Tajawal',
+      fontFamily: 'Cairo',
       direction: 'rtl',
     }}
   >
@@ -207,7 +207,7 @@ const UnauthorizedPage = () => {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '2rem 1rem',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
         direction: 'rtl',
       }}
     >
@@ -216,11 +216,11 @@ const UnauthorizedPage = () => {
           maxWidth: 460,
           width: '100%',
           textAlign: 'center',
-          background: 'linear-gradient(160deg, #fffdf6, #f6eeda)',
-          border: '2px solid #c47a3a',
+          background: 'linear-gradient(160deg, #f7f6fb, #e3dbf5)',
+          border: '2px solid #7b29d5',
           borderRadius: 20,
           padding: '2.2rem 1.6rem',
-          boxShadow: '0 18px 50px rgba(60,40,10,0.22)',
+          boxShadow: '0 18px 50px rgb(15, 11, 48,0.22)',
         }}
       >
         <div
@@ -232,8 +232,8 @@ const UnauthorizedPage = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'linear-gradient(135deg, #a4163f, #6d1028)',
-            boxShadow: '0 8px 22px rgba(164,22,63,0.35)',
+            background: 'linear-gradient(135deg, #a7132e, #700c1f)',
+            boxShadow: '0 8px 22px rgb(167, 19, 46,0.35)',
             fontSize: 30,
           }}
         >
@@ -243,7 +243,7 @@ const UnauthorizedPage = () => {
         <h1
           style={{
             margin: '0 0 10px',
-            color: '#6d1028',
+            color: '#700c1f',
             fontWeight: 900,
             fontSize: '1.4rem',
           }}
@@ -254,7 +254,7 @@ const UnauthorizedPage = () => {
         <p
           style={{
             margin: 0,
-            color: '#3a2f18',
+            color: '#110c34',
             fontWeight: 600,
             lineHeight: 1.9,
             fontSize: '0.95rem',
@@ -1185,7 +1185,7 @@ function AppContent() {
       <div
         style={{
           padding: '2rem',
-          color: '#f7efd2',
+          color: '#dcd4f5',
         }}
       >
         يرجى تسجيل الدخول لعرض هذه الصفحة.
@@ -1209,9 +1209,9 @@ function AppContent() {
         background:
           location.pathname === '/login'
             ? 'transparent'
-            : 'linear-gradient(180deg, #f4ecdb 0%, #f0e6d2 55%, #eee3cf 100%)',
-        color: '#3a2b12',
-        fontFamily: 'Tajawal',
+            : 'linear-gradient(180deg, #e3dbf4 0%, #dbd0f2 55%, #d9ccf1 100%)',
+        color: '#100c32',
+        fontFamily: 'Cairo',
         position: 'relative',
       }}
     >
@@ -1228,7 +1228,7 @@ function AppContent() {
             width: "100%",
             height: "100%",
             background:
-              "rgba(0,0,0,0.5)",
+              "rgb(9, 6, 27,0.5)",
             display: "flex",
             justifyContent:
               "center",
@@ -1255,7 +1255,7 @@ function AppContent() {
               maxWidth: "380px",
               textAlign: "center",
               boxShadow:
-                "0 0 15px rgba(0,0,0,0.2)",
+                "0 0 15px rgb(9, 6, 27,0.2)",
               color: "#000",
             }}
             onClick={(event) =>
@@ -1268,7 +1268,7 @@ function AppContent() {
                 onClick={closeWelcomeModal}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgba(0,0,0,0.06)',
+                  background: 'rgb(9, 6, 27,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -1348,7 +1348,7 @@ function AppContent() {
               style={{
                 width: "100%",
                 padding: "12px",
-                background: "#e91e63",
+                background: "#e62145",
                 color: "#fff",
                 borderRadius: "8px",
                 border: "none",
@@ -1385,9 +1385,9 @@ function AppContent() {
         }
 
 @keyframes roozCrown3D {
-  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgba(255,215,0,0.9)); }
-  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgba(255,215,0,1)); }
-  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgba(255,215,0,0.9)); }
+  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgb(62, 19, 236,0.9)); }
+  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgb(62, 19, 236,1)); }
+  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgb(62, 19, 236,0.9)); }
 }
 
 @keyframes roozStar3D {
@@ -1449,17 +1449,17 @@ function AppContent() {
               maxWidth: 420,
               marginInline: 'auto',
               background:
-                'linear-gradient(150deg, #141002, #000)',
+                'linear-gradient(150deg, #0a071f, #000)',
               border:
-                '1px solid rgba(255, 215, 0, 0.55)',
+                '1px solid rgb(62, 19, 236, 0.55)',
               borderRadius: 16,
               padding:
                 '18px 20px',
               fontFamily:
-                'Tajawal, sans-serif',
-              color: '#f8e9bb',
+                'Cairo, sans-serif',
+              color: '#cbbaf9',
               boxShadow:
-                '0 18px 50px rgba(0,0,0,0.65)',
+                '0 18px 50px rgb(9, 6, 27,0.65)',
             }}
           >
             <div
@@ -1472,11 +1472,11 @@ function AppContent() {
             >
               <Clock
                 size={30}
-                color="#ffd700"
+                color="#3e13ec"
               />
               <strong
                 style={{
-                  color: '#ffd700',
+                  color: '#3e13ec',
                   fontSize: 15,
                   fontWeight: 900,
                 }}
@@ -1505,7 +1505,7 @@ function AppContent() {
                   display: 'block',
                   marginTop: 8,
                   fontSize: 12,
-                  color: '#C9A961',
+                  color: '#7b51d9',
                 }}
               >
                 سيتم إخراجك تلقائياً عند انتهاء الوقت.
@@ -1539,17 +1539,17 @@ function AppContent() {
               background:
                 guestRemaining <=
                 10000
-                  ? 'linear-gradient(90deg, rgba(190,18,60,0.97), rgba(225,29,72,0.92))'
-                  : 'linear-gradient(90deg, #0f766e, #0d9488)',
+                  ? 'linear-gradient(90deg, rgb(187, 21, 51,0.97), rgb(229, 25, 63,0.92))'
+                  : 'linear-gradient(90deg, #0b477a, #0c5695)',
               color: '#ffffff',
               padding: '0 1rem',
               textAlign: 'center',
               fontWeight: 800,
               fontSize: '0.9rem',
               boxShadow:
-                '0 2px 10px rgba(0,0,0,0.3)',
+                '0 2px 10px rgb(9, 6, 27,0.3)',
               fontFamily:
-                'Tajawal, sans-serif',
+                'Cairo, sans-serif',
               boxSizing: 'border-box',
             }}
           >
@@ -1585,7 +1585,7 @@ function AppContent() {
               position: 'fixed',
               inset: 0,
               background:
-                'rgba(0,0,0,0.8)',
+                'rgb(9, 6, 27,0.8)',
               display: 'flex',
               alignItems: 'center',
               justifyContent:
@@ -1593,23 +1593,23 @@ function AppContent() {
               zIndex: 15000,
               padding: 16,
               fontFamily:
-                'Tajawal, sans-serif',
+                'Cairo, sans-serif',
             }}
           >
             <div
               style={{
                 background: '#111',
                 border:
-                  '1px solid rgba(201,169,97,0.4)',
+                  '1px solid rgb(123, 81, 217,0.4)',
                 borderRadius: 16,
                 padding:
                   '2rem 1.5rem',
                 maxWidth: 420,
                 width: '100%',
                 textAlign: 'center',
-                color: '#f8e9bb',
+                color: '#cbbaf9',
                 boxShadow:
-                  '0 20px 60px rgba(0,0,0,0.6)',
+                  '0 20px 60px rgb(9, 6, 27,0.6)',
               }}
             >
               <div
@@ -1623,13 +1623,13 @@ function AppContent() {
               >
                 <Clock
                   size={48}
-                  color="#C9A961"
+                  color="#7b51d9"
                 />
               </div>
 
               <h2
                 style={{
-                  color: '#C9A961',
+                  color: '#7b51d9',
                   fontSize: 22,
                   fontWeight: 700,
                   marginBottom: 12,
@@ -1675,7 +1675,7 @@ function AppContent() {
                   width: '100%',
                   padding: '13px',
                   background:
-                    'linear-gradient(135deg, #C9A961, #8d6d1d)',
+                    'linear-gradient(135deg, #7b51d9, #3a1496)',
                   color: '#fff',
                   border: 'none',
                   borderRadius: 10,
@@ -1707,9 +1707,9 @@ function AppContent() {
                   padding: '13px',
                   background:
                     'transparent',
-                  color: '#C9A961',
+                  color: '#7b51d9',
                   border:
-                    '1px solid rgba(201,169,97,0.4)',
+                    '1px solid rgb(123, 81, 217,0.4)',
                   borderRadius: 10,
                   fontWeight: 700,
                   fontSize: 15,
@@ -1826,10 +1826,10 @@ function AppContent() {
               height: '60px',
               overflow: 'hidden',
               display: 'block',
-              background: 'linear-gradient(90deg, #050503 0%, #161208 40%, #1c1608 60%, #050503 100%)',
-              borderTop: '2px solid #ffd700',
-              borderBottom: '2px solid #ffd700',
-              boxShadow: '0 12px 32px rgba(0,0,0,0.6), 0 0 22px rgba(255,215,0,0.25)',
+              background: 'linear-gradient(90deg, #09061b 0%, #0b0821 40%, #0c0824 60%, #09061b 100%)',
+              borderTop: '2px solid #3e13ec',
+              borderBottom: '2px solid #3e13ec',
+              boxShadow: '0 12px 32px rgb(9, 6, 27,0.6), 0 0 22px rgb(62, 19, 236,0.25)',
               zIndex: 80,
               flexShrink: 0,
             }}
@@ -1866,15 +1866,15 @@ function AppContent() {
                     flexShrink: 0,
                     padding: '0 60px',
                     whiteSpace: 'nowrap',
-                    fontFamily: 'Tajawal, "Noto Sans Arabic", Tahoma, sans-serif',
+                    fontFamily: 'Cairo, "Noto Sans Arabic", Tahoma, sans-serif',
                     fontSize: 'clamp(1.15rem, 2.5vw, 1.55rem)',
                     fontWeight: 900,
-                    WebkitTextStroke: '0.4px rgba(255,210,60,0.5)',
+                    WebkitTextStroke: '0.4px rgb(117, 75, 240,0.5)',
                     lineHeight: '60px',
                     direction: 'rtl',
                     unicodeBidi: 'isolate',
-                    color: '#ffd700',
-                    WebkitTextFillColor: '#ffd700',
+                    color: '#3e13ec',
+                    WebkitTextFillColor: '#3e13ec',
                     textShadow: '0 1px 2px #000',
                   }}
                 >

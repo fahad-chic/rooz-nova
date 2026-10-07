@@ -110,7 +110,7 @@ const MemberInbox = () => {
         maxWidth: 720,
         margin: '0 auto',
         padding: '1rem',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
       }}
     >
       <div
@@ -119,22 +119,22 @@ const MemberInbox = () => {
           alignItems: 'center',
           gap: 10,
           marginBottom: '1rem',
-          color: '#0b0a09',
+          color: '#0a071e',
           fontWeight: 900,
           fontSize: '1.35rem',
         }}
       >
-        <Mail size={24} style={{ color: '#c47a3a' }} aria-hidden="true" />
+        <Mail size={24} style={{ color: '#7b29d5' }} aria-hidden="true" />
         بريد العضو الوارد
       </div>
 
       <div
         style={{
-          background: 'linear-gradient(160deg, #fffdf6, #f3ebd7)',
-          border: '2px solid #cfae6f',
+          background: 'linear-gradient(160deg, #f7f6fb, #dfd7f3)',
+          border: '2px solid #8a61dd',
           borderRadius: 20,
           padding: '0.5rem',
-          boxShadow: '0 12px 40px rgba(60,40,10,0.18)',
+          boxShadow: '0 12px 40px rgb(15, 11, 48,0.18)',
         }}
       >
         <div
@@ -149,13 +149,13 @@ const MemberInbox = () => {
           }}
         >
           {loading && (
-            <div style={{ padding: '2rem', textAlign: 'center', color: '#8a744a', display: 'flex', justifyContent: 'center', gap: 8, alignItems: 'center' }}>
+            <div style={{ padding: '2rem', textAlign: 'center', color: '#5834a0', display: 'flex', justifyContent: 'center', gap: 8, alignItems: 'center' }}>
               <Loader2 size={18} className="spin" aria-hidden="true" />
               جاري تحميل الرسائل...
             </div>
           )}
           {!loading && thread.length === 0 && (
-            <div style={{ padding: '2rem 1rem', textAlign: 'center', color: '#8a744a', fontWeight: 700, lineHeight: 2 }}>
+            <div style={{ padding: '2rem 1rem', textAlign: 'center', color: '#5834a0', fontWeight: 700, lineHeight: 2 }}>
               لا توجد رسائل بعد.
               <br />
               استخدم زرّ «مراسلة صاحب الموقع» لإرسال استفسار، وستظهر الردود هنا.
@@ -167,9 +167,9 @@ const MemberInbox = () => {
               style={{
                 alignSelf: isFromOwner(m) ? 'flex-start' : 'flex-end',
                 maxWidth: '78%',
-                background: isFromOwner(m) ? '#f6eeda' : 'linear-gradient(135deg,#0f766e,#14b8a6)',
-                color: isFromOwner(m) ? '#0b0a09' : '#fff',
-                border: isFromOwner(m) ? '1px solid #cfae6f' : 'none',
+                background: isFromOwner(m) ? '#e3dbf5' : 'linear-gradient(135deg,#0b477a,#0f6fbd)',
+                color: isFromOwner(m) ? '#0a071e' : '#fff',
+                border: isFromOwner(m) ? '1px solid #8a61dd' : 'none',
                 borderRadius: 14,
                 padding: '0.6rem 0.85rem',
                 fontSize: '0.92rem',
@@ -196,7 +196,7 @@ const MemberInbox = () => {
           ))}
         </div>
 
-        <div style={{ padding: '0.65rem', borderTop: '1px solid #ead9b2' }}>
+        <div style={{ padding: '0.65rem', borderTop: '1px solid #c1acf0' }}>
           <textarea
             value={text}
             onChange={(e) => {
@@ -211,19 +211,19 @@ const MemberInbox = () => {
               boxSizing: 'border-box',
               resize: 'vertical',
               borderRadius: 12,
-              border: '1.5px solid #cdb27a',
-              background: '#fffef9',
+              border: '1.5px solid #8f6bdc',
+              background: '#f7f6fb',
               padding: '0.6rem 0.8rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
               fontSize: '0.95rem',
               fontWeight: 600,
-              color: '#0b0a09',
+              color: '#0a071e',
               outline: 'none',
               lineHeight: 1.8,
             }}
           />
           {sendError && (
-            <div style={{ fontSize: '0.78rem', color: '#a4163f', fontWeight: 800, marginTop: 4 }}>
+            <div style={{ fontSize: '0.78rem', color: '#a7132e', fontWeight: 800, marginTop: 4 }}>
               {sendError}
             </div>
           )}
@@ -237,7 +237,7 @@ const MemberInbox = () => {
               border: 'none',
               borderRadius: 12,
               padding: '0.7rem',
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
               fontWeight: 900,
               fontSize: '0.95rem',
               cursor: text.trim() && !sending ? 'pointer' : 'not-allowed',
@@ -247,9 +247,9 @@ const MemberInbox = () => {
               gap: 8,
               color: '#fff',
               background: text.trim() && !sending
-                ? 'linear-gradient(135deg,#0f766e,#14b8a6)'
-                : '#c9bd9f',
-              boxShadow: text.trim() && !sending ? '0 8px 20px rgba(15,118,110,0.3)' : 'none',
+                ? 'linear-gradient(135deg,#0b477a,#0f6fbd)'
+                : '#a58fd9',
+              boxShadow: text.trim() && !sending ? '0 8px 20px rgb(11, 71, 122,0.3)' : 'none',
             }}
           >
             <Send size={16} aria-hidden="true" />
@@ -258,7 +258,7 @@ const MemberInbox = () => {
         </div>
       </div>
 
-      <p style={{ textAlign: 'center', fontSize: '0.78rem', color: '#8a744a', fontWeight: 700, marginTop: '0.75rem' }}>
+      <p style={{ textAlign: 'center', fontSize: '0.78rem', color: '#5834a0', fontWeight: 700, marginTop: '0.75rem' }}>
         الرسائل خاصة بينك وبين صاحب الموقع.
       </p>
     </div>

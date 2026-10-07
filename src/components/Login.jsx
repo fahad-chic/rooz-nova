@@ -145,7 +145,7 @@ const Login = () => {
     const previous = document.body.style.background;
 
     document.body.style.background =
-      'linear-gradient(150deg, rgba(255,255,255,0.02) 0%, transparent 45%, rgba(255,255,255,0.01) 65%, transparent 100%), radial-gradient(1100px 600px at 80% -15%, rgba(255,215,0,0.16), transparent  60%), radial-gradient(700px 400px at 15% 25%, rgba(212,175,55,0.10), transparent  55%), repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0 1px, transparent  1px 4px), repeating-linear-gradient(25deg, rgba(255,255,255,0.02) 0 1px, transparent  1px 6px), linear-gradient(180deg, #000 0%, #030303 40%, #060606 75%, #010101 100%)';
+      'linear-gradient(150deg, rgb(255, 255, 255,0.02) 0%, transparent 45%, rgb(255, 255, 255,0.01) 65%, transparent 100%), radial-gradient(1100px 600px at 80% -15%, rgb(62, 19, 236,0.16), transparent  60%), radial-gradient(700px 400px at 15% 25%, rgb(89, 42, 225,0.10), transparent  55%), repeating-linear-gradient(115deg, rgb(255, 255, 255,0.03) 0 1px, transparent  1px 4px), repeating-linear-gradient(25deg, rgb(255, 255, 255,0.02) 0 1px, transparent  1px 6px), linear-gradient(180deg, #000 0%, #09061b 40%, #09061b 75%, #09061b 100%)';
 
     return () => {
       document.body.style.background = previous;
@@ -860,8 +860,8 @@ const Login = () => {
     width: '100%',
     padding: '12px 14px',
     borderRadius: 12,
-    border: '1px solid rgba(255, 215, 0, 0.5)',
-    background: 'rgba(0,0,0,0.6)',
+    border: '1px solid rgb(62, 19, 236, 0.5)',
+    background: 'rgb(9, 6, 27,0.6)',
     color: '#fff',
     fontSize: 15,
     textAlign: 'center',
@@ -1030,12 +1030,12 @@ const Login = () => {
       className="rl-root"
       style={{
         background:
-          'linear-gradient(150deg, rgba(255,255,255,0.02) 0%, transparent 45%, rgba(255,255,255,0.01) 65%, transparent 100%), ' +
-          'radial-gradient(1100px 600px at 80% -15%, rgba(255,215,0,0.16), transparent 60%), ' +
-          'radial-gradient(700px 400px at 15% 25%, rgba(212,175,55,0.10), transparent 55%), ' +
-          'repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0 1px, transparent 1px 4px), ' +
-          'repeating-linear-gradient(25deg, rgba(255,255,255,0.02) 0 1px, transparent 1px 6px), ' +
-          'linear-gradient(180deg, #000000 0%, #030303 40%, #060606 75%, #010101 100%)',
+          'linear-gradient(150deg, rgb(255, 255, 255,0.02) 0%, transparent 45%, rgb(255, 255, 255,0.01) 65%, transparent 100%), ' +
+          'radial-gradient(1100px 600px at 80% -15%, rgb(62, 19, 236,0.16), transparent 60%), ' +
+          'radial-gradient(700px 400px at 15% 25%, rgb(89, 42, 225,0.10), transparent 55%), ' +
+          'repeating-linear-gradient(115deg, rgb(255, 255, 255,0.03) 0 1px, transparent 1px 4px), ' +
+          'repeating-linear-gradient(25deg, rgb(255, 255, 255,0.02) 0 1px, transparent 1px 6px), ' +
+          'linear-gradient(180deg, #09061b 0%, #09061b 40%, #09061b 75%, #09061b 100%)',
         }}
     >
       <div className="rl-wrap">
@@ -1116,7 +1116,7 @@ const Login = () => {
                   ®️
                 </span>
 
-                <span style={{ color: '#000000', fontWeight: 900 }}>المالك الرئيسي</span>
+                <span style={{ color: '#09061b', fontWeight: 900 }}>المالك الرئيسي</span>
 
                 <button
                   type="button"
@@ -1141,7 +1141,7 @@ const Login = () => {
                     marginTop: 6,
                     fontSize: 11,
                     color:
-                      'rgba(255, 215, 0, 0.55)',
+                      'rgb(62, 19, 236, 0.55)',
                     letterSpacing: 1,
                   }}
                 >
@@ -1337,7 +1337,7 @@ const Login = () => {
               marginTop: 14,
               textAlign: 'center',
               fontSize: 11,
-              color: '#8a7a5c',
+              color: '#6340a6',
               direction: 'ltr',
               userSelect: 'all',
             }}
@@ -1356,11 +1356,11 @@ const Login = () => {
                 padding: '8px 10px',
                 borderRadius: 8,
                 border:
-                  '1px solid rgba(176,138,62,0.45)',
+                  '1px solid rgb(93, 43, 195,0.45)',
                 background:
-                  'rgba(214,177,95,0.08)',
+                  'rgb(127, 83, 226,0.08)',
                 fontSize: 11,
-                color: '#8a6d1d',
+                color: '#371493',
                 textAlign: 'right',
                 direction: 'rtl',
                 userSelect: 'all',
@@ -1586,7 +1586,7 @@ const Login = () => {
               position: 'fixed',
               inset: 0,
               background:
-                'rgba(0,0,0,0.82)',
+                'rgb(9, 6, 27,0.82)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -1600,9 +1600,9 @@ const Login = () => {
             <div
               style={{
                 background:
-                  'linear-gradient(150deg, #141002, #000)',
+                  'linear-gradient(150deg, #0a071f, #000)',
                 border:
-                  '1px solid rgba(255, 215, 0, 0.6)',
+                  '1px solid rgb(62, 19, 236, 0.6)',
                 borderRadius: 16,
                 padding:
                   '22px 22px 18px',
@@ -1610,9 +1610,9 @@ const Login = () => {
                 width: '100%',
                 textAlign: 'center',
                 boxShadow:
-                  '0 20px 60px rgba(0,0,0,0.6)',
+                  '0 20px 60px rgb(9, 6, 27,0.6)',
                 fontFamily:
-                  'Tajawal, sans-serif',
+                  'Cairo, sans-serif',
               }}
               onClick={(e) =>
                 e.stopPropagation()
@@ -1629,7 +1629,7 @@ const Login = () => {
 
               <h3
                 style={{
-                  color: '#ffd700',
+                  color: '#3e13ec',
                   margin:
                     '0 0 6px',
                   fontSize: 18,
@@ -1641,7 +1641,7 @@ const Login = () => {
 
               <p
                 style={{
-                  color: '#f8e9bb',
+                  color: '#cbbaf9',
                   fontSize: 13,
                   margin:
                     '0 0 14px',
@@ -1720,11 +1720,11 @@ const Login = () => {
                   <div
                     style={{
                       background:
-                        'rgba(239,68,68,0.14)',
+                        'rgb(235, 72, 102,0.14)',
                       border:
-                        '1px solid rgba(239,68,68,0.45)',
+                        '1px solid rgb(235, 72, 102,0.45)',
                       color:
-                        '#ffb3b3',
+                        '#f7bbc6',
                       borderRadius: 10,
                       padding:
                         '8px 10px',
@@ -1746,10 +1746,10 @@ const Login = () => {
                     padding: '12px',
                     borderRadius: 12,
                     border:
-                      '1px solid rgba(248,233,187,0.5)',
+                      '1px solid rgb(203, 186, 249,0.5)',
                     background:
-                      'linear-gradient(135deg, #f8e9bb, #c47a3a 55%, #8d6d1d)',
-                    color: '#1a1202',
+                      'linear-gradient(135deg, #cbbaf9, #7b29d5 55%, #3a1496)',
+                    color: '#0b0821',
                     fontSize: 15,
                     fontWeight: 900,
                     cursor:
@@ -1781,10 +1781,10 @@ const Login = () => {
                     padding: '10px',
                     borderRadius: 12,
                     border:
-                      '1px solid rgba(212,175,95,0.35)',
+                      '1px solid rgb(127, 82, 225,0.35)',
                     background:
                       'transparent',
-                    color: '#f8e9bb',
+                    color: '#cbbaf9',
                     fontSize: 13,
                     fontWeight: 700,
                     cursor:
@@ -1807,14 +1807,14 @@ const Login = () => {
               position: 'fixed',
               inset: 0,
               background:
-                'rgba(0,0,0,0.85)',
+                'rgb(9, 6, 27,0.85)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               zIndex: 15000,
               padding: 16,
               fontFamily:
-                'Tajawal, sans-serif',
+                'Cairo, sans-serif',
             }}
             onClick={() =>
               setGuestEntryOpen(false)
@@ -1823,9 +1823,9 @@ const Login = () => {
             <div
               style={{
                 background:
-                  'linear-gradient(150deg, #141002, #000)',
+                  'linear-gradient(150deg, #0a071f, #000)',
                 border:
-                  '1px solid rgba(255, 215, 0, 0.6)',
+                  '1px solid rgb(62, 19, 236, 0.6)',
                 borderRadius: 18,
                 padding:
                   '24px 20px 18px',
@@ -1833,8 +1833,8 @@ const Login = () => {
                 width: '100%',
                 textAlign: 'center',
                 boxShadow:
-                  '0 20px 60px rgba(0,0,0,0.6)',
-                color: '#f8e9bb',
+                  '0 20px 60px rgb(9, 6, 27,0.6)',
+                color: '#cbbaf9',
               }}
               onClick={(e) =>
                 e.stopPropagation()
@@ -1848,13 +1848,13 @@ const Login = () => {
               >
                 <Sparkles
                   size={28}
-                  color="#ffd700"
+                  color="#3e13ec"
                 />
               </div>
 
               <h3
                 style={{
-                  color: '#ffd700',
+                  color: '#3e13ec',
                   margin:
                     '0 0 10px',
                   fontSize: 17,
@@ -1866,7 +1866,7 @@ const Login = () => {
 
               <p
                 style={{
-                  color: '#f8e9bb',
+                  color: '#cbbaf9',
                   fontSize: 14,
                   lineHeight: 1.7,
                   margin:
@@ -1911,9 +1911,9 @@ const Login = () => {
                         '13px 14px',
                       borderRadius: 10,
                       border:
-                        '1px solid rgba(248,233,187,0.35)',
+                        '1px solid rgb(203, 186, 249,0.35)',
                       background:
-                        'rgba(0,0,0,0.45)',
+                        'rgb(9, 6, 27,0.45)',
                       color: '#fff',
                       fontSize: 15,
                       fontFamily:
@@ -1937,8 +1937,8 @@ const Login = () => {
                       borderRadius: 10,
                       border: 'none',
                       background:
-                        'linear-gradient(135deg, #ffd700, #8d6d1d)',
-                      color: '#1a1202',
+                        'linear-gradient(135deg, #3e13ec, #3a1496)',
+                      color: '#0b0821',
                       fontWeight: 900,
                       fontSize: 14,
                       cursor:
@@ -1970,7 +1970,7 @@ const Login = () => {
                   background:
                     'transparent',
                   border: 'none',
-                  color: '#C9A961',
+                  color: '#7b51d9',
                   fontSize: 13,
                   fontWeight:  700,
                   cursor: 'pointer',

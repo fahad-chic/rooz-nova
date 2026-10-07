@@ -4,25 +4,25 @@
 
 /* ═══════════════════ المتغيرات ═══════════════════ */
 :root {
-  --gold-primary: #c47a3a; /* was redefined */
-  --_unused_gold: #c47a3a;
-  --gold-dark: #8f5528;
-  --gold-soft: #3a2f10;
-  --gold-glow: rgba(176, 138, 62, 0.12);
-  --bg-deep: #f3ede4;
-  --bg-mid: #ebe3d6;
-  --bg-card: rgba(255, 252, 245, 0.94);
-  --border-gold: rgba(176, 138, 62, 0.42);
-  --border-subtle: rgba(90, 70, 30, 0.08);
-  --text-primary: #12100e;
-  --text-secondary: #3c2f1e;
-  --text-muted: #5a4a32;
+  --gold-primary: #7b29d5; /* was redefined */
+  --_unused_gold: #7b29d5;
+  --gold-dark: #5b1c9b;
+  --gold-soft: #100c31;
+  --gold-glow: rgb(93, 43, 195, 0.12);
+  --bg-deep: #eae4f3;
+  --bg-mid: #ddd2ef;
+  --bg-card: rgb(248, 246, 251, 0.94);
+  --border-gold: rgb(93, 43, 195, 0.42);
+  --border-subtle: rgb(47, 21, 99, 0.08);
+  --text-primary: #0b0822;
+  --text-secondary: #281545;
+  --text-muted: #3d2369;
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-full: 999px;
-  --shadow-gold: 0 8px 32px rgba(176, 138, 62, 0.14);
-  --shadow-card: 0 4px 20px rgba(90, 70, 30, 0.10);
+  --shadow-gold: 0 8px 32px rgb(93, 43, 195, 0.14);
+  --shadow-card: 0 4px 20px rgb(47, 21, 99, 0.10);
   --transition: 0.22s ease;
 }
 
@@ -40,13 +40,13 @@ html {
 
 body {
   overflow-x: hidden;
-  font-family: 'Tajawal', 'Segoe UI', 'Arial', 'Tahoma', sans-serif;
+  font-family: 'Cairo', 'Segoe UI', 'Arial', 'Tahoma', sans-serif;
   font-weight: 400;
   background: linear-gradient(
     150deg,
     var(--bg-deep) 0%,
-    #f0e8d8 55%,
-    #eee3cf 100%
+    #dfd7f1 55%,
+    #d9ccf1 100%
   );
   color: var(--text-primary);
   min-height: 100vh;
@@ -132,15 +132,15 @@ select:focus-visible {
 .btn-gold,
 .btn-primary {
   background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-  color: #160f02;
-  border: 1px solid rgba(248, 233, 187, 0.3);
-  box-shadow: 0 4px 14px rgba(214, 177, 95, 0.25);
+  color: #0a071f;
+  border: 1px solid rgb(203, 186, 249, 0.3);
+  box-shadow: 0 4px 14px rgb(127, 83, 226, 0.25);
 }
 
 .btn-gold:hover,
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(214, 177, 95, 0.4);
+  box-shadow: 0 6px 20px rgb(127, 83, 226, 0.4);
 }
 
 .btn-gold:active,
@@ -150,26 +150,26 @@ select:focus-visible {
 
 .btn-glass,
 .btn-secondary {
-  background: rgba(255, 255, 255, 0.07);
+  background: rgb(255, 255, 255, 0.07);
   color: var(--gold-soft);
   border: 1px solid var(--border-gold);
 }
 
 .btn-glass:hover,
 .btn-secondary:hover {
-  background: rgba(214, 177, 95, 0.14);
-  border-color: rgba(214, 177, 95, 0.45);
+  background: rgb(127, 83, 226, 0.14);
+  border-color: rgb(127, 83, 226, 0.45);
   transform: translateY(-1px);
 }
 
 .btn-danger {
-  background: rgba(239, 68, 68, 0.15);
-  color: #ffa5a5;
-  border: 1px solid rgba(239, 68, 68, 0.3);
+  background: rgb(235, 72, 102, 0.15);
+  color: #f6aebb;
+  border: 1px solid rgb(235, 72, 102, 0.3);
 }
 
 .btn-danger:hover {
-  background: rgba(239, 68, 68, 0.28);
+  background: rgb(235, 72, 102, 0.28);
   transform: translateY(-1px);
 }
 
@@ -205,7 +205,7 @@ select:focus-visible {
 
 .card:hover,
 .glass-morphism-gold:hover {
-  border-color: rgba(214, 177, 95, 0.4);
+  border-color: rgb(127, 83, 226, 0.4);
   box-shadow: var(--shadow-gold);
 }
 
@@ -232,7 +232,7 @@ select {
   border-radius: var(--radius-md);
   font-size: 0.92rem;
   font-family: inherit;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgb(255, 255, 255, 0.05);
   color: var(--text-primary);
   transition:
     border-color var(--transition),
@@ -251,8 +251,8 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--gold-primary);
-  background: rgba(214, 177, 95, 0.06);
-  box-shadow: 0 0 0 3px rgba(214, 177, 95, 0.12);
+  background: rgb(127, 83, 226, 0.06);
+  box-shadow: 0 0 0 3px rgb(127, 83, 226, 0.12);
 }
 
 select option {
@@ -282,7 +282,7 @@ table {
 }
 
 thead th {
-  background: rgba(214, 177, 95, 0.1);
+  background: rgb(127, 83, 226, 0.1);
   color: var(--gold-soft);
   padding: 0.9rem 1rem;
   text-align: right;
@@ -301,7 +301,7 @@ tbody td {
 }
 
 tbody tr:hover td {
-  background: rgba(214, 177, 95, 0.04);
+  background: rgb(127, 83, 226, 0.04);
 }
 
 tbody tr:last-child td {
@@ -321,28 +321,28 @@ tbody tr:last-child td {
 }
 
 .badge-gold {
-  background: rgba(214, 177, 95, 0.18);
+  background: rgb(127, 83, 226, 0.18);
   color: var(--gold-soft);
 }
 
 .badge-green {
-  background: rgba(34, 197, 94, 0.15);
-  color: #86efac;
+  background: rgb(30, 201, 201, 0.15);
+  color: #85f0f0;
 }
 
 .badge-red {
-  background: rgba(239, 68, 68, 0.15);
-  color: #fca5a5;
+  background: rgb(235, 72, 102, 0.15);
+  color: #f6abb9;
 }
 
 .badge-blue {
-  background: rgba(59, 130, 246, 0.15);
-  color: #93c5fd;
+  background: rgb(65, 97, 240, 0.15);
+  color: #99aff7;
 }
 
 .badge-purple {
-  background: rgba(168, 85, 247, 0.15);
-  color: #d8b4fe;
+  background: rgb(185, 95, 237, 0.15);
+  color: #e1bbf7;
 }
 
 /* ═══════════════════ الإشعارات ═══════════════════ */
@@ -357,19 +357,19 @@ tbody tr:last-child td {
 }
 
 .alert-error {
-  background: rgba(239, 68, 68, 0.12);
-  border: 1px solid rgba(239, 68, 68, 0.3);
-  color: #fca5a5;
+  background: rgb(235, 72, 102, 0.12);
+  border: 1px solid rgb(235, 72, 102, 0.3);
+  color: #f6abb9;
 }
 
 .alert-success {
-  background: rgba(34, 197, 94, 0.12);
-  border: 1px solid rgba(34, 197, 94, 0.3);
-  color: #86efac;
+  background: rgb(30, 201, 201, 0.12);
+  border: 1px solid rgb(30, 201, 201, 0.3);
+  color: #85f0f0;
 }
 
 .alert-info {
-  background: rgba(214, 177, 95, 0.10);
+  background: rgb(127, 83, 226, 0.10);
   border: 1px solid var(--border-gold);
   color: var(--gold-soft);
 }
@@ -428,7 +428,7 @@ tbody tr:last-child td {
 .spinner {
   width: 36px;
   height: 36px;
-  border: 3px solid rgba(214, 177, 95, 0.2);
+  border: 3px solid rgb(127, 83, 226, 0.2);
   border-top-color: var(--gold-primary);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -441,9 +441,9 @@ tbody tr:last-child td {
 .skeleton {
   background: linear-gradient(
     90deg,
-    rgba(255,255,255,0.05) 25%,
-    rgba(255,255,255,0.1) 50%,
-    rgba(255,255,255,0.05) 75%
+    rgb(255, 255, 255,0.05) 25%,
+    rgb(255, 255, 255,0.1) 50%,
+    rgb(255, 255, 255,0.05) 75%
   );
   background-size: 800px 100%;
   animation: shimmer 1.5s infinite;
@@ -465,7 +465,7 @@ tbody tr:last-child td {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.05);
+  background: rgb(255, 255, 255,0.05);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -605,12 +605,12 @@ tbody tr:last-child td {
   background:
     radial-gradient(
       circle at 20% 20%,
-      rgba(214,177,95,0.08),
+      rgb(127, 83, 226,0.08),
       transparent 40%
     ),
     radial-gradient(
       circle at 80% 80%,
-      rgba(141,109,29,0.07),
+      rgb(58, 20, 150,0.07),
       transparent 40%
     ),
     var(--bg-mid);
@@ -661,7 +661,7 @@ tbody tr:last-child td {
   left: 0;
   right: 0;
   background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-  color: #120c02;
+  color: #0a071e;
   padding: 14px;
   text-align: center;
   font-weight: 900;
@@ -695,8 +695,8 @@ tbody tr:last-child td {
 
 /* ═══════════════════ التنبيهات الملكية ═══════════════════ */
 .owner-alert {
-  background: rgba(214, 177, 95, 0.12);
-  border: 1px solid rgba(214, 177, 95, 0.35);
+  background: rgb(127, 83, 226, 0.12);
+  border: 1px solid rgb(127, 83, 226, 0.35);
   padding: 1rem;
   border-radius: var(--radius-md);
   color: var(--gold-soft);
@@ -718,7 +718,7 @@ tbody tr:last-child td {
 }
 
 .bg-gray-800 {
-  background: #0a0a0a !important;
+  background: #0a071e !important;
   background-image: url("https://i.imgur.com/7yQF1mM.png");
   background-size: cover;
   background-position: center;
@@ -732,7 +732,7 @@ tbody tr:last-child td {
 }
 
 .hover\:bg-gray-700:hover {
-  background: #1a1a1a !important;
+  background: #0d0a29 !important;
   background-image: url("https://i.imgur.com/7yQF1mM.png");
   background-size: cover;
   background-position: center;
@@ -744,64 +744,64 @@ tbody tr:last-child td {
 }
 
 .text-gray-300 {
-  color: #d1d5db !important;
+  color: #d1d3db !important;
 }
 
 .text-gray-400 {
-  color: #9ca3af !important;
+  color: #9c9faf !important;
 }
 
 .text-gray-500 {
-  color: #6b7280 !important;
+  color: #6b6f80 !important;
 }
 
 /* الحدود الداكنة — ترجع طبيعية */
 .border-gray-700 {
-  border-color: #374151 !important;
+  border-color: #273162 !important;
 }
 
 .border-gray-600 {
-  border-color: #4b5563 !important;
+  border-color: #34427a !important;
 }
 
 /* اللون الوردي القديم (accent) يصبح ذهبياً لامعاً */
 .bg-pink-500 {
   background: linear-gradient(
     135deg,
-    #f0d79a,
-    #e8a35c 55%,
-    #c47a3a
+    #b295f4,
+    #9955ef 55%,
+    #7b29d5
   ) !important;
-  color: #2a1f08 !important;
+  color: #0d0a29 !important;
 }
 
 .hover\:bg-pink-600:hover {
   background: linear-gradient(
     135deg,
-    #f4e2b0,
-    #e0bd75 55%,
-    #9c7b2e
+    #c1adf7,
+    #946ce9 55%,
+    #4a20aa
   ) !important;
 }
 
 .text-pink-400,
 .text-pink-500 {
-  color: #8f5528 !important;
+  color: #5b1c9b !important;
 }
 
 .border-pink-500 {
-  border-color: #c47a3a !important;
+  border-color: #7b29d5 !important;
 }
 
 .focus\:border-pink-500:focus {
-  border-color: #c47a3a !important;
+  border-color: #7b29d5 !important;
 }
 
 /* حقول Tailwind الداكنة */
 input.bg-gray-700,
 select.bg-gray-700,
 textarea.bg-gray-700 {
-  background-color: #0f0f0f !important;
+  background-color: #0b0821 !important;
   color: #f5f5f5 !important;
 }
 

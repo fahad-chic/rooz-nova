@@ -30,7 +30,7 @@ const BANK_ACCOUNTS = [
     id: 'alrajhi',
     name: 'بنك الراجحي',
     icon: Landmark,
-    color: '#00a651',
+    color: '#119591',
     iban: 'SA0980000509608010069017',
     account: '09608010069017',
   },
@@ -38,15 +38,15 @@ const BANK_ACCOUNTS = [
     id: 'arabank',
     name: 'بنك العربي',
     icon: Landmark,
-    color: '#0066b2',
+    color: '#0d38a5',
     iban: 'SA9830400108088851870011',
     account: '0108088851870011',
   },
 ];
 
-const GOLD = '#c47a3a';
-const GOLD_LIGHT = '#f8e9bb';
-const DARK = '#0a0a0f';
+const GOLD = '#7b29d5';
+const GOLD_LIGHT = '#cbbaf9';
+const DARK = '#0a0720';
 
 const buttonBaseStyle = {
   border: 'none',
@@ -54,7 +54,7 @@ const buttonBaseStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  fontFamily: 'Tajawal, Arial, sans-serif',
+  fontFamily: 'Cairo, Arial, sans-serif',
   WebkitTapHighlightColor: 'transparent',
 };
 
@@ -138,13 +138,13 @@ const ContactPage = () => {
     display: 'flex',
     alignItems: 'center',
     gap: '0.5rem',
-    fontFamily: 'Tajawal, Arial, sans-serif',
+    fontFamily: 'Cairo, Arial, sans-serif',
   };
 
   const cardStyle = {
     background:
-      'linear-gradient(145deg, rgba(20, 20, 35, 0.95) 0%, rgba(10, 10, 20, 0.98) 100%)',
-    border: '1px solid rgba(214, 177, 95, 0.2)',
+      'linear-gradient(145deg, rgb(14, 10, 42, 0.95) 0%, rgb(11, 8, 33, 0.98) 100%)',
+    border: '1px solid rgb(127, 83, 226, 0.2)',
     borderRadius: 16,
   };
 
@@ -156,9 +156,9 @@ const ContactPage = () => {
         width: '100%',
         boxSizing: 'border-box',
         background:
-          'linear-gradient(180deg, #0a0a0f 0%, #12121f 30%, #1a1a2e 50%, #0f0f1a 100%)',
+          'linear-gradient(180deg, #0a0720 0%, #0d0928 30%, #100b30 50%, #0c0925 100%)',
         padding: 'clamp(1rem, 4vw, 1.5rem)',
-        fontFamily: 'Tajawal, Arial, sans-serif',
+        fontFamily: 'Cairo, Arial, sans-serif',
         color: GOLD_LIGHT,
       }}
     >
@@ -188,8 +188,8 @@ const ContactPage = () => {
               width: 46,
               height: 46,
               flexShrink: 0,
-              background: 'rgba(214, 177, 95, 0.15)',
-              border: '1px solid rgba(214, 177, 95, 0.3)',
+              background: 'rgb(127, 83, 226, 0.15)',
+              border: '1px solid rgb(127, 83, 226, 0.3)',
               borderRadius: 12,
               color: GOLD,
             }}
@@ -217,9 +217,9 @@ const ContactPage = () => {
             marginBottom: '2rem',
             padding: 'clamp(1.25rem, 4vw, 1.5rem)',
             background:
-              'linear-gradient(145deg, rgba(214, 177, 95, 0.08) 0%, transparent 100%)',
+              'linear-gradient(145deg, rgb(127, 83, 226, 0.08) 0%, transparent 100%)',
             borderRadius: 20,
-            border: '1px solid rgba(214, 177, 95, 0.15)',
+            border: '1px solid rgb(127, 83, 226, 0.15)',
           }}
         >
           <div
@@ -227,13 +227,13 @@ const ContactPage = () => {
               width: 64,
               height: 64,
               background:
-                'linear-gradient(135deg, #c47a3a 0%, #b8860b 100%)',
+                'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)',
               borderRadius: '50%',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               margin: '0 auto 1rem',
-              boxShadow: '0 8px 24px rgba(214, 177, 95, 0.3)',
+              boxShadow: '0 8px 24px rgb(127, 83, 226, 0.3)',
             }}
           >
             <Crown size={32} color={DARK} aria-hidden="true" />
@@ -255,7 +255,7 @@ const ContactPage = () => {
             style={{
               margin: '0.5rem 0 0',
               fontSize: '0.9rem',
-              color: '#a0a0b0',
+              color: '#a0a3b0',
               lineHeight: 1.7,
             }}
           >
@@ -322,14 +322,14 @@ const ContactPage = () => {
                         ...buttonBaseStyle,
                         width: 42,
                         height: 42,
-                        background: 'rgba(214, 177, 95, 0.15)',
-                        border: '1px solid rgba(214, 177, 95, 0.3)',
+                        background: 'rgb(127, 83, 226, 0.15)',
+                        border: '1px solid rgb(127, 83, 226, 0.3)',
                         borderRadius: 10,
                         color: GOLD,
                       }}
                     >
                       {copied === copyId ? (
-                        <Check size={18} color="#22c55e" aria-hidden="true" />
+                        <Check size={18} color="#1ec9c9" aria-hidden="true" />
                       ) : (
                         <Copy size={18} color={GOLD} aria-hidden="true" />
                       )}
@@ -344,17 +344,17 @@ const ContactPage = () => {
                         minHeight: 42,
                         padding: '0.6rem 1rem',
                         background:
-                          'linear-gradient(135deg, #c47a3a 0%, #b8860b 100%)',
+                          'linear-gradient(135deg, #7b29d5 0%, #400fb4 100%)',
                         borderRadius: 10,
                         gap: '0.5rem',
-                        color: '#1a1205',
+                        color: '#0b0822',
                       }}
                     >
                       <Phone size={18} aria-hidden="true" />
 
                       <span
                         style={{
-                          color: '#1a1205',
+                          color: '#0b0822',
                           fontWeight: 700,
                           fontSize: '0.85rem',
                         }}
@@ -371,7 +371,7 @@ const ContactPage = () => {
                         minHeight: 42,
                         padding: '0.6rem 1rem',
                         background:
-                          'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
+                          'linear-gradient(135deg, #20d8d7 0%, #0d5791 100%)',
                         borderRadius: 10,
                         gap: '0.5rem',
                         color: '#fff',
@@ -399,7 +399,7 @@ const ContactPage = () => {
         {/* WhatsApp */}
         <section style={{ marginBottom: '2rem' }}>
           <h3 style={sectionTitleStyle}>
-            <MessageCircle size={20} color="#25D366" aria-hidden="true" />
+            <MessageCircle size={20} color="#20d8d7" aria-hidden="true" />
             تواصل عبر واتساب
           </h3>
 
@@ -411,12 +411,12 @@ const ContactPage = () => {
               width: '100%',
               minHeight: 88,
               background:
-                'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
+                'linear-gradient(135deg, #20d8d7 0%, #0d5791 100%)',
               borderRadius: 16,
               padding: '1.25rem',
               gap: '1rem',
               color: '#fff',
-              boxShadow: '0 8px 24px rgba(37, 211, 102, 0.3)',
+              boxShadow: '0 8px 24px rgb(32, 216, 215, 0.3)',
             }}
           >
             <MessageCircle
@@ -447,7 +447,7 @@ const ContactPage = () => {
                 style={{
                   margin: '0.25rem 0 0',
                   fontSize: '0.85rem',
-                  color: 'rgba(255,255,255,0.8)',
+                  color: 'rgb(255, 255, 255,0.8)',
                   direction: 'ltr',
                   overflowWrap: 'anywhere',
                 }}
@@ -461,7 +461,7 @@ const ContactPage = () => {
         {/* Snapchat */}
         <section style={{ marginBottom: '2rem' }}>
           <h3 style={sectionTitleStyle}>
-            <Camera size={20} color="#FFFC00" aria-hidden="true" />
+            <Camera size={20} color="#2713ec" aria-hidden="true" />
             سناب شات
           </h3>
 
@@ -473,12 +473,12 @@ const ContactPage = () => {
               width: '100%',
               minHeight: 88,
               background:
-                'linear-gradient(135deg, #FFFC00 0%, #E6E600 100%)',
+                'linear-gradient(135deg, #2713ec 0%, #2211d5 100%)',
               borderRadius: 16,
               padding: '1.25rem',
               gap: '1rem',
               color: '#000',
-              boxShadow: '0 8px 24px rgba(255, 252, 0, 0.3)',
+              boxShadow: '0 8px 24px rgb(39, 19, 236, 0.3)',
             }}
           >
             <Camera
@@ -509,7 +509,7 @@ const ContactPage = () => {
                 style={{
                   margin: '0.25rem 0 0',
                   fontSize: '0.85rem',
-                  color: 'rgba(0,0,0,0.7)',
+                  color: 'rgb(9, 6, 27,0.7)',
                 }}
               >
                 @{CONTACT_INFO.snapchat.username}
@@ -561,13 +561,13 @@ const ContactPage = () => {
                 width: 42,
                 height: 42,
                 flexShrink: 0,
-                background: 'rgba(214, 177, 95, 0.15)',
-                border: '1px solid rgba(214, 177, 95, 0.3)',
+                background: 'rgb(127, 83, 226, 0.15)',
+                border: '1px solid rgb(127, 83, 226, 0.3)',
                 borderRadius: 10,
               }}
             >
               {copied === 'email' ? (
-                <Check size={18} color="#22c55e" aria-hidden="true" />
+                <Check size={18} color="#1ec9c9" aria-hidden="true" />
               ) : (
                 <Copy size={18} color={GOLD} aria-hidden="true" />
               )}
@@ -667,7 +667,7 @@ const ContactPage = () => {
                     style={{
                       margin: '0 0 0.25rem',
                       fontSize: '0.75rem',
-                      color: '#e9d9a8',
+                      color: '#b6a1f0',
                       fontWeight: 700,
                     }}
                   >
@@ -680,7 +680,7 @@ const ContactPage = () => {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       gap: '0.5rem',
-                      background: 'linear-gradient(145deg, rgba(214, 177, 95, 0.16), rgba(168, 132, 44, 0.26))',
+                      background: 'linear-gradient(145deg, rgb(127, 83, 226, 0.16), rgb(75, 31, 181, 0.26))',
                       borderRadius: 10,
                       padding: '0.6rem 0.85rem',
                     }}
@@ -723,7 +723,7 @@ const ContactPage = () => {
                       {copied === `iban-${bank.id}` ? (
                         <Check
                           size={16}
-                          color="#22c55e"
+                          color="#1ec9c9"
                           aria-hidden="true"
                         />
                       ) : (
@@ -743,7 +743,7 @@ const ContactPage = () => {
                     style={{
                       margin: '0 0 0.25rem',
                       fontSize: '0.75rem',
-                      color: '#e9d9a8',
+                      color: '#b6a1f0',
                       fontWeight: 700,
                     }}
                   >
@@ -756,7 +756,7 @@ const ContactPage = () => {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       gap: '0.5rem',
-                      background: 'linear-gradient(145deg, rgba(214, 177, 95, 0.16), rgba(168, 132, 44, 0.26))',
+                      background: 'linear-gradient(145deg, rgb(127, 83, 226, 0.16), rgb(75, 31, 181, 0.26))',
                       borderRadius: 10,
                       padding: '0.6rem 0.85rem',
                     }}
@@ -799,7 +799,7 @@ const ContactPage = () => {
                       {copied === `acc-${bank.id}` ? (
                         <Check
                           size={16}
-                          color="#22c55e"
+                          color="#1ec9c9"
                           aria-hidden="true"
                         />
                       ) : (
@@ -836,7 +836,7 @@ const ContactPage = () => {
                 margin: 0,
                 whiteSpace: 'pre-wrap',
                 wordBreak: 'break-word',
-                fontFamily: 'Tajawal, Arial, sans-serif',
+                fontFamily: 'Cairo, Arial, sans-serif',
                 fontSize: '0.88rem',
                 lineHeight: 2,
                 color: GOLD_LIGHT,
@@ -862,15 +862,15 @@ const ContactPage = () => {
                 marginTop: '0.75rem',
                 width: '100%',
                 minHeight: 44,
-                background: 'rgba(214, 177, 95, 0.15)',
-                border: '1px solid rgba(214, 177, 95, 0.3)',
+                background: 'rgb(127, 83, 226, 0.15)',
+                border: '1px solid rgb(127, 83, 226, 0.3)',
                 borderRadius: 10,
                 color: GOLD,
                 gap: '0.5rem',
               }}
             >
               {copied === 'contact-summary' ? (
-                <Check size={18} color="#22c55e" aria-hidden="true" />
+                <Check size={18} color="#1ec9c9" aria-hidden="true" />
               ) : (
                 <Copy size={18} color={GOLD} aria-hidden="true" />
               )}
@@ -887,14 +887,14 @@ const ContactPage = () => {
             textAlign: 'center',
             marginTop: '2rem',
             padding: '1.5rem 0.5rem',
-            borderTop: '1px solid rgba(214, 177, 95, 0.15)',
+            borderTop: '1px solid rgb(127, 83, 226, 0.15)',
           }}
         >
           <p
             style={{
               margin: 0,
               fontSize: '0.85rem',
-              color: '#e9d9a8',
+              color: '#b6a1f0',
                       fontWeight: 700,
               lineHeight: 1.7,
             }}

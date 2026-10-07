@@ -179,8 +179,8 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
     <>
       <style>{`
         .navbar {
-          background: rgba(11, 10, 9, 0.95);
-          border-bottom: 1px solid rgba(196, 122, 58, 0.4);
+          background: rgb(10, 7, 30, 0.95);
+          border-bottom: 1px solid rgb(123, 41, 213, 0.4);
           padding: 0.2rem 0;
           position: fixed;
           top: 0;
@@ -191,21 +191,21 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           isolation: isolate;
           backdrop-filter: blur(16px);
           -webkit-backdrop-filter: blur(16px);
-          box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+          box-shadow: 0 6px 24px rgb(9, 6, 27,0.35);
           transform: translateZ(0);
         }
         .navbar .logout-btn,
         .navbar .welcome-btn,
         .navbar .ai-header-btn,
         .navbar .mobile-toggle {
-          color: #faf6f0 !important;
-          border-color: rgba(196,122,58,0.4) !important;
+          color: #f4f1f9 !important;
+          border-color: rgb(123, 41, 213,0.4) !important;
         }
-        .navbar .user-name, .navbar .user-role { color: #faf6f0 !important; }
+        .navbar .user-name, .navbar .user-role { color: #f4f1f9 !important; }
         .nav-menu.open {
-          background: #faf6f0 !important;
-          color: #12100e !important;
-          box-shadow: -6px 0 28px rgba(0,0,0,0.2) !important;
+          background: #f4f1f9 !important;
+          color: #0b0822 !important;
+          box-shadow: -6px 0 28px rgb(9, 6, 27,0.2) !important;
         }
 
         .navbar-container {
@@ -216,10 +216,10 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           justify-content: space-between;
           align-items: center;
           gap: 0.35rem;
-          border: 1.5px solid rgba(176,138,62,0.5);
+          border: 1.5px solid rgb(93, 43, 195,0.5);
           border-radius: 16px;
-          background: linear-gradient(145deg, rgba(255,253,247,0.92), rgba(248,241,227,0.85));
-          box-shadow: inset 0 0 0 1px rgba(255,255,255,0.65), 0 4px 14px rgba(176,138,62,0.14);
+          background: linear-gradient(145deg, rgb(247, 246, 251,0.92), rgb(235, 229, 246,0.85));
+          box-shadow: inset 0 0 0 1px rgb(255, 255, 255,0.65), 0 4px 14px rgb(93, 43, 195,0.14);
           min-width: 0;
         }
 
@@ -241,8 +241,8 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           height: 38px;
           object-fit: cover;
           border-radius: 50%;
-          border: 2px solid #e8a35c;
-          box-shadow: 0 0 0 1.5px rgba(217,177,102,0.3), 0 4px 12px rgba(176,138,62,0.4);
+          border: 2px solid #9955ef;
+          box-shadow: 0 0 0 1.5px rgb(137, 91, 228,0.3), 0 4px 12px rgb(93, 43, 195,0.4);
           transition: transform 0.25s ease;
         }
 
@@ -253,7 +253,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
         .navbar-brand-name {
           font-size: clamp(0.92rem, 2vw, 1.18rem);
           font-weight: 900;
-          background: linear-gradient(180deg, #c9a04a 0%, #8f5528 45%, #12100e 100%);
+          background: linear-gradient(180deg, #6d3ad9 0%, #5b1c9b 45%, #0b0822 100%);
           -webkit-background-clip: text;
           background-clip: text;
           color: transparent;
@@ -264,7 +264,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
         .navbar-brand-sub {
           font-size: clamp(0.56rem, 1.2vw, 0.68rem);
           font-weight: 800;
-          color: #8f5528;
+          color: #5b1c9b;
           line-height: 1.2;
           display: block;
           max-width: 240px;
@@ -300,7 +300,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           display: flex;
           align-items: center;
           gap: 0.28rem;
-          color: #12100e !important;
+          color: #0b0822 !important;
           background: transparent;
           border: 1px solid transparent;
           cursor: pointer;
@@ -315,15 +315,15 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
         }
 
         .nav-item:hover {
-          background: rgba(217,177,102,0.25);
-          border-color: rgba(176,138,62,0.45);
-          color: #12100e !important;
+          background: rgb(137, 91, 228,0.25);
+          border-color: rgb(93, 43, 195,0.45);
+          color: #0b0822 !important;
         }
 
         .nav-item.active {
-          background: linear-gradient(135deg, rgba(217,177,102,0.55), rgba(176,138,62,0.35));
-          border-color: #c47a3a;
-          color: #12100e !important;
+          background: linear-gradient(135deg, rgb(137, 91, 228,0.55), rgb(93, 43, 195,0.35));
+          border-color: #7b29d5;
+          color: #0b0822 !important;
         }
 
         .nav-right {
@@ -343,11 +343,11 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           font-family: inherit;
           font-weight: 900;
           font-size: 0.65rem;
-          color: #2a1f08;
+          color: #0d0a29;
           padding: 0.32rem 0.5rem;
           border-radius: 8px;
-          background: linear-gradient(135deg, #f0d79a 0%, #e8a35c 40%, #c47a3a 100%);
-          box-shadow: 0 3px 10px rgba(176,138,62,0.4);
+          background: linear-gradient(135deg, #b295f4 0%, #9955ef 40%, #7b29d5 100%);
+          box-shadow: 0 3px 10px rgb(93, 43, 195,0.4);
           white-space: nowrap;
         }
 
@@ -355,20 +355,20 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           display: flex;
           align-items: center;
           gap: 0.25rem;
-          border: 1.5px solid #0f766e;
+          border: 1.5px solid #0b477a;
           cursor: pointer;
           font-family: inherit;
           font-weight: 800;
           font-size: 0.65rem;
-          color: #0f766e;
+          color: #0b477a;
           padding: 0.3rem 0.48rem;
           border-radius: 8px;
-          background: rgba(15, 118, 110, 0.08);
+          background: rgb(11, 71, 122, 0.08);
           white-space: nowrap;
         }
 
         .user-info {
-          color: #3c2f1e;
+          color: #281545;
           font-size: 0.65rem;
           display: flex;
           flex-direction: column;
@@ -377,8 +377,8 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           white-space: nowrap;
         }
 
-        .user-name { font-weight: 800; color: #0b0a09; }
-        .user-role { color: #8f5528; font-size: 0.6rem; font-weight: 700; }
+        .user-name { font-weight: 800; color: #0a071e; }
+        .user-role { color: #5b1c9b; font-size: 0.6rem; font-weight: 700; }
 
         .toggle-chip {
           display: inline-flex;
@@ -386,9 +386,9 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           gap: 0.25rem;
           padding: 0.3rem 0.42rem;
           border-radius: 999px;
-          color: #3c2f1e;
-          background: rgba(217,177,102,0.2);
-          border: 1px solid rgba(176,138,62,0.35);
+          color: #281545;
+          background: rgb(137, 91, 228,0.2);
+          border: 1px solid rgb(93, 43, 195,0.35);
           font-size: 0.62rem;
           cursor: pointer;
           font-weight: 700;
@@ -403,12 +403,12 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           height: 36px;
           flex: 0 0 36px;
           border-radius: 10px;
-          color: #12100e;
-          background: linear-gradient(145deg, #faf6f0, #f8f1e3);
-          border: 1.5px solid rgba(176,138,62,0.5);
+          color: #0b0822;
+          background: linear-gradient(145deg, #f4f1f9, #ebe5f6);
+          border: 1.5px solid rgb(93, 43, 195,0.5);
           cursor: pointer;
           transition: all 0.22s ease;
-          box-shadow: 0 2px 6px rgba(176,138,62,0.12);
+          box-shadow: 0 2px 6px rgb(93, 43, 195,0.12);
         }
 
         .icon-btn .badge {
@@ -419,7 +419,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           height: 16px;
           padding: 0 3px;
           border-radius: 999px;
-          background: linear-gradient(135deg, #d94f4f, #b03535);
+          background: linear-gradient(135deg, #e44461, #c02541);
           color: #fff;
           font-size: 0.58rem;
           font-weight: 900;
@@ -431,9 +431,9 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           display: flex;
           align-items: center;
           gap: 0.25rem;
-          background: linear-gradient(135deg, rgba(240,215,154,0.55), rgba(217,177,102,0.35));
-          color: #3c2f1e;
-          border: 1px solid rgba(176,138,62,0.45);
+          background: linear-gradient(135deg, rgb(178, 149, 244,0.55), rgb(137, 91, 228,0.35));
+          color: #281545;
+          border: 1px solid rgb(93, 43, 195,0.45);
           padding: 0.32rem 0.5rem;
           border-radius: 9px;
           cursor: pointer;
@@ -447,9 +447,9 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           display: flex;
           align-items: center;
           gap: 0.25rem;
-          background: #faf6f0;
-          color: #12100e;
-          border: 1.5px solid #c47a3a;
+          background: #f4f1f9;
+          color: #0b0822;
+          border: 1.5px solid #7b29d5;
           padding: 0.35rem 0.55rem;
           border-radius: 9px;
           cursor: pointer;
@@ -460,9 +460,9 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           white-space: nowrap;
         }
         .logout-btn:hover {
-          background: rgba(185, 78, 57, 0.12);
-          border-color: #b94e39;
-          color: #7a2e22;
+          background: rgb(202, 40, 70, 0.12);
+          border-color: #ca2846;
+          color: #84182c;
         }
 
         .ai-header-btn {
@@ -472,17 +472,17 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           height: 34px;
           flex: 0 0 34px;
           border-radius: 9px;
-          color: #c47a3a;
-          background: rgba(255,253,247,0.9);
-          border: 1.5px solid rgba(176,138,62,0.45);
+          color: #7b29d5;
+          background: rgb(247, 246, 251,0.9);
+          border: 1.5px solid rgb(93, 43, 195,0.45);
           cursor: pointer;
         }
 
         .mobile-toggle {
           display: none;
-          background: rgba(255,253,247,0.95);
-          border: 2px solid #c47a3a;
-          color: #0b0a09;
+          background: rgb(247, 246, 251,0.95);
+          border: 2px solid #7b29d5;
+          color: #0a071e;
           cursor: pointer;
           padding: 0.42rem;
           border-radius: 9px;
@@ -495,7 +495,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           inset: 0;
           width: 100vw;
           height: 100dvh;
-          background: rgba(23, 18, 8, 0.48);
+          background: rgb(11, 8, 34, 0.48);
           z-index: 2500;
           border: none;
           cursor: pointer;
@@ -578,7 +578,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             height: 100dvh !important;
             min-height: 100vh;
             margin: 0 !important;
-            background: rgba(248, 241, 227, 0.99) !important;
+            background: rgb(235, 229, 246, 0.99) !important;
             flex-direction: column;
             flex-wrap: nowrap;
             align-items: stretch;
@@ -588,8 +588,8 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             overflow-x: hidden;
             transform: translate3d(110%, 0, 0);
             transition: transform 0.3s cubic-bezier(0.22, 0.9, 0.3, 1);
-            border-inline-start: 2px solid #c47a3a;
-            box-shadow: -16px 0 36px rgba(23, 18, 8, 0.26);
+            border-inline-start: 2px solid #7b29d5;
+            box-shadow: -16px 0 36px rgb(11, 8, 34, 0.26);
             z-index: 4000 !important;
             visibility: hidden;
             pointer-events: none;
@@ -610,7 +610,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             gap: 0.45rem;
             padding: 0.1rem 0.15rem 0.55rem;
             margin-bottom: 0.3rem;
-            border-bottom: 1.5px solid rgba(176, 138, 62, 0.32);
+            border-bottom: 1.5px solid rgb(93, 43, 195, 0.32);
           }
 
           .nav-drawer-title {
@@ -619,7 +619,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             gap: 0.4rem;
             font-weight: 900;
             font-size: 0.9rem;
-            color: #0b0a09;
+            color: #0a071e;
           }
 
           .nav-drawer-close {
@@ -629,9 +629,9 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             height: 36px;
             flex: 0 0 36px;
             border-radius: 11px;
-            background: rgba(255, 253, 247, 0.92);
-            border: 1px solid rgba(176, 138, 62, 0.38);
-            color: #0b0a09;
+            background: rgb(247, 246, 251, 0.92);
+            border: 1px solid rgb(93, 43, 195, 0.38);
+            color: #0a071e;
             cursor: pointer;
           }
 
@@ -641,7 +641,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           .nav-menu-extras {
             display: block;
             padding: 0.35rem 0.15rem 0.5rem;
-            border-bottom: 1px solid rgba(176, 138, 62, 0.22);
+            border-bottom: 1px solid rgb(93, 43, 195, 0.22);
             margin-bottom: 0.3rem;
           }
 
@@ -659,7 +659,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             padding: 0.5rem 0.35rem 0.3rem;
             font-weight: 900;
             font-size: 0.8rem;
-            color: #8f5528;
+            color: #5b1c9b;
             margin-top: 0.35rem;
           }
 
@@ -674,9 +674,9 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             width: 100%;
             min-width: 0;
             text-align: right;
-            background: linear-gradient(145deg, #faf6f0 0%, #f8f1e3 100%);
-            border: 1.5px solid rgba(176, 138, 62, 0.4);
-            color: #0b0a09 !important;
+            background: linear-gradient(145deg, #f4f1f9 0%, #ebe5f6 100%);
+            border: 1.5px solid rgb(93, 43, 195, 0.4);
+            color: #0a071e !important;
             cursor: pointer;
             padding: 0.6rem 0.7rem;
             border-radius: 12px;
@@ -684,7 +684,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             font-weight: 800;
             font-size: 0.82rem;
             line-height: 1.35;
-            box-shadow: 0 2px 8px rgba(176,138,62,0.08);
+            box-shadow: 0 2px 8px rgb(93, 43, 195,0.08);
           }
 
           .nav-section-btn > span {
@@ -693,40 +693,40 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             white-space: normal;
             word-break: break-word;
             overflow-wrap: anywhere;
-            color: #0b0a09;
+            color: #0a071e;
           }
 
           .nav-section-btn svg {
             flex: 0 0 auto;
-            color: #8f5528;
+            color: #5b1c9b;
           }
 
           .nav-section-count {
             flex: 0 0 auto;
             margin-right: 0;
             margin-left: auto;
-            background: linear-gradient(135deg, #e8a35c, #c47a3a);
-            color: #12100e;
+            background: linear-gradient(135deg, #9955ef, #7b29d5);
+            color: #0b0822;
             font-size: 0.68rem;
             font-weight: 900;
             padding: 0.15rem 0.45rem;
             border-radius: 999px;
-            box-shadow: 0 1px 4px rgba(176,138,62,0.25);
+            box-shadow: 0 1px 4px rgb(93, 43, 195,0.25);
           }
 
           .nav-drawer-group {
             margin: 0.35rem 0;
             padding: 0.45rem 0.3rem;
             border-radius: 11px;
-            background: rgba(255, 253, 247, 0.55);
-            border: 1px solid rgba(176, 138, 62, 0.18);
+            background: rgb(247, 246, 251, 0.55);
+            border: 1px solid rgb(93, 43, 195, 0.18);
           }
 
           .nav-drawer-group-title {
             display: block;
             font-weight: 900;
             font-size: 0.75rem;
-            color: #8f5528;
+            color: #5b1c9b;
             margin-bottom: 0.35rem;
             padding-inline: 0.25rem;
           }
@@ -743,9 +743,9 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             gap: 0.35rem;
             width: 100%;
             text-align: right;
-            background: rgba(255, 253, 247, 0.75);
-            border: 1px solid rgba(176, 138, 62, 0.26);
-            color: #0b0a09 !important;
+            background: rgb(247, 246, 251, 0.75);
+            border: 1px solid rgb(93, 43, 195, 0.26);
+            color: #0a071e !important;
             cursor: pointer;
             padding: 0.5rem 0.55rem;
             border-radius: 10px;
@@ -759,12 +759,12 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             list-style: none;
             margin: 0 0 0.25rem;
             padding: 0.2rem 0.4rem 0.35rem 0.5rem;
-            border-inline-start: 3px solid #c47a3a;
+            border-inline-start: 3px solid #7b29d5;
             margin-inline-start: 0.85rem;
-            background: linear-gradient(180deg, #faf6f0 0%, #f8f1e3 100%);
+            background: linear-gradient(180deg, #f4f1f9 0%, #ebe5f6 100%);
             border-radius: 12px;
-            border: 1px solid rgba(176, 138, 62, 0.28);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.8);
+            border: 1px solid rgb(93, 43, 195, 0.28);
+            box-shadow: inset 0 1px 0 rgb(255, 255, 255,0.8);
             margin-bottom: 0.55rem;
           }
 
@@ -777,7 +777,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             text-align: right;
             background: transparent;
             border: none;
-            color: #12100e !important;
+            color: #0b0822 !important;
             cursor: pointer;
             padding: 0.5rem 0.55rem;
             border-radius: 9px;
@@ -789,7 +789,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           }
 
           .nav-branch-btn:hover {
-            background: rgba(217, 177, 102, 0.22);
+            background: rgb(137, 91, 228, 0.22);
           }
 
           .nav-branch-btn > span {
@@ -798,19 +798,19 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
             white-space: normal;
             word-break: break-word;
             overflow-wrap: anywhere;
-            color: #12100e;
+            color: #0b0822;
           }
 
           .nav-branch-btn svg {
             flex: 0 0 auto;
             margin-top: 2px;
-            color: #8f5528;
+            color: #5b1c9b;
           }
 
           
           /* drawer-tight */
           .nav-menu.open {
-            box-shadow: -3px 0 14px rgba(143,106,38,0.15) !important;
+            box-shadow: -3px 0 14px rgb(70, 27, 154,0.15) !important;
             padding-bottom: 1.5rem !important;
           }
           .nav-menu .nav-item {
@@ -842,14 +842,14 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
 
           .nav-haraj-entry {
             margin-top: 0.35rem;
-            border: 1px solid rgba(176, 138, 62, 0.38);
-            background: linear-gradient(135deg, rgba(240, 215, 154, 0.32), rgba(217, 177, 102, 0.18));
+            border: 1px solid rgb(93, 43, 195, 0.38);
+            background: linear-gradient(135deg, rgb(178, 149, 244, 0.32), rgb(137, 91, 228, 0.18));
             font-weight: 900;
           }
 
           .nav-drawer-badge {
             margin-right: auto;
-            background: linear-gradient(135deg, #d94f4f, #b03535);
+            background: linear-gradient(135deg, #e44461, #c02541);
             color: #fff;
             font-size: 0.65rem;
             font-weight: 900;
@@ -1099,7 +1099,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
                           {branches.length > 0 && (isExpanded ? <ChevronUp size={13} /> : <ChevronDown size={13} />)}
                         </button>
                         {isExpanded && branches.length > 0 && (
-                          <ul style={{ listStyle: 'none', margin: '4px 0 8px', padding: '0 0 0 10px', borderInlineStart: '2px solid #c47a3a' }}>
+                          <ul style={{ listStyle: 'none', margin: '4px 0 8px', padding: '0 0 0 10px', borderInlineStart: '2px solid #7b29d5' }}>
                             {branches.map((branch) => (
                               <li key={branch.id}>
                                 <button
@@ -1129,7 +1129,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
                       type="button"
                       className="nav-branch-btn"
                       onClick={() => { navigate('/haraj'); closeMenu(); }}
-                      style={{ fontWeight: 900, background: 'rgba(217,177,102,0.25)', marginTop: 6 }}
+                      style={{ fontWeight: 900, background: 'rgb(137, 91, 228,0.25)', marginTop: 6 }}
                     >
                       <ShoppingBag size={14} />
                       <span>الدخول إلى موقع حراج</span>
@@ -1274,7 +1274,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(40,30,5,0.55)',
+            background: 'rgb(13, 9, 39,0.55)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -1285,22 +1285,22 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: 'linear-gradient(145deg, #faf6f0, #f6ecd6)',
-              border: '1px solid rgba(184,134,11,0.45)',
+              background: 'linear-gradient(145deg, #f4f1f9, #e0d7f5)',
+              border: '1px solid rgb(64, 15, 180,0.45)',
               borderRadius: 18,
               padding: '1.5rem 1.25rem',
               maxWidth: 370,
               width: '100%',
               textAlign: 'center',
-              boxShadow: '0 22px 55px rgba(60,45,5,0.35)',
-              fontFamily: 'Tajawal, sans-serif',
+              boxShadow: '0 22px 55px rgb(15, 11, 46,0.35)',
+              fontFamily: 'Cairo, sans-serif',
             }}
           >
-            <Crown size={30} color="#c47a3a" style={{ marginBottom: 10 }} />
-            <h3 style={{ margin: '0 0 0.45rem', fontSize: '1.15rem', fontWeight: 800, color: '#4a3a12' }}>
+            <Crown size={30} color="#7b29d5" style={{ marginBottom: 10 }} />
+            <h3 style={{ margin: '0 0 0.45rem', fontSize: '1.15rem', fontWeight: 800, color: '#200d4f' }}>
               أهلاً بكم في أناقة ROOZ
             </h3>
-            <p style={{ margin: '0 0 1.1rem', fontSize: '0.88rem', color: '#5c4a20', lineHeight: 1.65 }}>
+            <p style={{ margin: '0 0 1.1rem', fontSize: '0.88rem', color: '#2e1666', lineHeight: 1.65 }}>
               نورت المنصة. هنا تجدون الفخامة والثقة في كل تفصيلة.
               <br />
               استمتعوا بتجربة راقية تليق بذوقكم.
@@ -1309,8 +1309,8 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
               type="button"
               onClick={() => setShowElegantWelcome(false)}
               style={{
-                background: 'linear-gradient(135deg, #c47a3a, #a8842c)',
-                color: '#1a1206',
+                background: 'linear-gradient(135deg, #7b29d5, #4b1fb5)',
+                color: '#0b0822',
                 border: 'none',
                 borderRadius: 11,
                 padding: '0.55rem 1.5rem',
@@ -1334,7 +1334,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(40,30,5,0.55)',
+            background: 'rgb(13, 9, 39,0.55)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -1345,8 +1345,8 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: 'linear-gradient(145deg, #faf6f0, #f6ecd6)',
-              border: '1px solid rgba(184,134,11,0.45)',
+              background: 'linear-gradient(145deg, #f4f1f9, #e0d7f5)',
+              border: '1px solid rgb(64, 15, 180,0.45)',
               borderRadius: 18,
               padding: '1.35rem 1.15rem',
               maxWidth: 440,
@@ -1354,12 +1354,12 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
               maxHeight: '85vh',
               overflowY: 'auto',
               textAlign: 'right',
-              boxShadow: '0 22px 55px rgba(60,45,5,0.35)',
-              fontFamily: 'Tajawal, sans-serif',
+              boxShadow: '0 22px 55px rgb(15, 11, 46,0.35)',
+              fontFamily: 'Cairo, sans-serif',
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-              <h3 style={{ margin: 0, fontSize: '1.08rem', fontWeight: 800, color: '#4a3a12' }}>
+              <h3 style={{ margin: 0, fontSize: '1.08rem', fontWeight: 800, color: '#200d4f' }}>
                 {infoModal === 'why' && 'لماذا أناقة ROOZ؟'}
                 {infoModal === 'contest' && 'المسابقة الكبرى'}
                 {infoModal === 'statement' && 'بيان الموقع الرسمي'}
@@ -1369,8 +1369,8 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
                 type="button"
                 onClick={() => setInfoModal(null)}
                 style={{
-                  background: 'rgba(184,134,11,0.12)',
-                  border: '1px solid rgba(184,134,11,0.35)',
+                  background: 'rgb(64, 15, 180,0.12)',
+                  border: '1px solid rgb(64, 15, 180,0.35)',
                   borderRadius: '50%',
                   width: 32,
                   height: 32,
@@ -1378,7 +1378,7 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#6b5313',
+                  color: '#290d71',
                 }}
               >
                 <X size={16} />
@@ -1387,74 +1387,74 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
 
             {infoModal === 'why' && (
               <div style={{ display: 'grid', gap: 11 }}>
-                <div style={{ background: 'rgba(255,255,255,0.65)', borderRadius: 12, padding: '0.85rem' }}>
+                <div style={{ background: 'rgb(255, 255, 255,0.65)', borderRadius: 12, padding: '0.85rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                    <ShieldCheck size={17} color="#8d6d1d" />
-                    <strong style={{ color: '#8d6d1d' }}>موثوق وآمن</strong>
+                    <ShieldCheck size={17} color="#3a1496" />
+                    <strong style={{ color: '#3a1496' }}>موثوق وآمن</strong>
                   </div>
-                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#5c4a20' }}>نراجع الإعلانات ونضمن بيئة آمنة للتعامل</p>
+                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#2e1666' }}>نراجع الإعلانات ونضمن بيئة آمنة للتعامل</p>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.65)', borderRadius: 12, padding: '0.85rem' }}>
+                <div style={{ background: 'rgb(255, 255, 255,0.65)', borderRadius: 12, padding: '0.85rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                    <Gem size={17} color="#8d6d1d" />
-                    <strong style={{ color: '#8d6d1d' }}>جودة عالية</strong>
+                    <Gem size={17} color="#3a1496" />
+                    <strong style={{ color: '#3a1496' }}>جودة عالية</strong>
                   </div>
-                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#5c4a20' }}>إعلانات راقية لأناس راقين مثلك</p>
+                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#2e1666' }}>إعلانات راقية لأناس راقين مثلك</p>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.65)', borderRadius: 12, padding: '0.85rem' }}>
+                <div style={{ background: 'rgb(255, 255, 255,0.65)', borderRadius: 12, padding: '0.85rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                    <MonitorSmartphone size={17} color="#8d6d1d" />
-                    <strong style={{ color: '#8d6d1d' }}>سهولة الاستخدام</strong>
+                    <MonitorSmartphone size={17} color="#3a1496" />
+                    <strong style={{ color: '#3a1496' }}>سهولة الاستخدام</strong>
                   </div>
-                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#5c4a20' }}>واجهة بسيطة وتجربة سلسة</p>
+                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#2e1666' }}>واجهة بسيطة وتجربة سلسة</p>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.65)', borderRadius: 12, padding: '0.85rem' }}>
+                <div style={{ background: 'rgb(255, 255, 255,0.65)', borderRadius: 12, padding: '0.85rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
-                    <Headphones size={17} color="#8d6d1d" />
-                    <strong style={{ color: '#8d6d1d' }}>دعم على مدار الساعة</strong>
+                    <Headphones size={17} color="#3a1496" />
+                    <strong style={{ color: '#3a1496' }}>دعم على مدار الساعة</strong>
                   </div>
-                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#5c4a20' }}>فريق الدعم جاهز لمساعدتك دائماً</p>
+                  <p style={{ margin: 0, fontSize: '0.86rem', color: '#2e1666' }}>فريق الدعم جاهز لمساعدتك دائماً</p>
                 </div>
               </div>
             )}
 
             {infoModal === 'contest' && (
               <div style={{ textAlign: 'center' }}>
-                <Crown size={28} color="#c47a3a" style={{ marginBottom: 8 }} />
-                <p style={{ fontSize: '1.02rem', color: '#5a4a1f', lineHeight: 1.7, margin: 0 }}>
-                  ستُقام مسابقة كبرى قريباً على <strong style={{ color: '#b38b00' }}>3 أطقم ذهب عيار 21</strong> وهدايا أخرى قيّمة.
+                <Crown size={28} color="#7b29d5" style={{ marginBottom: 8 }} />
+                <p style={{ fontSize: '1.02rem', color: '#2c1663', lineHeight: 1.7, margin: 0 }}>
+                  ستُقام مسابقة كبرى قريباً على <strong style={{ color: '#330da6' }}>3 أطقم ذهب عيار 21</strong> وهدايا أخرى قيّمة.
                   <br /><br />
-                  <span style={{ fontWeight: 700, color: '#a07c1a' }}>انتظرونا</span>
+                  <span style={{ fontWeight: 700, color: '#3c12a8' }}>انتظرونا</span>
                 </p>
               </div>
             )}
 
             {infoModal === 'statement' && (
-              <p style={{ fontSize: '0.88rem', lineHeight: 1.9, color: '#5c4a20', margin: 0 }}>
-                منصة «أناقة ROOZ» تعمل تحت <strong style={{ color: '#8f5528' }}>حماية قانونية ومحاماة معتمدة</strong>.
+              <p style={{ fontSize: '0.88rem', lineHeight: 1.9, color: '#2e1666', margin: 0 }}>
+                منصة «أناقة ROOZ» تعمل تحت <strong style={{ color: '#5b1c9b' }}>حماية قانونية ومحاماة معتمدة</strong>.
                 خصوصية جميع المستخدمين مصانة بالكامل، وجميع البيانات محمية بتشفير كامل.
-                نلتزم بالاحترام المتبادل، وأعضاؤنا بالنسبة لصاحب الموقع <strong style={{ color: '#8f5528' }}>خط أحمر</strong> —
+                نلتزم بالاحترام المتبادل، وأعضاؤنا بالنسبة لصاحب الموقع <strong style={{ color: '#5b1c9b' }}>خط أحمر</strong> —
                 لا يُقبل أي إساءة أو ضرر لأي شخص داخل المنصة، ومن يتجاوز ذلك يُحال للجهات المختصة.
               </p>
             )}
 
             {infoModal === 'journey' && (
               <div style={{ display: 'grid', gap: 9 }}>
-                <div style={{ background: 'rgba(255,255,255,0.65)', borderRadius: 11, padding: '0.75rem' }}>
-                  <strong style={{ color: '#8d6d1d' }}>01 اكتشف</strong>
-                  <p style={{ margin: '3px 0 0', fontSize: '0.84rem', color: '#5c4a20' }}>استعرض الأقسام واختر الفئة المناسبة.</p>
+                <div style={{ background: 'rgb(255, 255, 255,0.65)', borderRadius: 11, padding: '0.75rem' }}>
+                  <strong style={{ color: '#3a1496' }}>01 اكتشف</strong>
+                  <p style={{ margin: '3px 0 0', fontSize: '0.84rem', color: '#2e1666' }}>استعرض الأقسام واختر الفئة المناسبة.</p>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.65)', borderRadius: 11, padding: '0.75rem' }}>
-                  <strong style={{ color: '#8d6d1d' }}>02 اختر</strong>
-                  <p style={{ margin: '3px 0 0', fontSize: '0.84rem', color: '#5c4a20' }}>تصفح المنتجات وابحث عن القطعة المناسبة.</p>
+                <div style={{ background: 'rgb(255, 255, 255,0.65)', borderRadius: 11, padding: '0.75rem' }}>
+                  <strong style={{ color: '#3a1496' }}>02 اختر</strong>
+                  <p style={{ margin: '3px 0 0', fontSize: '0.84rem', color: '#2e1666' }}>تصفح المنتجات وابحث عن القطعة المناسبة.</p>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.65)', borderRadius: 11, padding: '0.75rem' }}>
-                  <strong style={{ color: '#8d6d1d' }}>03 تواصل</strong>
-                  <p style={{ margin: '3px 0 0', fontSize: '0.84rem', color: '#5c4a20' }}>تواصل مع البائع أو الجهة المناسبة عند الحاجة.</p>
+                <div style={{ background: 'rgb(255, 255, 255,0.65)', borderRadius: 11, padding: '0.75rem' }}>
+                  <strong style={{ color: '#3a1496' }}>03 تواصل</strong>
+                  <p style={{ margin: '3px 0 0', fontSize: '0.84rem', color: '#2e1666' }}>تواصل مع البائع أو الجهة المناسبة عند الحاجة.</p>
                 </div>
-                <div style={{ background: 'rgba(255,255,255,0.65)', borderRadius: 11, padding: '0.75rem' }}>
-                  <strong style={{ color: '#8d6d1d' }}>04 استمتع</strong>
-                  <p style={{ margin: '3px 0 0', fontSize: '0.84rem', color: '#5c4a20' }}>استكمل تجربتك داخل أناقة ROOZ بكل سهولة.</p>
+                <div style={{ background: 'rgb(255, 255, 255,0.65)', borderRadius: 11, padding: '0.75rem' }}>
+                  <strong style={{ color: '#3a1496' }}>04 استمتع</strong>
+                  <p style={{ margin: '3px 0 0', fontSize: '0.84rem', color: '#2e1666' }}>استكمل تجربتك داخل أناقة ROOZ بكل سهولة.</p>
                 </div>
               </div>
             )}

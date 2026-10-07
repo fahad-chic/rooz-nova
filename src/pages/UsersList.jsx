@@ -277,13 +277,13 @@ export default UsersList;
 
 const container = {
   background:
-    'linear-gradient(145deg, #101010 0%, #151515 100%)',
+    'linear-gradient(145deg, #0b0822 0%, #0c0926 100%)',
   padding: '1.25rem',
   borderRadius: 18,
-  border: '1px solid rgba(201,169,97,0.24)',
+  border: '1px solid rgb(123, 81, 217,0.24)',
   boxShadow:
-    '0 12px 35px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.03)',
-  fontFamily: 'Tajawal, Cairo, sans-serif',
+    '0 12px 35px rgb(9, 6, 27,0.28), inset 0 1px 0 rgb(255, 255, 255,0.03)',
+  fontFamily: 'Cairo, Cairo, sans-serif',
   width: '100%',
   boxSizing: 'border-box',
 };
@@ -313,13 +313,13 @@ const titleIcon = {
   justifyContent: 'center',
   color: '#111',
   background:
-    'linear-gradient(135deg, #e4c875 0%, #c9a961 48%, #8d6d1d 100%)',
-  boxShadow: '0 6px 18px rgba(201,169,97,0.14)',
+    'linear-gradient(135deg, #8f6dec 0%, #7b51d9 48%, #3a1496 100%)',
+  boxShadow: '0 6px 18px rgb(123, 81, 217,0.14)',
   flexShrink: 0,
 };
 
 const title = {
-  color: '#f3dfaa',
+  color: '#bda6f7',
   fontWeight: 800,
   fontSize: 18,
   margin: 0,
@@ -339,9 +339,9 @@ const ownerBadge = {
   gap: 5,
   padding: '6px 9px',
   borderRadius: 999,
-  color: '#d8bd74',
-  background: 'rgba(201,169,97,0.08)',
-  border: '1px solid rgba(201,169,97,0.18)',
+  color: '#8b68e4',
+  background: 'rgb(123, 81, 217,0.08)',
+  border: '1px solid rgb(123, 81, 217,0.18)',
   fontSize: 11,
   fontWeight: 700,
   whiteSpace: 'nowrap',
@@ -355,7 +355,7 @@ const restrictedBox = {
   justifyContent: 'center',
   textAlign: 'center',
   padding: 24,
-  color: '#c9a961',
+  color: '#7b51d9',
   boxSizing: 'border-box',
 };
 
@@ -373,7 +373,7 @@ const loadingBox = {
   alignItems: 'center',
   justifyContent: 'center',
   gap: 10,
-  color: '#c9a961',
+  color: '#7b51d9',
   fontSize: 13,
 };
 
@@ -409,10 +409,10 @@ const userCard = {
   alignItems: 'center',
   gap: 11,
   background:
-    'linear-gradient(135deg, rgba(22,22,22,0.98), rgba(16,16,16,0.98))',
+    'linear-gradient(135deg, rgb(12, 9, 38,0.98), rgb(11, 8, 34,0.98))',
   padding: 11,
   borderRadius: 13,
-  border: '1px solid rgba(201,169,97,0.12)',
+  border: '1px solid rgb(123, 81, 217,0.12)',
   boxSizing: 'border-box',
   minWidth: 0,
   transition:
@@ -425,8 +425,8 @@ const avatarWrapper = {
   minWidth: 44,
   borderRadius: '50%',
   overflow: 'hidden',
-  border: '2px solid rgba(201,169,97,0.35)',
-  background: '#1b1b1b',
+  border: '2px solid rgb(123, 81, 217,0.35)',
+  background: '#0e0a2a',
   boxSizing: 'border-box',
 };
 
@@ -444,11 +444,11 @@ const avatarInitials = {
   alignItems: 'center',
   justifyContent: 'center',
   background:
-    'linear-gradient(135deg, #e0c16c 0%, #c9a961 50%, #8d6d1d 100%)',
+    'linear-gradient(135deg, #8863e9 0%, #7b51d9 50%, #3a1496 100%)',
   color: '#111',
   fontWeight: 900,
   fontSize: 17,
-  fontFamily: 'Tajawal, Cairo, sans-serif',
+  fontFamily: 'Cairo, Cairo, sans-serif',
 };
 
 const userInfo = {
@@ -457,7 +457,7 @@ const userInfo = {
 };
 
 const userName = {
-  color: '#f2e2b5',
+  color: '#c4b1f6',
   fontWeight: 800,
   fontSize: 13,
   margin: '0 0 2px',
@@ -491,7 +491,7 @@ const roleText = {
 };
 
 const verified = {
-  color: '#10b981',
+  color: '#14b5a7',
   display: 'inline-flex',
   alignItems: 'center',
 };
@@ -516,7 +516,7 @@ const btnBase = {
   alignItems: 'center',
   justifyContent: 'center',
   gap: 5,
-  fontFamily: 'Tajawal, Cairo, sans-serif',
+  fontFamily: 'Cairo, Cairo, sans-serif',
   transition: 'opacity 160ms ease, transform 160ms ease',
   boxSizing: 'border-box',
 };
@@ -524,16 +524,16 @@ const btnBase = {
 const btnChat = {
   ...btnBase,
   background:
-    'linear-gradient(135deg, #e1c36e 0%, #c9a961 50%, #9a7925 100%)',
+    'linear-gradient(135deg, #8a65ea 0%, #7b51d9 50%, #421aa5 100%)',
   color: '#111',
-  borderColor: 'rgba(255,230,150,0.25)',
+  borderColor: 'rgb(181, 158, 247,0.25)',
 };
 
 const btnCopy = {
   ...btnBase,
   background: '#222',
   color: '#ddd',
-  borderColor: 'rgba(255,255,255,0.08)',
+  borderColor: 'rgb(255, 255, 255,0.08)',
 };
 
 if (

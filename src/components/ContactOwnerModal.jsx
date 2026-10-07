@@ -54,14 +54,14 @@ const ContactOwnerModal = ({ onClose }) => {
         position: 'fixed',
         inset: 0,
         zIndex: 1600,
-        background: 'rgba(23,18,8,0.55)',
+        background: 'rgb(11, 8, 34,0.55)',
         backdropFilter: 'blur(4px)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         padding: '1rem',
         direction: 'rtl',
-        fontFamily: 'Tajawal, sans-serif',
+        fontFamily: 'Cairo, sans-serif',
       }}
     >
       <div
@@ -70,17 +70,17 @@ const ContactOwnerModal = ({ onClose }) => {
         aria-label="مراسلة صاحب الموقع"
         style={{
           width: 'min(440px, 100%)',
-          background: 'linear-gradient(160deg, #fffdf6, #f6eeda)',
-          border: '2px solid #c47a3a',
+          background: 'linear-gradient(160deg, #f7f6fb, #e3dbf5)',
+          border: '2px solid #7b29d5',
           borderRadius: 20,
-          boxShadow: '0 24px 60px rgba(60,40,10,0.35)',
+          boxShadow: '0 24px 60px rgb(15, 11, 48,0.35)',
           overflow: 'hidden',
         }}
       >
         <div
           style={{
-            background: 'linear-gradient(120deg, #45300f, #6d4c14)',
-            color: '#ffd978',
+            background: 'linear-gradient(120deg, #110c35, #320e73)',
+            color: '#a382f5',
             padding: '14px 18px',
             display: 'flex',
             alignItems: 'center',
@@ -95,7 +95,7 @@ const ContactOwnerModal = ({ onClose }) => {
             type="button"
             onClick={onClose}
             aria-label="إغلاق"
-            style={{ background: 'none', border: 'none', color: '#ffd978', cursor: 'pointer', display: 'flex', padding: 4 }}
+            style={{ background: 'none', border: 'none', color: '#a382f5', cursor: 'pointer', display: 'flex', padding: 4 }}
           >
             <X size={19} />
           </button>
@@ -103,7 +103,7 @@ const ContactOwnerModal = ({ onClose }) => {
 
         <div style={{ padding: '18px' }}>
           {status === 'sent' ? (
-            <div style={{ textAlign: 'center', padding: '1.2rem 0', color: '#0f766e', fontWeight: 800 }}>
+            <div style={{ textAlign: 'center', padding: '1.2rem 0', color: '#0b477a', fontWeight: 800 }}>
               <CheckCircle2 size={40} style={{ margin: '0 auto 8px' }} aria-hidden="true" />
               وصلت رسالتك لصاحب الموقع — سيتم الرد عليك قريباً بإذن الله
             </div>
@@ -120,21 +120,21 @@ const ContactOwnerModal = ({ onClose }) => {
                   boxSizing: 'border-box',
                   resize: 'vertical',
                   borderRadius: 12,
-                  border: '1.5px solid #cdb27a',
-                  background: '#fffef9',
+                  border: '1.5px solid #8f6bdc',
+                  background: '#f7f6fb',
                   padding: '12px 14px',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                   fontSize: '0.95rem',
                   fontWeight: 600,
-                  color: '#0b0a09',
+                  color: '#0a071e',
                   outline: 'none',
                   lineHeight: 1.8,
                 }}
               />
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 6 }}>
-                <span style={{ fontSize: '0.75rem', color: '#8a744a', fontWeight: 700 }}>{text.length}/1000</span>
+                <span style={{ fontSize: '0.75rem', color: '#5834a0', fontWeight: 700 }}>{text.length}/1000</span>
                 {status === 'error' && (
-                  <span style={{ fontSize: '0.78rem', color: '#a4163f', fontWeight: 800 }}>
+                  <span style={{ fontSize: '0.78rem', color: '#a7132e', fontWeight: 800 }}>
                     تعذر الإرسال — حاول مرة أخرى
                   </span>
                 )}
@@ -149,7 +149,7 @@ const ContactOwnerModal = ({ onClose }) => {
                   border: 'none',
                   borderRadius: 12,
                   padding: '12px',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                   fontWeight: 900,
                   fontSize: '0.98rem',
                   cursor: text.trim() ? 'pointer' : 'not-allowed',
@@ -157,11 +157,11 @@ const ContactOwnerModal = ({ onClose }) => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   gap: 8,
-                  color: text.trim() ? '#fff' : '#6b6250',
+                  color: text.trim() ? '#fff' : '#513883',
                   background: text.trim()
-                    ? 'linear-gradient(135deg, #0f766e, #14b8a6)'
-                    : '#c9bd9f',
-                  boxShadow: text.trim() ? '0 8px 20px rgba(15,118,110,0.35)' : 'none',
+                    ? 'linear-gradient(135deg, #0b477a, #0f6fbd)'
+                    : '#a58fd9',
+                  boxShadow: text.trim() ? '0 8px 20px rgb(11, 71, 122,0.35)' : 'none',
                 }}
               >
                 <Send size={17} aria-hidden="true" />

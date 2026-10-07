@@ -35,27 +35,27 @@ const WhatsAppFloat = () => {
             display: 'flex',
             alignItems: 'center',
             gap: 10,
-            background: 'linear-gradient(145deg, #fffef9, #f7efdd)',
-            border: '1px solid rgba(184, 134, 11, 0.35)',
+            background: 'linear-gradient(145deg, #f7f6fb, #e6dff5)',
+            border: '1px solid rgb(64, 15, 180, 0.35)',
             borderRadius: 14,
             padding: '10px 14px',
-            boxShadow: '0 10px 30px rgba(120, 90, 20, 0.25)',
+            boxShadow: '0 10px 30px rgb(48, 14, 126, 0.25)',
             textDecoration: 'none',
             maxWidth: 240,
           }}
         >
           <span
             style={{
-              fontFamily: 'Tajawal, sans-serif',
+              fontFamily: 'Cairo, sans-serif',
               fontSize: 13,
               fontWeight: 700,
-              color: '#4a3a12',
+              color: '#200d4f',
               lineHeight: 1.5,
             }}
           >
             تحتاج مساعدة؟
             <br />
-            <span style={{ fontWeight: 400, color: '#7c6a3a' }}>
+            <span style={{ fontWeight: 400, color: '#45298d' }}>
               راسلنا واتساب وسنرد عليك بسرعة
             </span>
           </span>
@@ -72,7 +72,7 @@ const WhatsAppFloat = () => {
               cursor: 'pointer',
               padding: 4,
               display: 'flex',
-              color: '#9b8a5a',
+              color: '#603fb6',
             }}
           >
             <X size={14} />
@@ -92,11 +92,11 @@ const WhatsAppFloat = () => {
           width: 56,
           height: 56,
           borderRadius: '50%',
-          background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
+          background: 'linear-gradient(135deg, #20d8d7 0%, #0d5791 100%)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          boxShadow: '0 8px 24px rgba(18, 140, 126, 0.45)',
+          boxShadow: '0 8px 24px rgb(13, 87, 145, 0.45)',
           textDecoration: 'none',
         }}
       >

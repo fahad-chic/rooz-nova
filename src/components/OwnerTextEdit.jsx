@@ -61,14 +61,14 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
           width: 26,
           height: 26,
           borderRadius: 8,
-          border: '1.5px solid rgba(212,175,55,0.85)',
-          background: 'linear-gradient(135deg, #241b08, #3a2a10)',
-          color: '#e8c66a',
+          border: '1.5px solid rgb(89, 42, 225,0.85)',
+          background: 'linear-gradient(135deg, #0c0926, #100c31)',
+          color: '#8a63ef',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           cursor: 'pointer',
-          boxShadow: '0 3px 10px rgba(36,27,8,0.35)',
+          boxShadow: '0 3px 10px rgb(12, 9, 38,0.35)',
         }}
       >
         <Pencil size={12} strokeWidth={2.4} />
@@ -85,14 +85,14 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
             position: 'fixed',
             inset: 0,
             zIndex: 1700,
-            background: 'rgba(23,18,8,0.55)',
+            background: 'rgb(11, 8, 34,0.55)',
             backdropFilter: 'blur(4px)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             padding: '1rem',
             direction: 'rtl',
-            fontFamily: 'Tajawal, sans-serif',
+            fontFamily: 'Cairo, sans-serif',
           }}
         >
           <div
@@ -102,17 +102,17 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
             aria-label="تعديل النص"
             style={{
               width: 'min(430px, 100%)',
-              background: 'linear-gradient(160deg, #fffdf6, #f6eeda)',
-              border: '2px solid #c47a3a',
+              background: 'linear-gradient(160deg, #f7f6fb, #e3dbf5)',
+              border: '2px solid #7b29d5',
               borderRadius: 18,
-              boxShadow: '0 22px 55px rgba(60,40,10,0.35)',
+              boxShadow: '0 22px 55px rgb(15, 11, 48,0.35)',
               overflow: 'hidden',
             }}
           >
             <div
               style={{
-                background: 'linear-gradient(120deg, #45300f, #6d4c14)',
-                color: '#ffd978',
+                background: 'linear-gradient(120deg, #110c35, #320e73)',
+                color: '#a382f5',
                 padding: '12px 16px',
                 display: 'flex',
                 alignItems: 'center',
@@ -142,7 +142,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#ffd978',
+                  color: '#a382f5',
                   cursor: saving ? 'not-allowed' : 'pointer',
                   display: 'flex',
                   padding: 2,
@@ -166,13 +166,13 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
                   boxSizing: 'border-box',
                   resize: 'vertical',
                   borderRadius: 12,
-                  border: '1.5px solid #cdb27a',
-                  background: '#fffef9',
+                  border: '1.5px solid #8f6bdc',
+                  background: '#f7f6fb',
                   padding: '10px 12px',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                   fontSize: '0.92rem',
                   fontWeight: 600,
-                  color: '#0b0a09',
+                  color: '#0a071e',
                   outline: 'none',
                   lineHeight: 1.8,
                   opacity: saving ? 0.7 : 1
@@ -189,7 +189,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
                   border: 'none',
                   borderRadius: 12,
                   padding: '11px',
-                  fontFamily: 'Tajawal, sans-serif',
+                  fontFamily: 'Cairo, sans-serif',
                   fontWeight: 900,
                   fontSize: '0.92rem',
                   cursor: saving || !value.trim() ? 'not-allowed' : 'pointer',
@@ -198,8 +198,8 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
                   justifyContent: 'center',
                   gap: 7,
                   color: '#fff',
-                  background: 'linear-gradient(135deg, #c47a3a, #8f5528)',
-                  boxShadow: '0 6px 16px rgba(176,138,62,0.35)',
+                  background: 'linear-gradient(135deg, #7b29d5, #5b1c9b)',
+                  boxShadow: '0 6px 16px rgb(93, 43, 195,0.35)',
                   opacity: saving || !value.trim() ? 0.6 : 1,
                 }}
               >
