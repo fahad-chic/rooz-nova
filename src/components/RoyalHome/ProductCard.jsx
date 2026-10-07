@@ -166,11 +166,11 @@ const ProductCard = ({
   };
 
   const whatsappButtonStyle = {
-    background: 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
-    border: 'none',
-    borderRadius: 12,
-    color: '#fff',
-    fontWeight: 700,
+    background: '#d4a5a5',
+    border: '1px solid rgba(31, 17, 22, 0.10)',
+    borderRadius: 8,
+    color: '#1f1116',
+    fontWeight: 800,
     cursor: 'pointer',
     display: 'flex',
     alignItems: 'center',
@@ -214,11 +214,11 @@ const ProductCard = ({
     return (
       <div
         style={{
-          background: 'linear-gradient(145deg, #fdfbf7 0%, #f3e0dd 100%)',
-          borderRadius: 20,
+          background: '#ffffff',
+          borderRadius: 8,
           overflow: 'hidden',
-          border: '1px solid rgba(61, 15, 24, 0.28)',
-          boxShadow: '0 8px 30px rgba(61, 15, 24, 0.14)',
+          border: '1px solid rgba(31, 17, 22, 0.08)',
+          boxShadow: '0 2px 10px rgba(31, 17, 22, 0.05)',
           transition: 'all 0.3s ease',
           position: 'relative',
         }}
@@ -379,11 +379,11 @@ const ProductCard = ({
     return (
       <div
         style={{
-          background: 'linear-gradient(145deg, #fdfbf7 0%, #f3e0dd 100%)',
-          borderRadius: 20,
+          background: '#ffffff',
+          borderRadius: 8,
           overflow: 'hidden',
-          border: '1px solid rgba(61, 15, 24, 0.28)',
-          boxShadow: '0 8px 30px rgba(61, 15, 24, 0.14)',
+          border: '1px solid rgba(31, 17, 22, 0.08)',
+          boxShadow: '0 2px 10px rgba(31, 17, 22, 0.05)',
           display: 'flex',
           transition: 'all 0.3s ease',
         }}
@@ -487,7 +487,7 @@ const ProductCard = ({
               style={{
                 margin: '0 0 0.5rem',
                 fontSize: '1.2rem',
-                fontWeight: 700,
+                fontWeight: 400,
                 color: '#1f1116',
                 fontFamily: 'Tajawal, sans-serif',
                 wordBreak: 'break-word',

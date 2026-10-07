@@ -613,6 +613,14 @@ const CatalogPage = () => {
               justifyItems: currentDisplayStyle.center
                 ? 'center'
                 : 'stretch',
+
+              // بطاقات عرضية متناسقة: 3–4 في الصف للشاشات الكبيرة، ومنتجان للهاتف
+              ...(currentDisplayStyle.direction === 'column'
+                ? {}
+                : {
+                    gridTemplateColumns:
+                      'repeat(auto-fill, minmax(min(100%, 260px), 1fr))',
+                  }),
             }}
           >
             {products.map((product) => (

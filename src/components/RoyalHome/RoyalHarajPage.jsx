@@ -214,8 +214,8 @@ const normalizeSaudiPhone = (phone) => {
 
 const AdCard = ({
   ad,
-  onContact,
   isRegistered,
+  onContact,
   navigate,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -226,9 +226,9 @@ const AdCard = ({
       : ad.condition || ad.desc_condition || '';
 
   const getConditionColor = () => {
-    if (conditionText === 'جديد') return C.green;
-    if (conditionText === 'ممتازة') return '#4a3a3f';
-    return '#6b1d2f';
+    if (conditionText === 'جديد') return '#6b1d2f';
+    if (conditionText === 'ممتازة') return '#8a5560';
+    return '#8f2a40';
   };
 
   const imageSource = ad.images?.[0] || ad.image;
@@ -238,6 +238,19 @@ const AdCard = ({
     /^(https?:\/\/|data:image\/|\/)/i.test(imageSource);
 
   const locationText = ad.location || ad.city || 'غير محدد';
+  const sellerName =
+    ad.userName || ad.sellerName || ad.username || 'بائع موثوق';
+
+  const timeAgo = (() => {
+    const ms = ad.createdAt?.toMillis?.();
+    if (!ms) return '';
+    const mins = Math.floor((Date.now() - ms) / 60000);
+    if (mins < 1) return 'الآن';
+    if (mins < 60) return `قبل ${mins} دقيقة`;
+    const hrs = Math.floor(mins / 60);
+    if (hrs < 24) return `قبل ${hrs} ساعة`;
+    return `قبل ${Math.floor(hrs / 24)} يوم`;
+  })();
 
   const handleCardClick = () => {
     if (ad.id) {
@@ -294,35 +307,34 @@ const AdCard = ({
       onMouseLeave={() => setIsHovered(false)}
       style={{
         position: 'relative',
-        background: `linear-gradient(145deg, #ffffff 0%, #fdfbf7 100%)`,
-        borderRadius: 16,
+        background: '#ffffff',
+        borderRadius: 8,
         overflow: 'hidden',
         border: `1px solid ${
-          isHovered
-            ? `${C.gold}50`
-            : C.grayLight
+          isHovered ? 'rgba(107, 29, 47, 0.28)' : 'rgba(31, 17, 22, 0.08)'
         }`,
         transition: 'all 0.3s ease',
-        transform: isHovered
-          ? 'translateY(-4px)'
-          : 'translateY(0)',
+        transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
         boxShadow: isHovered
-          ? `0 12px 24px ${C.black}60, 0 0 20px ${C.gold}10`
-          : `0 4px 12px ${C.black}40`,
+          ? '0 10px 28px rgba(31, 17, 22, 0.10)'
+          : '0 2px 10px rgba(31, 17, 22, 0.05)',
         cursor: 'pointer',
-        opacity: isRegistered ? 1 : 0.85,
+        opacity: isRegistered ? 1 : 0.95,
+        display: 'flex',
+        alignItems: 'stretch',
+        minHeight: 152,
       }}
     >
       <OwnerEditBadge to="/owner-private-room" label="تعديل" />
+
+      {/* صورة السلعة (يمين البطاقة) */}
       <div
         style={{
-          height: '120px',
-          background: isImageUrl
-            ? C.grayLight
-            : `linear-gradient(135deg, ${C.grayLight} 0%, ${C.gray} 100%)`,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          width: '36%',
+          minWidth: 104,
+          maxWidth: 165,
+          flexShrink: 0,
+          background: '#f3e0dd',
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -341,11 +353,17 @@ const AdCard = ({
             }}
           />
         ) : (
-          <ShoppingBag
-            size={42}
-            color={C.gold}
-            strokeWidth={1.5}
-          />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <ShoppingBag size={38} color="#6b1d2f" strokeWidth={1.5} />
+          </div>
         )}
 
         {conditionText && (
@@ -355,167 +373,144 @@ const AdCard = ({
               top: 8,
               right: 8,
               background: getConditionColor(),
-              color: C.white,
-              padding: '2px 6px',
-              borderRadius: 12,
+              color: '#ffffff',
+              padding: '2px 8px',
+              borderRadius: 8,
               fontSize: '10px',
-              fontWeight: 600,
+              fontWeight: 700,
               fontFamily: 'Tajawal, sans-serif',
             }}
           >
             {conditionText}
           </div>
         )}
-
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: `linear-gradient(180deg, transparent 50%, ${C.black}aa 100%)`,
-            opacity: isHovered ? 1 : 0,
-            transition: 'opacity 0.3s ease',
-            pointerEvents: 'none',
-          }}
-        />
       </div>
 
-      <div style={{ padding: '10px' }}>
-        <h3
-          style={{
-            margin: '0 0 4px',
-            fontSize: '14px',
-            fontWeight: 700,
-            color: C.cream,
-            fontFamily: 'Tajawal, sans-serif',
-            lineHeight: 1.35,
-            display: '-webkit-box',
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden',
-          }}
-        >
-          {ad.title || 'إعلان بدون عنوان'}
-        </h3>
+      {/* تفاصيل الإعلان (المنتصف) */}
+      <div
+        style={{
+          flex: 1,
+          minWidth: 0,
+          padding: '0.85rem 1rem',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}
+      >
+        <div>
+          <h3
+            style={{
+              margin: '0 0 6px',
+              fontSize: '1.02rem',
+              fontWeight: 800,
+              color: '#1f1116',
+              fontFamily: 'Tajawal, sans-serif',
+              lineHeight: 1.35,
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+            }}
+          >
+            {ad.title || 'إعلان بدون عنوان'}
+          </h3>
+
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              gap: '0.45rem',
+              fontSize: '0.76rem',
+              fontWeight: 400,
+              color: '#8a5560',
+              fontFamily: 'Tajawal, sans-serif',
+            }}
+          >
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3 }}>
+              <UserRound size={12} aria-hidden="true" />
+              {sellerName}
+            </span>
+            <span aria-hidden="true">•</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3 }}>
+              <MapPin size={12} aria-hidden="true" />
+              {locationText}
+            </span>
+            {timeAgo && (
+              <>
+                <span aria-hidden="true">•</span>
+                <span>{timeAgo}</span>
+              </>
+            )}
+          </div>
+        </div>
 
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            marginBottom: '6px',
-            gap: 6,
+            gap: '0.6rem',
+            marginTop: '0.7rem',
           }}
         >
           <span
             style={{
-              fontSize: '13px',
-              fontWeight: 700,
-              color: C.gold,
-              fontFamily: 'Inter, sans-serif',
+              fontSize: '1.05rem',
+              fontWeight: 800,
+              color: '#6b1d2f',
+              fontFamily: 'Tajawal, sans-serif',
+              whiteSpace: 'nowrap',
             }}
           >
-            {Number(ad.price || 0).toLocaleString()} ر.س
+            {Number(ad.price || 0).toLocaleString()}{' '}
+            <span style={{ fontSize: '0.72rem', fontWeight: 700 }}>ر.س</span>
           </span>
 
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '3px',
-              fontSize: '12px',
-              color: '#8a5560',
-              minWidth: 0,
-            }}
-          >
-            <MapPin size={10} />
-
-            <span
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+            <button
+              type="button"
+              onClick={handleCall}
+              aria-label="اتصال"
               style={{
-                display: '-webkit-box',
-                WebkitLineClamp: 1,
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden',
-                lineHeight: 1.25,
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 34,
+                height: 34,
+                borderRadius: 8,
+                background: '#ffffff',
+                border: '1px solid rgba(107, 29, 47, 0.35)',
+                color: '#6b1d2f',
+                cursor: 'pointer',
               }}
             >
-              {locationText}
-            </span>
+              <Phone size={15} color="#6b1d2f" aria-hidden="true" />
+            </button>
+
+            <button
+              type="button"
+              onClick={handleWhatsApp}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 5,
+                background: '#d4a5a5',
+                border: '1px solid rgba(31, 17, 22, 0.10)',
+                borderRadius: 8,
+                padding: '0.45rem 1.05rem',
+                cursor: 'pointer',
+                color: '#1f1116',
+                fontSize: '0.82rem',
+                fontWeight: 800,
+                fontFamily: 'Tajawal, sans-serif',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              <MessageCircle size={14} color="#1f1116" aria-hidden="true" />
+              تواصل
+            </button>
           </div>
-        </div>
-
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '6px',
-            marginTop: '8px',
-          }}
-        >
-          <button
-            type="button"
-            onClick={handleWhatsApp}
-            style={{
-              background:
-                'linear-gradient(135deg, #4a3a3f 0%, #6b1d2f 100%)',
-              border: 'none',
-              borderRadius: 8,
-              padding: '6px 4px',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '3px',
-              fontFamily: 'Tajawal, sans-serif',
-            }}
-          >
-            <MessageCircle
-              size={11}
-              color="white"
-            />
-
-            <span
-              style={{
-                color: 'white',
-                fontSize: '10px',
-                fontWeight: 600,
-              }}
-            >
-              واتساب
-            </span>
-          </button>
-
-          <button
-            type="button"
-            onClick={handleCall}
-            style={{
-              background:
-                'linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 100%)',
-              border: 'none',
-              borderRadius: 8,
-              padding: '6px 4px',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '3px',
-              fontFamily: 'Tajawal, sans-serif',
-            }}
-          >
-            <Phone
-              size={12}
-              color={C.black}
-            />
-
-            <span
-              style={{
-                color: C.black,
-                fontSize: '11px',
-                fontWeight: 700,
-              }}
-            >
-              اتصال
-            </span>
-          </button>
         </div>
       </div>
     </div>
@@ -1234,7 +1229,7 @@ const RoyalHarajPage = () => {
         style={{
           background: `linear-gradient(180deg, ${C.darkBg} 0%, #fdfbf7 100%)`,
           borderBottom: `1px solid ${C.gold}30`,
-          padding: '1rem',
+          padding: '1.1rem 1rem 1.25rem',
           position: 'sticky',
           top: 'var(--rooz-top-offset, 0px)',
           zIndex: 100,
@@ -1244,70 +1239,95 @@ const RoyalHarajPage = () => {
       >
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem',
-            maxWidth: '600px',
+            maxWidth: '820px',
             width: '100%',
             margin: '0 auto',
-            overflow: 'hidden',
+            direction: 'rtl',
           }}
         >
-          {/* زر الرجوع العام من App فقط — لتجنب تداخل الرجوع */}
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '0.75rem',
-              flex: 1,
+              justifyContent: 'space-between',
+              gap: '1rem',
             }}
           >
-            <div
-              style={{
-                width: 40,
-                height: 40,
-                background: `linear-gradient(135deg, ${C.gold} 0%, ${C.goldDark} 100%)`,
-                borderRadius: 12,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: `0 4px 15px ${C.gold}40`,
-              }}
-            >
-              <ShoppingBag
-                size={20}
-                color={C.black}
-              />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', minWidth: 0 }}>
+              <div
+                style={{
+                  width: 46,
+                  height: 46,
+                  flexShrink: 0,
+                  background: `linear-gradient(135deg, ${C.gold} 0%, ${C.goldDark} 100%)`,
+                  borderRadius: 8,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: `0 4px 15px ${C.gold}40`,
+                }}
+              >
+                <ShoppingBag size={22} color="#ffffff" />
+              </div>
+              <div style={{ minWidth: 0 }}>
+                <h1
+                  style={{
+                    margin: 0,
+                    fontSize: 'clamp(1.1rem, 3.4vw, 1.6rem)',
+                    fontWeight: 800,
+                    color: '#1f1116',
+                    fontFamily: 'Tajawal, sans-serif',
+                    lineHeight: 1.25,
+                  }}
+                >
+                  منصة حراج الفخامة والتميز
+                </h1>
+                <p
+                  style={{
+                    margin: '4px 0 0',
+                    fontSize: 'clamp(0.74rem, 2.4vw, 0.9rem)',
+                    fontWeight: 400,
+                    color: '#8a5560',
+                    fontFamily: 'Tajawal, sans-serif',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  هنا تلتقي النخبة لبيع وشراء أرقى السلع والمنتجات بكل موثوقية وسهولة
+                </p>
+              </div>
             </div>
 
-            <h1
+            <button
+              type="button"
+              className="haraj-cta-banner haraj-add-ad-btn"
+              onClick={() => {
+                if (!harajUser) {
+                  setShowHarajAuth(true);
+                } else {
+                  navigate('/haraj/post');
+                }
+              }}
               style={{
-                margin: 0,
-                fontSize: '1.1rem',
-                fontWeight: 800,
-                color: C.cream,
-                fontFamily:
-                  'Tajawal, sans-serif',
-                display: 'flex',
+                flexShrink: 0,
+                display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px',
+                gap: 7,
+                background: '#6b1d2f',
+                border: 'none',
+                borderRadius: 8,
+                padding: '0.7rem 1.15rem',
+                cursor: 'pointer',
+                color: '#ffffff',
+                fontSize: '0.88rem',
+                fontWeight: 800,
+                fontFamily: 'Tajawal, sans-serif',
+                boxShadow: '0 8px 22px rgba(107, 29, 47, 0.28)',
+                whiteSpace: 'nowrap',
               }}
             >
-              <img fetchPriority="high"
-                src={LOGO_SRC}
-                alt="أناقة ROOZ"
-                style={{
-                  width: 48,
-                  height: 48,
-                  objectFit: 'contain',
-                  clipPath: 'circle(48%)',
-                  background: '#1f1116',
-                  borderRadius: '50%',
-                  border: `2px solid ${C.gold}`,
-                  boxShadow: `0 0 12px ${C.gold}60`,
-                }}
-              />
-            </h1>
+              <Plus size={17} color="#ffffff" aria-hidden="true" />
+              أضف إعلانك الآن
+            </button>
           </div>
         </div>
       </header>
@@ -1315,71 +1335,103 @@ const RoyalHarajPage = () => {
       {/* لافتات حراج الإبداعية — شريط متحرك ملوّن يمين ← يسار */}
       {/* رسالة البث تظهر في الصفحة الرئيسية فقط (كما طلب المستخدم) — لا شريط بث في الحراج */}
 
-      {/* لافتة الدعوة للإعلان — بطاقة متدرجة ملفتة */}
+      {/* لافتة «أعلن معنا هنا» الموحدة */}
       <div
         style={{
-          maxWidth: '600px',
+          maxWidth: '820px',
           width: '100%',
           margin: '0 auto',
-          padding: '0.5rem 0.75rem 0',
+          padding: '0.85rem 0.75rem 0',
           boxSizing: 'border-box',
         }}
       >
-        <button
-          type="button"
-          className="haraj-cta-banner"
-          onClick={() => {
-            // لا يمكن الإعلان دون تسجيل: فتح نافذة الدخول/التسجيل أولاً
-            if (!harajUser) {
-              setShowHarajAuth(true);
-            } else {
-              navigate('/haraj/post');
-            }
-          }}
+        <div
+          className="haraj-ad-banner"
           style={{
-            width: '100%',
-            cursor: 'pointer',
-            borderRadius: 16,
-            padding: '1rem 1.25rem',
+            position: 'relative',
+            overflow: 'hidden',
+            background: '#6b1d2f',
+            borderRadius: 8,
+            padding: '1.4rem 1.5rem',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.85rem',
+            justifyContent: 'space-between',
+            gap: '1.25rem',
             direction: 'rtl',
-            color: '#ffffff',
-            fontFamily: 'Tajawal, sans-serif',
-            textAlign: 'right',
+            flexWrap: 'wrap',
+            boxShadow: '0 12px 30px rgba(107, 29, 47, 0.22)',
           }}
         >
           <span
+            aria-hidden="true"
             style={{
-              flexShrink: 0,
-              width: 46,
-              height: 46,
+              position: 'absolute',
+              insetInlineStart: -30,
+              insetBlockStart: -30,
+              width: 110,
+              height: 110,
               borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgba(255, 255, 255,0.16)',
-              border: '1.5px solid rgba(61, 15, 24,0.7)',
+              border: '2px solid rgba(212, 165, 165, 0.55)',
+            }}
+          />
+          <span
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              insetInlineEnd: -24,
+              insetBlockEnd: -34,
+              width: 96,
+              height: 96,
+              borderRadius: '50%',
+              border: '2px solid rgba(212, 165, 165, 0.45)',
+            }}
+          />
+          <div style={{ position: 'relative', flex: 1, minWidth: 220 }}>
+            <div
+              style={{
+                color: '#ffffff',
+                fontSize: 'clamp(1.05rem, 3vw, 1.35rem)',
+                fontWeight: 800,
+                fontFamily: 'Tajawal, sans-serif',
+                lineHeight: 1.4,
+              }}
+            >
+              مساحتك الإعلانية هنا تنبض بالفخامة!
+            </div>
+            <div
+              style={{
+                color: '#d4a5a5',
+                fontSize: 'clamp(0.78rem, 2.4vw, 0.9rem)',
+                fontWeight: 400,
+                fontFamily: 'Tajawal, sans-serif',
+                lineHeight: 1.6,
+                marginTop: 6,
+              }}
+            >
+              تواصل مع آلاف الزوار المهتمين بمنتجاتك، واجعل لعلامتك التجارية حضوراً بطلاً.
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => navigate('/contact')}
+            style={{
+              position: 'relative',
+              flexShrink: 0,
+              background: '#fdfbf7',
+              border: 'none',
+              borderRadius: 8,
+              padding: '0.8rem 1.4rem',
+              cursor: 'pointer',
+              color: '#1f1116',
+              fontSize: '0.9rem',
+              fontWeight: 800,
+              fontFamily: 'Tajawal, sans-serif',
+              whiteSpace: 'nowrap',
             }}
           >
-            <Sparkles size={22} color="#d4a5a5" aria-hidden="true" />
-          </span>
-          <span style={{ flex: 1, minWidth: 0 }}>
-            <span style={{ display: 'block', fontWeight: 900, fontSize: '1.02rem', textShadow: '0 1px 3px rgba(31, 17, 22,0.3)' }}>
-              أعلن عن سلعتك الآن — مجاناً
-            </span>
-            <span style={{ display: 'block', fontWeight: 600, fontSize: '0.8rem', opacity: 0.92, marginTop: 2 }}>
-              إعلانك يُراجع ويُنشر أمام آلاف الزوار خلال وقت قصير
-            </span>
-          </span>
-          <Plus
-            size={20}
-            color="#d4a5a5"
-            aria-hidden="true"
-            style={{ flexShrink: 0 }}
-          />
-        </button>
+            تواصل للإعلان معنا
+          </button>
+        </div>
       </div>
 
       <main
