@@ -1500,62 +1500,7 @@ const RoyalHarajPage = () => {
           </div>
         )}
 
-        <button
-          type="button"
-          onClick={() => {
-            if (!harajUser) {
-              openAuth();
-            } else {
-              navigate('/haraj/post');
-            }
-          }}
-          style={{
-            width: '70%',
-            height: '55px',
-            background: `linear-gradient(135deg, ${C.gold} 0%, ${C.goldDark} 50%, ${C.gold} 100%)`,
-            backgroundSize: '200% 200%',
-            border: 'none',
-            borderRadius: 12,
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '0.6rem',
-            margin: '0 auto 1.5rem',
-            boxShadow: `0 6px 20px ${C.gold}40`,
-            animation:
-              'gradient 3s ease infinite',
-            position: 'relative',
-            overflow: 'hidden',
-          }}
-        >
-          <div
-            className="shimmer"
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: `linear-gradient(90deg, transparent, ${C.white}15, transparent)`,
-            }}
-          />
 
-          <Plus
-            size={22}
-            color={C.black}
-          />
-
-          <span
-            style={{
-              fontSize: '17px',
-              fontWeight: 800,
-              color: C.black,
-              fontFamily:
-                'Tajawal, sans-serif',
-              position: 'relative',
-            }}
-          >
-            ضع إعلانك هنا
-          </span>
-        </button>
 
         <div
           style={{
