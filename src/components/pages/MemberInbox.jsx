@@ -134,7 +134,7 @@ const MemberInbox = () => {
           border: '2px solid #6b1d2f',
           borderRadius: 20,
           padding: '0.5rem',
-          boxShadow: '0 12px 40px rgb(1f1116,0.18)',
+          boxShadow: '0 12px 40px rgba(31, 17, 22,0.18)',
         }}
       >
         <div
@@ -249,7 +249,7 @@ const MemberInbox = () => {
               background: text.trim() && !sending
                 ? 'linear-gradient(135deg,#1f1116,#6b1d2f)'
                 : '#8a5560',
-              boxShadow: text.trim() && !sending ? '0 8px 20px rgb(1f1116,0.3)' : 'none',
+              boxShadow: text.trim() && !sending ? '0 8px 20px rgba(31, 17, 22,0.3)' : 'none',
             }}
           >
             <Send size={16} aria-hidden="true" />

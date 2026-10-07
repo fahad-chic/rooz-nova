@@ -61,14 +61,14 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
           width: 26,
           height: 26,
           borderRadius: 8,
-          border: '1.5px solid rgb(6b1d2f,0.85)',
+          border: '1.5px solid rgba(61, 15, 24,0.85)',
           background: 'linear-gradient(135deg, #1f1116, #1f1116)',
           color: '#6b1d2f',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           cursor: 'pointer',
-          boxShadow: '0 3px 10px rgb(1f1116,0.35)',
+          boxShadow: '0 3px 10px rgba(31, 17, 22,0.35)',
         }}
       >
         <Pencil size={12} strokeWidth={2.4} />
@@ -85,7 +85,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
             position: 'fixed',
             inset: 0,
             zIndex: 1700,
-            background: 'rgb(1f1116,0.55)',
+            background: 'rgba(31, 17, 22,0.55)',
             backdropFilter: 'blur(4px)',
             display: 'flex',
             alignItems: 'center',
@@ -105,7 +105,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
               background: 'linear-gradient(160deg, #fdfbf7, #fdfbf7)',
               border: '2px solid #6b1d2f',
               borderRadius: 18,
-              boxShadow: '0 22px 55px rgb(1f1116,0.35)',
+              boxShadow: '0 22px 55px rgba(31, 17, 22,0.35)',
               overflow: 'hidden',
             }}
           >
@@ -199,7 +199,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
                   gap: 7,
                   color: '#fff',
                   background: 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
-                  boxShadow: '0 6px 16px rgb(6b1d2f,0.35)',
+                  boxShadow: '0 6px 16px rgba(61, 15, 24,0.35)',
                   opacity: saving || !value.trim() ? 0.6 : 1,
                 }}
               >

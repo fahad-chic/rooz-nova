@@ -175,10 +175,10 @@ const AIChatWidget = ({
           minHeight: 400,
           background:
             'linear-gradient(145deg, #fdfbf7 0%, #fdfbf7 100%)',
-          border: '1px solid rgb(6b1d2f, 0.24)',
+          border: '1px solid rgba(61, 15, 24, 0.24)',
           borderRadius: 22,
           boxShadow:
-            '0 24px 70px rgb(1f1116, 0.22), 0 5px 18px rgb(1f1116, 0.08)',
+            '0 24px 70px rgba(31, 17, 22, 0.22), 0 5px 18px rgba(31, 17, 22, 0.08)',
           display: 'flex',
           flexDirection: 'column',
           zIndex: 999,
@@ -197,7 +197,7 @@ const AIChatWidget = ({
             display: 'flex',
             alignItems: 'center',
             gap: '0.7rem',
-            boxShadow: '0 3px 14px rgb(1f1116, 0.10)',
+            boxShadow: '0 3px 14px rgba(31, 17, 22, 0.10)',
           }}
         >
           <div
@@ -206,8 +206,8 @@ const AIChatWidget = ({
               height: 40,
               borderRadius: 13,
               background: 'linear-gradient(145deg, #1f1116 0%, #1f1116 55%, #1f1116 100%)',
-              border: '1.5px solid rgb(d4a5a5, 0.85)',
-              boxShadow: '0 4px 12px rgb(1f1116,0.45), inset 0 1px 1px rgb(ffffff,0.28)',
+              border: '1.5px solid rgba(212, 165, 165, 0.85)',
+              boxShadow: '0 4px 12px rgba(31, 17, 22,0.45), inset 0 1px 1px rgba(255, 255, 255,0.28)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -228,7 +228,7 @@ const AIChatWidget = ({
                 WebkitBackgroundClip: 'text',
                 backgroundClip: 'text',
                 color: 'transparent',
-                textShadow: '0 1px 8px rgb(6b1d2f, 0.25)',
+                textShadow: '0 1px 8px rgba(61, 15, 24, 0.25)',
               }}
             >
               المساعد الذكي
@@ -238,7 +238,7 @@ const AIChatWidget = ({
               style={{
                 margin: '0.12rem 0 0',
                 fontSize: '0.7rem',
-                color: 'rgb(6b1d2f, 0.85)',
+                color: 'rgba(61, 15, 24, 0.85)',
                 fontWeight: 700,
                 opacity: 1,
               }}
@@ -257,8 +257,8 @@ const AIChatWidget = ({
               width: 34,
               height: 34,
               borderRadius: 10,
-              border: '1px solid rgb(ffffff,0.28)',
-              background: 'rgb(ffffff,0.12)',
+              border: '1px solid rgba(255, 255, 255,0.28)',
+              background: 'rgba(255, 255, 255,0.12)',
               color: '#fdfbf7',
               cursor: isLoading ? 'not-allowed' : 'pointer',
               display: 'flex',
@@ -280,8 +280,8 @@ const AIChatWidget = ({
               width: 34,
               height: 34,
               borderRadius: 10,
-              border: '1px solid rgb(ffffff,0.28)',
-              background: 'rgb(ffffff,0.12)',
+              border: '1px solid rgba(255, 255, 255,0.28)',
+              background: 'rgba(255, 255, 255,0.12)',
               color: '#fdfbf7',
               cursor: 'pointer',
               display: 'flex',
@@ -348,12 +348,12 @@ const AIChatWidget = ({
                     borderTopLeftRadius: isUser ? 5 : 16,
                     background: isUser
                       ? 'linear-gradient(145deg, #6b1d2f, #6b1d2f)'
-                      : 'rgb(ffffff,0.82)',
+                      : 'rgba(255, 255, 255,0.82)',
                     border: isUser
-                      ? '1px solid rgb(6b1d2f, 0.2)'
-                      : '1px solid rgb(6b1d2f, 0.13)',
+                      ? '1px solid rgba(61, 15, 24, 0.2)'
+                      : '1px solid rgba(61, 15, 24, 0.13)',
                     color: isUser ? '#fdfbf7' : '#1f1116',
-                    boxShadow: '0 4px 13px rgb(1f1116, 0.06)',
+                    boxShadow: '0 4px 13px rgba(31, 17, 22, 0.06)',
                   }}
                 >
                   <p
@@ -376,7 +376,7 @@ const AIChatWidget = ({
                       height: 32,
                       borderRadius: 10,
                       flexShrink: 0,
-                      background: 'rgb(6b1d2f, 0.12)',
+                      background: 'rgba(61, 15, 24, 0.12)',
                       color: '#6b1d2f',
                       display: 'flex',
                       alignItems: 'center',
@@ -420,8 +420,8 @@ const AIChatWidget = ({
                   padding: '0.7rem 0.9rem',
                   borderRadius: 15,
                   borderTopLeftRadius: 5,
-                  background: 'rgb(ffffff,0.82)',
-                  border: '1px solid rgb(6b1d2f, 0.13)',
+                  background: 'rgba(255, 255, 255,0.82)',
+                  border: '1px solid rgba(61, 15, 24, 0.13)',
                   display: 'flex',
                   alignItems: 'center',
                   gap: 7,
@@ -450,8 +450,8 @@ const AIChatWidget = ({
           style={{
             flexShrink: 0,
             padding: '0.8rem',
-            borderTop: '1px solid rgb(6b1d2f, 0.16)',
-            background: 'rgb(ffffff,0.55)',
+            borderTop: '1px solid rgba(61, 15, 24, 0.16)',
+            background: 'rgba(255, 255, 255,0.55)',
           }}
         >
           <div
@@ -460,10 +460,10 @@ const AIChatWidget = ({
               alignItems: 'center',
               gap: '0.55rem',
               background: '#fdfbf7',
-              border: '1px solid rgb(6b1d2f, 0.20)',
+              border: '1px solid rgba(61, 15, 24, 0.20)',
               borderRadius: 14,
               padding: '0.35rem',
-              boxShadow: '0 4px 14px rgb(1f1116, 0.05)',
+              boxShadow: '0 4px 14px rgba(31, 17, 22, 0.05)',
             }}
           >
             <input

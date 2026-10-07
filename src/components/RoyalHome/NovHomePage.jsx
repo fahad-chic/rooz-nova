@@ -336,7 +336,7 @@ const NovHomePage = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgb(1f1116,0.55)',
+            background: 'rgba(31, 17, 22,0.55)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -348,13 +348,13 @@ const NovHomePage = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg,#ffffff,#fdfbf7)',
-              border: '1px solid rgb(6b1d2f,0.4)',
+              border: '1px solid rgba(61, 15, 24,0.4)',
               borderRadius: 18,
               padding: '1.2rem 1rem',
               maxWidth: 340,
               width: '100%',
               textAlign: 'right',
-              boxShadow: '0 18px 45px rgb(1f1116,0.35)',
+              boxShadow: '0 18px 45px rgba(31, 17, 22,0.35)',
               fontFamily: 'Tajawal,sans-serif',
             }}
           >
@@ -367,7 +367,7 @@ const NovHomePage = () => {
                 onClick={() => setShowAddHelp(false)}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(1f1116,0.06)',
+                  background: 'rgba(31, 17, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,

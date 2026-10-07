@@ -123,9 +123,9 @@ export const BranchesManagement = () => {
           margin-bottom: 1rem;
           padding: 1rem 1.1rem;
           background: #1f1116;
-          border: 1px solid rgb(6b1d2f,0.25);
+          border: 1px solid rgba(61, 15, 24,0.25);
           border-radius: 16px;
-          box-shadow: 0 2px 12px rgb(ffffff,0.05);
+          box-shadow: 0 2px 12px rgba(255, 255, 255,0.05);
         }
 
         .management-title {
@@ -150,10 +150,10 @@ export const BranchesManagement = () => {
 
         .table-wrapper {
           background: #111;
-          border: 1px solid rgb(6b1d2f,0.25);
+          border: 1px solid rgba(61, 15, 24,0.25);
           border-radius: 16px;
           overflow-x: auto;
-          box-shadow: 0 2px 12px rgb(ffffff,0.05);
+          box-shadow: 0 2px 12px rgba(255, 255, 255,0.05);
         }
 
         table {
@@ -173,7 +173,7 @@ export const BranchesManagement = () => {
 
         td {
           padding: 0.8rem;
-          border-bottom: 1px solid rgb(ffffff,0.05);
+          border-bottom: 1px solid rgba(255, 255, 255,0.05);
         }
 
         .branch-name {
@@ -183,7 +183,7 @@ export const BranchesManagement = () => {
 
         .type-badge {
           display: inline-block;
-          background: rgb(6b1d2f,0.15);
+          background: rgba(61, 15, 24,0.15);
           color: #6b1d2f;
           padding: 0.24rem 0.6rem;
           border-radius: 999px;
@@ -199,9 +199,9 @@ export const BranchesManagement = () => {
           font-weight: 700;
         }
 
-        .status-active { background: rgb(4a3a3f,0.2); color: #4a3a3f; }
-        .status-warning { background: rgb(6b1d2f,0.2); color: #6b1d2f; }
-        .status-danger { background: rgb(8f2a40,0.2); color: #8f2a40; }
+        .status-active { background: rgba(31, 17, 22,0.2); color: #4a3a3f; }
+        .status-warning { background: rgba(61, 15, 24,0.2); color: #6b1d2f; }
+        .status-danger { background: rgba(61, 15, 24,0.2); color: #8f2a40; }
 
         .action-cell {
           display: flex;
@@ -221,15 +221,15 @@ export const BranchesManagement = () => {
           font-size: 0.8rem;
         }
 
-        .action-btn-edit { background: rgb(6b1d2f,0.15); color: #fdfbf7; }
-        .action-btn-delete { background: rgb(8f2a40,0.16); color: #fbf0f0; }
-        .action-btn-share { background: rgb(ffffff,0.08); color: #fff; }
-        .action-btn-copy { background: rgb(ffffff,0.08); color: #fff; }
+        .action-btn-edit { background: rgba(61, 15, 24,0.15); color: #fdfbf7; }
+        .action-btn-delete { background: rgba(61, 15, 24,0.16); color: #fbf0f0; }
+        .action-btn-share { background: rgba(255, 255, 255,0.08); color: #fff; }
+        .action-btn-copy { background: rgba(255, 255, 255,0.08); color: #fff; }
 
         .modal-overlay {
           position: fixed;
           inset: 0;
-          background: rgb(1f1116,0.6);
+          background: rgba(31, 17, 22,0.6);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -239,12 +239,12 @@ export const BranchesManagement = () => {
 
         .modal {
           background: #1f1116;
-          border: 1px solid rgb(6b1d2f,0.25);
+          border: 1px solid rgba(61, 15, 24,0.25);
           border-radius: 16px;
           padding: 1.1rem;
           max-width: 500px;
           width: 100%;
-          box-shadow: 0 2px 12px rgb(ffffff,0.05);
+          box-shadow: 0 2px 12px rgba(255, 255, 255,0.05);
         }
 
         .modal-header {
@@ -269,7 +269,7 @@ export const BranchesManagement = () => {
         input, select {
           padding: 0.6rem;
           border-radius: 8px;
-          border: 1px solid rgb(ffffff,0.1);
+          border: 1px solid rgba(255, 255, 255,0.1);
           background: #1f1116;
           color: #fff;
           font-size: 0.9rem;
@@ -295,7 +295,7 @@ export const BranchesManagement = () => {
         }
 
         .modal-btn-cancel {
-          background: rgb(ffffff,0.08);
+          background: rgba(255, 255, 255,0.08);
           color: #f3e0dd;
         }
       `}</style>
@@ -393,7 +393,7 @@ export const BranchesManagement = () => {
                 onClick={() => { setShowForm(false); setEditingBranch(null); }}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(1f1116,0.06)',
+                  background: 'rgba(31, 17, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,

@@ -105,11 +105,11 @@ const RoyalHomePage = () => {
           }
           .rh-icon-card {
             background: linear-gradient(145deg, #fdfbf7, #fdfbf7);
-            border: 1.5px solid rgb(6b1d2f,0.42);
+            border: 1.5px solid rgba(61, 15, 24,0.42);
             border-radius: 14px;
             padding: 0.65rem 0.4rem;
             text-align: center;
-            box-shadow: 0 3px 12px rgb(1f1116,0.08);
+            box-shadow: 0 3px 12px rgba(31, 17, 22,0.08);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             min-height: 88px;
             display: flex;
@@ -226,7 +226,7 @@ const RoyalHomePage = () => {
               border: '2.2px double #6b1d2f',
               borderRadius: '50px',
               padding: '3px 11px',
-              boxShadow: 'inset 0 0 3px rgb(6b1d2f,0.2), 0 1px 3px rgb(1f1116,0.05)',
+              boxShadow: 'inset 0 0 3px rgba(61, 15, 24,0.2), 0 1px 3px rgba(31, 17, 22,0.05)',
               backgroundColor: 'transparent',
               whiteSpace: 'nowrap'
             }}
@@ -277,7 +277,7 @@ const RoyalHomePage = () => {
                 fontSize: '0.58rem',
                 padding: '0.22rem 0.3rem',
                 borderRadius: 6,
-                border: '1px solid rgb(6b1d2f,0.35)',
+                border: '1px solid rgba(61, 15, 24,0.35)',
                 background: '#fff',
                 textAlign: 'center',
                 marginBottom: 2,
@@ -332,7 +332,7 @@ const RoyalHomePage = () => {
             fontSize: '0.92rem',
             fontFamily: 'inherit',
             cursor: 'pointer',
-            boxShadow: '0 2px 10px rgb(6b1d2f,0.15)',
+            boxShadow: '0 2px 10px rgba(61, 15, 24,0.15)',
             marginBottom: sectionsPanelOpen ? 10 : 0,
           }}
         >
@@ -384,8 +384,8 @@ const RoyalHomePage = () => {
                       gap: 4,
                       padding: '0.4rem 0.65rem',
                       borderRadius: 10,
-                      border: '1.5px solid rgb(6b1d2f,0.45)',
-                      background: isOpen ? 'rgb(6b1d2f,0.35)' : '#fdfbf7',
+                      border: '1.5px solid rgba(61, 15, 24,0.45)',
+                      background: isOpen ? 'rgba(61, 15, 24,0.35)' : '#fdfbf7',
                       color: '#1f1116',
                       fontWeight: 800,
                       fontSize: '0.75rem',
@@ -560,7 +560,7 @@ const RoyalHomePage = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgb(1f1116,0.55)',
+            background: 'rgba(31, 17, 22,0.55)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -572,13 +572,13 @@ const RoyalHomePage = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg,#fdfbf7,#fdfbf7)',
-              border: '1px solid rgb(6b1d2f,0.45)',
+              border: '1px solid rgba(61, 15, 24,0.45)',
               borderRadius: 16,
               padding: '1.2rem 1rem',
               maxWidth: 340,
               width: '100%',
               textAlign: 'right',
-              boxShadow: '0 18px 45px rgb(1f1116,0.35)',
+              boxShadow: '0 18px 45px rgba(31, 17, 22,0.35)',
               fontFamily: 'Tajawal,sans-serif'
             }}
           >
@@ -607,7 +607,7 @@ const RoyalHomePage = () => {
                 onClick={() => setShowAddHelp(false)}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(1f1116,0.06)',
+                  background: 'rgba(31, 17, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,

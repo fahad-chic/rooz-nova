@@ -54,7 +54,7 @@ const ContactOwnerModal = ({ onClose }) => {
         position: 'fixed',
         inset: 0,
         zIndex: 1600,
-        background: 'rgb(1f1116,0.55)',
+        background: 'rgba(31, 17, 22,0.55)',
         backdropFilter: 'blur(4px)',
         display: 'flex',
         alignItems: 'center',
@@ -73,7 +73,7 @@ const ContactOwnerModal = ({ onClose }) => {
           background: 'linear-gradient(160deg, #fdfbf7, #fdfbf7)',
           border: '2px solid #6b1d2f',
           borderRadius: 20,
-          boxShadow: '0 24px 60px rgb(1f1116,0.35)',
+          boxShadow: '0 24px 60px rgba(31, 17, 22,0.35)',
           overflow: 'hidden',
         }}
       >
@@ -161,7 +161,7 @@ const ContactOwnerModal = ({ onClose }) => {
                   background: text.trim()
                     ? 'linear-gradient(135deg, #1f1116, #6b1d2f)'
                     : '#8a5560',
-                  boxShadow: text.trim() ? '0 8px 20px rgb(1f1116,0.35)' : 'none',
+                  boxShadow: text.trim() ? '0 8px 20px rgba(31, 17, 22,0.35)' : 'none',
                 }}
               >
                 <Send size={17} aria-hidden="true" />

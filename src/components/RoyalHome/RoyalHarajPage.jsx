@@ -557,7 +557,7 @@ const SectionCard = ({
           : 'translateY(0)',
         boxShadow: isHovered
           ? `0 8px 20px ${section.color}20`
-          : '0 2px 6px rgb(1f1116,0.2)',
+          : '0 2px 6px rgba(31, 17, 22,0.2)',
         width: '100%',
         height: '70px',
         boxSizing: 'border-box',
@@ -1225,7 +1225,7 @@ const RoyalHarajPage = () => {
         .haraj-page .haraj-cta-banner {
           background: linear-gradient(120deg, #6b1d2f 0%, #6b1d2f 55%, #6b1d2f 100%) !important;
           border: none !important;
-          box-shadow: 0 10px 28px rgb(6b1d2f, 0.35), inset 0 1px 0 rgb(ffffff, 0.25) !important;
+          box-shadow: 0 10px 28px rgba(61, 15, 24, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
           font-weight: 800 !important;
         }
       `}</style>
@@ -1359,14 +1359,14 @@ const RoyalHarajPage = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              background: 'rgb(ffffff,0.16)',
-              border: '1.5px solid rgb(6b1d2f,0.7)',
+              background: 'rgba(255, 255, 255,0.16)',
+              border: '1.5px solid rgba(61, 15, 24,0.7)',
             }}
           >
             <Sparkles size={22} color="#d4a5a5" aria-hidden="true" />
           </span>
           <span style={{ flex: 1, minWidth: 0 }}>
-            <span style={{ display: 'block', fontWeight: 900, fontSize: '1.02rem', textShadow: '0 1px 3px rgb(1f1116,0.3)' }}>
+            <span style={{ display: 'block', fontWeight: 900, fontSize: '1.02rem', textShadow: '0 1px 3px rgba(31, 17, 22,0.3)' }}>
               أعلن عن سلعتك الآن — مجاناً
             </span>
             <span style={{ display: 'block', fontWeight: 600, fontSize: '0.8rem', opacity: 0.92, marginTop: 2 }}>
@@ -1394,7 +1394,7 @@ const RoyalHarajPage = () => {
         {!harajUser && (
           <div
             style={{
-              background: `linear-gradient(145deg, rgb(fdfbf7,0.95) 0%, rgb(fdfbf7,0.9) 100%)`,
+              background: `linear-gradient(145deg, rgba(253, 251, 247,0.95) 0%, rgba(253, 251, 247,0.9) 100%)`,
               border: `1px solid ${C.gold}30`,
               borderRadius: 12,
               padding: '1rem',
@@ -1611,7 +1611,7 @@ const RoyalHarajPage = () => {
               fontSize: '0.95rem',
               fontWeight: 900,
               fontFamily: 'Tajawal, sans-serif',
-              boxShadow: '0 2px 10px rgb(6b1d2f,0.15)',
+              boxShadow: '0 2px 10px rgba(61, 15, 24,0.15)',
             }}
           >
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
@@ -1747,7 +1747,7 @@ const RoyalHarajPage = () => {
                 fontWeight: 800,
                 fontFamily:
                   'Tajawal, sans-serif',
-                boxShadow: '0 6px 18px rgb(6b1d2f,0.25)',
+                boxShadow: '0 6px 18px rgba(61, 15, 24,0.25)',
               }}
             >
               عرض المزيد من الإعلانات (
@@ -1797,7 +1797,7 @@ const RoyalHarajPage = () => {
                 borderRadius: 12,
                 padding: '0.55rem 0.75rem',
                 border: '1.5px solid #6b1d2f',
-                boxShadow: '0 2px 8px rgb(6b1d2f,0.25)',
+                boxShadow: '0 2px 8px rgba(61, 15, 24,0.25)',
                 display: 'inline-block',
                 width: '100%',
                 maxWidth: 320,
@@ -1899,7 +1899,7 @@ const RoyalHarajPage = () => {
           style={{
             marginBottom: '0.85rem',
             padding: '0.75rem 0.85rem',
-            background: `linear-gradient(135deg, ${C.darkBg} 0%, rgb(6b1d2f,0.1) 100%)`,
+            background: `linear-gradient(135deg, ${C.darkBg} 0%, rgba(61, 15, 24,0.1) 100%)`,
             borderRadius: '16px',
             border: `1px solid ${C.gold}40`,
           }}
@@ -2083,8 +2083,8 @@ const RoyalHarajPage = () => {
             aria-label="تسجيل الخروج"
             style={{
               marginInlineStart: '0.5rem',
-              background: 'rgb(1f1116,0.25)',
-              border: '1px solid rgb(ffffff,0.4)',
+              background: 'rgba(31, 17, 22,0.25)',
+              border: '1px solid rgba(255, 255, 255,0.4)',
               color: 'white',
               borderRadius: 999,
               padding: '0.35rem 0.9rem',

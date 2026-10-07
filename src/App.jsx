@@ -220,7 +220,7 @@ const UnauthorizedPage = () => {
           border: '2px solid #6b1d2f',
           borderRadius: 20,
           padding: '2.2rem 1.6rem',
-          boxShadow: '0 18px 50px rgb(1f1116,0.22)',
+          boxShadow: '0 18px 50px rgba(31, 17, 22,0.22)',
         }}
       >
         <div
@@ -233,7 +233,7 @@ const UnauthorizedPage = () => {
             alignItems: 'center',
             justifyContent: 'center',
             background: 'linear-gradient(135deg, #6b1d2f, #3d0f18)',
-            boxShadow: '0 8px 22px rgb(6b1d2f,0.35)',
+            boxShadow: '0 8px 22px rgba(61, 15, 24,0.35)',
             fontSize: 30,
           }}
         >
@@ -1228,7 +1228,7 @@ function AppContent() {
             width: "100%",
             height: "100%",
             background:
-              "rgb(1f1116,0.5)",
+              "rgba(31, 17, 22,0.5)",
             display: "flex",
             justifyContent:
               "center",
@@ -1255,7 +1255,7 @@ function AppContent() {
               maxWidth: "380px",
               textAlign: "center",
               boxShadow:
-                "0 0 15px rgb(1f1116,0.2)",
+                "0 0 15px rgba(31, 17, 22,0.2)",
               color: "#000",
             }}
             onClick={(event) =>
@@ -1268,7 +1268,7 @@ function AppContent() {
                 onClick={closeWelcomeModal}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(1f1116,0.06)',
+                  background: 'rgba(31, 17, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -1385,9 +1385,9 @@ function AppContent() {
         }
 
 @keyframes roozCrown3D {
-  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgb(6b1d2f,0.9)); }
-  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgb(6b1d2f,1)); }
-  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgb(6b1d2f,0.9)); }
+  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgba(61, 15, 24,0.9)); }
+  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgba(61, 15, 24,1)); }
+  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgba(61, 15, 24,0.9)); }
 }
 
 @keyframes roozStar3D {
@@ -1451,7 +1451,7 @@ function AppContent() {
               background:
                 'linear-gradient(150deg, #1f1116, #000)',
               border:
-                '1px solid rgb(6b1d2f, 0.55)',
+                '1px solid rgba(61, 15, 24, 0.55)',
               borderRadius: 16,
               padding:
                 '18px 20px',
@@ -1459,7 +1459,7 @@ function AppContent() {
                 'Tajawal, sans-serif',
               color: '#f3e0dd',
               boxShadow:
-                '0 18px 50px rgb(1f1116,0.65)',
+                '0 18px 50px rgba(31, 17, 22,0.65)',
             }}
           >
             <div
@@ -1539,7 +1539,7 @@ function AppContent() {
               background:
                 guestRemaining <=
                 10000
-                  ? 'linear-gradient(90deg, rgb(6b1d2f,0.97), rgb(8f2a40,0.92))'
+                  ? 'linear-gradient(90deg, rgba(61, 15, 24,0.97), rgba(61, 15, 24,0.92))'
                   : 'linear-gradient(90deg, #1f1116, #6b1d2f)',
               color: '#ffffff',
               padding: '0 1rem',
@@ -1547,7 +1547,7 @@ function AppContent() {
               fontWeight: 800,
               fontSize: '0.9rem',
               boxShadow:
-                '0 2px 10px rgb(1f1116,0.3)',
+                '0 2px 10px rgba(31, 17, 22,0.3)',
               fontFamily:
                 'Tajawal, sans-serif',
               boxSizing: 'border-box',
@@ -1585,7 +1585,7 @@ function AppContent() {
               position: 'fixed',
               inset: 0,
               background:
-                'rgb(1f1116,0.8)',
+                'rgba(31, 17, 22,0.8)',
               display: 'flex',
               alignItems: 'center',
               justifyContent:
@@ -1600,7 +1600,7 @@ function AppContent() {
               style={{
                 background: '#111',
                 border:
-                  '1px solid rgb(6b1d2f,0.4)',
+                  '1px solid rgba(61, 15, 24,0.4)',
                 borderRadius: 16,
                 padding:
                   '2rem 1.5rem',
@@ -1609,7 +1609,7 @@ function AppContent() {
                 textAlign: 'center',
                 color: '#f3e0dd',
                 boxShadow:
-                  '0 20px 60px rgb(1f1116,0.6)',
+                  '0 20px 60px rgba(31, 17, 22,0.6)',
               }}
             >
               <div
@@ -1709,7 +1709,7 @@ function AppContent() {
                     'transparent',
                   color: '#6b1d2f',
                   border:
-                    '1px solid rgb(6b1d2f,0.4)',
+                    '1px solid rgba(61, 15, 24,0.4)',
                   borderRadius: 10,
                   fontWeight: 700,
                   fontSize: 15,
@@ -1829,7 +1829,7 @@ function AppContent() {
               background: 'linear-gradient(90deg, #1f1116 0%, #1f1116 40%, #1f1116 60%, #1f1116 100%)',
               borderTop: '2px solid #6b1d2f',
               borderBottom: '2px solid #6b1d2f',
-              boxShadow: '0 12px 32px rgb(1f1116,0.6), 0 0 22px rgb(6b1d2f,0.25)',
+              boxShadow: '0 12px 32px rgba(31, 17, 22,0.6), 0 0 22px rgba(61, 15, 24,0.25)',
               zIndex: 80,
               flexShrink: 0,
             }}
@@ -1869,7 +1869,7 @@ function AppContent() {
                     fontFamily: 'Tajawal, "Noto Sans Arabic", Tahoma, sans-serif',
                     fontSize: 'clamp(1.15rem, 2.5vw, 1.55rem)',
                     fontWeight: 900,
-                    WebkitTextStroke: '0.4px rgb(6b1d2f,0.5)',
+                    WebkitTextStroke: '0.4px rgba(61, 15, 24,0.5)',
                     lineHeight: '60px',
                     direction: 'rtl',
                     unicodeBidi: 'isolate',

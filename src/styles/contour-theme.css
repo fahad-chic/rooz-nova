@@ -18,8 +18,8 @@
   --co-radius: 14px;
   --co-radius-sm: 10px;
   --co-font: 'Tajawal', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
-  --co-shadow: 0 6px 22px -12px rgb(1f1116, 0.28);
-  --co-shadow-lg: 0 18px 44px -22px rgb(1f1116, 0.4);
+  --co-shadow: 0 6px 22px -12px rgba(31, 17, 22, 0.28);
+  --co-shadow-lg: 0 18px 44px -22px rgba(31, 17, 22, 0.4);
 
   /* جسر للمتغيرات القديمة في المكوّنات */
   --nv-font: var(--co-font);
@@ -76,7 +76,7 @@ p, li { font-weight: 300; }
 /* شريط علوي (نافبار) صلبة */
 .navbar {
   background: var(--co-dark) !important;
-  border-bottom: 1px solid rgb(ffffff, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
 /* حقول إدخال موحّدة */

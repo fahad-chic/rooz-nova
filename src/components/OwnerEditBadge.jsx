@@ -37,7 +37,7 @@ const OwnerEditBadge = ({ to, label = 'تعديل' }) => {
         fontWeight: 800,
         fontSize: '0.72rem',
         cursor: 'pointer',
-        boxShadow: '0 3px 10px rgb(6b1d2f,0.35)',
+        boxShadow: '0 3px 10px rgba(61, 15, 24,0.35)',
         minWidth: 64,
       }}
     >

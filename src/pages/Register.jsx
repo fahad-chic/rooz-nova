@@ -454,7 +454,7 @@ const page = {
   minHeight: '100vh',
   width: '100%',
   background:
-    'radial-gradient(circle at top, rgb(6b1d2f,0.10), transparent 40%), linear-gradient(135deg, #fdfbf7 0%, #fdfbf7 50%, #fdfbf7 100%)',
+    'radial-gradient(circle at top, rgba(61, 15, 24,0.10), transparent 40%), linear-gradient(135deg, #fdfbf7 0%, #fdfbf7 50%, #fdfbf7 100%)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -469,9 +469,9 @@ const card = {
   borderRadius: 22,
   width: '100%',
   maxWidth: 430,
-  border: '1px solid rgb(1f1116,0.08)',
+  border: '1px solid rgba(31, 17, 22,0.08)',
   boxShadow:
-    '0 22px 60px rgb(1f1116,0.12), inset 0 1px 0 rgb(ffffff,0.6)',
+    '0 22px 60px rgba(31, 17, 22,0.12), inset 0 1px 0 rgba(255, 255, 255,0.6)',
   textAlign: 'center',
   boxSizing: 'border-box',
 };
@@ -489,7 +489,7 @@ const brandMark = {
   color: '#ffffff',
   fontSize: 25,
   fontWeight: 900,
-  boxShadow: '0 8px 24px rgb(6b1d2f,0.2)',
+  boxShadow: '0 8px 24px rgba(61, 15, 24,0.2)',
 };
 
 const title = {
@@ -535,7 +535,7 @@ const input = {
   minHeight: 48,
   padding: '12px 14px 12px 42px',
   borderRadius: 12,
-  border: '1px solid rgb(1f1116,0.14)',
+  border: '1px solid rgba(31, 17, 22,0.14)',
   outline: 'none',
   background: '#fdfbf7',
   color: '#1f1116',
@@ -552,14 +552,14 @@ const submitBtn = {
   background:
     'linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 48%, #6b1d2f 100%)',
   color: '#111',
-  border: '1px solid rgb(f3e0dd,0.45)',
+  border: '1px solid rgba(251, 240, 240,0.45)',
   borderRadius: 12,
   fontWeight: 800,
   cursor: 'pointer',
   marginTop: 5,
   fontSize: 15,
   fontFamily: 'Tajawal, Tajawal, sans-serif',
-  boxShadow: '0 8px 24px rgb(6b1d2f,0.16)',
+  boxShadow: '0 8px 24px rgba(61, 15, 24,0.16)',
   transition: 'transform 160ms ease, opacity 160ms ease',
 };
 
@@ -580,7 +580,7 @@ const spinner = {
   width: 15,
   height: 15,
   borderRadius: '50%',
-  border: '2px solid rgb(1f1116,0.25)',
+  border: '2px solid rgba(31, 17, 22,0.25)',
   borderTopColor: '#111',
   display: 'inline-block',
   animation: 'roozRegisterSpin 700ms linear infinite',
@@ -600,7 +600,7 @@ const link = {
 
 const alertError = {
   background: '#fef2f2',
-  border: '1px solid rgb(8f2a40,0.25)',
+  border: '1px solid rgba(61, 15, 24,0.25)',
   color: '#6b1d2f',
   padding: '11px 12px',
   borderRadius: 11,
@@ -615,7 +615,7 @@ const alertError = {
 
 const alertSuccess = {
   background: '#eae3d9',
-  border: '1px solid rgb(4a3a3f,0.25)',
+  border: '1px solid rgba(31, 17, 22,0.25)',
   color: '#4a3a3f',
   padding: '11px 12px',
   borderRadius: 11,

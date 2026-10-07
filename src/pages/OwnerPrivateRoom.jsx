@@ -997,8 +997,8 @@ const OwnerPrivateRoom = () => {
           direction: rtl;
           text-align: start;
           background:
-            radial-gradient(circle at top right, rgb(6b1d2f,.16), transparent 32%),
-            radial-gradient(circle at bottom left, rgb(6b1d2f,.10), transparent 30%),
+            radial-gradient(circle at top right, rgba(61, 15, 24,.16), transparent 32%),
+            radial-gradient(circle at bottom left, rgba(61, 15, 24,.10), transparent 30%),
             linear-gradient(160deg, #fdfbf7 0%, #f3e0dd 55%, #fdfbf7 100%);
           color: #1f1116;
         }
@@ -1011,9 +1011,9 @@ const OwnerPrivateRoom = () => {
 
         .owner-console-room .royal-surface {
           background:
-            linear-gradient(165deg, rgb(fdfbf7,.96), rgb(f3e0dd,.96));
-          border-color: rgb(6b1d2f,.28);
-          box-shadow: 0 10px 28px rgb(1f1116,.08);
+            linear-gradient(165deg, rgba(253, 251, 247,.96), rgba(251, 240, 240,.96));
+          border-color: rgba(61, 15, 24,.28);
+          box-shadow: 0 10px 28px rgba(31, 17, 22,.08);
         }
 
         .owner-console-room .royal-muted {
@@ -1025,7 +1025,7 @@ const OwnerPrivateRoom = () => {
         }
 
         .owner-console-room .royal-border {
-          border-color: rgb(6b1d2f,.28);
+          border-color: rgba(61, 15, 24,.28);
         }
 
         .owner-console-room .icon-card {
@@ -1034,8 +1034,8 @@ const OwnerPrivateRoom = () => {
           max-width: 100%;
           overflow: visible;
           background:
-            linear-gradient(145deg, rgb(fdfbf7,.98), rgb(f3e0dd,.92));
-          border: 1px solid rgb(6b1d2f,.26);
+            linear-gradient(145deg, rgba(253, 251, 247,.98), rgba(251, 240, 240,.92));
+          border: 1px solid rgba(61, 15, 24,.26);
           transition:
             transform .2s ease,
             border-color .2s ease,
@@ -1045,17 +1045,17 @@ const OwnerPrivateRoom = () => {
 
         .owner-console-room .icon-card:hover {
           transform: translateY(-2px);
-          border-color: rgb(6b1d2f,.72);
+          border-color: rgba(61, 15, 24,.72);
           background:
-            linear-gradient(145deg, rgb(fdfbf7,.99), rgb(f3e0dd,.96));
-          box-shadow: 0 12px 30px rgb(1f1116,.12);
+            linear-gradient(145deg, rgba(253, 251, 247,.99), rgba(251, 240, 240,.96));
+          box-shadow: 0 12px 30px rgba(31, 17, 22,.12);
         }
 
         .owner-console-room .icon-card.active {
-          border-color: rgb(6b1d2f,.9);
+          border-color: rgba(61, 15, 24,.9);
           box-shadow:
-            0 0 0 1px rgb(6b1d2f,.14),
-            0 12px 32px rgb(1f1116,.12);
+            0 0 0 1px rgba(61, 15, 24,.14),
+            0 12px 32px rgba(31, 17, 22,.12);
         }
 
         .owner-console-room button {
@@ -1076,11 +1076,11 @@ const OwnerPrivateRoom = () => {
         }
 
         .owner-console-room ::-webkit-scrollbar-track {
-          background: rgb(6b1d2f,.08);
+          background: rgba(61, 15, 24,.08);
         }
 
         .owner-console-room ::-webkit-scrollbar-thumb {
-          background: rgb(6b1d2f,.45);
+          background: rgba(61, 15, 24,.45);
           border-radius: 999px;
         }
 
@@ -1095,9 +1095,9 @@ const OwnerPrivateRoom = () => {
         }
 
         .owner-console-room .light-field {
-          background: rgb(fdfbf7,.92);
+          background: rgba(253, 251, 247,.92);
           color: #1f1116;
-          border-color: rgb(6b1d2f,.25);
+          border-color: rgba(61, 15, 24,.25);
           font-weight: 600;
         }
 
@@ -1106,26 +1106,26 @@ const OwnerPrivateRoom = () => {
         }
 
         .owner-console-room .view-only-badge {
-          background: rgb(6b1d2f,.10);
+          background: rgba(61, 15, 24,.10);
           color: #1f1116;
-          border-color: rgb(6b1d2f,.25);
+          border-color: rgba(61, 15, 24,.25);
           font-weight: 700;
         }
 
         /* ===== وضع الليل ===== */
         .owner-console-room.owner-dark {
           background:
-            radial-gradient(circle at top right, rgb(6b1d2f,.12), transparent 36%),
-            radial-gradient(circle at bottom left, rgb(6b1d2f,.08), transparent 32%),
+            radial-gradient(circle at top right, rgba(61, 15, 24,.12), transparent 36%),
+            radial-gradient(circle at bottom left, rgba(61, 15, 24,.08), transparent 32%),
             linear-gradient(160deg, #1f1116 0%, #1f1116 50%, #1f1116 100%) !important;
           color: #fdfbf7 !important;
         }
 
         .owner-console-room.owner-dark .royal-surface {
           background:
-            linear-gradient(165deg, rgb(1f1116,.96), rgb(1f1116,.96)) !important;
-          border-color: rgb(6b1d2f,.32) !important;
-          box-shadow: 0 10px 28px rgb(1f1116,.35) !important;
+            linear-gradient(165deg, rgba(31, 17, 22,.96), rgba(31, 17, 22,.96)) !important;
+          border-color: rgba(61, 15, 24,.32) !important;
+          box-shadow: 0 10px 28px rgba(31, 17, 22,.35) !important;
         }
 
         .owner-console-room.owner-dark .royal-muted {
@@ -1137,27 +1137,27 @@ const OwnerPrivateRoom = () => {
         }
 
         .owner-console-room.owner-dark .royal-border {
-          border-color: rgb(6b1d2f,.28) !important;
+          border-color: rgba(61, 15, 24,.28) !important;
         }
 
         .owner-console-room.owner-dark .icon-card {
           background:
-            linear-gradient(145deg, rgb(1f1116,.98), rgb(1f1116,.94)) !important;
-          border: 1px solid rgb(6b1d2f,.28) !important;
+            linear-gradient(145deg, rgba(31, 17, 22,.98), rgba(31, 17, 22,.94)) !important;
+          border: 1px solid rgba(61, 15, 24,.28) !important;
         }
 
         .owner-console-room.owner-dark .icon-card:hover {
-          border-color: rgb(6b1d2f,.7) !important;
+          border-color: rgba(61, 15, 24,.7) !important;
           background:
-            linear-gradient(145deg, rgb(1f1116,.99), rgb(1f1116,.96)) !important;
-          box-shadow: 0 12px 30px rgb(1f1116,.4) !important;
+            linear-gradient(145deg, rgba(31, 17, 22,.99), rgba(31, 17, 22,.96)) !important;
+          box-shadow: 0 12px 30px rgba(31, 17, 22,.4) !important;
         }
 
         .owner-console-room.owner-dark .icon-card.active {
-          border-color: rgb(6b1d2f,.85) !important;
+          border-color: rgba(61, 15, 24,.85) !important;
           box-shadow:
-            0 0 0 1px rgb(6b1d2f,.2),
-            0 12px 32px rgb(1f1116,.4) !important;
+            0 0 0 1px rgba(61, 15, 24,.2),
+            0 12px 32px rgba(31, 17, 22,.4) !important;
         }
 
         .owner-console-room.owner-dark input,
@@ -1168,11 +1168,11 @@ const OwnerPrivateRoom = () => {
         }
 
         .owner-console-room.owner-dark ::-webkit-scrollbar-track {
-          background: rgb(1f1116,.25);
+          background: rgba(31, 17, 22,.25);
         }
 
         .owner-console-room.owner-dark ::-webkit-scrollbar-thumb {
-          background: rgb(6b1d2f,.45);
+          background: rgba(61, 15, 24,.45);
         }
 
         .owner-console-room.owner-dark .gold-button {
@@ -1181,9 +1181,9 @@ const OwnerPrivateRoom = () => {
         }
 
         .owner-console-room.owner-dark .light-field {
-          background: rgb(1f1116,.92) !important;
+          background: rgba(31, 17, 22,.92) !important;
           color: #fdfbf7 !important;
-          border-color: rgb(6b1d2f,.35) !important;
+          border-color: rgba(61, 15, 24,.35) !important;
         }
 
         .owner-console-room.owner-dark .light-field::placeholder {
@@ -1191,9 +1191,9 @@ const OwnerPrivateRoom = () => {
         }
 
         .owner-console-room.owner-dark .view-only-badge {
-          background: rgb(6b1d2f,.15) !important;
+          background: rgba(61, 15, 24,.15) !important;
           color: #fdfbf7 !important;
-          border-color: rgb(6b1d2f,.3) !important;
+          border-color: rgba(61, 15, 24,.3) !important;
         }
       `}</style>
 
@@ -1207,8 +1207,8 @@ const OwnerPrivateRoom = () => {
                 : '#fdfbf7',
             borderColor:
               toast.type === 'error'
-                ? 'rgb(8f2a40,.30)'
-                : 'rgb(6b1d2f,.35)'
+                ? 'rgba(61, 15, 24,.30)'
+                : 'rgba(61, 15, 24,.35)'
           }}
           role="status"
           aria-live="polite"
@@ -1219,8 +1219,8 @@ const OwnerPrivateRoom = () => {
               style={{
                 background:
                   toast.type === 'error'
-                    ? 'rgb(8f2a40,.10)'
-                    : 'rgb(6b1d2f,.10)',
+                    ? 'rgba(61, 15, 24,.10)'
+                    : 'rgba(61, 15, 24,.10)',
                 color:
                   toast.type === 'error'
                     ? '#6b1d2f'
@@ -1336,8 +1336,8 @@ const OwnerPrivateRoom = () => {
                 position: 'static',
                 width: 38,
                 height: 38,
-                background: darkMode ? 'rgb(1f1116,0.85)' : 'rgb(fdfbf7,0.65)',
-                border: '1px solid rgb(6b1d2f,0.3)',
+                background: darkMode ? 'rgba(31, 17, 22,0.85)' : 'rgba(253, 251, 247,0.65)',
+                border: '1px solid rgba(61, 15, 24,0.3)',
                 color: darkMode ? '#fdfbf7' : '#1f1116',
                 boxShadow: 'none',
                 top: 0
@@ -1660,7 +1660,7 @@ const OwnerPrivateRoom = () => {
         <>
           <div
             className="fixed inset-0 z-40"
-            style={{ background: 'rgb(1f1116,0.16)' }}
+            style={{ background: 'rgba(31, 17, 22,0.16)' }}
             onClick={() => setShowNotifications(false)}
             aria-hidden="true"
           />
@@ -2704,7 +2704,7 @@ const MessagesPanel = ({
       </span>
     </div>
 
-    <div className="royal-surface rounded-xl p-4 border royal-border" style={{ background: 'rgb(6b1d2f,0.08)' }}>
+    <div className="royal-surface rounded-xl p-4 border royal-border" style={{ background: 'rgba(61, 15, 24,0.08)' }}>
       <p className="text-[#1f1116] flex items-center gap-2 text-sm font-medium">
         <Shield size={18} />
         الرسائل الخاصة محمية: المشاركون فقط يتراسلون، وأنت كمالك تراقب لحماية الموقع دون علمهم.
@@ -2751,7 +2751,7 @@ const MessagesPanel = ({
         <div className="space-y-2 max-h-80 overflow-y-auto">
           {chatMessages.length === 0 && <p className="text-sm royal-muted">لا رسائل أو جاري التحميل...</p>}
           {chatMessages.map((m) => (
-            <div key={m.id} className="p-2 rounded-lg" style={{ background: '#fdfbf7', border: '1px solid rgb(6b1d2f,0.2)' }}>
+            <div key={m.id} className="p-2 rounded-lg" style={{ background: '#fdfbf7', border: '1px solid rgba(61, 15, 24,0.2)' }}>
               <p className="text-[11px] royal-muted font-medium">{m.senderName || m.senderKey || '—'}</p>
               <p className="royal-text text-sm break-words font-medium">{m.text || m.content || '—'}</p>
             </div>

@@ -149,10 +149,10 @@ export default function OwnerPanel() {
               position: 'static',
               width: 40,
               height: 40,
-              background: 'rgb(ffffff,0.08)',
-              border: '1px solid rgb(6b1d2f,0.45)',
+              background: 'rgba(255, 255, 255,0.08)',
+              border: '1px solid rgba(61, 15, 24,0.45)',
               color: '#f3e0dd',
-              boxShadow: '0 0 12px rgb(6b1d2f,0.25)',
+              boxShadow: '0 0 12px rgba(61, 15, 24,0.25)',
               top: 0,
             }}
           />
@@ -310,7 +310,7 @@ const title = {
   color: '#f3e0dd',
   fontSize: 28,
   fontWeight: 800,
-  textShadow: '0 0 10px rgb(6b1d2f,0.45)',
+  textShadow: '0 0 10px rgba(61, 15, 24,0.45)',
 };
 
 const subtitle = {
@@ -337,16 +337,16 @@ const sectionTitle = {
   fontSize: 22,
   fontWeight: 800,
   marginBottom: 10,
-  textShadow: '0 0 10px rgb(6b1d2f,0.35)',
+  textShadow: '0 0 10px rgba(61, 15, 24,0.35)',
 };
 
 const card = {
-  background: 'rgb(ffffff,0.08)',
+  background: 'rgba(255, 255, 255,0.08)',
   padding: '1rem',
   borderRadius: 14,
-  border: '1px solid rgb(6b1d2f,0.35)',
+  border: '1px solid rgba(61, 15, 24,0.35)',
   marginBottom: 12,
-  boxShadow: '0 0 18px rgb(6b1d2f,0.25)',
+  boxShadow: '0 0 18px rgba(61, 15, 24,0.25)',
   backdropFilter: 'blur(10px)',
 };
 
@@ -393,14 +393,14 @@ const btnGray = {
 };
 
 const btnGlass = {
-  background: 'rgb(ffffff,0.12)',
-  border: '1px solid rgb(6b1d2f,0.35)',
+  background: 'rgba(255, 255, 255,0.12)',
+  border: '1px solid rgba(61, 15, 24,0.35)',
   color: '#fdfbf7',
   padding: '8px 12px',
   borderRadius: 10,
   cursor: 'pointer',
   fontWeight: 700,
-  boxShadow: '0 0 12px rgb(6b1d2f,0.25)',
+  boxShadow: '0 0 12px rgba(61, 15, 24,0.25)',
 };
 
 const btnRoyal = {
@@ -408,10 +408,10 @@ const btnRoyal = {
   color: '#1f1116',
   padding: '10px 14px',
   borderRadius: 12,
-  border: '1px solid rgb(f3e0dd,0.45)',
+  border: '1px solid rgba(251, 240, 240,0.45)',
   cursor: 'pointer',
   fontWeight: 900,
-  boxShadow: '0 0 25px rgb(6b1d2f,0.45)',
+  boxShadow: '0 0 25px rgba(61, 15, 24,0.45)',
 };
 
 const btnDisabled = {
@@ -434,25 +434,25 @@ const loadingBox = {
 };
 
 const alertError = {
-  background: 'rgb(8f2a40,0.18)',
-  border: '1px solid rgb(8f2a40,0.45)',
+  background: 'rgba(61, 15, 24,0.18)',
+  border: '1px solid rgba(61, 15, 24,0.45)',
   color: '#f3e0dd',
   padding: '10px 12px',
   borderRadius: 12,
   marginTop: 10,
   marginBottom: 10,
-  boxShadow: '0 0 12px rgb(8f2a40,0.35)',
+  boxShadow: '0 0 12px rgba(61, 15, 24,0.35)',
 };
 
 const alertOk = {
-  background: 'rgb(4a3a3f,0.18)',
-  border: '1px solid rgb(4a3a3f,0.45)',
+  background: 'rgba(31, 17, 22,0.18)',
+  border: '1px solid rgba(31, 17, 22,0.45)',
   color: '#eae3d9',
   padding: '10px 12px',
   borderRadius: 12,
   marginTop: 10,
   marginBottom: 10,
-  boxShadow: '0 0 12px rgb(4a3a3f,0.35)',
+  boxShadow: '0 0 12px rgba(31, 17, 22,0.35)',
 };
 
 const emptyBox = {
@@ -463,9 +463,9 @@ const emptyBox = {
 
 const textarea = {
   width: '100%',
-  background: 'rgb(ffffff,0.06)',
+  background: 'rgba(255, 255, 255,0.06)',
   color: '#fff',
-  border: '1px solid rgb(6b1d2f,0.35)',
+  border: '1px solid rgba(61, 15, 24,0.35)',
   borderRadius: 10,
   padding: '10px 12px',
   outline: 'none',
@@ -475,9 +475,9 @@ const textarea = {
 };
 
 const searchInput = {
-  background: 'rgb(ffffff,0.06)',
+  background: 'rgba(255, 255, 255,0.06)',
   color: '#fff',
-  border: '1px solid rgb(6b1d2f,0.35)',
+  border: '1px solid rgba(61, 15, 24,0.35)',
   borderRadius: 10,
   padding: '8px 12px',
   outline: 'none',

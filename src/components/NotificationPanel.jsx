@@ -32,8 +32,8 @@ const toolButtonStyle = {
   display: 'inline-flex',
   alignItems: 'center',
   gap: 6,
-  background: 'rgb(6b1d2f, 0.1)',
-  border: '1px solid rgb(6b1d2f, 0.35)',
+  background: 'rgba(61, 15, 24, 0.1)',
+  border: '1px solid rgba(61, 15, 24, 0.35)',
   color: '#1f1116',
   borderRadius: 999,
   padding: '7px 13px',
@@ -46,8 +46,8 @@ const toolButtonStyle = {
 };
 
 const bannerStyle = {
-  background: 'rgb(6b1d2f, 0.12)',
-  border: '1px solid rgb(6b1d2f, 0.3)',
+  background: 'rgba(61, 15, 24, 0.12)',
+  border: '1px solid rgba(61, 15, 24, 0.3)',
   borderRadius: 12,
   padding: '0.75rem 1rem',
   color: '#1f1116',
@@ -223,9 +223,9 @@ const NotificationPanel = () => {
             textAlign: 'center',
             padding: '3.5rem 1rem',
             color: '#6b1d2f',
-            background: 'rgb(fdfbf7,0.6)',
+            background: 'rgba(253, 251, 247,0.6)',
             borderRadius: 16,
-            border: '1px solid rgb(6b1d2f,0.18)',
+            border: '1px solid rgba(61, 15, 24,0.18)',
           }}
         >
           <Bell size={48} color="#6b1d2f" style={{ margin: '0 auto 1rem' }} />
@@ -257,13 +257,13 @@ const NotificationPanel = () => {
                 style={{
                   background: isUnread
                     ? 'linear-gradient(145deg, #fdfbf7, #fdfbf7)'
-                    : 'rgb(ffffff, 0.72)',
-                  border: `1px solid ${isUnread ? 'rgb(6b1d2f, 0.45)' : 'rgb(6b1d2f, 0.2)'}`,
+                    : 'rgba(255, 255, 255, 0.72)',
+                  border: `1px solid ${isUnread ? 'rgba(61, 15, 24, 0.45)' : 'rgba(61, 15, 24, 0.2)'}`,
                   borderRadius: 14,
                   padding: '0.9rem 1rem',
                   boxShadow: isUnread
-                    ? '0 6px 18px rgb(6b1d2f, 0.12)'
-                    : '0 2px 8px rgb(6b1d2f, 0.06)',
+                    ? '0 6px 18px rgba(61, 15, 24, 0.12)'
+                    : '0 2px 8px rgba(61, 15, 24, 0.06)',
                   transition: 'all 0.25s ease',
                   cursor: isUnread ? 'pointer' : 'default',
                   opacity: isRead && muted ? 0.7 : 1,
@@ -271,14 +271,14 @@ const NotificationPanel = () => {
                 onMouseEnter={(e) => {
                   if (isUnread) {
                     e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 8px 24px rgb(6b1d2f, 0.15)';
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(61, 15, 24, 0.15)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = isUnread
-                    ? '0 6px 18px rgb(6b1d2f, 0.12)'
-                    : '0 2px 8px rgb(6b1d2f, 0.06)';
+                    ? '0 6px 18px rgba(61, 15, 24, 0.12)'
+                    : '0 2px 8px rgba(61, 15, 24, 0.06)';
                 }}
               >
                 <div

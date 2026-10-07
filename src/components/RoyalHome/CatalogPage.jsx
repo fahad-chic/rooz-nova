@@ -310,8 +310,8 @@ const CatalogPage = () => {
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem',
-            background: 'rgb(6b1d2f, 0.12)',
-            border: '1px solid rgb(6b1d2f, 0.35)',
+            background: 'rgba(61, 15, 24, 0.12)',
+            border: '1px solid rgba(61, 15, 24, 0.35)',
             borderRadius: 12,
             padding: '0.45rem 0.9rem',
             color: '#6b1d2f',
@@ -330,8 +330,8 @@ const CatalogPage = () => {
         <div
           style={{
             background:
-              'linear-gradient(145deg, rgb(fdfbf7, 0.98), rgb(fdfbf7, 0.92))',
-            border: `1px solid rgb(6b1d2f, 0.35)`,
+              'linear-gradient(145deg, rgba(253, 251, 247, 0.98), rgba(253, 251, 247, 0.92))',
+            border: `1px solid rgba(61, 15, 24, 0.35)`,
             borderRadius: 20,
             padding: '1.5rem',
             textAlign: 'center',
@@ -381,7 +381,7 @@ const CatalogPage = () => {
           flexWrap: 'wrap',
           gap: '1rem',
           marginBottom: '2rem',
-          background: 'rgb(fdfbf7, 0.85)',
+          background: 'rgba(253, 251, 247, 0.85)',
           padding: '1rem',
           borderRadius: 16,
         }}
@@ -410,7 +410,7 @@ const CatalogPage = () => {
             style={{
               display: 'flex',
               gap: '0.3rem',
-              background: 'rgb(ffffff,0.05)',
+              background: 'rgba(255, 255, 255,0.05)',
               padding: '0.3rem',
               borderRadius: 12,
               flexWrap: 'wrap',
@@ -429,7 +429,7 @@ const CatalogPage = () => {
                     padding: '0.5rem 0.8rem',
                     background:
                       cardStyle === key
-                        ? 'rgb(6b1d2f, 0.3)'
+                        ? 'rgba(61, 15, 24, 0.3)'
                         : 'transparent',
                     border: 'none',
                     borderRadius: 8,
@@ -480,8 +480,8 @@ const CatalogPage = () => {
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.6rem 1rem',
-                background: 'rgb(6b1d2f, 0.2)',
-                border: '1px solid rgb(6b1d2f, 0.4)',
+                background: 'rgba(61, 15, 24, 0.2)',
+                border: '1px solid rgba(61, 15, 24, 0.4)',
                 borderRadius: 12,
                 color: '#6b1d2f',
                 fontWeight: 600,
@@ -542,9 +542,9 @@ const CatalogPage = () => {
             textAlign: 'center',
             padding: '4rem',
             color: '#888',
-            background: 'rgb(ffffff,0.02)',
+            background: 'rgba(255, 255, 255,0.02)',
             borderRadius: 16,
-            border: '2px dashed rgb(ffffff,0.1)',
+            border: '2px dashed rgba(255, 255, 255,0.1)',
           }}
         >
           <p
@@ -673,7 +673,7 @@ const DisplaySettingsModal = ({
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgb(1f1116,0.85)',
+        background: 'rgba(31, 17, 22,0.85)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -723,8 +723,8 @@ const DisplaySettingsModal = ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              background: 'rgb(6b1d2f,0.15)',
-              border: '1px solid rgb(6b1d2f,0.4)',
+              background: 'rgba(61, 15, 24,0.15)',
+              border: '1px solid rgba(61, 15, 24,0.4)',
               borderRadius: 10,
               cursor: 'pointer',
               color: '#6b1d2f',
@@ -772,12 +772,12 @@ const DisplaySettingsModal = ({
                       padding: '0.75rem',
                       background:
                         localSettings.displayStyle === key
-                          ? 'rgb(6b1d2f, 0.3)'
-                          : 'rgb(ffffff,0.05)',
+                          ? 'rgba(61, 15, 24, 0.3)'
+                          : 'rgba(255, 255, 255,0.05)',
                       border:
                         localSettings.displayStyle === key
                           ? '2px solid #6b1d2f'
-                          : '1px solid rgb(ffffff,0.2)',
+                          : '1px solid rgba(255, 255, 255,0.2)',
                       borderRadius: 12,
                       color:
                         localSettings.displayStyle === key
@@ -1022,8 +1022,8 @@ const AddProductModal = ({
   const inputStyle = {
     width: '100%',
     padding: '0.85rem',
-    background: 'rgb(ffffff,0.05)',
-    border: '1px solid rgb(ffffff,0.2)',
+    background: 'rgba(255, 255, 255,0.05)',
+    border: '1px solid rgba(255, 255, 255,0.2)',
     borderRadius: 12,
     color: '#fff',
     fontSize: '1rem',
@@ -1036,7 +1036,7 @@ const AddProductModal = ({
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgb(1f1116,0.85)',
+        background: 'rgba(31, 17, 22,0.85)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -1084,8 +1084,8 @@ const AddProductModal = ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              background: 'rgb(6b1d2f,0.15)',
-              border: '1px solid rgb(6b1d2f,0.4)',
+              background: 'rgba(61, 15, 24,0.15)',
+              border: '1px solid rgba(61, 15, 24,0.4)',
               borderRadius: 10,
               cursor: 'pointer',
               color: '#6b1d2f',
@@ -1098,7 +1098,7 @@ const AddProductModal = ({
         {catalogName && (
           <div
             style={{
-              background: 'rgb(6b1d2f, 0.1)',
+              background: 'rgba(61, 15, 24, 0.1)',
               padding: '0.75rem',
               borderRadius: 10,
               marginBottom: '1rem',
@@ -1298,7 +1298,7 @@ const AddProductModal = ({
                 flex: 1,
                 padding: '0.85rem',
                 background: saving
-                  ? 'rgb(6b1d2f,0.5)'
+                  ? 'rgba(61, 15, 24,0.5)'
                   : 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
                 border: 'none',
                 borderRadius: 12,

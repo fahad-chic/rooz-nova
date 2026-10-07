@@ -126,8 +126,8 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
 
   // ألوان حسب الوضع (نهاري / ليلي)
   const cardBg = darkMode
-    ? { background: 'linear-gradient(165deg, rgb(1f1116,.96), rgb(1f1116,.96))', borderColor: 'rgb(6b1d2f,.32)' }
-    : { background: 'linear-gradient(165deg, rgb(fdfbf7,.98), rgb(f3e0dd,.96))', borderColor: 'rgb(6b1d2f,.30)' };
+    ? { background: 'linear-gradient(165deg, rgba(31, 17, 22,.96), rgba(31, 17, 22,.96))', borderColor: 'rgba(61, 15, 24,.32)' }
+    : { background: 'linear-gradient(165deg, rgba(253, 251, 247,.98), rgba(251, 240, 240,.96))', borderColor: 'rgba(61, 15, 24,.30)' };
   const textMain = darkMode ? 'text-[#fdfbf7]' : 'text-[#1f1116]';
   const textSub = darkMode ? 'text-[#6b1d2f]' : 'text-[#1f1116]';
   const textMuted = darkMode ? 'text-[#6b1d2f]' : 'text-[#1f1116]';

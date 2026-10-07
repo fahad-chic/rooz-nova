@@ -43,7 +43,7 @@ const HomePrefsFloat = () => {
           background: linear-gradient(135deg, #1f1116, #6b1d2f);
           color: #fff;
           cursor: pointer;
-          box-shadow: 0 6px 18px rgb(1f1116,0.4);
+          box-shadow: 0 6px 18px rgba(31, 17, 22,0.4);
           transition: transform 0.2s ease;
         }
         .hpf-btn:hover { transform: scale(1.08); }
@@ -56,7 +56,7 @@ const HomePrefsFloat = () => {
           background: #fdfbf7;
           border: 1.5px solid #6b1d2f;
           border-radius: 16px;
-          box-shadow: 0 14px 40px rgb(1f1116,0.25);
+          box-shadow: 0 14px 40px rgba(31, 17, 22,0.25);
           padding: 14px;
           direction: rtl;
           font-family: Tajawal, sans-serif;
@@ -84,7 +84,7 @@ const HomePrefsFloat = () => {
           justify-content: space-between;
           gap: 8px;
           padding: 7px 0;
-          border-top: 1px dashed rgb(6b1d2f,0.3);
+          border-top: 1px dashed rgba(61, 15, 24,0.3);
           font-size: 0.85rem;
           font-weight: 700;
           color: #1f1116;

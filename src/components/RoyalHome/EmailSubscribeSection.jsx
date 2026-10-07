@@ -62,9 +62,9 @@ const EmailSubscribeSection = () => {
         padding: '0.75rem 0.85rem',
         boxSizing: 'border-box',
         background: 'linear-gradient(145deg, #fdfbf7 0%, #fdfbf7 55%, #fdfbf7 100%)',
-        border: '1px solid rgb(6b1d2f, 0.3)',
+        border: '1px solid rgba(61, 15, 24, 0.3)',
         borderRadius: 14,
-        boxShadow: '0 4px 14px rgb(6b1d2f, 0.08)',
+        boxShadow: '0 4px 14px rgba(61, 15, 24, 0.08)',
         textAlign: 'center',
         fontFamily: 'Tajawal, sans-serif',
       }}
@@ -126,7 +126,7 @@ const EmailSubscribeSection = () => {
             minWidth: 0,
             padding: '0.45rem 0.75rem',
             borderRadius: 10,
-            border: '1px solid rgb(6b1d2f, 0.35)',
+            border: '1px solid rgba(61, 15, 24, 0.35)',
             background: '#fdfbf7',
             fontSize: '0.8rem',
             fontFamily: 'Tajawal, sans-serif',
@@ -150,7 +150,7 @@ const EmailSubscribeSection = () => {
             display: 'inline-flex',
             alignItems: 'center',
             gap: 5,
-            boxShadow: '0 3px 10px rgb(6b1d2f, 0.3)',
+            boxShadow: '0 3px 10px rgba(61, 15, 24, 0.3)',
           }}
         >
           {state === 'loading' ? (

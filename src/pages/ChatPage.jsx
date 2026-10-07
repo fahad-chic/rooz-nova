@@ -211,8 +211,8 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
         flexDirection: 'column',
         background: '#1f1116',
         borderRadius: 16,
-        boxShadow: '0 4px 20px rgb(ffffff,0.08)',
-        border: '1px solid rgb(6b1d2f,0.25)',
+        boxShadow: '0 4px 20px rgba(255, 255, 255,0.08)',
+        border: '1px solid rgba(61, 15, 24,0.25)',
         overflow: 'hidden',
         fontFamily: 'Tajawal, sans-serif'
       }}
@@ -224,7 +224,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
           alignItems: 'center',
           padding: 15,
           background: '#111',
-          borderBottom: '1px solid rgb(6b1d2f,0.25)'
+          borderBottom: '1px solid rgba(61, 15, 24,0.25)'
         }}
       >
         <button
@@ -320,8 +320,8 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
                 color: m.senderId === user.uid ? '#fff' : '#eee',
                 boxShadow:
                   m.senderId === user.uid
-                    ? '0 2px 8px rgb(6b1d2f,0.4)'
-                    : '0 2px 8px rgb(1f1116,0.3)'
+                    ? '0 2px 8px rgba(61, 15, 24,0.4)'
+                    : '0 2px 8px rgba(31, 17, 22,0.3)'
               }}
             >
               <p style={{ margin: 0, fontSize: 14 }}>{m.text || ''}</p>
@@ -347,7 +347,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
           gap: 10,
           padding: 15,
           background: '#111',
-          borderTop: '1px solid rgb(6b1d2f,0.25)'
+          borderTop: '1px solid rgba(61, 15, 24,0.25)'
         }}
       >
         <input
@@ -360,7 +360,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
           disabled={sending || !chatId}
           style={{
             flex: 1,
-            border: '1px solid rgb(ffffff,0.1)',
+            border: '1px solid rgba(255, 255, 255,0.1)',
             borderRadius: 10,
             padding: '12px',
             background: '#1f1116',

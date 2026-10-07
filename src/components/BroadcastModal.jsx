@@ -66,7 +66,7 @@ const BroadcastModal = ({ onClose }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'rgb(1f1116, 0.72)',
+        background: 'rgba(31, 17, 22, 0.72)',
         backdropFilter: 'blur(8px)',
         padding: '1rem',
         fontFamily: 'Tajawal, sans-serif',
@@ -81,8 +81,8 @@ const BroadcastModal = ({ onClose }) => {
           maxWidth: 460,
           background: 'linear-gradient(145deg, #fdfbf7 0%, #f3e0dd 100%)',
           borderRadius: 20,
-          border: '1px solid rgb(6b1d2f,0.35)',
-          boxShadow: '0 24px 60px rgb(1f1116, 0.45)',
+          border: '1px solid rgba(61, 15, 24,0.35)',
+          boxShadow: '0 24px 60px rgba(31, 17, 22, 0.45)',
           padding: '1.4rem',
         }}
       >
@@ -112,7 +112,7 @@ const BroadcastModal = ({ onClose }) => {
             onClick={onClose}
             aria-label="إغلاق"
             style={{
-              background: 'rgb(6b1d2f,0.12)',
+              background: 'rgba(61, 15, 24,0.12)',
               border: 'none',
               borderRadius: 10,
               width: 34,
@@ -135,8 +135,8 @@ const BroadcastModal = ({ onClose }) => {
           style={{
             width: '100%',
             boxSizing: 'border-box',
-            background: 'rgb(ffffff,0.7)',
-            border: '1px solid rgb(6b1d2f,0.35)',
+            background: 'rgba(255, 255, 255,0.7)',
+            border: '1px solid rgba(61, 15, 24,0.35)',
             borderRadius: 12,
             padding: '0.85rem',
             fontSize: '0.95rem',

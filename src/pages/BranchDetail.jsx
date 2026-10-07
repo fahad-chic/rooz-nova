@@ -189,7 +189,7 @@ export const BranchDetail = () => {
           border-radius: 12px;
           padding: 2rem;
           margin-bottom: 2rem;
-          box-shadow: 0 2px 12px rgb(ffffff, 0.05);
+          box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
           border-left: 4px solid #6b1d2f;
         }
 
@@ -216,7 +216,7 @@ export const BranchDetail = () => {
         .meta-icon {
           width: 45px;
           height: 45px;
-          background: rgb(6b1d2f, 0.15);
+          background: rgba(61, 15, 24, 0.15);
           border-radius: 10px;
           display: flex;
           align-items: center;
@@ -248,7 +248,7 @@ export const BranchDetail = () => {
           background: #111;
           padding: 1.5rem;
           border-radius: 12px;
-          box-shadow: 0 2px 12px rgb(ffffff, 0.05);
+          box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
           border-top: 3px solid #6b1d2f;
           text-align: center;
         }
@@ -269,7 +269,7 @@ export const BranchDetail = () => {
           background: #111;
           padding: 2rem;
           border-radius: 12px;
-          box-shadow: 0 2px 12px rgb(ffffff, 0.05);
+          box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
           margin-bottom: 2rem;
         }
 
@@ -311,7 +311,7 @@ export const BranchDetail = () => {
           background: #111;
           padding: 1.5rem;
           border-radius: 12px;
-          box-shadow: 0 2px 12px rgb(ffffff, 0.05);
+          box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
         }
 
         .action-btn {

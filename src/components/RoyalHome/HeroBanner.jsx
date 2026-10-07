@@ -167,11 +167,11 @@ const HeroBanner = () => {
         background:
           'linear-gradient(135deg, #fdfbf7 0%, #f3e0dd 48%, #fdfbf7 100%)',
         borderTop:
-          '1px solid rgb(ffffff,0.85)',
+          '1px solid rgba(255, 255, 255,0.85)',
         borderBottom:
-          '1px solid rgb(6b1d2f,0.22)',
+          '1px solid rgba(61, 15, 24,0.22)',
         boxShadow:
-          '0 6px 22px rgb(6b1d2f,0.09), inset 0 1px 0 rgb(ffffff,0.9)',
+          '0 6px 22px rgba(61, 15, 24,0.09), inset 0 1px 0 rgba(255, 255, 255,0.9)',
       }}
     >
       {/* الخط العلوي */}
@@ -213,10 +213,10 @@ const HeroBanner = () => {
             background:
               'linear-gradient(145deg, #fdfbf7 0%, #d4a5a5 100%)',
             border:
-              '1px solid rgb(6b1d2f,0.28)',
+              '1px solid rgba(61, 15, 24,0.28)',
             color: '#6b1d2f',
             boxShadow:
-              '0 6px 16px rgb(6b1d2f,0.13), inset 0 1px 0 rgb(ffffff,0.95)',
+              '0 6px 16px rgba(61, 15, 24,0.13), inset 0 1px 0 rgba(255, 255, 255,0.95)',
             flexShrink: 0,
           }}
         >
@@ -400,14 +400,14 @@ const HeroBanner = () => {
             background:
               'linear-gradient(135deg, #4a3a3f 0%, #4a3a3f 100%)',
             border:
-              '1px solid rgb(4a3a3f,0.28)',
+              '1px solid rgba(31, 17, 22,0.28)',
             color: '#ffffff',
             fontFamily:
               'Tajawal, Tajawal, Arial, sans-serif',
             fontSize: '0.78rem',
             fontWeight: 800,
             boxShadow:
-              '0 6px 16px rgb(4a3a3f,0.20)',
+              '0 6px 16px rgba(31, 17, 22,0.20)',
             transition:
               'transform 0.2s ease, box-shadow 0.2s ease',
           }}
@@ -416,18 +416,18 @@ const HeroBanner = () => {
               'translateY(-2px)';
 
             event.currentTarget.style.boxShadow =
-              '0 9px 20px rgb(4a3a3f,0.26)';
+              '0 9px 20px rgba(31, 17, 22,0.26)';
           }}
           onMouseLeave={(event) => {
             event.currentTarget.style.transform =
               'translateY(0)';
 
             event.currentTarget.style.boxShadow =
-              '0 6px 16px rgb(4a3a3f,0.20)';
+              '0 6px 16px rgba(31, 17, 22,0.20)';
           }}
           onFocus={(event) => {
             event.currentTarget.style.outline =
-              '3px solid rgb(4a3a3f,0.22)';
+              '3px solid rgba(31, 17, 22,0.22)';
             event.currentTarget.style.outlineOffset =
               '2px';
           }}
@@ -458,14 +458,14 @@ const HeroBanner = () => {
         style={{
           height: 1,
           background:
-            'linear-gradient(90deg, transparent, rgb(6b1d2f,0.42), transparent)',
+            'linear-gradient(90deg, transparent, rgba(61, 15, 24,0.42), transparent)',
         }}
       />
 
       <style>{`
         .hero-banner-whatsapp:hover {
           transform: translateY(-2px);
-          box-shadow: 0 9px 20px rgb(4a3a3f,0.26) !important;
+          box-shadow: 0 9px 20px rgba(31, 17, 22,0.26) !important;
         }
 
         .hero-banner-whatsapp:active {

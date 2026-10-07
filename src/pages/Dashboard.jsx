@@ -58,8 +58,8 @@ const StatCard = ({ icon: Icon, label, value, sub, color = '#6b1d2f', onClick })
         : undefined
     }
     style={{
-      background: 'rgb(1f1116,0.88)',
-      border: '1px solid rgb(6b1d2f,0.22)',
+      background: 'rgba(31, 17, 22,0.88)',
+      border: '1px solid rgba(61, 15, 24,0.22)',
       borderRadius: 16,
       padding: '1.1rem 1.2rem',
       display: 'flex',
@@ -67,15 +67,15 @@ const StatCard = ({ icon: Icon, label, value, sub, color = '#6b1d2f', onClick })
       gap: '1rem',
       cursor: onClick ? 'pointer' : 'default',
       transition: 'all 0.22s ease',
-      boxShadow: '0 4px 16px rgb(1f1116,0.25)',
+      boxShadow: '0 4px 16px rgba(31, 17, 22,0.25)',
     }}
     onMouseEnter={(e) => {
       if (onClick) e.currentTarget.style.transform = 'translateY(-3px)'
-      e.currentTarget.style.borderColor = 'rgb(6b1d2f,0.5)'
+      e.currentTarget.style.borderColor = 'rgba(61, 15, 24,0.5)'
     }}
     onMouseLeave={(e) => {
       e.currentTarget.style.transform = 'none'
-      e.currentTarget.style.borderColor = 'rgb(6b1d2f,0.22)'
+      e.currentTarget.style.borderColor = 'rgba(61, 15, 24,0.22)'
     }}
   >
     <div
@@ -135,8 +135,8 @@ const BranchCard = ({ branch, onClick }) => {
         }
       }}
       style={{
-        background: 'rgb(1f1116,0.9)',
-        border: '1px solid rgb(6b1d2f,0.2)',
+        background: 'rgba(31, 17, 22,0.9)',
+        border: '1px solid rgba(61, 15, 24,0.2)',
         borderRadius: 16,
         padding: '1rem 1.1rem',
         cursor: 'pointer',
@@ -146,12 +146,12 @@ const BranchCard = ({ branch, onClick }) => {
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = 'translateY(-3px)'
-        e.currentTarget.style.borderColor = 'rgb(6b1d2f,0.5)'
-        e.currentTarget.style.boxShadow = '0 8px 28px rgb(6b1d2f,0.14)'
+        e.currentTarget.style.borderColor = 'rgba(61, 15, 24,0.5)'
+        e.currentTarget.style.boxShadow = '0 8px 28px rgba(61, 15, 24,0.14)'
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = 'none'
-        e.currentTarget.style.borderColor = 'rgb(6b1d2f,0.2)'
+        e.currentTarget.style.borderColor = 'rgba(61, 15, 24,0.2)'
         e.currentTarget.style.boxShadow = 'none'
       }}
     >
@@ -163,7 +163,7 @@ const BranchCard = ({ branch, onClick }) => {
           width: 80,
           height: 80,
           background:
-            'radial-gradient(circle, rgb(6b1d2f,0.1), transparent 70%)',
+            'radial-gradient(circle, rgba(61, 15, 24,0.1), transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -203,8 +203,8 @@ const BranchCard = ({ branch, onClick }) => {
           style={{
             background:
               branch.status === 'نشط'
-                ? 'rgb(4a3a3f,0.15)'
-                : 'rgb(8f2a40,0.15)',
+                ? 'rgba(31, 17, 22,0.15)'
+                : 'rgba(61, 15, 24,0.15)',
             color: branch.status === 'نشط' ? '#4a3a3f' : '#f3e0dd',
             padding: '0.25rem 0.65rem',
             borderRadius: 999,
@@ -236,7 +236,7 @@ const BranchCard = ({ branch, onClick }) => {
         <div
           style={{
             height: 6,
-            background: 'rgb(ffffff,0.07)',
+            background: 'rgba(255, 255, 255,0.07)',
             borderRadius: 999,
           }}
         >
@@ -478,8 +478,8 @@ const Dashboard = () => {
       {/* Header */}
       <div
         style={{
-          background: 'rgb(1f1116,0.9)',
-          border: '1px solid rgb(6b1d2f,0.25)',
+          background: 'rgba(31, 17, 22,0.9)',
+          border: '1px solid rgba(61, 15, 24,0.25)',
           borderRadius: 20,
           padding: '1.25rem 1.4rem',
           marginBottom: '0.6rem',
@@ -546,9 +546,9 @@ const Dashboard = () => {
                 : 'رجوع للتبويب السابق'
             }
             style={{
-              background: 'rgb(6b1d2f,0.12)',
+              background: 'rgba(61, 15, 24,0.12)',
               color: '#f3e0dd',
-              border: '1px solid rgb(6b1d2f,0.35)',
+              border: '1px solid rgba(61, 15, 24,0.35)',
               padding: '0.6rem 1rem',
               borderRadius: 999,
               fontWeight: 700,
@@ -569,7 +569,7 @@ const Dashboard = () => {
             style={{
               background: 'transparent',
               color: '#d4a5a5',
-              border: '1px solid rgb(8a5560,0.25)',
+              border: '1px solid rgba(61, 15, 24,0.25)',
               padding: '0.6rem 1rem',
               borderRadius: 999,
               fontWeight: 700,
@@ -605,9 +605,9 @@ const Dashboard = () => {
             type="button"
             onClick={() => navigate('/branches')}
             style={{
-              background: 'rgb(6b1d2f,0.12)',
+              background: 'rgba(61, 15, 24,0.12)',
               color: '#f3e0dd',
-              border: '1px solid rgb(6b1d2f,0.25)',
+              border: '1px solid rgba(61, 15, 24,0.25)',
               padding: '0.6rem 1.1rem',
               borderRadius: 999,
               fontWeight: 700,
@@ -628,9 +628,9 @@ const Dashboard = () => {
       <div
         style={{
           marginBottom: '1rem',
-          background: 'rgb(1f1116,0.95)',
+          background: 'rgba(31, 17, 22,0.95)',
           borderRadius: 14,
-          border: '1px solid rgb(6b1d2f,0.35)',
+          border: '1px solid rgba(61, 15, 24,0.35)',
           padding: '0.7rem 1rem',
           display: 'flex',
           alignItems: 'center',
@@ -708,8 +708,8 @@ const Dashboard = () => {
         style={{
           display: 'flex',
           gap: '0.5rem',
-          background: 'rgb(1f1116,0.7)',
-          border: '1px solid rgb(6b1d2f,0.15)',
+          background: 'rgba(31, 17, 22,0.7)',
+          border: '1px solid rgba(61, 15, 24,0.15)',
           borderRadius: 14,
           padding: '0.4rem',
           marginBottom: '1.1rem',
@@ -772,8 +772,8 @@ const Dashboard = () => {
           {/* أحدث الفروع */}
           <div
             style={{
-              background: 'rgb(1f1116,0.88)',
-              border: '1px solid rgb(6b1d2f,0.2)',
+              background: 'rgba(31, 17, 22,0.88)',
+              border: '1px solid rgba(61, 15, 24,0.2)',
               borderRadius: 16,
               overflow: 'hidden',
             }}
@@ -781,7 +781,7 @@ const Dashboard = () => {
             <div
               style={{
                 padding: '0.85rem 1.1rem',
-                borderBottom: '1px solid rgb(6b1d2f,0.15)',
+                borderBottom: '1px solid rgba(61, 15, 24,0.15)',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
@@ -839,11 +839,11 @@ const Dashboard = () => {
                         borderRadius: 10,
                         cursor: 'pointer',
                         transition: 'background 0.2s',
-                        borderBottom: '1px solid rgb(ffffff,0.04)',
+                        borderBottom: '1px solid rgba(255, 255, 255,0.04)',
                       }}
                       onMouseEnter={(e) =>
                         (e.currentTarget.style.background =
-                          'rgb(6b1d2f,0.06)')
+                          'rgba(61, 15, 24,0.06)')
                       }
                       onMouseLeave={(e) =>
                         (e.currentTarget.style.background = 'transparent')
@@ -856,7 +856,7 @@ const Dashboard = () => {
                           borderRadius: 10,
                           flexShrink: 0,
                           background:
-                            'linear-gradient(135deg, rgb(6b1d2f,0.2), rgb(6b1d2f,0.15))',
+                            'linear-gradient(135deg, rgba(61, 15, 24,0.2), rgba(61, 15, 24,0.15))',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
@@ -923,8 +923,8 @@ const Dashboard = () => {
           {/* الإعلانات النشطة */}
           <div
             style={{
-              background: 'rgb(1f1116,0.88)',
-              border: '1px solid rgb(6b1d2f,0.2)',
+              background: 'rgba(31, 17, 22,0.88)',
+              border: '1px solid rgba(61, 15, 24,0.2)',
               borderRadius: 16,
               overflow: 'hidden',
             }}
@@ -932,7 +932,7 @@ const Dashboard = () => {
             <div
               style={{
                 padding: '0.85rem 1.1rem',
-                borderBottom: '1px solid rgb(6b1d2f,0.15)',
+                borderBottom: '1px solid rgba(61, 15, 24,0.15)',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
@@ -972,7 +972,7 @@ const Dashboard = () => {
                     style={{
                       padding: '0.7rem 0.8rem',
                       borderRadius: 10,
-                      borderBottom: '1px solid rgb(ffffff,0.04)',
+                      borderBottom: '1px solid rgba(255, 255, 255,0.04)',
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.75rem',
@@ -984,7 +984,7 @@ const Dashboard = () => {
                         height: 38,
                         borderRadius: 10,
                         flexShrink: 0,
-                        background: 'rgb(6b1d2f,0.15)',
+                        background: 'rgba(61, 15, 24,0.15)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -1018,7 +1018,7 @@ const Dashboard = () => {
                     </div>
                     <span
                       style={{
-                        background: 'rgb(4a3a3f,0.15)',
+                        background: 'rgba(31, 17, 22,0.15)',
                         color: '#4a3a3f',
                         padding: '0.2rem 0.55rem',
                         borderRadius: 999,
@@ -1066,8 +1066,8 @@ const Dashboard = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               style={{
-                background: 'rgb(1f1116,0.88)',
-                border: '1px solid rgb(6b1d2f,0.22)',
+                background: 'rgba(31, 17, 22,0.88)',
+                border: '1px solid rgba(61, 15, 24,0.22)',
                 borderRadius: 12,
                 padding: '0.65rem 1rem',
                 color: '#fdfbf7',
@@ -1118,8 +1118,8 @@ const Dashboard = () => {
                   textAlign: 'center',
                   padding: '3rem',
                   color: '#8a5560',
-                  background: 'rgb(1f1116,0.7)',
-                  border: '1px solid rgb(6b1d2f,0.12)',
+                  background: 'rgba(31, 17, 22,0.7)',
+                  border: '1px solid rgba(61, 15, 24,0.12)',
                   borderRadius: 16,
                 }}
               >
@@ -1154,8 +1154,8 @@ const Dashboard = () => {
                   }
                 }}
                 style={{
-                  background: 'rgb(6b1d2f,0.08)',
-                  border: '1px solid rgb(6b1d2f,0.25)',
+                  background: 'rgba(61, 15, 24,0.08)',
+                  border: '1px solid rgba(61, 15, 24,0.25)',
                   borderRadius: 14,
                   padding: '0.9rem 1.1rem',
                   display: 'flex',
@@ -1182,7 +1182,7 @@ const Dashboard = () => {
                 </div>
                 <span
                   style={{
-                    background: 'rgb(6b1d2f,0.2)',
+                    background: 'rgba(61, 15, 24,0.2)',
                     color: '#6b1d2f',
                     padding: '0.25rem 0.7rem',
                     borderRadius: 999,
@@ -1209,8 +1209,8 @@ const Dashboard = () => {
                   }
                 }}
                 style={{
-                  background: 'rgb(8f2a40,0.08)',
-                  border: '1px solid rgb(8f2a40,0.25)',
+                  background: 'rgba(61, 15, 24,0.08)',
+                  border: '1px solid rgba(61, 15, 24,0.25)',
                   borderRadius: 14,
                   padding: '0.9rem 1.1rem',
                   display: 'flex',
@@ -1240,7 +1240,7 @@ const Dashboard = () => {
                 </div>
                 <span
                   style={{
-                    background: 'rgb(8f2a40,0.2)',
+                    background: 'rgba(61, 15, 24,0.2)',
                     color: '#f3e0dd',
                     padding: '0.25rem 0.7rem',
                     borderRadius: 999,
@@ -1263,8 +1263,8 @@ const Dashboard = () => {
                   textAlign: 'center',
                   padding: '3rem',
                   color: '#4a3a3f',
-                  background: 'rgb(4a3a3f,0.05)',
-                  border: '1px solid rgb(4a3a3f,0.2)',
+                  background: 'rgba(31, 17, 22,0.05)',
+                  border: '1px solid rgba(31, 17, 22,0.2)',
                   borderRadius: 16,
                 }}
               >

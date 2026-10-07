@@ -36,9 +36,9 @@ const AddToHomeSection = () => {
         padding: '0.75rem 0.85rem',
         boxSizing: 'border-box',
         background: 'linear-gradient(145deg, #fdfbf7 0%, #fdfbf7 55%, #fdfbf7 100%)',
-        border: '1px solid rgb(6b1d2f, 0.3)',
+        border: '1px solid rgba(61, 15, 24, 0.3)',
         borderRadius: 14,
-        boxShadow: '0 4px 14px rgb(6b1d2f, 0.08)',
+        boxShadow: '0 4px 14px rgba(61, 15, 24, 0.08)',
         textAlign: 'center',
         fontFamily: 'Tajawal, sans-serif',
       }}
@@ -87,7 +87,7 @@ const AddToHomeSection = () => {
           display: 'inline-flex',
           alignItems: 'center',
           gap: 6,
-          boxShadow: '0 3px 10px rgb(6b1d2f, 0.3)',
+          boxShadow: '0 3px 10px rgba(61, 15, 24, 0.3)',
         }}
       >
         <PlusSquare size={14} />
@@ -103,7 +103,7 @@ const AddToHomeSection = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgb(1f1116, 0.55)',
+            background: 'rgba(31, 17, 22, 0.55)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -115,7 +115,7 @@ const AddToHomeSection = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg, #fdfbf7, #fdfbf7)',
-              border: '1px solid rgb(6b1d2f, 0.45)',
+              border: '1px solid rgba(61, 15, 24, 0.45)',
               borderRadius: 18,
               padding: '1.2rem 1.1rem',
               maxWidth: 400,
@@ -123,7 +123,7 @@ const AddToHomeSection = () => {
               maxHeight: '85vh',
               overflowY: 'auto',
               textAlign: 'right',
-              boxShadow: '0 20px 50px rgb(1f1116, 0.35)',
+              boxShadow: '0 20px 50px rgba(31, 17, 22, 0.35)',
             }}
           >
             <div
@@ -149,8 +149,8 @@ const AddToHomeSection = () => {
                 aria-label="إغلاق"
                 onClick={() => setOpen(false)}
                 style={{
-                  background: 'rgb(6b1d2f, 0.12)',
-                  border: '1px solid rgb(6b1d2f, 0.35)',
+                  background: 'rgba(61, 15, 24, 0.12)',
+                  border: '1px solid rgba(61, 15, 24, 0.35)',
                   borderRadius: '50%',
                   width: 30,
                   height: 30,
@@ -169,8 +169,8 @@ const AddToHomeSection = () => {
               <div
                 key={os}
                 style={{
-                  background: 'rgb(ffffff, 0.65)',
-                  border: '1px solid rgb(6b1d2f, 0.25)',
+                  background: 'rgba(255, 255, 255, 0.65)',
+                  border: '1px solid rgba(61, 15, 24, 0.25)',
                   borderRadius: 12,
                   padding: '0.7rem 0.85rem',
                   marginBottom: '0.55rem',

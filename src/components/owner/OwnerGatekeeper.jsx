@@ -155,7 +155,7 @@ const OwnerGatekeeper = ({ onPassed, onCancel }) => {
           background: 'linear-gradient(160deg, #fdfbf7, #fdfbf7)',
           border: '2px solid #6b1d2f',
           borderRadius: 20,
-          boxShadow: '0 24px 60px rgb(1f1116,0.35)',
+          boxShadow: '0 24px 60px rgba(31, 17, 22,0.35)',
           overflow: 'hidden'
         }}
       >

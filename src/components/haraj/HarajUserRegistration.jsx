@@ -123,7 +123,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
       left: 0,
       right: 0,
       bottom: 0,
-      background: 'rgb(1f1116, 0.85)',
+      background: 'rgba(31, 17, 22, 0.85)',
       backdropFilter: 'blur(8px)',
       display: 'flex',
       alignItems: 'center',
@@ -133,7 +133,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
     }}>
       <div style={{
         background: 'linear-gradient(180deg, #1f1116 0%, #1f1116 100%)',
-        border: '1px solid rgb(6b1d2f, 0.3)',
+        border: '1px solid rgba(61, 15, 24, 0.3)',
         borderRadius: 24,
         width: '100%',
         maxWidth: 480,
@@ -154,7 +154,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               position: 'absolute',
               top: '1rem',
               left: '1rem',
-              background: 'rgb(1f1116, 0.2)',
+              background: 'rgba(31, 17, 22, 0.2)',
               border: 'none',
               borderRadius: '50%',
               width: 32,
@@ -171,7 +171,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
           <div style={{
             width: 64,
             height: 64,
-            background: 'rgb(1f1116, 0.2)',
+            background: 'rgba(31, 17, 22, 0.2)',
             borderRadius: '50%',
             display: 'flex',
             alignItems: 'center',
@@ -193,7 +193,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
           <p style={{
             margin: '0.5rem 0 0',
             fontSize: '0.85rem',
-            color: 'rgb(1f1116, 0.7)',
+            color: 'rgba(31, 17, 22, 0.7)',
             fontFamily: 'Tajawal, sans-serif',
           }}>
             للتواصل مع المعلن بالشكل الصحيح
@@ -225,8 +225,8 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               placeholder="أدخل اسمك الحقيقي"
               style={{
                 width: '100%',
-                background: 'rgb(1f1116, 0.3)',
-                border: errors.name ? '1px solid #8f2a40' : '1px solid rgb(6b1d2f, 0.2)',
+                background: 'rgba(31, 17, 22, 0.3)',
+                border: errors.name ? '1px solid #8f2a40' : '1px solid rgba(61, 15, 24, 0.2)',
                 borderRadius: 12,
                 padding: '0.85rem 1rem',
                 color: '#fdfbf7',
@@ -265,8 +265,8 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               dir="ltr"
               style={{
                 width: '100%',
-                background: 'rgb(1f1116, 0.3)',
-                border: errors.phone ? '1px solid #8f2a40' : '1px solid rgb(6b1d2f, 0.2)',
+                background: 'rgba(31, 17, 22, 0.3)',
+                border: errors.phone ? '1px solid #8f2a40' : '1px solid rgba(61, 15, 24, 0.2)',
                 borderRadius: 12,
                 padding: '0.85rem 1rem',
                 color: '#fdfbf7',
@@ -306,8 +306,8 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               dir="ltr"
               style={{
                 width: '100%',
-                background: 'rgb(1f1116, 0.3)',
-                border: errors.email ? '1px solid #8f2a40' : '1px solid rgb(6b1d2f, 0.2)',
+                background: 'rgba(31, 17, 22, 0.3)',
+                border: errors.email ? '1px solid #8f2a40' : '1px solid rgba(61, 15, 24, 0.2)',
                 borderRadius: 12,
                 padding: '0.85rem 1rem',
                 color: '#fdfbf7',
@@ -344,8 +344,8 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               onChange={handleChange}
               style={{
                 width: '100%',
-                background: 'rgb(1f1116, 0.3)',
-                border: errors.region ? '1px solid #8f2a40' : '1px solid rgb(6b1d2f, 0.2)',
+                background: 'rgba(31, 17, 22, 0.3)',
+                border: errors.region ? '1px solid #8f2a40' : '1px solid rgba(61, 15, 24, 0.2)',
                 borderRadius: 12,
                 padding: '0.85rem 1rem',
                 color: formData.region ? '#fdfbf7' : '#888',
@@ -378,7 +378,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
             cursor: 'pointer',
             marginBottom: '1.5rem',
             padding: '1rem',
-            background: 'rgb(1f1116, 0.2)',
+            background: 'rgba(31, 17, 22, 0.2)',
             borderRadius: 12,
           }}>
             <div
@@ -388,7 +388,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
                 height: 24,
                 borderRadius: 6,
                 background: agreed ? 'linear-gradient(135deg, #4a3a3f 0%, #4a3a3f 100%)' : 'transparent',
-                border: agreed ? 'none' : '2px solid rgb(6b1d2f, 0.4)',
+                border: agreed ? 'none' : '2px solid rgba(61, 15, 24, 0.4)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -416,7 +416,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               width: '100%',
               background: agreed 
                 ? 'linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 100%)'
-                : 'rgb(6b1d2f, 0.2)',
+                : 'rgba(61, 15, 24, 0.2)',
               border: 'none',
               borderRadius: 12,
               padding: '1rem',

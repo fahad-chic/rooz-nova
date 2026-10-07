@@ -12,8 +12,8 @@ import { Crown, X } from 'lucide-react'
 const C = {
   ivory: '#fdfbf7',
   ivoryDeep: '#fdfbf7',
-  line: 'rgb(6b1d2f, 0.45)',
-  lineSoft: 'rgb(6b1d2f, 0.22)',
+  line: 'rgba(61, 15, 24, 0.45)',
+  lineSoft: 'rgba(61, 15, 24, 0.22)',
   gold: '#6b1d2f',
   goldDeep: '#1f1116',
   ink: '#1f1116',
@@ -81,7 +81,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
             radial-gradient(120% 120% at 30% 15%, #fdfbf7, ${C.ivoryDeep} 70%);
           box-shadow:
             inset 0 0 0 1.5px ${C.line},
-            0 6px 18px rgb(1f1116, 0.22);
+            0 6px 18px rgba(31, 17, 22, 0.22);
           transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .ocm-trigger:hover,
@@ -89,7 +89,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           transform: translateY(-1px);
           box-shadow:
             inset 0 0 0 1.5px ${C.gold},
-            0 9px 22px rgb(1f1116, 0.3);
+            0 9px 22px rgba(31, 17, 22, 0.3);
           outline: none;
         }
         .ocm-trigger:active { transform: scale(0.96); }
@@ -97,8 +97,8 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           color: #fff;
           background: linear-gradient(150deg, #6b1d2f, ${C.gold} 65%, #6b1d2f);
           box-shadow:
-            inset 0 0 0 1.5px rgb(ffffff, 0.5),
-            0 8px 20px rgb(1f1116, 0.32);
+            inset 0 0 0 1.5px rgba(255, 255, 255, 0.5),
+            0 8px 20px rgba(31, 17, 22, 0.32);
         }
         /* التاج الصغير أعلى الأيقونة — وسم «امتياز المالك» */
         .ocm-trigger-mark {
@@ -112,7 +112,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           border-radius: 50%;
           color: ${C.ink};
           background: linear-gradient(140deg, #d4a5a5, #6b1d2f 60%, #6b1d2f);
-          box-shadow: 0 2px 6px rgb(1f1116, 0.35);
+          box-shadow: 0 2px 6px rgba(31, 17, 22, 0.35);
         }
 
         /* لوحة الخيارات — عاجية بحدود ذهبية واضحة ومحددة */
@@ -128,8 +128,8 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           background: linear-gradient(170deg, ${C.ivory}, ${C.ivoryDeep});
           border: 1.5px solid ${C.line};
           box-shadow:
-            0 22px 54px rgb(1f1116, 0.28),
-            0 2px 0 rgb(ffffff, 0.9) inset;
+            0 22px 54px rgba(31, 17, 22, 0.28),
+            0 2px 0 rgba(255, 255, 255, 0.9) inset;
           color: ${C.ink};
         }
         .ocm-head {
@@ -201,7 +201,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
         }
         .ocm-item:hover,
         .ocm-item:focus-visible {
-          background: rgb(6b1d2f, 0.16);
+          background: rgba(61, 15, 24, 0.16);
           border-color: ${C.line};
           outline: none;
           transform: translateX(-2px);
@@ -243,7 +243,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
         .ocm-item.is-active {
           background: linear-gradient(140deg, #d4a5a5, #6b1d2f 60%, #6b1d2f);
           border-color: ${C.gold};
-          box-shadow: 0 8px 20px rgb(1f1116, 0.22);
+          box-shadow: 0 8px 20px rgba(31, 17, 22, 0.22);
         }
         .ocm-item.is-active .ocm-item-icon {
           color: #fff;

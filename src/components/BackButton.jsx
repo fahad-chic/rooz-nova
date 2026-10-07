@@ -70,7 +70,7 @@ const BackButton = () => {
         fontSize: '0.82rem',
         fontFamily: 'Tajawal, sans-serif',
         cursor: 'pointer',
-        boxShadow: '0 2px 10px rgb(6b1d2f,0.2)',
+        boxShadow: '0 2px 10px rgba(61, 15, 24,0.2)',
         WebkitTapHighlightColor: 'transparent',
       }}
     >

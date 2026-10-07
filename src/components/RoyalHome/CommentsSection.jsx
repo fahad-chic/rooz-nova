@@ -162,9 +162,9 @@ const CommentsSection = () => {
         padding: '0.85rem 0.9rem',
         boxSizing: 'border-box',
         background: 'linear-gradient(145deg, #fdfbf7 0%, #fdfbf7 52%, #fdfbf7 100%)',
-        border: '1px solid rgb(6b1d2f, 0.22)',
+        border: '1px solid rgba(61, 15, 24, 0.22)',
         borderRadius: 18,
-        boxShadow: '0 10px 28px rgb(6b1d2f, 0.08), inset 0 1px 0 rgb(ffffff,0.8)',
+        boxShadow: '0 10px 28px rgba(61, 15, 24, 0.08), inset 0 1px 0 rgba(255, 255, 255,0.8)',
         fontFamily: 'Tajawal, Arial, sans-serif',
       }}
     >
@@ -189,7 +189,7 @@ const CommentsSection = () => {
               justifyContent: 'center',
               background: 'linear-gradient(145deg, #6b1d2f 0%, #6b1d2f 100%)',
               color: '#fdfbf7',
-              boxShadow: '0 4px 12px rgb(6b1d2f, 0.2)',
+              boxShadow: '0 4px 12px rgba(61, 15, 24, 0.2)',
             }}
           >
             <MessageCircle size={17} strokeWidth={2.3} />
@@ -250,7 +250,7 @@ const CommentsSection = () => {
             fontSize: '0.72rem',
             fontWeight: 800,
             cursor: 'pointer',
-            boxShadow: '0 2px 8px rgb(6b1d2f, 0.15)',
+            boxShadow: '0 2px 8px rgba(61, 15, 24, 0.15)',
             fontFamily: 'inherit',
             whiteSpace: 'nowrap',
           }}
@@ -271,12 +271,12 @@ const CommentsSection = () => {
             height: 42,
             borderRadius: 11,
             background: 'linear-gradient(90deg, #1f1116 0%, #1f1116 40%, #1f1116 100%)',
-            border: '1px solid rgb(6b1d2f, 0.35)',
+            border: '1px solid rgba(61, 15, 24, 0.35)',
             cursor: 'pointer',
             display: 'flex',
             alignItems: 'center',
             padding: '0 12px',
-            boxShadow: 'inset 0 1px 0 rgb(ffffff,0.08)',
+            boxShadow: 'inset 0 1px 0 rgba(255, 255, 255,0.08)',
           }}
         >
           <div
@@ -338,8 +338,8 @@ const CommentsSection = () => {
             marginTop: '0.5rem',
             padding: '0.5rem 0.7rem',
             borderRadius: 8,
-            background: 'rgb(6b1d2f, 0.06)',
-            border: '1px solid rgb(6b1d2f, 0.15)',
+            background: 'rgba(61, 15, 24, 0.06)',
+            border: '1px solid rgba(61, 15, 24, 0.15)',
             color: '#6b1d2f',
             fontSize: '0.75rem',
           }}
@@ -358,7 +358,7 @@ const CommentsSection = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgb(1f1116, 0.62)',
+            background: 'rgba(31, 17, 22, 0.62)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -370,14 +370,14 @@ const CommentsSection = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg, #fdfbf7, #fdfbf7)',
-              border: '1.5px solid rgb(6b1d2f, 0.45)',
+              border: '1.5px solid rgba(61, 15, 24, 0.45)',
               borderRadius: 18,
               padding: '1.1rem',
               maxWidth: 420,
               width: '100%',
               maxHeight: '82vh',
               overflowY: 'auto',
-              boxShadow: '0 22px 50px rgb(1f1116, 0.35)',
+              boxShadow: '0 22px 50px rgba(31, 17, 22, 0.35)',
               fontFamily: 'Tajawal, sans-serif',
             }}
           >
@@ -405,7 +405,7 @@ const CommentsSection = () => {
                 type="button"
                 onClick={() => setShowAllComments(false)}
                 style={{
-                  background: 'rgb(1f1116,0.06)',
+                  background: 'rgba(31, 17, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -431,7 +431,7 @@ const CommentsSection = () => {
                     width: '100%',
                     textAlign: 'right',
                     background: '#fdfbf7',
-                    border: '1px solid rgb(6b1d2f, 0.28)',
+                    border: '1px solid rgba(61, 15, 24, 0.28)',
                     borderRadius: 11,
                     padding: '0.75rem',
                     cursor: 'pointer',
@@ -507,7 +507,7 @@ const CommentsSection = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgb(1f1116, 0.62)',
+            background: 'rgba(31, 17, 22, 0.62)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -519,12 +519,12 @@ const CommentsSection = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg, #fdfbf7, #fdfbf7)',
-              border: '1.5px solid rgb(6b1d2f, 0.45)',
+              border: '1.5px solid rgba(61, 15, 24, 0.45)',
               borderRadius: 18,
               padding: '1.25rem 1.1rem',
               maxWidth: 360,
               width: '100%',
-              boxShadow: '0 22px 50px rgb(1f1116, 0.35)',
+              boxShadow: '0 22px 50px rgba(31, 17, 22, 0.35)',
               fontFamily: 'Tajawal, sans-serif',
             }}
           >
@@ -592,7 +592,7 @@ const CommentsSection = () => {
                         boxSizing: 'border-box',
                         padding: '0.55rem 2rem 0.55rem 0.7rem',
                         borderRadius: 9,
-                        border: '1px solid rgb(6b1d2f, 0.35)',
+                        border: '1px solid rgba(61, 15, 24, 0.35)',
                         background: '#fff',
                         fontSize: '0.82rem',
                         fontFamily: 'inherit',
@@ -613,7 +613,7 @@ const CommentsSection = () => {
                         boxSizing: 'border-box',
                         padding: '0.55rem 2rem 0.55rem 0.7rem',
                         borderRadius: 9,
-                        border: '1px solid rgb(6b1d2f, 0.35)',
+                        border: '1px solid rgba(61, 15, 24, 0.35)',
                         background: '#fff',
                         fontSize: '0.82rem',
                         fontFamily: 'inherit',
@@ -634,7 +634,7 @@ const CommentsSection = () => {
                         boxSizing: 'border-box',
                         padding: '0.55rem 2rem 0.55rem 0.7rem',
                         borderRadius: 9,
-                        border: '1px solid rgb(6b1d2f, 0.35)',
+                        border: '1px solid rgba(61, 15, 24, 0.35)',
                         background: '#fff',
                         fontSize: '0.82rem',
                         fontFamily: 'inherit',
@@ -655,7 +655,7 @@ const CommentsSection = () => {
                       boxSizing: 'border-box',
                       padding: '0.55rem 0.7rem',
                       borderRadius: 9,
-                      border: '1px solid rgb(6b1d2f, 0.35)',
+                      border: '1px solid rgba(61, 15, 24, 0.35)',
                       background: '#fff',
                       fontSize: '0.82rem',
                       fontFamily: 'inherit',
@@ -707,7 +707,7 @@ const CommentsSection = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgb(1f1116, 0.62)',
+            background: 'rgba(31, 17, 22, 0.62)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -719,13 +719,13 @@ const CommentsSection = () => {
             onClick={(e) => e.stopPropagation()}
             style={{
               background: 'linear-gradient(145deg, #fdfbf7, #fdfbf7)',
-              border: '1.5px solid rgb(6b1d2f, 0.45)',
+              border: '1.5px solid rgba(61, 15, 24, 0.45)',
               borderRadius: 16,
               padding: '1.15rem 1rem',
               maxWidth: 340,
               width: '100%',
               position: 'relative',
-              boxShadow: '0 20px 45px rgb(1f1116, 0.35)',
+              boxShadow: '0 20px 45px rgba(31, 17, 22, 0.35)',
             }}
           >
             <button
@@ -735,7 +735,7 @@ const CommentsSection = () => {
                 position: 'absolute',
                 top: 10,
                 left: 10,
-                background: 'rgb(1f1116,0.06)',
+                background: 'rgba(31, 17, 22,0.06)',
                 border: 'none',
                 borderRadius: 8,
                 width: 28,

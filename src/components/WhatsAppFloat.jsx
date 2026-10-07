@@ -36,10 +36,10 @@ const WhatsAppFloat = () => {
             alignItems: 'center',
             gap: 10,
             background: 'linear-gradient(145deg, #fdfbf7, #fdfbf7)',
-            border: '1px solid rgb(6b1d2f, 0.35)',
+            border: '1px solid rgba(61, 15, 24, 0.35)',
             borderRadius: 14,
             padding: '10px 14px',
-            boxShadow: '0 10px 30px rgb(1f1116, 0.25)',
+            boxShadow: '0 10px 30px rgba(31, 17, 22, 0.25)',
             textDecoration: 'none',
             maxWidth: 240,
           }}
@@ -96,7 +96,7 @@ const WhatsAppFloat = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          boxShadow: '0 8px 24px rgb(6b1d2f, 0.45)',
+          boxShadow: '0 8px 24px rgba(61, 15, 24, 0.45)',
           textDecoration: 'none',
         }}
       >

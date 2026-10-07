@@ -39,8 +39,8 @@ export const AboutPage = () => {
           padding: 1.4rem 1rem;
           border-radius: 16px;
           background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
-          border: 1px solid rgb(1f1116,0.10);
-          box-shadow: 0 6px 18px rgb(1f1116,0.06);
+          border: 1px solid rgba(31, 17, 22,0.10);
+          box-shadow: 0 6px 18px rgba(31, 17, 22,0.06);
         }
 
         .about-title {
@@ -70,10 +70,10 @@ export const AboutPage = () => {
 
         .about-card {
           background: #ffffff;
-          border: 1px solid rgb(1f1116,0.08);
+          border: 1px solid rgba(31, 17, 22,0.08);
           border-radius: 14px;
           padding: 1rem;
-          box-shadow: 0 6px 18px rgb(1f1116,0.06);
+          box-shadow: 0 6px 18px rgba(31, 17, 22,0.06);
           margin-bottom: 0.8rem;
         }
 
@@ -102,7 +102,7 @@ export const AboutPage = () => {
 
         .stat-box {
           background: #fdfbf7;
-          border: 1px solid rgb(1f1116,0.08);
+          border: 1px solid rgba(31, 17, 22,0.08);
           padding: 0.8rem;
           border-radius: 12px;
           text-align: center;
@@ -129,7 +129,7 @@ export const AboutPage = () => {
         .partner-box {
           background: #fdfbf7;
           border-radius: 10px;
-          border: 1px solid rgb(1f1116,0.08);
+          border: 1px solid rgba(31, 17, 22,0.08);
           padding: 0.7rem;
         }
 
@@ -149,7 +149,7 @@ export const AboutPage = () => {
           padding: 1rem;
           background: #ffffff;
           border-radius: 14px;
-          border: 1px solid rgb(1f1116,0.08);
+          border: 1px solid rgba(31, 17, 22,0.08);
           text-align: center;
           color: #8a5560;
           font-size: 0.8rem;

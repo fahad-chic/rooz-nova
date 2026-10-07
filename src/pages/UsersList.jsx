@@ -280,9 +280,9 @@ const container = {
     'linear-gradient(145deg, #1f1116 0%, #1f1116 100%)',
   padding: '1.25rem',
   borderRadius: 18,
-  border: '1px solid rgb(6b1d2f,0.24)',
+  border: '1px solid rgba(61, 15, 24,0.24)',
   boxShadow:
-    '0 12px 35px rgb(1f1116,0.28), inset 0 1px 0 rgb(ffffff,0.03)',
+    '0 12px 35px rgba(31, 17, 22,0.28), inset 0 1px 0 rgba(255, 255, 255,0.03)',
   fontFamily: 'Tajawal, Tajawal, sans-serif',
   width: '100%',
   boxSizing: 'border-box',
@@ -314,7 +314,7 @@ const titleIcon = {
   color: '#111',
   background:
     'linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 48%, #6b1d2f 100%)',
-  boxShadow: '0 6px 18px rgb(6b1d2f,0.14)',
+  boxShadow: '0 6px 18px rgba(61, 15, 24,0.14)',
   flexShrink: 0,
 };
 
@@ -340,8 +340,8 @@ const ownerBadge = {
   padding: '6px 9px',
   borderRadius: 999,
   color: '#6b1d2f',
-  background: 'rgb(6b1d2f,0.08)',
-  border: '1px solid rgb(6b1d2f,0.18)',
+  background: 'rgba(61, 15, 24,0.08)',
+  border: '1px solid rgba(61, 15, 24,0.18)',
   fontSize: 11,
   fontWeight: 700,
   whiteSpace: 'nowrap',
@@ -409,10 +409,10 @@ const userCard = {
   alignItems: 'center',
   gap: 11,
   background:
-    'linear-gradient(135deg, rgb(1f1116,0.98), rgb(1f1116,0.98))',
+    'linear-gradient(135deg, rgba(31, 17, 22,0.98), rgba(31, 17, 22,0.98))',
   padding: 11,
   borderRadius: 13,
-  border: '1px solid rgb(6b1d2f,0.12)',
+  border: '1px solid rgba(61, 15, 24,0.12)',
   boxSizing: 'border-box',
   minWidth: 0,
   transition:
@@ -425,7 +425,7 @@ const avatarWrapper = {
   minWidth: 44,
   borderRadius: '50%',
   overflow: 'hidden',
-  border: '2px solid rgb(6b1d2f,0.35)',
+  border: '2px solid rgba(61, 15, 24,0.35)',
   background: '#1f1116',
   boxSizing: 'border-box',
 };
@@ -526,14 +526,14 @@ const btnChat = {
   background:
     'linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 50%, #6b1d2f 100%)',
   color: '#111',
-  borderColor: 'rgb(d4a5a5,0.25)',
+  borderColor: 'rgba(212, 165, 165,0.25)',
 };
 
 const btnCopy = {
   ...btnBase,
   background: '#222',
   color: '#ddd',
-  borderColor: 'rgb(ffffff,0.08)',
+  borderColor: 'rgba(255, 255, 255,0.08)',
 };
 
 if (

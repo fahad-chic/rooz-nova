@@ -75,8 +75,8 @@ export const AdvertisementsPage = () => {
           align-items: center;
           margin-bottom: 1rem;
           padding: 1rem 1.1rem;
-          background: rgb(1f1116,0.8);
-          border: 1px solid rgb(6b1d2f,0.2);
+          background: rgba(31, 17, 22,0.8);
+          border: 1px solid rgba(61, 15, 24,0.2);
           border-radius: 16px;
         }
 
@@ -85,16 +85,16 @@ export const AdvertisementsPage = () => {
 
         .ads-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
         .ad-card {
-          background: rgb(1f1116,0.86);
-          border: 1px solid rgb(6b1d2f,0.18);
+          background: rgba(31, 17, 22,0.86);
+          border: 1px solid rgba(61, 15, 24,0.18);
           border-radius: 16px;
           overflow: hidden;
-          box-shadow: 0 8px 20px rgb(1f1116,0.2);
+          box-shadow: 0 8px 20px rgba(31, 17, 22,0.2);
         }
 
         .ad-card:hover {
           transform: translateY(-4px);
-          box-shadow: 0 8px 20px rgb(6b1d2f, 0.2);
+          box-shadow: 0 8px 20px rgba(61, 15, 24, 0.2);
         }
 
         .ad-card.inactive {
@@ -104,7 +104,7 @@ export const AdvertisementsPage = () => {
         .ad-image {
           width: 100%;
           height: 150px;
-          background: linear-gradient(135deg, rgb(6b1d2f,0.22), rgb(ffffff,0.05));
+          background: linear-gradient(135deg, rgba(61, 15, 24,0.22), rgba(255, 255, 255,0.05));
           display: flex;
           align-items: center;
           justify-content: center;
@@ -146,12 +146,12 @@ export const AdvertisementsPage = () => {
         }
 
         .ad-status.active {
-          background: rgb(4a3a3f, 0.1);
+          background: rgba(31, 17, 22, 0.1);
           color: #4a3a3f;
         }
 
         .ad-status.inactive {
-          background: rgb(8f2a40, 0.1);
+          background: rgba(61, 15, 24, 0.1);
           color: #6b1d2f;
         }
 
@@ -201,7 +201,7 @@ export const AdvertisementsPage = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgb(1f1116, 0.5);
+          background: rgba(31, 17, 22, 0.5);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -214,7 +214,7 @@ export const AdvertisementsPage = () => {
           padding: 2rem;
           max-width: 500px;
           width: 90%;
-          box-shadow: 0 20px 25px rgb(1f1116, 0.15);
+          box-shadow: 0 20px 25px rgba(31, 17, 22, 0.15);
         }
 
         .modal-header {
@@ -373,7 +373,7 @@ export const AdvertisementsPage = () => {
                 onClick={() => setShowForm(false)}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(1f1116,0.06)',
+                  background: 'rgba(31, 17, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,

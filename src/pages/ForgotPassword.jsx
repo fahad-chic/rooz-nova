@@ -111,7 +111,7 @@ export default ForgotPassword;
 const page = {
   minHeight: '100vh',
   background:
-    'radial-gradient(circle at 50% 20%, rgb(6b1d2f,0.10), transparent 40%), linear-gradient(135deg, #fdfbf7, #fdfbf7)',
+    'radial-gradient(circle at 50% 20%, rgba(61, 15, 24,0.10), transparent 40%), linear-gradient(135deg, #fdfbf7, #fdfbf7)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -127,8 +127,8 @@ const card = {
   borderRadius: 20,
   width: '100%',
   maxWidth: 420,
-  border: '1px solid rgb(1f1116,0.08)',
-  boxShadow: '0 20px 55px rgb(1f1116,0.12), inset 0 1px 0 rgb(ffffff,0.6)',
+  border: '1px solid rgba(31, 17, 22,0.08)',
+  boxShadow: '0 20px 55px rgba(31, 17, 22,0.12), inset 0 1px 0 rgba(255, 255, 255,0.6)',
   textAlign: 'center',
   boxSizing: 'border-box'
 };
@@ -142,9 +142,9 @@ const brandMark = {
   alignItems: 'center',
   justifyContent: 'center',
   color: '#6b1d2f',
-  background: 'rgb(6b1d2f,0.10)',
-  border: '1px solid rgb(6b1d2f,0.25)',
-  boxShadow: '0 8px 24px rgb(6b1d2f,0.08)'
+  background: 'rgba(61, 15, 24,0.10)',
+  border: '1px solid rgba(61, 15, 24,0.25)',
+  boxShadow: '0 8px 24px rgba(61, 15, 24,0.08)'
 };
 
 const title = {
@@ -188,7 +188,7 @@ const input = {
   width: '100%',
   padding: '12px 12px 12px 40px',
   borderRadius: 10,
-  border: '1px solid rgb(1f1116,0.14)',
+  border: '1px solid rgba(31, 17, 22,0.14)',
   background: '#fdfbf7',
   color: '#1f1116',
   fontSize: 15,
@@ -234,7 +234,7 @@ const backBtn = {
 
 const alertError = {
   background: '#fef2f2',
-  border: '1px solid rgb(8f2a40,0.25)',
+  border: '1px solid rgba(61, 15, 24,0.25)',
   color: '#6b1d2f',
   padding: '10px 12px',
   borderRadius: 10,
@@ -248,7 +248,7 @@ const alertError = {
 
 const alertSuccess = {
   background: '#eae3d9',
-  border: '1px solid rgb(4a3a3f,0.25)',
+  border: '1px solid rgba(31, 17, 22,0.25)',
   color: '#4a3a3f',
   padding: '10px 12px',
   borderRadius: 10,

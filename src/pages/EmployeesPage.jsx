@@ -61,8 +61,8 @@ export const EmployeesPage = () => {
           align-items: center;
           margin-bottom: 1rem;
           padding: 1rem 1.1rem;
-          background: rgb(1f1116,0.8);
-          border: 1px solid rgb(6b1d2f,0.2);
+          background: rgba(31, 17, 22,0.8);
+          border: 1px solid rgba(61, 15, 24,0.2);
           border-radius: 16px;
           gap: 0.75rem;
         }
@@ -102,7 +102,7 @@ export const EmployeesPage = () => {
           border-radius: 12px;
           overflow-x: auto;
           overflow-y: hidden;
-          box-shadow: 0 2px 12px rgb(1f1116, 0.1);
+          box-shadow: 0 2px 12px rgba(31, 17, 22, 0.1);
         }
 
         table {
@@ -129,7 +129,7 @@ export const EmployeesPage = () => {
         }
 
         tbody tr:hover {
-          background: rgb(6b1d2f, 0.05);
+          background: rgba(61, 15, 24, 0.05);
         }
 
         .employee-name {
@@ -139,7 +139,7 @@ export const EmployeesPage = () => {
 
         .role-badge {
           display: inline-block;
-          background: rgb(6b1d2f, 0.1);
+          background: rgba(61, 15, 24, 0.1);
           color: #6b1d2f;
           padding: 0.25rem 0.75rem;
           border-radius: 4px;
@@ -156,12 +156,12 @@ export const EmployeesPage = () => {
         }
 
         .status-active {
-          background: rgb(4a3a3f, 0.1);
+          background: rgba(31, 17, 22, 0.1);
           color: #4a3a3f;
         }
 
         .status-banned {
-          background: rgb(8f2a40, 0.1);
+          background: rgba(61, 15, 24, 0.1);
           color: #6b1d2f;
         }
 
@@ -215,7 +215,7 @@ export const EmployeesPage = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgb(1f1116, 0.5);
+          background: rgba(31, 17, 22, 0.5);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -231,7 +231,7 @@ export const EmployeesPage = () => {
           width: 90%;
           max-height: 90vh;
           overflow-y: auto;
-          box-shadow: 0 20px 25px rgb(1f1116, 0.15);
+          box-shadow: 0 20px 25px rgba(31, 17, 22, 0.15);
         }
 
         .modal-header {
@@ -445,7 +445,7 @@ export const EmployeesPage = () => {
                 onClick={closeForm}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(1f1116,0.06)',
+                  background: 'rgba(31, 17, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,

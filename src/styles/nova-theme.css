@@ -13,20 +13,20 @@
   --nv-copper: #6b1d2f;
   --nv-copper-bright: #6b1d2f;
   --nv-copper-deep: #6b1d2f;
-  --nv-copper-glow: rgb(6b1d2f, 0.28);
+  --nv-copper-glow: rgba(61, 15, 24, 0.28);
   --nv-ink: #1f1116;
   --nv-ink-2: #1f1116;
   --nv-mist: #8a5560;
-  --nv-line: rgb(6b1d2f, 0.32);
-  --nv-line-soft: rgb(1f1116, 0.08);
+  --nv-line: rgba(61, 15, 24, 0.32);
+  --nv-line-soft: rgba(31, 17, 22, 0.08);
   --nv-success: #4a3a3f;
   --nv-danger: #8f2a40;
   --nv-radius: 18px;
   --nv-radius-sm: 12px;
   --nv-radius-xs: 8px;
   --nv-font: 'Tajawal', system-ui, sans-serif;
-  --nv-shadow: 0 10px 30px rgb(1f1116, 0.12);
-  --nv-shadow-lg: 0 20px 50px rgb(1f1116, 0.18);
+  --nv-shadow: 0 10px 30px rgba(31, 17, 22, 0.12);
+  --nv-shadow-lg: 0 20px 50px rgba(31, 17, 22, 0.18);
   --nav-height: 56px;
 
   /* جسر توافق للمكوّنات القديمة دون ألوان الموقع السابق */
@@ -96,7 +96,7 @@ button, input, select, textarea { font-family: inherit; }
   background: linear-gradient(145deg, var(--nv-copper-bright) 0%, var(--nv-copper) 48%, var(--nv-copper-deep) 100%);
   box-shadow:
     0 8px 20px var(--nv-copper-glow),
-    inset 0 1px 0 rgb(ffffff,0.35);
+    inset 0 1px 0 rgba(255, 255, 255,0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .nv-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px var(--nv-copper-glow); }
@@ -129,7 +129,7 @@ button, input, select, textarea { font-family: inherit; }
   gap: 4px;
   padding: 0.2rem 0.65rem;
   border-radius: 999px;
-  background: rgb(6b1d2f,0.12);
+  background: rgba(61, 15, 24,0.12);
   color: var(--nv-copper-deep);
   font-size: 0.72rem;
   font-weight: 800;
@@ -170,8 +170,8 @@ button, input, select, textarea { font-family: inherit; }
   border: 1px solid var(--nv-line);
   border-radius: var(--nv-radius);
   box-shadow:
-    0 1px 0 rgb(ffffff,0.9) inset,
-    0 10px 28px rgb(1f1116,0.1),
+    0 1px 0 rgba(255, 255, 255,0.9) inset,
+    0 10px 28px rgba(31, 17, 22,0.1),
     0 2px 0 var(--nv-copper-deep);
   transform: translateZ(0);
 }
@@ -194,7 +194,7 @@ button:not(.rl-submit):not([class*="nv-"]):not(.nav-item):not(.nav-section-btn):
 
 /* شريط علوي */
 .navbar {
-  background: rgb(1f1116, 0.95) !important;
+  background: rgba(31, 17, 22, 0.95) !important;
   border-bottom: 1px solid var(--nv-line) !important;
 }
 
@@ -214,9 +214,9 @@ html, body {
 
 body {
   background-image:
-    radial-gradient(1100px 620px at 88% -8%, rgb(6b1d2f, 0.18), transparent 60%),
-    radial-gradient(900px 560px at 6% 4%, rgb(4a3a3f, 0.15), transparent 58%),
-    radial-gradient(760px 620px at 50% 112%, rgb(6b1d2f, 0.14), transparent 62%),
+    radial-gradient(1100px 620px at 88% -8%, rgba(61, 15, 24, 0.18), transparent 60%),
+    radial-gradient(900px 560px at 6% 4%, rgba(31, 17, 22, 0.15), transparent 58%),
+    radial-gradient(760px 620px at 50% 112%, rgba(61, 15, 24, 0.14), transparent 62%),
     linear-gradient(154deg, #fdfbf7 0%, #fdfbf7 52%, #fdfbf7 100%) !important;
   background-attachment: fixed !important;
 }
@@ -229,7 +229,7 @@ body::before {
   height: 4px;
   z-index: 4000;
   background: linear-gradient(90deg, #6b1d2f 0%, #6b1d2f 38%, #4a3a3f 74%, #6b1d2f 100%);
-  box-shadow: 0 2px 18px rgb(6b1d2f, 0.45);
+  box-shadow: 0 2px 18px rgba(61, 15, 24, 0.45);
   pointer-events: none;
 }
 
@@ -239,12 +239,12 @@ body::before {
   color: #fff !important;
 }
 .nv-btn-ghost {
-  background: rgb(ffffff, 0.72) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
   color: #1f1116 !important;
-  border: 1.5px solid rgb(6b1d2f, 0.35) !important;
+  border: 1.5px solid rgba(61, 15, 24, 0.35) !important;
 }
 .nv-card, .nv-frame-3d {
   background: linear-gradient(160deg, #ffffff 0%, #fdfbf7 100%) !important;
-  border-color: rgb(6b1d2f, 0.22) !important;
+  border-color: rgba(61, 15, 24, 0.22) !important;
 }
 

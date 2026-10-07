@@ -154,7 +154,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgb(1f1116,0.85)',
+        background: 'rgba(31, 17, 22,0.85)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -171,7 +171,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
           maxWidth: 400,
           width: '100%',
           border: `1px solid ${C.gold}40`,
-          boxShadow: `0 20px 60px rgb(1f1116,0.5)`,
+          boxShadow: `0 20px 60px rgba(31, 17, 22,0.5)`,
           position: 'relative',
         }}
         onClick={e => e.stopPropagation()}
@@ -216,8 +216,8 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
 
         {error && (
           <div style={{
-            background: 'rgb(8f2a40, 0.12)',
-            border: '1px solid rgb(8f2a40, 0.4)',
+            background: 'rgba(61, 15, 24, 0.12)',
+            border: '1px solid rgba(61, 15, 24, 0.4)',
             color: '#f3e0dd',
             borderRadius: 10,
             padding: '10px 14px',
@@ -308,7 +308,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 width: '100%',
                 padding: 14,
                 borderRadius: 12,
-                background: 'rgb(ffffff,0.08)',
+                background: 'rgba(255, 255, 255,0.08)',
                 border: `1px solid ${C.gold}40`,
                 color: C.white,
                 fontSize: 16,
@@ -359,7 +359,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 width: '100%',
                 padding: 14,
                 borderRadius: 12,
-                background: 'rgb(ffffff,0.08)',
+                background: 'rgba(255, 255, 255,0.08)',
                 border: `1px solid ${C.gold}40`,
                 color: C.white,
                 fontSize: 16,
@@ -375,7 +375,7 @@ export default function HarajAuth({ isOpen, onClose, onSuccess, onCreateAccount 
                 width: '100%',
                 padding: 14,
                 borderRadius: 12,
-                background: 'rgb(ffffff,0.08)',
+                background: 'rgba(255, 255, 255,0.08)',
                 border: `1px solid ${C.gold}40`,
                 color: C.white,
                 fontSize: 16,
