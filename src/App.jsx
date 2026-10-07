@@ -50,6 +50,7 @@ import SettingsPage from './components/pages/SettingsPage';
 import OTPPage from './components/pages/OTPPage';
 import MemberInbox from './components/pages/MemberInbox';
 import NotificationPanel from './components/NotificationPanel';
+import OtpModal from './components/OtpModal';
 
 import ComplaintsPage from './components/pages/ComplaintsPage';
 import './styles/global.css';
@@ -779,7 +780,9 @@ function AppContent() {
   const [showVisitorPopup, setShowVisitorPopup] =
     useState(false);
 
-  const [phone, setPhone] = useState("");
+  const [visitorEmail, setVisitorEmail] = useState("");
+
+  const [visitorOtpEmail, setVisitorOtpEmail] = useState(null);
 
   /* =======================================================
      Logout
@@ -1068,14 +1071,22 @@ function AppContent() {
      Visitor enter
      ======================================================= */
 
+  // دخول الزوار — التحقق برمز يصل إلى البريد الإلكتروني إجباري (Email OTP)
   const handleVisitorEnter =
     async () => {
+      const email = String(
+        visitorEmail || ''
+      )
+        .trim()
+        .toLowerCase();
+
       if (
-        !phone ||
-        phone.length < 8
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+          email
+        )
       ) {
         window.alert(
-          "الرجاء إدخال رقم جوال صحيح"
+          "الرجاء إدخال بريد إلكتروني صحيح"
         );
 
         return;
@@ -1084,42 +1095,63 @@ function AppContent() {
       try {
         await ensureFirebaseSession();
 
-        await addDoc(
-          collection(
-            db,
-            "visitors"
-          ),
-          {
-            createdAt:
-              serverTimestamp(),
-          }
-        );
+        const sendOtp =
+          useStore.getState().sendOtp;
 
-        const guestLogin =
-          useStore.getState()
-            .guestLogin;
+        if (typeof sendOtp !== 'function') {
+          window.alert(
+            "تعذّر إرسال كود التحقق، حاول لاحقاً"
+          );
 
-        if (
-          typeof guestLogin ===
-          'function'
-        ) {
-          await guestLogin();
+          return;
         }
 
-        setShowVisitorPopup(false);
+        const res = await sendOtp(
+          email,
+          'login'
+        );
 
-        window.alert(
-          "كود الخصم الخاص بك: ROOZ10 — لديك دقيقتان للتصفّح."
-        );
+        if (!res?.success) {
+          window.alert(
+            res?.error
+              ? `تعذّر إرسال كود التحقق: ${res.error}`
+              : "تعذّر إرسال كود التحقق، حاول مرة أخرى"
+          );
+
+          return;
+        }
+
+        setVisitorOtpEmail(email);
+        setShowVisitorPopup(false);
       } catch (error) {
-        window.console.error(
-          error
-        );
+        window.console.error(error);
 
         window.alert(
           "حدث خطأ غير متوقع، حاول مرة أخرى"
         );
       }
+    };
+
+  // إكمال دخول الزائر بعد نجاح التحقق بالبريد (Email OTP)
+  const handleVisitorOtpVerified =
+    async () => {
+      await addDoc(
+        collection(db, "visitors"),
+        { createdAt: serverTimestamp() }
+      );
+
+      const guestLogin =
+        useStore.getState().guestLogin;
+
+      if (typeof guestLogin === 'function') {
+        await guestLogin(visitorOtpEmail);
+      }
+
+      setVisitorOtpEmail(null);
+
+      window.alert(
+        "كود الخصم الخاص بك: ROOZ10 — أهلاً بك في أناقة ROOZ."
+      );
     };
 
   const openWelcomeModal = () =>
@@ -1305,11 +1337,13 @@ function AppContent() {
             </p>
 
             <input
-              type="text"
-              placeholder="رقم الجوال"
-              value={phone}
+              type="email"
+              inputMode="email"
+              autoComplete="email"
+              placeholder="بريدك الإلكتروني"
+              value={visitorEmail}
               onChange={(e) =>
-                setPhone(e.target.value)
+                setVisitorEmail(e.target.value)
               }
               style={{
                 width: "100%",
@@ -1338,7 +1372,7 @@ function AppContent() {
                 cursor: "pointer",
               }}
             >
-              دخول كزائر
+              إرسال رمز التحقق
             </button>
 
             <button
@@ -1361,6 +1395,15 @@ function AppContent() {
             </button>
           </div>
         </div>
+      )}
+
+      {visitorOtpEmail && (
+        <OtpModal
+          email={visitorOtpEmail}
+          purpose="login"
+          onVerified={handleVisitorOtpVerified}
+          onClose={() => setVisitorOtpEmail(null)}
+        />
       )}
 
       {/* =================================================
@@ -2006,14 +2049,18 @@ function AppContent() {
               <Route
                 path="/ad/:id"
                 element={
-                  <AdDetailsPage />
+                  <ProtectedRoute>
+                    <AdDetailsPage />
+                  </ProtectedRoute>
                 }
               />
 
               <Route
                 path="/haraj/ad/:id"
                 element={
-                  <AdDetailsPage />
+                  <ProtectedRoute>
+                    <AdDetailsPage />
+                  </ProtectedRoute>
                 }
               />
 
@@ -2058,21 +2105,27 @@ function AppContent() {
               <Route
                 path="/haraj"
                 element={
-                  <RoyalHarajPage />
+                  <ProtectedRoute>
+                    <RoyalHarajPage />
+                  </ProtectedRoute>
                 }
               />
 
               <Route
                 path="/haraj/catalog/:catalogId"
                 element={
-                  <CatalogPage />
+                  <ProtectedRoute>
+                    <CatalogPage />
+                  </ProtectedRoute>
                 }
               />
 
               <Route
                 path="/haraj/post"
                 element={
-                  <AdFormPage />
+                  <ProtectedRoute>
+                    <AdFormPage />
+                  </ProtectedRoute>
                 }
               />
 
@@ -2136,7 +2189,9 @@ function AppContent() {
               <Route
                 path="/faq"
                 element={
-                  <FAQ />
+                  <ProtectedRoute>
+                    <FAQ />
+                  </ProtectedRoute>
                 }
               />
 

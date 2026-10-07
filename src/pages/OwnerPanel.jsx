@@ -245,7 +245,7 @@ export default function OwnerPanel() {
 
                 <button
                   type="button"
-                  style={btnBlue}
+                  style={btnBurgundy}
                   onClick={() =>
                     typeof promoteUser === 'function' &&
                     promoteUser(id, u?.email, 'owner')
@@ -372,7 +372,7 @@ const btnBan = {
   fontWeight: 800,
 };
 
-const btnBlue = {
+const btnBurgundy = {
   background: '#6b1d2f',
   color: '#fff',
   padding: '8px 12px',

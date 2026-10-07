@@ -137,7 +137,7 @@ const Login = () => {
   const [googleUserObj, setGoogleUserObj] = useState(null);
 
   // دخول الزوار: رقم الهاتف فقط — دخول مؤقت مباشر لمدة دقيقتين بلا تحقق
-  const [guestPhone, setGuestPhone] = useState('');
+  const [guestEmail, setGuestEmail] = useState('');
   const [guestEntryOpen, setGuestEntryOpen] = useState(false);
 
   // لون خلفية الصفحة مباشرة عند ظهورها — رخام أسود لامع
@@ -708,7 +708,7 @@ const Login = () => {
     }
   };
 
-  const completeGuestLogin = async (realPhone) => {
+  const completeGuestLogin = async (verifiedEmail) => {
     setError('');
     setSuccess('');
 
@@ -733,7 +733,7 @@ const Login = () => {
     }
 
     const result =
-      await store.guestLogin(realPhone);
+      await store.guestLogin(verifiedEmail);
 
     if (!result?.success) {
       throw new Error(
@@ -749,22 +749,19 @@ const Login = () => {
     navigate('/');
   };
 
-  // دخول الزوار — دخول مؤقت مباشر: رقم الهاتف فقط، بدون أي تحقق بريدي
-  const handleGuestLogin = async () => {
+  // دخول الزوار — التحقق برمز يصل إلى البريد الإلكتروني إجباري (Email OTP)
+  const handleGuestOtpRequest = async () => {
     setError('');
     setSuccess('');
     setLoading(true);
 
-    const phone =
-      String(guestPhone || '')
+    const email =
+      String(guestEmail || '')
         .trim()
-        .replace(/^\+/, '')
-        .replace(/[^\d]/g, '');
+        .toLowerCase();
 
-    if (phone.length < 8) {
-      setError(
-        'أدخل رقم هاتف صحيحاً (8 أرقام على الأقل)'
-      );
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError('أدخل بريداً إلكترونياً صحيحاً');
 
       setLoading(false);
 
@@ -772,11 +769,29 @@ const Login = () => {
     }
 
     try {
-      await completeGuestLogin(phone);
+      const otpResult = await store.sendOtp(email, 'login');
+
+      if (!otpResult?.success) {
+        setError(
+          otpResult?.error
+            ? `تعذّر إرسال كود التحقق: ${otpResult.error}. حاول مرة أخرى بعد قليل.`
+            : 'تعذّر إرسال كود التحقق. حاول مرة أخرى بعد قليل.'
+        );
+
+        return;
+      }
+
+      setGuestEntryOpen(false);
+      setSuccess('تم إرسال كود التحقق إلى بريدك');
+      setOtpModal({
+        email,
+        purpose: 'login',
+        onVerified: () => completeGuestLogin(email),
+      });
     } catch (err) {
       setError(
         err?.message ||
-          'تعذّر الدخول كزائر — حاول مرة أخرى'
+          'تعذّر إرسال كود التحقق — حاول مرة أخرى'
       );
     } finally {
       setLoading(false);
@@ -1874,19 +1889,18 @@ const Login = () => {
                 }}
               >
                 صديقنا العزيز: نفيدك بأن دخولك من هذا المكان
-                هو مؤقت لمدة دقيقتين فقط، ونأمل منكم تسجيل
-                حساب أو تسجيل الدخول لتتمكنوا من الدخول
-                بشكل مستمر. شكراً لتفهمكم.
+                مؤقت، ولضمان أمان حسابك أصبح التحقق إجبارياً عبر
+                رمز يصل إلى بريدك الإلكتروني.
 
                 <br />
                 <br />
-                أدخل رقم هاتفك للدخول المؤقت:
+                أدخل بريدك الإلكتروني لاستلام رمز التحقق:
               </p>
 
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  handleGuestLogin();
+                  handleGuestOtpRequest();
                 }}
               >
                 <div
@@ -1896,15 +1910,15 @@ const Login = () => {
                   }}
                 >
                   <input
-                    type="tel"
-                    inputMode="tel"
-                    value={guestPhone}
+                    type="email"
+                    inputMode="email"
+                    value={guestEmail}
                     onChange={(e) =>
-                      setGuestPhone(e.target.value)
+                      setGuestEmail(e.target.value)
                     }
-                    placeholder="05xxxxxxxx"
+                    placeholder="name@example.com"
                     disabled={loading}
-                    autoComplete="tel"
+                    autoComplete="email"
                     style={{
                       flex: 1,
                       padding:
@@ -1927,9 +1941,7 @@ const Login = () => {
                     type="submit"
                     disabled={
                       loading ||
-                      String(guestPhone || '')
-                        .trim()
-                        .length < 8
+                      !guestEmail.trim()
                     }
                     style={{
                       padding:
@@ -1951,8 +1963,8 @@ const Login = () => {
                     }}
                   >
                     {loading
-                      ? 'جاري الدخول...'
-                      : 'دخول'}
+                      ? 'جاري الإرسال...'
+                      : 'إرسال الرمز'}
                   </button>
                 </div>
               </form>

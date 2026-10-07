@@ -204,9 +204,9 @@ h1, h2, h3 {
 }
 
 /* ============================================================
-   ROOZ NOVA — Aurora signature layer
-   طبقة هوية بصرية مميزة: خلفية أورورا بنفسجية + حدّ علوي متدرّج
-   لا تشبه الموقع القديم (لا بيج ولا ذهب) — إنديغو/بنفسجي/فيروزي
+   ROOZ NOVA — Burgundy signature layer
+   طبقة هوية بصرية مميزة: خلفية كريمية + حدّ علوي بلون العنّاب
+   لوحة الهوية: كريمي #FDFBF7 / عنّاب #6B1D2F / وردي ترابي #D4A5A5
    ============================================================ */
 html, body {
   background-color: #fdfbf7 !important;
@@ -221,7 +221,7 @@ body {
   background-attachment: fixed !important;
 }
 
-/* حدّ أورورا أعلى الصفحة */
+/* حدّ العنّاب أعلى الصفحة */
 body::before {
   content: "";
   position: fixed;
@@ -233,7 +233,7 @@ body::before {
   pointer-events: none;
 }
 
-/* أزرار أساسية بأورورا */
+/* أزرار أساسية بلون العنّاب */
 .nv-btn {
   background: linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 52%, #4a3a3f 120%) !important;
   color: #fff !important;

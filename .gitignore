@@ -29,3 +29,4 @@ yarn-error.log*
 .vite/
 coverage/
 stats.html
+e2e/report/
