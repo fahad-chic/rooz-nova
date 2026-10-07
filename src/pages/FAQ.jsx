@@ -47,12 +47,12 @@ function FAQ() {
           overflow: hidden;
           margin-bottom: 22px;
           padding: 24px 22px;
-          border: 1px solid rgb(75, 128, 214, 0.35);
+          border: 1px solid rgb(6b1d2f, 0.35);
           border-radius: 20px;
           background:
-            radial-gradient(circle at 15% 20%, rgb(75, 128, 214, 0.18), transparent 34%),
-            linear-gradient(135deg, #101a2b, #0b1017);
-          box-shadow: 0 12px 30px rgb(25, 32, 43, 0.16);
+            radial-gradient(circle at 15% 20%, rgb(6b1d2f, 0.18), transparent 34%),
+            linear-gradient(135deg, #1f1116, #1f1116);
+          box-shadow: 0 12px 30px rgb(1f1116, 0.16);
         }
 
         .faq-header-content {
@@ -69,21 +69,21 @@ function FAQ() {
           align-items: center;
           justify-content: center;
           border-radius: 14px;
-          color: #2563eb;
-          background: rgb(83, 138, 226, 0.12);
-          border: 1px solid rgb(83, 138, 226, 0.3);
+          color: #6b1d2f;
+          background: rgb(6b1d2f, 0.12);
+          border: 1px solid rgb(6b1d2f, 0.3);
         }
 
         .faq-title {
           margin: 0;
-          color: #c7dbfe;
+          color: #f3e0dd;
           font-size: clamp(1.35rem, 3vw, 1.9rem);
           font-weight: 800;
         }
 
         .faq-subtitle {
           margin: 5px 0 0;
-          color: rgb(247, 248, 250, 0.72);
+          color: rgb(fdfbf7, 0.72);
           font-size: 0.92rem;
         }
 
@@ -94,16 +94,16 @@ function FAQ() {
 
         .faq-item {
           overflow: hidden;
-          border: 1px solid rgb(75, 128, 214, 0.22);
+          border: 1px solid rgb(6b1d2f, 0.22);
           border-radius: 16px;
-          background: rgb(255, 255, 255, 0.94);
-          box-shadow: 0 5px 18px rgb(25, 32, 43, 0.07);
+          background: rgb(ffffff, 0.94);
+          box-shadow: 0 5px 18px rgb(1f1116, 0.07);
           transition: border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .faq-item.open {
-          border-color: rgb(75, 128, 214, 0.55);
-          box-shadow: 0 8px 24px rgb(25, 32, 43, 0.1);
+          border-color: rgb(6b1d2f, 0.55);
+          box-shadow: 0 8px 24px rgb(1f1116, 0.1);
         }
 
         .faq-question {
@@ -115,7 +115,7 @@ function FAQ() {
           padding: 17px 18px;
           border: none;
           background: transparent;
-          color: #101a2b;
+          color: #1f1116;
           cursor: pointer;
           text-align: right;
           font-family: inherit;
@@ -124,7 +124,7 @@ function FAQ() {
         }
 
         .faq-question:hover {
-          background: rgb(75, 128, 214, 0.045);
+          background: rgb(6b1d2f, 0.045);
         }
 
         .faq-question-text {
@@ -139,24 +139,24 @@ function FAQ() {
           align-items: center;
           justify-content: center;
           border-radius: 10px;
-          color: #1e40af;
-          background: rgb(75, 128, 214, 0.11);
+          color: #6b1d2f;
+          background: rgb(6b1d2f, 0.11);
           transition: transform 0.25s ease, background 0.25s ease;
         }
 
         .faq-item.open .faq-chevron {
           transform: rotate(180deg);
-          background: rgb(75, 128, 214, 0.18);
+          background: rgb(6b1d2f, 0.18);
         }
 
         .faq-answer {
           padding: 0 18px 18px;
-          border-top: 1px solid rgb(75, 128, 214, 0.14);
+          border-top: 1px solid rgb(6b1d2f, 0.14);
         }
 
         .faq-answer p {
           margin: 14px 0 0;
-          color: #344f7a;
+          color: #6b1d2f;
           line-height: 1.9;
           font-size: 0.94rem;
         }

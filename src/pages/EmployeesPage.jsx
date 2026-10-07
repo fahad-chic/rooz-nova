@@ -61,14 +61,14 @@ export const EmployeesPage = () => {
           align-items: center;
           margin-bottom: 1rem;
           padding: 1rem 1.1rem;
-          background: rgb(11, 16, 23,0.8);
-          border: 1px solid rgb(83, 138, 226,0.2);
+          background: rgb(1f1116,0.8);
+          border: 1px solid rgb(6b1d2f,0.2);
           border-radius: 16px;
           gap: 0.75rem;
         }
 
-        .employees-title { font-size: 1.35rem; font-weight: 700; color: #c7dbfe; }
-        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #2563eb, #1e40af); color:#0b1220; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; cursor:pointer; }
+        .employees-title { font-size: 1.35rem; font-weight: 700; color: #f3e0dd; }
+        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #6b1d2f, #6b1d2f); color:#1f1116; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; cursor:pointer; }
 
         .tabs {
           display: flex;
@@ -93,8 +93,8 @@ export const EmployeesPage = () => {
         }
 
         .tab-btn.active {
-          color: #2563eb;
-          border-bottom-color: #2563eb;
+          color: #6b1d2f;
+          border-bottom-color: #6b1d2f;
         }
 
         .table-wrapper {
@@ -102,7 +102,7 @@ export const EmployeesPage = () => {
           border-radius: 12px;
           overflow-x: auto;
           overflow-y: hidden;
-          box-shadow: 0 2px 12px rgb(11, 18, 32, 0.1);
+          box-shadow: 0 2px 12px rgb(1f1116, 0.1);
         }
 
         table {
@@ -112,15 +112,15 @@ export const EmployeesPage = () => {
         }
 
         thead {
-          background: #101a2b;
-          color: #2563eb;
+          background: #1f1116;
+          color: #6b1d2f;
         }
 
         th {
           padding: 1.25rem;
           text-align: right;
           font-weight: 600;
-          border-bottom: 2px solid #2563eb;
+          border-bottom: 2px solid #6b1d2f;
         }
 
         td {
@@ -129,18 +129,18 @@ export const EmployeesPage = () => {
         }
 
         tbody tr:hover {
-          background: rgb(75, 128, 214, 0.05);
+          background: rgb(6b1d2f, 0.05);
         }
 
         .employee-name {
           font-weight: 600;
-          color: #101a2b;
+          color: #1f1116;
         }
 
         .role-badge {
           display: inline-block;
-          background: rgb(75, 128, 214, 0.1);
-          color: #2563eb;
+          background: rgb(6b1d2f, 0.1);
+          color: #6b1d2f;
           padding: 0.25rem 0.75rem;
           border-radius: 4px;
           font-size: 0.85rem;
@@ -156,13 +156,13 @@ export const EmployeesPage = () => {
         }
 
         .status-active {
-          background: rgb(20, 181, 167, 0.1);
-          color: #0a5b53;
+          background: rgb(4a3a3f, 0.1);
+          color: #4a3a3f;
         }
 
         .status-banned {
-          background: rgb(235, 72, 102, 0.1);
-          color: #881429;
+          background: rgb(8f2a40, 0.1);
+          color: #6b1d2f;
         }
 
         .action-cell {
@@ -186,21 +186,21 @@ export const EmployeesPage = () => {
         }
 
         .action-btn-ban {
-          background: #eb4866;
+          background: #8f2a40;
           color: white;
         }
 
         .action-btn-ban:hover {
-          background: #e61c41;
+          background: #8f2a40;
         }
 
         .action-btn-restore {
-          background: #14b5a7;
+          background: #4a3a3f;
           color: white;
         }
 
         .action-btn-restore:hover {
-          background: #108c80;
+          background: #4a3a3f;
         }
 
         .empty-state {
@@ -215,7 +215,7 @@ export const EmployeesPage = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgb(11, 18, 32, 0.5);
+          background: rgb(1f1116, 0.5);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -231,13 +231,13 @@ export const EmployeesPage = () => {
           width: 90%;
           max-height: 90vh;
           overflow-y: auto;
-          box-shadow: 0 20px 25px rgb(11, 18, 32, 0.15);
+          box-shadow: 0 20px 25px rgb(1f1116, 0.15);
         }
 
         .modal-header {
           font-size: 1.5rem;
           font-weight: 600;
-          color: #101a2b;
+          color: #1f1116;
           margin-bottom: 1.5rem;
           border-bottom: 2px solid #e0e0e0;
           padding-bottom: 1rem;
@@ -251,7 +251,7 @@ export const EmployeesPage = () => {
           display: block;
           margin-bottom: 0.5rem;
           font-weight: 600;
-          color: #101a2b;
+          color: #1f1116;
         }
 
         .form-group input,
@@ -284,13 +284,13 @@ export const EmployeesPage = () => {
         }
 
         .modal-btn-cancel {
-          background: #e5e6eb;
-          color: #101a2b;
+          background: #fdfbf7;
+          color: #1f1116;
         }
 
         .modal-btn-submit {
-          background: linear-gradient(135deg, #2563eb, #1e40af);
-          color: #0b1220;
+          background: linear-gradient(135deg, #6b1d2f, #6b1d2f);
+          color: #1f1116;
         }
 
         @media (max-width: 640px) {
@@ -445,7 +445,7 @@ export const EmployeesPage = () => {
                 onClick={closeForm}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(11, 18, 32,0.06)',
+                  background: 'rgb(1f1116,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -455,7 +455,7 @@ export const EmployeesPage = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#101a2b',
+                  color: '#1f1116',
                 }}
               >
                 <X size={17} />

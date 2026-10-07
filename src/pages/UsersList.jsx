@@ -277,12 +277,12 @@ export default UsersList;
 
 const container = {
   background:
-    'linear-gradient(145deg, #0b1017 0%, #0e1626 100%)',
+    'linear-gradient(145deg, #1f1116 0%, #1f1116 100%)',
   padding: '1.25rem',
   borderRadius: 18,
-  border: '1px solid rgb(59, 130, 246,0.24)',
+  border: '1px solid rgb(6b1d2f,0.24)',
   boxShadow:
-    '0 12px 35px rgb(11, 18, 32,0.28), inset 0 1px 0 rgb(255, 255, 255,0.03)',
+    '0 12px 35px rgb(1f1116,0.28), inset 0 1px 0 rgb(ffffff,0.03)',
   fontFamily: 'Tajawal, Tajawal, sans-serif',
   width: '100%',
   boxSizing: 'border-box',
@@ -313,13 +313,13 @@ const titleIcon = {
   justifyContent: 'center',
   color: '#111',
   background:
-    'linear-gradient(135deg, #6d9eec 0%, #3b82f6 48%, #1e40af 100%)',
-  boxShadow: '0 6px 18px rgb(59, 130, 246,0.14)',
+    'linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 48%, #6b1d2f 100%)',
+  boxShadow: '0 6px 18px rgb(6b1d2f,0.14)',
   flexShrink: 0,
 };
 
 const title = {
-  color: '#a6c5f7',
+  color: '#f3e0dd',
   fontWeight: 800,
   fontSize: 18,
   margin: 0,
@@ -339,9 +339,9 @@ const ownerBadge = {
   gap: 5,
   padding: '6px 9px',
   borderRadius: 999,
-  color: '#6898e4',
-  background: 'rgb(59, 130, 246,0.08)',
-  border: '1px solid rgb(59, 130, 246,0.18)',
+  color: '#6b1d2f',
+  background: 'rgb(6b1d2f,0.08)',
+  border: '1px solid rgb(6b1d2f,0.18)',
   fontSize: 11,
   fontWeight: 700,
   whiteSpace: 'nowrap',
@@ -355,7 +355,7 @@ const restrictedBox = {
   justifyContent: 'center',
   textAlign: 'center',
   padding: 24,
-  color: '#3b82f6',
+  color: '#6b1d2f',
   boxSizing: 'border-box',
 };
 
@@ -373,7 +373,7 @@ const loadingBox = {
   alignItems: 'center',
   justifyContent: 'center',
   gap: 10,
-  color: '#3b82f6',
+  color: '#6b1d2f',
   fontSize: 13,
 };
 
@@ -409,10 +409,10 @@ const userCard = {
   alignItems: 'center',
   gap: 11,
   background:
-    'linear-gradient(135deg, rgb(22, 28, 38,0.98), rgb(11, 16, 23,0.98))',
+    'linear-gradient(135deg, rgb(1f1116,0.98), rgb(1f1116,0.98))',
   padding: 11,
   borderRadius: 13,
-  border: '1px solid rgb(59, 130, 246,0.12)',
+  border: '1px solid rgb(6b1d2f,0.12)',
   boxSizing: 'border-box',
   minWidth: 0,
   transition:
@@ -425,8 +425,8 @@ const avatarWrapper = {
   minWidth: 44,
   borderRadius: '50%',
   overflow: 'hidden',
-  border: '2px solid rgb(59, 130, 246,0.35)',
-  background: '#181f2a',
+  border: '2px solid rgb(6b1d2f,0.35)',
+  background: '#1f1116',
   boxSizing: 'border-box',
 };
 
@@ -444,7 +444,7 @@ const avatarInitials = {
   alignItems: 'center',
   justifyContent: 'center',
   background:
-    'linear-gradient(135deg, #6396e9 0%, #3b82f6 50%, #1e40af 100%)',
+    'linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 50%, #6b1d2f 100%)',
   color: '#111',
   fontWeight: 900,
   fontSize: 17,
@@ -457,7 +457,7 @@ const userInfo = {
 };
 
 const userName = {
-  color: '#b1cbf6',
+  color: '#f3e0dd',
   fontWeight: 800,
   fontSize: 13,
   margin: '0 0 2px',
@@ -491,7 +491,7 @@ const roleText = {
 };
 
 const verified = {
-  color: '#14b5a7',
+  color: '#4a3a3f',
   display: 'inline-flex',
   alignItems: 'center',
 };
@@ -524,16 +524,16 @@ const btnBase = {
 const btnChat = {
   ...btnBase,
   background:
-    'linear-gradient(135deg, #6598ea 0%, #3b82f6 50%, #1a4fa5 100%)',
+    'linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 50%, #6b1d2f 100%)',
   color: '#111',
-  borderColor: 'rgb(158, 192, 247,0.25)',
+  borderColor: 'rgb(d4a5a5,0.25)',
 };
 
 const btnCopy = {
   ...btnBase,
   background: '#222',
   color: '#ddd',
-  borderColor: 'rgb(255, 255, 255,0.08)',
+  borderColor: 'rgb(ffffff,0.08)',
 };
 
 if (

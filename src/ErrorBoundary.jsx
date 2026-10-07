@@ -60,17 +60,17 @@ class ErrorBoundary extends React.Component {
             textAlign: 'center',
             fontFamily: 'Tajawal',
             direction: 'rtl',
-            background: '#0b1017',
-            color: '#dcd4f5',
+            background: '#1f1116',
+            color: '#fdfbf7',
             minHeight: '100vh'
           }}
         >
-          <h2 style={{ color: '#2563eb' }}> حدث خطأ غير متوقع</h2>
+          <h2 style={{ color: '#6b1d2f' }}> حدث خطأ غير متوقع</h2>
 
           <p
             style={{
-              color: '#7a1426',
-              background: '#f6d9df',
+              color: '#3d0f18',
+              background: '#fbf0f0',
               padding: '1rem',
               borderRadius: '8px',
               marginTop: '1rem'
@@ -91,8 +91,8 @@ class ErrorBoundary extends React.Component {
               marginTop: '1rem',
               padding: '0.6rem 1.2rem',
               cursor: 'pointer',
-              background: '#2563eb',
-              color: '#0b1220',
+              background: '#6b1d2f',
+              color: '#1f1116',
               border: 'none',
               borderRadius: '8px',
               fontWeight: 'bold'
@@ -107,11 +107,11 @@ class ErrorBoundary extends React.Component {
                 textAlign: 'left',
                 maxHeight: 250,
                 overflow: 'auto',
-                background: '#1b222f',
+                background: '#1f1116',
                 padding: 10,
                 marginTop: '1rem',
                 borderRadius: '8px',
-                color: '#dcd4f5'
+                color: '#fdfbf7'
               }}
             >
               {this.state.error?.stack}
@@ -124,7 +124,7 @@ class ErrorBoundary extends React.Component {
               style={{
                 padding: '0.8rem 1.5rem',
                 cursor: 'pointer',
-                background: '#1e40af',
+                background: '#6b1d2f',
                 color: '#fff',
                 border: 'none',
                 borderRadius: '8px',

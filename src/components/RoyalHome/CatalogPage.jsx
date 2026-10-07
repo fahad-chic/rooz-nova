@@ -310,11 +310,11 @@ const CatalogPage = () => {
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem',
-            background: 'rgb(37, 99, 235, 0.12)',
-            border: '1px solid rgb(37, 99, 235, 0.35)',
+            background: 'rgb(6b1d2f, 0.12)',
+            border: '1px solid rgb(6b1d2f, 0.35)',
             borderRadius: 12,
             padding: '0.45rem 0.9rem',
-            color: '#1e40af',
+            color: '#6b1d2f',
             fontSize: '0.85rem',
             cursor: 'pointer',
             marginBottom: '0.75rem',
@@ -330,14 +330,14 @@ const CatalogPage = () => {
         <div
           style={{
             background:
-              'linear-gradient(145deg, rgb(247, 246, 251, 0.98), rgb(221, 209, 244, 0.92))',
-            border: `1px solid rgb(37, 99, 235, 0.35)`,
+              'linear-gradient(145deg, rgb(fdfbf7, 0.98), rgb(fdfbf7, 0.92))',
+            border: `1px solid rgb(6b1d2f, 0.35)`,
             borderRadius: 20,
             padding: '1.5rem',
             textAlign: 'center',
             overflowX: 'hidden',
             boxShadow: `0 8px 32px ${
-              catalogInfo?.sectionColor || '#2563eb'
+              catalogInfo?.sectionColor || '#6b1d2f'
             }20`,
           }}
         >
@@ -346,7 +346,7 @@ const CatalogPage = () => {
               margin: 0,
               fontSize: '2rem',
               fontWeight: 900,
-              background: 'linear-gradient(180deg, #3b82f6, #1e40af)',
+              background: 'linear-gradient(180deg, #6b1d2f, #6b1d2f)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               fontFamily: 'Tajawal, sans-serif',
@@ -359,7 +359,7 @@ const CatalogPage = () => {
             <p
               style={{
                 margin: '0.5rem 0 0',
-                color: '#32568f',
+                color: '#6b1d2f',
                 fontSize: '0.9rem',
                 fontFamily: 'Tajawal, sans-serif',
               }}
@@ -381,7 +381,7 @@ const CatalogPage = () => {
           flexWrap: 'wrap',
           gap: '1rem',
           marginBottom: '2rem',
-          background: 'rgb(248, 246, 251, 0.85)',
+          background: 'rgb(fdfbf7, 0.85)',
           padding: '1rem',
           borderRadius: 16,
         }}
@@ -410,7 +410,7 @@ const CatalogPage = () => {
             style={{
               display: 'flex',
               gap: '0.3rem',
-              background: 'rgb(255, 255, 255,0.05)',
+              background: 'rgb(ffffff,0.05)',
               padding: '0.3rem',
               borderRadius: 12,
               flexWrap: 'wrap',
@@ -429,13 +429,13 @@ const CatalogPage = () => {
                     padding: '0.5rem 0.8rem',
                     background:
                       cardStyle === key
-                        ? 'rgb(83, 138, 226, 0.3)'
+                        ? 'rgb(6b1d2f, 0.3)'
                         : 'transparent',
                     border: 'none',
                     borderRadius: 8,
                     cursor: 'pointer',
                     color:
-                      cardStyle === key ? '#2563eb' : '#888',
+                      cardStyle === key ? '#6b1d2f' : '#888',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.3rem',
@@ -480,10 +480,10 @@ const CatalogPage = () => {
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.6rem 1rem',
-                background: 'rgb(65, 132, 240, 0.2)',
-                border: '1px solid rgb(65, 132, 240, 0.4)',
+                background: 'rgb(6b1d2f, 0.2)',
+                border: '1px solid rgb(6b1d2f, 0.4)',
                 borderRadius: 12,
-                color: '#6785f3',
+                color: '#6b1d2f',
                 fontWeight: 600,
                 fontSize: '0.85rem',
                 cursor: 'pointer',
@@ -505,7 +505,7 @@ const CatalogPage = () => {
                 gap: '0.5rem',
                 padding: '0.6rem 1.2rem',
                 background:
-                  'linear-gradient(135deg, #2563eb, #1e40af)',
+                  'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
                 border: 'none',
                 borderRadius: 12,
                 color: '#000',
@@ -542,9 +542,9 @@ const CatalogPage = () => {
             textAlign: 'center',
             padding: '4rem',
             color: '#888',
-            background: 'rgb(255, 255, 255,0.02)',
+            background: 'rgb(ffffff,0.02)',
             borderRadius: 16,
-            border: '2px dashed rgb(255, 255, 255,0.1)',
+            border: '2px dashed rgb(ffffff,0.1)',
           }}
         >
           <p
@@ -574,7 +574,7 @@ const CatalogPage = () => {
                 marginTop: '1rem',
                 padding: '0.75rem 1.5rem',
                 background:
-                  'linear-gradient(135deg, #2563eb, #1e40af)',
+                  'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
                 border: 'none',
                 borderRadius: 12,
                 color: '#000',
@@ -673,7 +673,7 @@ const DisplaySettingsModal = ({
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgb(11, 18, 32,0.85)',
+        background: 'rgb(1f1116,0.85)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -686,8 +686,8 @@ const DisplaySettingsModal = ({
         dir="rtl"
         style={{
           background:
-            'linear-gradient(145deg, #101a2b, #13203a)',
-          border: '2px solid #2563eb',
+            'linear-gradient(145deg, #1f1116, #1f1116)',
+          border: '2px solid #6b1d2f',
           borderRadius: 24,
           padding: '2rem',
           maxWidth: 500,
@@ -701,7 +701,7 @@ const DisplaySettingsModal = ({
           <h2
             style={{
               margin: 0,
-              color: '#2563eb',
+              color: '#6b1d2f',
               fontSize: '1.3rem',
               fontFamily: 'Tajawal, sans-serif',
               display: 'flex',
@@ -723,11 +723,11 @@ const DisplaySettingsModal = ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              background: 'rgb(83, 138, 226,0.15)',
-              border: '1px solid rgb(83, 138, 226,0.4)',
+              background: 'rgb(6b1d2f,0.15)',
+              border: '1px solid rgb(6b1d2f,0.4)',
               borderRadius: 10,
               cursor: 'pointer',
-              color: '#2563eb',
+              color: '#6b1d2f',
             }}
           >
             <X size={18} />
@@ -772,16 +772,16 @@ const DisplaySettingsModal = ({
                       padding: '0.75rem',
                       background:
                         localSettings.displayStyle === key
-                          ? 'rgb(83, 138, 226, 0.3)'
-                          : 'rgb(255, 255, 255,0.05)',
+                          ? 'rgb(6b1d2f, 0.3)'
+                          : 'rgb(ffffff,0.05)',
                       border:
                         localSettings.displayStyle === key
-                          ? '2px solid #2563eb'
-                          : '1px solid rgb(255, 255, 255,0.2)',
+                          ? '2px solid #6b1d2f'
+                          : '1px solid rgb(ffffff,0.2)',
                       borderRadius: 12,
                       color:
                         localSettings.displayStyle === key
-                          ? '#2563eb'
+                          ? '#6b1d2f'
                           : '#aaa',
                       cursor: 'pointer',
                       display: 'flex',
@@ -877,7 +877,7 @@ const DisplaySettingsModal = ({
               flex: 1,
               padding: '0.85rem',
               background:
-                'linear-gradient(135deg, #2563eb, #1e40af)',
+                'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
               border: 'none',
               borderRadius: 12,
               color: '#000',
@@ -1022,8 +1022,8 @@ const AddProductModal = ({
   const inputStyle = {
     width: '100%',
     padding: '0.85rem',
-    background: 'rgb(255, 255, 255,0.05)',
-    border: '1px solid rgb(255, 255, 255,0.2)',
+    background: 'rgb(ffffff,0.05)',
+    border: '1px solid rgb(ffffff,0.2)',
     borderRadius: 12,
     color: '#fff',
     fontSize: '1rem',
@@ -1036,7 +1036,7 @@ const AddProductModal = ({
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgb(11, 18, 32,0.85)',
+        background: 'rgb(1f1116,0.85)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -1049,8 +1049,8 @@ const AddProductModal = ({
         dir="rtl"
         style={{
           background:
-            'linear-gradient(145deg, #101a2b, #13203a)',
-          border: '2px solid #2563eb',
+            'linear-gradient(145deg, #1f1116, #1f1116)',
+          border: '2px solid #6b1d2f',
           borderRadius: 24,
           padding: '2rem',
           maxWidth: 550,
@@ -1064,7 +1064,7 @@ const AddProductModal = ({
           <h2
             style={{
               margin: 0,
-              color: '#2563eb',
+              color: '#6b1d2f',
               fontSize: '1.3rem',
               fontFamily: 'Tajawal, sans-serif',
             }}
@@ -1084,11 +1084,11 @@ const AddProductModal = ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              background: 'rgb(83, 138, 226,0.15)',
-              border: '1px solid rgb(83, 138, 226,0.4)',
+              background: 'rgb(6b1d2f,0.15)',
+              border: '1px solid rgb(6b1d2f,0.4)',
               borderRadius: 10,
               cursor: 'pointer',
-              color: '#2563eb',
+              color: '#6b1d2f',
             }}
           >
             <X size={18} />
@@ -1098,12 +1098,12 @@ const AddProductModal = ({
         {catalogName && (
           <div
             style={{
-              background: 'rgb(83, 138, 226, 0.1)',
+              background: 'rgb(6b1d2f, 0.1)',
               padding: '0.75rem',
               borderRadius: 10,
               marginBottom: '1rem',
               textAlign: 'center',
-              color: '#2563eb',
+              color: '#6b1d2f',
               fontFamily: 'Tajawal, sans-serif',
               fontSize: '0.9rem',
             }}
@@ -1298,8 +1298,8 @@ const AddProductModal = ({
                 flex: 1,
                 padding: '0.85rem',
                 background: saving
-                  ? 'rgb(83, 138, 226,0.5)'
-                  : 'linear-gradient(135deg, #2563eb, #1e40af)',
+                  ? 'rgb(6b1d2f,0.5)'
+                  : 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
                 border: 'none',
                 borderRadius: 12,
                 color: '#000',

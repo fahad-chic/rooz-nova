@@ -88,31 +88,31 @@ const MarqueeBanner = ({
   const palette = isFirstStyle
     ? {
         background:
-          "linear-gradient(118deg, #0e1626 0%, #0b2058 48%, #1b222f 100%)",
-        border: "rgb(102, 172, 231, 0.42)",
-        text: "#f6f8fb",
-        textShadow: "0 1px 8px rgb(11, 18, 32, 0.42)",
-        label: "#97caf2",
-        icon: "#7dc2f4",
-        arrow: "rgb(219, 235, 247, 0.82)",
-        separator: "rgb(156, 207, 247, 0.30)",
-        iconBackground: "rgb(107, 185, 243, 0.13)",
-        iconBorder: "rgb(163, 212, 248, 0.26)",
-        glow: "rgb(66, 160, 232, 0.34)",
+          "linear-gradient(118deg, #1f1116 0%, #1f1116 48%, #1f1116 100%)",
+        border: "rgb(6b1d2f, 0.42)",
+        text: "#fdfbf7",
+        textShadow: "0 1px 8px rgb(1f1116, 0.42)",
+        label: "#d4a5a5",
+        icon: "#d4a5a5",
+        arrow: "rgb(fdfbf7, 0.82)",
+        separator: "rgb(d4a5a5, 0.30)",
+        iconBackground: "rgb(6b1d2f, 0.13)",
+        iconBorder: "rgb(f3e0dd, 0.26)",
+        glow: "rgb(6b1d2f, 0.34)",
       }
     : {
         background:
-          "linear-gradient(118deg, #181f2a 0%, #3a485f 50%, #1c2431 100%)",
-        border: "rgb(157, 190, 244, 0.40)",
+          "linear-gradient(118deg, #1f1116 0%, #6b1d2f 50%, #1f1116 100%)",
+        border: "rgb(d4a5a5, 0.40)",
         text: "#fbf6f7",
-        textShadow: "0 1px 8px rgb(18, 23, 32, 0.44)",
-        label: "#f6c7d0",
-        icon: "#f7bdc8",
-        arrow: "rgb(248, 233, 236, 0.84)",
-        separator: "rgb(246, 197, 206, 0.30)",
-        iconBackground: "rgb(247, 181, 193, 0.13)",
-        iconBorder: "rgb(246, 216, 222, 0.28)",
-        glow: "rgb(93, 146, 232, 0.36)",
+        textShadow: "0 1px 8px rgb(1f1116, 0.44)",
+        label: "#f3e0dd",
+        icon: "#f3e0dd",
+        arrow: "rgb(f8e9ec, 0.84)",
+        separator: "rgb(f3e0dd, 0.30)",
+        iconBackground: "rgb(f3e0dd, 0.13)",
+        iconBorder: "rgb(fbf0f0, 0.28)",
+        glow: "rgb(6b1d2f, 0.36)",
       };
 
   const shouldScroll = scrollDistance > 2;
@@ -156,14 +156,14 @@ const MarqueeBanner = ({
         @keyframes roozBadgePulse {
           0%, 100% {
             box-shadow:
-              0 7px 18px rgb(11, 18, 32, 0.27),
-              0 0 0 1px rgb(255, 255, 255, 0.035) inset,
+              0 7px 18px rgb(1f1116, 0.27),
+              0 0 0 1px rgb(ffffff, 0.035) inset,
               0 0 15px var(--rooz-glow);
           }
           50% {
             box-shadow:
-              0 10px 23px rgb(11, 18, 32, 0.34),
-              0 0 0 1px rgb(255, 255, 255, 0.055) inset,
+              0 10px 23px rgb(1f1116, 0.34),
+              0 0 0 1px rgb(ffffff, 0.055) inset,
               0 0 24px var(--rooz-glow);
           }
         }
@@ -329,7 +329,7 @@ const MarqueeBanner = ({
             bottom: "-35%",
             width: "28%",
             background:
-              "linear-gradient(90deg, transparent, rgb(255, 255, 255, 0.16), transparent)",
+              "linear-gradient(90deg, transparent, rgb(ffffff, 0.16), transparent)",
             pointerEvents: "none",
             zIndex: 0,
           }}
@@ -343,8 +343,8 @@ const MarqueeBanner = ({
             position: "absolute",
             inset: 0,
             background: isFirstStyle
-              ? "linear-gradient(115deg, rgb(22, 27, 37, 0.96), rgb(13, 44, 96, 0.94), rgb(27, 34, 46, 0.97), rgb(30, 37, 51, 0.94))"
-              : "linear-gradient(115deg, rgb(24, 30, 41, 0.97), rgb(30, 62, 114, 0.94), rgb(28, 35, 48, 0.97), rgb(141, 34, 54, 0.92))",
+              ? "linear-gradient(115deg, rgb(1f1116, 0.96), rgb(1f1116, 0.94), rgb(1f1116, 0.97), rgb(1f1116, 0.94))"
+              : "linear-gradient(115deg, rgb(1f1116, 0.97), rgb(1f1116, 0.94), rgb(1f1116, 0.97), rgb(6b1d2f, 0.92))",
             pointerEvents: "none",
             zIndex: 0,
           }}
@@ -379,7 +379,7 @@ const MarqueeBanner = ({
               top: -4,
               left: -4,
               color: "#ffffff",
-              filter: "drop-shadow(0 1px 3px rgb(11, 18, 32, 0.35))",
+              filter: "drop-shadow(0 1px 3px rgb(1f1116, 0.35))",
             }}
           />
         </span>

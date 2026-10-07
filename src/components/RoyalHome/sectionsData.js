@@ -6,7 +6,7 @@ export const ROYAL_SECTIONS = [
     id: 'dresses',
     title: 'فساتين حفلات أنيقة وفخمة',
     icon: 'dress',
-    color: '#2563eb',
+    color: '#6b1d2f',
     branches: [
       {
         id: 'dresses-wedding',
@@ -40,7 +40,7 @@ export const ROYAL_SECTIONS = [
     id: 'wedding-dresses',
     title: 'فساتين أعراس',
     icon: 'wedding',
-    color: '#2563eb',
+    color: '#6b1d2f',
     branches: [
       {
         id: 'wedding-luxury',
@@ -69,7 +69,7 @@ export const ROYAL_SECTIONS = [
     id: 'girls-dresses',
     title: 'فساتين بنات صغار',
     icon: 'girls',
-    color: '#3b82f6',
+    color: '#6b1d2f',
     branches: [
       {
         id: 'girls-parties',
@@ -98,7 +98,7 @@ export const ROYAL_SECTIONS = [
     id: 'abayas',
     title: 'العبايات بأنواعها',
     icon: 'abaya',
-    color: '#35578e',
+    color: '#6b1d2f',
     branches: [
       {
         id: 'abayas-luxury',
@@ -132,7 +132,7 @@ export const ROYAL_SECTIONS = [
     id: 'bags',
     title: 'الشنط والحقائب',
     icon: 'bag',
-    color: '#2960b8',
+    color: '#6b1d2f',
     branches: [
       {
         id: 'bags-brands',
@@ -166,7 +166,7 @@ export const ROYAL_SECTIONS = [
     id: 'shoes',
     title: 'الأحذية',
     icon: 'shoes',
-    color: '#2f5a9f',
+    color: '#6b1d2f',
     branches: [
       {
         id: 'shoes-heels',
@@ -200,7 +200,7 @@ export const ROYAL_SECTIONS = [
     id: 'used-dresses',
     title: 'فساتين فاخرة مستعملة',
     icon: 'preowned',
-    color: '#3c6ab4',
+    color: '#6b1d2f',
     branches: [
       {
         id: 'used-dresses-wedding',
@@ -229,7 +229,7 @@ export const ROYAL_SECTIONS = [
     id: 'perfumes',
     title: 'العطورات والبخور',
     icon: 'perfume',
-    color: '#3263b2',
+    color: '#6b1d2f',
     branches: [
       {
         id: 'perfumes-women',
@@ -263,7 +263,7 @@ export const ROYAL_SECTIONS = [
     id: 'golden-mothers',
     title: 'أمهاتنا — الجيل الذهبي',
     icon: 'heritage',
-    color: '#2b5dad',
+    color: '#6b1d2f',
     branches: [
       {
         id: 'golden-jalabiyas',
@@ -292,7 +292,7 @@ export const ROYAL_SECTIONS = [
     id: 'jewelry',
     title: 'المجوهرات والإكسسوارات',
     icon: 'jewelry',
-    color: '#3268bf',
+    color: '#6b1d2f',
     branches: [
       {
         id: 'jewelry-gold',
@@ -321,7 +321,7 @@ export const ROYAL_SECTIONS = [
     id: 'home-products',
     title: 'الأسر المنتجة',
     icon: 'home',
-    color: '#2b5dad',
+    color: '#6b1d2f',
     branches: [
       {
         id: 'home-food',
@@ -355,7 +355,7 @@ export const ROYAL_SECTIONS = [
     id: 'haraj',
     title: 'موقع حراج ',
     icon: 'store',
-    color: '#1d4ed8',
+    color: '#6b1d2f',
     isAction: true,
     actionPath: '/haraj',
   },
@@ -365,7 +365,7 @@ export const MARQUEE_BANNERS = [
   {
     id: 1,
     text: 'أهلاً بكم في موقعكم "أناقة ROOZ" ونحيطكم علماً بأن يوجد خصم 30% على جميع الفساتين الجديدة — لفترة محدودة',
-    bgColor: 'linear-gradient(135deg, #a7132e, #700c1f)',
+    bgColor: 'linear-gradient(135deg, #6b1d2f, #3d0f18)',
   },
 ];
 
@@ -373,7 +373,7 @@ export const MARQUEE_BANNERS_2 = [
   {
     id: 1,
     text: 'سوق حراج ROOZ — انشر إعلانك مجاناً ووصّل بضاعتك لآلاف الزوار يومياً',
-    bgColor: 'linear-gradient(135deg, #154593, #32415b)',
+    bgColor: 'linear-gradient(135deg, #6b1d2f, #1f1116)',
   },
 ];
 
@@ -381,22 +381,22 @@ export const HARAJ_BANNERS = [
   {
     id: 1,
     text: 'سوق حراج ROOZ — بضاعتك تصل لآلاف الزوار يومياً، انشر إعلانك الآن',
-    bgColor: 'linear-gradient(135deg, #a7132e, #700c1f)',
+    bgColor: 'linear-gradient(135deg, #6b1d2f, #3d0f18)',
   },
   {
     id: 2,
     text: 'نسبة الموقع موثقة وواضحة: 2% للجديد و1% للمستعمل — لا رسوم خفية',
-    bgColor: 'linear-gradient(135deg, #0b477a, #073257)',
+    bgColor: 'linear-gradient(135deg, #1f1116, #1f1116)',
   },
   {
     id: 3,
     text: 'تعامل بثقة — جميع الإعلانات تُراجع قبل النشر حمايةً لك من الاحتيال',
-    bgColor: 'linear-gradient(135deg, #0e4caf, #0b367c)',
+    bgColor: 'linear-gradient(135deg, #6b1d2f, #1f1116)',
   },
   {
     id: 4,
     text: 'تواصل مباشر مع البائع عبر واتساب أو الاتصال — بدون وسطاء',
-    bgColor: 'linear-gradient(135deg, #286cda, #154593)',
+    bgColor: 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
   },
 ];
 

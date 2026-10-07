@@ -35,14 +35,14 @@ import {
 const ADMIN_NUMBER = '0536667222';
 
 const C = {
-  gold: '#2563eb',
-  goldDark: '#1e40af',
-  ink: '#0e1626',
-  inkSoft: '#143873',
-  cream: '#f5f7fa',
-  creamLight: '#eae5f6',
-  card: '#f8f6fb',
-  line: '#cbbcee',
+  gold: '#6b1d2f',
+  goldDark: '#6b1d2f',
+  ink: '#1f1116',
+  inkSoft: '#1f1116',
+  cream: '#fdfbf7',
+  creamLight: '#fdfbf7',
+  card: '#fdfbf7',
+  line: '#f3e0dd',
 };
 
 const timeAgo = (timestamp) => {
@@ -312,7 +312,7 @@ export default function AdDetailsPage() {
       dir="rtl"
       style={{
         minHeight: '100vh',
-        background: `linear-gradient(180deg, ${C.cream} 0%, #eceff4 55%, #e6ebf2 100%)`,
+        background: `linear-gradient(180deg, ${C.cream} 0%, #fdfbf7 55%, #fdfbf7 100%)`,
         fontFamily: 'Tajawal, sans-serif',
         color: C.ink,
         padding: '1rem',
@@ -348,13 +348,13 @@ export default function AdDetailsPage() {
             border: `1px solid ${C.line}`,
             borderRadius: 20,
             overflow: 'hidden',
-            boxShadow: '0 8px 30px rgb(21, 42, 92,0.12)',
+            boxShadow: '0 8px 30px rgb(1f1116,0.12)',
           }}
         >
           <div
             style={{
               height: 320,
-              background: `linear-gradient(135deg, ${C.creamLight}, #d2c3f2)`,
+              background: `linear-gradient(135deg, ${C.creamLight}, #f3e0dd)`,
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -385,7 +385,7 @@ export default function AdDetailsPage() {
                   borderRadius: 999,
                   fontSize: 12,
                   fontWeight: 800,
-                  boxShadow: '0 4px 12px rgb(11, 18, 32,0.2)',
+                  boxShadow: '0 4px 12px rgb(1f1116,0.2)',
                 }}
               >
                 {ad.condition === true ? 'جديد' : ad.condition}
@@ -424,7 +424,7 @@ export default function AdDetailsPage() {
             padding: 20,
             marginTop: 14,
             textAlign: 'center',
-            boxShadow: '0 8px 30px rgb(21, 42, 92,0.10)',
+            boxShadow: '0 8px 30px rgb(1f1116,0.10)',
           }}
         >
           <h1 style={{ margin: '0 0 8px', fontSize: 'clamp(1.4rem, 4vw, 2rem)', fontWeight: 800 }}>
@@ -458,7 +458,7 @@ export default function AdDetailsPage() {
             borderRadius: 20,
             padding: 20,
             marginTop: 14,
-            boxShadow: '0 8px 30px rgb(21, 42, 92,0.10)',
+            boxShadow: '0 8px 30px rgb(1f1116,0.10)',
           }}
         >
           <h3 style={{ margin: '0 0 14px', fontSize: 18, fontWeight: 800, textAlign: 'center', color: C.ink }}>
@@ -511,7 +511,7 @@ export default function AdDetailsPage() {
             padding: 20,
             marginTop: 14,
             marginBottom: 30,
-            boxShadow: '0 8px 30px rgb(21, 42, 92,0.10)',
+            boxShadow: '0 8px 30px rgb(1f1116,0.10)',
           }}
         >
           <h3 style={{ margin: '0 0 6px', fontSize: 18, fontWeight: 800, textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8 }}>
@@ -559,7 +559,7 @@ export default function AdDetailsPage() {
                   </p>
                 )}
                 {chatError && (
-                  <p style={{ textAlign: 'center', color: '#c01535', fontSize: 13 }}>{chatError}</p>
+                  <p style={{ textAlign: 'center', color: '#6b1d2f', fontSize: 13 }}>{chatError}</p>
                 )}
                 {messages.map((m) => {
                   const mine = m.senderKey === buyerKey;
@@ -578,7 +578,7 @@ export default function AdDetailsPage() {
                         padding: '8px 14px',
                         fontSize: 14,
                         lineHeight: 1.7,
-                        boxShadow: '0 2px 8px rgb(21, 42, 92,0.10)',
+                        boxShadow: '0 2px 8px rgb(1f1116,0.10)',
                       }}
                     >
                       {m.text}
@@ -637,8 +637,8 @@ const infoRow = {
   display: 'flex',
   alignItems: 'center',
   gap: 10,
-  background: '#f0edf8',
-  border: '1px solid #cbbcee',
+  background: '#fdfbf7',
+  border: '1px solid #f3e0dd',
   borderRadius: 12,
   padding: '10px 14px',
 };
@@ -646,8 +646,8 @@ const infoRow = {
 const goldBtn = {
   width: '100%',
   padding: 14,
-  background: 'linear-gradient(135deg, #2563eb 0%, #1e40af 55%, #2563eb 100%)',
-  color: '#0e1626',
+  background: 'linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 55%, #6b1d2f 100%)',
+  color: '#1f1116',
   border: 'none',
   borderRadius: 12,
   fontWeight: 800,
@@ -658,14 +658,14 @@ const goldBtn = {
   justifyContent: 'center',
   gap: 8,
   fontFamily: 'inherit',
-  boxShadow: '0 6px 20px rgb(30, 58, 138,0.35), inset 0 1px 0 rgb(255, 255, 255,0.5)',
+  boxShadow: '0 6px 20px rgb(6b1d2f,0.35), inset 0 1px 0 rgb(ffffff,0.5)',
 };
 
 const ghostBtn = {
   padding: '10px 14px',
   background: '#fff',
-  color: '#0e1626',
-  border: '1px solid #cbbcee',
+  color: '#1f1116',
+  border: '1px solid #f3e0dd',
   borderRadius: 12,
   fontWeight: 700,
   fontSize: 13,

@@ -454,7 +454,7 @@ const page = {
   minHeight: '100vh',
   width: '100%',
   background:
-    'radial-gradient(circle at top, rgb(37, 99, 235,0.10), transparent 40%), linear-gradient(135deg, #eceff4 0%, #f5f7fa 50%, #e6ebf2 100%)',
+    'radial-gradient(circle at top, rgb(6b1d2f,0.10), transparent 40%), linear-gradient(135deg, #fdfbf7 0%, #fdfbf7 50%, #fdfbf7 100%)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
@@ -469,9 +469,9 @@ const card = {
   borderRadius: 22,
   width: '100%',
   maxWidth: 430,
-  border: '1px solid rgb(15, 23, 42,0.08)',
+  border: '1px solid rgb(1f1116,0.08)',
   boxShadow:
-    '0 22px 60px rgb(15, 23, 42,0.12), inset 0 1px 0 rgb(255, 255, 255,0.6)',
+    '0 22px 60px rgb(1f1116,0.12), inset 0 1px 0 rgb(ffffff,0.6)',
   textAlign: 'center',
   boxSizing: 'border-box',
 };
@@ -485,15 +485,15 @@ const brandMark = {
   alignItems: 'center',
   justifyContent: 'center',
   background:
-    'linear-gradient(145deg, #3b82f6 0%, #2563eb 55%, #1d4ed8 100%)',
+    'linear-gradient(145deg, #6b1d2f 0%, #6b1d2f 55%, #6b1d2f 100%)',
   color: '#ffffff',
   fontSize: 25,
   fontWeight: 900,
-  boxShadow: '0 8px 24px rgb(59, 130, 246,0.2)',
+  boxShadow: '0 8px 24px rgb(6b1d2f,0.2)',
 };
 
 const title = {
-  color: '#0b1017',
+  color: '#1f1116',
   fontSize: 26,
   fontWeight: 900,
   margin: '0 0 6px',
@@ -501,13 +501,13 @@ const title = {
 };
 
 const subtitle = {
-  color: '#475569',
+  color: '#8a5560',
   fontSize: 13,
   margin: '0 0 22px',
 };
 
 const label = {
-  color: '#0f172a',
+  color: '#1f1116',
   fontSize: 14,
   fontWeight: 700,
   textAlign: 'right',
@@ -525,7 +525,7 @@ const inputIcon = {
   top: '50%',
   left: 13,
   transform: 'translateY(-50%)',
-  color: '#3b82f6',
+  color: '#6b1d2f',
   zIndex: 1,
   pointerEvents: 'none',
 };
@@ -535,10 +535,10 @@ const input = {
   minHeight: 48,
   padding: '12px 14px 12px 42px',
   borderRadius: 12,
-  border: '1px solid rgb(15, 23, 42,0.14)',
+  border: '1px solid rgb(1f1116,0.14)',
   outline: 'none',
-  background: '#f8fafc',
-  color: '#0b1017',
+  background: '#fdfbf7',
+  color: '#1f1116',
   fontSize: 15,
   fontFamily: 'Tajawal, Tajawal, sans-serif',
   boxSizing: 'border-box',
@@ -550,16 +550,16 @@ const submitBtn = {
   minHeight: 50,
   padding: '13px 14px',
   background:
-    'linear-gradient(135deg, #689bed 0%, #3b82f6 48%, #1e40af 100%)',
+    'linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 48%, #6b1d2f 100%)',
   color: '#111',
-  border: '1px solid rgb(165, 197, 248,0.45)',
+  border: '1px solid rgb(f3e0dd,0.45)',
   borderRadius: 12,
   fontWeight: 800,
   cursor: 'pointer',
   marginTop: 5,
   fontSize: 15,
   fontFamily: 'Tajawal, Tajawal, sans-serif',
-  boxShadow: '0 8px 24px rgb(59, 130, 246,0.16)',
+  boxShadow: '0 8px 24px rgb(6b1d2f,0.16)',
   transition: 'transform 160ms ease, opacity 160ms ease',
 };
 
@@ -580,7 +580,7 @@ const spinner = {
   width: 15,
   height: 15,
   borderRadius: '50%',
-  border: '2px solid rgb(20, 26, 35,0.25)',
+  border: '2px solid rgb(1f1116,0.25)',
   borderTopColor: '#111',
   display: 'inline-block',
   animation: 'roozRegisterSpin 700ms linear infinite',
@@ -588,20 +588,20 @@ const spinner = {
 
 const switchForm = {
   margin: '21px 0 0',
-  color: '#475569',
+  color: '#8a5560',
   fontSize: 14,
 };
 
 const link = {
-  color: '#2563eb',
+  color: '#6b1d2f',
   fontWeight: 800,
   textDecoration: 'none',
 };
 
 const alertError = {
   background: '#fef2f2',
-  border: '1px solid rgb(225, 29, 72,0.25)',
-  color: '#b91c1c',
+  border: '1px solid rgb(8f2a40,0.25)',
+  color: '#6b1d2f',
   padding: '11px 12px',
   borderRadius: 11,
   marginBottom: 17,
@@ -614,9 +614,9 @@ const alertError = {
 };
 
 const alertSuccess = {
-  background: '#f0fdf9',
-  border: '1px solid rgb(14, 165, 164,0.25)',
-  color: '#0f766e',
+  background: '#eae3d9',
+  border: '1px solid rgb(4a3a3f,0.25)',
+  color: '#4a3a3f',
   padding: '11px 12px',
   borderRadius: 11,
   marginBottom: 17,

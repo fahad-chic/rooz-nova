@@ -4,22 +4,22 @@
    لا تدرّجات صاخبة — تنسيق احترافي هادئ. يُستورد أخيراً.
    ============================================================ */
 :root {
-  --co-bg: #eceff4;
+  --co-bg: #fdfbf7;
   --co-surface: #ffffff;
-  --co-ink: #0b1017;
-  --co-ink-2: #1f2733;
-  --co-muted: #5b6472;
-  --co-line: #dde3ec;
-  --co-primary: #2563eb;
-  --co-primary-deep: #1d4ed8;
-  --co-primary-soft: #e8efff;
-  --co-accent: #0ea5e9;
-  --co-dark: #0b1220;
+  --co-ink: #1f1116;
+  --co-ink-2: #1f1116;
+  --co-muted: #8a5560;
+  --co-line: #fdfbf7;
+  --co-primary: #6b1d2f;
+  --co-primary-deep: #6b1d2f;
+  --co-primary-soft: #fdfbf7;
+  --co-accent: #6b1d2f;
+  --co-dark: #1f1116;
   --co-radius: 14px;
   --co-radius-sm: 10px;
   --co-font: 'Tajawal', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
-  --co-shadow: 0 6px 22px -12px rgba(15, 23, 42, 0.28);
-  --co-shadow-lg: 0 18px 44px -22px rgba(15, 23, 42, 0.4);
+  --co-shadow: 0 6px 22px -12px rgb(1f1116, 0.28);
+  --co-shadow-lg: 0 18px 44px -22px rgb(1f1116, 0.4);
 
   /* جسر للمتغيرات القديمة في المكوّنات */
   --nv-font: var(--co-font);
@@ -76,7 +76,7 @@ p, li { font-weight: 300; }
 /* شريط علوي (نافبار) صلبة */
 .navbar {
   background: var(--co-dark) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgb(ffffff, 0.08) !important;
 }
 
 /* حقول إدخال موحّدة */

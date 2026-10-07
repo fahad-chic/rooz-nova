@@ -12,25 +12,25 @@
 
 :root {
   --nav-height: 56px;
-  --primary-dark: #10151c;
-  --secondary-gold: #2563eb;
-  --gold-soft: #dbe3ee;
-  --gold-bright: #3b82f6;
-  --gold-deep: #1e40af;
+  --primary-dark: #1f1116;
+  --secondary-gold: #6b1d2f;
+  --gold-soft: #fdfbf7;
+  --gold-bright: #6b1d2f;
+  --gold-deep: #6b1d2f;
   --white: #ffffff;
-  --cream: #e6ebf2;
-  --cream-light: #f5f7fa;
-  --cream-deep: #cbd9f0;
-  --light-gray: #e6ebf2;
-  --dark-gray: #0b1017;
-  --brown-dark: #0b1017;
-  --brown-soft: #323e54;
-  --border-gray: rgb(37, 99, 235,0.22);
-  --border-gold: rgb(37, 99, 235,0.42);
-  --success: #14b5a7;
-  --danger: #eb4866;
-  --warning: #1d4ed8;
-  --info: #4184f0;
+  --cream: #fdfbf7;
+  --cream-light: #fdfbf7;
+  --cream-deep: #fdfbf7;
+  --light-gray: #fdfbf7;
+  --dark-gray: #1f1116;
+  --brown-dark: #1f1116;
+  --brown-soft: #1f1116;
+  --border-gray: rgb(6b1d2f,0.22);
+  --border-gold: rgb(6b1d2f,0.42);
+  --success: #4a3a3f;
+  --danger: #8f2a40;
+  --warning: #6b1d2f;
+  --info: #6b1d2f;
   --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --transition: all 0.22s ease;
 }
@@ -50,10 +50,10 @@ html, body, #root {
 body {
   font-family: var(--font-family);
   background:
-    radial-gradient(circle at 12% 8%, rgb(255, 255, 255,0.65), transparent 28%),
-    radial-gradient(circle at 88% 18%, rgb(37, 99, 235,0.08), transparent 26%),
-    linear-gradient(150deg, #e6ebf2 0%, #dbe3ee 55%, #cbd9f0 100%);
-  color: #0b1017;
+    radial-gradient(circle at 12% 8%, rgb(ffffff,0.65), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgb(6b1d2f,0.08), transparent 26%),
+    linear-gradient(150deg, #fdfbf7 0%, #fdfbf7 55%, #fdfbf7 100%);
+  color: #1f1116;
   overflow-x: hidden;
   direction: rtl;
   -webkit-font-smoothing: antialiased;
@@ -74,13 +74,13 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid rgb(83, 138, 226,0.75);
+  outline: 2px solid rgb(6b1d2f,0.75);
   outline-offset: 2px;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
-  color: #0b1017;
+  color: #1f1116;
   text-wrap: balance;
 }
 
@@ -91,15 +91,15 @@ p { line-height: 1.6; margin-bottom: 0.45rem; }
 
 input, textarea, select {
   padding: 0.72rem 0.8rem;
-  border: 1px solid rgb(37, 99, 235,0.35);
+  border: 1px solid rgb(6b1d2f,0.35);
   border-radius: 10px;
   font-size: 0.92rem;
   background:
-    linear-gradient(145deg, rgb(255, 255, 255,0.96), rgb(247, 246, 251,0.9));
-  color: #0e1626;
+    linear-gradient(145deg, rgb(ffffff,0.96), rgb(fdfbf7,0.9));
+  color: #1f1116;
   box-shadow:
-    inset 0 1px 0 rgb(255, 255, 255,0.9),
-    0 3px 12px rgb(56, 71, 97,0.04);
+    inset 0 1px 0 rgb(ffffff,0.9),
+    0 3px 12px rgb(6b1d2f,0.04);
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
@@ -108,13 +108,13 @@ input, textarea, select {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgb(27, 58, 107,0.58);
+  color: rgb(1f1116,0.58);
 }
 
 input:hover,
 textarea:hover,
 select:hover {
-  border-color: rgb(37, 99, 235,0.5);
+  border-color: rgb(6b1d2f,0.5);
 }
 
 input:focus,
@@ -122,10 +122,10 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--secondary-gold);
-  background: #f8f6fb;
+  background: #fdfbf7;
   box-shadow:
-    0 0 0 3px rgb(83, 138, 226,0.12),
-    0 6px 18px rgb(56, 71, 97,0.07);
+    0 0 0 3px rgb(6b1d2f,0.12),
+    0 6px 18px rgb(6b1d2f,0.07);
 }
 
 /* ================================
@@ -139,9 +139,9 @@ select:focus {
   gap: 0.5rem;
   padding: 0.85rem 1.4rem;
   background:
-    linear-gradient(135deg, #6a9beb 0%, #2563eb 45%, #1e40af 100%);
-  color: #0b1220;
-  border: 1px solid rgb(186, 210, 249,0.55);
+    linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 45%, #6b1d2f 100%);
+  color: #1f1116;
+  border: 1px solid rgb(f3e0dd,0.55);
   border-radius: 14px;
   font-size: 0.95rem;
   font-weight: 800;
@@ -152,20 +152,20 @@ select:focus {
     border-color 0.22s ease,
     filter 0.22s ease;
   box-shadow:
-    0 8px 20px rgb(37, 99, 235,0.22),
-    0 0 18px rgb(83, 138, 226,0.35),
-    inset 0 1px 0 rgb(226, 219, 247,0.5);
-  text-shadow: 0 1px 0 rgb(255, 255, 255,0.18);
+    0 8px 20px rgb(6b1d2f,0.22),
+    0 0 18px rgb(6b1d2f,0.35),
+    inset 0 1px 0 rgb(fdfbf7,0.5);
+  text-shadow: 0 1px 0 rgb(ffffff,0.18);
 }
 
 .btn-royal:hover {
   transform: translateY(-2px);
-  border-color: rgb(186, 210, 249,0.8);
+  border-color: rgb(f3e0dd,0.8);
   filter: brightness(1.04);
   box-shadow:
-    0 12px 26px rgb(37, 99, 235,0.28),
-    0 0 25px rgb(83, 138, 226,0.48),
-    inset 0 1px 0 rgb(226, 219, 247,0.65);
+    0 12px 26px rgb(6b1d2f,0.28),
+    0 0 25px rgb(6b1d2f,0.48),
+    inset 0 1px 0 rgb(fdfbf7,0.65);
 }
 
 .btn-royal:active {
@@ -183,22 +183,22 @@ select:focus {
 
 .btn-here {
   background:
-    linear-gradient(135deg, #dad1f7 0%, #c7dbfe 45%, #2563eb 100%);
-  color: #11151d;
+    linear-gradient(135deg, #fdfbf7 0%, #f3e0dd 45%, #6b1d2f 100%);
+  color: #1f1116;
 }
 
 /* زر الصفحة التالية */
 
 .btn-next {
   background:
-    linear-gradient(135deg, #6497ea 0%, #2563eb 48%, #2060c6 100%);
+    linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 48%, #6b1d2f 100%);
 }
 
 /* زر الصفحة السابقة */
 
 .btn-prev {
   background:
-    linear-gradient(135deg, #3775d8 0%, #2060c6 48%, #1e40af 100%);
+    linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 48%, #6b1d2f 100%);
 }
 
 /* زر زجاجي */
@@ -207,31 +207,31 @@ select:focus {
   background:
     linear-gradient(
       145deg,
-      rgb(255, 255, 255,0.86),
-      rgb(247, 246, 251,0.68)
+      rgb(ffffff,0.86),
+      rgb(fdfbf7,0.68)
     );
-  border: 1px solid rgb(37, 99, 235,0.4);
-  color: #0e1626;
+  border: 1px solid rgb(6b1d2f,0.4);
+  color: #1f1116;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow:
-    0 6px 18px rgb(56, 71, 97,0.08),
-    inset 0 1px 0 rgb(255, 255, 255,0.9);
+    0 6px 18px rgb(6b1d2f,0.08),
+    inset 0 1px 0 rgb(ffffff,0.9);
 }
 
 .btn-glass:hover {
   background:
     linear-gradient(
       145deg,
-      rgb(255, 255, 255,0.98),
-      rgb(247, 246, 251,0.84)
+      rgb(ffffff,0.98),
+      rgb(fdfbf7,0.84)
     );
-  border-color: rgb(37, 99, 235,0.58);
+  border-color: rgb(6b1d2f,0.58);
   transform: translateY(-2px);
   box-shadow:
-    0 10px 24px rgb(56, 71, 97,0.12),
-    0 0 0 3px rgb(83, 138, 226,0.08),
-    inset 0 1px 0 rgb(255, 255, 255,0.95);
+    0 10px 24px rgb(6b1d2f,0.12),
+    0 0 0 3px rgb(6b1d2f,0.08),
+    inset 0 1px 0 rgb(ffffff,0.95);
 }
 
 /* الحقول — مستخدمة في صفحات الإدارة */
@@ -245,8 +245,8 @@ select:focus {
    ================================ */
 
 ::selection {
-  background: rgb(83, 138, 226,0.3);
-  color: #0b1220;
+  background: rgb(6b1d2f,0.3);
+  color: #1f1116;
 }
 
 a {

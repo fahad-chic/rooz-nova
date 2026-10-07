@@ -66,7 +66,7 @@ const BroadcastModal = ({ onClose }) => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'rgb(11, 18, 32, 0.72)',
+        background: 'rgb(1f1116, 0.72)',
         backdropFilter: 'blur(8px)',
         padding: '1rem',
         fontFamily: 'Tajawal, sans-serif',
@@ -79,10 +79,10 @@ const BroadcastModal = ({ onClose }) => {
         style={{
           width: '100%',
           maxWidth: 460,
-          background: 'linear-gradient(145deg, #e1d8f5 0%, #bed3f4 100%)',
+          background: 'linear-gradient(145deg, #fdfbf7 0%, #f3e0dd 100%)',
           borderRadius: 20,
-          border: '1px solid rgb(31, 89, 181,0.35)',
-          boxShadow: '0 24px 60px rgb(11, 18, 32, 0.45)',
+          border: '1px solid rgb(6b1d2f,0.35)',
+          boxShadow: '0 24px 60px rgb(1f1116, 0.45)',
           padding: '1.4rem',
         }}
       >
@@ -99,12 +99,12 @@ const BroadcastModal = ({ onClose }) => {
               display: 'flex',
               alignItems: 'center',
               gap: 8,
-              color: '#0b1017',
+              color: '#1f1116',
               fontSize: '1.05rem',
               fontWeight: 800,
             }}
           >
-            <Megaphone size={20} color="#1d4ed8" />
+            <Megaphone size={20} color="#6b1d2f" />
             رسالة البث
           </strong>
           <button
@@ -112,7 +112,7 @@ const BroadcastModal = ({ onClose }) => {
             onClick={onClose}
             aria-label="إغلاق"
             style={{
-              background: 'rgb(31, 89, 181,0.12)',
+              background: 'rgb(6b1d2f,0.12)',
               border: 'none',
               borderRadius: 10,
               width: 34,
@@ -123,7 +123,7 @@ const BroadcastModal = ({ onClose }) => {
               cursor: 'pointer',
             }}
           >
-            <X size={18} color="#0b1017" />
+            <X size={18} color="#1f1116" />
           </button>
         </div>
 
@@ -135,13 +135,13 @@ const BroadcastModal = ({ onClose }) => {
           style={{
             width: '100%',
             boxSizing: 'border-box',
-            background: 'rgb(255, 255, 255,0.7)',
-            border: '1px solid rgb(31, 89, 181,0.35)',
+            background: 'rgb(ffffff,0.7)',
+            border: '1px solid rgb(6b1d2f,0.35)',
             borderRadius: 12,
             padding: '0.85rem',
             fontSize: '0.95rem',
             lineHeight: '1.7',
-            color: '#0e1626',
+            color: '#1f1116',
             fontFamily: 'inherit',
             outline: 'none',
             resize: 'vertical',
@@ -159,8 +159,8 @@ const BroadcastModal = ({ onClose }) => {
             alignItems: 'center',
             justifyContent: 'center',
             gap: 8,
-            background: 'linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)',
-            color: '#0b1017',
+            background: 'linear-gradient(135deg, #6b1d2f 0%, #6b1d2f 100%)',
+            color: '#1f1116',
             border: 'none',
             borderRadius: 12,
             padding: '0.8rem',
@@ -181,7 +181,7 @@ const BroadcastModal = ({ onClose }) => {
               textAlign: 'center',
               fontSize: '0.85rem',
               fontWeight: 700,
-              color: status.includes('تم') ? '#178081' : '#0e4caf',
+              color: status.includes('تم') ? '#4a3a3f' : '#6b1d2f',
             }}
           >
             {status}
