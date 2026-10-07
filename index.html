@@ -8,52 +8,58 @@
   <!-- PWA Meta Tags -->
   <meta name="theme-color" content="#3d0f18"/>
   <meta name="google-site-verification" content="gc-cSgckNw5k6r31nw4kwYFkJgRiPax2W0-CZNBohwY"/>
-  <meta name="description" content="منصة أناقة ROOZ: سوق متكامل يجمع بين حراج الإعلانات العام ومتجر المنتجات الحديثة بأسعار رخيصة للجميع. شحن سريع ومجاني للطلبات فوق 150 ريال."/>
+  <meta name="description" content="أناقةROOZ: سوق متكامل يجمع بين حراج الإعلانات العام ومتجر المنتجات الحديثة بأسعار رخيصة للجميع. شحن سريع ومجاني للطلبات فوق 150 ريال."/>
   <meta name="robots" content="index,follow"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-capable" content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-  <meta name="apple-mobile-web-app-title" content="منصة أناقة ROOZ"/>
-  <meta name="application-name" content="منصة أناقة ROOZ"/>
+  <meta name="apple-mobile-web-app-title" content="أناقةROOZ"/>
+  <meta name="application-name" content="أناقةROOZ"/>
   <meta name="msapplication-TileColor" content="#3d0f18"/>
 
   <!-- Open Graph -->
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://fahad-chic.pages.dev"/>
-  <meta property="og:title" content="منصة أناقة ROOZ | حراج إعلانات ومتجر شامل"/>
+  <meta property="og:title" content="أناقةROOZ | حراج إعلانات ومتجر شامل"/>
   <meta property="og:description" content="وجهتك الأولى للبيع والشراء! حراج عام شامل وأرقى المنتجات والأزياء بأسعار رخيصة للجميع. شحن سريع ومجاني للطلبات فوق 150 ريال."/>
-  <meta property="og:image" content="https://fahad-chic.pages.dev/assets/logo-v2.webp"/>
+  <meta property="og:image" content="https://fahad-chic.pages.dev/assets/og-image.jpg"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta property="og:locale" content="ar_SA"/>
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="منصة أناقة ROOZ | حراج إعلانات ومتجر شامل"/>
+  <meta name="twitter:title" content="أناقةROOZ | حراج إعلانات ومتجر شامل"/>
   <meta name="twitter:description" content="وجهتك الأولى للبيع والشراء! حراج عام شامل وأرقى المنتجات والأزياء بأسعار رخيصة للجميع."/>
-  <meta name="twitter:image" content="https://fahad-chic.pages.dev/assets/logo-v2.webp"/>
+  <meta name="twitter:image" content="https://fahad-chic.pages.dev/assets/og-image.jpg"/>
 
   <!-- Icons -->
-  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
-  <link rel="icon" href="/assets/logo-v2.webp" type="image/webp"/>
-  <link rel="apple-touch-icon" href="/assets/logo-v2.webp"/>
+  <link rel="icon" href="/favicon.ico" sizes="any"/>
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64"/>
+  <link rel="icon" href="/icons/icon-192x192.png" type="image/png" sizes="192x192"/>
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
 
   <!-- Manifest -->
   <link rel="manifest" href="/manifest.json"/>
 
-  <title>منصة أناقة ROOZ | حراج إعلانات ومتجر شامل للجميع · NOVA</title>
+  <title>أناقةROOZ | فساتين وعبايات فاخرة في السعودية</title>
   <link rel="canonical" href="https://fahad-chic.pages.dev"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <style>
     *,*:before,*::after{box-sizing:border-box}
-    html{background:#1f1116}
-    body{margin:0;background:#1f1116;color:#1f1116;font-family:Tajawal,system-ui,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    html{background:#fdfbf7}
+    body{margin:0;background:#fdfbf7;color:#1f1116;font-family:Tajawal,system-ui,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     #root{min-height:100vh;display:flex;align-items:center;justify-content:center}
-    .l{width:48px;height:48px;border:4px solid rgb(6b1d2f,.15);border-top-color:#3d0f18;border-radius:50%;animation:spin 1s linear infinite}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    @media(prefers-reduced-motion:reduce){.l{animation:none}}
+    /* شاشة تحميل ناعمة: أيقونة حرف R والتاج في المنتصف */
+    .rooz-boot{display:flex;flex-direction:column;align-items:center;gap:16px;opacity:0;animation:roozFadeIn .7s ease .05s forwards}
+    .rooz-boot img{width:96px;height:96px;object-fit:contain;filter:drop-shadow(0 8px 22px rgba(107,29,47,.22))}
+    .rooz-boot .rooz-boot-bar{width:132px;height:3px;border-radius:999px;background:rgba(107,29,47,.14);overflow:hidden;position:relative}
+    .rooz-boot .rooz-boot-bar::after{content:"";position:absolute;inset:0;width:40%;border-radius:999px;background:linear-gradient(90deg,#6b1d2f,#d4a5a5);animation:roozSlide 1.15s ease-in-out infinite}
+    @keyframes roozFadeIn{to{opacity:1}}
+    @keyframes roozSlide{0%{transform:translateX(-120%)}100%{transform:translateX(320%)}}
+    @media(prefers-reduced-motion:reduce){.rooz-boot{animation:none;opacity:1}.rooz-boot .rooz-boot-bar::after{animation:none;width:100%}}
   </style>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" media="print" onload="this.media='all'"/>
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap"/></noscript>
@@ -62,9 +68,9 @@
   {
     "@context": "https://schema.org",
     "@type": "ShoppingCenter",
-    "name": "منصة أناقة ROOZ",
+    "name": "أناقةROOZ",
     "url": "https://fahad-chic.pages.dev",
-    "logo": "https://fahad-chic.pages.dev/assets/logo-v2.webp",
+    "logo": "https://fahad-chic.pages.dev/assets/logo.png",
     "description": "منصة متكاملة تجمع بين حراج الإعلانات العام ومتجر المنتجات والأزياء بأسعار تصفية في السعودية",
     "telephone": "+966536667222",
     "address": {
@@ -78,7 +84,12 @@
   </script>
 </head>
 <body>
-  <div id="root"><div class="l" aria-label="جاري التحميل"></div></div>
+  <div id="root">
+    <div class="rooz-boot" role="status" aria-label="جاري التحميل">
+      <img src="/assets/emblem.png" alt="أناقة ROOZ" width="96" height="96"/>
+      <span class="rooz-boot-bar"></span>
+    </div>
+  </div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

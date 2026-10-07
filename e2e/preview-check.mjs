@@ -8,7 +8,7 @@ fs.mkdirSync(OUT, { recursive: true });
 const routes = [
   '/', '/login', '/register', '/forgot-password', '/haraj', '/haraj/post',
   '/catalog/all', '/about', '/faq', '/contact', '/branches',
-  '/dashboard', '/advertisements',
+  '/dashboard', '/advertisements', '/terms', '/wanted-dress',
 ];
 
 const viewports = [

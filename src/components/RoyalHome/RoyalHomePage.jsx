@@ -27,7 +27,7 @@ import OwnerEditBadge from '../OwnerEditBadge';
 import '../../styles/RoyalHome.css';
 import '../../styles/ChicHome.css';
 
-const LOGO_SRC = '/assets/logo-v2.webp';
+const LOGO_SRC = '/assets/logo.png';
 
 const SECTION_ICONS = {
   dresses: Sparkles,

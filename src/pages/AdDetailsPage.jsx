@@ -12,10 +12,17 @@ import {
   orderBy,
   onSnapshot,
   setDoc,
+  arrayUnion,
 } from 'firebase/firestore';
 import { signInAnonymously } from 'firebase/auth';
 import { ensureFirebaseSession } from '../utils/firebaseSession';
+import { notifyOwner } from '../utils/visitorNotify';
 import { db, auth } from '../firebase/config';
+import VerifiedBadge from '../components/haraj/VerifiedBadge';
+import SizeMatcher from '../components/haraj/SizeMatcher';
+import AuctionPanel from '../components/haraj/AuctionPanel';
+import EscrowPanel from '../components/haraj/EscrowPanel';
+import { hasAnySize } from '../utils/dressMeta';
 import {
   ArrowRight,
   MapPin,
@@ -270,6 +277,63 @@ export default function AdDetailsPage() {
     if (phone) window.location.href = `tel:${phone}`;
   };
 
+  // إرسال مزايدة جديدة في المزاد العلني (٤٨ ساعة)
+  const handleBid = async (amount) => {
+    if (!ad || !db) return;
+    const bidderName = harajUser?.name || harajUser?.userName || 'مزايد';
+    const bidderKey = String(
+      harajUser?.phone || harajUser?.userPhone || harajUser?.email || bidderName
+    );
+    try {
+      await updateDoc(doc(db, 'haraj_ads', ad.id), {
+        currentBid: amount,
+        bids: arrayUnion({
+          amount,
+          bidderName,
+          bidderKey,
+          at: Date.now(),
+        }),
+        updatedAt: serverTimestamp(),
+      });
+      notifyOwner(
+        'مزايدة جديدة',
+        `${bidderName} زايد بمبلغ ${Number(amount).toLocaleString()} ريال على «${ad.title}»`
+      );
+    } catch {
+      /* فشل المزايدة يُظهر تنبيهاً بسيطاً */
+      alert('تعذّر إرسال المزايدة، حاول مرة أخرى.');
+    }
+  };
+
+  // خطوات الوساطة الآمنة (الدفع/الشحن/الاستلام/التحرير)
+  const handleEscrowAction = async (action) => {
+    if (!ad || !db) return;
+    const now = Date.now();
+    const nextStatus =
+      action === 'pay'
+        ? 'paid'
+        : action === 'ship'
+        ? 'shipped'
+        : action === 'receive'
+        ? 'received'
+        : 'released';
+    const escrow = {
+      status: nextStatus,
+      commissionRate: ad.condition === 'used' ? 0.01 : 0.02,
+      updatedAt: now,
+      reviewUntil: nextStatus === 'received' ? now + 24 * 3600 * 1000 : null,
+    };
+    try {
+      await updateDoc(doc(db, 'haraj_ads', ad.id), { escrow, updatedAt: serverTimestamp() });
+      notifyOwner(
+        'تحديث الوساطة الآمنة',
+        `«${ad.title}» — الحالة الجديدة: ${nextStatus}`
+      );
+    } catch {
+      alert('تعذّر تحديث حالة الوساطة، حاول مرة أخرى.');
+    }
+  };
+
   const handleShare = () => {
     const adUrl = `${window.location.origin}/haraj/ad/${ad.id}`;
     const text = `${ad.title} — ${Number(ad.price || 0).toLocaleString()} ريال | حراج أناقة ROOZ\n${adUrl}`;
@@ -450,6 +514,51 @@ export default function AdDetailsPage() {
           )}
         </div>
 
+        {/* الفستان في الحركة — معاينة إطارات الفيديو القصير */}
+        {Array.isArray(ad.motionFrames) && ad.motionFrames.length > 0 && (
+          <div
+            style={{
+              background: C.card,
+              border: `1px solid ${C.line}`,
+              borderRadius: 20,
+              padding: 16,
+              marginTop: 14,
+              boxShadow: '0 8px 30px rgba(31, 17, 22,0.10)',
+            }}
+          >
+            <h3 style={{ margin: '0 0 10px', fontSize: 16, fontWeight: 800, textAlign: 'center' }}>
+              الفستان في الحركة
+            </h3>
+            <div style={{ display: 'flex', gap: 8, overflowX: 'auto', paddingBottom: 4 }}>
+              {ad.motionFrames.map((frame, i) => (
+                <img
+                  key={i}
+                  src={frame}
+                  alt={`حركة ${i + 1}`}
+                  loading="lazy"
+                  style={{ width: 88, height: 110, objectFit: 'cover', borderRadius: 10, border: `1px solid ${C.line}`, flexShrink: 0 }}
+                />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* حاسبة المقاسات الذكية */}
+        {hasAnySize(ad.measurements || {}) && <SizeMatcher dress={ad.measurements || {}} />}
+
+        {/* المزاد العلني (٤٨ ساعة) */}
+        {ad.isAuction && (
+          <AuctionPanel
+            ad={ad}
+            onBid={handleBid}
+            disabled={isSeller}
+            currentUserKey={buyerKey}
+          />
+        )}
+
+        {/* الوساطة الآمنة */}
+        {ad.escrow && <EscrowPanel ad={ad} role={isSeller ? 'seller' : 'buyer'} onAction={handleEscrowAction} />}
+
         {/* بيانات المعلن */}
         <div
           style={{
@@ -468,6 +577,7 @@ export default function AdDetailsPage() {
             <div style={infoRow}>
               <User size={18} color={C.gold} />
               <span style={{ fontWeight: 700 }}>{ad.userName || 'معلن'}</span>
+              <VerifiedBadge verified={ad.sellerVerified || ad.verified} withLabel />
             </div>
             {(ad.city || ad.location || ad.userRegion) && (
               <div style={infoRow}>

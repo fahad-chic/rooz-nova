@@ -43,6 +43,16 @@ export const ROYAL_SECTIONS = [
     color: '#6b1d2f',
     branches: [
       {
+        id: 'wedding-new',
+        name: 'فساتين أعراس جديدة',
+        catalogId: 'wedding-dresses-new',
+      },
+      {
+        id: 'wedding-used',
+        name: 'فساتين أعراس مستعملة',
+        catalogId: 'wedding-dresses-used',
+      },
+      {
         id: 'wedding-luxury',
         name: 'أعراس فخمة',
         catalogId: 'luxury-wedding',

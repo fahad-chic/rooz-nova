@@ -2,7 +2,7 @@
 // صفحة الكاتالوج الديناميكية — النسخة النهائية
 
 import React, { useState, useEffect, useContext } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import {
   ArrowRight,
   Plus,
@@ -101,7 +101,12 @@ const DISPLAY_STYLES = {
 const CatalogPage = () => {
   const { catalogId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const { user, userRole } = useContext(AuthContext);
+
+  // فلتر المقاس القادم من القائمة الذكية (مثال: فساتين أعراس جديدة -> مقاس M)
+  const activeSize = location.state?.size || null;
+  const activeSubName = location.state?.subName || null;
 
   const isOwner = userRole === 'owner';
   // أزرار التعديل والحذف للمالك فقط — محجوبة عن المشرفين والجميع
@@ -281,6 +286,18 @@ const CatalogPage = () => {
     setEditingProduct(null);
   };
 
+  // فلترة المنتجات حسب المقاس المختار من القائمة الذكية (إن وُجد)
+  const sizeFilteredProducts = activeSize
+    ? products.filter((product) => {
+        const raw = String(product.size || '').trim().toUpperCase();
+        const wanted = String(activeSize).trim().toUpperCase();
+        if (wanted === 'خاص') {
+          return !raw || !['S', 'M', 'L', 'XL'].includes(raw);
+        }
+        return raw === wanted;
+      })
+    : products;
+
   const currentDisplayStyle =
     DISPLAY_STYLES[cardStyle] || DISPLAY_STYLES.square;
 
@@ -366,6 +383,44 @@ const CatalogPage = () => {
             >
               {catalogInfo.section}
             </p>
+          )}
+
+          {activeSize && (
+            <div
+              style={{
+                marginTop: '1rem',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.6rem',
+                background: 'rgba(107, 29, 47, 0.10)',
+                border: '1px solid rgba(107, 29, 47, 0.28)',
+                borderRadius: 999,
+                padding: '0.4rem 0.5rem 0.4rem 0.9rem',
+                fontFamily: 'Cairo, sans-serif',
+              }}
+            >
+              <span style={{ color: '#6b1d2f', fontSize: '0.85rem', fontWeight: 800 }}>
+                {activeSubName ? `${activeSubName} — ` : ''}
+                المقاس: {activeSize}
+              </span>
+              <button
+                type="button"
+                onClick={() => navigate(`/catalog/${catalogId}`, { replace: true })}
+                style={{
+                  background: '#6b1d2f',
+                  color: '#fdfbf7',
+                  border: 'none',
+                  borderRadius: 999,
+                  padding: '0.25rem 0.7rem',
+                  fontSize: '0.78rem',
+                  fontWeight: 800,
+                  cursor: 'pointer',
+                  fontFamily: 'inherit',
+                }}
+              >
+                إزالة الفلتر
+              </button>
+            </div>
           )}
         </div>
       </div>
@@ -460,7 +515,7 @@ const CatalogPage = () => {
             margin: 0,
           }}
         >
-          {products.length} منتج
+          {sizeFilteredProducts.length} منتج
         </p>
 
         {/* أزرار الإدارة */}
@@ -534,7 +589,7 @@ const CatalogPage = () => {
         >
           جاري التحميل...
         </div>
-      ) : products.length === 0 ? (
+      ) : sizeFilteredProducts.length === 0 ? (
         <div
           style={{
             maxWidth: 1200,
@@ -623,7 +678,7 @@ const CatalogPage = () => {
                   }),
             }}
           >
-            {products.map((product) => (
+            {sizeFilteredProducts.map((product) => (
               <ProductCard
                 key={product.id}
                 product={product}

@@ -46,6 +46,8 @@ import ContactOwnerModal from './ContactOwnerModal';
 import BroadcastModal from './BroadcastModal';
 import { ROYAL_SECTIONS } from './RoyalHome/sectionsData';
 import OwnerEditBadge from './OwnerEditBadge';
+import SmartDropdownMenu from './SmartDropdownMenu';
+import '../styles/smart-menu.css';
 
 // ============================================================
 // ثوابت خارج المكوّن → لا يُعاد إنشاؤها في كل تصيير (تحسين أداء)
@@ -179,9 +181,9 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
     <>
       <style>{`
         .navbar {
-          background: rgba(31, 17, 22, 0.95);
-          border-bottom: 1px solid rgba(61, 15, 24, 0.4);
-          padding: 0.2rem 0;
+          background: rgba(253, 251, 247, 0.72);
+          border-bottom: 1px solid rgba(107, 29, 47, 0.18);
+          padding: 0.28rem 0;
           position: fixed;
           top: 0;
           left: 0;
@@ -189,19 +191,19 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           width: 100%;
           z-index: 3000;
           isolation: isolate;
-          backdrop-filter: blur(16px);
-          -webkit-backdrop-filter: blur(16px);
-          box-shadow: 0 6px 24px rgba(31, 17, 22,0.35);
+          backdrop-filter: blur(18px) saturate(160%);
+          -webkit-backdrop-filter: blur(18px) saturate(160%);
+          box-shadow: 0 6px 26px rgba(31, 17, 22, 0.10);
           transform: translateZ(0);
         }
         .navbar .logout-btn,
         .navbar .welcome-btn,
         .navbar .ai-header-btn,
         .navbar .mobile-toggle {
-          color: #fdfbf7 !important;
-          border-color: rgba(61, 15, 24,0.4) !important;
+          color: #1f1116 !important;
+          border-color: rgba(107, 29, 47, 0.35) !important;
         }
-        .navbar .user-name, .navbar .user-role { color: #fdfbf7 !important; }
+        .navbar .user-name, .navbar .user-role { color: #1f1116 !important; }
         .nav-menu.open {
           background: #fdfbf7 !important;
           color: #1f1116 !important;
@@ -211,21 +213,22 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
         .navbar-container {
           max-width: 1280px;
           margin: 0 auto;
-          padding: 0.18rem 0.4rem;
-          display: flex;
-          justify-content: space-between;
+          padding: 0.22rem 0.6rem;
+          display: grid;
+          grid-template-columns: 1fr auto auto 1fr;
           align-items: center;
-          gap: 0.35rem;
-          border: 1.5px solid rgba(61, 15, 24,0.5);
-          border-radius: 16px;
-          background: linear-gradient(145deg, rgba(253, 251, 247,0.92), rgba(253, 251, 247,0.85));
-          box-shadow: inset 0 0 0 1px rgba(255, 255, 255,0.65), 0 4px 14px rgba(61, 15, 24,0.14);
+          gap: 0.4rem;
+          border: none;
+          border-radius: 0;
+          background: transparent;
+          box-shadow: none;
           min-width: 0;
         }
 
-        .nav-right { order: 1; }
-        .nav-menu { order: 2; }
-        .navbar-brand { order: 3; }
+        .nav-right { order: 4; justify-self: end; }
+        .nav-menu { order: 1; justify-self: start; }
+        .nav-smart-desktop { order: 2; justify-self: center; }
+        .navbar-brand { order: 3; justify-self: center; }
 
         .navbar-brand {
           display: flex;
@@ -237,17 +240,20 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
         }
 
         .navbar-brand-logo {
-          width: 38px;
-          height: 38px;
-          object-fit: cover;
-          border-radius: 50%;
-          border: 2px solid #6b1d2f;
-          box-shadow: 0 0 0 1.5px rgba(61, 15, 24,0.3), 0 4px 12px rgba(61, 15, 24,0.4);
+          height: 45px;
+          width: auto;
+          max-height: 45px;
+          object-fit: contain;
+          border: none;
+          border-radius: 0;
+          background: transparent;
+          box-shadow: none;
+          filter: drop-shadow(0 3px 9px rgba(107, 29, 47, 0.30));
           transition: transform 0.25s ease;
         }
 
         .navbar-brand:hover .navbar-brand-logo {
-          transform: scale(1.06);
+          transform: scale(1.05);
         }
 
         .navbar-brand-name {
@@ -551,12 +557,22 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
           .navbar-container {
             margin-inline: 0.35rem;
             padding: 0.2rem 0.35rem;
-            border-radius: 13px;
+            border-radius: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
           }
 
+          /* الجوال: الشعار في اليمين */
+          .navbar-brand { order: 1; justify-self: auto; }
+          .nav-right { order: 2; justify-self: auto; }
+          .nav-menu { order: 3; }
+          .nav-smart-desktop { display: none; }
+
           .navbar-brand-logo {
-            width: 36px;
-            height: 36px;
+            height: 45px;
+            width: auto;
+            max-height: 45px;
           }
 
           .navbar-brand-sub {
@@ -897,16 +913,18 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
       <nav className="navbar" dir="rtl">
         <div className="navbar-container">
 
-          <Link to="/" className="navbar-brand" aria-label="الصفحة الرئيسية">
+          <Link to="/" className="navbar-brand" aria-label="أناقة ROOZ — الصفحة الرئيسية">
             <img
-              src="/assets/logo-v2.webp"
-              alt="شعار أناقة ROOZ"
+              src="/assets/logo.png"
+              alt="أناقة ROOZ"
               className="navbar-brand-logo"
-              width={44}
-              height={44}
+              height={45}
               loading="eager"
+              decoding="async"
             />
           </Link>
+
+          <SmartDropdownMenu className="nav-smart-desktop" variant="desktop" />
 
           <ul className={`nav-menu ${isOpen ? 'open' : ''}`}>
 
@@ -918,6 +936,10 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
               <button type="button" className="nav-drawer-close" onClick={closeMenu} aria-label="إغلاق القائمة">
                 <X size={18} />
               </button>
+            </li>
+
+            <li className="nav-drawer-only">
+              <SmartDropdownMenu variant="mobile" />
             </li>
 
             <li className="nav-menu-extras">

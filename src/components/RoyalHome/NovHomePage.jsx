@@ -28,7 +28,7 @@ import { MARQUEE_BANNERS, MARQUEE_BANNERS_2, ROYAL_SECTIONS } from './sectionsDa
 import { CONTACT_INFO } from '../../utils/constants';
 import '../../styles/NovHome.css';
 
-const LOGO_SRC = '/assets/logo-v2.webp';
+const LOGO_SRC = '/assets/logo.png';
 
 const SECTION_ICONS = {
   dresses: Sparkles,
@@ -293,7 +293,7 @@ const NovHomePage = () => {
                   style={{ width: '32px' }}
                 />
                 <h3 className="ch-footer-name ch-ink-gloss" style={{ fontSize: '0.82rem' }}>
-                  أناقة ROOZ
+                  أنـاقـةROOZ
                 </h3>
               </div>
               <p className="ch-footer-text" style={{ fontSize: '0.68rem', lineHeight: 1.35, marginBottom: '0.25rem' }}>
@@ -323,6 +323,17 @@ const NovHomePage = () => {
           </div>
           <div className="ch-footer-bottom" style={{ fontSize: '0.62rem', marginTop: '0.4rem' }}>
             جميع الحقوق محفوظة © 2026 أناقة ROOZ
+            <span style={{ margin: '0 8px', opacity: 0.5 }}>·</span>
+            <a
+              href="/terms"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('/terms');
+              }}
+              style={{ color: '#6b1d2f', fontWeight: 800, textDecoration: 'underline' }}
+            >
+              شروط وأحكام الاستخدام
+            </a>
           </div>
         </footer>
       </div>

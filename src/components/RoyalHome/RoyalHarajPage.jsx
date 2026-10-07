@@ -72,7 +72,7 @@ const C = {
 };
 
 
-const LOGO_SRC = '/assets/logo-v2.webp';
+const LOGO_SRC = '/assets/logo.png';
 
 const BANK_ACCOUNTS = [
   {

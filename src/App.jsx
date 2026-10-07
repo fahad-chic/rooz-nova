@@ -112,6 +112,8 @@ const AboutPage = safeLazy(() => import('./pages/AboutPage'));
 const AIChat = safeLazy(() => import('./components/AIChat'));
 const AdDetailsPage = safeLazy(() => import('./pages/AdDetailsPage'));
 const ChatPage = safeLazy(() => import('./pages/ChatPage'));
+const TermsPage = safeLazy(() => import('./pages/TermsPage'));
+const WantedDressPage = safeLazy(() => import('./pages/WantedDressPage'));
 
 /* =========================================================
    Owner Broadcast
@@ -482,6 +484,8 @@ function AppContent() {
       '/catalog/golden-mothers': 'أمهاتنا | أناقة ROOZ',
       '/catalog/home-products': 'الأسر المنتجة | أناقة ROOZ',
       '/contact': 'تواصل معنا | أناقة ROOZ',
+      '/terms': 'شروط وأحكام الاستخدام | أناقة ROOZ',
+      '/wanted-dress': 'طلب فستان | أناقة ROOZ',
     };
 
     const title = TITLES[location.pathname];
@@ -2191,6 +2195,26 @@ function AppContent() {
                 element={
                   <ProtectedRoute>
                     <FAQ />
+                  </ProtectedRoute>
+                }
+              />
+
+              {/* ⭐ صفحة الشروط والأحكام */}
+              <Route
+                path="/terms"
+                element={
+                  <ProtectedRoute>
+                    <TermsPage />
+                  </ProtectedRoute>
+                }
+              />
+
+              {/* ⭐ صفحة طلب فستان (الخصائص الذكية) */}
+              <Route
+                path="/wanted-dress"
+                element={
+                  <ProtectedRoute>
+                    <WantedDressPage />
                   </ProtectedRoute>
                 }
               />

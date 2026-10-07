@@ -19,6 +19,9 @@ import {
 import { notifyOwner, buildAdOwnerNotice } from '../../utils/visitorNotify';
 import { ensureFirebaseSession } from '../../utils/firebaseSession';
 import { CITY_GROUPS } from '../../data/saudiCities';
+import { watermarkDataUrl } from '../../utils/watermark';
+import { extractMotionFrames } from '../../utils/motionPreview';
+import { MAX_VIDEO_SECONDS, SIZE_FIELDS } from '../../utils/dressMeta';
 const HARAJ_SECTIONS = [
   'أجهزة كهربائية',
   'غرف نوم',
@@ -95,6 +98,9 @@ const AdFormPage = () => {
     condition: 'new',
     location: '',
     images: [null, null],
+    video: null,
+    isAuction: false,
+    measurements: { bust: '', waist: '', hip: '', length: '' },
   });
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
@@ -192,6 +198,35 @@ const AdFormPage = () => {
       images: newImages,
     }));
   };
+  const handleVideoUpload = (e) => {
+    const file = e.target.files?.[0];
+    if (!file) {
+      return;
+    }
+    if (!file.type.startsWith('video/')) {
+      setSubmitError('الملف المحدد ليس مقطع فيديو صالحاً.');
+      e.target.value = '';
+      return;
+    }
+    setFormData((prev) => ({
+      ...prev,
+      video: { file, preview: URL.createObjectURL(file) },
+    }));
+    setSubmitError('');
+    e.target.value = '';
+  };
+  const removeVideo = () => {
+    if (formData.video?.preview) {
+      URL.revokeObjectURL(formData.video.preview);
+    }
+    setFormData((prev) => ({ ...prev, video: null }));
+  };
+  const handleMeasurementChange = (key, value) => {
+    setFormData((prev) => ({
+      ...prev,
+      measurements: { ...prev.measurements, [key]: value },
+    }));
+  };
   const validateForm = () => {
     const newErrors = {};
     const name = formData.name.trim();
@@ -242,7 +277,18 @@ const AdFormPage = () => {
         continue;
       }
       try {
-        dataUrls.push(await compressImageToDataUrl(image.file));
+        const compressed = await compressImageToDataUrl(image.file);
+        /*
+         * علامة مائية شفافة (R + التاج) تُطبَّق تلقائياً على صور الفساتين
+         * لحماية الإعلانات — وتبقى الصورة سليمة إن تعذّر رسم العلامة.
+         */
+        let finalUrl = compressed;
+        try {
+          finalUrl = await watermarkDataUrl(compressed);
+        } catch {
+          finalUrl = compressed;
+        }
+        dataUrls.push(finalUrl);
       } catch (err) {
         onError?.(err);
         throw err;
@@ -281,6 +327,30 @@ const AdFormPage = () => {
       const imageDataUrls = await compressAllImages((err) => {
         lastUploadError = err;
       });
+      /*
+       * "الفستان في الحركة": عند إرفاق مقطع قصير (٥ ثوانٍ) نستخرج إطارات
+       * متتابعة ونحفظها كمعاينة حركة — الاختياري لا يعطّل النشر إن فشل.
+       */
+      let motionFrames = [];
+      let motionDuration = 0;
+      if (formData.video?.file) {
+        try {
+          const motion = await extractMotionFrames(formData.video.file);
+          motionFrames = motion.frames;
+          motionDuration = motion.duration;
+        } catch (err) {
+          lastUploadError = err;
+          setSubmitError(err.message || 'تعذّر تجهيز الفيديو.');
+          setSubmitting(false);
+          return;
+        }
+      }
+      const measurements = {
+        bust: Number(formData.measurements.bust) || null,
+        waist: Number(formData.measurements.waist) || null,
+        hip: Number(formData.measurements.hip) || null,
+        length: Number(formData.measurements.length) || null,
+      };
       const initialAdData = {
         title: formData.name.trim(),
         category: formData.category,
@@ -293,6 +363,16 @@ const AdFormPage = () => {
         defects: formData.defects.trim(),
         images: imageDataUrls,
         imageCount: imageDataUrls.length,
+        measurements,
+        motionFrames,
+        motionDuration,
+        /* فتح المزاد العلني تلقائياً لمدة ٤٨ ساعة (اختياري) */
+        isAuction: !!formData.isAuction,
+        auctionEndsAt: formData.isAuction
+          ? new Date(Date.now() + 48 * 3600 * 1000)
+          : null,
+        currentBid: formData.isAuction ? price : null,
+        bids: [],
         /*
          * active = يُنشر فوراً للعموم (بطلب المالك). صاحب الموقع يستطيع
          * حذف أي إعلان مخالف لاحقاً من غرفته.
@@ -870,6 +950,53 @@ const AdFormPage = () => {
                   marginBottom: '0.5rem',
                 }}
               >
+                مقاسات الفستان (سم) — اختياري
+              </label>
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))',
+                  gap: '0.75rem',
+                }}
+              >
+                {SIZE_FIELDS.map((field) => (
+                  <input
+                    key={field.key}
+                    type="number"
+                    min="0"
+                    inputMode="decimal"
+                    value={formData.measurements[field.key]}
+                    onChange={(e) => handleMeasurementChange(field.key, e.target.value)}
+                    placeholder={field.label}
+                    style={{
+                      width: '100%',
+                      background: '#f3e0dd',
+                      border: '1px solid rgba(31, 17, 22, 0.10)',
+                      borderRadius: 12,
+                      padding: '0.8rem 1rem',
+                      color: '#1f1116',
+                      fontSize: '0.95rem',
+                      fontFamily: 'inherit',
+                      outline: 'none',
+                      boxSizing: 'border-box',
+                    }}
+                  />
+                ))}
+              </div>
+              <p style={{ color: '#777', fontSize: '0.75rem', margin: '0.5rem 0 0' }}>
+                تُستخدم في «حاسبة المقاسات الذكية» ليرى المشتري نسبة ملاءمة الفستان له.
+              </p>
+            </div>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <label
+                style={{
+                  display: 'block',
+                  fontSize: '0.9rem',
+                  fontWeight: 600,
+                  color: '#1f1116',
+                  marginBottom: '0.5rem',
+                }}
+              >
                 الموقع *
               </label>
               <div style={{ position: 'relative' }}>
@@ -1089,8 +1216,102 @@ const AdFormPage = () => {
                   margin: '0.5rem 0 0',
                 }}
               >
-                الحد الأقصى للصورة الواحدة 5 ميجابايت.
+                الحد الأقصى للصورة الواحدة 5 ميجابايت — تُضاف علامة مائية تلقائياً لحماية إعلانك.
               </p>
+            </div>
+            <div style={{ marginBottom: '1.5rem' }}>
+              <label
+                style={{
+                  display: 'block',
+                  fontSize: '0.9rem',
+                  fontWeight: 600,
+                  color: '#1f1116',
+                  marginBottom: '0.5rem',
+                }}
+              >
+                الفستان في الحركة (فيديو قصير حتى {MAX_VIDEO_SECONDS} ثوانٍ) — اختياري
+              </label>
+              {formData.video?.preview ? (
+                <div style={{ position: 'relative' }}>
+                  <video
+                    src={formData.video.preview}
+                    muted
+                    loop
+                    playsInline
+                    autoPlay
+                    style={{
+                      width: '100%',
+                      maxHeight: 240,
+                      borderRadius: 12,
+                      background: '#000',
+                      display: 'block',
+                      objectFit: 'cover',
+                    }}
+                  />
+                  <button
+                    type="button"
+                    className="chic-image-remove"
+                    onClick={removeVideo}
+                    aria-label="حذف الفيديو"
+                  >
+                    ×
+                  </button>
+                </div>
+              ) : (
+                <label
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.5rem',
+                    minHeight: 130,
+                    background: '#f3e0dd',
+                    border: '2px dashed rgba(61, 15, 24, 0.3)',
+                    borderRadius: 12,
+                    cursor: 'pointer',
+                  }}
+                >
+                  <Camera size={28} color="#888" />
+                  <span style={{ fontSize: '0.82rem', color: '#888' }}>
+                    أضف مقطعاً قصيراً يُظهر حركة الفستان وانسيابه
+                  </span>
+                  <input
+                    type="file"
+                    accept="video/*"
+                    onChange={handleVideoUpload}
+                    style={{ display: 'none' }}
+                  />
+                </label>
+              )}
+              <p style={{ color: '#777', fontSize: '0.75rem', margin: '0.5rem 0 0' }}>
+                يُحوَّل الفيديو إلى إطارات متتابعة (معاينة حركة) تُخزَّن مع الإعلان — المدة حتى {MAX_VIDEO_SECONDS} ثوانٍ.
+              </p>
+            </div>
+            <div
+              style={{
+                marginBottom: '1.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '1rem',
+                background: 'rgba(107, 29, 47, 0.06)',
+                border: '1px solid rgba(107, 29, 47, 0.18)',
+                borderRadius: 12,
+              }}
+            >
+              <input
+                id="chic-auction-toggle"
+                type="checkbox"
+                checked={!!formData.isAuction}
+                onChange={(e) =>
+                  setFormData((prev) => ({ ...prev, isAuction: e.target.checked }))
+                }
+                style={{ width: 22, height: 22, accentColor: '#6b1d2f', cursor: 'pointer', flexShrink: 0 }}
+              />
+              <label htmlFor="chic-auction-toggle" style={{ fontSize: '0.9rem', fontWeight: 700, color: '#1f1116', cursor: 'pointer' }}>
+                تفعيل المزاد العلني لمدة ٤٨ ساعة — يبدأ المزاد من سعرك ويصعد تلقائياً بأعلى مزايدة.
+              </label>
             </div>
             <div style={{ marginBottom: '1.5rem' }}>
               <label
@@ -1482,10 +1703,36 @@ const AdFormPage = () => {
                   fontSize: '0.95rem',
                   color: '#1f1116',
                   fontWeight: 600,
+                  lineHeight: 2,
                 }}
               >
-                أقرّ بالاطلاع على الإقرار أعلاه وأوافق على نسبة الموقع
-                وأتعهد بسدادها، وأقسم بالله على صحة ذلك
+                أقر أنا المعلن بأن كافة البيانات، المقاسات، والصور والفيديوهات
+                المدرجة في الإعلان حقيقية وعلى مسؤوليتي الشخصية، كما أتعهد
+                وألتزم شرعاً ونظاماً بدفع عمولة الموقع المستحقة فور بيع
+                الفستان، وهي (1% للسلع المستخدمة) أو (2% للسلع الجديدة)، وأوافق
+                على{' '}
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    navigate('/terms');
+                  }}
+                  style={{
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    color: '#6b1d2f',
+                    fontWeight: 800,
+                    textDecoration: 'underline',
+                    cursor: 'pointer',
+                    fontFamily: 'inherit',
+                    fontSize: 'inherit',
+                  }}
+                >
+                  شروط وأحكام استخدام أناقة ROOZ
+                </button>{' '}
+                وبنود الوساطة الآمنة والمزادات.
               </span>
             </label>
             <button

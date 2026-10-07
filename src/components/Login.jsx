@@ -1057,7 +1057,7 @@ const Login = () => {
         <header className="rl-head">
         <div className="rl-crown-ic">
           <img
-            src="/assets/logo-v2.webp"
+            src="/assets/logo.png"
             alt="شعار أناقة ROOZ"
           />
         </div>
@@ -1105,7 +1105,7 @@ const Login = () => {
           >
             <span className="rl-card-crown-line">
               <img
-                src="/assets/logo-v2.webp"
+                src="/assets/logo.png"
                 alt=""
                 className="rl-card-logo"
               />
