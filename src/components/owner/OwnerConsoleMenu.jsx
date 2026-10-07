@@ -10,14 +10,14 @@ import { Crown, X } from 'lucide-react'
 
 // لوحة الألوان: عاجي/ذهب — بلا أي خلفية زرقاء أو كحلية.
 const C = {
-  ivory: '#f7f6fb',
-  ivoryDeep: '#e2d9f5',
-  line: 'rgb(93, 43, 195, 0.45)',
-  lineSoft: 'rgb(93, 43, 195, 0.22)',
-  gold: '#7b29d5',
-  goldDeep: '#321473',
-  ink: '#0c0926',
-  inkSoft: '#3e247a',
+  ivory: '#fdfbf7',
+  ivoryDeep: '#fdfbf7',
+  line: 'rgba(61, 15, 24, 0.45)',
+  lineSoft: 'rgba(61, 15, 24, 0.22)',
+  gold: '#6b1d2f',
+  goldDeep: '#1f1116',
+  ink: '#1f1116',
+  inkSoft: '#6b1d2f',
 }
 
 const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أدوات المالك' }) => {
@@ -78,10 +78,10 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           cursor: pointer;
           color: ${C.goldDeep};
           background:
-            radial-gradient(120% 120% at 30% 15%, #f7f6fb, ${C.ivoryDeep} 70%);
+            radial-gradient(120% 120% at 30% 15%, #fdfbf7, ${C.ivoryDeep} 70%);
           box-shadow:
             inset 0 0 0 1.5px ${C.line},
-            0 6px 18px rgb(50, 20, 115, 0.22);
+            0 6px 18px rgba(31, 17, 22, 0.22);
           transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .ocm-trigger:hover,
@@ -89,16 +89,16 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           transform: translateY(-1px);
           box-shadow:
             inset 0 0 0 1.5px ${C.gold},
-            0 9px 22px rgb(50, 20, 115, 0.3);
+            0 9px 22px rgba(31, 17, 22, 0.3);
           outline: none;
         }
         .ocm-trigger:active { transform: scale(0.96); }
         .ocm-trigger[aria-expanded="true"] {
           color: #fff;
-          background: linear-gradient(150deg, #7b29d5, ${C.gold} 65%, #5b1c9b);
+          background: linear-gradient(150deg, #6b1d2f, ${C.gold} 65%, #6b1d2f);
           box-shadow:
-            inset 0 0 0 1.5px rgb(255, 255, 255, 0.5),
-            0 8px 20px rgb(50, 20, 115, 0.32);
+            inset 0 0 0 1.5px rgba(255, 255, 255, 0.5),
+            0 8px 20px rgba(31, 17, 22, 0.32);
         }
         /* التاج الصغير أعلى الأيقونة — وسم «امتياز المالك» */
         .ocm-trigger-mark {
@@ -111,8 +111,8 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           height: 19px;
           border-radius: 50%;
           color: ${C.ink};
-          background: linear-gradient(140deg, #b295f4, #7b29d5 60%, #7b29d5);
-          box-shadow: 0 2px 6px rgb(50, 20, 115, 0.35);
+          background: linear-gradient(140deg, #d4a5a5, #6b1d2f 60%, #6b1d2f);
+          box-shadow: 0 2px 6px rgba(31, 17, 22, 0.35);
         }
 
         /* لوحة الخيارات — عاجية بحدود ذهبية واضحة ومحددة */
@@ -128,8 +128,8 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           background: linear-gradient(170deg, ${C.ivory}, ${C.ivoryDeep});
           border: 1.5px solid ${C.line};
           box-shadow:
-            0 22px 54px rgb(15, 11, 46, 0.28),
-            0 2px 0 rgb(255, 255, 255, 0.9) inset;
+            0 22px 54px rgba(31, 17, 22, 0.28),
+            0 2px 0 rgba(255, 255, 255, 0.9) inset;
           color: ${C.ink};
         }
         .ocm-head {
@@ -148,7 +148,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           flex: 0 0 32px;
           border-radius: 11px;
           color: ${C.ink};
-          background: linear-gradient(140deg, #b295f4, #7b29d5 60%, #7b29d5);
+          background: linear-gradient(140deg, #d4a5a5, #6b1d2f 60%, #6b1d2f);
         }
         .ocm-head-text { margin-inline-end: auto; min-width: 0; }
         .ocm-head-title {
@@ -201,7 +201,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
         }
         .ocm-item:hover,
         .ocm-item:focus-visible {
-          background: rgb(127, 83, 226, 0.16);
+          background: rgba(61, 15, 24, 0.16);
           border-color: ${C.line};
           outline: none;
           transform: translateX(-2px);
@@ -214,7 +214,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           flex: 0 0 36px;
           border-radius: 12px;
           color: ${C.goldDeep};
-          background: linear-gradient(150deg, #f7f6fb, #d8ccf3);
+          background: linear-gradient(150deg, #fdfbf7, #fdfbf7);
           border: 1px solid ${C.lineSoft};
           transition: color 0.18s ease, background 0.18s ease;
         }
@@ -237,13 +237,13 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
           cursor: pointer;
           transition: background 0.18s ease, color 0.18s ease;
         }
-        .ocm-item-x:hover { background: #95142c; border-color: #95142c; color: #fff; }
+        .ocm-item-x:hover { background: #6b1d2f; border-color: #6b1d2f; color: #fff; }
 
         /* الخيار المحدد — خلفية ذهبية وأيقونة معاكسة بارزة */
         .ocm-item.is-active {
-          background: linear-gradient(140deg, #b295f4, #7b29d5 60%, #7b29d5);
+          background: linear-gradient(140deg, #d4a5a5, #6b1d2f 60%, #6b1d2f);
           border-color: ${C.gold};
-          box-shadow: 0 8px 20px rgb(50, 20, 115, 0.22);
+          box-shadow: 0 8px 20px rgba(31, 17, 22, 0.22);
         }
         .ocm-item.is-active .ocm-item-icon {
           color: #fff;
@@ -252,7 +252,7 @@ const OwnerConsoleMenu = ({ tabs = [], activeId, onSelect, triggerLabel = 'أد�
         }
         .ocm-item.is-active .ocm-item-label { font-weight: 800; }
         .ocm-item.is-active .ocm-item-x { background: ${C.goldDeep}; border-color: ${C.goldDeep}; color: #fff; }
-        .ocm-item.is-active .ocm-item-x:hover { background: #95142c; border-color: #95142c; }
+        .ocm-item.is-active .ocm-item-x:hover { background: #6b1d2f; border-color: #6b1d2f; }
         .ocm-item.is-excluded { opacity: 0.5; }
       `}</style>
 

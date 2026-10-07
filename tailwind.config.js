@@ -8,32 +8,32 @@ export default {
   theme: {
     extend: {
       colors: {
-        luxury: { gold: '#7b29d5' },
+        luxury: { gold: '#3d0f18' },
 
         royal: {
-          black: "#0a071e",
-          marble: "#0e0a2b",
-          gold: "#7b29d5",
-          goldSoft: "#5122d8",
-          goldDim: "#3e209d",
+          black: "#1f1116",
+          marble: "#1f1116",
+          gold: "#3d0f18",
+          goldSoft: "#3d0f18",
+          goldDim: "#3d0f18",
           white: "#f5f5f5",
         },
 
         glass: {
-          light: "rgb(255, 255, 255,0.06)",
-          medium: "rgb(255, 255, 255,0.12)",
-          strong: "rgb(255, 255, 255,0.18)",
+          light: "rgb(ffffff,0.06)",
+          medium: "rgb(ffffff,0.12)",
+          strong: "rgb(ffffff,0.18)",
         },
 
         // إضافات خاصة لمربع صاحب الموقع
-        "royal-gold": "#7b29d5",
-        "royal-goldBright": "#a388f4",
-        "royal-goldSoft": "#5122d8",
+        "royal-gold": "#3d0f18",
+        "royal-goldBright": "#d4a5a5",
+        "royal-goldSoft": "#3d0f18",
         "royal-white": "#f8f8f8",
-        "royal-black": "#0d0a29",
+        "royal-black": "#1f1116",
 
-        glassUltra: "rgb(255, 255, 255,0.15)",
-        glassMedium: "rgb(255, 255, 255,0.25)",
+        glassUltra: "rgb(ffffff,0.15)",
+        glassMedium: "rgb(ffffff,0.25)",
       },
 
       fontFamily: {
@@ -51,12 +51,12 @@ export default {
       },
 
       boxShadow: {
-        royal: "0 0 20px rgb(89, 42, 225,0.30)",
-        marble: "0 6px 20px rgb(9, 6, 27,0.40)",
-        glass: "0 4px 14px rgb(255, 255, 255,0.12)",
+        royal: "0 0 20px rgb(6b1d2f,0.30)",
+        marble: "0 6px 20px rgb(1f1116,0.40)",
+        glass: "0 4px 14px rgb(ffffff,0.12)",
 
         // ظل ملكي ثلاثي خاص لمربع صاحب الموقع
-        royal3d: "0 12px 28px rgb(89, 42, 225,0.45)",
+        royal3d: "0 12px 28px rgb(6b1d2f,0.45)",
       },
 
       backdropBlur: {

@@ -56,19 +56,19 @@ import OwnerEditBadge from '../OwnerEditBadge';
 import '../../styles/RoyalHome.css';
 
 const C = {
-  gold: '#7b29d5',
-  goldLight: '#5b1c9b',
-  goldDark: '#321473',
-  black: '#0a071e',
-  blackLight: '#0f0b2e',
-  darkBg: '#e3dbf4',
-  gray: '#e7e1f4',
-  grayLight: '#e4e0f0',
-  grayMid: '#6340a6',
-  white: '#f8f6fb',
-  cream: '#0c0926',
-  green: '#1aa29f',
-  red: '#e43b5a',
+  gold: '#6b1d2f',
+  goldLight: '#6b1d2f',
+  goldDark: '#6b1d2f',
+  black: '#1f1116',
+  blackLight: '#1f1116',
+  darkBg: '#fdfbf7',
+  gray: '#fdfbf7',
+  grayLight: '#fdfbf7',
+  grayMid: '#8a5560',
+  white: '#ffffff',
+  cream: '#1f1116',
+  green: '#4a3a3f',
+  red: '#8f2a40',
 };
 
 
@@ -79,7 +79,7 @@ const BANK_ACCOUNTS = [
     id: 'alrajhi',
     name: 'بنك الراجحي',
     icon: Building2,
-    color: '#119591',
+    color: '#4a3a3f',
     iban: 'SA0980000509608010069017',
     account: '09608010069017',
   },
@@ -87,7 +87,7 @@ const BANK_ACCOUNTS = [
     id: 'arabank',
     name: 'بنك العربي',
     icon: Landmark,
-    color: '#0d38a5',
+    color: '#6b1d2f',
     iban: 'SA9830400108088851870011',
     account: '0108088851870011',
   },
@@ -98,97 +98,97 @@ const HARAJ_SECTIONS = [
     id: 'electronics',
     name: 'أجهزة كهربائية',
     icon: Zap,
-    color: '#4161f0',
+    color: '#6b1d2f',
   },
   {
     id: 'bedrooms',
     name: 'غرف نوم',
     icon: BedDouble,
-    color: '#bb64ee',
+    color: '#6b1d2f',
   },
   {
     id: 'cars',
     name: 'سيارات',
     icon: Car,
-    color: '#eb4866',
+    color: '#8f2a40',
   },
   {
     id: 'watches',
     name: 'ساعات',
     icon: Watch,
-    color: '#6114ec',
+    color: '#6b1d2f',
   },
   {
     id: 'bags',
     name: 'شنط',
     icon: ShoppingBag,
-    color: '#eb4967',
+    color: '#8f2a40',
   },
   {
     id: 'clothes',
     name: 'ملابس',
     icon: Shirt,
-    color: '#14b5a7',
+    color: '#4a3a3f',
   },
   {
     id: 'realestate',
     name: 'عقارات',
     icon: House,
-    color: '#6262f2',
+    color: '#6b1d2f',
   },
   {
     id: 'jobs',
     name: 'وظائف',
     icon: BriefcaseBusiness,
-    color: '#0f6fbd',
+    color: '#6b1d2f',
   },
   {
     id: 'furniture',
     name: 'أثاث',
     icon: Armchair,
-    color: '#8a22ed',
+    color: '#6b1d2f',
   },
   {
     id: 'homeware',
     name: 'مستلزمات',
     icon: Home,
-    color: '#179acb',
+    color: '#6b1d2f',
   },
   {
     id: 'mobiles',
     name: 'جوالات',
     icon: Smartphone,
-    color: '#b95fed',
+    color: '#6b1d2f',
   },
   {
     id: 'laptops',
     name: 'حواسب',
     icon: Laptop,
-    color: '#4659a9',
+    color: '#6b1d2f',
   },
   {
     id: 'kids',
     name: 'أطفال',
     icon: Baby,
-    color: '#c376f0',
+    color: '#6b1d2f',
   },
   {
     id: 'women',
     name: 'نسائي',
     icon: UserRound,
-    color: '#f07c91',
+    color: '#8f2a40',
   },
   {
     id: 'men',
     name: 'رجالي',
     icon: UserRound,
-    color: '#135ae4',
+    color: '#6b1d2f',
   },
   {
     id: 'other',
     name: 'أخرى',
     icon: Package,
-    color: '#6c6e78',
+    color: '#8a5560',
   },
 ];
 
@@ -214,8 +214,8 @@ const normalizeSaudiPhone = (phone) => {
 
 const AdCard = ({
   ad,
-  onContact,
   isRegistered,
+  onContact,
   navigate,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -226,9 +226,9 @@ const AdCard = ({
       : ad.condition || ad.desc_condition || '';
 
   const getConditionColor = () => {
-    if (conditionText === 'جديد') return C.green;
-    if (conditionText === 'ممتازة') return '#14b5a7';
-    return '#6114ec';
+    if (conditionText === 'جديد') return '#6b1d2f';
+    if (conditionText === 'ممتازة') return '#8a5560';
+    return '#8f2a40';
   };
 
   const imageSource = ad.images?.[0] || ad.image;
@@ -238,6 +238,19 @@ const AdCard = ({
     /^(https?:\/\/|data:image\/|\/)/i.test(imageSource);
 
   const locationText = ad.location || ad.city || 'غير محدد';
+  const sellerName =
+    ad.userName || ad.sellerName || ad.username || 'بائع موثوق';
+
+  const timeAgo = (() => {
+    const ms = ad.createdAt?.toMillis?.();
+    if (!ms) return '';
+    const mins = Math.floor((Date.now() - ms) / 60000);
+    if (mins < 1) return 'الآن';
+    if (mins < 60) return `قبل ${mins} دقيقة`;
+    const hrs = Math.floor(mins / 60);
+    if (hrs < 24) return `قبل ${hrs} ساعة`;
+    return `قبل ${Math.floor(hrs / 24)} يوم`;
+  })();
 
   const handleCardClick = () => {
     if (ad.id) {
@@ -294,35 +307,34 @@ const AdCard = ({
       onMouseLeave={() => setIsHovered(false)}
       style={{
         position: 'relative',
-        background: `linear-gradient(145deg, #ffffff 0%, #eae5f6 100%)`,
-        borderRadius: 16,
+        background: '#ffffff',
+        borderRadius: 8,
         overflow: 'hidden',
         border: `1px solid ${
-          isHovered
-            ? `${C.gold}50`
-            : C.grayLight
+          isHovered ? 'rgba(107, 29, 47, 0.28)' : 'rgba(31, 17, 22, 0.08)'
         }`,
         transition: 'all 0.3s ease',
-        transform: isHovered
-          ? 'translateY(-4px)'
-          : 'translateY(0)',
+        transform: isHovered ? 'translateY(-4px)' : 'translateY(0)',
         boxShadow: isHovered
-          ? `0 12px 24px ${C.black}60, 0 0 20px ${C.gold}10`
-          : `0 4px 12px ${C.black}40`,
+          ? '0 10px 28px rgba(31, 17, 22, 0.10)'
+          : '0 2px 10px rgba(31, 17, 22, 0.05)',
         cursor: 'pointer',
-        opacity: isRegistered ? 1 : 0.85,
+        opacity: isRegistered ? 1 : 0.95,
+        display: 'flex',
+        alignItems: 'stretch',
+        minHeight: 152,
       }}
     >
       <OwnerEditBadge to="/owner-private-room" label="تعديل" />
+
+      {/* صورة السلعة (يمين البطاقة) */}
       <div
         style={{
-          height: '120px',
-          background: isImageUrl
-            ? C.grayLight
-            : `linear-gradient(135deg, ${C.grayLight} 0%, ${C.gray} 100%)`,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          width: '36%',
+          minWidth: 104,
+          maxWidth: 165,
+          flexShrink: 0,
+          background: '#f3e0dd',
           position: 'relative',
           overflow: 'hidden',
         }}
@@ -341,11 +353,17 @@ const AdCard = ({
             }}
           />
         ) : (
-          <ShoppingBag
-            size={42}
-            color={C.gold}
-            strokeWidth={1.5}
-          />
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <ShoppingBag size={38} color="#6b1d2f" strokeWidth={1.5} />
+          </div>
         )}
 
         {conditionText && (
@@ -355,167 +373,144 @@ const AdCard = ({
               top: 8,
               right: 8,
               background: getConditionColor(),
-              color: C.white,
-              padding: '2px 6px',
-              borderRadius: 12,
+              color: '#ffffff',
+              padding: '2px 8px',
+              borderRadius: 8,
               fontSize: '10px',
-              fontWeight: 600,
-              fontFamily: 'Cairo, sans-serif',
+              fontWeight: 700,
+              fontFamily: 'Tajawal, sans-serif',
             }}
           >
             {conditionText}
           </div>
         )}
-
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: `linear-gradient(180deg, transparent 50%, ${C.black}aa 100%)`,
-            opacity: isHovered ? 1 : 0,
-            transition: 'opacity 0.3s ease',
-            pointerEvents: 'none',
-          }}
-        />
       </div>
 
-      <div style={{ padding: '10px' }}>
-        <h3
-          style={{
-            margin: '0 0 4px',
-            fontSize: '14px',
-            fontWeight: 700,
-            color: C.cream,
-            fontFamily: 'Cairo, sans-serif',
-            lineHeight: 1.35,
-            display: '-webkit-box',
-            WebkitLineClamp: 2,
-            WebkitBoxOrient: 'vertical',
-            overflow: 'hidden',
-          }}
-        >
-          {ad.title || 'إعلان بدون عنوان'}
-        </h3>
+      {/* تفاصيل الإعلان (المنتصف) */}
+      <div
+        style={{
+          flex: 1,
+          minWidth: 0,
+          padding: '0.85rem 1rem',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+        }}
+      >
+        <div>
+          <h3
+            style={{
+              margin: '0 0 6px',
+              fontSize: '1.02rem',
+              fontWeight: 800,
+              color: '#1f1116',
+              fontFamily: 'Tajawal, sans-serif',
+              lineHeight: 1.35,
+              display: '-webkit-box',
+              WebkitLineClamp: 2,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+            }}
+          >
+            {ad.title || 'إعلان بدون عنوان'}
+          </h3>
+
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              gap: '0.45rem',
+              fontSize: '0.76rem',
+              fontWeight: 400,
+              color: '#8a5560',
+              fontFamily: 'Tajawal, sans-serif',
+            }}
+          >
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3 }}>
+              <UserRound size={12} aria-hidden="true" />
+              {sellerName}
+            </span>
+            <span aria-hidden="true">•</span>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 3 }}>
+              <MapPin size={12} aria-hidden="true" />
+              {locationText}
+            </span>
+            {timeAgo && (
+              <>
+                <span aria-hidden="true">•</span>
+                <span>{timeAgo}</span>
+              </>
+            )}
+          </div>
+        </div>
 
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            marginBottom: '6px',
-            gap: 6,
+            gap: '0.6rem',
+            marginTop: '0.7rem',
           }}
         >
           <span
             style={{
-              fontSize: '13px',
-              fontWeight: 700,
-              color: C.gold,
-              fontFamily: 'Inter, sans-serif',
+              fontSize: '1.05rem',
+              fontWeight: 800,
+              color: '#6b1d2f',
+              fontFamily: 'Tajawal, sans-serif',
+              whiteSpace: 'nowrap',
             }}
           >
-            {Number(ad.price || 0).toLocaleString()} ر.س
+            {Number(ad.price || 0).toLocaleString()}{' '}
+            <span style={{ fontSize: '0.72rem', fontWeight: 700 }}>ر.س</span>
           </span>
 
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '3px',
-              fontSize: '12px',
-              color: '#3d2369',
-              minWidth: 0,
-            }}
-          >
-            <MapPin size={10} />
-
-            <span
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
+            <button
+              type="button"
+              onClick={handleCall}
+              aria-label="اتصال"
               style={{
-                display: '-webkit-box',
-                WebkitLineClamp: 1,
-                WebkitBoxOrient: 'vertical',
-                overflow: 'hidden',
-                lineHeight: 1.25,
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 34,
+                height: 34,
+                borderRadius: 8,
+                background: '#ffffff',
+                border: '1px solid rgba(107, 29, 47, 0.35)',
+                color: '#6b1d2f',
+                cursor: 'pointer',
               }}
             >
-              {locationText}
-            </span>
+              <Phone size={15} color="#6b1d2f" aria-hidden="true" />
+            </button>
+
+            <button
+              type="button"
+              onClick={handleWhatsApp}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 5,
+                background: '#d4a5a5',
+                border: '1px solid rgba(31, 17, 22, 0.10)',
+                borderRadius: 8,
+                padding: '0.45rem 1.05rem',
+                cursor: 'pointer',
+                color: '#1f1116',
+                fontSize: '0.82rem',
+                fontWeight: 800,
+                fontFamily: 'Tajawal, sans-serif',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              <MessageCircle size={14} color="#1f1116" aria-hidden="true" />
+              تواصل
+            </button>
           </div>
-        </div>
-
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: '6px',
-            marginTop: '8px',
-          }}
-        >
-          <button
-            type="button"
-            onClick={handleWhatsApp}
-            style={{
-              background:
-                'linear-gradient(135deg, #20d8d7 0%, #0d5791 100%)',
-              border: 'none',
-              borderRadius: 8,
-              padding: '6px 4px',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '3px',
-              fontFamily: 'Cairo, sans-serif',
-            }}
-          >
-            <MessageCircle
-              size={11}
-              color="white"
-            />
-
-            <span
-              style={{
-                color: 'white',
-                fontSize: '10px',
-                fontWeight: 600,
-              }}
-            >
-              واتساب
-            </span>
-          </button>
-
-          <button
-            type="button"
-            onClick={handleCall}
-            style={{
-              background:
-                'linear-gradient(135deg, #592ae1 0%, #400fb4 100%)',
-              border: 'none',
-              borderRadius: 8,
-              padding: '6px 4px',
-              cursor: 'pointer',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '3px',
-              fontFamily: 'Cairo, sans-serif',
-            }}
-          >
-            <Phone
-              size={12}
-              color={C.black}
-            />
-
-            <span
-              style={{
-                color: C.black,
-                fontSize: '11px',
-                fontWeight: 700,
-              }}
-            >
-              اتصال
-            </span>
-          </button>
         </div>
       </div>
     </div>
@@ -557,7 +552,7 @@ const SectionCard = ({
           : 'translateY(0)',
         boxShadow: isHovered
           ? `0 8px 20px ${section.color}20`
-          : '0 2px 6px rgb(9, 6, 27,0.2)',
+          : '0 2px 6px rgba(31, 17, 22,0.2)',
         width: '100%',
         height: '70px',
         boxSizing: 'border-box',
@@ -591,8 +586,8 @@ const SectionCard = ({
         style={{
           fontSize: '11px',
           fontWeight: 700,
-          color: '#0b0822',
-          fontFamily: 'Cairo, sans-serif',
+          color: '#1f1116',
+          fontFamily: 'Tajawal, sans-serif',
           textAlign: 'center',
           lineHeight: 1.2,
           maxWidth: '100%',
@@ -645,8 +640,8 @@ const BankCard = ({ bank }) => {
   return (
     <div
       style={{
-        background: 'linear-gradient(145deg, #f4f1f9 0%, #eae4f3 100%)',
-        border: '1.5px solid #7b29d5',
+        background: 'linear-gradient(145deg, #fdfbf7 0%, #fdfbf7 100%)',
+        border: '1.5px solid #6b1d2f',
         borderRadius: 14,
         padding: '0.7rem 0.8rem',
         position: 'relative',
@@ -698,8 +693,8 @@ const BankCard = ({ bank }) => {
             margin: 0,
             fontSize: '0.95rem',
             fontWeight: 900,
-            color: '#0b0822',
-            fontFamily: 'Cairo, sans-serif',
+            color: '#1f1116',
+            fontFamily: 'Tajawal, sans-serif',
           }}
         >
           {bank.name}
@@ -711,7 +706,7 @@ const BankCard = ({ bank }) => {
           style={{
             margin: '0 0 0.25rem',
             fontSize: '0.7rem',
-            color: '#3d2369',
+            color: '#8a5560',
           }}
         >
           IBAN
@@ -722,8 +717,8 @@ const BankCard = ({ bank }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            background: 'linear-gradient(135deg, #cfc0f4, #a991eb)',
-            border: '1px solid #7b29d5',
+            background: 'linear-gradient(135deg, #f3e0dd, #d4a5a5)',
+            border: '1px solid #6b1d2f',
             borderRadius: 10,
             padding: '0.4rem 0.6rem',
             gap: 8,
@@ -733,7 +728,7 @@ const BankCard = ({ bank }) => {
             style={{
               fontSize: '0.78rem',
               fontWeight: 800,
-              color: '#0b0822',
+              color: '#1f1116',
               fontFamily: 'monospace',
               direction: 'ltr',
               overflow: 'hidden',
@@ -781,7 +776,7 @@ const BankCard = ({ bank }) => {
           style={{
             margin: '0 0 0.25rem',
             fontSize: '0.7rem',
-            color: '#3d2369',
+            color: '#8a5560',
           }}
         >
           رقم الحساب
@@ -792,8 +787,8 @@ const BankCard = ({ bank }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            background: 'linear-gradient(135deg, #cfc0f4, #a991eb)',
-            border: '1px solid #7b29d5',
+            background: 'linear-gradient(135deg, #f3e0dd, #d4a5a5)',
+            border: '1px solid #6b1d2f',
             borderRadius: 10,
             padding: '0.4rem 0.6rem',
             gap: 8,
@@ -803,7 +798,7 @@ const BankCard = ({ bank }) => {
             style={{
               fontSize: '0.78rem',
               fontWeight: 800,
-              color: '#0b0822',
+              color: '#1f1116',
               fontFamily: 'monospace',
               direction: 'ltr',
               whiteSpace: 'nowrap',
@@ -1108,7 +1103,7 @@ const RoyalHarajPage = () => {
       <div className="rh-bg" aria-hidden="true" />
       <div className="rh-topline" aria-hidden="true" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cairo:wght@400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800;900&display=swap"
         rel="stylesheet"
       />
 
@@ -1223,18 +1218,18 @@ const RoyalHarajPage = () => {
 
         /* لافتة «أعلن الآن» — تتغلب على قاعدة الأزرار الذهبية العامة */
         .haraj-page .haraj-cta-banner {
-          background: linear-gradient(120deg, #3128da 0%, #aa3ee9 45%, #a7132e 100%) !important;
+          background: linear-gradient(120deg, #6b1d2f 0%, #6b1d2f 55%, #6b1d2f 100%) !important;
           border: none !important;
-          box-shadow: 0 10px 28px rgb(49, 40, 218, 0.35), inset 0 1px 0 rgb(255, 255, 255, 0.25) !important;
+          box-shadow: 0 10px 28px rgba(61, 15, 24, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
           font-weight: 800 !important;
         }
       `}</style>
 
       <header
         style={{
-          background: `linear-gradient(180deg, ${C.darkBg} 0%, #eae5f6 100%)`,
+          background: `linear-gradient(180deg, ${C.darkBg} 0%, #fdfbf7 100%)`,
           borderBottom: `1px solid ${C.gold}30`,
-          padding: '1rem',
+          padding: '1.1rem 1rem 1.25rem',
           position: 'sticky',
           top: 'var(--rooz-top-offset, 0px)',
           zIndex: 100,
@@ -1244,70 +1239,95 @@ const RoyalHarajPage = () => {
       >
         <div
           style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem',
-            maxWidth: '600px',
+            maxWidth: '820px',
             width: '100%',
             margin: '0 auto',
-            overflow: 'hidden',
+            direction: 'rtl',
           }}
         >
-          {/* زر الرجوع العام من App فقط — لتجنب تداخل الرجوع */}
           <div
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '0.75rem',
-              flex: 1,
+              justifyContent: 'space-between',
+              gap: '1rem',
             }}
           >
-            <div
-              style={{
-                width: 40,
-                height: 40,
-                background: `linear-gradient(135deg, ${C.gold} 0%, ${C.goldDark} 100%)`,
-                borderRadius: 12,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                boxShadow: `0 4px 15px ${C.gold}40`,
-              }}
-            >
-              <ShoppingBag
-                size={20}
-                color={C.black}
-              />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', minWidth: 0 }}>
+              <div
+                style={{
+                  width: 46,
+                  height: 46,
+                  flexShrink: 0,
+                  background: `linear-gradient(135deg, ${C.gold} 0%, ${C.goldDark} 100%)`,
+                  borderRadius: 8,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  boxShadow: `0 4px 15px ${C.gold}40`,
+                }}
+              >
+                <ShoppingBag size={22} color="#ffffff" />
+              </div>
+              <div style={{ minWidth: 0 }}>
+                <h1
+                  style={{
+                    margin: 0,
+                    fontSize: 'clamp(1.1rem, 3.4vw, 1.6rem)',
+                    fontWeight: 800,
+                    color: '#1f1116',
+                    fontFamily: 'Tajawal, sans-serif',
+                    lineHeight: 1.25,
+                  }}
+                >
+                  منصة حراج الفخامة والتميز
+                </h1>
+                <p
+                  style={{
+                    margin: '4px 0 0',
+                    fontSize: 'clamp(0.74rem, 2.4vw, 0.9rem)',
+                    fontWeight: 400,
+                    color: '#8a5560',
+                    fontFamily: 'Tajawal, sans-serif',
+                    lineHeight: 1.5,
+                  }}
+                >
+                  هنا تلتقي النخبة لبيع وشراء أرقى السلع والمنتجات بكل موثوقية وسهولة
+                </p>
+              </div>
             </div>
 
-            <h1
+            <button
+              type="button"
+              className="haraj-cta-banner haraj-add-ad-btn"
+              onClick={() => {
+                if (!harajUser) {
+                  setShowHarajAuth(true);
+                } else {
+                  navigate('/haraj/post');
+                }
+              }}
               style={{
-                margin: 0,
-                fontSize: '1.1rem',
-                fontWeight: 800,
-                color: C.cream,
-                fontFamily:
-                  'Cairo, sans-serif',
-                display: 'flex',
+                flexShrink: 0,
+                display: 'inline-flex',
                 alignItems: 'center',
-                gap: '8px',
+                gap: 7,
+                background: '#6b1d2f',
+                border: 'none',
+                borderRadius: 8,
+                padding: '0.7rem 1.15rem',
+                cursor: 'pointer',
+                color: '#ffffff',
+                fontSize: '0.88rem',
+                fontWeight: 800,
+                fontFamily: 'Tajawal, sans-serif',
+                boxShadow: '0 8px 22px rgba(107, 29, 47, 0.28)',
+                whiteSpace: 'nowrap',
               }}
             >
-              <img fetchPriority="high"
-                src={LOGO_SRC}
-                alt="أناقة ROOZ"
-                style={{
-                  width: 48,
-                  height: 48,
-                  objectFit: 'contain',
-                  clipPath: 'circle(48%)',
-                  background: '#0a071f',
-                  borderRadius: '50%',
-                  border: `2px solid ${C.gold}`,
-                  boxShadow: `0 0 12px ${C.gold}60`,
-                }}
-              />
-            </h1>
+              <Plus size={17} color="#ffffff" aria-hidden="true" />
+              أضف إعلانك الآن
+            </button>
           </div>
         </div>
       </header>
@@ -1315,71 +1335,103 @@ const RoyalHarajPage = () => {
       {/* لافتات حراج الإبداعية — شريط متحرك ملوّن يمين ← يسار */}
       {/* رسالة البث تظهر في الصفحة الرئيسية فقط (كما طلب المستخدم) — لا شريط بث في الحراج */}
 
-      {/* لافتة الدعوة للإعلان — بطاقة متدرجة ملفتة */}
+      {/* لافتة «أعلن معنا هنا» الموحدة */}
       <div
         style={{
-          maxWidth: '600px',
+          maxWidth: '820px',
           width: '100%',
           margin: '0 auto',
-          padding: '0.5rem 0.75rem 0',
+          padding: '0.85rem 0.75rem 0',
           boxSizing: 'border-box',
         }}
       >
-        <button
-          type="button"
-          className="haraj-cta-banner"
-          onClick={() => {
-            // لا يمكن الإعلان دون تسجيل: فتح نافذة الدخول/التسجيل أولاً
-            if (!harajUser) {
-              setShowHarajAuth(true);
-            } else {
-              navigate('/haraj/post');
-            }
-          }}
+        <div
+          className="haraj-ad-banner"
           style={{
-            width: '100%',
-            cursor: 'pointer',
-            borderRadius: 16,
-            padding: '1rem 1.25rem',
+            position: 'relative',
+            overflow: 'hidden',
+            background: '#6b1d2f',
+            borderRadius: 8,
+            padding: '1.4rem 1.5rem',
             display: 'flex',
             alignItems: 'center',
-            gap: '0.85rem',
+            justifyContent: 'space-between',
+            gap: '1.25rem',
             direction: 'rtl',
-            color: '#ffffff',
-            fontFamily: 'Cairo, sans-serif',
-            textAlign: 'right',
+            flexWrap: 'wrap',
+            boxShadow: '0 12px 30px rgba(107, 29, 47, 0.22)',
           }}
         >
           <span
+            aria-hidden="true"
             style={{
-              flexShrink: 0,
-              width: 46,
-              height: 46,
+              position: 'absolute',
+              insetInlineStart: -30,
+              insetBlockStart: -30,
+              width: 110,
+              height: 110,
               borderRadius: '50%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background: 'rgb(255, 255, 255,0.16)',
-              border: '1.5px solid rgb(89, 42, 225,0.7)',
+              border: '2px solid rgba(212, 165, 165, 0.55)',
+            }}
+          />
+          <span
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              insetInlineEnd: -24,
+              insetBlockEnd: -34,
+              width: 96,
+              height: 96,
+              borderRadius: '50%',
+              border: '2px solid rgba(212, 165, 165, 0.45)',
+            }}
+          />
+          <div style={{ position: 'relative', flex: 1, minWidth: 220 }}>
+            <div
+              style={{
+                color: '#ffffff',
+                fontSize: 'clamp(1.05rem, 3vw, 1.35rem)',
+                fontWeight: 800,
+                fontFamily: 'Tajawal, sans-serif',
+                lineHeight: 1.4,
+              }}
+            >
+              مساحتك الإعلانية هنا تنبض بالفخامة!
+            </div>
+            <div
+              style={{
+                color: '#d4a5a5',
+                fontSize: 'clamp(0.78rem, 2.4vw, 0.9rem)',
+                fontWeight: 400,
+                fontFamily: 'Tajawal, sans-serif',
+                lineHeight: 1.6,
+                marginTop: 6,
+              }}
+            >
+              تواصل مع آلاف الزوار المهتمين بمنتجاتك، واجعل لعلامتك التجارية حضوراً بطلاً.
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => navigate('/contact')}
+            style={{
+              position: 'relative',
+              flexShrink: 0,
+              background: '#fdfbf7',
+              border: 'none',
+              borderRadius: 8,
+              padding: '0.8rem 1.4rem',
+              cursor: 'pointer',
+              color: '#1f1116',
+              fontSize: '0.9rem',
+              fontWeight: 800,
+              fontFamily: 'Tajawal, sans-serif',
+              whiteSpace: 'nowrap',
             }}
           >
-            <Sparkles size={22} color="#a382f5" aria-hidden="true" />
-          </span>
-          <span style={{ flex: 1, minWidth: 0 }}>
-            <span style={{ display: 'block', fontWeight: 900, fontSize: '1.02rem', textShadow: '0 1px 3px rgb(9, 6, 27,0.3)' }}>
-              أعلن عن سلعتك الآن — مجاناً
-            </span>
-            <span style={{ display: 'block', fontWeight: 600, fontSize: '0.8rem', opacity: 0.92, marginTop: 2 }}>
-              إعلانك يُراجع ويُنشر أمام آلاف الزوار خلال وقت قصير
-            </span>
-          </span>
-          <Plus
-            size={20}
-            color="#a382f5"
-            aria-hidden="true"
-            style={{ flexShrink: 0 }}
-          />
-        </button>
+            تواصل للإعلان معنا
+          </button>
+        </div>
       </div>
 
       <main
@@ -1394,7 +1446,7 @@ const RoyalHarajPage = () => {
         {!harajUser && (
           <div
             style={{
-              background: `linear-gradient(145deg, rgb(248, 246, 251,0.95) 0%, rgb(221, 209, 244,0.9) 100%)`,
+              background: `linear-gradient(145deg, rgba(253, 251, 247,0.95) 0%, rgba(253, 251, 247,0.9) 100%)`,
               border: `1px solid ${C.gold}30`,
               borderRadius: 12,
               padding: '1rem',
@@ -1448,62 +1500,7 @@ const RoyalHarajPage = () => {
           </div>
         )}
 
-        <button
-          type="button"
-          onClick={() => {
-            if (!harajUser) {
-              openAuth();
-            } else {
-              navigate('/haraj/post');
-            }
-          }}
-          style={{
-            width: '70%',
-            height: '55px',
-            background: `linear-gradient(135deg, ${C.gold} 0%, ${C.goldDark} 50%, ${C.gold} 100%)`,
-            backgroundSize: '200% 200%',
-            border: 'none',
-            borderRadius: 12,
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '0.6rem',
-            margin: '0 auto 1.5rem',
-            boxShadow: `0 6px 20px ${C.gold}40`,
-            animation:
-              'gradient 3s ease infinite',
-            position: 'relative',
-            overflow: 'hidden',
-          }}
-        >
-          <div
-            className="shimmer"
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background: `linear-gradient(90deg, transparent, ${C.white}15, transparent)`,
-            }}
-          />
 
-          <Plus
-            size={22}
-            color={C.black}
-          />
-
-          <span
-            style={{
-              fontSize: '17px',
-              fontWeight: 800,
-              color: C.black,
-              fontFamily:
-                'Cairo, sans-serif',
-              position: 'relative',
-            }}
-          >
-            ضع إعلانك هنا
-          </span>
-        </button>
 
         <div
           style={{
@@ -1536,13 +1533,13 @@ const RoyalHarajPage = () => {
             aria-label="البحث عن سلعة"
             style={{
               width: '100%',
-              background: `linear-gradient(145deg, #ffffff 0%, #eae5f6 100%)`,
-              border: `1px solid #8566d9`,
+              background: `linear-gradient(145deg, #ffffff 0%, #fdfbf7 100%)`,
+              border: `1px solid #6b1d2f`,
               borderRadius: 14,
               padding:
                 '0.85rem 1rem 0.85rem 3rem',
-              color: '#0b0822',
-              caretColor: '#0b0822',
+              color: '#1f1116',
+              caretColor: '#1f1116',
               fontSize: '0.9rem',
               fontFamily:
                 'Cairo, sans-serif',
@@ -1565,10 +1562,10 @@ const RoyalHarajPage = () => {
             style={{
               width: '100%',
               background: '#ffffff',
-              border: `1px solid #8566d9`,
+              border: `1px solid #6b1d2f`,
               borderRadius: 14,
               padding: '0.75rem 1rem',
-              color: '#0b0822',
+              color: '#1f1116',
               fontSize: '0.9rem',
               fontFamily:
                 'Cairo, sans-serif',
@@ -1581,7 +1578,7 @@ const RoyalHarajPage = () => {
               <option
                 key={category}
                 value={category}
-                style={{ color: '#0b0822', background: '#ffffff' }}
+                style={{ color: '#1f1116', background: '#ffffff' }}
               >
                 {category}
               </option>
@@ -1598,8 +1595,8 @@ const RoyalHarajPage = () => {
             style={{
               width: '100%',
               marginBottom: sectionsOpen ? '0.75rem' : 0,
-              background: 'linear-gradient(145deg, #f4f1f9, #eae4f3)',
-              border: '1.5px solid #7b29d5',
+              background: 'linear-gradient(145deg, #fdfbf7, #fdfbf7)',
+              border: '1.5px solid #6b1d2f',
               borderRadius: 14,
               padding: '0.85rem 1rem',
               cursor: 'pointer',
@@ -1607,18 +1604,18 @@ const RoyalHarajPage = () => {
               alignItems: 'center',
               justifyContent: 'space-between',
               gap: '0.5rem',
-              color: '#0b0822',
+              color: '#1f1116',
               fontSize: '0.95rem',
               fontWeight: 900,
-              fontFamily: 'Cairo, sans-serif',
-              boxShadow: '0 2px 10px rgb(93, 43, 195,0.15)',
+              fontFamily: 'Tajawal, sans-serif',
+              boxShadow: '0 2px 10px rgba(61, 15, 24,0.15)',
             }}
           >
             <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-              <Crown size={18} color="#7b29d5" />
+              <Crown size={18} color="#6b1d2f" />
               أقسام الحراج
               <span style={{
-                background: '#7b29d5',
+                background: '#6b1d2f',
                 color: '#fff',
                 fontSize: '0.7rem',
                 fontWeight: 900,
@@ -1634,7 +1631,7 @@ const RoyalHarajPage = () => {
 
           {sectionsOpen && (
             <>
-              <p style={{ margin: '0 0 0.75rem', fontSize: '0.78rem', color: '#3d2369', fontWeight: 600 }}>
+              <p style={{ margin: '0 0 0.75rem', fontSize: '0.78rem', color: '#8a5560', fontWeight: 600 }}>
                 اختر قسماً لتصفية الإعلانات حسب النوع
               </p>
               <div className="sections-grid">
@@ -1697,10 +1694,10 @@ const RoyalHarajPage = () => {
               style={{
                 textAlign: 'center',
                 padding: '2rem 1rem',
-                background: `linear-gradient(145deg, #ffffff 0%, #eae5f6 100%)`,
+                background: `linear-gradient(145deg, #ffffff 0%, #fdfbf7 100%)`,
                 border: `1px solid ${C.grayLight}`,
                 borderRadius: 16,
-                color: '#3d2369',
+                color: '#8a5560',
                 fontFamily:
                   'Cairo, sans-serif',
               }}
@@ -1737,17 +1734,17 @@ const RoyalHarajPage = () => {
               style={{
                 width: '100%',
                 marginTop: '1.5rem',
-                background: `linear-gradient(135deg, ${C.gold} 0%, #8f6bdc 100%)`,
+                background: `linear-gradient(135deg, ${C.gold} 0%, #6b1d2f 100%)`,
                 border: `1px solid ${C.gold}`,
                 borderRadius: 14,
                 padding: '1rem',
                 cursor: 'pointer',
-                color: '#0c0824',
+                color: '#1f1116',
                 fontSize: '0.9rem',
                 fontWeight: 800,
                 fontFamily:
-                  'Cairo, sans-serif',
-                boxShadow: '0 6px 18px rgb(58, 20, 150,0.25)',
+                  'Tajawal, sans-serif',
+                boxShadow: '0 6px 18px rgba(61, 15, 24,0.25)',
               }}
             >
               عرض المزيد من الإعلانات (
@@ -1766,7 +1763,7 @@ const RoyalHarajPage = () => {
         >
           <div
             style={{
-              background: `linear-gradient(145deg, #ffffff 0%, #eae5f6 100%)`,
+              background: `linear-gradient(145deg, #ffffff 0%, #fdfbf7 100%)`,
               border: `1px solid ${C.gold}30`,
               borderRadius: 20,
               padding: '0.75rem 0.85rem',
@@ -1776,7 +1773,7 @@ const RoyalHarajPage = () => {
               style={{
                 fontSize: '1rem',
                 fontWeight: 800,
-                color: '#0b0822',
+                color: '#1f1116',
                 marginBottom: '1rem',
                 display: 'flex',
                 alignItems: 'center',
@@ -1793,11 +1790,11 @@ const RoyalHarajPage = () => {
 
             <div
               style={{
-                background: 'linear-gradient(145deg, #9955ef 0%, #7b29d5 55%, #5b1c9b 100%)',
+                background: 'linear-gradient(145deg, #6b1d2f 0%, #6b1d2f 55%, #6b1d2f 100%)',
                 borderRadius: 12,
                 padding: '0.55rem 0.75rem',
-                border: '1.5px solid #5b1c9b',
-                boxShadow: '0 2px 8px rgb(93, 43, 195,0.25)',
+                border: '1.5px solid #6b1d2f',
+                boxShadow: '0 2px 8px rgba(61, 15, 24,0.25)',
                 display: 'inline-block',
                 width: '100%',
                 maxWidth: 320,
@@ -1822,7 +1819,7 @@ const RoyalHarajPage = () => {
                       margin: 0,
                       fontSize: '1.15rem',
                       fontWeight: 900,
-                      color: '#09071c',
+                      color: '#1f1116',
                     }}
                   >
                     1%
@@ -1834,7 +1831,7 @@ const RoyalHarajPage = () => {
                         '0.25rem 0 0',
                       fontSize:
                         '0.75rem',
-                      color: '#0b0822',
+                      color: '#1f1116',
                     }}
                   >
                     المستخدمة
@@ -1899,7 +1896,7 @@ const RoyalHarajPage = () => {
           style={{
             marginBottom: '0.85rem',
             padding: '0.75rem 0.85rem',
-            background: `linear-gradient(135deg, ${C.darkBg} 0%, rgb(115, 75, 214,0.1) 100%)`,
+            background: `linear-gradient(135deg, ${C.darkBg} 0%, rgba(61, 15, 24,0.1) 100%)`,
             borderRadius: '16px',
             border: `1px solid ${C.gold}40`,
           }}
@@ -2039,7 +2036,7 @@ const RoyalHarajPage = () => {
             left: '50%',
             transform:
               'translateX(-50%)',
-            background: `linear-gradient(135deg, ${C.green} 0%, #14a5a5 100%)`,
+            background: `linear-gradient(135deg, ${C.green} 0%, #4a3a3f 100%)`,
             borderRadius: 50,
             padding: '0.6rem 1.25rem',
             display: 'flex',
@@ -2083,8 +2080,8 @@ const RoyalHarajPage = () => {
             aria-label="تسجيل الخروج"
             style={{
               marginInlineStart: '0.5rem',
-              background: 'rgb(9, 6, 27,0.25)',
-              border: '1px solid rgb(255, 255, 255,0.4)',
+              background: 'rgba(31, 17, 22,0.25)',
+              border: '1px solid rgba(255, 255, 255,0.4)',
               color: 'white',
               borderRadius: 999,
               padding: '0.35rem 0.9rem',

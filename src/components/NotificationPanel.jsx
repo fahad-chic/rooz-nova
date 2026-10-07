@@ -32,9 +32,9 @@ const toolButtonStyle = {
   display: 'inline-flex',
   alignItems: 'center',
   gap: 6,
-  background: 'rgb(64, 15, 180, 0.1)',
-  border: '1px solid rgb(64, 15, 180, 0.35)',
-  color: '#290d71',
+  background: 'rgba(61, 15, 24, 0.1)',
+  border: '1px solid rgba(61, 15, 24, 0.35)',
+  color: '#1f1116',
   borderRadius: 999,
   padding: '7px 13px',
   fontSize: '0.78rem',
@@ -46,11 +46,11 @@ const toolButtonStyle = {
 };
 
 const bannerStyle = {
-  background: 'rgb(64, 15, 180, 0.12)',
-  border: '1px solid rgb(64, 15, 180, 0.3)',
+  background: 'rgba(61, 15, 24, 0.12)',
+  border: '1px solid rgba(61, 15, 24, 0.3)',
   borderRadius: 12,
   padding: '0.75rem 1rem',
-  color: '#290d71',
+  color: '#1f1116',
   fontSize: '0.88rem',
   fontWeight: 600,
   marginBottom: '1rem',
@@ -160,16 +160,16 @@ const NotificationPanel = () => {
             gap: 10,
             fontSize: 'clamp(1.25rem, 4vw, 1.5rem)',
             fontWeight: 800,
-            color: '#200d4f',
+            color: '#1f1116',
             margin: 0,
           }}
         >
-          <Bell size={24} color="#400fb4" />
+          <Bell size={24} color="#6b1d2f" />
           الإشعارات
           {unreadCount > 0 && (
             <span
               style={{
-                background: '#400fb4',
+                background: '#6b1d2f',
                 color: '#fff',
                 fontSize: '0.7rem',
                 fontWeight: 800,
@@ -222,13 +222,13 @@ const NotificationPanel = () => {
           style={{
             textAlign: 'center',
             padding: '3.5rem 1rem',
-            color: '#5839a3',
-            background: 'rgb(247, 246, 251,0.6)',
+            color: '#6b1d2f',
+            background: 'rgba(253, 251, 247,0.6)',
             borderRadius: 16,
-            border: '1px solid rgb(64, 15, 180,0.18)',
+            border: '1px solid rgba(61, 15, 24,0.18)',
           }}
         >
-          <Bell size={48} color="#9074d9" style={{ margin: '0 auto 1rem' }} />
+          <Bell size={48} color="#6b1d2f" style={{ margin: '0 auto 1rem' }} />
           <p style={{ fontWeight: 700, fontSize: '1.05rem', margin: 0 }}>
             لا توجد إشعارات حالياً
           </p>
@@ -256,14 +256,14 @@ const NotificationPanel = () => {
                 onClick={() => handleItemClick(item.id)}
                 style={{
                   background: isUnread
-                    ? 'linear-gradient(145deg, #f4f1f9, #e3dbf6)'
-                    : 'rgb(255, 255, 255, 0.72)',
-                  border: `1px solid ${isUnread ? 'rgb(64, 15, 180, 0.45)' : 'rgb(64, 15, 180, 0.2)'}`,
+                    ? 'linear-gradient(145deg, #fdfbf7, #fdfbf7)'
+                    : 'rgba(255, 255, 255, 0.72)',
+                  border: `1px solid ${isUnread ? 'rgba(61, 15, 24, 0.45)' : 'rgba(61, 15, 24, 0.2)'}`,
                   borderRadius: 14,
                   padding: '0.9rem 1rem',
                   boxShadow: isUnread
-                    ? '0 6px 18px rgb(58, 14, 166, 0.12)'
-                    : '0 2px 8px rgb(58, 14, 166, 0.06)',
+                    ? '0 6px 18px rgba(61, 15, 24, 0.12)'
+                    : '0 2px 8px rgba(61, 15, 24, 0.06)',
                   transition: 'all 0.25s ease',
                   cursor: isUnread ? 'pointer' : 'default',
                   opacity: isRead && muted ? 0.7 : 1,
@@ -271,14 +271,14 @@ const NotificationPanel = () => {
                 onMouseEnter={(e) => {
                   if (isUnread) {
                     e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 8px 24px rgb(58, 14, 166, 0.15)';
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(61, 15, 24, 0.15)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = isUnread
-                    ? '0 6px 18px rgb(58, 14, 166, 0.12)'
-                    : '0 2px 8px rgb(58, 14, 166, 0.06)';
+                    ? '0 6px 18px rgba(61, 15, 24, 0.12)'
+                    : '0 2px 8px rgba(61, 15, 24, 0.06)';
                 }}
               >
                 <div
@@ -291,16 +291,16 @@ const NotificationPanel = () => {
                   }}
                 >
                   {item.type === 'owner-entry' ? (
-                    <Crown size={15} color="#400fb4" />
+                    <Crown size={15} color="#6b1d2f" />
                   ) : (
-                    <Mail size={15} color="#400fb4" />
+                    <Mail size={15} color="#6b1d2f" />
                   )}
 
                   <span
                     style={{
                       fontSize: '0.78rem',
                       fontWeight: 700,
-                      color: '#3a1496',
+                      color: '#6b1d2f',
                     }}
                   >
                     {item.title || TYPE_LABELS[item.type] || 'إشعار'}
@@ -309,7 +309,7 @@ const NotificationPanel = () => {
                   {isUnread && (
                     <span
                       style={{
-                        background: '#400fb4',
+                        background: '#6b1d2f',
                         color: '#fff',
                         fontSize: '0.68rem',
                         fontWeight: 700,
@@ -326,7 +326,7 @@ const NotificationPanel = () => {
                     style={{
                       marginInlineStart: 'auto',
                       fontSize: '0.75rem',
-                      color: '#603fb6',
+                      color: '#6b1d2f',
                     }}
                   >
                     {formatTime(item.at)}
@@ -337,7 +337,7 @@ const NotificationPanel = () => {
                   style={{
                     margin: 0,
                     fontSize: '0.95rem',
-                    color: '#200d4f',
+                    color: '#1f1116',
                     lineHeight: 1.6,
                     whiteSpace: 'pre-wrap',
                   }}

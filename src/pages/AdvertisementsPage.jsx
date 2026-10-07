@@ -75,26 +75,26 @@ export const AdvertisementsPage = () => {
           align-items: center;
           margin-bottom: 1rem;
           padding: 1rem 1.1rem;
-          background: rgb(11, 8, 34,0.8);
-          border: 1px solid rgb(127, 83, 226,0.2);
+          background: rgba(31, 17, 22,0.8);
+          border: 1px solid rgba(61, 15, 24,0.2);
           border-radius: 16px;
         }
 
-        .ads-title { font-size: 1.35rem; font-weight: 700; color: #cbbaf9; }
-        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #7b29d5, #3a1496); color:#0a071e; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; }
+        .ads-title { font-size: 1.35rem; font-weight: 700; color: #f3e0dd; }
+        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #6b1d2f, #6b1d2f); color:#1f1116; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; }
 
         .ads-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
         .ad-card {
-          background: rgb(11, 8, 34,0.86);
-          border: 1px solid rgb(127, 83, 226,0.18);
+          background: rgba(31, 17, 22,0.86);
+          border: 1px solid rgba(61, 15, 24,0.18);
           border-radius: 16px;
           overflow: hidden;
-          box-shadow: 0 8px 20px rgb(9, 6, 27,0.2);
+          box-shadow: 0 8px 20px rgba(31, 17, 22,0.2);
         }
 
         .ad-card:hover {
           transform: translateY(-4px);
-          box-shadow: 0 8px 20px rgb(115, 75, 214, 0.2);
+          box-shadow: 0 8px 20px rgba(61, 15, 24, 0.2);
         }
 
         .ad-card.inactive {
@@ -104,11 +104,11 @@ export const AdvertisementsPage = () => {
         .ad-image {
           width: 100%;
           height: 150px;
-          background: linear-gradient(135deg, rgb(127, 83, 226,0.22), rgb(255, 255, 255,0.05));
+          background: linear-gradient(135deg, rgba(61, 15, 24,0.22), rgba(255, 255, 255,0.05));
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #cbbaf9;
+          color: #f3e0dd;
           font-size: 2rem;
           overflow: hidden;
         }
@@ -121,8 +121,8 @@ export const AdvertisementsPage = () => {
         }
 
         .ad-content { padding: 1rem; }
-        .ad-title { font-size: 1rem; font-weight: 700; color: #cbbaf9; margin-bottom: 0.35rem; }
-        .ad-description { color: #aa99d8; font-size: 0.84rem; margin-bottom: 0.75rem; line-height: 1.5; }
+        .ad-title { font-size: 1rem; font-weight: 700; color: #f3e0dd; margin-bottom: 0.35rem; }
+        .ad-description { color: #d4a5a5; font-size: 0.84rem; margin-bottom: 0.75rem; line-height: 1.5; }
 
         .ad-meta {
           display: flex;
@@ -146,13 +146,13 @@ export const AdvertisementsPage = () => {
         }
 
         .ad-status.active {
-          background: rgb(20, 181, 167, 0.1);
-          color: #0a5b53;
+          background: rgba(31, 17, 22, 0.1);
+          color: #4a3a3f;
         }
 
         .ad-status.inactive {
-          background: rgb(235, 72, 102, 0.1);
-          color: #881429;
+          background: rgba(61, 15, 24, 0.1);
+          color: #6b1d2f;
         }
 
         .ad-actions {
@@ -178,21 +178,21 @@ export const AdvertisementsPage = () => {
         }
 
         .ad-btn-toggle {
-          background: #4161f0;
+          background: #6b1d2f;
           color: white;
         }
 
         .ad-btn-toggle:hover {
-          background: #2341ed;
+          background: #6b1d2f;
         }
 
         .ad-btn-delete {
-          background: #eb4866;
+          background: #8f2a40;
           color: white;
         }
 
         .ad-btn-delete:hover {
-          background: #e61c41;
+          background: #8f2a40;
         }
 
         .modal-overlay {
@@ -201,7 +201,7 @@ export const AdvertisementsPage = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgb(9, 6, 27, 0.5);
+          background: rgba(31, 17, 22, 0.5);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -214,13 +214,13 @@ export const AdvertisementsPage = () => {
           padding: 2rem;
           max-width: 500px;
           width: 90%;
-          box-shadow: 0 20px 25px rgb(9, 6, 27, 0.15);
+          box-shadow: 0 20px 25px rgba(31, 17, 22, 0.15);
         }
 
         .modal-header {
           font-size: 1.5rem;
           font-weight: 600;
-          color: #0e0a2b;
+          color: #1f1116;
           margin-bottom: 1.5rem;
           border-bottom: 2px solid #e0e0e0;
           padding-bottom: 1rem;
@@ -243,7 +243,7 @@ export const AdvertisementsPage = () => {
           display: block;
           margin-bottom: 0.5rem;
           font-weight: 600;
-          color: #0e0a2b;
+          color: #1f1116;
         }
 
         .form-group input,
@@ -259,7 +259,7 @@ export const AdvertisementsPage = () => {
         .form-group input:focus,
         .form-group textarea:focus {
           outline: none;
-          border-color: #7b29d5;
+          border-color: #6b1d2f;
         }
 
         .form-group textarea {
@@ -278,17 +278,17 @@ export const AdvertisementsPage = () => {
         }
 
         .modal-btn-submit {
-          background: #7b29d5;
-          color: #0e0a2b;
+          background: #6b1d2f;
+          color: #1f1116;
         }
 
         .modal-btn-submit:hover {
-          background: #4016c1;
+          background: #6b1d2f;
         }
 
         .modal-btn-cancel {
           background: #e0e0e0;
-          color: #0e0a2b;
+          color: #1f1116;
         }
 
         .modal-btn-cancel:hover {
@@ -373,7 +373,7 @@ export const AdvertisementsPage = () => {
                 onClick={() => setShowForm(false)}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(9, 6, 27,0.06)',
+                  background: 'rgba(31, 17, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -383,7 +383,7 @@ export const AdvertisementsPage = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#0e0a2b',
+                  color: '#1f1116',
                 }}
               >
                 <X size={17} />

@@ -28,7 +28,7 @@ import OtpModal from './OtpModal';
 import ContactOwnerModal from './ContactOwnerModal';
 import { markManualSignOut, readKickLog, kickReasonLabel } from '../utils/kickLog';
 import '../styles/global.css';
-import '../styles/Login.css';
+import '../styles/LoginNova.css';
 
 const OWNER_MARQUEE = 'تم تسجيل دخول صاحب موقع "أناقة ROOZ" ويُرحّب بكم جميعاً ويتمنى لكم تجربة تسوّق ممتعة ترضي ذائقتكم الرفيعة. يُذكِّركم بأن من لديه اقتراح أو ملاحظة أو شكوى على أحد موظفي الموقع أو على أي شخص بسبب النصب أو الاحتيال، يتوجّه إلى غرفة صاحب موقع "أناقة ROOZ" ويتقدّم برسالة مفصّلة. وفي حال كانت الشكوى نصب واحتيال فسيتم اتخاذ الإجراءات اللازمة فوراً، سواء من قِبَل صاحب الموقع أو بإحالة الموضوع إلى الجهات الأمنية المختصّة بشكل عاجل، حفاظاً على حقوقكم وسلامة تعاملاتكم. أناقة ROOZ — حيث الأناقة تلتقي بالثقة.';
 const OWNER_SOUND_URL = '/sounds/welcome.mp3';
@@ -137,7 +137,7 @@ const Login = () => {
   const [googleUserObj, setGoogleUserObj] = useState(null);
 
   // دخول الزوار: رقم الهاتف فقط — دخول مؤقت مباشر لمدة دقيقتين بلا تحقق
-  const [guestPhone, setGuestPhone] = useState('');
+  const [guestEmail, setGuestEmail] = useState('');
   const [guestEntryOpen, setGuestEntryOpen] = useState(false);
 
   // لون خلفية الصفحة مباشرة عند ظهورها — رخام أسود لامع
@@ -145,7 +145,7 @@ const Login = () => {
     const previous = document.body.style.background;
 
     document.body.style.background =
-      'linear-gradient(150deg, rgb(255, 255, 255,0.02) 0%, transparent 45%, rgb(255, 255, 255,0.01) 65%, transparent 100%), radial-gradient(1100px 600px at 80% -15%, rgb(62, 19, 236,0.16), transparent  60%), radial-gradient(700px 400px at 15% 25%, rgb(89, 42, 225,0.10), transparent  55%), repeating-linear-gradient(115deg, rgb(255, 255, 255,0.03) 0 1px, transparent  1px 4px), repeating-linear-gradient(25deg, rgb(255, 255, 255,0.02) 0 1px, transparent  1px 6px), linear-gradient(180deg, #000 0%, #09061b 40%, #09061b 75%, #09061b 100%)';
+      'linear-gradient(150deg, rgba(255, 255, 255,0.02) 0%, transparent 45%, rgba(255, 255, 255,0.01) 65%, transparent 100%), radial-gradient(1100px 600px at 80% -15%, rgba(61, 15, 24,0.16), transparent  60%), radial-gradient(700px 400px at 15% 25%, rgba(61, 15, 24,0.10), transparent  55%), repeating-linear-gradient(115deg, rgba(255, 255, 255,0.03) 0 1px, transparent  1px 4px), repeating-linear-gradient(25deg, rgba(255, 255, 255,0.02) 0 1px, transparent  1px 6px), linear-gradient(180deg, #000 0%, #1f1116 40%, #1f1116 75%, #1f1116 100%)';
 
     return () => {
       document.body.style.background = previous;
@@ -708,7 +708,7 @@ const Login = () => {
     }
   };
 
-  const completeGuestLogin = async (realPhone) => {
+  const completeGuestLogin = async (verifiedEmail) => {
     setError('');
     setSuccess('');
 
@@ -733,7 +733,7 @@ const Login = () => {
     }
 
     const result =
-      await store.guestLogin(realPhone);
+      await store.guestLogin(verifiedEmail);
 
     if (!result?.success) {
       throw new Error(
@@ -749,22 +749,19 @@ const Login = () => {
     navigate('/');
   };
 
-  // دخول الزوار — دخول مؤقت مباشر: رقم الهاتف فقط، بدون أي تحقق بريدي
-  const handleGuestLogin = async () => {
+  // دخول الزوار — التحقق برمز يصل إلى البريد الإلكتروني إجباري (Email OTP)
+  const handleGuestOtpRequest = async () => {
     setError('');
     setSuccess('');
     setLoading(true);
 
-    const phone =
-      String(guestPhone || '')
+    const email =
+      String(guestEmail || '')
         .trim()
-        .replace(/^\+/, '')
-        .replace(/[^\d]/g, '');
+        .toLowerCase();
 
-    if (phone.length < 8) {
-      setError(
-        'أدخل رقم هاتف صحيحاً (8 أرقام على الأقل)'
-      );
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setError('أدخل بريداً إلكترونياً صحيحاً');
 
       setLoading(false);
 
@@ -772,11 +769,29 @@ const Login = () => {
     }
 
     try {
-      await completeGuestLogin(phone);
+      const otpResult = await store.sendOtp(email, 'login');
+
+      if (!otpResult?.success) {
+        setError(
+          otpResult?.error
+            ? `تعذّر إرسال كود التحقق: ${otpResult.error}. حاول مرة أخرى بعد قليل.`
+            : 'تعذّر إرسال كود التحقق. حاول مرة أخرى بعد قليل.'
+        );
+
+        return;
+      }
+
+      setGuestEntryOpen(false);
+      setSuccess('تم إرسال كود التحقق إلى بريدك');
+      setOtpModal({
+        email,
+        purpose: 'login',
+        onVerified: () => completeGuestLogin(email),
+      });
     } catch (err) {
       setError(
         err?.message ||
-          'تعذّر الدخول كزائر — حاول مرة أخرى'
+          'تعذّر إرسال كود التحقق — حاول مرة أخرى'
       );
     } finally {
       setLoading(false);
@@ -860,8 +875,8 @@ const Login = () => {
     width: '100%',
     padding: '12px 14px',
     borderRadius: 12,
-    border: '1px solid rgb(62, 19, 236, 0.5)',
-    background: 'rgb(9, 6, 27,0.6)',
+    border: '1px solid rgba(61, 15, 24, 0.5)',
+    background: 'rgba(31, 17, 22,0.6)',
     color: '#fff',
     fontSize: 15,
     textAlign: 'center',
@@ -1030,12 +1045,12 @@ const Login = () => {
       className="rl-root"
       style={{
         background:
-          'linear-gradient(150deg, rgb(255, 255, 255,0.02) 0%, transparent 45%, rgb(255, 255, 255,0.01) 65%, transparent 100%), ' +
-          'radial-gradient(1100px 600px at 80% -15%, rgb(62, 19, 236,0.16), transparent 60%), ' +
-          'radial-gradient(700px 400px at 15% 25%, rgb(89, 42, 225,0.10), transparent 55%), ' +
-          'repeating-linear-gradient(115deg, rgb(255, 255, 255,0.03) 0 1px, transparent 1px 4px), ' +
-          'repeating-linear-gradient(25deg, rgb(255, 255, 255,0.02) 0 1px, transparent 1px 6px), ' +
-          'linear-gradient(180deg, #09061b 0%, #09061b 40%, #09061b 75%, #09061b 100%)',
+          'linear-gradient(150deg, rgba(255, 255, 255,0.02) 0%, transparent 45%, rgba(255, 255, 255,0.01) 65%, transparent 100%), ' +
+          'radial-gradient(1100px 600px at 80% -15%, rgba(61, 15, 24,0.16), transparent 60%), ' +
+          'radial-gradient(700px 400px at 15% 25%, rgba(61, 15, 24,0.10), transparent 55%), ' +
+          'repeating-linear-gradient(115deg, rgba(255, 255, 255,0.03) 0 1px, transparent 1px 4px), ' +
+          'repeating-linear-gradient(25deg, rgba(255, 255, 255,0.02) 0 1px, transparent 1px 6px), ' +
+          'linear-gradient(180deg, #1f1116 0%, #1f1116 40%, #1f1116 75%, #1f1116 100%)',
         }}
     >
       <div className="rl-wrap">
@@ -1116,7 +1131,7 @@ const Login = () => {
                   ®️
                 </span>
 
-                <span style={{ color: '#09061b', fontWeight: 900 }}>المالك الرئيسي</span>
+                <span style={{ color: '#1f1116', fontWeight: 900 }}>المالك الرئيسي</span>
 
                 <button
                   type="button"
@@ -1141,7 +1156,7 @@ const Login = () => {
                     marginTop: 6,
                     fontSize: 11,
                     color:
-                      'rgb(62, 19, 236, 0.55)',
+                      'rgba(61, 15, 24, 0.55)',
                     letterSpacing: 1,
                   }}
                 >
@@ -1337,7 +1352,7 @@ const Login = () => {
               marginTop: 14,
               textAlign: 'center',
               fontSize: 11,
-              color: '#6340a6',
+              color: '#6b1d2f',
               direction: 'ltr',
               userSelect: 'all',
             }}
@@ -1356,11 +1371,11 @@ const Login = () => {
                 padding: '8px 10px',
                 borderRadius: 8,
                 border:
-                  '1px solid rgb(93, 43, 195,0.45)',
+                  '1px solid rgba(61, 15, 24,0.45)',
                 background:
-                  'rgb(127, 83, 226,0.08)',
+                  'rgba(61, 15, 24,0.08)',
                 fontSize: 11,
-                color: '#371493',
+                color: '#6b1d2f',
                 textAlign: 'right',
                 direction: 'rtl',
                 userSelect: 'all',
@@ -1586,7 +1601,7 @@ const Login = () => {
               position: 'fixed',
               inset: 0,
               background:
-                'rgb(9, 6, 27,0.82)',
+                'rgba(31, 17, 22,0.82)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -1600,9 +1615,9 @@ const Login = () => {
             <div
               style={{
                 background:
-                  'linear-gradient(150deg, #0a071f, #000)',
+                  'linear-gradient(150deg, #1f1116, #000)',
                 border:
-                  '1px solid rgb(62, 19, 236, 0.6)',
+                  '1px solid rgba(61, 15, 24, 0.6)',
                 borderRadius: 16,
                 padding:
                   '22px 22px 18px',
@@ -1610,7 +1625,7 @@ const Login = () => {
                 width: '100%',
                 textAlign: 'center',
                 boxShadow:
-                  '0 20px 60px rgb(9, 6, 27,0.6)',
+                  '0 20px 60px rgba(31, 17, 22,0.6)',
                 fontFamily:
                   'Cairo, sans-serif',
               }}
@@ -1629,7 +1644,7 @@ const Login = () => {
 
               <h3
                 style={{
-                  color: '#3e13ec',
+                  color: '#6b1d2f',
                   margin:
                     '0 0 6px',
                   fontSize: 18,
@@ -1641,7 +1656,7 @@ const Login = () => {
 
               <p
                 style={{
-                  color: '#cbbaf9',
+                  color: '#f3e0dd',
                   fontSize: 13,
                   margin:
                     '0 0 14px',
@@ -1720,11 +1735,11 @@ const Login = () => {
                   <div
                     style={{
                       background:
-                        'rgb(235, 72, 102,0.14)',
+                        'rgba(61, 15, 24,0.14)',
                       border:
-                        '1px solid rgb(235, 72, 102,0.45)',
+                        '1px solid rgba(61, 15, 24,0.45)',
                       color:
-                        '#f7bbc6',
+                        '#f3e0dd',
                       borderRadius: 10,
                       padding:
                         '8px 10px',
@@ -1746,10 +1761,10 @@ const Login = () => {
                     padding: '12px',
                     borderRadius: 12,
                     border:
-                      '1px solid rgb(203, 186, 249,0.5)',
+                      '1px solid rgba(251, 240, 240,0.5)',
                     background:
-                      'linear-gradient(135deg, #cbbaf9, #7b29d5 55%, #3a1496)',
-                    color: '#0b0821',
+                      'linear-gradient(135deg, #f3e0dd, #6b1d2f 55%, #6b1d2f)',
+                    color: '#1f1116',
                     fontSize: 15,
                     fontWeight: 900,
                     cursor:
@@ -1781,10 +1796,10 @@ const Login = () => {
                     padding: '10px',
                     borderRadius: 12,
                     border:
-                      '1px solid rgb(127, 82, 225,0.35)',
+                      '1px solid rgba(61, 15, 24,0.35)',
                     background:
                       'transparent',
-                    color: '#cbbaf9',
+                    color: '#f3e0dd',
                     fontSize: 13,
                     fontWeight: 700,
                     cursor:
@@ -1807,7 +1822,7 @@ const Login = () => {
               position: 'fixed',
               inset: 0,
               background:
-                'rgb(9, 6, 27,0.85)',
+                'rgba(31, 17, 22,0.85)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -1823,9 +1838,9 @@ const Login = () => {
             <div
               style={{
                 background:
-                  'linear-gradient(150deg, #0a071f, #000)',
+                  'linear-gradient(150deg, #1f1116, #000)',
                 border:
-                  '1px solid rgb(62, 19, 236, 0.6)',
+                  '1px solid rgba(61, 15, 24, 0.6)',
                 borderRadius: 18,
                 padding:
                   '24px 20px 18px',
@@ -1833,8 +1848,8 @@ const Login = () => {
                 width: '100%',
                 textAlign: 'center',
                 boxShadow:
-                  '0 20px 60px rgb(9, 6, 27,0.6)',
-                color: '#cbbaf9',
+                  '0 20px 60px rgba(31, 17, 22,0.6)',
+                color: '#f3e0dd',
               }}
               onClick={(e) =>
                 e.stopPropagation()
@@ -1848,13 +1863,13 @@ const Login = () => {
               >
                 <Sparkles
                   size={28}
-                  color="#3e13ec"
+                  color="#6b1d2f"
                 />
               </div>
 
               <h3
                 style={{
-                  color: '#3e13ec',
+                  color: '#6b1d2f',
                   margin:
                     '0 0 10px',
                   fontSize: 17,
@@ -1866,7 +1881,7 @@ const Login = () => {
 
               <p
                 style={{
-                  color: '#cbbaf9',
+                  color: '#f3e0dd',
                   fontSize: 14,
                   lineHeight: 1.7,
                   margin:
@@ -1874,19 +1889,18 @@ const Login = () => {
                 }}
               >
                 صديقنا العزيز: نفيدك بأن دخولك من هذا المكان
-                هو مؤقت لمدة دقيقتين فقط، ونأمل منكم تسجيل
-                حساب أو تسجيل الدخول لتتمكنوا من الدخول
-                بشكل مستمر. شكراً لتفهمكم.
+                مؤقت، ولضمان أمان حسابك أصبح التحقق إجبارياً عبر
+                رمز يصل إلى بريدك الإلكتروني.
 
                 <br />
                 <br />
-                أدخل رقم هاتفك للدخول المؤقت:
+                أدخل بريدك الإلكتروني لاستلام رمز التحقق:
               </p>
 
               <form
                 onSubmit={(e) => {
                   e.preventDefault();
-                  handleGuestLogin();
+                  handleGuestOtpRequest();
                 }}
               >
                 <div
@@ -1896,24 +1910,24 @@ const Login = () => {
                   }}
                 >
                   <input
-                    type="tel"
-                    inputMode="tel"
-                    value={guestPhone}
+                    type="email"
+                    inputMode="email"
+                    value={guestEmail}
                     onChange={(e) =>
-                      setGuestPhone(e.target.value)
+                      setGuestEmail(e.target.value)
                     }
-                    placeholder="05xxxxxxxx"
+                    placeholder="name@example.com"
                     disabled={loading}
-                    autoComplete="tel"
+                    autoComplete="email"
                     style={{
                       flex: 1,
                       padding:
                         '13px 14px',
                       borderRadius: 10,
                       border:
-                        '1px solid rgb(203, 186, 249,0.35)',
+                        '1px solid rgba(251, 240, 240,0.35)',
                       background:
-                        'rgb(9, 6, 27,0.45)',
+                        'rgba(31, 17, 22,0.45)',
                       color: '#fff',
                       fontSize: 15,
                       fontFamily:
@@ -1927,9 +1941,7 @@ const Login = () => {
                     type="submit"
                     disabled={
                       loading ||
-                      String(guestPhone || '')
-                        .trim()
-                        .length < 8
+                      !guestEmail.trim()
                     }
                     style={{
                       padding:
@@ -1937,8 +1949,8 @@ const Login = () => {
                       borderRadius: 10,
                       border: 'none',
                       background:
-                        'linear-gradient(135deg, #3e13ec, #3a1496)',
-                      color: '#0b0821',
+                        'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
+                      color: '#1f1116',
                       fontWeight: 900,
                       fontSize: 14,
                       cursor:
@@ -1951,8 +1963,8 @@ const Login = () => {
                     }}
                   >
                     {loading
-                      ? 'جاري الدخول...'
-                      : 'دخول'}
+                      ? 'جاري الإرسال...'
+                      : 'إرسال الرمز'}
                   </button>
                 </div>
               </form>
@@ -1970,7 +1982,7 @@ const Login = () => {
                   background:
                     'transparent',
                   border: 'none',
-                  color: '#7b51d9',
+                  color: '#6b1d2f',
                   fontSize: 13,
                   fontWeight:  700,
                   cursor: 'pointer',

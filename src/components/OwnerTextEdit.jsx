@@ -61,14 +61,14 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
           width: 26,
           height: 26,
           borderRadius: 8,
-          border: '1.5px solid rgb(89, 42, 225,0.85)',
-          background: 'linear-gradient(135deg, #0c0926, #100c31)',
-          color: '#8a63ef',
+          border: '1.5px solid rgba(61, 15, 24,0.85)',
+          background: 'linear-gradient(135deg, #1f1116, #1f1116)',
+          color: '#6b1d2f',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           cursor: 'pointer',
-          boxShadow: '0 3px 10px rgb(12, 9, 38,0.35)',
+          boxShadow: '0 3px 10px rgba(31, 17, 22,0.35)',
         }}
       >
         <Pencil size={12} strokeWidth={2.4} />
@@ -85,7 +85,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
             position: 'fixed',
             inset: 0,
             zIndex: 1700,
-            background: 'rgb(11, 8, 34,0.55)',
+            background: 'rgba(31, 17, 22,0.55)',
             backdropFilter: 'blur(4px)',
             display: 'flex',
             alignItems: 'center',
@@ -102,17 +102,17 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
             aria-label="تعديل النص"
             style={{
               width: 'min(430px, 100%)',
-              background: 'linear-gradient(160deg, #f7f6fb, #e3dbf5)',
-              border: '2px solid #7b29d5',
+              background: 'linear-gradient(160deg, #fdfbf7, #fdfbf7)',
+              border: '2px solid #6b1d2f',
               borderRadius: 18,
-              boxShadow: '0 22px 55px rgb(15, 11, 48,0.35)',
+              boxShadow: '0 22px 55px rgba(31, 17, 22,0.35)',
               overflow: 'hidden',
             }}
           >
             <div
               style={{
-                background: 'linear-gradient(120deg, #110c35, #320e73)',
-                color: '#a382f5',
+                background: 'linear-gradient(120deg, #1f1116, #1f1116)',
+                color: '#d4a5a5',
                 padding: '12px 16px',
                 display: 'flex',
                 alignItems: 'center',
@@ -142,7 +142,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#a382f5',
+                  color: '#d4a5a5',
                   cursor: saving ? 'not-allowed' : 'pointer',
                   display: 'flex',
                   padding: 2,
@@ -166,13 +166,13 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
                   boxSizing: 'border-box',
                   resize: 'vertical',
                   borderRadius: 12,
-                  border: '1.5px solid #8f6bdc',
-                  background: '#f7f6fb',
+                  border: '1.5px solid #6b1d2f',
+                  background: '#fdfbf7',
                   padding: '10px 12px',
                   fontFamily: 'Cairo, sans-serif',
                   fontSize: '0.92rem',
                   fontWeight: 600,
-                  color: '#0a071e',
+                  color: '#1f1116',
                   outline: 'none',
                   lineHeight: 1.8,
                   opacity: saving ? 0.7 : 1
@@ -198,8 +198,8 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
                   justifyContent: 'center',
                   gap: 7,
                   color: '#fff',
-                  background: 'linear-gradient(135deg, #7b29d5, #5b1c9b)',
-                  boxShadow: '0 6px 16px rgb(93, 43, 195,0.35)',
+                  background: 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
+                  boxShadow: '0 6px 16px rgba(61, 15, 24,0.35)',
                   opacity: saving || !value.trim() ? 0.6 : 1,
                 }}
               >

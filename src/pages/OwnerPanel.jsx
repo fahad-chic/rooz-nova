@@ -149,10 +149,10 @@ export default function OwnerPanel() {
               position: 'static',
               width: 40,
               height: 40,
-              background: 'rgb(255, 255, 255,0.08)',
-              border: '1px solid rgb(127, 83, 226,0.45)',
-              color: '#cbbaf9',
-              boxShadow: '0 0 12px rgb(127, 83, 226,0.25)',
+              background: 'rgba(255, 255, 255,0.08)',
+              border: '1px solid rgba(61, 15, 24,0.45)',
+              color: '#f3e0dd',
+              boxShadow: '0 0 12px rgba(61, 15, 24,0.25)',
               top: 0,
             }}
           />
@@ -245,7 +245,7 @@ export default function OwnerPanel() {
 
                 <button
                   type="button"
-                  style={btnBlue}
+                  style={btnBurgundy}
                   onClick={() =>
                     typeof promoteUser === 'function' &&
                     promoteUser(id, u?.email, 'owner')
@@ -285,10 +285,10 @@ export default function OwnerPanel() {
 
 const page = {
   padding: '2rem',
-  fontFamily: "Cairo, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-  background: 'linear-gradient(135deg,#0a071e,#0f0b2d)',
+  fontFamily: "Tajawal, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+  background: 'linear-gradient(135deg,#1f1116,#1f1116)',
   minHeight: '100vh',
-  color: '#dcd4f5',
+  color: '#fdfbf7',
   boxSizing: 'border-box',
 };
 
@@ -307,10 +307,10 @@ const headerActions = {
 };
 
 const title = {
-  color: '#cbbaf9',
+  color: '#f3e0dd',
   fontSize: 28,
   fontWeight: 800,
-  textShadow: '0 0 10px rgb(127, 83, 226,0.45)',
+  textShadow: '0 0 10px rgba(61, 15, 24,0.45)',
 };
 
 const subtitle = {
@@ -333,20 +333,20 @@ const sectionHeader = {
 };
 
 const sectionTitle = {
-  color: '#cbbaf9',
+  color: '#f3e0dd',
   fontSize: 22,
   fontWeight: 800,
   marginBottom: 10,
-  textShadow: '0 0 10px rgb(127, 83, 226,0.35)',
+  textShadow: '0 0 10px rgba(61, 15, 24,0.35)',
 };
 
 const card = {
-  background: 'rgb(255, 255, 255,0.08)',
+  background: 'rgba(255, 255, 255,0.08)',
   padding: '1rem',
   borderRadius: 14,
-  border: '1px solid rgb(127, 83, 226,0.35)',
+  border: '1px solid rgba(61, 15, 24,0.35)',
   marginBottom: 12,
-  boxShadow: '0 0 18px rgb(127, 83, 226,0.25)',
+  boxShadow: '0 0 18px rgba(61, 15, 24,0.25)',
   backdropFilter: 'blur(10px)',
 };
 
@@ -363,7 +363,7 @@ const actions = {
 };
 
 const btnBan = {
-  background: '#a1122c',
+  background: '#6b1d2f',
   color: '#fff',
   padding: '8px 12px',
   borderRadius: 10,
@@ -372,8 +372,8 @@ const btnBan = {
   fontWeight: 800,
 };
 
-const btnBlue = {
-  background: '#2341ed',
+const btnBurgundy = {
+  background: '#6b1d2f',
   color: '#fff',
   padding: '8px 12px',
   borderRadius: 10,
@@ -383,7 +383,7 @@ const btnBlue = {
 };
 
 const btnGray = {
-  background: '#273162',
+  background: '#8a5560',
   color: '#fff',
   padding: '8px 12px',
   borderRadius: 10,
@@ -393,25 +393,25 @@ const btnGray = {
 };
 
 const btnGlass = {
-  background: 'rgb(255, 255, 255,0.12)',
-  border: '1px solid rgb(127, 83, 226,0.35)',
-  color: '#dcd4f5',
+  background: 'rgba(255, 255, 255,0.12)',
+  border: '1px solid rgba(61, 15, 24,0.35)',
+  color: '#fdfbf7',
   padding: '8px 12px',
   borderRadius: 10,
   cursor: 'pointer',
   fontWeight: 700,
-  boxShadow: '0 0 12px rgb(127, 83, 226,0.25)',
+  boxShadow: '0 0 12px rgba(61, 15, 24,0.25)',
 };
 
 const btnRoyal = {
-  background: 'linear-gradient(135deg, #7b29d5, #3a1496)',
-  color: '#0a071e',
+  background: 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
+  color: '#1f1116',
   padding: '10px 14px',
   borderRadius: 12,
-  border: '1px solid rgb(203, 186, 249,0.45)',
+  border: '1px solid rgba(251, 240, 240,0.45)',
   cursor: 'pointer',
   fontWeight: 900,
-  boxShadow: '0 0 25px rgb(127, 83, 226,0.45)',
+  boxShadow: '0 0 25px rgba(61, 15, 24,0.45)',
 };
 
 const btnDisabled = {
@@ -429,30 +429,30 @@ const denied = {
 const loadingBox = {
   padding: '2rem',
   textAlign: 'center',
-  color: '#cbbaf9',
+  color: '#f3e0dd',
   fontSize: 20,
 };
 
 const alertError = {
-  background: 'rgb(235, 72, 102,0.18)',
-  border: '1px solid rgb(235, 72, 102,0.45)',
-  color: '#f7bbc6',
+  background: 'rgba(61, 15, 24,0.18)',
+  border: '1px solid rgba(61, 15, 24,0.45)',
+  color: '#f3e0dd',
   padding: '10px 12px',
   borderRadius: 12,
   marginTop: 10,
   marginBottom: 10,
-  boxShadow: '0 0 12px rgb(235, 72, 102,0.35)',
+  boxShadow: '0 0 12px rgba(61, 15, 24,0.35)',
 };
 
 const alertOk = {
-  background: 'rgb(20, 181, 167,0.18)',
-  border: '1px solid rgb(20, 181, 167,0.45)',
-  color: '#c1f7f5',
+  background: 'rgba(31, 17, 22,0.18)',
+  border: '1px solid rgba(31, 17, 22,0.45)',
+  color: '#eae3d9',
   padding: '10px 12px',
   borderRadius: 12,
   marginTop: 10,
   marginBottom: 10,
-  boxShadow: '0 0 12px rgb(20, 181, 167,0.35)',
+  boxShadow: '0 0 12px rgba(31, 17, 22,0.35)',
 };
 
 const emptyBox = {
@@ -463,9 +463,9 @@ const emptyBox = {
 
 const textarea = {
   width: '100%',
-  background: 'rgb(255, 255, 255,0.06)',
+  background: 'rgba(255, 255, 255,0.06)',
   color: '#fff',
-  border: '1px solid rgb(127, 83, 226,0.35)',
+  border: '1px solid rgba(61, 15, 24,0.35)',
   borderRadius: 10,
   padding: '10px 12px',
   outline: 'none',
@@ -475,9 +475,9 @@ const textarea = {
 };
 
 const searchInput = {
-  background: 'rgb(255, 255, 255,0.06)',
+  background: 'rgba(255, 255, 255,0.06)',
   color: '#fff',
-  border: '1px solid rgb(127, 83, 226,0.35)',
+  border: '1px solid rgba(61, 15, 24,0.35)',
   borderRadius: 10,
   padding: '8px 12px',
   outline: 'none',

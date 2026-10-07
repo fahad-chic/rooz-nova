@@ -38,21 +38,21 @@ export const AboutPage = () => {
           margin-bottom: 1rem;
           padding: 1.4rem 1rem;
           border-radius: 16px;
-          background: linear-gradient(135deg, #0b0821 0%, #0d0a29 100%);
-          border: 1px solid rgb(123, 81, 217,0.35);
-          box-shadow: 0 6px 18px rgb(255, 255, 255,0.05);
+          background: linear-gradient(135deg, #ffffff 0%, #fdfbf7 100%);
+          border: 1px solid rgba(31, 17, 22,0.10);
+          box-shadow: 0 6px 18px rgba(31, 17, 22,0.06);
         }
 
         .about-title {
           font-size: 1.7rem;
           font-weight: 900;
-          color: #7b51d9;
+          color: #1f1116;
           margin-bottom: 0.4rem;
         }
 
         .about-subtitle {
           font-size: 0.85rem;
-          color: #aa99d8;
+          color: #8a5560;
           max-width: 650px;
           margin: 0 auto;
           line-height: 1.6;
@@ -61,7 +61,7 @@ export const AboutPage = () => {
         .section-title {
           font-size: 1.2rem;
           font-weight: 900;
-          color: #7b51d9;
+          color: #6b1d2f;
           margin: 1.2rem 0 0.7rem;
           display: flex;
           align-items: center;
@@ -69,18 +69,18 @@ export const AboutPage = () => {
         }
 
         .about-card {
-          background: #111;
-          border: 1px solid rgb(123, 81, 217,0.25);
+          background: #ffffff;
+          border: 1px solid rgba(31, 17, 22,0.08);
           border-radius: 14px;
           padding: 1rem;
-          box-shadow: 0 6px 18px rgb(255, 255, 255,0.05);
+          box-shadow: 0 6px 18px rgba(31, 17, 22,0.06);
           margin-bottom: 0.8rem;
         }
 
         .about-card-title {
           font-size: 1rem;
           font-weight: 800;
-          color: #cbbaf9;
+          color: #1f1116;
           margin-bottom: 0.6rem;
           display: flex;
           align-items: center;
@@ -88,7 +88,7 @@ export const AboutPage = () => {
         }
 
         .about-card-content {
-          color: #aa99d8;
+          color: #8a5560;
           line-height: 1.6;
           font-size: 0.82rem;
         }
@@ -101,8 +101,8 @@ export const AboutPage = () => {
         }
 
         .stat-box {
-          background: #0d0a29;
-          border: 1px solid rgb(123, 81, 217,0.25);
+          background: #fdfbf7;
+          border: 1px solid rgba(31, 17, 22,0.08);
           padding: 0.8rem;
           border-radius: 12px;
           text-align: center;
@@ -111,11 +111,11 @@ export const AboutPage = () => {
         .stat-number {
           font-size: 1.4rem;
           font-weight: 900;
-          color: #7b51d9;
+          color: #6b1d2f;
         }
 
         .stat-label {
-          color: #aa99d8;
+          color: #8a5560;
           font-size: 0.75rem;
         }
 
@@ -127,44 +127,44 @@ export const AboutPage = () => {
         }
 
         .partner-box {
-          background: #0d0a29;
+          background: #fdfbf7;
           border-radius: 10px;
-          border: 1px solid rgb(123, 81, 217,0.25);
+          border: 1px solid rgba(31, 17, 22,0.08);
           padding: 0.7rem;
         }
 
         .partner-name {
-          color: #cbbaf9;
+          color: #1f1116;
           font-weight: 800;
           font-size: 0.85rem;
         }
 
         .partner-type {
-          color: #aa99d8;
+          color: #8a5560;
           font-size: 0.75rem;
         }
 
         .footer {
           margin-top: 1.5rem;
           padding: 1rem;
-          background: #111;
+          background: #ffffff;
           border-radius: 14px;
-          border: 1px solid rgb(123, 81, 217,0.25);
+          border: 1px solid rgba(31, 17, 22,0.08);
           text-align: center;
-          color: #aa99d8;
+          color: #8a5560;
           font-size: 0.8rem;
         }
 
         .footer strong {
           font-size: 0.9rem;
           font-weight: 900;
-          color: #7b51d9;
+          color: #6b1d2f;
         }
 
         .owner-name {
           font-size: 1rem;
           font-weight: 900;
-          color: #7b51d9;
+          color: #6b1d2f;
           margin-top: 0.4rem;
         }
       `}</style>
@@ -247,7 +247,7 @@ export const AboutPage = () => {
       <h2 className="section-title"><Building2 /> وظائفنا وفريق العمل</h2>
       <div className="about-card">
         <div className="about-card-content">
-          <strong style={{color:'#7b51d9'}}>تحت إشراف نخبة من المختصين:</strong>
+          <strong style={{color:'#6b1d2f'}}>تحت إشراف نخبة من المختصين:</strong>
           <br/>• مدير المنصة  
           <br/>• فريق خدمة العملاء  
           <br/>• فريق البرمجة والتطوير  
@@ -264,7 +264,7 @@ export const AboutPage = () => {
       <div className="about-card">
         <div className="about-card-content">
 
-          <strong style={{color:'#7b51d9'}}>شركاء سعوديون:</strong>
+          <strong style={{color:'#6b1d2f'}}>شركاء سعوديون:</strong>
           <div className="partners-grid">
             <div className="partner-box">
               <div className="partner-name">شركة النخبة للتقنية</div>
@@ -280,7 +280,7 @@ export const AboutPage = () => {
             </div>
           </div>
 
-          <strong style={{color:'#7b51d9', marginTop:'0.7rem', display:'block'}}>شركاء عالميون:</strong>
+          <strong style={{color:'#6b1d2f', marginTop:'0.7rem', display:'block'}}>شركاء عالميون:</strong>
           <div className="partners-grid">
             <div className="partner-box">
               <div className="partner-name">Global Soft Ltd</div>
@@ -381,7 +381,7 @@ export const AboutPage = () => {
       <h2 className="section-title"><MapPin /> موقعنا</h2>
       <div className="about-card">
         <div className="about-card-content">
-          <strong style={{color:'#7b51d9'}}>المقر الرئيسي:</strong>
+          <strong style={{color:'#6b1d2f'}}>المقر الرئيسي:</strong>
           <br/>حفر الباطن – طريق الملك فهد  
         </div>
       </div>
@@ -390,13 +390,13 @@ export const AboutPage = () => {
       <h2 className="section-title"><CreditCard /> حساباتنا البنكية</h2>
       <div className="about-card">
         <div className="about-card-content">
-          <strong style={{color:'#7b51d9'}}>حساب الراجحي:</strong>
+          <strong style={{color:'#6b1d2f'}}>حساب الراجحي:</strong>
           <br/>************  
           <br/><br/>
-          <strong style={{color:'#7b51d9'}}>حساب الأهلي:</strong>
+          <strong style={{color:'#6b1d2f'}}>حساب الأهلي:</strong>
           <br/>************  
           <br/><br/>
-          <strong style={{color:'#7b51d9'}}>حساب الإنماء:</strong>
+          <strong style={{color:'#6b1d2f'}}>حساب الإنماء:</strong>
           <br/>************  
         </div>
       </div>

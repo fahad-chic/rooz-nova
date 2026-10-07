@@ -1,0 +1,85 @@
+/* ============================================================
+   ROOZ NOVA — IDENTITY CONTOUR
+   هوية جديدة كاملة: أزرق كهربائي + أسطح صلبة + عنوان عريض/نص نحيف
+   لا تدرّجات صاخبة — تنسيق احترافي هادئ. يُستورد أخيراً.
+   ============================================================ */
+:root {
+  --co-bg: #fdfbf7;
+  --co-surface: #ffffff;
+  --co-ink: #1f1116;
+  --co-ink-2: #1f1116;
+  --co-muted: #8a5560;
+  --co-line: #fdfbf7;
+  --co-primary: #6b1d2f;
+  --co-primary-deep: #6b1d2f;
+  --co-primary-soft: #fdfbf7;
+  --co-accent: #6b1d2f;
+  --co-dark: #1f1116;
+  --co-radius: 14px;
+  --co-radius-sm: 10px;
+  --co-font: 'Tajawal', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
+  --co-shadow: 0 6px 22px -12px rgba(31, 17, 22, 0.28);
+  --co-shadow-lg: 0 18px 44px -22px rgba(31, 17, 22, 0.4);
+
+  /* جسر للمتغيرات القديمة في المكوّنات */
+  --nv-font: var(--co-font);
+  --ch-font: var(--co-font);
+  --rh-font: var(--co-font);
+  --font-family: var(--co-font);
+}
+
+/* أسطح صلبة بدل تدرّجات الأورورا — إلغاء طبقة الخلفية السابقة */
+html, body {
+  background: var(--co-bg) !important;
+  background-image: none !important;
+}
+body {
+  font-family: var(--co-font) !important;
+  font-weight: 300 !important;
+  color: var(--co-ink) !important;
+  letter-spacing: 0;
+}
+body::before { content: none !important; }
+
+/* العناوين عريضة سوداء */
+h1, h2, h3, h4, h5 {
+  font-family: var(--co-font) !important;
+  font-weight: 900 !important;
+  color: var(--co-ink) !important;
+  letter-spacing: -0.01em;
+}
+p, span, li, label, input, textarea, button {
+  font-family: var(--co-font);
+}
+p, li { font-weight: 300; }
+
+/* أزرار موحّدة صلبة */
+.nv-btn {
+  background: var(--co-primary) !important;
+  color: #fff !important;
+  border-radius: var(--co-radius-sm) !important;
+  box-shadow: none !important;
+  font-weight: 800 !important;
+}
+.nv-btn-ghost {
+  background: #fff !important;
+  color: var(--co-ink) !important;
+  border: 1px solid var(--co-line) !important;
+}
+.nv-card, .nv-frame-3d {
+  background: var(--co-surface) !important;
+  border: 1px solid var(--co-line) !important;
+  border-radius: var(--co-radius) !important;
+  box-shadow: var(--co-shadow) !important;
+}
+
+/* شريط علوي (نافبار) صلبة */
+.navbar {
+  background: var(--co-dark) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* حقول إدخال موحّدة */
+input, textarea, select {
+  border-radius: var(--co-radius-sm) !important;
+}

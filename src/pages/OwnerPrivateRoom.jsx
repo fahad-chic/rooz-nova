@@ -820,10 +820,10 @@ const OwnerPrivateRoom = () => {
 
   if (loading) {
     return (
-      <div dir="rtl" lang="ar" className="min-h-screen bg-[#dacef3] flex items-center justify-center">
+      <div dir="rtl" lang="ar" className="min-h-screen bg-[#fdfbf7] flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin w-14 h-14 border-4 border-[#764bd9]/30 border-t-[#5f2cc4] rounded-full mx-auto mb-4" />
-          <p className="text-[#0c0924] font-bold">
+          <div className="animate-spin w-14 h-14 border-4 border-[#6b1d2f]/30 border-t-[#6b1d2f] rounded-full mx-auto mb-4" />
+          <p className="text-[#1f1116] font-bold">
             جاري تحميل غرفة صاحب موقع أناقة ROOZ...
           </p>
         </div>
@@ -990,17 +990,17 @@ const OwnerPrivateRoom = () => {
       dir="rtl"
       lang="ar"
       className={`min-h-screen owner-console-room ${darkMode ? 'owner-dark' : ''}`}
-      style={darkMode ? { background: '#0b0821', color: '#e9e4f4' } : { background: '#dacef3', color: '#0c0924' }}
+      style={darkMode ? { background: '#1f1116', color: '#fdfbf7' } : { background: '#fdfbf7', color: '#1f1116' }}
     >
       <style>{`
         .owner-console-room {
           direction: rtl;
           text-align: start;
           background:
-            radial-gradient(circle at top right, rgb(121, 76, 220,.16), transparent 32%),
-            radial-gradient(circle at bottom left, rgb(95, 44, 196,.10), transparent 30%),
-            linear-gradient(160deg, #e7e0f5 0%, #d2c3f2 55%, #ded3f3 100%);
-          color: #0c0924;
+            radial-gradient(circle at top right, rgba(61, 15, 24,.16), transparent 32%),
+            radial-gradient(circle at bottom left, rgba(61, 15, 24,.10), transparent 30%),
+            linear-gradient(160deg, #fdfbf7 0%, #f3e0dd 55%, #fdfbf7 100%);
+          color: #1f1116;
         }
 
         .owner-console-room [dir="ltr"] {
@@ -1011,21 +1011,21 @@ const OwnerPrivateRoom = () => {
 
         .owner-console-room .royal-surface {
           background:
-            linear-gradient(165deg, rgb(246, 244, 250,.96), rgb(212, 197, 243,.96));
-          border-color: rgb(88, 39, 182,.28);
-          box-shadow: 0 10px 28px rgb(57, 24, 115,.08);
+            linear-gradient(165deg, rgba(253, 251, 247,.96), rgba(251, 240, 240,.96));
+          border-color: rgba(61, 15, 24,.28);
+          box-shadow: 0 10px 28px rgba(31, 17, 22,.08);
         }
 
         .owner-console-room .royal-muted {
-          color: #0f0b2e;
+          color: #1f1116;
         }
 
         .owner-console-room .royal-text {
-          color: #0c0924;
+          color: #1f1116;
         }
 
         .owner-console-room .royal-border {
-          border-color: rgb(88, 39, 182,.28);
+          border-color: rgba(61, 15, 24,.28);
         }
 
         .owner-console-room .icon-card {
@@ -1034,8 +1034,8 @@ const OwnerPrivateRoom = () => {
           max-width: 100%;
           overflow: visible;
           background:
-            linear-gradient(145deg, rgb(247, 246, 251,.98), rgb(200, 180, 239,.92));
-          border: 1px solid rgb(88, 39, 182,.26);
+            linear-gradient(145deg, rgba(253, 251, 247,.98), rgba(251, 240, 240,.92));
+          border: 1px solid rgba(61, 15, 24,.26);
           transition:
             transform .2s ease,
             border-color .2s ease,
@@ -1045,17 +1045,17 @@ const OwnerPrivateRoom = () => {
 
         .owner-console-room .icon-card:hover {
           transform: translateY(-2px);
-          border-color: rgb(95, 44, 196,.72);
+          border-color: rgba(61, 15, 24,.72);
           background:
-            linear-gradient(145deg, rgb(248, 246, 251,.99), rgb(210, 194, 243,.96));
-          box-shadow: 0 12px 30px rgb(57, 24, 115,.12);
+            linear-gradient(145deg, rgba(253, 251, 247,.99), rgba(251, 240, 240,.96));
+          box-shadow: 0 12px 30px rgba(31, 17, 22,.12);
         }
 
         .owner-console-room .icon-card.active {
-          border-color: rgb(95, 44, 196,.9);
+          border-color: rgba(61, 15, 24,.9);
           box-shadow:
-            0 0 0 1px rgb(95, 44, 196,.14),
-            0 12px 32px rgb(57, 24, 115,.12);
+            0 0 0 1px rgba(61, 15, 24,.14),
+            0 12px 32px rgba(31, 17, 22,.12);
         }
 
         .owner-console-room button {
@@ -1066,7 +1066,7 @@ const OwnerPrivateRoom = () => {
         .owner-console-room textarea,
         .owner-console-room select {
           color-scheme: light;
-          color: #0c0924;
+          color: #1f1116;
           font-weight: 600;
         }
 
@@ -1076,124 +1076,124 @@ const OwnerPrivateRoom = () => {
         }
 
         .owner-console-room ::-webkit-scrollbar-track {
-          background: rgb(74, 34, 144,.08);
+          background: rgba(61, 15, 24,.08);
         }
 
         .owner-console-room ::-webkit-scrollbar-thumb {
-          background: rgb(88, 39, 182,.45);
+          background: rgba(61, 15, 24,.45);
           border-radius: 999px;
         }
 
         .owner-console-room .gold-button {
-          background: linear-gradient(135deg, #764bd9, #5623b6);
-          color: #0c0924;
+          background: linear-gradient(135deg, #6b1d2f, #6b1d2f);
+          color: #1f1116;
           font-weight: 700;
         }
 
         .owner-console-room .gold-button:hover {
-          background: linear-gradient(135deg, #8861e2, #5f2cc4);
+          background: linear-gradient(135deg, #6b1d2f, #6b1d2f);
         }
 
         .owner-console-room .light-field {
-          background: rgb(248, 246, 251,.92);
-          color: #0c0924;
-          border-color: rgb(88, 39, 182,.25);
+          background: rgba(253, 251, 247,.92);
+          color: #1f1116;
+          border-color: rgba(61, 15, 24,.25);
           font-weight: 600;
         }
 
         .owner-console-room .light-field::placeholder {
-          color: #492b7e;
+          color: #6b1d2f;
         }
 
         .owner-console-room .view-only-badge {
-          background: rgb(88, 39, 182,.10);
-          color: #0f0b2e;
-          border-color: rgb(88, 39, 182,.25);
+          background: rgba(61, 15, 24,.10);
+          color: #1f1116;
+          border-color: rgba(61, 15, 24,.25);
           font-weight: 700;
         }
 
         /* ===== وضع الليل ===== */
         .owner-console-room.owner-dark {
           background:
-            radial-gradient(circle at top right, rgb(95, 44, 196,.12), transparent 36%),
-            radial-gradient(circle at bottom left, rgb(65, 28, 132,.08), transparent 32%),
-            linear-gradient(160deg, #0c0824 0%, #0d0927 50%, #0b0823 100%) !important;
-          color: #e9e4f4 !important;
+            radial-gradient(circle at top right, rgba(61, 15, 24,.12), transparent 36%),
+            radial-gradient(circle at bottom left, rgba(61, 15, 24,.08), transparent 32%),
+            linear-gradient(160deg, #1f1116 0%, #1f1116 50%, #1f1116 100%) !important;
+          color: #fdfbf7 !important;
         }
 
         .owner-console-room.owner-dark .royal-surface {
           background:
-            linear-gradient(165deg, rgb(14, 10, 43,.96), rgb(13, 9, 39,.96)) !important;
-          border-color: rgb(95, 44, 196,.32) !important;
-          box-shadow: 0 10px 28px rgb(9, 6, 27,.35) !important;
+            linear-gradient(165deg, rgba(31, 17, 22,.96), rgba(31, 17, 22,.96)) !important;
+          border-color: rgba(61, 15, 24,.32) !important;
+          box-shadow: 0 10px 28px rgba(31, 17, 22,.35) !important;
         }
 
         .owner-console-room.owner-dark .royal-muted {
-          color: #a186d9 !important;
+          color: #6b1d2f !important;
         }
 
         .owner-console-room.owner-dark .royal-text {
-          color: #e9e4f4 !important;
+          color: #fdfbf7 !important;
         }
 
         .owner-console-room.owner-dark .royal-border {
-          border-color: rgb(95, 44, 196,.28) !important;
+          border-color: rgba(61, 15, 24,.28) !important;
         }
 
         .owner-console-room.owner-dark .icon-card {
           background:
-            linear-gradient(145deg, rgb(15, 11, 48,.98), rgb(14, 10, 42,.94)) !important;
-          border: 1px solid rgb(95, 44, 196,.28) !important;
+            linear-gradient(145deg, rgba(31, 17, 22,.98), rgba(31, 17, 22,.94)) !important;
+          border: 1px solid rgba(61, 15, 24,.28) !important;
         }
 
         .owner-console-room.owner-dark .icon-card:hover {
-          border-color: rgb(118, 75, 217,.7) !important;
+          border-color: rgba(61, 15, 24,.7) !important;
           background:
-            linear-gradient(145deg, rgb(16, 12, 51,.99), rgb(15, 11, 45,.96)) !important;
-          box-shadow: 0 12px 30px rgb(9, 6, 27,.4) !important;
+            linear-gradient(145deg, rgba(31, 17, 22,.99), rgba(31, 17, 22,.96)) !important;
+          box-shadow: 0 12px 30px rgba(31, 17, 22,.4) !important;
         }
 
         .owner-console-room.owner-dark .icon-card.active {
-          border-color: rgb(118, 75, 217,.85) !important;
+          border-color: rgba(61, 15, 24,.85) !important;
           box-shadow:
-            0 0 0 1px rgb(118, 75, 217,.2),
-            0 12px 32px rgb(9, 6, 27,.4) !important;
+            0 0 0 1px rgba(61, 15, 24,.2),
+            0 12px 32px rgba(31, 17, 22,.4) !important;
         }
 
         .owner-console-room.owner-dark input,
         .owner-console-room.owner-dark textarea,
         .owner-console-room.owner-dark select {
           color-scheme: dark;
-          color: #e9e4f4 !important;
+          color: #fdfbf7 !important;
         }
 
         .owner-console-room.owner-dark ::-webkit-scrollbar-track {
-          background: rgb(9, 6, 27,.25);
+          background: rgba(31, 17, 22,.25);
         }
 
         .owner-console-room.owner-dark ::-webkit-scrollbar-thumb {
-          background: rgb(95, 44, 196,.45);
+          background: rgba(61, 15, 24,.45);
         }
 
         .owner-console-room.owner-dark .gold-button {
-          background: linear-gradient(135deg, #764bd9, #5623b6);
-          color: #0c0924;
+          background: linear-gradient(135deg, #6b1d2f, #6b1d2f);
+          color: #1f1116;
         }
 
         .owner-console-room.owner-dark .light-field {
-          background: rgb(13, 9, 39,.92) !important;
-          color: #e9e4f4 !important;
-          border-color: rgb(95, 44, 196,.35) !important;
+          background: rgba(31, 17, 22,.92) !important;
+          color: #fdfbf7 !important;
+          border-color: rgba(61, 15, 24,.35) !important;
         }
 
         .owner-console-room.owner-dark .light-field::placeholder {
-          color: #603fa5 !important;
+          color: #6b1d2f !important;
         }
 
         .owner-console-room.owner-dark .view-only-badge {
-          background: rgb(95, 44, 196,.15) !important;
-          color: #cdb8ed !important;
-          border-color: rgb(95, 44, 196,.3) !important;
+          background: rgba(61, 15, 24,.15) !important;
+          color: #fdfbf7 !important;
+          border-color: rgba(61, 15, 24,.3) !important;
         }
       `}</style>
 
@@ -1203,12 +1203,12 @@ const OwnerPrivateRoom = () => {
           style={{
             background:
               toast.type === 'error'
-                ? '#f7f2fa'
-                : '#f6f4fb',
+                ? '#fdfbf7'
+                : '#fdfbf7',
             borderColor:
               toast.type === 'error'
-                ? 'rgb(202, 40, 70,.30)'
-                : 'rgb(88, 39, 182,.35)'
+                ? 'rgba(61, 15, 24,.30)'
+                : 'rgba(61, 15, 24,.35)'
           }}
           role="status"
           aria-live="polite"
@@ -1219,12 +1219,12 @@ const OwnerPrivateRoom = () => {
               style={{
                 background:
                   toast.type === 'error'
-                    ? 'rgb(202, 40, 70,.10)'
-                    : 'rgb(88, 39, 182,.10)',
+                    ? 'rgba(61, 15, 24,.10)'
+                    : 'rgba(61, 15, 24,.10)',
                 color:
                   toast.type === 'error'
-                    ? '#b3223d'
-                    : '#4e20a8'
+                    ? '#6b1d2f'
+                    : '#6b1d2f'
               }}
             >
               {toast.type === 'error'
@@ -1232,14 +1232,14 @@ const OwnerPrivateRoom = () => {
                 : <Check size={18} />}
             </div>
 
-            <p className="font-bold text-sm text-[#0c0924]">
+            <p className="font-bold text-sm text-[#1f1116]">
               {toast.message}
             </p>
 
             <button
               type="button"
               onClick={() => setToast(null)}
-              className="mr-auto p-1.5 rounded-lg hover:bg-[#5f2cc4]/10 text-[#0f0b2e]"
+              className="mr-auto p-1.5 rounded-lg hover:bg-[#6b1d2f]/10 text-[#1f1116]"
               aria-label="إغلاق"
             >
               <X size={16} />
@@ -1264,7 +1264,7 @@ const OwnerPrivateRoom = () => {
             <div className="min-w-0">
               <h1 className="text-base md:text-xl font-bold flex items-center gap-2 royal-text">
                 <Crown
-                  className="text-[#5f2cc4] flex-shrink-0"
+                  className="text-[#6b1d2f] flex-shrink-0"
                   size={24}
                 />
                 غرفة صاحب موقع أناقة ROOZ
@@ -1290,7 +1290,7 @@ const OwnerPrivateRoom = () => {
             <button
               type="button"
               onClick={() => setShowNotifications(!showNotifications)}
-              className="p-2.5 hover:bg-[#5f2cc4]/10 rounded-lg relative royal-text border border-transparent hover:border-[#5f2cc4]/20 transition-colors"
+              className="p-2.5 hover:bg-[#6b1d2f]/10 rounded-lg relative royal-text border border-transparent hover:border-[#6b1d2f]/20 transition-colors"
               title="الإشعارات"
               aria-label="الإشعارات"
               aria-expanded={showNotifications}
@@ -1298,7 +1298,7 @@ const OwnerPrivateRoom = () => {
               <Bell size={20} />
 
               {unreadCount > 0 && (
-                <span className="absolute -top-1 -right-1 min-w-5 h-5 px-1 bg-[#ca2846] rounded-full text-[10px] text-white flex items-center justify-center font-bold">
+                <span className="absolute -top-1 -right-1 min-w-5 h-5 px-1 bg-[#8f2a40] rounded-full text-[10px] text-white flex items-center justify-center font-bold">
                   {unreadCount > 99 ? '99+' : unreadCount}
                 </span>
               )}
@@ -1311,7 +1311,7 @@ const OwnerPrivateRoom = () => {
                   showToast('تم حفظ التعديل بنجاح')
                 )
               }
-              className="p-2.5 hover:bg-[#5f2cc4]/10 rounded-lg royal-text border border-transparent hover:border-[#5f2cc4]/20 transition-colors"
+              className="p-2.5 hover:bg-[#6b1d2f]/10 rounded-lg royal-text border border-transparent hover:border-[#6b1d2f]/20 transition-colors"
               title="تحديث البيانات"
               aria-label="تحديث البيانات"
             >
@@ -1321,7 +1321,7 @@ const OwnerPrivateRoom = () => {
             <button
               type="button"
               onClick={toggleDarkMode}
-              className="p-2.5 hover:bg-[#5f2cc4]/10 rounded-lg royal-text border border-transparent hover:border-[#5f2cc4]/20 transition-colors"
+              className="p-2.5 hover:bg-[#6b1d2f]/10 rounded-lg royal-text border border-transparent hover:border-[#6b1d2f]/20 transition-colors"
               title={darkMode ? 'الوضع النهاري' : 'وضع الليل'}
               aria-label={darkMode ? 'الوضع النهاري' : 'وضع الليل'}
             >
@@ -1336,9 +1336,9 @@ const OwnerPrivateRoom = () => {
                 position: 'static',
                 width: 38,
                 height: 38,
-                background: darkMode ? 'rgb(14, 10, 43,0.85)' : 'rgb(246, 244, 250,0.65)',
-                border: '1px solid rgb(88, 39, 182,0.3)',
-                color: darkMode ? '#e9e4f4' : '#0c0924',
+                background: darkMode ? 'rgba(31, 17, 22,0.85)' : 'rgba(253, 251, 247,0.65)',
+                border: '1px solid rgba(61, 15, 24,0.3)',
+                color: darkMode ? '#fdfbf7' : '#1f1116',
                 boxShadow: 'none',
                 top: 0
               }}
@@ -1347,7 +1347,7 @@ const OwnerPrivateRoom = () => {
             <button
               type="button"
               onClick={handleLogout}
-              className="p-2.5 hover:bg-[#ca2846]/10 rounded-lg text-[#b3223d] border border-transparent hover:border-[#ca2846]/20 transition-colors"
+              className="p-2.5 hover:bg-[#8f2a40]/10 rounded-lg text-[#6b1d2f] border border-transparent hover:border-[#8f2a40]/20 transition-colors"
               title="تسجيل الخروج"
               aria-label="تسجيل الخروج"
             >
@@ -1361,12 +1361,12 @@ const OwnerPrivateRoom = () => {
         {sidebarOpen && (
           <>
             <div
-              className="fixed inset-0 bg-[#301855]/25 backdrop-blur-sm z-40 md:hidden"
+              className="fixed inset-0 bg-[#1f1116]/25 backdrop-blur-sm z-40 md:hidden"
               onClick={() => setSidebarOpen(false)}
               aria-hidden="true"
             />
 
-            <aside className="fixed inset-y-0 right-0 w-80 max-w-[90vw] bg-[#e0d6f4]/98 backdrop-blur-xl md:static md:w-72 md:max-w-none md:border-l royal-border p-3 md:p-4 md:min-h-screen z-50 overflow-y-auto shadow-2xl md:shadow-none">
+            <aside className="fixed inset-y-0 right-0 w-80 max-w-[90vw] bg-[#fdfbf7]/98 backdrop-blur-xl md:static md:w-72 md:max-w-none md:border-l royal-border p-3 md:p-4 md:min-h-screen z-50 overflow-y-auto shadow-2xl md:shadow-none">
               <div className="flex items-center justify-between mb-4 md:hidden">
                 <div>
                   <span className="font-bold royal-text block">
@@ -1380,7 +1380,7 @@ const OwnerPrivateRoom = () => {
                 <button
                   type="button"
                   onClick={() => setSidebarOpen(false)}
-                  className="p-2 hover:bg-[#5f2cc4]/10 rounded-lg royal-text"
+                  className="p-2 hover:bg-[#6b1d2f]/10 rounded-lg royal-text"
                   aria-label="إغلاق القائمة"
                 >
                   <X size={18} />
@@ -1396,7 +1396,7 @@ const OwnerPrivateRoom = () => {
                       <div className="flex items-center gap-2 px-2 mb-2">
                         <GroupIcon
                           size={15}
-                          className="text-[#5623b6]"
+                          className="text-[#6b1d2f]"
                         />
                         <span className="text-xs font-bold royal-muted">
                           {group.title}
@@ -1425,8 +1425,8 @@ const OwnerPrivateRoom = () => {
                               <span
                                 className={`w-10 h-10 rounded-xl flex items-center justify-center border ${
                                   active
-                                    ? 'bg-[#5f2cc4]/15 border-[#5f2cc4]/40 text-[#4e20a8]'
-                                    : 'bg-[#5f2cc4]/5 border-[#5f2cc4]/15 text-[#45218e]'
+                                    ? 'bg-[#6b1d2f]/15 border-[#6b1d2f]/40 text-[#6b1d2f]'
+                                    : 'bg-[#6b1d2f]/5 border-[#6b1d2f]/15 text-[#6b1d2f]'
                                 }`}
                               >
                                 <TabIcon size={20} />
@@ -1464,7 +1464,7 @@ const OwnerPrivateRoom = () => {
 
                   return (
                     <>
-                      <div className="w-12 h-12 rounded-xl bg-[#5f2cc4]/10 border border-[#5f2cc4]/30 flex items-center justify-center text-[#4e20a8]">
+                      <div className="w-12 h-12 rounded-xl bg-[#6b1d2f]/10 border border-[#6b1d2f]/30 flex items-center justify-center text-[#6b1d2f]">
                         <CurrentIcon size={24} />
                       </div>
 
@@ -1486,7 +1486,7 @@ const OwnerPrivateRoom = () => {
               <button
                 type="button"
                 onClick={goBackOneStep}
-                className="px-3.5 py-2.5 rounded-xl border border-[#5f2cc4]/40 bg-[#5f2cc4]/10 text-[#0c0924] hover:bg-[#5f2cc4]/20 text-xs font-bold flex items-center gap-2 shadow-sm"
+                className="px-3.5 py-2.5 rounded-xl border border-[#6b1d2f]/40 bg-[#6b1d2f]/10 text-[#1f1116] hover:bg-[#6b1d2f]/20 text-xs font-bold flex items-center gap-2 shadow-sm"
                 aria-label="رجوع خطوة واحدة داخل الغرفة"
                 title={activeTab === 'center' ? 'أنت في المركز الرئيسي' : 'رجوع للقسم السابق'}
               >
@@ -1501,7 +1501,7 @@ const OwnerPrivateRoom = () => {
               <div className="flex flex-col md:flex-row gap-3">
                 <div className="flex-1 relative min-w-0">
                   <Search
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#5623b6]"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#6b1d2f]"
                     size={19}
                   />
 
@@ -1512,7 +1512,7 @@ const OwnerPrivateRoom = () => {
                     onChange={(e) =>
                       setSearchTerm(e.target.value)
                     }
-                    className="w-full light-field border rounded-xl pl-4 pr-10 py-3 text-sm focus:border-[#5f2cc4]/60 focus:outline-none transition-all font-semibold"
+                    className="w-full light-field border rounded-xl pl-4 pr-10 py-3 text-sm focus:border-[#6b1d2f]/60 focus:outline-none transition-all font-semibold"
                   />
                 </div>
 
@@ -1521,7 +1521,7 @@ const OwnerPrivateRoom = () => {
                   onChange={(e) =>
                     setFilterType(e.target.value)
                   }
-                  className="md:w-48 light-field border rounded-xl px-4 py-3 text-sm focus:border-[#5f2cc4]/60 focus:outline-none font-semibold"
+                  className="md:w-48 light-field border rounded-xl px-4 py-3 text-sm focus:border-[#6b1d2f]/60 focus:outline-none font-semibold"
                   aria-label="تصفية النتائج"
                 >
                   <option value="all">الكل</option>
@@ -1660,15 +1660,15 @@ const OwnerPrivateRoom = () => {
         <>
           <div
             className="fixed inset-0 z-40"
-            style={{ background: 'rgb(48, 24, 85,0.16)' }}
+            style={{ background: 'rgba(31, 17, 22,0.16)' }}
             onClick={() => setShowNotifications(false)}
             aria-hidden="true"
           />
 
-          <div className="fixed top-20 left-3 right-3 sm:left-auto sm:right-4 sm:w-96 bg-[#f6f4fb]/98 backdrop-blur-xl rounded-2xl border border-[#5f2cc4]/30 shadow-2xl z-50 max-h-[75vh] overflow-hidden">
-            <div className="p-4 border-b border-[#5f2cc4]/15 flex items-center justify-between">
+          <div className="fixed top-20 left-3 right-3 sm:left-auto sm:right-4 sm:w-96 bg-[#fdfbf7]/98 backdrop-blur-xl rounded-2xl border border-[#6b1d2f]/30 shadow-2xl z-50 max-h-[75vh] overflow-hidden">
+            <div className="p-4 border-b border-[#6b1d2f]/15 flex items-center justify-between">
               <div className="flex items-center gap-2">
-                <div className="w-9 h-9 rounded-lg bg-[#5f2cc4]/10 flex items-center justify-center text-[#4e20a8]">
+                <div className="w-9 h-9 rounded-lg bg-[#6b1d2f]/10 flex items-center justify-center text-[#6b1d2f]">
                   <Bell size={18} />
                 </div>
 
@@ -1685,14 +1685,14 @@ const OwnerPrivateRoom = () => {
               <button
                 type="button"
                 onClick={() => setShowNotifications(false)}
-                className="p-2 rounded-lg hover:bg-[#5f2cc4]/10 royal-text"
+                className="p-2 rounded-lg hover:bg-[#6b1d2f]/10 royal-text"
                 aria-label="إغلاق الإشعارات"
               >
                 <X size={18} />
               </button>
             </div>
 
-            <div className="divide-y divide-[#5f2cc4]/10 overflow-y-auto max-h-[calc(75vh-76px)]">
+            <div className="divide-y divide-[#6b1d2f]/10 overflow-y-auto max-h-[calc(75vh-76px)]">
               {notifications.slice(0, 10).map(notif => (
                 <button
                   key={notif.id}
@@ -1701,7 +1701,7 @@ const OwnerPrivateRoom = () => {
                   onClick={() => setShowNotifications(false)}
                 >
                   <div className="flex gap-3">
-                    <div className="w-9 h-9 rounded-lg bg-[#5f2cc4]/10 text-[#4e20a8] flex items-center justify-center flex-shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-[#6b1d2f]/10 text-[#6b1d2f] flex items-center justify-center flex-shrink-0">
                       <Bell size={16} />
                     </div>
 
@@ -1714,7 +1714,7 @@ const OwnerPrivateRoom = () => {
                         {notif.body || notif.message || '—'}
                       </span>
 
-                      <span className="block text-[11px] text-[#3d2369] mt-2 font-medium">
+                      <span className="block text-[11px] text-[#8a5560] mt-2 font-medium">
                         {formatDate(
                           notif.timestamp ||
                           notif.createdAt
@@ -1751,12 +1751,12 @@ const StatCard = ({
   color
 }) => {
   const colors = {
-    gold: 'bg-[#5f2cc4]/10 text-[#4e20a8] border-[#5f2cc4]/25',
-    red: 'bg-[#ca2846]/10 text-[#b3223d] border-[#ca2846]/25',
-    yellow: 'bg-[#764bd9]/10 text-[#4b209a] border-[#764bd9]/25',
-    green: 'bg-[#469ba0]/10 text-[#3e878b] border-[#469ba0]/25',
-    purple: 'bg-[#64687c]/10 text-[#5a5e70] border-[#64687c]/25',
-    orange: 'bg-[#682aba]/10 text-[#5c23a5] border-[#682aba]/25'
+    gold: 'bg-[#6b1d2f]/10 text-[#6b1d2f] border-[#6b1d2f]/25',
+    red: 'bg-[#8f2a40]/10 text-[#6b1d2f] border-[#8f2a40]/25',
+    yellow: 'bg-[#6b1d2f]/10 text-[#6b1d2f] border-[#6b1d2f]/25',
+    green: 'bg-[#4a3a3f]/10 text-[#4a3a3f] border-[#4a3a3f]/25',
+    purple: 'bg-[#8a5560]/10 text-[#8a5560] border-[#8a5560]/25',
+    orange: 'bg-[#6b1d2f]/10 text-[#6b1d2f] border-[#6b1d2f]/25'
   }
 
   return (
@@ -1772,7 +1772,7 @@ const StatCard = ({
         </span>
       </div>
 
-      <p className="text-xl md:text-2xl font-bold text-[#0c0924]">
+      <p className="text-xl md:text-2xl font-bold text-[#1f1116]">
         {formatNumber(value)}
       </p>
     </div>
@@ -1870,8 +1870,8 @@ const CenterPanel = ({
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <div className="w-16 h-16 mx-auto mb-3 rounded-2xl bg-[#5f2cc4]/10 border border-[#5f2cc4]/25 flex items-center justify-center">
-          <Crown size={30} className="text-[#4e20a8]" />
+        <div className="w-16 h-16 mx-auto mb-3 rounded-2xl bg-[#6b1d2f]/10 border border-[#6b1d2f]/25 flex items-center justify-center">
+          <Crown size={30} className="text-[#6b1d2f]" />
         </div>
 
         <h2 className="text-xl font-bold royal-text">
@@ -1906,7 +1906,7 @@ const CenterPanel = ({
                 className="icon-card rounded-xl p-2.5 text-right relative group min-w-0 w-full"
                 title={item.description}
               >
-                <div className="w-9 h-9 rounded-lg bg-[#5f2cc4]/10 border border-[#5f2cc4]/20 text-[#4e20a8] flex items-center justify-center mb-1.5 flex-shrink-0">
+                <div className="w-9 h-9 rounded-lg bg-[#6b1d2f]/10 border border-[#6b1d2f]/20 text-[#6b1d2f] flex items-center justify-center mb-1.5 flex-shrink-0">
                   <Icon size={18} />
                 </div>
 
@@ -1973,7 +1973,7 @@ const OverviewPanel = ({ stats, onTab }) => (
         <h3 className="font-bold flex items-center gap-2 royal-text">
           <TrendingUp
             size={18}
-            className="text-[#4e20a8]"
+            className="text-[#6b1d2f]"
           />
           نظرة عامة
         </h3>
@@ -1981,7 +1981,7 @@ const OverviewPanel = ({ stats, onTab }) => (
         <button
           type="button"
           onClick={() => onTab('users')}
-          className="text-xs text-[#4e20a8] hover:text-[#45218e] hover:underline font-bold"
+          className="text-xs text-[#6b1d2f] hover:text-[#6b1d2f] hover:underline font-bold"
         >
           تفاصيل المستخدمين
         </button>
@@ -2026,7 +2026,7 @@ const LiveActivityPanel = ({
     <div className="royal-surface rounded-2xl p-4 md:p-6 border royal-border">
       <h3 className="text-lg font-bold mb-4 flex items-center gap-2 royal-text">
         <Activity
-          className="text-[#3e878b]"
+          className="text-[#4a3a3f]"
           size={20}
         />
         النشاط اللحظي
@@ -2064,7 +2064,7 @@ const LiveActivityPanel = ({
         <h3 className="font-bold flex items-center gap-2 royal-text">
           <Flag
             size={18}
-            className="text-[#b3223d]"
+            className="text-[#6b1d2f]"
           />
           أحدث البلاغات
         </h3>
@@ -2072,7 +2072,7 @@ const LiveActivityPanel = ({
         <button
           type="button"
           onClick={() => onTab('reports')}
-          className="text-xs text-[#4e20a8] hover:underline font-bold"
+          className="text-xs text-[#6b1d2f] hover:underline font-bold"
         >
           عرض الكل
         </button>
@@ -2084,16 +2084,16 @@ const LiveActivityPanel = ({
             key={report.id}
             type="button"
             onClick={() => onTab('reports')}
-            className="w-full flex items-center justify-between gap-3 p-3 bg-[#5f2cc4]/5 hover:bg-[#5f2cc4]/10 rounded-xl text-right transition-colors border border-transparent hover:border-[#5f2cc4]/10"
+            className="w-full flex items-center justify-between gap-3 p-3 bg-[#6b1d2f]/5 hover:bg-[#6b1d2f]/10 rounded-xl text-right transition-colors border border-transparent hover:border-[#6b1d2f]/10"
           >
             <div className="min-w-0">
               <span
                 className={`inline-block px-2 py-0.5 rounded-full text-[10px] mb-1 font-bold ${
                   report.status === 'pending'
-                    ? 'bg-[#ca2846]/10 text-[#b3223d]'
+                    ? 'bg-[#8f2a40]/10 text-[#6b1d2f]'
                     : report.status === 'resolved'
-                      ? 'bg-[#469ba0]/10 text-[#3e878b]'
-                      : 'bg-[#5f2cc4]/10 text-[#4e20a8]'
+                      ? 'bg-[#4a3a3f]/10 text-[#4a3a3f]'
+                      : 'bg-[#6b1d2f]/10 text-[#6b1d2f]'
                 }`}
               >
                 {report.status === 'pending'
@@ -2116,7 +2116,7 @@ const LiveActivityPanel = ({
 
             <ChevronDown
               size={16}
-              className="text-[#5623b6] -rotate-90 flex-shrink-0"
+              className="text-[#6b1d2f] -rotate-90 flex-shrink-0"
             />
           </button>
         ))}
@@ -2148,13 +2148,13 @@ const LiveActivityPanel = ({
           .map((u) => (
           <div
             key={u.id}
-            className="flex items-center justify-between gap-3 p-3 bg-[#5f2cc4]/5 rounded-xl border border-[#5f2cc4]/5"
+            className="flex items-center justify-between gap-3 p-3 bg-[#6b1d2f]/5 rounded-xl border border-[#6b1d2f]/5"
           >
             <div className="flex items-center gap-3 min-w-0">
-              <div className="w-10 h-10 bg-[#5f2cc4]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <div className="w-10 h-10 bg-[#6b1d2f]/10 rounded-xl flex items-center justify-center flex-shrink-0">
                 <Crown
                   size={18}
-                  className="text-[#4e20a8]"
+                  className="text-[#6b1d2f]"
                 />
               </div>
 
@@ -2169,7 +2169,7 @@ const LiveActivityPanel = ({
               </div>
             </div>
 
-            <span className="px-2.5 py-1 rounded-full text-[10px] flex-shrink-0 font-bold bg-[#5f2cc4]/10 text-[#4e20a8]">
+            <span className="px-2.5 py-1 rounded-full text-[10px] flex-shrink-0 font-bold bg-[#6b1d2f]/10 text-[#6b1d2f]">
               مالك
             </span>
           </div>
@@ -2187,10 +2187,10 @@ const LiveActivityPanel = ({
 )
 
 const MiniStat = ({ icon: Icon, value, label }) => (
-  <div className="text-center p-4 bg-[#5f2cc4]/5 rounded-xl border border-[#5f2cc4]/10">
+  <div className="text-center p-4 bg-[#6b1d2f]/5 rounded-xl border border-[#6b1d2f]/10">
     <Icon
       size={20}
-      className="mx-auto mb-2 text-[#4e20a8]"
+      className="mx-auto mb-2 text-[#6b1d2f]"
     />
 
     <p className="text-2xl font-bold royal-text">
@@ -2204,10 +2204,10 @@ const MiniStat = ({ icon: Icon, value, label }) => (
 )
 
 const LiveStat = ({ value, label, icon: Icon }) => (
-  <div className="text-center p-4 bg-[#5f2cc4]/5 rounded-xl border border-[#5f2cc4]/10">
+  <div className="text-center p-4 bg-[#6b1d2f]/5 rounded-xl border border-[#6b1d2f]/10">
     <Icon
       size={19}
-      className="mx-auto mb-2 text-[#4e20a8]"
+      className="mx-auto mb-2 text-[#6b1d2f]"
     />
 
     <p className="text-2xl font-bold royal-text">
@@ -2256,7 +2256,7 @@ const UsersPanel = ({
         </p>
       </div>
 
-      <div className="w-10 h-10 rounded-xl bg-[#5f2cc4]/10 border border-[#5f2cc4]/20 flex items-center justify-center text-[#4e20a8]">
+      <div className="w-10 h-10 rounded-xl bg-[#6b1d2f]/10 border border-[#6b1d2f]/20 flex items-center justify-center text-[#6b1d2f]">
         <Users size={20} />
       </div>
     </div>
@@ -2264,12 +2264,12 @@ const UsersPanel = ({
     <div className="royal-surface rounded-2xl border royal-border overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full min-w-[900px]">
-          <thead className="bg-[#5f2cc4]/8">
+          <thead className="bg-[#6b1d2f]/8">
             <tr>
-              <th className="px-4 py-3 text-right font-bold text-[#0c0924]">المستخدم</th>
-              <th className="px-4 py-3 text-right font-bold text-[#0c0924]">البريد</th>
-              <th className="px-4 py-3 text-right font-bold text-[#0c0924]">الحالة</th>
-              <th className="px-4 py-3 text-center font-bold text-[#0c0924]">
+              <th className="px-4 py-3 text-right font-bold text-[#1f1116]">المستخدم</th>
+              <th className="px-4 py-3 text-right font-bold text-[#1f1116]">البريد</th>
+              <th className="px-4 py-3 text-right font-bold text-[#1f1116]">الحالة</th>
+              <th className="px-4 py-3 text-center font-bold text-[#1f1116]">
                 الإجراءات
               </th>
             </tr>
@@ -2279,15 +2279,15 @@ const UsersPanel = ({
             {users.map(u => (
               <tr
                 key={u.id}
-                className="border-t border-[#5f2cc4]/10"
+                className="border-t border-[#6b1d2f]/10"
               >
                 <td className="px-4 py-3">
                   {editingUserId === u.id ? (
                     <div className="flex items-center gap-2">
-                      <div className="w-10 h-10 bg-[#5f2cc4]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <div className="w-10 h-10 bg-[#6b1d2f]/10 rounded-xl flex items-center justify-center flex-shrink-0">
                         <UserRound
                           size={18}
-                          className="text-[#4e20a8]"
+                          className="text-[#6b1d2f]"
                         />
                       </div>
 
@@ -2303,10 +2303,10 @@ const UsersPanel = ({
                     </div>
                   ) : (
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 bg-[#5f2cc4]/10 rounded-xl flex items-center justify-center">
+                      <div className="w-10 h-10 bg-[#6b1d2f]/10 rounded-xl flex items-center justify-center">
                         <Users
                           size={18}
-                          className="text-[#4e20a8]"
+                          className="text-[#6b1d2f]"
                         />
                       </div>
 
@@ -2337,10 +2337,10 @@ const UsersPanel = ({
                   <span
                     className={`px-3 py-1 rounded-full text-xs font-bold ${
                       u.banned
-                        ? 'bg-[#ca2846]/10 text-[#b3223d]'
+                        ? 'bg-[#8f2a40]/10 text-[#6b1d2f]'
                         : u.role === 'admin'
-                          ? 'bg-[#5f2cc4]/10 text-[#4e20a8]'
-                          : 'bg-[#469ba0]/10 text-[#3e878b]'
+                          ? 'bg-[#6b1d2f]/10 text-[#6b1d2f]'
+                          : 'bg-[#4a3a3f]/10 text-[#4a3a3f]'
                     }`}
                   >
                     {u.banned
@@ -2360,7 +2360,7 @@ const UsersPanel = ({
                           onClick={() =>
                             onSaveEdit(u.id)
                           }
-                          className="p-2.5 hover:bg-[#469ba0]/10 rounded-lg text-[#3e878b]"
+                          className="p-2.5 hover:bg-[#4a3a3f]/10 rounded-lg text-[#4a3a3f]"
                           title="حفظ التعديل"
                           aria-label="حفظ التعديل"
                         >
@@ -2370,7 +2370,7 @@ const UsersPanel = ({
                         <button
                           type="button"
                           onClick={onCancelEdit}
-                          className="p-2.5 hover:bg-[#ca2846]/10 rounded-lg text-[#b3223d]"
+                          className="p-2.5 hover:bg-[#8f2a40]/10 rounded-lg text-[#6b1d2f]"
                           title="إلغاء التعديل"
                           aria-label="إلغاء التعديل"
                         >
@@ -2381,7 +2381,7 @@ const UsersPanel = ({
                       <button
                         type="button"
                         onClick={() => onEdit(u)}
-                        className="p-2.5 hover:bg-[#5f2cc4]/10 rounded-lg text-[#4e20a8]"
+                        className="p-2.5 hover:bg-[#6b1d2f]/10 rounded-lg text-[#6b1d2f]"
                         title="تعديل المستخدم"
                         aria-label="تعديل المستخدم"
                       >
@@ -2395,7 +2395,7 @@ const UsersPanel = ({
                         onClick={() =>
                           onUnban(u.id)
                         }
-                        className="p-2.5 hover:bg-[#469ba0]/10 rounded-lg text-[#3e878b]"
+                        className="p-2.5 hover:bg-[#4a3a3f]/10 rounded-lg text-[#4a3a3f]"
                         title="إلغاء الحظر"
                         aria-label="إلغاء الحظر"
                       >
@@ -2414,7 +2414,7 @@ const UsersPanel = ({
                             'مخالفة'
                           )
                         }}
-                        className="p-2.5 hover:bg-[#ca2846]/10 rounded-lg text-[#b3223d]"
+                        className="p-2.5 hover:bg-[#8f2a40]/10 rounded-lg text-[#6b1d2f]"
                         title="حظر المستخدم"
                         aria-label="حظر المستخدم"
                       >
@@ -2428,7 +2428,7 @@ const UsersPanel = ({
                         onClick={() =>
                           onRemoveAdmin(u.id)
                         }
-                        className="p-2.5 hover:bg-[#682aba]/10 rounded-lg text-[#5c23a5]"
+                        className="p-2.5 hover:bg-[#6b1d2f]/10 rounded-lg text-[#6b1d2f]"
                         title="إزالة صلاحيات المدير"
                         aria-label="إزالة صلاحيات المدير"
                       >
@@ -2440,7 +2440,7 @@ const UsersPanel = ({
                         onClick={() =>
                           onSetAdmin(u.id)
                         }
-                        className="p-2.5 hover:bg-[#5f2cc4]/10 rounded-lg text-[#4e20a8]"
+                        className="p-2.5 hover:bg-[#6b1d2f]/10 rounded-lg text-[#6b1d2f]"
                         title="تعيين مدير"
                         aria-label="تعيين مدير"
                       >
@@ -2491,7 +2491,7 @@ const AdsPanel = ({
         </p>
       </div>
 
-      <div className="w-10 h-10 rounded-xl bg-[#5f2cc4]/10 border border-[#5f2cc4]/20 flex items-center justify-center text-[#4e20a8]">
+      <div className="w-10 h-10 rounded-xl bg-[#6b1d2f]/10 border border-[#6b1d2f]/20 flex items-center justify-center text-[#6b1d2f]">
         <ShoppingBag size={20} />
       </div>
     </div>
@@ -2509,7 +2509,7 @@ const AdsPanel = ({
                 decoding="async"
                 src={ad.images[0]}
                 alt=""
-                className="w-24 h-24 rounded-xl object-cover border border-[#5f2cc4]/10 flex-shrink-0"
+                className="w-24 h-24 rounded-xl object-cover border border-[#6b1d2f]/10 flex-shrink-0"
               />
             )}
 
@@ -2544,7 +2544,7 @@ const AdsPanel = ({
                         onClick={() =>
                           onSaveEdit(ad.id)
                         }
-                        className="px-3 py-2 bg-[#469ba0]/10 text-[#3e878b] rounded-lg text-xs flex items-center gap-1.5 font-bold"
+                        className="px-3 py-2 bg-[#4a3a3f]/10 text-[#4a3a3f] rounded-lg text-xs flex items-center gap-1.5 font-bold"
                       >
                         <Save size={15} />
                         حفظ
@@ -2553,7 +2553,7 @@ const AdsPanel = ({
                       <button
                         type="button"
                         onClick={onCancelEdit}
-                        className="px-3 py-2 bg-[#ca2846]/10 text-[#b3223d] rounded-lg text-xs flex items-center gap-1.5 font-bold"
+                        className="px-3 py-2 bg-[#8f2a40]/10 text-[#6b1d2f] rounded-lg text-xs flex items-center gap-1.5 font-bold"
                       >
                         <X size={15} />
                         إلغاء
@@ -2569,10 +2569,10 @@ const AdsPanel = ({
                 <span
                   className={`px-2 py-1 rounded-full text-[10px] flex-shrink-0 font-bold ${
                     ad.status === 'active'
-                      ? 'bg-[#469ba0]/10 text-[#3e878b]'
+                      ? 'bg-[#4a3a3f]/10 text-[#4a3a3f]'
                       : ad.status === 'pending'
-                        ? 'bg-[#5f2cc4]/10 text-[#4e20a8]'
-                        : 'bg-[#ca2846]/10 text-[#b3223d]'
+                        ? 'bg-[#6b1d2f]/10 text-[#6b1d2f]'
+                        : 'bg-[#8f2a40]/10 text-[#6b1d2f]'
                   }`}
                 >
                   {ad.status === 'active'
@@ -2595,7 +2595,7 @@ const AdsPanel = ({
                     <button
                       type="button"
                       onClick={() => onEdit(ad)}
-                      className="px-3 py-2 bg-[#5f2cc4]/10 text-[#4e20a8] rounded-lg text-xs flex items-center gap-1.5 font-bold"
+                      className="px-3 py-2 bg-[#6b1d2f]/10 text-[#6b1d2f] rounded-lg text-xs flex items-center gap-1.5 font-bold"
                     >
                       <Edit3 size={15} />
                       تعديل
@@ -2608,7 +2608,7 @@ const AdsPanel = ({
                           onClick={() =>
                             onApprove(ad.id)
                           }
-                          className="px-3 py-2 bg-[#469ba0]/10 text-[#3e878b] rounded-lg text-xs flex items-center gap-1.5 font-bold"
+                          className="px-3 py-2 bg-[#4a3a3f]/10 text-[#4a3a3f] rounded-lg text-xs flex items-center gap-1.5 font-bold"
                         >
                           <Check size={15} />
                           تفعيل
@@ -2622,7 +2622,7 @@ const AdsPanel = ({
                               'مخالفة للشروط'
                             )
                           }
-                          className="px-3 py-2 bg-[#ca2846]/10 text-[#b3223d] rounded-lg text-xs flex items-center gap-1.5 font-bold"
+                          className="px-3 py-2 bg-[#8f2a40]/10 text-[#6b1d2f] rounded-lg text-xs flex items-center gap-1.5 font-bold"
                         >
                           <X size={15} />
                           رفض
@@ -2638,7 +2638,7 @@ const AdsPanel = ({
                           'قرار الإدارة'
                         )
                       }
-                      className="px-3 py-2 bg-[#ca2846]/10 text-[#b3223d] rounded-lg text-xs flex items-center gap-1.5 font-bold"
+                      className="px-3 py-2 bg-[#8f2a40]/10 text-[#6b1d2f] rounded-lg text-xs flex items-center gap-1.5 font-bold"
                     >
                       <Trash2 size={15} />
                       حذف
@@ -2699,13 +2699,13 @@ const MessagesPanel = ({
           محادثات حراج خاصة (المشتري ↔ المعلن) — تظهر لك فقط كمالك
         </p>
       </div>
-      <span className="px-3 py-1.5 rounded-full text-[10px] bg-[#5f2cc4]/10 text-[#0f0b2e] border border-[#5f2cc4]/25 font-bold">
+      <span className="px-3 py-1.5 rounded-full text-[10px] bg-[#6b1d2f]/10 text-[#1f1116] border border-[#6b1d2f]/25 font-bold">
         {formatNumber((privateChats || []).length)} محادثة حراج
       </span>
     </div>
 
-    <div className="royal-surface rounded-xl p-4 border royal-border" style={{ background: 'rgb(93, 43, 195,0.08)' }}>
-      <p className="text-[#0b0822] flex items-center gap-2 text-sm font-medium">
+    <div className="royal-surface rounded-xl p-4 border royal-border" style={{ background: 'rgba(61, 15, 24,0.08)' }}>
+      <p className="text-[#1f1116] flex items-center gap-2 text-sm font-medium">
         <Shield size={18} />
         الرسائل الخاصة محمية: المشاركون فقط يتراسلون، وأنت كمالك تراقب لحماية الموقع دون علمهم.
       </p>
@@ -2730,7 +2730,7 @@ const MessagesPanel = ({
               type="button"
               onClick={() => openChat(chat)}
               className="px-3 py-1.5 rounded-lg text-xs font-bold"
-              style={{ background: 'linear-gradient(135deg,#9955ef,#7b29d5)', color: '#0b0822', border: 'none', cursor: 'pointer' }}
+              style={{ background: 'linear-gradient(135deg,#6b1d2f,#6b1d2f)', color: '#1f1116', border: 'none', cursor: 'pointer' }}
             >
               فتح المحادثة
             </button>
@@ -2743,7 +2743,7 @@ const MessagesPanel = ({
     </div>
 
     {selectedChat && (
-      <div className="royal-surface rounded-xl p-4 border royal-border" style={{ borderColor: '#7b29d5' }}>
+      <div className="royal-surface rounded-xl p-4 border royal-border" style={{ borderColor: '#6b1d2f' }}>
         <div className="flex items-center justify-between mb-3">
           <h3 className="font-bold royal-text">محادثة: {selectedChat.adTitle || selectedChat.id}</h3>
           <button type="button" onClick={() => { setSelectedChat(null); setChatMessages([]) }} className="text-xs font-bold royal-muted">إغلاق</button>
@@ -2751,7 +2751,7 @@ const MessagesPanel = ({
         <div className="space-y-2 max-h-80 overflow-y-auto">
           {chatMessages.length === 0 && <p className="text-sm royal-muted">لا رسائل أو جاري التحميل...</p>}
           {chatMessages.map((m) => (
-            <div key={m.id} className="p-2 rounded-lg" style={{ background: '#f4f1f9', border: '1px solid rgb(93, 43, 195,0.2)' }}>
+            <div key={m.id} className="p-2 rounded-lg" style={{ background: '#fdfbf7', border: '1px solid rgba(61, 15, 24,0.2)' }}>
               <p className="text-[11px] royal-muted font-medium">{m.senderName || m.senderKey || '—'}</p>
               <p className="royal-text text-sm break-words font-medium">{m.text || m.content || '—'}</p>
             </div>
@@ -2760,7 +2760,7 @@ const MessagesPanel = ({
       </div>
     )}
 
-    <div className="border-t border-[#5f2cc4]/20 pt-4 mt-4">
+    <div className="border-t border-[#6b1d2f]/20 pt-4 mt-4">
       <h3 className="font-bold royal-text text-base mb-2">رسائل عامة أخرى</h3>
       <div className="space-y-3">
         {(messages || []).map(msg => (
@@ -2774,7 +2774,7 @@ const MessagesPanel = ({
               </span>
             </div>
             <p className="royal-text break-words font-medium">{msg.content || '—'}</p>
-            <p className="text-[11px] text-[#3d2369] mt-2 font-medium">{formatDate(msg.createdAt)}</p>
+            <p className="text-[11px] text-[#8a5560] mt-2 font-medium">{formatDate(msg.createdAt)}</p>
           </div>
         ))}
         {(messages || []).length === 0 && (
@@ -2799,7 +2799,7 @@ const ReportsPanel = ({ reports }) => (
         </p>
       </div>
 
-      <span className="px-3 py-1.5 rounded-full text-[10px] bg-[#5f2cc4]/10 text-[#0f0b2e] border border-[#5f2cc4]/25 font-bold">
+      <span className="px-3 py-1.5 rounded-full text-[10px] bg-[#6b1d2f]/10 text-[#1f1116] border border-[#6b1d2f]/25 font-bold">
         مراجعة
       </span>
     </div>
@@ -2814,10 +2814,10 @@ const ReportsPanel = ({ reports }) => (
             <span
               className={`px-2 py-1 rounded-full text-xs font-bold ${
                 report.status === 'pending'
-                  ? 'bg-[#5f2cc4]/10 text-[#4e20a8]'
+                  ? 'bg-[#6b1d2f]/10 text-[#6b1d2f]'
                   : report.status === 'resolved'
-                    ? 'bg-[#469ba0]/10 text-[#3e878b]'
-                    : 'bg-[#ca2846]/10 text-[#b3223d]'
+                    ? 'bg-[#4a3a3f]/10 text-[#4a3a3f]'
+                    : 'bg-[#8f2a40]/10 text-[#6b1d2f]'
               }`}
             >
               {report.status === 'pending'
@@ -2874,8 +2874,8 @@ const SecurityPanel = ({ logs }) => (
       </span>
     </div>
 
-    <div className="bg-[#5f2cc4]/5 border border-[#5f2cc4]/20 rounded-xl p-4">
-      <p className="text-[#0f0b2e] flex items-center gap-2 text-sm font-medium">
+    <div className="bg-[#6b1d2f]/5 border border-[#6b1d2f]/20 rounded-xl p-4">
+      <p className="text-[#1f1116] flex items-center gap-2 text-sm font-medium">
         <Lock size={18} />
         سجل الأمان للقراءة والمشاهدة فقط.
       </p>
@@ -2893,10 +2893,10 @@ const SecurityPanel = ({ logs }) => (
                 size={18}
                 className={
                   log.severity === 'high'
-                    ? 'text-[#b3223d]'
+                    ? 'text-[#6b1d2f]'
                     : log.severity === 'medium'
-                      ? 'text-[#4e20a8]'
-                      : 'text-[#0f0b2e]'
+                      ? 'text-[#6b1d2f]'
+                      : 'text-[#1f1116]'
                 }
               />
 
@@ -2914,7 +2914,7 @@ const SecurityPanel = ({ logs }) => (
             {log.details || '—'}
           </p>
 
-          <p className="text-xs text-[#3d2369] mt-1 font-medium">
+          <p className="text-xs text-[#8a5560] mt-1 font-medium">
             بواسطة: {log.userEmail || '—'}
           </p>
         </div>
@@ -2948,8 +2948,8 @@ const OrdersPanel = ({ orders }) => (
       </span>
     </div>
 
-    <div className="bg-[#5f2cc4]/5 border border-[#5f2cc4]/20 rounded-xl p-4">
-      <p className="text-[#0f0b2e] flex items-center gap-2 text-sm font-medium">
+    <div className="bg-[#6b1d2f]/5 border border-[#6b1d2f]/20 rounded-xl p-4">
+      <p className="text-[#1f1116] flex items-center gap-2 text-sm font-medium">
         <Eye size={18} />
         الطلبات موجودة في قسم المشاهدة فقط ولا تحتوي على إجراءات تعديل هنا.
       </p>
@@ -2958,21 +2958,21 @@ const OrdersPanel = ({ orders }) => (
     <div className="royal-surface rounded-2xl border royal-border overflow-hidden">
       <div className="overflow-x-auto">
         <table className="w-full min-w-[680px]">
-          <thead className="bg-[#5f2cc4]/8">
+          <thead className="bg-[#6b1d2f]/8">
             <tr>
-              <th className="px-4 py-3 text-right font-bold text-[#0c0924]">
+              <th className="px-4 py-3 text-right font-bold text-[#1f1116]">
                 رقم الطلب
               </th>
 
-              <th className="px-4 py-3 text-right font-bold text-[#0c0924]">
+              <th className="px-4 py-3 text-right font-bold text-[#1f1116]">
                 العميل
               </th>
 
-              <th className="px-4 py-3 text-right font-bold text-[#0c0924]">
+              <th className="px-4 py-3 text-right font-bold text-[#1f1116]">
                 المجموع
               </th>
 
-              <th className="px-4 py-3 text-right font-bold text-[#0c0924]">
+              <th className="px-4 py-3 text-right font-bold text-[#1f1116]">
                 الحالة
               </th>
             </tr>
@@ -2982,7 +2982,7 @@ const OrdersPanel = ({ orders }) => (
             {orders.map(order => (
               <tr
                 key={order.id}
-                className="border-t border-[#5f2cc4]/10"
+                className="border-t border-[#6b1d2f]/10"
               >
                 <td className="px-4 py-3 font-mono text-sm font-medium">
                   {String(order.id || '').slice(0, 8)}
@@ -2992,7 +2992,7 @@ const OrdersPanel = ({ orders }) => (
                   {order.customerName || '—'}
                 </td>
 
-                <td className="px-4 py-3 text-[#4e20a8] font-bold">
+                <td className="px-4 py-3 text-[#6b1d2f] font-bold">
                   {safeNumber(order.total).toLocaleString('ar-SA')}{' '}
                   ر.س
                 </td>
@@ -3001,10 +3001,10 @@ const OrdersPanel = ({ orders }) => (
                   <span
                     className={`px-2 py-1 rounded-full text-xs font-bold ${
                       order.status === 'completed'
-                        ? 'bg-[#469ba0]/10 text-[#3e878b]'
+                        ? 'bg-[#4a3a3f]/10 text-[#4a3a3f]'
                         : order.status === 'pending'
-                          ? 'bg-[#5f2cc4]/10 text-[#4e20a8]'
-                          : 'bg-[#5f2cc4]/5 royal-muted'
+                          ? 'bg-[#6b1d2f]/10 text-[#6b1d2f]'
+                          : 'bg-[#6b1d2f]/5 royal-muted'
                     }`}
                   >
                     {order.status || 'غير محدد'}
@@ -3034,14 +3034,14 @@ const BroadcastPanel = ({
   onQuickNotice
 }) => (
   <div className="space-y-4">
-    <div className="royal-surface rounded-2xl p-5 md:p-6 border border-[#5f2cc4]/30">
+    <div className="royal-surface rounded-2xl p-5 md:p-6 border border-[#6b1d2f]/30">
       <div className="flex items-start gap-3 mb-4">
-        <div className="w-11 h-11 rounded-xl bg-[#5f2cc4]/10 border border-[#5f2cc4]/25 flex items-center justify-center text-[#4e20a8] flex-shrink-0">
+        <div className="w-11 h-11 rounded-xl bg-[#6b1d2f]/10 border border-[#6b1d2f]/25 flex items-center justify-center text-[#6b1d2f] flex-shrink-0">
           <Radio size={21} />
         </div>
 
         <div>
-          <h3 className="text-lg font-bold text-[#4e20a8]">
+          <h3 className="text-lg font-bold text-[#6b1d2f]">
             بث مباشر للعملاء
           </h3>
 
@@ -3058,11 +3058,11 @@ const BroadcastPanel = ({
         maxLength={500}
         placeholder="اكتب رسالة البث..."
         disabled={sending}
-        className="w-full p-3 rounded-xl light-field text-sm outline-none border focus:border-[#5f2cc4]/60 transition resize-y disabled:opacity-60 font-semibold"
+        className="w-full p-3 rounded-xl light-field text-sm outline-none border focus:border-[#6b1d2f]/60 transition resize-y disabled:opacity-60 font-semibold"
       />
 
       <div className="flex items-center justify-between mt-1 mb-3">
-        <span className="text-xs text-[#3d2369] font-medium">
+        <span className="text-xs text-[#8a5560] font-medium">
           {text.length}/500
         </span>
 
@@ -3078,7 +3078,7 @@ const BroadcastPanel = ({
         className={`w-full py-3 rounded-xl flex items-center justify-center gap-2 font-bold transition ${
           text.trim() && !sending
             ? 'gold-button hover:scale-[1.01]'
-            : 'bg-[#5f2cc4]/10 text-[#492b7e] cursor-not-allowed border border-[#5f2cc4]/10'
+            : 'bg-[#6b1d2f]/10 text-[#6b1d2f] cursor-not-allowed border border-[#6b1d2f]/10'
         }`}
       >
         <Send size={18} />
@@ -3092,16 +3092,16 @@ const BroadcastPanel = ({
         type="button"
         onClick={onQuickNotice}
         disabled={sending}
-        className="w-full mt-3 py-3 rounded-xl bg-[#5f2cc4]/5 hover:bg-[#5f2cc4]/10 text-[#0c0924] text-sm flex items-center justify-center gap-2 transition-all border border-[#5f2cc4]/15 disabled:opacity-50 font-bold"
+        className="w-full mt-3 py-3 rounded-xl bg-[#6b1d2f]/5 hover:bg-[#6b1d2f]/10 text-[#1f1116] text-sm flex items-center justify-center gap-2 transition-all border border-[#6b1d2f]/15 disabled:opacity-50 font-bold"
       >
         <Bell size={16} />
         إشعار بعنوان ونص
       </button>
     </div>
 
-    <div className="royal-surface rounded-2xl p-4 border border-[#5f2cc4]/20">
+    <div className="royal-surface rounded-2xl p-4 border border-[#6b1d2f]/20">
       <div className="flex items-start gap-3">
-        <div className="w-9 h-9 rounded-lg bg-[#5f2cc4]/10 text-[#4e20a8] flex items-center justify-center flex-shrink-0">
+        <div className="w-9 h-9 rounded-lg bg-[#6b1d2f]/10 text-[#6b1d2f] flex items-center justify-center flex-shrink-0">
           <Eye size={17} />
         </div>
 
@@ -3112,7 +3112,7 @@ const BroadcastPanel = ({
 
           <p className="text-xs royal-muted mt-1 font-medium">
             البث المباشر يستخدم قناة
-            <span className="text-[#4e20a8] mx-1 font-bold">
+            <span className="text-[#6b1d2f] mx-1 font-bold">
               /api/broadcast
             </span>
             الحالية للموقع.

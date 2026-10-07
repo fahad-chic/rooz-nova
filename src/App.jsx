@@ -50,6 +50,7 @@ import SettingsPage from './components/pages/SettingsPage';
 import OTPPage from './components/pages/OTPPage';
 import MemberInbox from './components/pages/MemberInbox';
 import NotificationPanel from './components/NotificationPanel';
+import OtpModal from './components/OtpModal';
 
 import ComplaintsPage from './components/pages/ComplaintsPage';
 import './styles/global.css';
@@ -85,7 +86,7 @@ window.addEventListener('load', () => {
 
 const Dashboard = safeLazy(() => import('./pages/Dashboard'));
 const RoyalHomePage = safeLazy(() =>
-  import('./components/RoyalHome/RoyalHomePage')
+  import('./components/RoyalHome/NovHomePage')
 );
 const CatalogPage = safeLazy(() =>
   import('./components/RoyalHome/CatalogPage')
@@ -153,7 +154,7 @@ const LoadingScreen = () => (
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
-      color: '#7b29d5',
+      color: '#6b1d2f',
       fontSize: '1.5rem',
       fontFamily: 'Cairo',
       direction: 'rtl',
@@ -216,11 +217,11 @@ const UnauthorizedPage = () => {
           maxWidth: 460,
           width: '100%',
           textAlign: 'center',
-          background: 'linear-gradient(160deg, #f7f6fb, #e3dbf5)',
-          border: '2px solid #7b29d5',
+          background: 'linear-gradient(160deg, #fdfbf7, #fdfbf7)',
+          border: '2px solid #6b1d2f',
           borderRadius: 20,
           padding: '2.2rem 1.6rem',
-          boxShadow: '0 18px 50px rgb(15, 11, 48,0.22)',
+          boxShadow: '0 18px 50px rgba(31, 17, 22,0.22)',
         }}
       >
         <div
@@ -232,8 +233,8 @@ const UnauthorizedPage = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'linear-gradient(135deg, #a7132e, #700c1f)',
-            boxShadow: '0 8px 22px rgb(167, 19, 46,0.35)',
+            background: 'linear-gradient(135deg, #6b1d2f, #3d0f18)',
+            boxShadow: '0 8px 22px rgba(61, 15, 24,0.35)',
             fontSize: 30,
           }}
         >
@@ -243,7 +244,7 @@ const UnauthorizedPage = () => {
         <h1
           style={{
             margin: '0 0 10px',
-            color: '#700c1f',
+            color: '#3d0f18',
             fontWeight: 900,
             fontSize: '1.4rem',
           }}
@@ -254,7 +255,7 @@ const UnauthorizedPage = () => {
         <p
           style={{
             margin: 0,
-            color: '#110c34',
+            color: '#1f1116',
             fontWeight: 600,
             lineHeight: 1.9,
             fontSize: '0.95rem',
@@ -779,7 +780,9 @@ function AppContent() {
   const [showVisitorPopup, setShowVisitorPopup] =
     useState(false);
 
-  const [phone, setPhone] = useState("");
+  const [visitorEmail, setVisitorEmail] = useState("");
+
+  const [visitorOtpEmail, setVisitorOtpEmail] = useState(null);
 
   /* =======================================================
      Logout
@@ -1068,14 +1071,22 @@ function AppContent() {
      Visitor enter
      ======================================================= */
 
+  // دخول الزوار — التحقق برمز يصل إلى البريد الإلكتروني إجباري (Email OTP)
   const handleVisitorEnter =
     async () => {
+      const email = String(
+        visitorEmail || ''
+      )
+        .trim()
+        .toLowerCase();
+
       if (
-        !phone ||
-        phone.length < 8
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
+          email
+        )
       ) {
         window.alert(
-          "الرجاء إدخال رقم جوال صحيح"
+          "الرجاء إدخال بريد إلكتروني صحيح"
         );
 
         return;
@@ -1084,42 +1095,63 @@ function AppContent() {
       try {
         await ensureFirebaseSession();
 
-        await addDoc(
-          collection(
-            db,
-            "visitors"
-          ),
-          {
-            createdAt:
-              serverTimestamp(),
-          }
-        );
+        const sendOtp =
+          useStore.getState().sendOtp;
 
-        const guestLogin =
-          useStore.getState()
-            .guestLogin;
+        if (typeof sendOtp !== 'function') {
+          window.alert(
+            "تعذّر إرسال كود التحقق، حاول لاحقاً"
+          );
 
-        if (
-          typeof guestLogin ===
-          'function'
-        ) {
-          await guestLogin();
+          return;
         }
 
-        setShowVisitorPopup(false);
+        const res = await sendOtp(
+          email,
+          'login'
+        );
 
-        window.alert(
-          "كود الخصم الخاص بك: ROOZ10 — لديك دقيقتان للتصفّح."
-        );
+        if (!res?.success) {
+          window.alert(
+            res?.error
+              ? `تعذّر إرسال كود التحقق: ${res.error}`
+              : "تعذّر إرسال كود التحقق، حاول مرة أخرى"
+          );
+
+          return;
+        }
+
+        setVisitorOtpEmail(email);
+        setShowVisitorPopup(false);
       } catch (error) {
-        window.console.error(
-          error
-        );
+        window.console.error(error);
 
         window.alert(
           "حدث خطأ غير متوقع، حاول مرة أخرى"
         );
       }
+    };
+
+  // إكمال دخول الزائر بعد نجاح التحقق بالبريد (Email OTP)
+  const handleVisitorOtpVerified =
+    async () => {
+      await addDoc(
+        collection(db, "visitors"),
+        { createdAt: serverTimestamp() }
+      );
+
+      const guestLogin =
+        useStore.getState().guestLogin;
+
+      if (typeof guestLogin === 'function') {
+        await guestLogin(visitorOtpEmail);
+      }
+
+      setVisitorOtpEmail(null);
+
+      window.alert(
+        "كود الخصم الخاص بك: ROOZ10 — أهلاً بك في أناقة ROOZ."
+      );
     };
 
   const openWelcomeModal = () =>
@@ -1185,7 +1217,7 @@ function AppContent() {
       <div
         style={{
           padding: '2rem',
-          color: '#dcd4f5',
+          color: '#fdfbf7',
         }}
       >
         يرجى تسجيل الدخول لعرض هذه الصفحة.
@@ -1209,9 +1241,9 @@ function AppContent() {
         background:
           location.pathname === '/login'
             ? 'transparent'
-            : 'linear-gradient(180deg, #e3dbf4 0%, #dbd0f2 55%, #d9ccf1 100%)',
-        color: '#100c32',
-        fontFamily: 'Cairo',
+            : 'linear-gradient(180deg, #fdfbf7 0%, #fdfbf7 55%, #fdfbf7 100%)',
+        color: '#1f1116',
+        fontFamily: 'Tajawal',
         position: 'relative',
       }}
     >
@@ -1228,7 +1260,7 @@ function AppContent() {
             width: "100%",
             height: "100%",
             background:
-              "rgb(9, 6, 27,0.5)",
+              "rgba(31, 17, 22,0.5)",
             display: "flex",
             justifyContent:
               "center",
@@ -1255,7 +1287,7 @@ function AppContent() {
               maxWidth: "380px",
               textAlign: "center",
               boxShadow:
-                "0 0 15px rgb(9, 6, 27,0.2)",
+                "0 0 15px rgba(31, 17, 22,0.2)",
               color: "#000",
             }}
             onClick={(event) =>
@@ -1268,7 +1300,7 @@ function AppContent() {
                 onClick={closeWelcomeModal}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgb(9, 6, 27,0.06)',
+                  background: 'rgba(31, 17, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -1305,11 +1337,13 @@ function AppContent() {
             </p>
 
             <input
-              type="text"
-              placeholder="رقم الجوال"
-              value={phone}
+              type="email"
+              inputMode="email"
+              autoComplete="email"
+              placeholder="بريدك الإلكتروني"
+              value={visitorEmail}
               onChange={(e) =>
-                setPhone(e.target.value)
+                setVisitorEmail(e.target.value)
               }
               style={{
                 width: "100%",
@@ -1338,7 +1372,7 @@ function AppContent() {
                 cursor: "pointer",
               }}
             >
-              دخول كزائر
+              إرسال رمز التحقق
             </button>
 
             <button
@@ -1348,7 +1382,7 @@ function AppContent() {
               style={{
                 width: "100%",
                 padding: "12px",
-                background: "#e62145",
+                background: "#8f2a40",
                 color: "#fff",
                 borderRadius: "8px",
                 border: "none",
@@ -1361,6 +1395,15 @@ function AppContent() {
             </button>
           </div>
         </div>
+      )}
+
+      {visitorOtpEmail && (
+        <OtpModal
+          email={visitorOtpEmail}
+          purpose="login"
+          onVerified={handleVisitorOtpVerified}
+          onClose={() => setVisitorOtpEmail(null)}
+        />
       )}
 
       {/* =================================================
@@ -1385,9 +1428,9 @@ function AppContent() {
         }
 
 @keyframes roozCrown3D {
-  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgb(62, 19, 236,0.9)); }
-  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgb(62, 19, 236,1)); }
-  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgb(62, 19, 236,0.9)); }
+  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgba(61, 15, 24,0.9)); }
+  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgba(61, 15, 24,1)); }
+  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgba(61, 15, 24,0.9)); }
 }
 
 @keyframes roozStar3D {
@@ -1449,17 +1492,17 @@ function AppContent() {
               maxWidth: 420,
               marginInline: 'auto',
               background:
-                'linear-gradient(150deg, #0a071f, #000)',
+                'linear-gradient(150deg, #1f1116, #000)',
               border:
-                '1px solid rgb(62, 19, 236, 0.55)',
+                '1px solid rgba(61, 15, 24, 0.55)',
               borderRadius: 16,
               padding:
                 '18px 20px',
               fontFamily:
-                'Cairo, sans-serif',
-              color: '#cbbaf9',
+                'Tajawal, sans-serif',
+              color: '#f3e0dd',
               boxShadow:
-                '0 18px 50px rgb(9, 6, 27,0.65)',
+                '0 18px 50px rgba(31, 17, 22,0.65)',
             }}
           >
             <div
@@ -1472,11 +1515,11 @@ function AppContent() {
             >
               <Clock
                 size={30}
-                color="#3e13ec"
+                color="#6b1d2f"
               />
               <strong
                 style={{
-                  color: '#3e13ec',
+                  color: '#6b1d2f',
                   fontSize: 15,
                   fontWeight: 900,
                 }}
@@ -1505,7 +1548,7 @@ function AppContent() {
                   display: 'block',
                   marginTop: 8,
                   fontSize: 12,
-                  color: '#7b51d9',
+                  color: '#6b1d2f',
                 }}
               >
                 سيتم إخراجك تلقائياً عند انتهاء الوقت.
@@ -1539,15 +1582,15 @@ function AppContent() {
               background:
                 guestRemaining <=
                 10000
-                  ? 'linear-gradient(90deg, rgb(187, 21, 51,0.97), rgb(229, 25, 63,0.92))'
-                  : 'linear-gradient(90deg, #0b477a, #0c5695)',
+                  ? 'linear-gradient(90deg, rgba(61, 15, 24,0.97), rgba(61, 15, 24,0.92))'
+                  : 'linear-gradient(90deg, #1f1116, #6b1d2f)',
               color: '#ffffff',
               padding: '0 1rem',
               textAlign: 'center',
               fontWeight: 800,
               fontSize: '0.9rem',
               boxShadow:
-                '0 2px 10px rgb(9, 6, 27,0.3)',
+                '0 2px 10px rgba(31, 17, 22,0.3)',
               fontFamily:
                 'Cairo, sans-serif',
               boxSizing: 'border-box',
@@ -1585,7 +1628,7 @@ function AppContent() {
               position: 'fixed',
               inset: 0,
               background:
-                'rgb(9, 6, 27,0.8)',
+                'rgba(31, 17, 22,0.8)',
               display: 'flex',
               alignItems: 'center',
               justifyContent:
@@ -1600,16 +1643,16 @@ function AppContent() {
               style={{
                 background: '#111',
                 border:
-                  '1px solid rgb(123, 81, 217,0.4)',
+                  '1px solid rgba(61, 15, 24,0.4)',
                 borderRadius: 16,
                 padding:
                   '2rem 1.5rem',
                 maxWidth: 420,
                 width: '100%',
                 textAlign: 'center',
-                color: '#cbbaf9',
+                color: '#f3e0dd',
                 boxShadow:
-                  '0 20px 60px rgb(9, 6, 27,0.6)',
+                  '0 20px 60px rgba(31, 17, 22,0.6)',
               }}
             >
               <div
@@ -1623,13 +1666,13 @@ function AppContent() {
               >
                 <Clock
                   size={48}
-                  color="#7b51d9"
+                  color="#6b1d2f"
                 />
               </div>
 
               <h2
                 style={{
-                  color: '#7b51d9',
+                  color: '#6b1d2f',
                   fontSize: 22,
                   fontWeight: 700,
                   marginBottom: 12,
@@ -1675,7 +1718,7 @@ function AppContent() {
                   width: '100%',
                   padding: '13px',
                   background:
-                    'linear-gradient(135deg, #7b51d9, #3a1496)',
+                    'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
                   color: '#fff',
                   border: 'none',
                   borderRadius: 10,
@@ -1707,9 +1750,9 @@ function AppContent() {
                   padding: '13px',
                   background:
                     'transparent',
-                  color: '#7b51d9',
+                  color: '#6b1d2f',
                   border:
-                    '1px solid rgb(123, 81, 217,0.4)',
+                    '1px solid rgba(61, 15, 24,0.4)',
                   borderRadius: 10,
                   fontWeight: 700,
                   fontSize: 15,
@@ -1826,10 +1869,10 @@ function AppContent() {
               height: '60px',
               overflow: 'hidden',
               display: 'block',
-              background: 'linear-gradient(90deg, #09061b 0%, #0b0821 40%, #0c0824 60%, #09061b 100%)',
-              borderTop: '2px solid #3e13ec',
-              borderBottom: '2px solid #3e13ec',
-              boxShadow: '0 12px 32px rgb(9, 6, 27,0.6), 0 0 22px rgb(62, 19, 236,0.25)',
+              background: 'linear-gradient(90deg, #1f1116 0%, #1f1116 40%, #1f1116 60%, #1f1116 100%)',
+              borderTop: '2px solid #6b1d2f',
+              borderBottom: '2px solid #6b1d2f',
+              boxShadow: '0 12px 32px rgba(31, 17, 22,0.6), 0 0 22px rgba(61, 15, 24,0.25)',
               zIndex: 80,
               flexShrink: 0,
             }}
@@ -1869,12 +1912,12 @@ function AppContent() {
                     fontFamily: 'Cairo, "Noto Sans Arabic", Tahoma, sans-serif',
                     fontSize: 'clamp(1.15rem, 2.5vw, 1.55rem)',
                     fontWeight: 900,
-                    WebkitTextStroke: '0.4px rgb(117, 75, 240,0.5)',
+                    WebkitTextStroke: '0.4px rgba(61, 15, 24,0.5)',
                     lineHeight: '60px',
                     direction: 'rtl',
                     unicodeBidi: 'isolate',
-                    color: '#3e13ec',
-                    WebkitTextFillColor: '#3e13ec',
+                    color: '#6b1d2f',
+                    WebkitTextFillColor: '#6b1d2f',
                     textShadow: '0 1px 2px #000',
                   }}
                 >
@@ -2006,14 +2049,18 @@ function AppContent() {
               <Route
                 path="/ad/:id"
                 element={
-                  <AdDetailsPage />
+                  <ProtectedRoute>
+                    <AdDetailsPage />
+                  </ProtectedRoute>
                 }
               />
 
               <Route
                 path="/haraj/ad/:id"
                 element={
-                  <AdDetailsPage />
+                  <ProtectedRoute>
+                    <AdDetailsPage />
+                  </ProtectedRoute>
                 }
               />
 
@@ -2058,21 +2105,27 @@ function AppContent() {
               <Route
                 path="/haraj"
                 element={
-                  <RoyalHarajPage />
+                  <ProtectedRoute>
+                    <RoyalHarajPage />
+                  </ProtectedRoute>
                 }
               />
 
               <Route
                 path="/haraj/catalog/:catalogId"
                 element={
-                  <CatalogPage />
+                  <ProtectedRoute>
+                    <CatalogPage />
+                  </ProtectedRoute>
                 }
               />
 
               <Route
                 path="/haraj/post"
                 element={
-                  <AdFormPage />
+                  <ProtectedRoute>
+                    <AdFormPage />
+                  </ProtectedRoute>
                 }
               />
 
@@ -2136,7 +2189,9 @@ function AppContent() {
               <Route
                 path="/faq"
                 element={
-                  <FAQ />
+                  <ProtectedRoute>
+                    <FAQ />
+                  </ProtectedRoute>
                 }
               />
 
