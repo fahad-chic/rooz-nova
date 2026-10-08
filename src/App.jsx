@@ -402,8 +402,13 @@ function AppContent() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // الزائر = جلسة مؤقتة بلا حساب حقيقي (يُشتق من دور المتجر أو جلسة الزائر)
-  const isGuest = useStore((s) => s.userRole === 'guest');
+  // الزائر = جلسة مؤقتة بلا حساب حقيقي. يجب أن يطابق اشتقاق AuthContext
+  // (userRole === 'guest' || guestSession.active) وإلا اختلف حكم LoginRoute
+  // عن حكم ProtectedRoute: زائر يُطرد من صفحة محمية إلى /login ثم لا يتعرّف
+  // عليه LoginRoute فيُحوَّل إلى / بدل عرض نموذج الدخول.
+  const isGuest = useStore(
+    (s) => s.userRole === 'guest' || !!s.guestSession?.active
+  );
 
   // ربط زر الإغلاق العام (❌) بمُوجّه react-router — فيتنقل خطوة للخلف
   // داخلياً دون إعادة تحميل أو مغادرة الموقع.
