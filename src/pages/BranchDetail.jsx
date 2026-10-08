@@ -60,7 +60,7 @@ export const BranchDetail = () => {
 
   if (loading) {
     return (
-      <div style={{ padding: '2rem', textAlign: 'center', color: '#6b1d2f' }}>
+      <div style={{ padding: '2rem', textAlign: 'center', color: '#541426' }}>
         <p>جاري تحميل بيانات الفرع...</p>
       </div>
     );
@@ -75,7 +75,7 @@ export const BranchDetail = () => {
           style={{
             marginTop: '1rem',
             padding: '0.75rem 1.5rem',
-            background: '#6b1d2f',
+            background: '#541426',
             border: 'none',
             borderRadius: '6px',
             cursor: 'pointer',
@@ -157,17 +157,17 @@ export const BranchDetail = () => {
       <style>{`
         .branch-detail-container {
           padding: 2rem;
-          background: linear-gradient(135deg, #1f1116 0%, #1f1116 100%);
+          background: linear-gradient(135deg, #181316 0%, #181316 100%);
           min-height: calc(100vh - 70px);
           color: #fff;
-          font-family: 'Cairo', sans-serif;
+          font-family: Tajawal, sans-serif;
         }
 
         .back-button {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          background: #6b1d2f;
+          background: #541426;
           color: #fff;
           border: none;
           padding: 0.75rem 1.5rem;
@@ -180,7 +180,7 @@ export const BranchDetail = () => {
         }
 
         .back-button:hover {
-          background: #6b1d2f;
+          background: #541426;
           transform: translateY(-2px);
         }
 
@@ -190,13 +190,13 @@ export const BranchDetail = () => {
           padding: 2rem;
           margin-bottom: 2rem;
           box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
-          border-left: 4px solid #6b1d2f;
+          border-left: 4px solid #541426;
         }
 
         .detail-title {
           font-size: 2rem;
           font-weight: 700;
-          color: #6b1d2f;
+          color: #541426;
           margin-bottom: 1rem;
         }
 
@@ -216,12 +216,12 @@ export const BranchDetail = () => {
         .meta-icon {
           width: 45px;
           height: 45px;
-          background: rgba(61, 15, 24, 0.15);
+          background: rgba(42, 11, 21, 0.15);
           border-radius: 10px;
           display: flex;
           align-items: center;
           justify-content: center;
-          color: #6b1d2f;
+          color: #541426;
           flex-shrink: 0;
         }
 
@@ -249,14 +249,14 @@ export const BranchDetail = () => {
           padding: 1.5rem;
           border-radius: 12px;
           box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
-          border-top: 3px solid #6b1d2f;
+          border-top: 3px solid #541426;
           text-align: center;
         }
 
         .stat-number {
           font-size: 2.5rem;
           font-weight: 700;
-          color: #6b1d2f;
+          color: #541426;
           margin-bottom: 0.5rem;
         }
 
@@ -285,7 +285,7 @@ export const BranchDetail = () => {
         }
 
         .progress-label-value {
-          color: #6b1d2f;
+          color: #541426;
           font-weight: 700;
         }
 
@@ -299,7 +299,7 @@ export const BranchDetail = () => {
 
         .progress-fill {
           height: 100%;
-          background: linear-gradient(90deg, #6b1d2f, #d4a5a5);
+          background: linear-gradient(90deg, #541426, #e3c878);
           border-radius: 6px;
           transition: width 0.3s ease;
         }
@@ -328,22 +328,22 @@ export const BranchDetail = () => {
         }
 
         .action-btn-edit {
-          background: #6b1d2f;
+          background: #541426;
           color: #fff;
         }
 
         .action-btn-edit:hover {
-          background: #6b1d2f;
+          background: #541426;
           transform: translateY(-2px);
         }
 
         .action-btn-delete {
-          background: #8f2a40;
+          background: #2a0b15;
           color: white;
         }
 
         .action-btn-delete:hover {
-          background: #8f2a40;
+          background: #2a0b15;
           transform: translateY(-2px);
         }
 

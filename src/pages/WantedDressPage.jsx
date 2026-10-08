@@ -126,9 +126,9 @@ export default function WantedDressPage() {
       dir="rtl"
       style={{
         minHeight: '100vh',
-        background: 'linear-gradient(180deg, #fdfbf7 0%, #fdfbf7 55%, #f7f1ec 100%)',
+        background: 'linear-gradient(180deg, #fffdf8 0%, #fffdf8 55%, #f7f1e6 100%)',
         fontFamily: 'Tajawal, sans-serif',
-        color: '#1f1116',
+        color: '#181316',
         padding: '1.25rem',
       }}
     >
@@ -142,16 +142,16 @@ export default function WantedDressPage() {
               borderRadius: '50%',
               display: 'grid',
               placeItems: 'center',
-              background: 'linear-gradient(135deg, #d4a5a5, #6b1d2f)',
-              boxShadow: '0 10px 24px rgba(107, 29, 47, 0.28)',
+              background: 'linear-gradient(135deg, #e3c878, #541426)',
+              boxShadow: '0 10px 24px rgba(84, 20, 38, 0.28)',
             }}
           >
-            <Heart size={30} color="#fdfbf7" />
+            <Heart size={30} color="#fffdf8" />
           </div>
-          <h1 style={{ margin: '0 0 6px', fontSize: 'clamp(1.3rem, 4vw, 1.8rem)', fontWeight: 900, color: '#3d0f18' }}>
+          <h1 style={{ margin: '0 0 6px', fontSize: 'clamp(1.3rem, 4vw, 1.8rem)', fontWeight: 900, color: '#2a0b15' }}>
             طلب فستان
           </h1>
-          <p style={{ margin: 0, color: '#8a5560', fontWeight: 600 }}>
+          <p style={{ margin: 0, color: '#766d72', fontWeight: 600 }}>
             انشري مواصفات الفستان الذي تبحثين عنه، وسيصل تنبيه للمعلنين الذين يملكون فساتين مطابقة.
           </p>
         </header>
@@ -178,10 +178,10 @@ export default function WantedDressPage() {
         <div
           style={{
             background: '#ffffff',
-            border: '1px solid #f3e0dd',
+            border: '1px solid #f7f1e6',
             borderRadius: 22,
             padding: '1.5rem',
-            boxShadow: '0 10px 34px rgba(31, 17, 22, 0.07)',
+            boxShadow: '0 10px 34px rgba(24, 19, 22, 0.07)',
             display: 'grid',
             gap: 14,
           }}
@@ -231,7 +231,7 @@ export default function WantedDressPage() {
           </Field>
 
           <div>
-            <span style={{ fontSize: 13.5, fontWeight: 800, color: '#1f1116' }}>
+            <span style={{ fontSize: 13.5, fontWeight: 800, color: '#181316' }}>
               المقاسات (سم) — اختياري
             </span>
             <div
@@ -268,7 +268,7 @@ export default function WantedDressPage() {
           </Field>
 
           {errors.submit && (
-            <p style={{ margin: 0, color: '#8f2a40', fontWeight: 700, fontSize: 13 }}>{errors.submit}</p>
+            <p style={{ margin: 0, color: '#2a0b15', fontWeight: 700, fontSize: 13 }}>{errors.submit}</p>
           )}
 
           <button
@@ -277,8 +277,8 @@ export default function WantedDressPage() {
             disabled={submitting}
             style={{
               width: '100%',
-              background: 'linear-gradient(135deg, #6b1d2f, #3d0f18)',
-              color: '#fdfbf7',
+              background: 'linear-gradient(135deg, #541426, #2a0b15)',
+              color: '#fffdf8',
               border: 'none',
               borderRadius: 12,
               padding: '0.95rem',
@@ -304,7 +304,7 @@ export default function WantedDressPage() {
               style={{
                 fontSize: 16,
                 fontWeight: 900,
-                color: '#6b1d2f',
+                color: '#541426',
                 display: 'flex',
                 alignItems: 'center',
                 gap: 8,
@@ -319,18 +319,18 @@ export default function WantedDressPage() {
                   key={r.id}
                   style={{
                     background: '#ffffff',
-                    border: '1px solid #f3e0dd',
+                    border: '1px solid #f7f1e6',
                     borderRadius: 14,
                     padding: '12px 14px',
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', gap: 8, flexWrap: 'wrap' }}>
                     <strong style={{ fontSize: 14.5 }}>{r.title}</strong>
-                    <span style={{ fontSize: 13, color: '#6b1d2f', fontWeight: 800 }}>
+                    <span style={{ fontSize: 13, color: '#541426', fontWeight: 800 }}>
                       {Number(r.budget || 0).toLocaleString()} ريال
                     </span>
                   </div>
-                  <div style={{ marginTop: 4, fontSize: 12.5, color: '#8a5560', fontWeight: 600 }}>
+                  <div style={{ marginTop: 4, fontSize: 12.5, color: '#766d72', fontWeight: 600 }}>
                     {r.color} · {r.userName || 'مشترية'}
                   </div>
                 </div>
@@ -345,11 +345,11 @@ export default function WantedDressPage() {
 
 const inputStyle = (hasError) => ({
   width: '100%',
-  background: '#fdfbf7',
-  border: hasError ? '1px solid #8f2a40' : '1px solid rgba(107, 29, 47, 0.22)',
+  background: '#fffdf8',
+  border: hasError ? '1px solid #2a0b15' : '1px solid rgba(84, 20, 38, 0.22)',
   borderRadius: 12,
   padding: '0.8rem 1rem',
-  color: '#1f1116',
+  color: '#181316',
   fontSize: 15,
   fontFamily: 'inherit',
   outline: 'none',
@@ -359,9 +359,9 @@ const inputStyle = (hasError) => ({
 function Field({ label, error, children }) {
   return (
     <label style={{ display: 'grid', gap: 6 }}>
-      <span style={{ fontSize: 13.5, fontWeight: 800, color: '#1f1116' }}>{label}</span>
+      <span style={{ fontSize: 13.5, fontWeight: 800, color: '#181316' }}>{label}</span>
       {children}
-      {error && <span style={{ fontSize: 12, color: '#8f2a40', fontWeight: 700 }}>{error}</span>}
+      {error && <span style={{ fontSize: 12, color: '#2a0b15', fontWeight: 700 }}>{error}</span>}
     </label>
   );
 }

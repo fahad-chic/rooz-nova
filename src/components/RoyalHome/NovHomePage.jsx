@@ -250,7 +250,7 @@ const NovHomePage = () => {
             {emailStatus && (
               <span
                 className="nov-feature-status"
-                style={{ color: emailStatus.includes('نجاح') ? '#541426' : '#8f2a40' }}
+                style={{ color: emailStatus.includes('نجاح') ? '#541426' : '#2a0b15' }}
               >
                 {emailStatus}
               </span>
@@ -432,7 +432,7 @@ const NovHomePage = () => {
           style={{
             position: 'fixed',
             inset: 0,
-            background: 'rgba(31, 17, 22,0.55)',
+            background: 'rgba(24, 19, 22,0.55)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -443,19 +443,19 @@ const NovHomePage = () => {
           <div
             onClick={(e) => e.stopPropagation()}
             style={{
-              background: 'linear-gradient(145deg,#ffffff,#fdfbf7)',
-              border: '1px solid rgba(61, 15, 24,0.4)',
+              background: 'linear-gradient(145deg,#ffffff,#fffdf8)',
+              border: '1px solid rgba(42, 11, 21,0.4)',
               borderRadius: 18,
               padding: '1.2rem 1rem',
               maxWidth: 340,
               width: '100%',
               textAlign: 'right',
-              boxShadow: '0 18px 45px rgba(31, 17, 22,0.35)',
+              boxShadow: '0 18px 45px rgba(24, 19, 22,0.35)',
               fontFamily: 'Tajawal,sans-serif',
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 10, marginBottom: '0.6rem' }}>
-              <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 800, color: '#1f1116' }}>
+              <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: 800, color: '#181316' }}>
                 كيف تضيف المتجر لشاشة هاتفك؟
               </h3>
               <button
@@ -463,7 +463,7 @@ const NovHomePage = () => {
                 onClick={() => setShowAddHelp(false)}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgba(31, 17, 22,0.06)',
+                  background: 'rgba(24, 19, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -473,13 +473,13 @@ const NovHomePage = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#6b1d2f',
+                  color: '#541426',
                 }}
               >
                 <X size={16} />
               </button>
             </div>
-            <ol style={{ margin: 0, paddingRight: '1.1rem', fontSize: '0.82rem', color: '#1f1116', lineHeight: 1.7 }}>
+            <ol style={{ margin: 0, paddingRight: '1.1rem', fontSize: '0.82rem', color: '#181316', lineHeight: 1.7 }}>
               <li>افتح الموقع في المتصفح</li>
               <li>اضغط قائمة المشاركة أو القائمة</li>
               <li>اختر «إضافة إلى الشاشة الرئيسية»</li>

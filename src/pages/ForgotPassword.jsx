@@ -111,12 +111,12 @@ export default ForgotPassword;
 const page = {
   minHeight: '100vh',
   background:
-    'radial-gradient(circle at 50% 20%, rgba(61, 15, 24,0.10), transparent 40%), linear-gradient(135deg, #fdfbf7, #fdfbf7)',
+    'radial-gradient(circle at 50% 20%, rgba(42, 11, 21,0.10), transparent 40%), linear-gradient(135deg, #fffdf8, #fffdf8)',
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   padding: 20,
-  fontFamily: 'Cairo, sans-serif',
+  fontFamily: 'Tajawal, sans-serif',
   direction: 'rtl',
   boxSizing: 'border-box'
 };
@@ -127,8 +127,8 @@ const card = {
   borderRadius: 20,
   width: '100%',
   maxWidth: 420,
-  border: '1px solid rgba(31, 17, 22,0.08)',
-  boxShadow: '0 20px 55px rgba(31, 17, 22,0.12), inset 0 1px 0 rgba(255, 255, 255,0.6)',
+  border: '1px solid rgba(24, 19, 22,0.08)',
+  boxShadow: '0 20px 55px rgba(24, 19, 22,0.12), inset 0 1px 0 rgba(255, 255, 255,0.6)',
   textAlign: 'center',
   boxSizing: 'border-box'
 };
@@ -141,28 +141,28 @@ const brandMark = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '#6b1d2f',
-  background: 'rgba(61, 15, 24,0.10)',
-  border: '1px solid rgba(61, 15, 24,0.25)',
-  boxShadow: '0 8px 24px rgba(61, 15, 24,0.08)'
+  color: '#541426',
+  background: 'rgba(42, 11, 21,0.10)',
+  border: '1px solid rgba(42, 11, 21,0.25)',
+  boxShadow: '0 8px 24px rgba(42, 11, 21,0.08)'
 };
 
 const title = {
-  color: '#1f1116',
+  color: '#181316',
   fontSize: 26,
   fontWeight: 900,
   margin: '0 0 10px'
 };
 
 const subtitle = {
-  color: '#8a5560',
+  color: '#766d72',
   fontSize: 14,
   lineHeight: 1.8,
   margin: '0 0 20px'
 };
 
 const label = {
-  color: '#1f1116',
+  color: '#181316',
   fontSize: 14,
   fontWeight: 600,
   textAlign: 'right',
@@ -180,7 +180,7 @@ const inputIcon = {
   top: '50%',
   left: 12,
   transform: 'translateY(-50%)',
-  color: '#6b1d2f',
+  color: '#541426',
   pointerEvents: 'none'
 };
 
@@ -188,9 +188,9 @@ const input = {
   width: '100%',
   padding: '12px 12px 12px 40px',
   borderRadius: 10,
-  border: '1px solid rgba(31, 17, 22,0.14)',
-  background: '#fdfbf7',
-  color: '#1f1116',
+  border: '1px solid rgba(24, 19, 22,0.14)',
+  background: '#fffdf8',
+  color: '#181316',
   fontSize: 15,
   fontFamily: 'inherit',
   outline: 'none',
@@ -200,7 +200,7 @@ const input = {
 const submitBtn = {
   width: '100%',
   padding: 14,
-  background: 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
+  background: 'linear-gradient(135deg, #541426, #541426)',
   color: '#fff',
   border: 'none',
   borderRadius: 10,
@@ -221,7 +221,7 @@ const backBtn = {
   margin: '20px auto 0',
   background: 'none',
   border: 'none',
-  color: '#6b1d2f',
+  color: '#541426',
   fontWeight: 700,
   cursor: 'pointer',
   display: 'flex',
@@ -234,8 +234,8 @@ const backBtn = {
 
 const alertError = {
   background: '#fef2f2',
-  border: '1px solid rgba(61, 15, 24,0.25)',
-  color: '#6b1d2f',
+  border: '1px solid rgba(42, 11, 21,0.25)',
+  color: '#541426',
   padding: '10px 12px',
   borderRadius: 10,
   marginBottom: 15,
@@ -247,9 +247,9 @@ const alertError = {
 };
 
 const alertSuccess = {
-  background: '#eae3d9',
-  border: '1px solid rgba(31, 17, 22,0.25)',
-  color: '#4a3a3f',
+  background: '#f7f1e6',
+  border: '1px solid rgba(24, 19, 22,0.25)',
+  color: '#766d72',
   padding: '10px 12px',
   borderRadius: 10,
   marginBottom: 15,

@@ -86,15 +86,15 @@ const PERMISSION_ICONS = {
   INLINE_ELEMENT_DELETE: EyeOff,
 };
 
-// لون هدية الأيقونة حسب القسم — درجات بيج وذهبي دافئة متناسقة مع خلفية #fdfbf7
+// لون هدية الأيقونة حسب القسم — درجات بيج وذهبي دافئة متناسقة مع خلفية #fffdf8
 const CATEGORY_CHIP = {
-  master: 'bg-[#6b1d2f]/15 text-[#6b1d2f] border-[#6b1d2f]/35',
-  users: 'bg-[#6b1d2f]/12 text-[#6b1d2f] border-[#6b1d2f]/30',
-  haraj: 'bg-[#4a3a3f]/12 text-[#4a3a3f] border-[#4a3a3f]/30',
-  catalog: 'bg-[#8a5560]/12 text-[#8a5560] border-[#8a5560]/30',
-  staff: 'bg-[#6b1d2f]/12 text-[#6b1d2f] border-[#6b1d2f]/30',
-  spy: 'bg-[#6b1d2f]/12 text-[#6b1d2f] border-[#6b1d2f]/30',
-  inline: 'bg-[#8a5560]/12 text-[#4a3a3f] border-[#8a5560]/30',
+  master: 'bg-[#541426]/15 text-[#541426] border-[#541426]/35',
+  users: 'bg-[#541426]/12 text-[#541426] border-[#541426]/30',
+  haraj: 'bg-[#766d72]/12 text-[#766d72] border-[#766d72]/30',
+  catalog: 'bg-[#766d72]/12 text-[#766d72] border-[#766d72]/30',
+  staff: 'bg-[#541426]/12 text-[#541426] border-[#541426]/30',
+  spy: 'bg-[#541426]/12 text-[#541426] border-[#541426]/30',
+  inline: 'bg-[#766d72]/12 text-[#766d72] border-[#766d72]/30',
 };
 
 // يطابق شكل الكتالوج الأصلي: cat.icon قد يكون اسم الأيقونة أو المعرف
@@ -126,23 +126,23 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
 
   // ألوان حسب الوضع (نهاري / ليلي)
   const cardBg = darkMode
-    ? { background: 'linear-gradient(165deg, rgba(31, 17, 22,.96), rgba(31, 17, 22,.96))', borderColor: 'rgba(61, 15, 24,.32)' }
-    : { background: 'linear-gradient(165deg, rgba(253, 251, 247,.98), rgba(251, 240, 240,.96))', borderColor: 'rgba(61, 15, 24,.30)' };
-  const textMain = darkMode ? 'text-[#fdfbf7]' : 'text-[#1f1116]';
-  const textSub = darkMode ? 'text-[#6b1d2f]' : 'text-[#1f1116]';
-  const textMuted = darkMode ? 'text-[#6b1d2f]' : 'text-[#1f1116]';
+    ? { background: 'linear-gradient(165deg, rgba(24, 19, 22,.96), rgba(24, 19, 22,.96))', borderColor: 'rgba(42, 11, 21,.32)' }
+    : { background: 'linear-gradient(165deg, rgba(253, 251, 247,.98), rgba(251, 240, 240,.96))', borderColor: 'rgba(42, 11, 21,.30)' };
+  const textMain = darkMode ? 'text-[#fffdf8]' : 'text-[#181316]';
+  const textSub = darkMode ? 'text-[#541426]' : 'text-[#181316]';
+  const textMuted = darkMode ? 'text-[#541426]' : 'text-[#181316]';
   const chipInactive = darkMode
-    ? 'bg-[#1f1116] text-[#fdfbf7] border-[#6b1d2f]/35 hover:bg-[#6b1d2f]/15'
-    : 'bg-[#fdfbf7] text-[#1f1116] border-[#6b1d2f]/30 hover:bg-[#6b1d2f]/10';
+    ? 'bg-[#181316] text-[#fffdf8] border-[#541426]/35 hover:bg-[#541426]/15'
+    : 'bg-[#fffdf8] text-[#181316] border-[#541426]/30 hover:bg-[#541426]/10';
   const rowBgOn = darkMode
-    ? 'bg-[#1f1116] border-[#6b1d2f]/45 shadow-sm shadow-black/20'
-    : 'bg-[#fdfbf7] border-[#6b1d2f]/45 shadow-sm shadow-[#6b1d2f]/10';
+    ? 'bg-[#181316] border-[#541426]/45 shadow-sm shadow-black/20'
+    : 'bg-[#fffdf8] border-[#541426]/45 shadow-sm shadow-[#541426]/10';
   const rowBgOff = darkMode
-    ? 'bg-[#1f1116] border-[#6b1d2f]/20 hover:border-[#6b1d2f]/40'
-    : 'bg-[#fdfbf7] border-[#6b1d2f]/20 hover:border-[#6b1d2f]/35';
+    ? 'bg-[#181316] border-[#541426]/20 hover:border-[#541426]/40'
+    : 'bg-[#fffdf8] border-[#541426]/20 hover:border-[#541426]/35';
   const noticeBg = darkMode
-    ? 'text-[#fdfbf7] bg-[#6b1d2f]/20 border-[#6b1d2f]/40'
-    : 'text-[#1f1116] bg-[#6b1d2f]/15 border-[#6b1d2f]/35';
+    ? 'text-[#fffdf8] bg-[#541426]/20 border-[#541426]/40'
+    : 'text-[#181316] bg-[#541426]/15 border-[#541426]/35';
 
   // فقط حسابات المالك المعتمدة — تنقية كاملة لأي بريد آخر
   const ownerCandidates = useMemo(() => {
@@ -247,9 +247,9 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
       {/* ترويسة التبويب */}
       <div className="rounded-2xl p-5 border shadow-lg" style={cardBg}>
         <h3 className={`font-bold flex items-center gap-2 mb-2 ${textMain} text-base md:text-lg`}>
-          <Shield size={20} className="text-[#6b1d2f]" />
+          <Shield size={20} className="text-[#541426]" />
           مصفوفة الصلاحيات المجهرية{' '}
-          <span className="text-[#6b1d2f]">(47 صلاحية)</span>
+          <span className="text-[#541426]">(47 صلاحية)</span>
         </h3>
         <p className={`text-sm ${textSub} leading-6 font-medium`}>
           اختر حساب مالك ثم فعّل أو عطّل كل صلاحية على حدة عبر زر التعديل ثم الحفظ.
@@ -260,7 +260,7 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
       {/* مشاهدة حسابات المالك والتحكم المطلق — فقط البريدان المعتمدان */}
       <div className="rounded-2xl p-5 border shadow-lg" style={cardBg}>
         <div className="flex items-center gap-2 mb-4">
-          <div className="w-10 h-10 rounded-xl bg-[#6b1d2f]/15 border border-[#6b1d2f]/30 flex items-center justify-center text-[#6b1d2f]">
+          <div className="w-10 h-10 rounded-xl bg-[#541426]/15 border border-[#541426]/30 flex items-center justify-center text-[#541426]">
             <Crown size={20} />
           </div>
           <div>
@@ -273,7 +273,7 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
           </div>
         </div>
 
-        <div className="max-h-56 overflow-y-auto divide-y divide-[#6b1d2f]/15 rounded-xl border border-[#6b1d2f]/25">
+        <div className="max-h-56 overflow-y-auto divide-y divide-[#541426]/15 rounded-xl border border-[#541426]/25">
           {ownerCandidates.length === 0 && (
             <p className={`p-4 text-sm ${textMuted} text-center font-medium`}>
               لا توجد حسابات مالك مطابقة حالياً
@@ -286,8 +286,8 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
               onClick={() => setTarget(u)}
               className={`w-full text-right px-4 py-3.5 flex items-center justify-between gap-3 transition-colors ${
                 target?.id === u.id
-                  ? 'bg-[#6b1d2f]/15 border-r-4 border-[#6b1d2f]'
-                  : 'hover:bg-[#6b1d2f]/08'
+                  ? 'bg-[#541426]/15 border-r-4 border-[#541426]'
+                  : 'hover:bg-[#541426]/08'
               }`}
             >
               <span className="min-w-0">
@@ -299,7 +299,7 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
                 </span>
               </span>
               {target?.id === u.id && (
-                <Check size={18} className="text-[#6b1d2f] flex-shrink-0" />
+                <Check size={18} className="text-[#541426] flex-shrink-0" />
               )}
             </button>
           ))}
@@ -319,7 +319,7 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
               </p>
               <p
                 className={`text-xs font-bold ${
-                  suspended ? 'text-[#6b1d2f]' : 'text-[#6b1d2f]'
+                  suspended ? 'text-[#541426]' : 'text-[#541426]'
                 }`}
               >
                 {suspended
@@ -333,8 +333,8 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
               disabled={savingKey === 'suspend'}
               className={`flex items-center justify-center gap-2 w-full md:w-auto px-4 py-3 rounded-xl text-sm font-bold border transition-all duration-200 ${
                 suspended
-                  ? 'bg-[#4a3a3f]/15 text-[#4a3a3f] border-[#4a3a3f]/40 hover:bg-[#4a3a3f]/25'
-                  : 'bg-[#6b1d2f]/15 text-[#6b1d2f] border-[#6b1d2f]/40 hover:bg-[#6b1d2f]/25'
+                  ? 'bg-[#766d72]/15 text-[#766d72] border-[#766d72]/40 hover:bg-[#766d72]/25'
+                  : 'bg-[#541426]/15 text-[#541426] border-[#541426]/40 hover:bg-[#541426]/25'
               }`}
             >
               {suspended ? <Sun size={16} /> : <Snowflake size={16} />}
@@ -366,7 +366,7 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
                       onClick={() => setActiveCategory(cat.id)}
                       className={`flex items-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-bold border shrink-0 transition-all duration-200 ${
                         active
-                          ? 'bg-[#6b1d2f] text-[#1f1116] border-[#6b1d2f] shadow-md shadow-[#6b1d2f]/25'
+                          ? 'bg-[#541426] text-[#181316] border-[#541426] shadow-md shadow-[#541426]/25'
                           : chipInactive
                       }`}
                     >
@@ -386,14 +386,14 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
                   <button
                     type="button"
                     onClick={() => handleCategoryAll(activeCategory, true)}
-                    className="text-xs px-3.5 py-2 rounded-xl bg-[#4a3a3f]/15 text-[#4a3a3f] border border-[#4a3a3f]/40 hover:bg-[#4a3a3f]/25 font-bold transition-all duration-200"
+                    className="text-xs px-3.5 py-2 rounded-xl bg-[#766d72]/15 text-[#766d72] border border-[#766d72]/40 hover:bg-[#766d72]/25 font-bold transition-all duration-200"
                   >
                     تفعيل القسم كله
                   </button>
                   <button
                     type="button"
                     onClick={() => handleCategoryAll(activeCategory, false)}
-                    className="text-xs px-3.5 py-2 rounded-xl bg-[#6b1d2f]/12 text-[#6b1d2f] border border-[#6b1d2f]/35 hover:bg-[#6b1d2f]/20 font-bold transition-all duration-200"
+                    className="text-xs px-3.5 py-2 rounded-xl bg-[#541426]/12 text-[#541426] border border-[#541426]/35 hover:bg-[#541426]/20 font-bold transition-all duration-200"
                   >
                     تعطيل القسم كله
                   </button>
@@ -409,7 +409,7 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
                   const ChipIcon = PERMISSION_ICONS[p.key] || Shield;
                   const chipColor =
                     CATEGORY_CHIP[activeCategory] ||
-                    'bg-[#6b1d2f]/12 text-[#6b1d2f] border-[#6b1d2f]/30';
+                    'bg-[#541426]/12 text-[#541426] border-[#541426]/30';
                   return (
                     <div
                       key={p.key}
@@ -428,7 +428,7 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
                           <p className={`font-bold text-sm ${textMain} flex items-center gap-2 flex-wrap`}>
                             {p.label}
                             <code
-                              className={`text-[10px] font-mono bg-[#6b1d2f]/10 px-1.5 py-0.5 rounded ${darkMode ? 'text-[#6b1d2f]' : 'text-[#8a5560]'}`}
+                              className={`text-[10px] font-mono bg-[#541426]/10 px-1.5 py-0.5 rounded ${darkMode ? 'text-[#541426]' : 'text-[#766d72]'}`}
                               dir="ltr"
                             >
                               {p.key}
@@ -451,7 +451,7 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
                               disabled={suspended || savingKey === 'bulk' || saving}
                               onClick={() => handleToggle(p.key, !on)}
                               className={`relative w-12 h-7 rounded-full transition-colors ${
-                                on ? 'bg-[#6b1d2f]' : 'bg-[#6b1d2f]'
+                                on ? 'bg-[#541426]' : 'bg-[#541426]'
                               } ${suspended ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                             >
                               <span
@@ -460,18 +460,18 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
                                 }`}
                               >
                                 {saving ? (
-                                  <span className="w-3 h-3 border-2 border-[#6b1d2f] border-t-transparent rounded-full animate-spin" />
+                                  <span className="w-3 h-3 border-2 border-[#541426] border-t-transparent rounded-full animate-spin" />
                                 ) : on ? (
-                                  <Check size={11} className="text-[#6b1d2f]" />
+                                  <Check size={11} className="text-[#541426]" />
                                 ) : (
-                                  <X size={11} className="text-[#6b1d2f]" />
+                                  <X size={11} className="text-[#541426]" />
                                 )}
                               </span>
                             </button>
                             <button
                               type="button"
                               onClick={() => setEditingKey(null)}
-                              className="p-2 rounded-lg bg-[#6b1d2f]/10 text-[#6b1d2f] hover:bg-[#6b1d2f]/20"
+                              className="p-2 rounded-lg bg-[#541426]/10 text-[#541426] hover:bg-[#541426]/20"
                               title="إلغاء"
                               aria-label="إلغاء التعديل"
                             >
@@ -483,7 +483,7 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
                             type="button"
                             onClick={() => setEditingKey(p.key)}
                             disabled={suspended || savingKey === 'bulk'}
-                            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-[#6b1d2f]/12 text-[#6b1d2f] border border-[#6b1d2f]/30 hover:bg-[#6b1d2f]/20 transition-all disabled:opacity-50"
+                            className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-[#541426]/12 text-[#541426] border border-[#541426]/30 hover:bg-[#541426]/20 transition-all disabled:opacity-50"
                             title="تعديل الصلاحية"
                             aria-label={`تعديل ${p.label}`}
                           >
@@ -498,8 +498,8 @@ const PermissionsPanel = ({ users = [], ownerEmail: _ownerEmail, darkMode = fals
               </div>
 
               {activeCategory === 'inline' && (
-                <p className={`text-xs ${textSub} leading-6 flex items-start gap-2 border border-[#6b1d2f]/25 rounded-xl px-3.5 py-2.5 font-medium ${darkMode ? 'bg-[#1f1116]' : 'bg-[#fdfbf7]'}`}>
-                  <Info size={15} className="flex-shrink-0 mt-0.5 text-[#6b1d2f]" />
+                <p className={`text-xs ${textSub} leading-6 flex items-start gap-2 border border-[#541426]/25 rounded-xl px-3.5 py-2.5 font-medium ${darkMode ? 'bg-[#181316]' : 'bg-[#fffdf8]'}`}>
+                  <Info size={15} className="flex-shrink-0 mt-0.5 text-[#541426]" />
                   صلاحيات هذا القسم لا تظهر كأزرار ثابتة في الغرفة — بل كأدوات تحكم منبثقة
                   بجانب العناصر نفسها في الموقع (نصوص، صور، شريط متحرك) لمن يملكها فقط.
                 </p>

@@ -32,25 +32,25 @@ const toolButtonStyle = {
   display: 'inline-flex',
   alignItems: 'center',
   gap: 6,
-  background: 'rgba(61, 15, 24, 0.1)',
-  border: '1px solid rgba(61, 15, 24, 0.35)',
-  color: '#1f1116',
+  background: 'rgba(42, 11, 21, 0.1)',
+  border: '1px solid rgba(42, 11, 21, 0.35)',
+  color: '#181316',
   borderRadius: 999,
   padding: '7px 13px',
   fontSize: '0.78rem',
   fontWeight: 700,
   cursor: 'pointer',
-  fontFamily: 'Cairo, sans-serif',
+  fontFamily: 'Tajawal, sans-serif',
   minHeight: 40,
   transition: 'background 0.2s ease',
 };
 
 const bannerStyle = {
-  background: 'rgba(61, 15, 24, 0.12)',
-  border: '1px solid rgba(61, 15, 24, 0.3)',
+  background: 'rgba(42, 11, 21, 0.12)',
+  border: '1px solid rgba(42, 11, 21, 0.3)',
   borderRadius: 12,
   padding: '0.75rem 1rem',
-  color: '#1f1116',
+  color: '#181316',
   fontSize: '0.88rem',
   fontWeight: 600,
   marginBottom: '1rem',
@@ -139,7 +139,7 @@ const NotificationPanel = () => {
         margin: '0 auto',
         padding: '1.5rem 1rem 2.5rem',
         minHeight: '70vh',
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Tajawal, sans-serif',
       }}
     >
       {/* العنوان + أدوات التحكم */}
@@ -160,16 +160,16 @@ const NotificationPanel = () => {
             gap: 10,
             fontSize: 'clamp(1.25rem, 4vw, 1.5rem)',
             fontWeight: 800,
-            color: '#1f1116',
+            color: '#181316',
             margin: 0,
           }}
         >
-          <Bell size={24} color="#6b1d2f" />
+          <Bell size={24} color="#541426" />
           الإشعارات
           {unreadCount > 0 && (
             <span
               style={{
-                background: '#6b1d2f',
+                background: '#541426',
                 color: '#fff',
                 fontSize: '0.7rem',
                 fontWeight: 800,
@@ -222,13 +222,13 @@ const NotificationPanel = () => {
           style={{
             textAlign: 'center',
             padding: '3.5rem 1rem',
-            color: '#6b1d2f',
+            color: '#541426',
             background: 'rgba(253, 251, 247,0.6)',
             borderRadius: 16,
-            border: '1px solid rgba(61, 15, 24,0.18)',
+            border: '1px solid rgba(42, 11, 21,0.18)',
           }}
         >
-          <Bell size={48} color="#6b1d2f" style={{ margin: '0 auto 1rem' }} />
+          <Bell size={48} color="#541426" style={{ margin: '0 auto 1rem' }} />
           <p style={{ fontWeight: 700, fontSize: '1.05rem', margin: 0 }}>
             لا توجد إشعارات حالياً
           </p>
@@ -256,14 +256,14 @@ const NotificationPanel = () => {
                 onClick={() => handleItemClick(item.id)}
                 style={{
                   background: isUnread
-                    ? 'linear-gradient(145deg, #fdfbf7, #fdfbf7)'
+                    ? 'linear-gradient(145deg, #fffdf8, #fffdf8)'
                     : 'rgba(255, 255, 255, 0.72)',
-                  border: `1px solid ${isUnread ? 'rgba(61, 15, 24, 0.45)' : 'rgba(61, 15, 24, 0.2)'}`,
+                  border: `1px solid ${isUnread ? 'rgba(42, 11, 21, 0.45)' : 'rgba(42, 11, 21, 0.2)'}`,
                   borderRadius: 14,
                   padding: '0.9rem 1rem',
                   boxShadow: isUnread
-                    ? '0 6px 18px rgba(61, 15, 24, 0.12)'
-                    : '0 2px 8px rgba(61, 15, 24, 0.06)',
+                    ? '0 6px 18px rgba(42, 11, 21, 0.12)'
+                    : '0 2px 8px rgba(42, 11, 21, 0.06)',
                   transition: 'all 0.25s ease',
                   cursor: isUnread ? 'pointer' : 'default',
                   opacity: isRead && muted ? 0.7 : 1,
@@ -271,14 +271,14 @@ const NotificationPanel = () => {
                 onMouseEnter={(e) => {
                   if (isUnread) {
                     e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(61, 15, 24, 0.15)';
+                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(42, 11, 21, 0.15)';
                   }
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0)';
                   e.currentTarget.style.boxShadow = isUnread
-                    ? '0 6px 18px rgba(61, 15, 24, 0.12)'
-                    : '0 2px 8px rgba(61, 15, 24, 0.06)';
+                    ? '0 6px 18px rgba(42, 11, 21, 0.12)'
+                    : '0 2px 8px rgba(42, 11, 21, 0.06)';
                 }}
               >
                 <div
@@ -291,16 +291,16 @@ const NotificationPanel = () => {
                   }}
                 >
                   {item.type === 'owner-entry' ? (
-                    <Crown size={15} color="#6b1d2f" />
+                    <Crown size={15} color="#541426" />
                   ) : (
-                    <Mail size={15} color="#6b1d2f" />
+                    <Mail size={15} color="#541426" />
                   )}
 
                   <span
                     style={{
                       fontSize: '0.78rem',
                       fontWeight: 700,
-                      color: '#6b1d2f',
+                      color: '#541426',
                     }}
                   >
                     {item.title || TYPE_LABELS[item.type] || 'إشعار'}
@@ -309,7 +309,7 @@ const NotificationPanel = () => {
                   {isUnread && (
                     <span
                       style={{
-                        background: '#6b1d2f',
+                        background: '#541426',
                         color: '#fff',
                         fontSize: '0.68rem',
                         fontWeight: 700,
@@ -326,7 +326,7 @@ const NotificationPanel = () => {
                     style={{
                       marginInlineStart: 'auto',
                       fontSize: '0.75rem',
-                      color: '#6b1d2f',
+                      color: '#541426',
                     }}
                   >
                     {formatTime(item.at)}
@@ -337,7 +337,7 @@ const NotificationPanel = () => {
                   style={{
                     margin: 0,
                     fontSize: '0.95rem',
-                    color: '#1f1116',
+                    color: '#181316',
                     lineHeight: 1.6,
                     whiteSpace: 'pre-wrap',
                   }}

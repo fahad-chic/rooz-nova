@@ -4,22 +4,22 @@
    لا تدرّجات صاخبة — تنسيق احترافي هادئ. يُستورد أخيراً.
    ============================================================ */
 :root {
-  --co-bg: #fdfbf7;
+  --co-bg: #fffdf8;
   --co-surface: #ffffff;
-  --co-ink: #1f1116;
-  --co-ink-2: #1f1116;
-  --co-muted: #8a5560;
-  --co-line: #fdfbf7;
-  --co-primary: #6b1d2f;
-  --co-primary-deep: #6b1d2f;
-  --co-primary-soft: #fdfbf7;
-  --co-accent: #6b1d2f;
-  --co-dark: #1f1116;
+  --co-ink: #181316;
+  --co-ink-2: #181316;
+  --co-muted: #766d72;
+  --co-line: #fffdf8;
+  --co-primary: #541426;
+  --co-primary-deep: #541426;
+  --co-primary-soft: #fffdf8;
+  --co-accent: #541426;
+  --co-dark: #181316;
   --co-radius: 14px;
   --co-radius-sm: 10px;
   --co-font: 'Tajawal', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
-  --co-shadow: 0 6px 22px -12px rgba(31, 17, 22, 0.28);
-  --co-shadow-lg: 0 18px 44px -22px rgba(31, 17, 22, 0.4);
+  --co-shadow: 0 6px 22px -12px rgba(24, 19, 22, 0.28);
+  --co-shadow-lg: 0 18px 44px -22px rgba(24, 19, 22, 0.4);
 
   /* جسر للمتغيرات القديمة في المكوّنات */
   --nv-font: var(--co-font);

@@ -150,9 +150,9 @@ export default function OwnerPanel() {
               width: 40,
               height: 40,
               background: 'rgba(255, 255, 255,0.08)',
-              border: '1px solid rgba(61, 15, 24,0.45)',
-              color: '#f3e0dd',
-              boxShadow: '0 0 12px rgba(61, 15, 24,0.25)',
+              border: '1px solid rgba(42, 11, 21,0.45)',
+              color: '#f7f1e6',
+              boxShadow: '0 0 12px rgba(42, 11, 21,0.25)',
               top: 0,
             }}
           />
@@ -286,9 +286,9 @@ export default function OwnerPanel() {
 const page = {
   padding: '2rem',
   fontFamily: "Tajawal, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-  background: 'linear-gradient(135deg,#1f1116,#1f1116)',
+  background: 'linear-gradient(135deg,#181316,#181316)',
   minHeight: '100vh',
-  color: '#fdfbf7',
+  color: '#fffdf8',
   boxSizing: 'border-box',
 };
 
@@ -307,10 +307,10 @@ const headerActions = {
 };
 
 const title = {
-  color: '#f3e0dd',
+  color: '#f7f1e6',
   fontSize: 28,
   fontWeight: 800,
-  textShadow: '0 0 10px rgba(61, 15, 24,0.45)',
+  textShadow: '0 0 10px rgba(42, 11, 21,0.45)',
 };
 
 const subtitle = {
@@ -333,20 +333,20 @@ const sectionHeader = {
 };
 
 const sectionTitle = {
-  color: '#f3e0dd',
+  color: '#f7f1e6',
   fontSize: 22,
   fontWeight: 800,
   marginBottom: 10,
-  textShadow: '0 0 10px rgba(61, 15, 24,0.35)',
+  textShadow: '0 0 10px rgba(42, 11, 21,0.35)',
 };
 
 const card = {
   background: 'rgba(255, 255, 255,0.08)',
   padding: '1rem',
   borderRadius: 14,
-  border: '1px solid rgba(61, 15, 24,0.35)',
+  border: '1px solid rgba(42, 11, 21,0.35)',
   marginBottom: 12,
-  boxShadow: '0 0 18px rgba(61, 15, 24,0.25)',
+  boxShadow: '0 0 18px rgba(42, 11, 21,0.25)',
   backdropFilter: 'blur(10px)',
 };
 
@@ -363,7 +363,7 @@ const actions = {
 };
 
 const btnBan = {
-  background: '#6b1d2f',
+  background: '#541426',
   color: '#fff',
   padding: '8px 12px',
   borderRadius: 10,
@@ -373,7 +373,7 @@ const btnBan = {
 };
 
 const btnBurgundy = {
-  background: '#6b1d2f',
+  background: '#541426',
   color: '#fff',
   padding: '8px 12px',
   borderRadius: 10,
@@ -383,7 +383,7 @@ const btnBurgundy = {
 };
 
 const btnGray = {
-  background: '#8a5560',
+  background: '#766d72',
   color: '#fff',
   padding: '8px 12px',
   borderRadius: 10,
@@ -394,24 +394,24 @@ const btnGray = {
 
 const btnGlass = {
   background: 'rgba(255, 255, 255,0.12)',
-  border: '1px solid rgba(61, 15, 24,0.35)',
-  color: '#fdfbf7',
+  border: '1px solid rgba(42, 11, 21,0.35)',
+  color: '#fffdf8',
   padding: '8px 12px',
   borderRadius: 10,
   cursor: 'pointer',
   fontWeight: 700,
-  boxShadow: '0 0 12px rgba(61, 15, 24,0.25)',
+  boxShadow: '0 0 12px rgba(42, 11, 21,0.25)',
 };
 
 const btnRoyal = {
-  background: 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
-  color: '#1f1116',
+  background: 'linear-gradient(135deg, #541426, #541426)',
+  color: '#181316',
   padding: '10px 14px',
   borderRadius: 12,
   border: '1px solid rgba(251, 240, 240,0.45)',
   cursor: 'pointer',
   fontWeight: 900,
-  boxShadow: '0 0 25px rgba(61, 15, 24,0.45)',
+  boxShadow: '0 0 25px rgba(42, 11, 21,0.45)',
 };
 
 const btnDisabled = {
@@ -429,30 +429,30 @@ const denied = {
 const loadingBox = {
   padding: '2rem',
   textAlign: 'center',
-  color: '#f3e0dd',
+  color: '#f7f1e6',
   fontSize: 20,
 };
 
 const alertError = {
-  background: 'rgba(61, 15, 24,0.18)',
-  border: '1px solid rgba(61, 15, 24,0.45)',
-  color: '#f3e0dd',
+  background: 'rgba(42, 11, 21,0.18)',
+  border: '1px solid rgba(42, 11, 21,0.45)',
+  color: '#f7f1e6',
   padding: '10px 12px',
   borderRadius: 12,
   marginTop: 10,
   marginBottom: 10,
-  boxShadow: '0 0 12px rgba(61, 15, 24,0.35)',
+  boxShadow: '0 0 12px rgba(42, 11, 21,0.35)',
 };
 
 const alertOk = {
-  background: 'rgba(31, 17, 22,0.18)',
-  border: '1px solid rgba(31, 17, 22,0.45)',
-  color: '#eae3d9',
+  background: 'rgba(24, 19, 22,0.18)',
+  border: '1px solid rgba(24, 19, 22,0.45)',
+  color: '#f7f1e6',
   padding: '10px 12px',
   borderRadius: 12,
   marginTop: 10,
   marginBottom: 10,
-  boxShadow: '0 0 12px rgba(31, 17, 22,0.35)',
+  boxShadow: '0 0 12px rgba(24, 19, 22,0.35)',
 };
 
 const emptyBox = {
@@ -465,7 +465,7 @@ const textarea = {
   width: '100%',
   background: 'rgba(255, 255, 255,0.06)',
   color: '#fff',
-  border: '1px solid rgba(61, 15, 24,0.35)',
+  border: '1px solid rgba(42, 11, 21,0.35)',
   borderRadius: 10,
   padding: '10px 12px',
   outline: 'none',
@@ -477,7 +477,7 @@ const textarea = {
 const searchInput = {
   background: 'rgba(255, 255, 255,0.06)',
   color: '#fff',
-  border: '1px solid rgba(61, 15, 24,0.35)',
+  border: '1px solid rgba(42, 11, 21,0.35)',
   borderRadius: 10,
   padding: '8px 12px',
   outline: 'none',

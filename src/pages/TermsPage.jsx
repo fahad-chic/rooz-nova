@@ -64,9 +64,9 @@ export default function TermsPage() {
       className="terms-page"
       style={{
         minHeight: '100vh',
-        background: 'linear-gradient(180deg, #fdfbf7 0%, #fdfbf7 55%, #f7f1ec 100%)',
+        background: 'linear-gradient(180deg, #fffdf8 0%, #fffdf8 55%, #f7f1e6 100%)',
         fontFamily: 'Tajawal, sans-serif',
-        color: '#1f1116',
+        color: '#181316',
         padding: '1.25rem',
       }}
     >
@@ -79,13 +79,13 @@ export default function TermsPage() {
             alignItems: 'center',
             gap: 8,
             background: '#ffffff',
-            border: '1px solid #f3e0dd',
+            border: '1px solid #f7f1e6',
             borderRadius: 12,
             padding: '10px 18px',
             cursor: 'pointer',
             fontSize: 15,
             fontWeight: 700,
-            color: '#1f1116',
+            color: '#181316',
             marginBottom: 18,
             fontFamily: 'inherit',
           }}
@@ -96,11 +96,11 @@ export default function TermsPage() {
         <header
           style={{
             background: '#ffffff',
-            border: '1px solid #f3e0dd',
+            border: '1px solid #f7f1e6',
             borderRadius: 22,
             padding: '1.75rem 1.5rem',
             textAlign: 'center',
-            boxShadow: '0 10px 34px rgba(31, 17, 22, 0.08)',
+            boxShadow: '0 10px 34px rgba(24, 19, 22, 0.08)',
           }}
         >
           <div
@@ -111,16 +111,16 @@ export default function TermsPage() {
               borderRadius: '50%',
               display: 'grid',
               placeItems: 'center',
-              background: 'linear-gradient(135deg, #6b1d2f, #3d0f18)',
-              boxShadow: '0 10px 24px rgba(107, 29, 47, 0.30)',
+              background: 'linear-gradient(135deg, #541426, #2a0b15)',
+              boxShadow: '0 10px 24px rgba(84, 20, 38, 0.30)',
             }}
           >
-            <ScrollText size={30} color="#fdfbf7" />
+            <ScrollText size={30} color="#fffdf8" />
           </div>
-          <h1 style={{ margin: '0 0 10px', fontSize: 'clamp(1.3rem, 4vw, 1.85rem)', fontWeight: 900, color: '#3d0f18' }}>
+          <h1 style={{ margin: '0 0 10px', fontSize: 'clamp(1.3rem, 4vw, 1.85rem)', fontWeight: 900, color: '#2a0b15' }}>
             شروط وأحكام استخدام منصة &quot;أناقة ROOZ&quot;
           </h1>
-          <p style={{ margin: 0, lineHeight: 2, color: '#8a5560', fontWeight: 600 }}>
+          <p style={{ margin: 0, lineHeight: 2, color: '#766d72', fontWeight: 600 }}>
             مرحباً بكم في &quot;أناقة ROOZ&quot;. تُطبق هذه الشروط والأحكام على كافة
             المستخدمين والزوار للموقع. استخدامك للموقع يعني موافقتك الكاملة على
             هذه الشروط.
@@ -133,10 +133,10 @@ export default function TermsPage() {
               key={section.title}
               style={{
                 background: '#ffffff',
-                border: '1px solid #f3e0dd',
+                border: '1px solid #f7f1e6',
                 borderRadius: 18,
                 padding: '1.25rem 1.35rem',
-                boxShadow: '0 6px 22px rgba(31, 17, 22, 0.06)',
+                boxShadow: '0 6px 22px rgba(24, 19, 22, 0.06)',
               }}
             >
               <h2
@@ -144,8 +144,8 @@ export default function TermsPage() {
                   margin: '0 0 12px',
                   fontSize: '1.05rem',
                   fontWeight: 900,
-                  color: '#6b1d2f',
-                  borderInlineStart: '4px solid #6b1d2f',
+                  color: '#541426',
+                  borderInlineStart: '4px solid #541426',
                   paddingInlineStart: 10,
                 }}
               >
@@ -171,8 +171,8 @@ export default function TermsPage() {
           style={{
             marginTop: 16,
             marginBottom: 30,
-            background: 'rgba(107, 29, 47, 0.06)',
-            border: '1px solid rgba(107, 29, 47, 0.16)',
+            background: 'rgba(84, 20, 38, 0.06)',
+            border: '1px solid rgba(84, 20, 38, 0.16)',
             borderRadius: 16,
             padding: '1rem 1.25rem',
             display: 'flex',
@@ -181,7 +181,7 @@ export default function TermsPage() {
             fontWeight: 700,
           }}
         >
-          <ShieldCheck size={20} color="#6b1d2f" />
+          <ShieldCheck size={20} color="#541426" />
           <span>للاستفسارات أو الشكاوى، يرجى التواصل مع فريق دعم &quot;أناقة ROOZ&quot;.</span>
         </footer>
       </div>
