@@ -51,3 +51,14 @@
 ## الاختبار الآلي
 - `npx vitest run` — 100 اختبار (13 ملفاً) يجب أن تمرّ.
 - `BASE_URL=http://localhost:12000 node e2e/full-audit.mjs` — تدقيق شامل (مصفوفة صلاحيات + تفاعل صفحة الدخول + تجاوز أفقي). يجب أن ينتهي بـ `OVERALL: PASS`.
+
+## الهوية الملكية الجديدة (rooz-royal) — الواجهة فقط
+- **قاعدة صارمة**: هذه التغييرات واجهة فقط. لم تُمسّ Routes/Firebase/Firestore/Functions/APIs/الصلاحيات/Rules.
+- ملف النظام البصري: `src/styles/rooz-royal.css` (يُستورد **أخيراً** في `main.jsx` ليتقدّم على أي هوية سابقة).
+  - الألوان: Royal Burgundy `#541426` · Deep Burgundy `#2A0B15` · Royal Gold `#C9A24D` · Champagne `#E3C878` · Ivory `#F7F1E6` · Warm White `#FFFDF8` · Dark `#181316` · Muted `#766D72`.
+  - يعرّف جسراً (`--co-*`, `--nv-*`, `--ch-*`, `--rh-*`) يحوّل بقية الصفحات تلقائياً للهوية الجديدة دون تعديلها.
+- الترويسة الملكية: `src/components/RoyalHeader.jsx` — طبقتان (بحث كبير + أيقونات Lucide + شريط تنقل مختصر) + درج جانبي بزر (+) الذكي.
+  - تُدمج داخل `Navigation.jsx` (استُبدلت كتلة `<nav className="navbar">` القديمة بالكامل) وتستقبل الحالة/الدوال جاهزة — لا منطق داخلها.
+- بيانات القائمة الملكية: `src/data/royalMenu.js` (كل مسار فيها موجود فعلاً في `App.jsx` — لا روابط ميتة).
+- الصفحة الرئيسية: `src/components/RoyalHome/NovHomePage.jsx` — هيرو ملكي + نقاط ثقة (rz-trust) + «اكتشفي ROOZ» (rz-discover) + FAQ (rz-faq) + فوتر ملكي (rz-footer).
+- عند تعديل الهوية مستقبلاً: عدّل `rooz-royal.css` فقط؛ لا تعدّل ملفات الصفحات لهذا الغرض.
