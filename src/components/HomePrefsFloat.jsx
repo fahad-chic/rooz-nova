@@ -30,7 +30,8 @@ const HomePrefsFloat = () => {
       <style>{`
         .hpf-btn {
           position: fixed;
-          bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 146px);
+          /* فوق زر واتساب مباشرةً (واتساب أسفل + 62px) — بلا تداخل */
+          bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 78px);
           right: 16px;
           z-index: 80;
           width: 46px;
@@ -49,7 +50,7 @@ const HomePrefsFloat = () => {
         .hpf-btn:hover { transform: scale(1.08); }
         .hpf-panel {
           position: fixed;
-          bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 208px);
+          bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 140px);
           right: 16px;
           z-index: 80;
           width: min(280px, calc(100vw - 32px));

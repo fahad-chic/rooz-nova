@@ -168,6 +168,17 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
     s.muted ? 0 : s.items.filter((i) => i.at > s.lastSeenAt).length
   );
 
+  // زر الرجوع يعكس تاريخ المتصفح الحقيقي.
+  // location.key === 'default' يعني أن هذه أول صفحة في الجلسة → لا يوجد سابق.
+  const canGoBack = location.key !== 'default' && !['/login', '/register', '/forgot-password', '/unauthorized'].includes(location.pathname);
+  const handleHeaderBack = useCallback(() => {
+    if (location.key !== 'default') {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
+  }, [location.key, navigate]);
+
   const visiblePages = useMemo(
     () => PAGES.filter((p) => !p.ownerOnly || isOwnerLoggedIn),
     [isOwnerLoggedIn]
@@ -921,6 +932,8 @@ const Navigation = ({ onOpenWelcome, onOpenAIChat }) => {
         onOpenOwnerContact={() => setShowOwnerContact(true)}
         onOpenBroadcast={() => setShowBroadcast(true)}
         onOpenWelcome={() => setShowElegantWelcome(true)}
+        canGoBack={canGoBack}
+        onBack={handleHeaderBack}
       />
 
       {showElegantWelcome && (

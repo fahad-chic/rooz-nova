@@ -4,6 +4,15 @@
    القاعدة الذهبية: نغيّر الواجهة فقط — لا Routes ولا Firebase ولا Functions.
    ============================================================ */
 
+/* مصدر الاستيراد الوحيد للأنماط: نستورد كل الهويات القديمة هنا بالترتيب
+   الصحيح ثم تأتي قواعدنا الملكية بعدها فتتقدّم دائماً (كان البناء يقدّم
+   index/global/nova/contour علينا فتفرض خلفيتها البيج وخطها الرفيع). */
+@import './nova-theme.css';
+@import './contour-theme.css';
+@import './../index.css';
+@import './global.css';
+@import './logo-clean.css';
+
 :root {
   /* --- الألوان الأساسية الثمانية (الرؤية الملكية) --- */
   --rz-burgundy: #541426;       /* Royal Burgundy */
@@ -95,6 +104,7 @@
 }
 
 /* ---------- قاعدة الصفحة ---------- */
+/* نتجاوز أي هوية سابقة (contour/nova) كانت تفرض خطاً رفيعاً 300 وألواناً بيج */
 html, body {
   background: var(--rz-ivory) !important;
   background-image: none !important;
@@ -102,10 +112,16 @@ html, body {
 }
 body {
   font-family: var(--rz-font) !important;
-  font-weight: 400 !important;
+  font-weight: 500 !important;
+  color: var(--rz-dark) !important;
   letter-spacing: 0;
   -webkit-font-smoothing: antialiased;
 }
+/* نصوص الجسم واضحة (لا رفيعة باهتة) */
+p, span, li, label, a, button, input, textarea, select {
+  font-family: var(--rz-font) !important;
+}
+p, li { font-weight: 500 !important; }
 
 /* ---------- تسلسل النصوص (وضوح هرمي) ---------- */
 h1, h2, h3, h4, h5, h6 {
@@ -129,6 +145,10 @@ small, .rz-muted { color: var(--rz-muted) !important; }
   width: 100%;
 }
 
+/* الترويسة sticky وتحتل مساحتها داخل التدفق، لذا لا حاجة لحشوة تعويضية
+   على body (كانت تُنتج فراغاً مزدوجاً أعلى الصفحة). */
+body.rooz-has-nav { padding-top: 0 !important; }
+
 .rz-topbar {
   background: linear-gradient(180deg, var(--rz-burgundy) 0%, var(--rz-burgundy-deep) 100%);
   color: var(--rz-ivory);
@@ -137,12 +157,31 @@ small, .rz-muted { color: var(--rz-muted) !important; }
 .rz-topbar-inner {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 10px 16px;
+  padding: 9px 16px;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
 }
+/* زر الرجوع داخل الترويسة (ليس عائماً) */
+.rz-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--rz-line-gold);
+  background: rgba(255, 253, 248, 0.08);
+  color: var(--rz-ivory);
+  font-family: var(--rz-font);
+  font-weight: 700;
+  font-size: 0.80rem;
+  cursor: pointer;
+  transition: background 0.18s ease, border-color 0.18s ease;
+}
+.rz-back:hover { background: rgba(255, 253, 248, 0.16); border-color: var(--rz-gold); }
+.rz-burger-mobile { display: none; }
 .rz-logo {
   display: inline-flex;
   align-items: center;
@@ -843,6 +882,84 @@ a { color: var(--rz-burgundy); }
   .rz-discover-grid { grid-template-columns: 1fr; }
 }
 
+/* ============================================================
+   إيقاع عمودي مضغوط (Compact Luxury) — يقلّص طول الصفحة دون ازدحام
+   ============================================================ */
+.nov-hero {
+  margin: 0.5rem 0 0.85rem !important;
+  padding: 1.2rem 1.1rem 1.15rem !important;
+}
+.nov-hero-title { margin: 0.35rem 0 0.4rem !important; }
+.nov-hero-sub { margin: 0 0 0.7rem !important; }
+.rz-trust { margin: 14px 0 !important; gap: 10px !important; }
+.rz-trust-item { padding: 14px 10px !important; }
+.rz-trust-ico { width: 40px !important; height: 40px !important; margin-bottom: 7px !important; }
+.rz-discover { margin: 14px 0 !important; padding: 15px 14px !important; }
+.rz-discover-head { margin-bottom: 11px !important; }
+.rz-faq { margin: 16px 0 6px !important; }
+.rz-footer { margin-top: 22px !important; }
+.nov-section-head { margin: 0.4rem 0 0.6rem !important; }
+.nov-tiles { gap: 0.6rem !important; }
+.rz-btn { padding: 10px 18px !important; }
+
+/* ============================================================
+   تثبيت الهوية الملكية أخيراً
+   (الملفات القديمة nova-theme/contour-theme تُحمَّل بعدنا أحياناً بحسب
+   ترتيب البناء، فتُعيد قيمها البيج. هنا نُعلن القيم بمحدِّد أقوى لتضمن الفوز.)
+   ============================================================ */
+:root:root {
+  --co-bg: var(--rz-ivory);
+  --co-surface: var(--rz-white);
+  --co-ink: var(--rz-dark);
+  --co-ink-2: var(--rz-dark);
+  --co-muted: var(--rz-muted);
+  --co-line: var(--rz-line);
+  --co-primary: var(--rz-burgundy);
+  --co-primary-deep: var(--rz-burgundy-deep);
+  --co-primary-soft: var(--rz-gold);
+  --co-accent: var(--rz-gold);
+  --co-dark: var(--rz-burgundy-deep);
+  --co-font: var(--rz-font);
+
+  --nv-void: var(--rz-burgundy-deep);
+  --nv-surface: var(--rz-white);
+  --nv-elevated: var(--rz-white);
+  --nv-panel: var(--rz-white);
+  --nv-ivory: var(--rz-ivory);
+  --nv-ivory-2: var(--rz-ivory);
+  --nv-ivory-3: var(--rz-ivory);
+  --nv-copper: var(--rz-burgundy);
+  --nv-copper-bright: var(--rz-gold);
+  --nv-copper-deep: var(--rz-burgundy-deep);
+  --nv-ink: var(--rz-dark);
+  --nv-ink-2: var(--rz-dark);
+  --nv-mist: var(--rz-muted);
+  --nv-line: var(--rz-line-gold);
+  --nv-line-soft: var(--rz-line);
+  --nv-font: var(--rz-font);
+
+  --ch-bg-0: var(--rz-white);
+  --ch-bg-1: var(--rz-ivory);
+  --ch-bg-2: var(--rz-ivory);
+  --ch-card: var(--rz-white);
+  --ch-ink: var(--rz-dark);
+  --ch-ink-2: var(--rz-dark);
+  --ch-ink-soft: var(--rz-muted);
+  --ch-gold: var(--rz-gold);
+  --ch-gold-deep: var(--rz-gold);
+  --ch-gold-bright: var(--rz-gold-soft);
+  --ch-gold-line: var(--rz-line-gold);
+  --ch-font: var(--rz-font);
+
+  --rh-cream-0: var(--rz-white);
+  --rh-gold: var(--rz-gold);
+  --rh-gold-deep: var(--rz-gold);
+  --rh-brown: var(--rz-dark);
+  --rh-font: var(--rz-font);
+}
+body { font-weight: 500 !important; color: var(--rz-dark) !important; }
+p, li { font-weight: 500 !important; }
+
 /* احترام تقليل الحركة */
 @media (prefers-reduced-motion: reduce) {
   .rz-drawer, .rz-drawer-overlay, .rz-sub, .rz-card, .rz-icon-btn, .rz-btn {
@@ -854,24 +971,43 @@ a { color: var(--rz-burgundy); }
 /* ============================================================
    الجوال أولاً
    ============================================================ */
+/* الجوال: ترويسة واحدة فقط في صف واحد — شعار + بحث + أيقونات + ☰ */
 @media (max-width: 900px) {
+  /* الجوال: صف واحد مرن — لا شبكة أعمدة تتسبّب بالتفاف العناصر لصفّين
+     (كانت grid-template-columns: auto 1fr auto مع 4 عناصر = ترويسة مزدوجة). */
   .rz-topbar-inner {
-    grid-template-columns: auto 1fr;
-    grid-template-areas:
-      'logo actions'
-      'search search';
-    gap: 10px;
-    padding: 10px 12px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 10px;
   }
-  .rz-logo { grid-area: logo; }
-  .rz-actions { grid-area: actions; }
-  .rz-search { grid-area: search; max-width: none; }
-  .rz-search input { padding: 10px 14px !important; }
-  .rz-subbar-inner { overflow-x: auto; padding: 0 12px; }
-  .rz-nav-link { padding: 8px 11px; font-size: 0.84rem; }
+  /* اللوجو يبقى، والرجوع أيقونة مضغوطة، والبحث يتمدّد، والأيقونات ثابتة */
+  .rz-logo { flex: 0 0 auto; }
+  .rz-logo img { height: 30px; }
+  .rz-back {
+    flex: 0 0 auto;
+    width: 34px;
+    height: 32px;
+    padding: 0;
+    justify-content: center;
+  }
+  .rz-back span { display: none; }
+  .rz-search { flex: 1 1 auto; min-width: 0; max-width: none; margin: 0; }
+  .rz-search input { padding: 8px 10px !important; font-size: 0.82rem; }
+  .rz-search-icon { display: none; }
+  .rz-actions { flex: 0 0 auto; gap: 0; }
+  .rz-icon-btn { width: 34px; height: 34px; }
+  /* ☰ هو مركز التنقل على الجوال → لا حاجة لشريط التنقل الثاني */
+  .rz-subbar { display: none !important; }
+  .rz-burger-mobile { display: inline-flex; }
+  .rz-only-desktop { display: none !important; }
   .rz-footer-cols { grid-template-columns: repeat(2, 1fr); gap: 20px; }
 }
 @media (max-width: 480px) {
   .rz-footer-cols { grid-template-columns: 1fr; }
-  .rz-logo img { height: 40px; }
+  .rz-logo img { height: 34px; }
+  .rz-topbar-inner { gap: 7px; padding: 7px 10px; }
+  .rz-icon-btn { width: 34px; height: 34px; }
+  .rz-search input { padding: 8px 10px !important; font-size: 0.82rem; }
 }

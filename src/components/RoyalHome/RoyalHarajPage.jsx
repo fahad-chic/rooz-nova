@@ -1225,15 +1225,15 @@ const RoyalHarajPage = () => {
         }
       `}</style>
 
+      {/* رأس القسم — ليس sticky: الترويسة الرئيسية وحدها ثابتة أعلى الشاشة،
+          وهذا يمنع تكدّس ترويسة فوق ترويسة أثناء التمرير. */}
       <header
         style={{
           background: `linear-gradient(180deg, ${C.darkBg} 0%, #fdfbf7 100%)`,
           borderBottom: `1px solid ${C.gold}30`,
-          padding: '1.1rem 1rem 1.25rem',
-          position: 'sticky',
-          top: 'var(--rooz-top-offset, 0px)',
-          zIndex: 100,
-          backdropFilter: 'blur(20px)',
+          padding: '0.9rem 1rem 1rem',
+          position: 'relative',
+          zIndex: 1,
           width: '100%',
         }}
       >

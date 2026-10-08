@@ -32,7 +32,6 @@ import { recordKick } from './utils/kickLog';
 
 import { Login } from './components/Login';
 
-import BackButton from './components/BackButton';
 import CloseButton from './components/CloseButton';
 import HomePrefsFloat from './components/HomePrefsFloat';
 import Navigation from './components/Navigation';
@@ -53,7 +52,7 @@ import NotificationPanel from './components/NotificationPanel';
 import OtpModal from './components/OtpModal';
 
 import ComplaintsPage from './components/pages/ComplaintsPage';
-import './styles/global.css';
+
 
 // ⭐ إضافة صفحة الأسئلة الشائعة
 import FAQ from './pages/FAQ';
@@ -738,17 +737,30 @@ function AppContent() {
       ? GUEST_BAR_HEIGHT
       : 0;
 
-    const totalOffset = guestOffset;
+    const totalOffset = guestOffset
+      ? `calc(${guestOffset}px + env(safe-area-inset-top, 0px))`
+      : '0px';
 
     document.documentElement.style.setProperty(
       '--rooz-top-offset',
-      `${totalOffset}px`
+      totalOffset
+    );
+
+    // عند ظهور شريط الزائر يكون هو العنصر الأعلى فيتحمّل مساحة Safe Area،
+    // وإلا تتحمّلها الترويسة نفسها (منعاً لفراغ مزدوج على iPhone).
+    document.documentElement.style.setProperty(
+      '--rooz-safe-top',
+      guestOffset ? '0px' : 'env(safe-area-inset-top, 0px)'
     );
 
     return () => {
       document.documentElement.style.setProperty(
         '--rooz-top-offset',
         '0px'
+      );
+      document.documentElement.style.setProperty(
+        '--rooz-safe-top',
+        'env(safe-area-inset-top, 0px)'
       );
     };
   }, [
@@ -1239,8 +1251,8 @@ function AppContent() {
         background:
           location.pathname === '/login'
             ? 'transparent'
-            : 'linear-gradient(180deg, #fdfbf7 0%, #fdfbf7 55%, #fdfbf7 100%)',
-        color: '#1f1116',
+            : '#FFFDF8',
+        color: '#181316',
         fontFamily: 'Tajawal',
         position: 'relative',
       }}
@@ -1570,9 +1582,11 @@ function AppContent() {
               left: 0,
               right: 0,
               height:
-                `${GUEST_BAR_HEIGHT}px`,
+                `calc(${GUEST_BAR_HEIGHT}px + env(safe-area-inset-top, 0px))`,
               minHeight:
-                `${GUEST_BAR_HEIGHT}px`,
+                `calc(${GUEST_BAR_HEIGHT}px + env(safe-area-inset-top, 0px))`,
+              paddingTop:
+                'env(safe-area-inset-top, 0px)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -1778,11 +1792,8 @@ function AppContent() {
         />
       )}
 
-      {/* ================================================= */}
-      {/* Floating Back Button */}
-      {/* ================================================= */}
-
-      <BackButton />
+      {/* زر الرجوع انتقل داخل الترويسة (RoyalHeader) ليعكس تاريخ المتصفح الحقيقي
+          ويمنع التداخل العائم مع المحتوى. */}
 
       {/* =================================================
           Global Close Button (❌) — يظهر في الصفحات الفرعية
@@ -1842,7 +1853,9 @@ function AppContent() {
           position: 'relative',
           zIndex: 1,
           boxSizing: 'border-box',
-          paddingTop: isAuthenticated ? 'var(--nav-height, 56px)' : 0,
+          // الترويسة sticky وتحتل مساحتها داخل التدفق → لا حشوة تعويضية
+          // (إزالة الحشوة المزدوجة التي كانت تُنتج فراغاً كبيراً أعلى الصفحة).
+          paddingTop: 0,
           marginTop: 0,
         }}
       >

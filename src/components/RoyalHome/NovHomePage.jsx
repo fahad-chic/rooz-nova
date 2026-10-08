@@ -96,15 +96,11 @@ const NovHomePage = () => {
 
   return (
     <div className="ch-root" dir="rtl">
+      {/* شريط عروض واحد فقط — شريطان متتاليان كانا يزيدان الطول والتشويش */}
       <div className="home-marquees-sticky">
         <MarqueeBanner
-          banners={MARQUEE_BANNERS}
-          editableKeys={['marquee1', 'marquee2', 'marquee3']}
-        />
-        <MarqueeBanner
-          banners={MARQUEE_BANNERS_2}
-          editableKeys={['marquee4', 'marquee5', 'marquee6']}
-          label="عروض ROOZ"
+          banners={[...MARQUEE_BANNERS, ...MARQUEE_BANNERS_2]}
+          editableKeys={['marquee1', 'marquee2', 'marquee3', 'marquee4', 'marquee5', 'marquee6']}
         />
       </div>
 
@@ -152,26 +148,26 @@ const NovHomePage = () => {
 
         {/* ===== نقاط الثقة ===== */}
         <section className="rz-trust" aria-label="لماذا أناقة ROOZ">
-          <div className="rz-trust-item">
+          <button type="button" className="rz-trust-item" onClick={() => navigate('/faq')}>
             <span className="rz-trust-ico"><Truck size={20} /></span>
             <h4>شحن سريع</h4>
             <p>لجميع مناطق المملكة</p>
-          </div>
-          <div className="rz-trust-item">
+          </button>
+          <button type="button" className="rz-trust-item" onClick={() => navigate('/faq')}>
             <span className="rz-trust-ico"><ShieldCheck size={20} /></span>
             <h4>دفع آمن</h4>
             <p>حماية وتشفير كامل</p>
-          </div>
-          <div className="rz-trust-item">
+          </button>
+          <button type="button" className="rz-trust-item" onClick={() => navigate('/terms')}>
             <span className="rz-trust-ico"><BadgeCheck size={20} /></span>
             <h4>إرجاع خلال 7 أيام</h4>
             <p>سياسة استبدال واضحة</p>
-          </div>
-          <div className="rz-trust-item">
+          </button>
+          <button type="button" className="rz-trust-item" onClick={() => navigate('/contact')}>
             <span className="rz-trust-ico"><Headphones size={20} /></span>
             <h4>دعم ومساندة</h4>
             <p>تواصل معنا في أي وقت</p>
-          </div>
+          </button>
         </section>
 
         {/* ===== اكتشفي ROOZ (تفاعلي) ===== */}
