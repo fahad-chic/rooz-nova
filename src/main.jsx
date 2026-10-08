@@ -8,6 +8,7 @@ import ErrorBoundary from './ErrorBoundary.jsx'
 import './index.css'
 import './styles/contour-theme.css'
 import './styles/logo-clean.css'
+import './styles/rooz-royal.css'
 
 /* ── استقرار تحميل المقاطع (chunks) ──
  * عند فشل تحميل أي مقطع ديناميكي (بصمة قديمة بعد نشر جديد، أو خطأ MIME

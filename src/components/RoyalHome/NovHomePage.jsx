@@ -8,8 +8,6 @@ import {
   Crown,
   Gem,
   Mail,
-  MapPin,
-  Phone,
   Smartphone,
   Plus,
   X,
@@ -20,12 +18,16 @@ import {
   Home,
   Store as StoreIcon,
   Flame,
+  Truck,
+  ShieldCheck,
+  BadgeCheck,
+  Headphones,
+  ChevronDown,
 } from 'lucide-react';
 
 import MarqueeBanner from './MarqueeBanner';
 import CommentsSection from './CommentsSection';
 import { MARQUEE_BANNERS, MARQUEE_BANNERS_2, ROYAL_SECTIONS } from './sectionsData';
-import { CONTACT_INFO } from '../../utils/constants';
 import '../../styles/NovHome.css';
 
 const LOGO_SRC = '/assets/logo.png';
@@ -46,12 +48,20 @@ const SECTION_ICONS = {
 };
 
 const TILE_GRADIENTS = [
-  'linear-gradient(140deg,#6b1d2f,#4a3a3f)',
-  'linear-gradient(140deg,#6b1d2f,#6b1d2f)',
-  'linear-gradient(140deg,#4a3a3f,#6b1d2f)',
-  'linear-gradient(140deg,#6b1d2f,#6b1d2f)',
-  'linear-gradient(140deg,#6b1d2f,#6b1d2f)',
-  'linear-gradient(140deg,#6b1d2f,#6b1d2f)',
+  'linear-gradient(140deg,#541426,#2a0b15)',
+  'linear-gradient(140deg,#541426,#541426)',
+  'linear-gradient(140deg,#2a0b15,#541426)',
+  'linear-gradient(140deg,#541426,#541426)',
+  'linear-gradient(140deg,#541426,#541426)',
+  'linear-gradient(140deg,#541426,#541426)',
+];
+
+const FAQ_ITEMS = [
+  { q: 'كيف أتتبع طلبي؟', a: 'بعد تسجيل الدخول، افتح «ملفي الشخصي» ثم «طلباتي» لعرض حالة كل طلب ومراحل الشحن.' },
+  { q: 'ما مدة الشحن؟', a: 'الشحن لجميع مناطق المملكة، ويستغرق عادة من 2 إلى 5 أيام عمل حسب المدينة.' },
+  { q: 'هل يمكنني الإرجاع؟', a: 'نعم، يمكن الاستبدال أو الإرجاع خلال 7 أيام من الاستلام بشرط سلامة المنتج.' },
+  { q: 'كيف أضيف إعلاناً في الحراج؟', a: 'افتح «الحراج» ثم اضغط «أضف إعلانك»، وأكمل الخطوات وأرفق الصور ثم انشر.' },
+  { q: 'كيف أتواصل مع الدعم؟', a: 'من صفحة «تواصل معنا» أو عبر واتساب وأرقام التواصل الظاهرة في الموقع.' },
 ];
 
 const NovHomePage = () => {
@@ -60,6 +70,8 @@ const NovHomePage = () => {
   const [email, setEmail] = useState('');
   const [emailStatus, setEmailStatus] = useState('');
   const [openId, setOpenId] = useState(null);
+  const [discoverPicked, setDiscoverPicked] = useState(false);
+  const [openFaq, setOpenFaq] = useState(null);
 
   const catalogSections = ROYAL_SECTIONS.filter((s) => !s.isAction);
   const openSection = catalogSections.find((s) => s.id === openId) || null;
@@ -93,13 +105,12 @@ const NovHomePage = () => {
           banners={MARQUEE_BANNERS_2}
           editableKeys={['marquee4', 'marquee5', 'marquee6']}
           label="عروض ROOZ"
-          barBg="linear-gradient(90deg, #1f1116 0%, #1f1116 50%, #1f1116 100%)"
         />
       </div>
 
       <div className="nov-home">
-        {/* ===== الهيرو العريض الجديد ===== */}
-        <section className="nov-hero">
+        {/* ===== الهيرو الملكي ===== */}
+        <section className="nov-hero rz-hero">
           <div className="nov-hero-grid">
             <img
               fetchPriority="high"
@@ -110,7 +121,7 @@ const NovHomePage = () => {
             <div>
               <span className="nov-hero-kicker">
                 <Gem size={13} strokeWidth={2} />
-                هوية جديدة · تجربة أرقى
+                أناقة تفوق الخيال
               </span>
               <h1 className="nov-hero-title">أناقة تليق بكم</h1>
               <p className="nov-hero-sub">
@@ -121,7 +132,7 @@ const NovHomePage = () => {
                 <button
                   type="button"
                   className="nov-btn nov-btn-primary"
-                  onClick={() => navigate('/advertisements')}
+                  onClick={() => navigate('/dashboard')}
                 >
                   <ShoppingBag size={16} />
                   تصفّح المتجر
@@ -138,6 +149,64 @@ const NovHomePage = () => {
             </div>
           </div>
         </section>
+
+        {/* ===== نقاط الثقة ===== */}
+        <section className="rz-trust" aria-label="لماذا أناقة ROOZ">
+          <div className="rz-trust-item">
+            <span className="rz-trust-ico"><Truck size={20} /></span>
+            <h4>شحن سريع</h4>
+            <p>لجميع مناطق المملكة</p>
+          </div>
+          <div className="rz-trust-item">
+            <span className="rz-trust-ico"><ShieldCheck size={20} /></span>
+            <h4>دفع آمن</h4>
+            <p>حماية وتشفير كامل</p>
+          </div>
+          <div className="rz-trust-item">
+            <span className="rz-trust-ico"><BadgeCheck size={20} /></span>
+            <h4>إرجاع خلال 7 أيام</h4>
+            <p>سياسة استبدال واضحة</p>
+          </div>
+          <div className="rz-trust-item">
+            <span className="rz-trust-ico"><Headphones size={20} /></span>
+            <h4>دعم ومساندة</h4>
+            <p>تواصل معنا في أي وقت</p>
+          </div>
+        </section>
+
+        {/* ===== اكتشفي ROOZ (تفاعلي) ===== */}
+        {!discoverPicked && (
+          <section className="rz-discover" aria-label="اكتشفي ROOZ">
+            <div className="rz-discover-head">
+              <h2><Sparkles size={18} /> ماذا تبحثين عنه اليوم؟</h2>
+              <button
+                type="button"
+                className="rz-discover-skip"
+                onClick={() => setDiscoverPicked(true)}
+                aria-label="إخفاء"
+              >
+                <X size={15} />
+              </button>
+            </div>
+            <div className="rz-discover-grid">
+              <button type="button" className="rz-discover-card" onClick={() => navigate('/dashboard')}>
+                <ShoppingBag size={22} /><span>أريد التسوق</span>
+              </button>
+              <button type="button" className="rz-discover-card" onClick={() => navigate('/advertisements')}>
+                <Flame size={22} /><span>أريد مشاهدة العروض</span>
+              </button>
+              <button type="button" className="rz-discover-card" onClick={() => navigate('/haraj')}>
+                <StoreIcon size={22} /><span>أريد تصفح الحراج</span>
+              </button>
+              <button type="button" className="rz-discover-card" onClick={() => navigate('/haraj/post')}>
+                <Plus size={22} /><span>أريد إضافة إعلان</span>
+              </button>
+              <button type="button" className="rz-discover-card" onClick={() => navigate('/settings')}>
+                <Crown size={22} /><span>أريد الوصول إلى حسابي</span>
+              </button>
+            </div>
+          </section>
+        )}
 
         {/* ===== شريط المزايا ===== */}
         <section className="nov-features">
@@ -185,7 +254,7 @@ const NovHomePage = () => {
             {emailStatus && (
               <span
                 className="nov-feature-status"
-                style={{ color: emailStatus.includes('نجاح') ? '#6b1d2f' : '#8f2a40' }}
+                style={{ color: emailStatus.includes('نجاح') ? '#541426' : '#8f2a40' }}
               >
                 {emailStatus}
               </span>
@@ -193,7 +262,7 @@ const NovHomePage = () => {
           </div>
         </section>
 
-        {/* ===== شبكة الأقسام الجديدة ===== */}
+        {/* ===== شبكة الأقسام ===== */}
         <div className="nov-sec-head">
           <h2>أقسام متجر أناقة ROOZ</h2>
           <span className="nov-sec-count">{catalogSections.length} قسم</span>
@@ -218,7 +287,7 @@ const NovHomePage = () => {
                   style={{
                     background:
                       section.color
-                        ? `linear-gradient(140deg, ${section.color}, #6b1d2f)`
+                        ? `linear-gradient(140deg, ${section.color}, #2a0b15)`
                         : TILE_GRADIENTS[idx % TILE_GRADIENTS.length],
                   }}
                 >
@@ -228,6 +297,7 @@ const NovHomePage = () => {
                   <h3>{section.title}</h3>
                   <span>{branches.length} فرع</span>
                 </span>
+                <span className="nov-tile-plus"><Plus size={14} /></span>
               </button>
             );
           })}
@@ -280,60 +350,79 @@ const NovHomePage = () => {
 
         <CommentsSection />
 
-        {/* ===== الفوتر الجديد ===== */}
-        <footer className="ch-footer" style={{ borderRadius: 22, marginTop: '0.5rem' }}>
-          <div className="ch-footer-in" style={{ gap: '0.55rem' }}>
-            <div>
-              <div className="ch-footer-brand" style={{ marginBottom: '0.2rem' }}>
-                <img
-                  src={LOGO_SRC}
-                  alt="شعار أناقة ROOZ"
-                  className="ch-footer-logo"
-                  loading="lazy"
-                  style={{ width: '32px' }}
-                />
-                <h3 className="ch-footer-name ch-ink-gloss" style={{ fontSize: '0.82rem' }}>
-                  أنـاقـةROOZ
-                </h3>
-              </div>
-              <p className="ch-footer-text" style={{ fontSize: '0.68rem', lineHeight: 1.35, marginBottom: '0.25rem' }}>
-                منصة راقية للإعلانات المميزة في المملكة — فخامة وثقة.
-              </p>
+        {/* ===== الأسئلة الشائعة ===== */}
+        <section className="rz-faq" aria-label="الأسئلة الشائعة">
+          <div className="nov-sec-head">
+            <h2>الأسئلة الشائعة</h2>
+            <span className="nov-sec-count">مساعدة</span>
+          </div>
+          <div className="rz-faq-list">
+            {FAQ_ITEMS.map((item, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div className="rz-faq-item" key={item.q}>
+                  <button
+                    type="button"
+                    className="rz-faq-q"
+                    aria-expanded={isOpen}
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                  >
+                    <span>{item.q}</span>
+                    <ChevronDown size={17} className={isOpen ? 'is-open' : ''} />
+                  </button>
+                  {isOpen && <div className="rz-faq-a">{item.a}</div>}
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        {/* ===== الفوتر الملكي ===== */}
+        <footer className="rz-footer" style={{ borderRadius: 20 }}>
+          <div className="rz-footer-inner">
+            <div className="rz-footer-top">
+              <img src={LOGO_SRC} alt="شعار أناقة ROOZ" className="rz-footer-logo" loading="lazy" />
+              <p className="rz-footer-tag">ROOZ — أناقة تفوق الخيال</p>
             </div>
 
-            <div>
-              <h4 className="ch-footer-head" style={{ fontSize: '0.75rem', marginBottom: '0.15rem' }}>
-                تواصل معنا
-              </h4>
-              <div className="ch-footer-contact" style={{ fontSize: '0.68rem', gap: '0.15rem' }}>
-                <a href={`mailto:${CONTACT_INFO.EMAIL}`}>
-                  {CONTACT_INFO.EMAIL}
-                  <Mail size={10} className="ch-ci" />
-                </a>
-                <a href={`tel:+${CONTACT_INFO.PHONE_1}`}>
-                  +{CONTACT_INFO.PHONE_1}
-                  <Phone size={10} className="ch-ci" />
-                </a>
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.15rem' }}>
-                  المملكة العربية السعودية
-                  <MapPin size={10} className="ch-ci" />
-                </span>
+            <div className="rz-footer-cols">
+              <div className="rz-footer-col">
+                <h4>المتجر</h4>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/dashboard'); }}>جميع المنتجات</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/branches'); }}>الكتالوجات</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/advertisements'); }}>العروض</a>
+              </div>
+              <div className="rz-footer-col">
+                <h4>الحراج</h4>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/haraj'); }}>الحراج الرئيسي</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/haraj/post'); }}>أضف إعلانك</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/wanted-dress'); }}>الفستان المطلوب</a>
+              </div>
+              <div className="rz-footer-col">
+                <h4>الحساب</h4>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/settings'); }}>ملفي الشخصي</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/chat'); }}>رسائلي</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/notifications'); }}>إشعاراتي</a>
+              </div>
+              <div className="rz-footer-col">
+                <h4>المساعدة</h4>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/faq'); }}>الأسئلة الشائعة</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/contact'); }}>تواصل معنا</a>
+                <a href="/" onClick={(e) => { e.preventDefault(); navigate('/terms'); }}>شروط الاستخدام</a>
               </div>
             </div>
-          </div>
-          <div className="ch-footer-bottom" style={{ fontSize: '0.62rem', marginTop: '0.4rem' }}>
-            جميع الحقوق محفوظة © 2026 أناقة ROOZ
-            <span style={{ margin: '0 8px', opacity: 0.5 }}>·</span>
-            <a
-              href="/terms"
-              onClick={(e) => {
-                e.preventDefault();
-                navigate('/terms');
-              }}
-              style={{ color: '#6b1d2f', fontWeight: 800, textDecoration: 'underline' }}
-            >
-              شروط وأحكام الاستخدام
-            </a>
+
+            <div className="rz-footer-bottom">
+              جميع الحقوق محفوظة © 2026 أناقة ROOZ
+              <span style={{ margin: '0 8px', opacity: 0.5 }}>·</span>
+              <a
+                href="/"
+                onClick={(e) => { e.preventDefault(); navigate('/terms'); }}
+                style={{ color: '#e3c878', fontWeight: 800, textDecoration: 'underline' }}
+              >
+                شروط وأحكام الاستخدام
+              </a>
+            </div>
           </div>
         </footer>
       </div>
