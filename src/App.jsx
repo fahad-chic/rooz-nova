@@ -2006,10 +2006,13 @@ function AppContent() {
                 }
               />
 
+              {/* الرئيسية مسار عام: الزائر يتصفّحها مع شريط العدّاد.
+                  إزالة blockGuest هنا تمنع حلقة التوجيه مع /login.
+                  الصفحات الخاصة (مثل /dashboard) تبقى محمية بـ blockGuest. */}
               <Route
                 path="/"
                 element={
-                  <ProtectedRoute blockGuest>
+                  <ProtectedRoute>
                     <RoyalHomePage />
                   </ProtectedRoute>
                 }
