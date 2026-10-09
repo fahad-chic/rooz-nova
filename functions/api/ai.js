@@ -3,6 +3,92 @@ const corsHeaders = {
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
   'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 };
+
+// ============================================================
+// حماية استهلاك الرصيد: تحديد معدّل الطلبات لكل عنوان IP
+// يعتمد على D1 الموجود (نفس نمط otp/verify) بلا أي اعتماديات جديدة.
+// المساعد عام للزوار (تدعم جلسة الزائر)، لذلك لا نفرض مصادقة Firebase
+// حتى لا نعطّل التجربة — نحدّ الاستهلاك فقط.
+// ============================================================
+const AI_RATE_WINDOW_SECONDS = 600; // نافذة 10 دقائق
+const AI_RATE_MAX_REQUESTS = 20; // أقصى عدد طلبات داخل النافذة لكل IP
+const AI_RATE_MIN_INTERVAL_MS = 800; // مهلة دنيا بين طلبين متتاليين
+
+function getClientIp(request) {
+  const cf = request.headers.get('cf-connecting-ip');
+  if (cf) return cf.trim();
+  const xff = request.headers.get('x-forwarded-for');
+  if (xff) return xff.split(',')[0].trim();
+  return 'unknown';
+}
+
+// تُنشأ عند أول طلب (كما تفعل otp/verify) فلا حاجة لترحيل يدوي.
+async function ensureAiRateTable(db) {
+  await db
+    .prepare(
+      `CREATE TABLE IF NOT EXISTS ai_rate_limits (
+        key TEXT PRIMARY KEY,
+        count INTEGER NOT NULL DEFAULT 0,
+        window_start INTEGER NOT NULL,
+        last_at INTEGER NOT NULL DEFAULT 0
+      )`
+    )
+    .run();
+}
+
+// يعيد { allowed, retryAfter }؛ عند تعذّر D1 يتدهور بأمان (allowed)
+// مع تسجيل التحذير حتى لا تتعطّل ميزة الذكاء الاصطناعي.
+async function checkAiRateLimit(env, ip) {
+  if (!env || !env.DB) {
+    console.warn('ai: D1 غير متاح — تم تجاوز تحديد المعدّل (تدهور آمن)');
+    return { allowed: true, degraded: true };
+  }
+  try {
+    await ensureAiRateTable(env.DB);
+    const nowSec = Math.floor(Date.now() / 1000);
+    const nowMs = Date.now();
+    const row = await env.DB.prepare(
+      'SELECT count, window_start, last_at FROM ai_rate_limits WHERE key = ?1'
+    )
+      .bind(ip)
+      .first()
+      .catch(() => null);
+
+    if (!row || nowSec - Number(row.window_start || 0) > AI_RATE_WINDOW_SECONDS) {
+      await env.DB.prepare(
+        `INSERT INTO ai_rate_limits (key, count, window_start, last_at)
+         VALUES (?1, 1, ?2, ?3)
+         ON CONFLICT(key) DO UPDATE SET count = 1, window_start = ?2, last_at = ?3`
+      )
+        .bind(ip, nowSec, nowMs)
+        .run()
+        .catch(() => {});
+      return { allowed: true };
+    }
+
+    if (nowMs - Number(row.last_at || 0) < AI_RATE_MIN_INTERVAL_MS) {
+      return { allowed: false, retryAfter: 1 };
+    }
+
+    if (Number(row.count || 0) >= AI_RATE_MAX_REQUESTS) {
+      const retry =
+        AI_RATE_WINDOW_SECONDS - (nowSec - Number(row.window_start || 0));
+      return { allowed: false, retryAfter: Math.max(1, retry) };
+    }
+
+    await env.DB.prepare(
+      'UPDATE ai_rate_limits SET count = count + 1, last_at = ?2 WHERE key = ?1'
+    )
+      .bind(ip, nowMs)
+      .run()
+      .catch(() => {});
+    return { allowed: true };
+  } catch (err) {
+    console.error('ai: فشل فحص تحديد المعدّل (تدهور آمن):', err);
+    return { allowed: true, degraded: true };
+  }
+}
+
 export async function onRequest({ request, env }) {
   if (request.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
@@ -38,6 +124,25 @@ export async function onRequest({ request, env }) {
       );
     }
     const lower = message.toLowerCase();
+    // حماية الرصيد: نحدّ الطلبات لكل IP قبل أي نداء لـ Groq.
+    const rl = await checkAiRateLimit(env, getClientIp(request));
+    if (!rl.allowed) {
+      return new Response(
+        JSON.stringify({
+          reply: '',
+          error: 'تم تجاوز الحد المسموح، حاول بعد قليل',
+          retryAfter: rl.retryAfter || 1,
+        }),
+        {
+          status: 429,
+          headers: {
+            ...corsHeaders,
+            'Content-Type': 'application/json',
+            'Retry-After': String(rl.retryAfter || 1),
+          },
+        }
+      );
+    }
     // تحديد الجنس عند الحاجة لتحسين أسلوب الرد
     let gender = 'unknown';
     if (
