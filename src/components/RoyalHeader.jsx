@@ -3,11 +3,11 @@
 // الترويسة الملكية — أناقة ROOZ (الطبقتان + الدرج الذكي بزر +)
 // واجهة فقط: تستقبل الحالة والدوال جاهزة من Navigation ولا تلمس أي منطق.
 // ============================================================
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import {
-  Search, Heart, Bell, User, Menu, X, Plus, Home, Store,
-  LayoutGrid, Tag, Sparkles, Info, Crown, LogOut, Bot,
+  Search, Heart, Bell, User, Menu, X, Plus, Minus, Home, Store,
+  LayoutGrid, Tag, Sparkles, Info, Crown, LogOut, Bot, ArrowRight,
 } from 'lucide-react';
 import { ROYAL_NAV, ROYAL_DRAWER } from '../data/royalMenu';
 import '../styles/rooz-royal.css';
@@ -38,12 +38,34 @@ const RoyalHeader = ({
   onOpenBroadcast,
   onOpenWelcome,
   onSearchSubmit,
+  canGoBack = false,
+  onBack,
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [openGroup, setOpenGroup] = useState(null);
   const [query, setQuery] = useState('');
+  const headerRef = useRef(null);
+
+  // قياس ارتفاع الترويسة فعلياً وضبط متغيّر CSS ليجلس الشريط اللاصق تحتها تماماً
+  // (يمنع التراكب ويُلغي الحاجة لأرقام ثابتة تخمينية).
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el || typeof ResizeObserver === 'undefined') return undefined;
+    const apply = () => {
+      const h = el.getBoundingClientRect().height;
+      if (h > 0) document.documentElement.style.setProperty('--rooz-header-h', `${Math.round(h)}px`);
+    };
+    apply();
+    const ro = new ResizeObserver(apply);
+    ro.observe(el);
+    window.addEventListener('resize', apply);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener('resize', apply);
+    };
+  }, []);
 
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
 
@@ -86,13 +108,20 @@ const RoyalHeader = ({
   const visibleGroups = ROYAL_DRAWER.filter((g) => !g.authOnly || userRole !== 'guest');
 
   return (
-    <header className="rz-header" dir="rtl">
+    <header className="rz-header" dir="rtl" ref={headerRef}>
       {/* ---------- الطبقة الأولى ---------- */}
       <div className="rz-topbar">
         <div className="rz-topbar-inner">
           <Link to="/" className="rz-logo" aria-label="أناقة ROOZ — الصفحة الرئيسية">
             <img src="/assets/logo.png" alt="أناقة ROOZ" />
           </Link>
+
+          {canGoBack && typeof onBack === 'function' && (
+            <button type="button" className="rz-back" onClick={onBack} aria-label="رجوع للصفحة السابقة" title="رجوع">
+              <ArrowRight size={18} />
+              <span>رجوع</span>
+            </button>
+          )}
 
           <form className="rz-search" onSubmit={submitSearch} role="search">
             <span className="rz-search-icon"><Search size={18} /></span>
@@ -106,7 +135,7 @@ const RoyalHeader = ({
           </form>
 
           <div className="rz-actions">
-            <button type="button" className="rz-icon-btn" aria-label="المفضلة" title="المفضلة"
+            <button type="button" className="rz-icon-btn rz-only-desktop" aria-label="المفضلة" title="المفضلة"
               onClick={() => go('/dashboard')}>
               <Heart size={19} />
             </button>
@@ -122,11 +151,15 @@ const RoyalHeader = ({
               <User size={19} />
             </button>
             {typeof onOpenAIChat === 'function' && (
-              <button type="button" className="rz-icon-btn" aria-label="المساعدة الذكية" title="المساعدة الذكية"
+              <button type="button" className="rz-icon-btn rz-only-desktop" aria-label="المساعدة الذكية" title="المساعدة الذكية"
                 onClick={onOpenAIChat}>
                 <Bot size={19} />
               </button>
             )}
+            <button type="button" className="rz-icon-btn rz-burger-mobile" aria-label="فتح القائمة الكاملة" title="القائمة"
+              onClick={() => setDrawerOpen(true)}>
+              <Menu size={20} />
+            </button>
           </div>
         </div>
       </div>
@@ -180,7 +213,7 @@ const RoyalHeader = ({
                     >
                       <span className="rz-group-icon"><ICON name={group.icon} size={18} /></span>
                       <span className="rz-group-label">{group.label}</span>
-                      <span className={`rz-plus ${isOpen ? 'is-open' : ''}`}><Plus size={15} /></span>
+                      <span className={`rz-plus ${isOpen ? 'is-open' : ''}`}>{isOpen ? <Minus size={15} /> : <Plus size={15} />}</span>
                     </button>
 
                     {isOpen && (
@@ -211,7 +244,7 @@ const RoyalHeader = ({
                   >
                     <span className="rz-group-icon"><Crown size={18} /></span>
                     <span className="rz-group-label">غرفة القيادة</span>
-                    <span className={`rz-plus ${openGroup === 'owner' ? 'is-open' : ''}`}><Plus size={15} /></span>
+                    <span className={`rz-plus ${openGroup === 'owner' ? 'is-open' : ''}`}>{openGroup === 'owner' ? <Minus size={15} /> : <Plus size={15} />}</span>
                   </button>
                   {openGroup === 'owner' && (
                     <div className="rz-sub">

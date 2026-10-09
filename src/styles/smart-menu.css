@@ -2,16 +2,16 @@
 
 .rooz-smart-menu {
   position: relative;
-  font-family: Tajawal, Cairo, sans-serif;
+  font-family: 'Tajawal', sans-serif;
 }
 
 .rooz-smart-trigger {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: linear-gradient(145deg, #fdfbf7, #f7f1ec);
-  border: 1.5px solid rgba(107, 29, 47, 0.35);
-  color: #1f1116;
+  background: linear-gradient(145deg, #fffdf8, #f7f1e6);
+  border: 1.5px solid rgba(84, 20, 38, 0.35);
+  color: #181316;
   border-radius: 12px;
   padding: 0.5rem 0.75rem;
   font-family: inherit;
@@ -19,14 +19,14 @@
   font-size: 0.8rem;
   cursor: pointer;
   white-space: nowrap;
-  box-shadow: 0 3px 12px rgba(107, 29, 47, 0.12);
+  box-shadow: 0 3px 12px rgba(84, 20, 38, 0.12);
   transition: all 0.2s ease;
 }
 
 .rooz-smart-trigger:hover {
-  background: linear-gradient(145deg, #6b1d2f, #3d0f18);
-  color: #fdfbf7;
-  border-color: #6b1d2f;
+  background: linear-gradient(145deg, #541426, #2a0b15);
+  color: #fffdf8;
+  border-color: #541426;
 }
 
 .rooz-smart-panel {
@@ -37,9 +37,9 @@
   max-height: min(74vh, 620px);
   overflow-y: auto;
   background: rgba(253, 251, 247, 0.99);
-  border: 1.5px solid rgba(107, 29, 47, 0.28);
+  border: 1.5px solid rgba(84, 20, 38, 0.28);
   border-radius: 18px;
-  box-shadow: 0 22px 60px rgba(31, 17, 22, 0.24);
+  box-shadow: 0 22px 60px rgba(24, 19, 22, 0.24);
   padding: 0.85rem;
   z-index: 4200;
   backdrop-filter: blur(14px);
@@ -58,9 +58,9 @@
   gap: 8px;
   font-weight: 900;
   font-size: 0.85rem;
-  color: #6b1d2f;
+  color: #541426;
   padding: 0.35rem 0.4rem 0.7rem;
-  border-bottom: 1px solid rgba(107, 29, 47, 0.16);
+  border-bottom: 1px solid rgba(84, 20, 38, 0.16);
   margin-bottom: 0.5rem;
 }
 
@@ -89,15 +89,15 @@
   font-family: inherit;
   font-weight: 800;
   font-size: 0.85rem;
-  color: #1f1116;
+  color: #181316;
   padding: 0.55rem 0.6rem;
   border-radius: 10px;
   transition: background 0.18s ease, color 0.18s ease;
 }
 
 .rooz-smart-label:hover {
-  background: rgba(107, 29, 47, 0.10);
-  color: #6b1d2f;
+  background: rgba(84, 20, 38, 0.10);
+  color: #541426;
 }
 
 .rooz-smart-plus {
@@ -107,22 +107,22 @@
   height: 30px;
   flex: 0 0 30px;
   border-radius: 9px;
-  background: rgba(107, 29, 47, 0.10);
-  border: 1px solid rgba(107, 29, 47, 0.25);
-  color: #6b1d2f;
+  background: rgba(84, 20, 38, 0.10);
+  border: 1px solid rgba(84, 20, 38, 0.25);
+  color: #541426;
   cursor: pointer;
   transition: all 0.18s ease;
 }
 
 .rooz-smart-plus:hover {
-  background: #6b1d2f;
-  color: #fdfbf7;
+  background: #541426;
+  color: #fffdf8;
 }
 
 .rooz-smart-sub {
   margin: 2px 0 6px;
   padding-inline-start: 12px;
-  border-inline-start: 2px solid rgba(107, 29, 47, 0.35);
+  border-inline-start: 2px solid rgba(84, 20, 38, 0.35);
 }
 
 .rooz-smart-label--sub { font-size: 0.8rem; font-weight: 700; padding-block: 0.45rem; }
@@ -133,7 +133,7 @@
   border-inline-start: 2px solid rgba(212, 165, 165, 0.55);
 }
 
-.rooz-smart-label--leaf { font-size: 0.76rem; font-weight: 600; color: #8a5560; padding-block: 0.4rem; }
+.rooz-smart-label--leaf { font-size: 0.76rem; font-weight: 600; color: #766d72; padding-block: 0.4rem; }
 
 .rooz-smart-links {
   display: flex;
@@ -141,13 +141,13 @@
   gap: 6px;
   margin-top: 0.6rem;
   padding-top: 0.6rem;
-  border-top: 1px solid rgba(107, 29, 47, 0.16);
+  border-top: 1px solid rgba(84, 20, 38, 0.16);
 }
 
 .rooz-smart-link {
-  background: rgba(107, 29, 47, 0.08);
-  border: 1px solid rgba(107, 29, 47, 0.2);
-  color: #6b1d2f;
+  background: rgba(84, 20, 38, 0.08);
+  border: 1px solid rgba(84, 20, 38, 0.2);
+  color: #541426;
   border-radius: 999px;
   padding: 0.4rem 0.85rem;
   font-family: inherit;
@@ -158,8 +158,8 @@
 }
 
 .rooz-smart-link:hover {
-  background: #6b1d2f;
-  color: #fdfbf7;
+  background: #541426;
+  color: #fffdf8;
 }
 
 /* نسخة الجوال داخل الدرج */

@@ -32,7 +32,6 @@ import { recordKick } from './utils/kickLog';
 
 import { Login } from './components/Login';
 
-import BackButton from './components/BackButton';
 import CloseButton from './components/CloseButton';
 import HomePrefsFloat from './components/HomePrefsFloat';
 import Navigation from './components/Navigation';
@@ -53,7 +52,7 @@ import NotificationPanel from './components/NotificationPanel';
 import OtpModal from './components/OtpModal';
 
 import ComplaintsPage from './components/pages/ComplaintsPage';
-import './styles/global.css';
+
 
 // ⭐ إضافة صفحة الأسئلة الشائعة
 import FAQ from './pages/FAQ';
@@ -156,9 +155,9 @@ const LoadingScreen = () => (
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
-      color: '#6b1d2f',
+      color: '#541426',
       fontSize: '1.5rem',
-      fontFamily: 'Cairo',
+      fontFamily: 'Tajawal',
       direction: 'rtl',
     }}
   >
@@ -210,7 +209,7 @@ const UnauthorizedPage = () => {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '2rem 1rem',
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Tajawal, sans-serif',
         direction: 'rtl',
       }}
     >
@@ -219,11 +218,11 @@ const UnauthorizedPage = () => {
           maxWidth: 460,
           width: '100%',
           textAlign: 'center',
-          background: 'linear-gradient(160deg, #fdfbf7, #fdfbf7)',
-          border: '2px solid #6b1d2f',
+          background: 'linear-gradient(160deg, #fffdf8, #fffdf8)',
+          border: '2px solid #541426',
           borderRadius: 20,
           padding: '2.2rem 1.6rem',
-          boxShadow: '0 18px 50px rgba(31, 17, 22,0.22)',
+          boxShadow: '0 18px 50px rgba(24, 19, 22,0.22)',
         }}
       >
         <div
@@ -235,8 +234,8 @@ const UnauthorizedPage = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'linear-gradient(135deg, #6b1d2f, #3d0f18)',
-            boxShadow: '0 8px 22px rgba(61, 15, 24,0.35)',
+            background: 'linear-gradient(135deg, #541426, #2a0b15)',
+            boxShadow: '0 8px 22px rgba(42, 11, 21,0.35)',
             fontSize: 30,
           }}
         >
@@ -246,7 +245,7 @@ const UnauthorizedPage = () => {
         <h1
           style={{
             margin: '0 0 10px',
-            color: '#3d0f18',
+            color: '#2a0b15',
             fontWeight: 900,
             fontSize: '1.4rem',
           }}
@@ -257,7 +256,7 @@ const UnauthorizedPage = () => {
         <p
           style={{
             margin: 0,
-            color: '#1f1116',
+            color: '#181316',
             fontWeight: 600,
             lineHeight: 1.9,
             fontSize: '0.95rem',
@@ -374,6 +373,19 @@ const ProtectedRoute = ({ children, roleRequired, blockGuest }) => {
   return children;
 };
 
+/**
+ * مسار الدخول: يعرض النموذج لغير المسجّل، ويحوّل المسجّل إلى الرئيسية.
+ * مهم: الزائر (جلسة مؤقتة بلا حساب) لا يُعتبر مسجّلاً هنا — وإلا حُوِّل
+ * إلى "/" فوراً فلم يستطع الدخول بحسابه أبداً وهو في وضع الزائر.
+ */
+const LoginRoute = ({ isAuthenticated, isGuest, children }) => {
+  if (isAuthenticated && !isGuest) {
+    return <Navigate to="/" replace />;
+  }
+
+  return children;
+};
+
 /* =========================================================
    App Content
    ========================================================= */
@@ -389,6 +401,14 @@ function AppContent() {
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  // الزائر = جلسة مؤقتة بلا حساب حقيقي. يجب أن يطابق اشتقاق AuthContext
+  // (userRole === 'guest' || guestSession.active) وإلا اختلف حكم LoginRoute
+  // عن حكم ProtectedRoute: زائر يُطرد من صفحة محمية إلى /login ثم لا يتعرّف
+  // عليه LoginRoute فيُحوَّل إلى / بدل عرض نموذج الدخول.
+  const isGuest = useStore(
+    (s) => s.userRole === 'guest' || !!s.guestSession?.active
+  );
 
   // ربط زر الإغلاق العام (❌) بمُوجّه react-router — فيتنقل خطوة للخلف
   // داخلياً دون إعادة تحميل أو مغادرة الموقع.
@@ -738,17 +758,30 @@ function AppContent() {
       ? GUEST_BAR_HEIGHT
       : 0;
 
-    const totalOffset = guestOffset;
+    const totalOffset = guestOffset
+      ? `calc(${guestOffset}px + env(safe-area-inset-top, 0px))`
+      : '0px';
 
     document.documentElement.style.setProperty(
       '--rooz-top-offset',
-      `${totalOffset}px`
+      totalOffset
+    );
+
+    // عند ظهور شريط الزائر يكون هو العنصر الأعلى فيتحمّل مساحة Safe Area،
+    // وإلا تتحمّلها الترويسة نفسها (منعاً لفراغ مزدوج على iPhone).
+    document.documentElement.style.setProperty(
+      '--rooz-safe-top',
+      guestOffset ? '0px' : 'env(safe-area-inset-top, 0px)'
     );
 
     return () => {
       document.documentElement.style.setProperty(
         '--rooz-top-offset',
         '0px'
+      );
+      document.documentElement.style.setProperty(
+        '--rooz-safe-top',
+        'env(safe-area-inset-top, 0px)'
       );
     };
   }, [
@@ -1239,8 +1272,8 @@ function AppContent() {
         background:
           location.pathname === '/login'
             ? 'transparent'
-            : 'linear-gradient(180deg, #fdfbf7 0%, #fdfbf7 55%, #fdfbf7 100%)',
-        color: '#1f1116',
+            : '#FFFDF8',
+        color: '#181316',
         fontFamily: 'Tajawal',
         position: 'relative',
       }}
@@ -1258,7 +1291,7 @@ function AppContent() {
             width: "100%",
             height: "100%",
             background:
-              "rgba(31, 17, 22,0.5)",
+              "rgba(24, 19, 22,0.5)",
             display: "flex",
             justifyContent:
               "center",
@@ -1285,7 +1318,7 @@ function AppContent() {
               maxWidth: "380px",
               textAlign: "center",
               boxShadow:
-                "0 0 15px rgba(31, 17, 22,0.2)",
+                "0 0 15px rgba(24, 19, 22,0.2)",
               color: "#000",
             }}
             onClick={(event) =>
@@ -1298,7 +1331,7 @@ function AppContent() {
                 onClick={closeWelcomeModal}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgba(31, 17, 22,0.06)',
+                  background: 'rgba(24, 19, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -1380,7 +1413,7 @@ function AppContent() {
               style={{
                 width: "100%",
                 padding: "12px",
-                background: "#8f2a40",
+                background: "#2a0b15",
                 color: "#fff",
                 borderRadius: "8px",
                 border: "none",
@@ -1426,9 +1459,9 @@ function AppContent() {
         }
 
 @keyframes roozCrown3D {
-  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgba(61, 15, 24,0.9)); }
-  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgba(61, 15, 24,1)); }
-  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgba(61, 15, 24,0.9)); }
+  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgba(42, 11, 21,0.9)); }
+  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgba(42, 11, 21,1)); }
+  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgba(42, 11, 21,0.9)); }
 }
 
 @keyframes roozStar3D {
@@ -1490,17 +1523,17 @@ function AppContent() {
               maxWidth: 420,
               marginInline: 'auto',
               background:
-                'linear-gradient(150deg, #1f1116, #000)',
+                'linear-gradient(150deg, #181316, #000)',
               border:
-                '1px solid rgba(61, 15, 24, 0.55)',
+                '1px solid rgba(42, 11, 21, 0.55)',
               borderRadius: 16,
               padding:
                 '18px 20px',
               fontFamily:
                 'Tajawal, sans-serif',
-              color: '#f3e0dd',
+              color: '#f7f1e6',
               boxShadow:
-                '0 18px 50px rgba(31, 17, 22,0.65)',
+                '0 18px 50px rgba(24, 19, 22,0.65)',
             }}
           >
             <div
@@ -1513,11 +1546,11 @@ function AppContent() {
             >
               <Clock
                 size={30}
-                color="#6b1d2f"
+                color="#541426"
               />
               <strong
                 style={{
-                  color: '#6b1d2f',
+                  color: '#541426',
                   fontSize: 15,
                   fontWeight: 900,
                 }}
@@ -1546,7 +1579,7 @@ function AppContent() {
                   display: 'block',
                   marginTop: 8,
                   fontSize: 12,
-                  color: '#6b1d2f',
+                  color: '#541426',
                 }}
               >
                 سيتم إخراجك تلقائياً عند انتهاء الوقت.
@@ -1570,9 +1603,11 @@ function AppContent() {
               left: 0,
               right: 0,
               height:
-                `${GUEST_BAR_HEIGHT}px`,
+                `calc(${GUEST_BAR_HEIGHT}px + env(safe-area-inset-top, 0px))`,
               minHeight:
-                `${GUEST_BAR_HEIGHT}px`,
+                `calc(${GUEST_BAR_HEIGHT}px + env(safe-area-inset-top, 0px))`,
+              paddingTop:
+                'env(safe-area-inset-top, 0px)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -1580,17 +1615,17 @@ function AppContent() {
               background:
                 guestRemaining <=
                 10000
-                  ? 'linear-gradient(90deg, rgba(61, 15, 24,0.97), rgba(61, 15, 24,0.92))'
-                  : 'linear-gradient(90deg, #1f1116, #6b1d2f)',
+                  ? 'linear-gradient(90deg, rgba(42, 11, 21,0.97), rgba(42, 11, 21,0.92))'
+                  : 'linear-gradient(90deg, #181316, #541426)',
               color: '#ffffff',
               padding: '0 1rem',
               textAlign: 'center',
               fontWeight: 800,
               fontSize: '0.9rem',
               boxShadow:
-                '0 2px 10px rgba(31, 17, 22,0.3)',
+                '0 2px 10px rgba(24, 19, 22,0.3)',
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal, sans-serif',
               boxSizing: 'border-box',
             }}
           >
@@ -1626,7 +1661,7 @@ function AppContent() {
               position: 'fixed',
               inset: 0,
               background:
-                'rgba(31, 17, 22,0.8)',
+                'rgba(24, 19, 22,0.8)',
               display: 'flex',
               alignItems: 'center',
               justifyContent:
@@ -1634,23 +1669,23 @@ function AppContent() {
               zIndex: 15000,
               padding: 16,
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal, sans-serif',
             }}
           >
             <div
               style={{
                 background: '#111',
                 border:
-                  '1px solid rgba(61, 15, 24,0.4)',
+                  '1px solid rgba(42, 11, 21,0.4)',
                 borderRadius: 16,
                 padding:
                   '2rem 1.5rem',
                 maxWidth: 420,
                 width: '100%',
                 textAlign: 'center',
-                color: '#f3e0dd',
+                color: '#f7f1e6',
                 boxShadow:
-                  '0 20px 60px rgba(31, 17, 22,0.6)',
+                  '0 20px 60px rgba(24, 19, 22,0.6)',
               }}
             >
               <div
@@ -1664,13 +1699,13 @@ function AppContent() {
               >
                 <Clock
                   size={48}
-                  color="#6b1d2f"
+                  color="#541426"
                 />
               </div>
 
               <h2
                 style={{
-                  color: '#6b1d2f',
+                  color: '#541426',
                   fontSize: 22,
                   fontWeight: 700,
                   marginBottom: 12,
@@ -1716,7 +1751,7 @@ function AppContent() {
                   width: '100%',
                   padding: '13px',
                   background:
-                    'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
+                    'linear-gradient(135deg, #541426, #541426)',
                   color: '#fff',
                   border: 'none',
                   borderRadius: 10,
@@ -1748,9 +1783,9 @@ function AppContent() {
                   padding: '13px',
                   background:
                     'transparent',
-                  color: '#6b1d2f',
+                  color: '#541426',
                   border:
-                    '1px solid rgba(61, 15, 24,0.4)',
+                    '1px solid rgba(42, 11, 21,0.4)',
                   borderRadius: 10,
                   fontWeight: 700,
                   fontSize: 15,
@@ -1778,11 +1813,8 @@ function AppContent() {
         />
       )}
 
-      {/* ================================================= */}
-      {/* Floating Back Button */}
-      {/* ================================================= */}
-
-      <BackButton />
+      {/* زر الرجوع انتقل داخل الترويسة (RoyalHeader) ليعكس تاريخ المتصفح الحقيقي
+          ويمنع التداخل العائم مع المحتوى. */}
 
       {/* =================================================
           Global Close Button (❌) — يظهر في الصفحات الفرعية
@@ -1842,7 +1874,9 @@ function AppContent() {
           position: 'relative',
           zIndex: 1,
           boxSizing: 'border-box',
-          paddingTop: isAuthenticated ? 'var(--nav-height, 56px)' : 0,
+          // الترويسة sticky وتحتل مساحتها داخل التدفق → لا حشوة تعويضية
+          // (إزالة الحشوة المزدوجة التي كانت تُنتج فراغاً كبيراً أعلى الصفحة).
+          paddingTop: 0,
           marginTop: 0,
         }}
       >
@@ -1867,10 +1901,10 @@ function AppContent() {
               height: '60px',
               overflow: 'hidden',
               display: 'block',
-              background: 'linear-gradient(90deg, #1f1116 0%, #1f1116 40%, #1f1116 60%, #1f1116 100%)',
-              borderTop: '2px solid #6b1d2f',
-              borderBottom: '2px solid #6b1d2f',
-              boxShadow: '0 12px 32px rgba(31, 17, 22,0.6), 0 0 22px rgba(61, 15, 24,0.25)',
+              background: 'linear-gradient(90deg, #181316 0%, #181316 40%, #181316 60%, #181316 100%)',
+              borderTop: '2px solid #541426',
+              borderBottom: '2px solid #541426',
+              boxShadow: '0 12px 32px rgba(24, 19, 22,0.6), 0 0 22px rgba(42, 11, 21,0.25)',
               zIndex: 80,
               flexShrink: 0,
             }}
@@ -1907,15 +1941,15 @@ function AppContent() {
                     flexShrink: 0,
                     padding: '0 60px',
                     whiteSpace: 'nowrap',
-                    fontFamily: 'Cairo, "Noto Sans Arabic", Tahoma, sans-serif',
+                    fontFamily: 'Tajawal, sans-serif',
                     fontSize: 'clamp(1.15rem, 2.5vw, 1.55rem)',
                     fontWeight: 900,
-                    WebkitTextStroke: '0.4px rgba(61, 15, 24,0.5)',
+                    WebkitTextStroke: '0.4px rgba(42, 11, 21,0.5)',
                     lineHeight: '60px',
                     direction: 'rtl',
                     unicodeBidi: 'isolate',
-                    color: '#6b1d2f',
-                    WebkitTextFillColor: '#6b1d2f',
+                    color: '#541426',
+                    WebkitTextFillColor: '#541426',
                     textShadow: '0 1px 2px #000',
                   }}
                 >
@@ -1947,14 +1981,12 @@ function AppContent() {
               <Route
                 path="/login"
                 element={
-                  !isAuthenticated ? (
+                  <LoginRoute
+                    isAuthenticated={isAuthenticated}
+                    isGuest={isGuest}
+                  >
                     <Login />
-                  ) : (
-                    <Navigate
-                      to="/"
-                      replace
-                    />
-                  )
+                  </LoginRoute>
                 }
               />
 
@@ -1988,10 +2020,14 @@ function AppContent() {
                 }
               />
 
+              {/* الرئيسية متاحة للزائر أيضاً — بدون blockGuest.
+                  وجودها كان يُنشئ حلقة لا نهائية: الزائر يُطرد من "/"
+                  إلى "/login"، و/login يرى isAuthenticated (الزائر)
+                  فيعيده إلى "/" — فتتجمّد الصفحة بلا توقف. */}
               <Route
                 path="/"
                 element={
-                  <ProtectedRoute blockGuest>
+                  <ProtectedRoute>
                     <RoyalHomePage />
                   </ProtectedRoute>
                 }

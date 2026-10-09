@@ -227,7 +227,7 @@ export default function AIChat() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label={`فتح مساعد ${AI_NAME}`}
-        className="fixed bottom-5 left-5 bg-gradient-to-br from-[#d4a5a5] via-[#6b1d2f] to-[#6b1d2f] text-[#1f1116] p-4 rounded-full shadow-2xl z-50 hover:scale-110 transition-all duration-300 border border-[#f3e0dd]/60"
+        className="fixed bottom-5 left-5 bg-gradient-to-br from-[#e3c878] via-[#541426] to-[#541426] text-[#181316] p-4 rounded-full shadow-2xl z-50 hover:scale-110 transition-all duration-300 border border-[#f7f1e6]/60"
       >
         <Sparkles size={24} />
       </button>
@@ -236,12 +236,12 @@ export default function AIChat() {
       {open && (
         <div
           dir="rtl"
-          className="fixed bottom-20 left-5 w-[calc(100vw-2.5rem)] max-w-80 h-[520px] bg-[#fdfbf7] border-2 border-[#6b1d2f] rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
+          className="fixed bottom-20 left-5 w-[calc(100vw-2.5rem)] max-w-80 h-[520px] bg-[#fffdf8] border-2 border-[#541426] rounded-2xl shadow-2xl z-50 flex flex-col overflow-hidden"
         >
 
           {/* الهيدر */}
-          <div className="bg-gradient-to-r from-[#1f1116] via-[#1f1116] to-[#6b1d2f] p-3 rounded-t-2xl flex justify-between items-center border-b border-[#6b1d2f]/60">
-            <h3 className="font-bold text-[#f3e0dd] flex items-center gap-2">
+          <div className="bg-gradient-to-r from-[#181316] via-[#181316] to-[#541426] p-3 rounded-t-2xl flex justify-between items-center border-b border-[#541426]/60">
+            <h3 className="font-bold text-[#f7f1e6] flex items-center gap-2">
               <Sparkles size={16} /> {AI_NAME}
             </h3>
             <button
@@ -250,33 +250,33 @@ export default function AIChat() {
               aria-label="إغلاق المحادثة"
               className="hover:bg-white/20 p-1 rounded-full transition"
             >
-              <X size={18} className="text-[#f3e0dd]" />
+              <X size={18} className="text-[#f7f1e6]" />
             </button>
           </div>
 
           {/* رسالة الأمان */}
-          <div className="p-2 bg-[#fdfbf7] text-[10px] text-[#1f1116] flex items-start gap-2 border-b border-[#6b1d2f]/40">
-            <ShieldCheck size={14} className="text-[#6b1d2f] shrink-0" />
+          <div className="p-2 bg-[#fffdf8] text-[10px] text-[#181316] flex items-start gap-2 border-b border-[#541426]/40">
+            <ShieldCheck size={14} className="text-[#541426] shrink-0" />
             <p>
               تخضع جميع بيانات المستخدمين والزائرين والرسائل الخاصة والمعاملات الداخلية لحماية صارمة 
               وتشفير عالمي متقدم 
-              <span className="text-[#6b1d2f] font-bold">(تشفير بموجب بروتوكولات عالمية محمية وسرية ومتعددة الطبقات)</span>.
+              <span className="text-[#541426] font-bold">(تشفير بموجب بروتوكولات عالمية محمية وسرية ومتعددة الطبقات)</span>.
               <br />
-              <span className="text-[#6b1d2f] italic">
+              <span className="text-[#541426] italic">
                 All user and visitor data is fully encrypted and cannot be accessed by any unauthorized party.
               </span>
             </p>
           </div>
 
           {/* الرسائل */}
-          <div ref={chatRef} className="flex-1 overflow-y-auto p-3 space-y-2 bg-gradient-to-b from-[#fdfbf7] to-[#fdfbf7]">
+          <div ref={chatRef} className="flex-1 overflow-y-auto p-3 space-y-2 bg-gradient-to-b from-[#fffdf8] to-[#fffdf8]">
             {messages.map((m) => (
               <div
                 key={m.id}
                 className={`p-3 rounded-lg text-sm whitespace-pre-wrap break-words ${
                   m.role === "user"
-                    ? "bg-gradient-to-r from-[#6b1d2f] to-[#6b1d2f] text-[#fdfbf7] ml-10 shadow-md"
-                    : "bg-[#fdfbf7] text-[#1f1116] mr-10 border border-[#6b1d2f]/30 shadow-sm"
+                    ? "bg-gradient-to-r from-[#541426] to-[#541426] text-[#fffdf8] ml-10 shadow-md"
+                    : "bg-[#fffdf8] text-[#181316] mr-10 border border-[#541426]/30 shadow-sm"
                 }`}
               >
                 {m.text}
@@ -284,14 +284,14 @@ export default function AIChat() {
             ))}
 
             {loading && (
-              <p className="text-xs text-[#6b1d2f] text-center">
+              <p className="text-xs text-[#541426] text-center">
                 {AI_NAME} تكتب...
               </p>
             )}
           </div>
 
           {/* صندوق الإرسال */}
-          <div className="p-2 flex gap-2 border-t border-[#6b1d2f]/40 bg-[#fdfbf7]">
+          <div className="p-2 flex gap-2 border-t border-[#541426]/40 bg-[#fffdf8]">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -303,14 +303,14 @@ export default function AIChat() {
               }}
               placeholder="اسألني عن أي منتج أو مقاس أو أي سؤال في الدنيا"
               disabled={loading}
-              className="flex-1 bg-[#fdfbf7] text-[#1f1116] placeholder:text-[#6b1d2f] p-2 rounded-lg text-sm outline-none border border-[#6b1d2f]/30 focus:border-[#6b1d2f] disabled:opacity-60"
+              className="flex-1 bg-[#fffdf8] text-[#181316] placeholder:text-[#541426] p-2 rounded-lg text-sm outline-none border border-[#541426]/30 focus:border-[#541426] disabled:opacity-60"
             />
             <button
               type="button"
               onClick={sendMessage}
               disabled={loading || !input.trim()}
               aria-label="إرسال الرسالة"
-              className="bg-gradient-to-br from-[#6b1d2f] to-[#6b1d2f] text-[#1f1116] p-2 rounded-lg hover:brightness-110 disabled:opacity-50 transition shadow-md"
+              className="bg-gradient-to-br from-[#541426] to-[#541426] text-[#181316] p-2 rounded-lg hover:brightness-110 disabled:opacity-50 transition shadow-md"
             >
               <Send size={16} />
             </button>

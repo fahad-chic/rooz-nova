@@ -170,7 +170,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
 
   if (!isAuthenticated) {
     return (
-      <div style={{ textAlign: 'center', padding: 40, color: '#6b1d2f' }}>
+      <div style={{ textAlign: 'center', padding: 40, color: '#541426' }}>
         يرجى تسجيل الدخول لعرض هذه المحادثة.
       </div>
     );
@@ -178,21 +178,21 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
 
   if (loading)
     return (
-      <p style={{ textAlign: 'center', padding: 40, color: '#6b1d2f' }}>
+      <p style={{ textAlign: 'center', padding: 40, color: '#541426' }}>
         جاري تحميل المحادثة...
       </p>
     );
 
   if (!hasChatTarget) {
     return (
-      <div style={{ textAlign: 'center', padding: 60, color: '#6b1d2f', fontFamily: 'Tajawal, sans-serif' }}>
-        <p style={{ fontSize: 18, fontWeight: 700, color: '#1f1116' }}>لا توجد محادثة محددة</p>
+      <div style={{ textAlign: 'center', padding: 60, color: '#541426', fontFamily: 'Tajawal, sans-serif' }}>
+        <p style={{ fontSize: 18, fontWeight: 700, color: '#181316' }}>لا توجد محادثة محددة</p>
         <p style={{ fontSize: 14 }}>افتح إعلاناً في حراج واضغط «مراسلة البائع» لبدء محادثة.</p>
         {typeof setCurrentPage === 'function' && (
           <button
             type="button"
             onClick={() => setCurrentPage('dashboard')}
-            style={{ marginTop: 16, padding: '10px 22px', borderRadius: 10, border: 'none', background: 'linear-gradient(135deg,#6b1d2f,#6b1d2f)', color: '#1f1116', fontWeight: 800, cursor: 'pointer' }}
+            style={{ marginTop: 16, padding: '10px 22px', borderRadius: 10, border: 'none', background: 'linear-gradient(135deg,#541426,#541426)', color: '#181316', fontWeight: 800, cursor: 'pointer' }}
           >
             العودة للرئيسية
           </button>
@@ -209,12 +209,12 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
         height: '85vh',
         display: 'flex',
         flexDirection: 'column',
-        background: '#1f1116',
+        background: '#181316',
         borderRadius: 16,
         boxShadow: '0 4px 20px rgba(255, 255, 255,0.08)',
-        border: '1px solid rgba(61, 15, 24,0.25)',
+        border: '1px solid rgba(42, 11, 21,0.25)',
         overflow: 'hidden',
-        fontFamily: 'Cairo, sans-serif'
+        fontFamily: 'Tajawal, sans-serif'
       }}
     >
       <div
@@ -224,7 +224,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
           alignItems: 'center',
           padding: 15,
           background: '#111',
-          borderBottom: '1px solid rgba(61, 15, 24,0.25)'
+          borderBottom: '1px solid rgba(42, 11, 21,0.25)'
         }}
       >
         <button
@@ -233,7 +233,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
           style={{
             background: 'none',
             border: 'none',
-            color: '#6b1d2f',
+            color: '#541426',
             fontWeight: 700,
             cursor: 'pointer',
             display: 'flex',
@@ -245,7 +245,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
         </button>
 
         <div style={{ textAlign: 'center' }}>
-          <h2 style={{ margin: 0, fontSize: 16, color: '#6b1d2f' }}>
+          <h2 style={{ margin: 0, fontSize: 16, color: '#541426' }}>
             محادثة بخصوص: {adData?.title || 'إعلان'}
           </h2>
           <p style={{ margin: 0, fontSize: 12, color: '#aaa' }}>
@@ -282,7 +282,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
           aria-label={reportSent ? 'تم إرسال البلاغ' : 'إبلاغ الإدارة عن هذه المحادثة'}
           style={{ background: 'none', border: 'none', cursor: reportSent ? 'default' : 'pointer', opacity: reportSent ? 0.4 : 1 }}
         >
-          <ShieldCheck size={20} color={reportSent ? '#888' : '#8f2a40'} />
+          <ShieldCheck size={20} color={reportSent ? '#888' : '#2a0b15'} />
         </button>
       </div>
 
@@ -291,7 +291,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
           flex: 1,
           overflowY: 'auto',
           padding: 20,
-          background: '#1f1116'
+          background: '#181316'
         }}
       >
         {messages.length === 0 && (
@@ -316,12 +316,12 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
                 borderRadius: 12,
                 maxWidth: '70%',
                 background:
-                  m.senderId === user.uid ? '#6b1d2f' : '#1f1116',
+                  m.senderId === user.uid ? '#541426' : '#181316',
                 color: m.senderId === user.uid ? '#fff' : '#eee',
                 boxShadow:
                   m.senderId === user.uid
-                    ? '0 2px 8px rgba(61, 15, 24,0.4)'
-                    : '0 2px 8px rgba(31, 17, 22,0.3)'
+                    ? '0 2px 8px rgba(42, 11, 21,0.4)'
+                    : '0 2px 8px rgba(24, 19, 22,0.3)'
               }}
             >
               <p style={{ margin: 0, fontSize: 14 }}>{m.text || ''}</p>
@@ -347,7 +347,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
           gap: 10,
           padding: 15,
           background: '#111',
-          borderTop: '1px solid rgba(61, 15, 24,0.25)'
+          borderTop: '1px solid rgba(42, 11, 21,0.25)'
         }}
       >
         <input
@@ -363,7 +363,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
             border: '1px solid rgba(255, 255, 255,0.1)',
             borderRadius: 10,
             padding: '12px',
-            background: '#1f1116',
+            background: '#181316',
             color: '#fff'
           }}
         />
@@ -374,7 +374,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
           disabled={sending || !message.trim() || !chatId}
           aria-label="إرسال الرسالة"
           style={{
-            background: '#6b1d2f',
+            background: '#541426',
             color: '#fff',
             border: 'none',
             borderRadius: 10,

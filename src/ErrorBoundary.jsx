@@ -58,18 +58,18 @@ class ErrorBoundary extends React.Component {
           style={{
             padding: '2rem',
             textAlign: 'center',
-            fontFamily: 'Cairo',
+            fontFamily: 'Tajawal',
             direction: 'rtl',
-            background: '#1f1116',
-            color: '#fdfbf7',
+            background: '#181316',
+            color: '#fffdf8',
             minHeight: '100vh'
           }}
         >
-          <h2 style={{ color: '#6b1d2f' }}> حدث خطأ غير متوقع</h2>
+          <h2 style={{ color: '#541426' }}> حدث خطأ غير متوقع</h2>
 
           <p
             style={{
-              color: '#3d0f18',
+              color: '#2a0b15',
               background: '#fbf0f0',
               padding: '1rem',
               borderRadius: '8px',
@@ -91,8 +91,8 @@ class ErrorBoundary extends React.Component {
               marginTop: '1rem',
               padding: '0.6rem 1.2rem',
               cursor: 'pointer',
-              background: '#6b1d2f',
-              color: '#1f1116',
+              background: '#541426',
+              color: '#181316',
               border: 'none',
               borderRadius: '8px',
               fontWeight: 'bold'
@@ -107,11 +107,11 @@ class ErrorBoundary extends React.Component {
                 textAlign: 'left',
                 maxHeight: 250,
                 overflow: 'auto',
-                background: '#1f1116',
+                background: '#181316',
                 padding: 10,
                 marginTop: '1rem',
                 borderRadius: '8px',
-                color: '#fdfbf7'
+                color: '#fffdf8'
               }}
             >
               {this.state.error?.stack}
@@ -124,7 +124,7 @@ class ErrorBoundary extends React.Component {
               style={{
                 padding: '0.8rem 1.5rem',
                 cursor: 'pointer',
-                background: '#6b1d2f',
+                background: '#541426',
                 color: '#fff',
                 border: 'none',
                 borderRadius: '8px',

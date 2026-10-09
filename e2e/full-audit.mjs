@@ -168,7 +168,7 @@ for (const r of matrix.guestOwnerRedirect) {
   await page.locator('#email').focus();
   await page.waitForTimeout(500);
   const border = await page.evaluate(() => getComputedStyle(document.querySelector('.rl-input-wrap')).borderColor);
-  add(border === 'rgb(201, 162, 75)' ? 'ok' : 'warn', 'login/input', 'إطار التركيز ' + border);
+  add(border === 'rgb(201, 162, 77)' ? 'ok' : 'warn', 'login/input', 'إطار التركيز ' + border);
   const radius = await page.evaluate(() => getComputedStyle(document.querySelector('.rl-input-wrap')).borderTopLeftRadius);
   add(radius === '8px' ? 'ok' : 'warn', 'login/input', 'استدارة الحقل ' + radius);
 

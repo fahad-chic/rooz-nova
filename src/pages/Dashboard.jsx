@@ -23,9 +23,9 @@ import {
 
 /* ── الألوان حسب الدور ── */
 const ROLE_LABELS = {
-  owner: { label: 'صاحب الموقع', color: '#6b1d2f' },
-  admin: { label: 'مشرف', color: '#6b1d2f' },
-  employee: { label: 'موظف', color: '#4a3a3f' },
+  owner: { label: 'صاحب الموقع', color: '#541426' },
+  admin: { label: 'مشرف', color: '#541426' },
+  employee: { label: 'موظف', color: '#766d72' },
 }
 
 /* ── أدوات القيم الآمنة ── */
@@ -42,7 +42,7 @@ const safePercentage = (value) => {
 const safeText = (value) => (typeof value === 'string' ? value : '')
 
 /* ── بطاقة إحصاء ── */
-const StatCard = ({ icon: Icon, label, value, sub, color = '#6b1d2f', onClick }) => (
+const StatCard = ({ icon: Icon, label, value, sub, color = '#541426', onClick }) => (
   <div
     onClick={onClick}
     role={onClick ? 'button' : undefined}
@@ -58,8 +58,8 @@ const StatCard = ({ icon: Icon, label, value, sub, color = '#6b1d2f', onClick })
         : undefined
     }
     style={{
-      background: 'rgba(31, 17, 22,0.88)',
-      border: '1px solid rgba(61, 15, 24,0.22)',
+      background: 'rgba(24, 19, 22,0.88)',
+      border: '1px solid rgba(42, 11, 21,0.22)',
       borderRadius: 16,
       padding: '1.1rem 1.2rem',
       display: 'flex',
@@ -67,15 +67,15 @@ const StatCard = ({ icon: Icon, label, value, sub, color = '#6b1d2f', onClick })
       gap: '1rem',
       cursor: onClick ? 'pointer' : 'default',
       transition: 'all 0.22s ease',
-      boxShadow: '0 4px 16px rgba(31, 17, 22,0.25)',
+      boxShadow: '0 4px 16px rgba(24, 19, 22,0.25)',
     }}
     onMouseEnter={(e) => {
       if (onClick) e.currentTarget.style.transform = 'translateY(-3px)'
-      e.currentTarget.style.borderColor = 'rgba(61, 15, 24,0.5)'
+      e.currentTarget.style.borderColor = 'rgba(42, 11, 21,0.5)'
     }}
     onMouseLeave={(e) => {
       e.currentTarget.style.transform = 'none'
-      e.currentTarget.style.borderColor = 'rgba(61, 15, 24,0.22)'
+      e.currentTarget.style.borderColor = 'rgba(42, 11, 21,0.22)'
     }}
   >
     <div
@@ -97,17 +97,17 @@ const StatCard = ({ icon: Icon, label, value, sub, color = '#6b1d2f', onClick })
         style={{
           fontSize: '1.75rem',
           fontWeight: 800,
-          color: '#f3e0dd',
+          color: '#f7f1e6',
           lineHeight: 1.1,
         }}
       >
         {value}
       </div>
-      <div style={{ fontSize: '0.84rem', color: '#d4a5a5', marginTop: 3 }}>
+      <div style={{ fontSize: '0.84rem', color: '#e3c878', marginTop: 3 }}>
         {label}
       </div>
       {sub && (
-        <div style={{ fontSize: '0.74rem', color: '#6b1d2f', marginTop: 2 }}>
+        <div style={{ fontSize: '0.74rem', color: '#541426', marginTop: 2 }}>
           {sub}
         </div>
       )}
@@ -121,7 +121,7 @@ const BranchCard = ({ branch, onClick }) => {
   const rating = safeNumber(branch?.rating)
   const employees = safeNumber(branch?.employees)
   const barColor =
-    completion >= 90 ? '#4a3a3f' : completion >= 70 ? '#6b1d2f' : '#8f2a40'
+    completion >= 90 ? '#766d72' : completion >= 70 ? '#541426' : '#2a0b15'
 
   return (
     <div
@@ -135,8 +135,8 @@ const BranchCard = ({ branch, onClick }) => {
         }
       }}
       style={{
-        background: 'rgba(31, 17, 22,0.9)',
-        border: '1px solid rgba(61, 15, 24,0.2)',
+        background: 'rgba(24, 19, 22,0.9)',
+        border: '1px solid rgba(42, 11, 21,0.2)',
         borderRadius: 16,
         padding: '1rem 1.1rem',
         cursor: 'pointer',
@@ -146,12 +146,12 @@ const BranchCard = ({ branch, onClick }) => {
       }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform = 'translateY(-3px)'
-        e.currentTarget.style.borderColor = 'rgba(61, 15, 24,0.5)'
-        e.currentTarget.style.boxShadow = '0 8px 28px rgba(61, 15, 24,0.14)'
+        e.currentTarget.style.borderColor = 'rgba(42, 11, 21,0.5)'
+        e.currentTarget.style.boxShadow = '0 8px 28px rgba(42, 11, 21,0.14)'
       }}
       onMouseLeave={(e) => {
         e.currentTarget.style.transform = 'none'
-        e.currentTarget.style.borderColor = 'rgba(61, 15, 24,0.2)'
+        e.currentTarget.style.borderColor = 'rgba(42, 11, 21,0.2)'
         e.currentTarget.style.boxShadow = 'none'
       }}
     >
@@ -163,7 +163,7 @@ const BranchCard = ({ branch, onClick }) => {
           width: 80,
           height: 80,
           background:
-            'radial-gradient(circle, rgba(61, 15, 24,0.1), transparent 70%)',
+            'radial-gradient(circle, rgba(42, 11, 21,0.1), transparent 70%)',
           pointerEvents: 'none',
         }}
       />
@@ -179,7 +179,7 @@ const BranchCard = ({ branch, onClick }) => {
           <div
             style={{
               fontWeight: 700,
-              color: '#f3e0dd',
+              color: '#f7f1e6',
               fontSize: '0.95rem',
               marginBottom: 3,
             }}
@@ -191,7 +191,7 @@ const BranchCard = ({ branch, onClick }) => {
               display: 'flex',
               alignItems: 'center',
               gap: 4,
-              color: '#d4a5a5',
+              color: '#e3c878',
               fontSize: '0.78rem',
             }}
           >
@@ -203,9 +203,9 @@ const BranchCard = ({ branch, onClick }) => {
           style={{
             background:
               branch.status === 'نشط'
-                ? 'rgba(31, 17, 22,0.15)'
-                : 'rgba(61, 15, 24,0.15)',
-            color: branch.status === 'نشط' ? '#4a3a3f' : '#f3e0dd',
+                ? 'rgba(24, 19, 22,0.15)'
+                : 'rgba(42, 11, 21,0.15)',
+            color: branch.status === 'نشط' ? '#766d72' : '#f7f1e6',
             padding: '0.25rem 0.65rem',
             borderRadius: 999,
             fontSize: '0.73rem',
@@ -224,7 +224,7 @@ const BranchCard = ({ branch, onClick }) => {
             marginBottom: 5,
           }}
         >
-          <span style={{ fontSize: '0.76rem', color: '#8a5560' }}>
+          <span style={{ fontSize: '0.76rem', color: '#766d72' }}>
             نسبة الإنجاز
           </span>
           <span
@@ -259,7 +259,7 @@ const BranchCard = ({ branch, onClick }) => {
         }}
       >
         <div style={{ display: 'flex', gap: '0.9rem' }}>
-          <div style={{ fontSize: '0.76rem', color: '#d4a5a5' }}>
+          <div style={{ fontSize: '0.76rem', color: '#e3c878' }}>
             <Users size={12} style={{ display: 'inline', marginLeft: 3 }} />
             {employees} موظف
           </div>
@@ -269,10 +269,10 @@ const BranchCard = ({ branch, onClick }) => {
               alignItems: 'center',
               gap: 3,
               fontSize: '0.76rem',
-              color: '#6b1d2f',
+              color: '#541426',
             }}
           >
-            <Star size={12} fill="#6b1d2f" />
+            <Star size={12} fill="#541426" />
             {rating > 0 ? rating.toFixed(1) : '—'}
           </div>
         </div>
@@ -281,7 +281,7 @@ const BranchCard = ({ branch, onClick }) => {
             display: 'flex',
             alignItems: 'center',
             gap: 4,
-            color: '#6b1d2f',
+            color: '#541426',
             fontSize: '0.78rem',
             fontWeight: 600,
           }}
@@ -416,7 +416,7 @@ const Dashboard = () => {
         style={{
           textAlign: 'center',
           padding: '2rem',
-          color: '#f3e0dd',
+          color: '#f7f1e6',
           direction: 'rtl',
         }}
       >
@@ -431,7 +431,7 @@ const Dashboard = () => {
         style={{
           textAlign: 'center',
           padding: '2rem',
-          color: '#f3e0dd',
+          color: '#f7f1e6',
           direction: 'rtl',
         }}
       >
@@ -446,7 +446,7 @@ const Dashboard = () => {
         style={{
           textAlign: 'center',
           padding: '2rem',
-          color: '#f3e0dd',
+          color: '#f7f1e6',
           direction: 'rtl',
         }}
       >
@@ -478,8 +478,8 @@ const Dashboard = () => {
       {/* Header */}
       <div
         style={{
-          background: 'rgba(31, 17, 22,0.9)',
-          border: '1px solid rgba(61, 15, 24,0.25)',
+          background: 'rgba(24, 19, 22,0.9)',
+          border: '1px solid rgba(42, 11, 21,0.25)',
           borderRadius: 20,
           padding: '1.25rem 1.4rem',
           marginBottom: '0.6rem',
@@ -501,7 +501,7 @@ const Dashboard = () => {
           >
             <span
               style={{
-                background: 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
+                background: 'linear-gradient(135deg, #541426, #541426)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 fontSize: '1.55rem',
@@ -513,7 +513,7 @@ const Dashboard = () => {
           </div>
           <div
             style={{
-              color: '#d4a5a5',
+              color: '#e3c878',
               fontSize: '0.84rem',
               display: 'flex',
               alignItems: 'center',
@@ -524,7 +524,7 @@ const Dashboard = () => {
             <span style={{ color: roleInfo.color, fontWeight: 700 }}>
               {roleInfo.label}
             </span>
-            <span style={{ color: '#8a5560' }}>•</span>
+            <span style={{ color: '#766d72' }}>•</span>
             <span dir="ltr">{user?.email || ''}</span>
           </div>
         </div>
@@ -546,9 +546,9 @@ const Dashboard = () => {
                 : 'رجوع للتبويب السابق'
             }
             style={{
-              background: 'rgba(61, 15, 24,0.12)',
-              color: '#f3e0dd',
-              border: '1px solid rgba(61, 15, 24,0.35)',
+              background: 'rgba(42, 11, 21,0.12)',
+              color: '#f7f1e6',
+              border: '1px solid rgba(42, 11, 21,0.35)',
               padding: '0.6rem 1rem',
               borderRadius: 999,
               fontWeight: 700,
@@ -568,8 +568,8 @@ const Dashboard = () => {
             onClick={leaveDashboard}
             style={{
               background: 'transparent',
-              color: '#d4a5a5',
-              border: '1px solid rgba(61, 15, 24,0.25)',
+              color: '#e3c878',
+              border: '1px solid rgba(42, 11, 21,0.25)',
               padding: '0.6rem 1rem',
               borderRadius: 999,
               fontWeight: 700,
@@ -584,8 +584,8 @@ const Dashboard = () => {
               type="button"
               onClick={() => navigate('/complaints')}
               style={{
-                background: 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
-                color: '#1f1116',
+                background: 'linear-gradient(135deg, #541426, #541426)',
+                color: '#181316',
                 border: 'none',
                 padding: '0.6rem 1.1rem',
                 borderRadius: 999,
@@ -605,9 +605,9 @@ const Dashboard = () => {
             type="button"
             onClick={() => navigate('/branches')}
             style={{
-              background: 'rgba(61, 15, 24,0.12)',
-              color: '#f3e0dd',
-              border: '1px solid rgba(61, 15, 24,0.25)',
+              background: 'rgba(42, 11, 21,0.12)',
+              color: '#f7f1e6',
+              border: '1px solid rgba(42, 11, 21,0.25)',
               padding: '0.6rem 1.1rem',
               borderRadius: 999,
               fontWeight: 700,
@@ -628,9 +628,9 @@ const Dashboard = () => {
       <div
         style={{
           marginBottom: '1rem',
-          background: 'rgba(31, 17, 22,0.95)',
+          background: 'rgba(24, 19, 22,0.95)',
           borderRadius: 14,
-          border: '1px solid rgba(61, 15, 24,0.35)',
+          border: '1px solid rgba(42, 11, 21,0.35)',
           padding: '0.7rem 1rem',
           display: 'flex',
           alignItems: 'center',
@@ -638,9 +638,9 @@ const Dashboard = () => {
           flexWrap: 'wrap',
         }}
       >
-        <Activity size={18} color="#6b1d2f" />
+        <Activity size={18} color="#541426" />
         <span
-          style={{ fontSize: '0.82rem', color: '#f3e0dd', fontWeight: 600 }}
+          style={{ fontSize: '0.82rem', color: '#f7f1e6', fontWeight: 600 }}
         >
           {pulseText}
         </span>
@@ -660,7 +660,7 @@ const Dashboard = () => {
           label="إجمالي الفروع"
           value={stats.totalBranches}
           sub={`${stats.activeBranches} فرع نشط`}
-          color="#6b1d2f"
+          color="#541426"
           onClick={() => navigate('/branches')}
         />
         <StatCard
@@ -668,7 +668,7 @@ const Dashboard = () => {
           label="الموظفون"
           value={stats.totalEmployees}
           sub="موظف مسجّل"
-          color="#6b1d2f"
+          color="#541426"
           onClick={() => navigate('/employees')}
         />
         <StatCard
@@ -676,7 +676,7 @@ const Dashboard = () => {
           label="الإعلانات الفعّالة"
           value={stats.activeAds}
           sub="إعلان نشط"
-          color="#d4a5a5"
+          color="#e3c878"
           onClick={() => navigate('/advertisements')}
         />
         <StatCard
@@ -684,14 +684,14 @@ const Dashboard = () => {
           label="متوسط التقييم"
           value={stats.avgRating}
           sub="من 5 نجوم"
-          color="#6b1d2f"
+          color="#541426"
         />
         <StatCard
           icon={AlertCircle}
           label="شكاوى معلّقة"
           value={stats.pendingComplaints}
           sub={`${stats.resolvedComplaints} تمت معالجتها`}
-          color={stats.pendingComplaints > 0 ? '#8f2a40' : '#4a3a3f'}
+          color={stats.pendingComplaints > 0 ? '#2a0b15' : '#766d72'}
           onClick={() => navigate('/complaints')}
         />
         <StatCard
@@ -699,7 +699,7 @@ const Dashboard = () => {
           label="معدل الإنجاز"
           value={`${stats.avgCompletion}%`}
           sub="متوسط الفروع"
-          color="#4a3a3f"
+          color="#766d72"
         />
       </div>
 
@@ -708,8 +708,8 @@ const Dashboard = () => {
         style={{
           display: 'flex',
           gap: '0.5rem',
-          background: 'rgba(31, 17, 22,0.7)',
-          border: '1px solid rgba(61, 15, 24,0.15)',
+          background: 'rgba(24, 19, 22,0.7)',
+          border: '1px solid rgba(42, 11, 21,0.15)',
           borderRadius: 14,
           padding: '0.4rem',
           marginBottom: '1.1rem',
@@ -734,9 +734,9 @@ const Dashboard = () => {
                 fontWeight: 700,
                 fontSize: '0.84rem',
                 background: active
-                  ? 'linear-gradient(135deg, #6b1d2f, #6b1d2f)'
+                  ? 'linear-gradient(135deg, #541426, #541426)'
                   : 'transparent',
-                color: active ? '#1f1116' : '#d4a5a5',
+                color: active ? '#181316' : '#e3c878',
                 border: 'none',
                 display: 'flex',
                 alignItems: 'center',
@@ -772,8 +772,8 @@ const Dashboard = () => {
           {/* أحدث الفروع */}
           <div
             style={{
-              background: 'rgba(31, 17, 22,0.88)',
-              border: '1px solid rgba(61, 15, 24,0.2)',
+              background: 'rgba(24, 19, 22,0.88)',
+              border: '1px solid rgba(42, 11, 21,0.2)',
               borderRadius: 16,
               overflow: 'hidden',
             }}
@@ -781,7 +781,7 @@ const Dashboard = () => {
             <div
               style={{
                 padding: '0.85rem 1.1rem',
-                borderBottom: '1px solid rgba(61, 15, 24,0.15)',
+                borderBottom: '1px solid rgba(42, 11, 21,0.15)',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
@@ -790,7 +790,7 @@ const Dashboard = () => {
               <span
                 style={{
                   fontWeight: 700,
-                  color: '#f3e0dd',
+                  color: '#f7f1e6',
                   fontSize: '0.95rem',
                 }}
               >
@@ -802,7 +802,7 @@ const Dashboard = () => {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#6b1d2f',
+                  color: '#541426',
                   fontSize: '0.8rem',
                   fontWeight: 600,
                   cursor: 'pointer',
@@ -843,7 +843,7 @@ const Dashboard = () => {
                       }}
                       onMouseEnter={(e) =>
                         (e.currentTarget.style.background =
-                          'rgba(61, 15, 24,0.06)')
+                          'rgba(42, 11, 21,0.06)')
                       }
                       onMouseLeave={(e) =>
                         (e.currentTarget.style.background = 'transparent')
@@ -856,7 +856,7 @@ const Dashboard = () => {
                           borderRadius: 10,
                           flexShrink: 0,
                           background:
-                            'linear-gradient(135deg, rgba(61, 15, 24,0.2), rgba(61, 15, 24,0.15))',
+                            'linear-gradient(135deg, rgba(42, 11, 21,0.2), rgba(42, 11, 21,0.15))',
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
@@ -867,7 +867,7 @@ const Dashboard = () => {
                         <div
                           style={{
                             fontWeight: 700,
-                            color: '#f3e0dd',
+                            color: '#f7f1e6',
                             fontSize: '0.87rem',
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',
@@ -878,7 +878,7 @@ const Dashboard = () => {
                         </div>
                         <div
                           style={{
-                            color: '#d4a5a5',
+                            color: '#e3c878',
                             fontSize: '0.75rem',
                             display: 'flex',
                             alignItems: 'center',
@@ -892,14 +892,14 @@ const Dashboard = () => {
                       <div style={{ textAlign: 'center', flexShrink: 0 }}>
                         <div
                           style={{
-                            color: '#6b1d2f',
+                            color: '#541426',
                             fontWeight: 700,
                             fontSize: '0.85rem',
                           }}
                         >
                           {completion}%
                         </div>
-                        <div style={{ color: '#8a5560', fontSize: '0.7rem' }}>
+                        <div style={{ color: '#766d72', fontSize: '0.7rem' }}>
                           إنجاز
                         </div>
                       </div>
@@ -911,7 +911,7 @@ const Dashboard = () => {
                   style={{
                     textAlign: 'center',
                     padding: '2rem',
-                    color: '#8a5560',
+                    color: '#766d72',
                   }}
                 >
                   لا توجد فروع مسجّلة
@@ -923,8 +923,8 @@ const Dashboard = () => {
           {/* الإعلانات النشطة */}
           <div
             style={{
-              background: 'rgba(31, 17, 22,0.88)',
-              border: '1px solid rgba(61, 15, 24,0.2)',
+              background: 'rgba(24, 19, 22,0.88)',
+              border: '1px solid rgba(42, 11, 21,0.2)',
               borderRadius: 16,
               overflow: 'hidden',
             }}
@@ -932,7 +932,7 @@ const Dashboard = () => {
             <div
               style={{
                 padding: '0.85rem 1.1rem',
-                borderBottom: '1px solid rgba(61, 15, 24,0.15)',
+                borderBottom: '1px solid rgba(42, 11, 21,0.15)',
                 display: 'flex',
                 justifyContent: 'space-between',
                 alignItems: 'center',
@@ -941,7 +941,7 @@ const Dashboard = () => {
               <span
                 style={{
                   fontWeight: 700,
-                  color: '#f3e0dd',
+                  color: '#f7f1e6',
                   fontSize: '0.95rem',
                 }}
               >
@@ -953,7 +953,7 @@ const Dashboard = () => {
                 style={{
                   background: 'none',
                   border: 'none',
-                  color: '#6b1d2f',
+                  color: '#541426',
                   fontSize: '0.8rem',
                   fontWeight: 600,
                   cursor: 'pointer',
@@ -984,7 +984,7 @@ const Dashboard = () => {
                         height: 38,
                         borderRadius: 10,
                         flexShrink: 0,
-                        background: 'rgba(61, 15, 24,0.15)',
+                        background: 'rgba(42, 11, 21,0.15)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -995,7 +995,7 @@ const Dashboard = () => {
                       <div
                         style={{
                           fontWeight: 700,
-                          color: '#f3e0dd',
+                          color: '#f7f1e6',
                           fontSize: '0.87rem',
                           whiteSpace: 'nowrap',
                           overflow: 'hidden',
@@ -1006,7 +1006,7 @@ const Dashboard = () => {
                       </div>
                       <div
                         style={{
-                          color: '#d4a5a5',
+                          color: '#e3c878',
                           fontSize: '0.74rem',
                           whiteSpace: 'nowrap',
                           overflow: 'hidden',
@@ -1018,8 +1018,8 @@ const Dashboard = () => {
                     </div>
                     <span
                       style={{
-                        background: 'rgba(31, 17, 22,0.15)',
-                        color: '#4a3a3f',
+                        background: 'rgba(24, 19, 22,0.15)',
+                        color: '#766d72',
                         padding: '0.2rem 0.55rem',
                         borderRadius: 999,
                         fontSize: '0.7rem',
@@ -1038,7 +1038,7 @@ const Dashboard = () => {
                   style={{
                     textAlign: 'center',
                     padding: '2rem',
-                    color: '#8a5560',
+                    color: '#766d72',
                   }}
                 >
                   لا توجد إعلانات نشطة
@@ -1066,11 +1066,11 @@ const Dashboard = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               style={{
-                background: 'rgba(31, 17, 22,0.88)',
-                border: '1px solid rgba(61, 15, 24,0.22)',
+                background: 'rgba(24, 19, 22,0.88)',
+                border: '1px solid rgba(42, 11, 21,0.22)',
                 borderRadius: 12,
                 padding: '0.65rem 1rem',
-                color: '#fdfbf7',
+                color: '#fffdf8',
                 fontSize: '0.88rem',
                 flex: 1,
                 maxWidth: 340,
@@ -1081,8 +1081,8 @@ const Dashboard = () => {
               type="button"
               onClick={() => navigate('/branches')}
               style={{
-                background: 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
-                color: '#1f1116',
+                background: 'linear-gradient(135deg, #541426, #541426)',
+                color: '#181316',
                 border: 'none',
                 padding: '0.65rem 1.1rem',
                 borderRadius: 12,
@@ -1117,15 +1117,15 @@ const Dashboard = () => {
                   gridColumn: '1/-1',
                   textAlign: 'center',
                   padding: '3rem',
-                  color: '#8a5560',
-                  background: 'rgba(31, 17, 22,0.7)',
-                  border: '1px solid rgba(61, 15, 24,0.12)',
+                  color: '#766d72',
+                  background: 'rgba(24, 19, 22,0.7)',
+                  border: '1px solid rgba(42, 11, 21,0.12)',
                   borderRadius: 16,
                 }}
               >
                 <BarChart3
                   size={42}
-                  color="#1f1116"
+                  color="#181316"
                   style={{ marginBottom: 12 }}
                 />
                 <p>لا توجد فروع تطابق البحث</p>
@@ -1154,8 +1154,8 @@ const Dashboard = () => {
                   }
                 }}
                 style={{
-                  background: 'rgba(61, 15, 24,0.08)',
-                  border: '1px solid rgba(61, 15, 24,0.25)',
+                  background: 'rgba(42, 11, 21,0.08)',
+                  border: '1px solid rgba(42, 11, 21,0.25)',
                   borderRadius: 14,
                   padding: '0.9rem 1.1rem',
                   display: 'flex',
@@ -1164,26 +1164,26 @@ const Dashboard = () => {
                   cursor: 'pointer',
                 }}
               >
-                <Clock size={22} color="#6b1d2f" style={{ flexShrink: 0 }} />
+                <Clock size={22} color="#541426" style={{ flexShrink: 0 }} />
                 <div style={{ flex: 1 }}>
                   <div
                     style={{
                       fontWeight: 700,
-                      color: '#f3e0dd',
+                      color: '#f7f1e6',
                       fontSize: '0.9rem',
                     }}
                   >
                     {safeText(branch?.name) || 'فرع بدون اسم'}
                   </div>
-                  <div style={{ color: '#8a5560', fontSize: '0.78rem' }}>
+                  <div style={{ color: '#766d72', fontSize: '0.78rem' }}>
                     نسبة الإنجاز {safePercentage(branch?.completionPercentage)}%
                     — يحتاج متابعة
                   </div>
                 </div>
                 <span
                   style={{
-                    background: 'rgba(61, 15, 24,0.2)',
-                    color: '#6b1d2f',
+                    background: 'rgba(42, 11, 21,0.2)',
+                    color: '#541426',
                     padding: '0.25rem 0.7rem',
                     borderRadius: 999,
                     fontSize: '0.74rem',
@@ -1209,8 +1209,8 @@ const Dashboard = () => {
                   }
                 }}
                 style={{
-                  background: 'rgba(61, 15, 24,0.08)',
-                  border: '1px solid rgba(61, 15, 24,0.25)',
+                  background: 'rgba(42, 11, 21,0.08)',
+                  border: '1px solid rgba(42, 11, 21,0.25)',
                   borderRadius: 14,
                   padding: '0.9rem 1.1rem',
                   display: 'flex',
@@ -1221,27 +1221,27 @@ const Dashboard = () => {
               >
                 <AlertCircle
                   size={22}
-                  color="#8f2a40"
+                  color="#2a0b15"
                   style={{ flexShrink: 0 }}
                 />
                 <div style={{ flex: 1 }}>
                   <div
                     style={{
                       fontWeight: 700,
-                      color: '#f3e0dd',
+                      color: '#f7f1e6',
                       fontSize: '0.9rem',
                     }}
                   >
                     شكوى معلّقة
                   </div>
-                  <div style={{ color: '#8a5560', fontSize: '0.78rem' }}>
+                  <div style={{ color: '#766d72', fontSize: '0.78rem' }}>
                     {safeText(c?.description) || 'انقر للمراجعة'}
                   </div>
                 </div>
                 <span
                   style={{
-                    background: 'rgba(61, 15, 24,0.2)',
-                    color: '#f3e0dd',
+                    background: 'rgba(42, 11, 21,0.2)',
+                    color: '#f7f1e6',
                     padding: '0.25rem 0.7rem',
                     borderRadius: 999,
                     fontSize: '0.74rem',
@@ -1262,15 +1262,15 @@ const Dashboard = () => {
                 style={{
                   textAlign: 'center',
                   padding: '3rem',
-                  color: '#4a3a3f',
-                  background: 'rgba(31, 17, 22,0.05)',
-                  border: '1px solid rgba(31, 17, 22,0.2)',
+                  color: '#766d72',
+                  background: 'rgba(24, 19, 22,0.05)',
+                  border: '1px solid rgba(24, 19, 22,0.2)',
                   borderRadius: 16,
                 }}
               >
                 <CheckCircle
                   size={42}
-                  color="#4a3a3f"
+                  color="#766d72"
                   style={{ marginBottom: 12 }}
                 />
                 <p>لا توجد تنبيهات! كل شيء على ما يرام</p>

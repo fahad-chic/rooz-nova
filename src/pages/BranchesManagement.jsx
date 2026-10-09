@@ -113,7 +113,7 @@ export const BranchesManagement = () => {
           padding: 1rem;
           max-width: 1200px;
           margin: 0 auto;
-          font-family: 'Cairo', sans-serif;
+          font-family: Tajawal, sans-serif;
         }
 
         .management-header {
@@ -122,8 +122,8 @@ export const BranchesManagement = () => {
           align-items: center;
           margin-bottom: 1rem;
           padding: 1rem 1.1rem;
-          background: #1f1116;
-          border: 1px solid rgba(61, 15, 24,0.25);
+          background: #181316;
+          border: 1px solid rgba(42, 11, 21,0.25);
           border-radius: 16px;
           box-shadow: 0 2px 12px rgba(255, 255, 255,0.05);
         }
@@ -131,14 +131,14 @@ export const BranchesManagement = () => {
         .management-title {
           font-size: 1.5rem;
           font-weight: 700;
-          color: #6b1d2f;
+          color: #541426;
         }
 
         .add-btn {
           display: flex;
           align-items: center;
           gap: 0.4rem;
-          background: linear-gradient(135deg, #6b1d2f, #6b1d2f);
+          background: linear-gradient(135deg, #541426, #541426);
           color: #fff;
           border: none;
           padding: 0.65rem 1rem;
@@ -150,7 +150,7 @@ export const BranchesManagement = () => {
 
         .table-wrapper {
           background: #111;
-          border: 1px solid rgba(61, 15, 24,0.25);
+          border: 1px solid rgba(42, 11, 21,0.25);
           border-radius: 16px;
           overflow-x: auto;
           box-shadow: 0 2px 12px rgba(255, 255, 255,0.05);
@@ -164,10 +164,10 @@ export const BranchesManagement = () => {
         }
 
         th {
-          background: #1f1116;
+          background: #181316;
           padding: 0.9rem;
           font-size: 0.9rem;
-          color: #6b1d2f;
+          color: #541426;
           text-align: left;
         }
 
@@ -178,13 +178,13 @@ export const BranchesManagement = () => {
 
         .branch-name {
           font-weight: 700;
-          color: #f3e0dd;
+          color: #f7f1e6;
         }
 
         .type-badge {
           display: inline-block;
-          background: rgba(61, 15, 24,0.15);
-          color: #6b1d2f;
+          background: rgba(42, 11, 21,0.15);
+          color: #541426;
           padding: 0.24rem 0.6rem;
           border-radius: 999px;
           font-size: 0.76rem;
@@ -199,9 +199,9 @@ export const BranchesManagement = () => {
           font-weight: 700;
         }
 
-        .status-active { background: rgba(31, 17, 22,0.2); color: #4a3a3f; }
-        .status-warning { background: rgba(61, 15, 24,0.2); color: #6b1d2f; }
-        .status-danger { background: rgba(61, 15, 24,0.2); color: #8f2a40; }
+        .status-active { background: rgba(24, 19, 22,0.2); color: #766d72; }
+        .status-warning { background: rgba(42, 11, 21,0.2); color: #541426; }
+        .status-danger { background: rgba(42, 11, 21,0.2); color: #2a0b15; }
 
         .action-cell {
           display: flex;
@@ -221,15 +221,15 @@ export const BranchesManagement = () => {
           font-size: 0.8rem;
         }
 
-        .action-btn-edit { background: rgba(61, 15, 24,0.15); color: #fdfbf7; }
-        .action-btn-delete { background: rgba(61, 15, 24,0.16); color: #fbf0f0; }
+        .action-btn-edit { background: rgba(42, 11, 21,0.15); color: #fffdf8; }
+        .action-btn-delete { background: rgba(42, 11, 21,0.16); color: #fbf0f0; }
         .action-btn-share { background: rgba(255, 255, 255,0.08); color: #fff; }
         .action-btn-copy { background: rgba(255, 255, 255,0.08); color: #fff; }
 
         .modal-overlay {
           position: fixed;
           inset: 0;
-          background: rgba(31, 17, 22,0.6);
+          background: rgba(24, 19, 22,0.6);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -238,8 +238,8 @@ export const BranchesManagement = () => {
         }
 
         .modal {
-          background: #1f1116;
-          border: 1px solid rgba(61, 15, 24,0.25);
+          background: #181316;
+          border: 1px solid rgba(42, 11, 21,0.25);
           border-radius: 16px;
           padding: 1.1rem;
           max-width: 500px;
@@ -250,7 +250,7 @@ export const BranchesManagement = () => {
         .modal-header {
           font-size: 1.2rem;
           font-weight: 700;
-          color: #6b1d2f;
+          color: #541426;
           margin-bottom: 0.9rem;
         }
 
@@ -262,7 +262,7 @@ export const BranchesManagement = () => {
         }
 
         label {
-          color: #f3e0dd;
+          color: #f7f1e6;
           font-size: 0.85rem;
         }
 
@@ -270,7 +270,7 @@ export const BranchesManagement = () => {
           padding: 0.6rem;
           border-radius: 8px;
           border: 1px solid rgba(255, 255, 255,0.1);
-          background: #1f1116;
+          background: #181316;
           color: #fff;
           font-size: 0.9rem;
         }
@@ -290,13 +290,13 @@ export const BranchesManagement = () => {
         }
 
         .modal-btn-submit {
-          background: linear-gradient(135deg, #6b1d2f, #6b1d2f);
+          background: linear-gradient(135deg, #541426, #541426);
           color: #fff;
         }
 
         .modal-btn-cancel {
           background: rgba(255, 255, 255,0.08);
-          color: #f3e0dd;
+          color: #f7f1e6;
         }
       `}</style>
 
@@ -393,7 +393,7 @@ export const BranchesManagement = () => {
                 onClick={() => { setShowForm(false); setEditingBranch(null); }}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgba(31, 17, 22,0.06)',
+                  background: 'rgba(24, 19, 22,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -403,7 +403,7 @@ export const BranchesManagement = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#1f1116',
+                  color: '#181316',
                 }}
               >
                 <X size={17} />

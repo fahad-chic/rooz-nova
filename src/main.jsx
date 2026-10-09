@@ -5,9 +5,8 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.jsx'
 import { AuthProvider } from './context/AuthContext.jsx'
 import ErrorBoundary from './ErrorBoundary.jsx'
-import './index.css'
-import './styles/contour-theme.css'
-import './styles/logo-clean.css'
+// مصدر واحد للأنماط: الهوية الملكية تستورد داخلها كل الهويات القديمة أولاً،
+// فتتقدّم قواعدها دائماً مهما كان ترتيب البناء (ألوان/أوزان/خلفيات).
 import './styles/rooz-royal.css'
 
 /* ── استقرار تحميل المقاطع (chunks) ──

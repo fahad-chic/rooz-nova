@@ -30,7 +30,8 @@ const HomePrefsFloat = () => {
       <style>{`
         .hpf-btn {
           position: fixed;
-          bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 146px);
+          /* فوق زر واتساب مباشرةً (واتساب أسفل + 62px) — بلا تداخل */
+          bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 78px);
           right: 16px;
           z-index: 80;
           width: 46px;
@@ -40,26 +41,26 @@ const HomePrefsFloat = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: linear-gradient(135deg, #1f1116, #6b1d2f);
+          background: linear-gradient(135deg, #181316, #541426);
           color: #fff;
           cursor: pointer;
-          box-shadow: 0 6px 18px rgba(31, 17, 22,0.4);
+          box-shadow: 0 6px 18px rgba(24, 19, 22,0.4);
           transition: transform 0.2s ease;
         }
         .hpf-btn:hover { transform: scale(1.08); }
         .hpf-panel {
           position: fixed;
-          bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 208px);
+          bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 140px);
           right: 16px;
           z-index: 80;
           width: min(280px, calc(100vw - 32px));
-          background: #fdfbf7;
-          border: 1.5px solid #6b1d2f;
+          background: #fffdf8;
+          border: 1.5px solid #541426;
           border-radius: 16px;
-          box-shadow: 0 14px 40px rgba(31, 17, 22,0.25);
+          box-shadow: 0 14px 40px rgba(24, 19, 22,0.25);
           padding: 14px;
           direction: rtl;
-          font-family: Cairo, sans-serif;
+          font-family: Tajawal, sans-serif;
         }
         .hpf-title {
           display: flex;
@@ -67,14 +68,14 @@ const HomePrefsFloat = () => {
           justify-content: space-between;
           font-weight: 900;
           font-size: 0.95rem;
-          color: #1f1116;
+          color: #181316;
           margin-bottom: 10px;
         }
         .hpf-close {
           background: none;
           border: none;
           cursor: pointer;
-          color: #6b1d2f;
+          color: #541426;
           display: flex;
           padding: 2px;
         }
@@ -84,10 +85,10 @@ const HomePrefsFloat = () => {
           justify-content: space-between;
           gap: 8px;
           padding: 7px 0;
-          border-top: 1px dashed rgba(61, 15, 24,0.3);
+          border-top: 1px dashed rgba(42, 11, 21,0.3);
           font-size: 0.85rem;
           font-weight: 700;
-          color: #1f1116;
+          color: #181316;
         }
         .hpf-switch {
           flex-shrink: 0;
@@ -97,10 +98,10 @@ const HomePrefsFloat = () => {
           border: none;
           cursor: pointer;
           position: relative;
-          background: #d4a5a5;
+          background: #e3c878;
           transition: background 0.2s ease;
         }
-        .hpf-switch.on { background: #1f1116; }
+        .hpf-switch.on { background: #181316; }
         .hpf-switch::after {
           content: '';
           position: absolute;
@@ -116,24 +117,24 @@ const HomePrefsFloat = () => {
         .hpf-fonts { display: flex; gap: 6px; }
         .hpf-font {
           flex: 1;
-          border: 1.5px solid #6b1d2f;
+          border: 1.5px solid #541426;
           background: #fff;
-          color: #6b1d2f;
+          color: #541426;
           border-radius: 10px;
           padding: 5px 0;
           font-size: 0.78rem;
           font-weight: 800;
           cursor: pointer;
-          font-family: Cairo, sans-serif;
+          font-family: Tajawal, sans-serif;
         }
-        .hpf-font.active { background: #6b1d2f; color: #fff; }
+        .hpf-font.active { background: #541426; color: #fff; }
         .hpf-more {
           display: block;
           text-align: center;
           margin-top: 10px;
           font-size: 0.8rem;
           font-weight: 800;
-          color: #1f1116;
+          color: #181316;
           text-decoration: none;
         }
       `}</style>
