@@ -374,6 +374,17 @@ const ProtectedRoute = ({ children, roleRequired, blockGuest }) => {
   return children;
 };
 
+/* مسار الدخول: يعرض النموذج لغير المسجّل، ويحوّل المسجّل الحقيقي إلى الرئيسية.
+   مهم: الزائر (جلسة مؤقتة) لا يُعتبر مسجّلاً هنا — وإلا حُوِّل إلى "/" فوراً
+   فلم يستطع الدخول بحسابه أبداً، وخَلَق مع blockGuest في "/" حلقة توجيه. */
+const LoginRoute = ({ isAuthenticated, isGuest, children }) => {
+  if (isAuthenticated && !isGuest) {
+    return <Navigate to="/" replace />;
+  }
+
+  return children;
+};
+
 /* =========================================================
    App Content
    ========================================================= */
@@ -389,6 +400,13 @@ function AppContent() {
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  // الزائر = جلسة مؤقتة بلا حساب حقيقي. يجب أن يطابق اشتقاق AuthContext
+  // (userRole === 'guest' || guestSession.active) وإلا اختلف حكم LoginRoute
+  // عن حكم ProtectedRoute فتنشأ حلقة توجيه بين "/" و "/login".
+  const isGuest = useStore(
+    (s) => s.userRole === 'guest' || !!s.guestSession?.active
+  );
 
   // ربط زر الإغلاق العام (❌) بمُوجّه react-router — فيتنقل خطوة للخلف
   // داخلياً دون إعادة تحميل أو مغادرة الموقع.
@@ -1947,14 +1965,12 @@ function AppContent() {
               <Route
                 path="/login"
                 element={
-                  !isAuthenticated ? (
+                  <LoginRoute
+                    isAuthenticated={isAuthenticated}
+                    isGuest={isGuest}
+                  >
                     <Login />
-                  ) : (
-                    <Navigate
-                      to="/"
-                      replace
-                    />
-                  )
+                  </LoginRoute>
                 }
               />
 
