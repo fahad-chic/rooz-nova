@@ -434,11 +434,10 @@ body.rooz-has-nav { padding-top: 0 !important; }
   border-radius: 999px;
   border: 1px solid var(--rz-line-gold);
   color: var(--rz-gold);
-  transition: transform 0.22s ease, background 0.22s ease;
+  transition: background 0.22s ease;
   flex-shrink: 0;
 }
 .rz-plus.is-open {
-  transform: rotate(180deg);
   background: rgba(201, 162, 77, 0.16);
 }
 
