@@ -7,6 +7,9 @@ import { db, auth } from '../firebase/config';
 import {
   collection,
   addDoc,
+  doc,
+  setDoc,
+  deleteDoc,
   serverTimestamp,
   query,
   orderBy,
@@ -19,6 +22,13 @@ import { SIZE_FIELDS } from '../utils/dressMeta';
 
 const COLORS = ['أبيض', 'أحمر', 'أسود', 'ذهبي', 'وردي', 'أزرق', 'أخضر', 'بنفسجي', 'بيج', 'أخرى'];
 
+// تطبيع رقم الجوال السعودي: 05xxxxxxxx أو 9665xxxxxxxx (مع تجاهل المسافات/الرموز).
+const normalizePhone = (value) =>
+  String(value || '').replace(/\D/g, '').replace(/^966/, '0');
+
+const isValidSaudiPhone = (value) =>
+  /^05\d{8}$/.test(normalizePhone(value));
+
 const emptyForm = {
   title: '',
   color: '',
@@ -29,6 +39,7 @@ const emptyForm = {
   hip: '',
   length: '',
   notes: '',
+  userPhone: '',
 };
 
 export default function WantedDressPage() {
@@ -43,7 +54,14 @@ export default function WantedDressPage() {
   useEffect(() => {
     try {
       const stored = localStorage.getItem('harajUser');
-      if (stored) setHarajUser(JSON.parse(stored));
+      if (stored) {
+        const u = JSON.parse(stored);
+        setHarajUser(u);
+        const prefilled = normalizePhone(u.phone || u.userPhone || '');
+        if (isValidSaudiPhone(prefilled)) {
+          setForm((prev) => ({ ...prev, userPhone: prefilled }));
+        }
+      }
     } catch {
       localStorage.removeItem('harajUser');
     }
@@ -77,6 +95,9 @@ export default function WantedDressPage() {
     if (!form.title.trim()) next.title = 'اكتبي وصفاً موجزاً للفستان المطلوب';
     if (!form.color) next.color = 'اختاري اللون';
     if (!(Number(form.budget) > 0)) next.budget = 'أدخلي ميزانية تقديرية';
+    if (!isValidSaudiPhone(form.userPhone)) {
+      next.userPhone = 'أدخلي رقم جوال صحيح (مثال: 05xxxxxxxx)';
+    }
     setErrors(next);
     return Object.keys(next).length === 0;
   };
@@ -90,7 +111,19 @@ export default function WantedDressPage() {
     setSubmitting(true);
     try {
       await ensureFirebaseSession();
-      const payload = {
+      const uid = harajUser.uid || auth?.currentUser?.uid || '';
+      if (!uid) {
+        setErrors({ submit: 'تعذّر التحقق من هويتك، حاولي إعادة المحاولة.' });
+        return;
+      }
+      const userPhone = normalizePhone(form.userPhone);
+      // لا يُنشأ أي مستند قبل التحقق من الرقم (حماية من طلبات يتيمة بلا تواصل).
+      if (!isValidSaudiPhone(userPhone)) {
+        setErrors({ userPhone: 'أدخلي رقم جوال صحيح (مثال: 05xxxxxxxx)' });
+        return;
+      }
+      // الوثيقة العامة: بيانات الفستان + ownerUid (للربط) فقط، بلا أي بيانات شخصية.
+      const publicPayload = {
         title: form.title.trim(),
         color: form.color,
         budget: Number(form.budget),
@@ -102,15 +135,42 @@ export default function WantedDressPage() {
         notes: form.notes.trim(),
         status: 'open',
         userName: harajUser.name || harajUser.userName || 'مشترية',
-        userPhone: harajUser.phone || harajUser.userPhone || '',
-        userEmail: harajUser.email || harajUser.userEmail || '',
-        userId: harajUser.uid || auth?.currentUser?.uid || '',
+        ownerUid: uid,
         createdAt: serverTimestamp(),
       };
-      await addDoc(collection(db, 'wanted_dresses'), payload);
+      const ref = await addDoc(
+        collection(db, 'wanted_dresses'),
+        publicPayload
+      );
+      const privateRef = doc(db, 'wanted_dresses', ref.id, 'private', uid);
+      // بيانات التواصل في وثيقة فرعية محصورة؛ البريد اختياري (الإشعار لا يتطلبه).
+      try {
+        await setDoc(privateRef, {
+          userPhone,
+          userEmail: harajUser.email || harajUser.userEmail || '',
+          createdAt: serverTimestamp(),
+        });
+      } catch {
+        // فشل الحفظ الخاص: امسح أي بقايا (خاص ثم عام) ولا نُظهر نجاحاً مضلّلاً.
+        try {
+          await deleteDoc(privateRef);
+        } catch {
+          /* لا يوجد ما يُحذف */
+        }
+        try {
+          await deleteDoc(doc(db, 'wanted_dresses', ref.id));
+        } catch {
+          /* تعذّر التراجع — قواعد الحذف تمنع بقاء بيانات خاصة يتيمة */
+        }
+        setErrors({
+          submit:
+            'تعذّر حفظ بيانات التواصل، ولم يُنشر الطلب. حاولي مرة أخرى.',
+        });
+        return;
+      }
       notifyOwner(
         'طلب فستان جديد',
-        `${payload.userName} تطلب فستاناً: ${payload.title} — اللون ${payload.color} — الميزانية ${payload.budget.toLocaleString()} ريال`
+        `${publicPayload.userName} تطلب فستاناً: ${publicPayload.title} — اللون ${publicPayload.color} — الميزانية ${publicPayload.budget.toLocaleString()} ريال`
       );
       setDone(true);
       setForm(emptyForm);
@@ -220,6 +280,17 @@ export default function WantedDressPage() {
               />
             </Field>
           </div>
+
+          <Field label="رقم الجوال *" error={errors.userPhone}>
+            <input
+              type="tel"
+              inputMode="tel"
+              value={form.userPhone}
+              onChange={(e) => setField('userPhone', e.target.value)}
+              placeholder="05xxxxxxxx"
+              style={inputStyle(!!errors.userPhone)}
+            />
+          </Field>
 
           <Field label="تاريخ المناسبة (اختياري)">
             <input

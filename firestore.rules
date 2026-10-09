@@ -322,14 +322,55 @@ service cloud.firestore {
       allow delete: if isOwner();
     }
 
-    // ============ طلبات الفستان (wanted_dresses) ============
-    // صفحة «طلب فستان» تنشر الطلب وتقرأ آخر الطلبات. بدون هذه القاعدة
-    // كانت تسقط على القاعدة الأخيرة (مالك فقط) فتفشل كل الكتابات/القراءات.
+    // ============ طلبات الفستان (wanted_dresses) — عام + خاص ============
+    // الوثيقة العامة تحمل ownerUid (معرّف مبهم) فقط لربط الملكية، بلا هاتف/بريد.
+    // البيانات الشخصية في وثيقة فرعية محصورة private/{uid}. لا تُترك بيانات يتيمة:
+    // لا يُسمح بحذف الوثيقة العامة ما دامت وثيقتها الخاصة موجودة (يجب حذف الخاصة أولاً).
     match /wanted_dresses/{docId} {
       allow read: if isSignedIn();
       allow create: if isSignedIn()
-                    && request.resource.data.keys().hasAll(['title', 'status']);
-      allow update, delete: if isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT');
+                    && request.resource.data.keys().hasAll(['title','status','ownerUid'])
+                    && request.resource.data.keys().hasOnly([
+                         'title','color','budget','eventDate','bust','waist','hip',
+                         'length','notes','status','userName','ownerUid','createdAt'
+                       ])
+                    && request.resource.data.ownerUid == request.auth.uid;
+      // تعديل: المالك/المخوّل فقط.
+      allow update: if isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT');
+      // حذف: صاحب الطلب/المالك/المخوّل، وبشرط ألا تبقى وثيقة خاصة (منع البيانات اليتيمة).
+      allow delete: if isSignedIn()
+                    && (isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT')
+                        || resource.data.ownerUid == request.auth.uid)
+                    && !exists(/databases/$(database)/documents/wanted_dresses/$(docId)/private/$(resource.data.ownerUid));
+
+      // البيانات الشخصية: تسجيل دخول إلزامي + ملكية الطلب + جوال سعودي صالح.
+      match /private/{privateId} {
+        allow read: if isSignedIn()
+                    && (privateId == request.auth.uid
+                        || isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT'));
+        allow create: if isSignedIn()
+                      && privateId == request.auth.uid
+                      && get(/databases/$(database)/documents/wanted_dresses/$(docId)).data.ownerUid == request.auth.uid
+                      && request.resource.data.keys().hasAll(['userPhone'])
+                      && request.resource.data.keys().hasOnly(['userPhone','userEmail','createdAt'])
+                      && request.resource.data.userPhone is string
+                      && request.resource.data.userPhone.matches('^05[0-9]{8}$');
+        // التحديث يبقي الجوال صالحاً ويمنع حذفه/إفراغه؛ صاحب الطلب يحقّله مع تعديل بريده فقط.
+        allow update: if isSignedIn()
+                      && request.resource.data.keys().hasAll(['userPhone'])
+                      && request.resource.data.userPhone is string
+                      && request.resource.data.userPhone.matches('^05[0-9]{8}$')
+                      && (
+                           (privateId == request.auth.uid
+                            && request.resource.data.diff(resource.data)
+                                 .affectedKeys().hasOnly(['userPhone','userEmail']))
+                           || isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT')
+                         );
+        // حذف البيانات الخاصة: المالك/المخوّل أو صاحب الطلب نفسه (لتمكين الحذف المتسلسل).
+        allow delete: if isSignedIn()
+                      && (isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT')
+                          || privateId == request.auth.uid);
+      }
     }
 
     // ============ مشتركو نشرة العروض ============
