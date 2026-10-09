@@ -1588,9 +1588,11 @@ function AppContent() {
               left: 0,
               right: 0,
               height:
-                `${GUEST_BAR_HEIGHT}px`,
+                `calc(${GUEST_BAR_HEIGHT}px + env(safe-area-inset-top, 0px))`,
               minHeight:
-                `${GUEST_BAR_HEIGHT}px`,
+                `calc(${GUEST_BAR_HEIGHT}px + env(safe-area-inset-top, 0px))`,
+              paddingTop:
+                'env(safe-area-inset-top, 0px)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',

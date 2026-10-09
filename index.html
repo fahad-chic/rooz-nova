@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+  <!-- viewport-fit=cover ضروري لتفعيل env(safe-area-inset-*) على iPhone
+       (Dynamic Island + شريط Safari السفلي) بلا تغطية المحتوى. -->
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"/>
 
   <!-- PWA Meta Tags -->
   <meta name="theme-color" content="#541426"/>
