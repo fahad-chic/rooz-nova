@@ -36,12 +36,14 @@ async function ensureAiRateTable(db) {
     .run();
 }
 
-// يعيد { allowed, retryAfter }؛ عند تعذّر D1 يتدهور بأمان (allowed)
-// مع تسجيل التحذير حتى لا تتعطّل ميزة الذكاء الاصطناعي.
+// يعيد { allowed, retryAfter, reason }.
+// عند غياب D1 أو فشل الفحص نُغلق الباب (fail-closed) ولا نسمح بالطلب،
+// حتى لا يتحوّل تعطّل طبقة الحماية إلى استنزاف مفتوح لرصيد Groq.
+// الواجهة تتعامل مع الفشل بالرد المحلي، فتبقى التجربة مقبولة.
 async function checkAiRateLimit(env, ip) {
   if (!env || !env.DB) {
-    console.warn('ai: D1 غير متاح — تم تجاوز تحديد المعدّل (تدهور آمن)');
-    return { allowed: true, degraded: true };
+    console.error('ai: D1 غير متاح — رفض الطلب (fail-closed)');
+    return { allowed: false, reason: 'db-unavailable' };
   }
   try {
     await ensureAiRateTable(env.DB);
@@ -84,8 +86,8 @@ async function checkAiRateLimit(env, ip) {
       .catch(() => {});
     return { allowed: true };
   } catch (err) {
-    console.error('ai: فشل فحص تحديد المعدّل (تدهور آمن):', err);
-    return { allowed: true, degraded: true };
+    console.error('ai: فشل فحص تحديد المعدّل — رفض الطلب (fail-closed):', err);
+    return { allowed: false, reason: 'db-error' };
   }
 }
 
@@ -127,14 +129,17 @@ export async function onRequest({ request, env }) {
     // حماية الرصيد: نحدّ الطلبات لكل IP قبل أي نداء لـ Groq.
     const rl = await checkAiRateLimit(env, getClientIp(request));
     if (!rl.allowed) {
+      const unavailable = rl.reason === 'db-unavailable' || rl.reason === 'db-error';
       return new Response(
         JSON.stringify({
           reply: '',
-          error: 'تم تجاوز الحد المسموح، حاول بعد قليل',
+          error: unavailable
+            ? 'المساعد غير متاح مؤقتاً، حاول لاحقاً'
+            : 'تم تجاوز الحد المسموح، حاول بعد قليل',
           retryAfter: rl.retryAfter || 1,
         }),
         {
-          status: 429,
+          status: unavailable ? 503 : 429,
           headers: {
             ...corsHeaders,
             'Content-Type': 'application/json',
