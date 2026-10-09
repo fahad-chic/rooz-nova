@@ -84,7 +84,7 @@ export default function AdDetailsPage() {
     if (!id) return;
     const link = document.createElement('link');
     link.rel = 'canonical';
-    link.href = 'https://fahad-chic.pages.dev/ad/' + id;
+    link.href = 'https://rooz-store.pages.dev/ad/' + id;
     document.head.appendChild(link);
     return () => link.remove();
   }, [id]);
@@ -98,7 +98,7 @@ export default function AdDetailsPage() {
     const description =
       `${ad.description || ''}`.slice(0, 155) ||
       `إعلان في حراج ROOZ — ${ad.category || 'أصناف متعددة'}${ad.city ? ' في ' + ad.city : ''}`;
-    const url = 'https://fahad-chic.pages.dev/ad/' + id;
+    const url = 'https://rooz-store.pages.dev/ad/' + id;
     document.title = title;
     const setMeta = (selector, value) => {
       let el = document.head.querySelector(selector);

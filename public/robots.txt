@@ -1,4 +1,4 @@
-# أناقة ROOZ - robots.txt# https://fahad-chic.pages.dev
+# أناقة ROOZ - robots.txt# https://rooz-store.pages.dev
 
 User-agent: *
 Allow: /
@@ -31,5 +31,5 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-Sitemap: https://fahad-chic.pages.dev/sitemap.xml
+Sitemap: https://rooz-store.pages.dev/sitemap.xml
 
