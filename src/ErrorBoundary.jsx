@@ -1,6 +1,7 @@
 import React from 'react';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { db } from './firebase/config'; //  المسار الصحيح
+import { ensureFirebaseSession } from './utils/firebaseSession';
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -23,6 +24,9 @@ class ErrorBoundary extends React.Component {
 
     try {
       const errorId = `ERR-${Date.now()}`;
+
+      // ضمان جلسة (مجهولة إن لزم) قبل الكتابة — القواعد تشترط isSignedIn() للسجلات
+      try { await ensureFirebaseSession(); } catch { /* تُحاول الكتابة على أي حال */ }
 
       await addDoc(collection(db, 'error_logs'), {
         errorId,

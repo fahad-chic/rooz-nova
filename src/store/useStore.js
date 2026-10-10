@@ -31,6 +31,7 @@ import {
 } from "firebase/auth";
 import { db } from "../firebase/config";
 import { recordKick, markManualSignOut } from "../utils/kickLog";
+import { ensureFirebaseSession } from "../utils/firebaseSession";
 
 // API helpers للـ Auth (D1)
 const API_BASE = "/api";
@@ -76,6 +77,7 @@ const isOwnerEmail = (email) =>
 // تسجيل أحداث في logs
 const addLog = async (action, target, by) => {
   try {
+    try { await ensureFirebaseSession(); } catch { /* تُحاول الكتابة على أي حال */ }
     await addDoc(collection(db, "logs"), {
       action,
       target,
