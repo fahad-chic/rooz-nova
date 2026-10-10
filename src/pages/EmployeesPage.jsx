@@ -61,20 +61,20 @@ export const EmployeesPage = () => {
           align-items: center;
           margin-bottom: 1rem;
           padding: 1rem 1.1rem;
-          background: rgba(31, 17, 22,0.8);
-          border: 1px solid rgba(61, 15, 24,0.2);
+          background: rgba(32,42,58,0.8);
+          border: 1px solid rgba(30,41,59,0.2);
           border-radius: 16px;
           gap: 0.75rem;
         }
 
-        .employees-title { font-size: 1.35rem; font-weight: 700; color: #f3e0dd; }
-        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #6b1d2f, #6b1d2f); color:#1f1116; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; cursor:pointer; }
+        .employees-title { font-size: 1.35rem; font-weight: 700; color: #E8E2D6; }
+        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #1E293B, #1E293B); color:#202A3A; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; cursor:pointer; }
 
         .tabs {
           display: flex;
           gap: 1rem;
           margin-bottom: 2rem;
-          border-bottom: 2px solid #e0e0e0;
+          border-bottom: 2px solid #D5D0C5;
           overflow-x: auto;
         }
 
@@ -85,7 +85,7 @@ export const EmployeesPage = () => {
           border-bottom: 3px solid transparent;
           cursor: pointer;
           font-weight: 600;
-          color: #999;
+          color: #404040;
           transition: all 0.3s ease;
           font-family: inherit;
           font-size: 1rem;
@@ -93,8 +93,8 @@ export const EmployeesPage = () => {
         }
 
         .tab-btn.active {
-          color: #6b1d2f;
-          border-bottom-color: #6b1d2f;
+          color: #1E293B;
+          border-bottom-color: #1E293B;
         }
 
         .table-wrapper {
@@ -102,7 +102,7 @@ export const EmployeesPage = () => {
           border-radius: 12px;
           overflow-x: auto;
           overflow-y: hidden;
-          box-shadow: 0 2px 12px rgba(31, 17, 22, 0.1);
+          box-shadow: 0 2px 12px rgba(32,42,58, 0.1);
         }
 
         table {
@@ -112,35 +112,35 @@ export const EmployeesPage = () => {
         }
 
         thead {
-          background: #1f1116;
-          color: #6b1d2f;
+          background: #202A3A;
+          color: #1E293B;
         }
 
         th {
           padding: 1.25rem;
           text-align: right;
           font-weight: 600;
-          border-bottom: 2px solid #6b1d2f;
+          border-bottom: 2px solid #1E293B;
         }
 
         td {
           padding: 1rem 1.25rem;
-          border-bottom: 1px solid #e0e0e0;
+          border-bottom: 1px solid #D5D0C5;
         }
 
         tbody tr:hover {
-          background: rgba(61, 15, 24, 0.05);
+          background: rgba(30,41,59, 0.05);
         }
 
         .employee-name {
           font-weight: 600;
-          color: #1f1116;
+          color: #202A3A;
         }
 
         .role-badge {
           display: inline-block;
-          background: rgba(61, 15, 24, 0.1);
-          color: #6b1d2f;
+          background: rgba(30,41,59, 0.1);
+          color: #1E293B;
           padding: 0.25rem 0.75rem;
           border-radius: 4px;
           font-size: 0.85rem;
@@ -156,13 +156,13 @@ export const EmployeesPage = () => {
         }
 
         .status-active {
-          background: rgba(31, 17, 22, 0.1);
-          color: #4a3a3f;
+          background: rgba(32,42,58, 0.1);
+          color: #202A3A;
         }
 
         .status-banned {
-          background: rgba(61, 15, 24, 0.1);
-          color: #6b1d2f;
+          background: rgba(30,41,59, 0.1);
+          color: #1E293B;
         }
 
         .action-cell {
@@ -186,27 +186,27 @@ export const EmployeesPage = () => {
         }
 
         .action-btn-ban {
-          background: #8f2a40;
+          background: #1E293B;
           color: white;
         }
 
         .action-btn-ban:hover {
-          background: #8f2a40;
+          background: #1E293B;
         }
 
         .action-btn-restore {
-          background: #4a3a3f;
+          background: #202A3A;
           color: white;
         }
 
         .action-btn-restore:hover {
-          background: #4a3a3f;
+          background: #202A3A;
         }
 
         .empty-state {
           text-align: center;
           padding: 3rem 1rem;
-          color: #777;
+          color: #404040;
         }
 
         .modal-overlay {
@@ -215,7 +215,7 @@ export const EmployeesPage = () => {
           left: 0;
           right: 0;
           bottom: 0;
-          background: rgba(31, 17, 22, 0.5);
+          background: rgba(32,42,58, 0.5);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -231,15 +231,15 @@ export const EmployeesPage = () => {
           width: 90%;
           max-height: 90vh;
           overflow-y: auto;
-          box-shadow: 0 20px 25px rgba(31, 17, 22, 0.15);
+          box-shadow: 0 20px 25px rgba(32,42,58, 0.15);
         }
 
         .modal-header {
           font-size: 1.5rem;
           font-weight: 600;
-          color: #1f1116;
+          color: #202A3A;
           margin-bottom: 1.5rem;
-          border-bottom: 2px solid #e0e0e0;
+          border-bottom: 2px solid #D5D0C5;
           padding-bottom: 1rem;
         }
 
@@ -251,14 +251,14 @@ export const EmployeesPage = () => {
           display: block;
           margin-bottom: 0.5rem;
           font-weight: 600;
-          color: #1f1116;
+          color: #202A3A;
         }
 
         .form-group input,
         .form-group select {
           width: 100%;
           padding: 0.75rem;
-          border: 2px solid #e0e0e0;
+          border: 2px solid #D5D0C5;
           border-radius: 6px;
           font-size: 1rem;
           font-family: inherit;
@@ -270,7 +270,7 @@ export const EmployeesPage = () => {
           justify-content: flex-end;
           gap: 0.75rem;
           margin-top: 1.5rem;
-          border-top: 2px solid #e0e0e0;
+          border-top: 2px solid #D5D0C5;
           padding-top: 1.5rem;
         }
 
@@ -284,13 +284,13 @@ export const EmployeesPage = () => {
         }
 
         .modal-btn-cancel {
-          background: #fdfbf7;
-          color: #1f1116;
+          background: #E8E2D6;
+          color: #202A3A;
         }
 
         .modal-btn-submit {
-          background: linear-gradient(135deg, #6b1d2f, #6b1d2f);
-          color: #1f1116;
+          background: linear-gradient(135deg, #1E293B, #1E293B);
+          color: #202A3A;
         }
 
         @media (max-width: 640px) {
@@ -445,7 +445,7 @@ export const EmployeesPage = () => {
                 onClick={closeForm}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgba(31, 17, 22,0.06)',
+                  background: 'rgba(32,42,58,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -455,7 +455,7 @@ export const EmployeesPage = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#1f1116',
+                  color: '#202A3A',
                 }}
               >
                 <X size={17} />

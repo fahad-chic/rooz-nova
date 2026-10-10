@@ -12,9 +12,9 @@ export default function VerifiedBadge({ verified, size = 16, withLabel = false }
         display: 'inline-flex',
         alignItems: 'center',
         gap: 5,
-        background: 'linear-gradient(135deg, #f3d79b 0%, #c9a24b 45%, #a67c2e 100%)',
-        color: '#3d0f18',
-        border: '1px solid rgba(61, 15, 24, 0.35)',
+        background: 'linear-gradient(135deg, #B8A47A 0%, #B8A47A 45%, #404040 100%)',
+        color: '#1E293B',
+        border: '1px solid rgba(30,41,59, 0.35)',
         borderRadius: 999,
         padding: withLabel ? '3px 10px' : '3px',
         fontSize: 12,
@@ -24,7 +24,7 @@ export default function VerifiedBadge({ verified, size = 16, withLabel = false }
         whiteSpace: 'nowrap',
       }}
     >
-      <BadgeCheck size={size} color="#3d0f18" strokeWidth={2.4} />
+      <BadgeCheck size={size} color="#1E293B" strokeWidth={2.4} />
       {withLabel && <span>موثق</span>}
     </span>
   );

@@ -4,25 +4,30 @@
 
 /* ═══════════════════ المتغيرات ═══════════════════ */
 :root {
-  --gold-primary: #6b1d2f; /* was redefined */
-  --_unused_gold: #6b1d2f;
-  --gold-dark: #6b1d2f;
-  --gold-soft: #1f1116;
-  --gold-glow: rgba(61, 15, 24, 0.12);
-  --bg-deep: #fdfbf7;
-  --bg-mid: #fdfbf7;
-  --bg-card: rgba(253, 251, 247, 0.94);
-  --border-gold: rgba(61, 15, 24, 0.42);
-  --border-subtle: rgba(31, 17, 22, 0.08);
-  --text-primary: #1f1116;
-  --text-secondary: #1f1116;
-  --text-muted: #8a5560;
+  --gold-primary: #1E293B; /* was redefined */
+  --secondary-gold: #1E293B;
+  --state-error: #B3261E;
+  --state-error-bg: #FBEAE7;
+  --state-success: #1F7A4D;
+  --state-success-bg: #E7F3EA;
+  --_unused_gold: #1E293B;
+  --gold-dark: #1E293B;
+  --gold-soft: #202A3A;
+  --gold-glow: rgba(30,41,59, 0.12);
+  --bg-deep: #E8E2D6;
+  --bg-mid: #E8E2D6;
+  --bg-card: rgba(232,226,214, 0.94);
+  --border-gold: rgba(30,41,59, 0.42);
+  --border-subtle: rgba(32,42,58, 0.08);
+  --text-primary: #202A3A;
+  --text-secondary: #202A3A;
+  --text-muted: #404040;
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 20px;
   --radius-full: 999px;
-  --shadow-gold: 0 8px 32px rgba(61, 15, 24, 0.14);
-  --shadow-card: 0 4px 20px rgba(31, 17, 22, 0.10);
+  --shadow-gold: 0 8px 32px rgba(30,41,59, 0.14);
+  --shadow-card: 0 4px 20px rgba(32,42,58, 0.10);
   --transition: 0.22s ease;
 }
 
@@ -40,13 +45,13 @@ html {
 
 body {
   overflow-x: hidden;
-  font-family: 'Cairo', 'Segoe UI', 'Arial', 'Tahoma', sans-serif;
+  font-family: 'Tajawal', 'Segoe UI', 'Arial', 'Tahoma', sans-serif;
   font-weight: 400;
   background: linear-gradient(
     150deg,
     var(--bg-deep) 0%,
-    #fdfbf7 55%,
-    #fdfbf7 100%
+    #E8E2D6 55%,
+    #E8E2D6 100%
   );
   color: var(--text-primary);
   min-height: 100vh;
@@ -132,15 +137,15 @@ select:focus-visible {
 .btn-gold,
 .btn-primary {
   background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-  color: #1f1116;
-  border: 1px solid rgba(251, 240, 240, 0.3);
-  box-shadow: 0 4px 14px rgba(61, 15, 24, 0.25);
+  color: #202A3A;
+  border: 1px solid rgba(239,233,223, 0.3);
+  box-shadow: 0 4px 14px rgba(30,41,59, 0.25);
 }
 
 .btn-gold:hover,
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(61, 15, 24, 0.4);
+  box-shadow: 0 6px 20px rgba(30,41,59, 0.4);
 }
 
 .btn-gold:active,
@@ -157,19 +162,19 @@ select:focus-visible {
 
 .btn-glass:hover,
 .btn-secondary:hover {
-  background: rgba(61, 15, 24, 0.14);
-  border-color: rgba(61, 15, 24, 0.45);
+  background: rgba(30,41,59, 0.14);
+  border-color: rgba(30,41,59, 0.45);
   transform: translateY(-1px);
 }
 
 .btn-danger {
-  background: rgba(61, 15, 24, 0.15);
-  color: #f3e0dd;
-  border: 1px solid rgba(61, 15, 24, 0.3);
+  background: rgba(30,41,59, 0.15);
+  color: #FFFFFF;
+  border: 1px solid rgba(30,41,59, 0.3);
 }
 
 .btn-danger:hover {
-  background: rgba(61, 15, 24, 0.28);
+  background: rgba(30,41,59, 0.28);
   transform: translateY(-1px);
 }
 
@@ -205,7 +210,7 @@ select:focus-visible {
 
 .card:hover,
 .glass-morphism-gold:hover {
-  border-color: rgba(61, 15, 24, 0.4);
+  border-color: rgba(30,41,59, 0.4);
   box-shadow: var(--shadow-gold);
 }
 
@@ -232,7 +237,7 @@ select {
   border-radius: var(--radius-md);
   font-size: 0.92rem;
   font-family: inherit;
-  background: rgb(255, 255, 255, 0.05);
+  background: #F1ECE3;
   color: var(--text-primary);
   transition:
     border-color var(--transition),
@@ -251,8 +256,8 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--gold-primary);
-  background: rgba(61, 15, 24, 0.06);
-  box-shadow: 0 0 0 3px rgba(61, 15, 24, 0.12);
+  background: rgba(30,41,59, 0.06);
+  box-shadow: 0 0 0 3px rgba(30,41,59, 0.12);
 }
 
 select option {
@@ -282,7 +287,7 @@ table {
 }
 
 thead th {
-  background: rgba(61, 15, 24, 0.1);
+  background: rgba(30,41,59, 0.1);
   color: var(--gold-soft);
   padding: 0.9rem 1rem;
   text-align: right;
@@ -301,7 +306,7 @@ tbody td {
 }
 
 tbody tr:hover td {
-  background: rgba(61, 15, 24, 0.04);
+  background: rgba(30,41,59, 0.04);
 }
 
 tbody tr:last-child td {
@@ -321,28 +326,28 @@ tbody tr:last-child td {
 }
 
 .badge-gold {
-  background: rgba(61, 15, 24, 0.18);
-  color: var(--gold-soft);
+  background: rgba(184,164,122, 0.18);
+  color: #6B5A38;
 }
 
 .badge-green {
-  background: rgba(31, 17, 22, 0.15);
-  color: #4a3a3f;
+  background: rgba(31,122,77, 0.12);
+  color: #1F7A4D;
 }
 
 .badge-red {
-  background: rgba(61, 15, 24, 0.15);
-  color: #f3e0dd;
+  background: rgba(179,38,30, 0.10);
+  color: #B3261E;
 }
 
 .badge-blue {
-  background: rgba(61, 15, 24, 0.15);
-  color: #d4a5a5;
+  background: rgba(30,41,59, 0.10);
+  color: #1E293B;
 }
 
 .badge-purple {
-  background: rgba(61, 15, 24, 0.15);
-  color: #f3e0dd;
+  background: rgba(184,164,122, 0.18);
+  color: #6B5A38;
 }
 
 /* ═══════════════════ الإشعارات ═══════════════════ */
@@ -357,19 +362,19 @@ tbody tr:last-child td {
 }
 
 .alert-error {
-  background: rgba(61, 15, 24, 0.12);
-  border: 1px solid rgba(61, 15, 24, 0.3);
-  color: #f3e0dd;
+  background: rgba(179,38,30, 0.08);
+  border: 1px solid rgba(179,38,30, 0.35);
+  color: #B3261E;
 }
 
 .alert-success {
-  background: rgba(31, 17, 22, 0.12);
-  border: 1px solid rgba(31, 17, 22, 0.3);
-  color: #4a3a3f;
+  background: rgba(31,122,77, 0.10);
+  border: 1px solid rgba(31,122,77, 0.32);
+  color: #1F7A4D;
 }
 
 .alert-info {
-  background: rgba(61, 15, 24, 0.10);
+  background: rgba(30,41,59, 0.10);
   border: 1px solid var(--border-gold);
   color: var(--gold-soft);
 }
@@ -428,7 +433,7 @@ tbody tr:last-child td {
 .spinner {
   width: 36px;
   height: 36px;
-  border: 3px solid rgba(61, 15, 24, 0.2);
+  border: 3px solid rgba(30,41,59, 0.2);
   border-top-color: var(--gold-primary);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
@@ -441,9 +446,9 @@ tbody tr:last-child td {
 .skeleton {
   background: linear-gradient(
     90deg,
-    rgba(255, 255, 255,0.05) 25%,
-    rgba(255, 255, 255,0.1) 50%,
-    rgba(255, 255, 255,0.05) 75%
+    rgba(255,255,255,0.05) 25%,
+    rgba(255,255,255,0.1) 50%,
+    rgba(255,255,255,0.05) 75%
   );
   background-size: 800px 100%;
   animation: shimmer 1.5s infinite;
@@ -465,7 +470,7 @@ tbody tr:last-child td {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255,0.05);
+  background: rgba(255,255,255,0.05);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -605,12 +610,12 @@ tbody tr:last-child td {
   background:
     radial-gradient(
       circle at 20% 20%,
-      rgba(61, 15, 24,0.08),
+      rgba(30,41,59,0.08),
       transparent 40%
     ),
     radial-gradient(
       circle at 80% 80%,
-      rgba(61, 15, 24,0.07),
+      rgba(30,41,59,0.07),
       transparent 40%
     ),
     var(--bg-mid);
@@ -661,7 +666,7 @@ tbody tr:last-child td {
   left: 0;
   right: 0;
   background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
-  color: #1f1116;
+  color: #202A3A;
   padding: 14px;
   text-align: center;
   font-weight: 900;
@@ -695,8 +700,8 @@ tbody tr:last-child td {
 
 /* ═══════════════════ التنبيهات الملكية ═══════════════════ */
 .owner-alert {
-  background: rgba(61, 15, 24, 0.12);
-  border: 1px solid rgba(61, 15, 24, 0.35);
+  background: rgba(30,41,59, 0.12);
+  border: 1px solid rgba(30,41,59, 0.35);
   padding: 1rem;
   border-radius: var(--radius-md);
   color: var(--gold-soft);
@@ -711,28 +716,28 @@ tbody tr:last-child td {
 
 /* خلفيات Tailwind الداكنة — الآن أسود رخام لامع */
 .bg-gray-900 {
-  background: #000 !important;
+  background: #202A3A !important;
   background-image: url("https://i.imgur.com/7yQF1mM.png");
   background-size: cover;
   background-position: center;
 }
 
 .bg-gray-800 {
-  background: #1f1116 !important;
+  background: #202A3A !important;
   background-image: url("https://i.imgur.com/7yQF1mM.png");
   background-size: cover;
   background-position: center;
 }
 
 .bg-gray-700 {
-  background: #111 !important;
+  background: #202A3A !important;
   background-image: url("https://i.imgur.com/7yQF1mM.png");
   background-size: cover;
   background-position: center;
 }
 
 .hover\:bg-gray-700:hover {
-  background: #1f1116 !important;
+  background: #202A3A !important;
   background-image: url("https://i.imgur.com/7yQF1mM.png");
   background-size: cover;
   background-position: center;
@@ -740,69 +745,69 @@ tbody tr:last-child td {
 
 /* النصوص الداكنة — ترجع لألوانها الأصلية */
 .text-white {
-  color: #fff !important;
+  color: #FFFFFF !important;
 }
 
 .text-gray-300 {
-  color: #fdfbf7 !important;
+  color: #FFFFFF !important;
 }
 
 .text-gray-400 {
-  color: #8a5560 !important;
+  color: #404040 !important;
 }
 
 .text-gray-500 {
-  color: #8a5560 !important;
+  color: #404040 !important;
 }
 
 /* الحدود الداكنة — ترجع طبيعية */
 .border-gray-700 {
-  border-color: #8a5560 !important;
+  border-color: #404040 !important;
 }
 
 .border-gray-600 {
-  border-color: #6b1d2f !important;
+  border-color: #1E293B !important;
 }
 
 /* اللون الوردي القديم (accent) يصبح ذهبياً لامعاً */
 .bg-pink-500 {
   background: linear-gradient(
     135deg,
-    #d4a5a5,
-    #6b1d2f 55%,
-    #6b1d2f
+    #B8A47A,
+    #1E293B 55%,
+    #1E293B
   ) !important;
-  color: #1f1116 !important;
+  color: #202A3A !important;
 }
 
 .hover\:bg-pink-600:hover {
   background: linear-gradient(
     135deg,
-    #f3e0dd,
-    #6b1d2f 55%,
-    #6b1d2f
+    #E8E2D6,
+    #1E293B 55%,
+    #1E293B
   ) !important;
 }
 
 .text-pink-400,
 .text-pink-500 {
-  color: #6b1d2f !important;
+  color: #1E293B !important;
 }
 
 .border-pink-500 {
-  border-color: #6b1d2f !important;
+  border-color: #1E293B !important;
 }
 
 .focus\:border-pink-500:focus {
-  border-color: #6b1d2f !important;
+  border-color: #1E293B !important;
 }
 
 /* حقول Tailwind الداكنة */
 input.bg-gray-700,
 select.bg-gray-700,
 textarea.bg-gray-700 {
-  background-color: #1f1116 !important;
-  color: #f5f5f5 !important;
+  background-color: #202A3A !important;
+  color: #FFFFFF !important;
 }
 
 /* ═══════════════════ تقليل الحركة عند طلب المستخدم ═══════════════════ */

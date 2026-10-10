@@ -4,22 +4,22 @@
    لا تدرّجات صاخبة — تنسيق احترافي هادئ. يُستورد أخيراً.
    ============================================================ */
 :root {
-  --co-bg: #fdfbf7;
-  --co-surface: #ffffff;
-  --co-ink: #1f1116;
-  --co-ink-2: #1f1116;
-  --co-muted: #8a5560;
-  --co-line: #fdfbf7;
-  --co-primary: #6b1d2f;
-  --co-primary-deep: #6b1d2f;
-  --co-primary-soft: #fdfbf7;
-  --co-accent: #6b1d2f;
-  --co-dark: #1f1116;
+  --co-bg: #E8E2D6;
+  --co-surface: #FFFFFF;
+  --co-ink: #202A3A;
+  --co-ink-2: #202A3A;
+  --co-muted: #404040;
+  --co-line: #E8E2D6;
+  --co-primary: #1E293B;
+  --co-primary-deep: #1E293B;
+  --co-primary-soft: #E8E2D6;
+  --co-accent: #1E293B;
+  --co-dark: #202A3A;
   --co-radius: 14px;
   --co-radius-sm: 10px;
   --co-font: 'Tajawal', system-ui, -apple-system, 'Segoe UI', Tahoma, sans-serif;
-  --co-shadow: 0 6px 22px -12px rgba(31, 17, 22, 0.28);
-  --co-shadow-lg: 0 18px 44px -22px rgba(31, 17, 22, 0.4);
+  --co-shadow: 0 6px 22px -12px rgba(32,42,58, 0.28);
+  --co-shadow-lg: 0 18px 44px -22px rgba(32,42,58, 0.4);
 
   /* جسر للمتغيرات القديمة في المكوّنات */
   --nv-font: var(--co-font);
@@ -56,13 +56,13 @@ p, li { font-weight: 300; }
 /* أزرار موحّدة صلبة */
 .nv-btn {
   background: var(--co-primary) !important;
-  color: #fff !important;
+  color: #FFFFFF !important;
   border-radius: var(--co-radius-sm) !important;
   box-shadow: none !important;
   font-weight: 800 !important;
 }
 .nv-btn-ghost {
-  background: #fff !important;
+  background: #FFFFFF !important;
   color: var(--co-ink) !important;
   border: 1px solid var(--co-line) !important;
 }
@@ -76,7 +76,7 @@ p, li { font-weight: 300; }
 /* شريط علوي (نافبار) صلبة */
 .navbar {
   background: var(--co-dark) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255,255,255, 0.08) !important;
 }
 
 /* حقول إدخال موحّدة */

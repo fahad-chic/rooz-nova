@@ -149,10 +149,10 @@ export default function OwnerPanel() {
               position: 'static',
               width: 40,
               height: 40,
-              background: 'rgba(255, 255, 255,0.08)',
-              border: '1px solid rgba(61, 15, 24,0.45)',
-              color: '#f3e0dd',
-              boxShadow: '0 0 12px rgba(61, 15, 24,0.25)',
+              background: 'rgba(255,255,255,0.08)',
+              border: '1px solid rgba(30,41,59,0.45)',
+              color: '#E8E2D6',
+              boxShadow: '0 0 12px rgba(30,41,59,0.25)',
               top: 0,
             }}
           />
@@ -166,7 +166,7 @@ export default function OwnerPanel() {
         <h2 style={sectionTitle}>بثّ فوري (شريط + صوت)</h2>
 
         <div style={card}>
-          <p style={{ marginBottom: 8, color: '#ccc' }}>
+          <p style={{ marginBottom: 8, color: '#D5D0C5' }}>
             أرسل إعلاناً فورياً سيظهر كشريط متحرك مع صوت للجميع في الموقع.
           </p>
 
@@ -286,9 +286,9 @@ export default function OwnerPanel() {
 const page = {
   padding: '2rem',
   fontFamily: "Tajawal, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-  background: 'linear-gradient(135deg,#1f1116,#1f1116)',
+  background: 'linear-gradient(135deg,#202A3A,#202A3A)',
   minHeight: '100vh',
-  color: '#fdfbf7',
+  color: '#E8E2D6',
   boxSizing: 'border-box',
 };
 
@@ -307,14 +307,14 @@ const headerActions = {
 };
 
 const title = {
-  color: '#f3e0dd',
+  color: '#E8E2D6',
   fontSize: 28,
   fontWeight: 800,
-  textShadow: '0 0 10px rgba(61, 15, 24,0.45)',
+  textShadow: '0 0 10px rgba(30,41,59,0.45)',
 };
 
 const subtitle = {
-  color: '#d4d4d4',
+  color: '#D5D0C5',
   marginBottom: 16,
   fontSize: 14,
 };
@@ -333,20 +333,20 @@ const sectionHeader = {
 };
 
 const sectionTitle = {
-  color: '#f3e0dd',
+  color: '#E8E2D6',
   fontSize: 22,
   fontWeight: 800,
   marginBottom: 10,
-  textShadow: '0 0 10px rgba(61, 15, 24,0.35)',
+  textShadow: '0 0 10px rgba(30,41,59,0.35)',
 };
 
 const card = {
-  background: 'rgba(255, 255, 255,0.08)',
+  background: 'rgba(255,255,255,0.08)',
   padding: '1rem',
   borderRadius: 14,
-  border: '1px solid rgba(61, 15, 24,0.35)',
+  border: '1px solid rgba(30,41,59,0.35)',
   marginBottom: 12,
-  boxShadow: '0 0 18px rgba(61, 15, 24,0.25)',
+  boxShadow: '0 0 18px rgba(30,41,59,0.25)',
   backdropFilter: 'blur(10px)',
 };
 
@@ -363,8 +363,8 @@ const actions = {
 };
 
 const btnBan = {
-  background: '#6b1d2f',
-  color: '#fff',
+  background: '#1E293B',
+  color: '#FFFFFF',
   padding: '8px 12px',
   borderRadius: 10,
   border: 'none',
@@ -373,8 +373,8 @@ const btnBan = {
 };
 
 const btnBurgundy = {
-  background: '#6b1d2f',
-  color: '#fff',
+  background: '#1E293B',
+  color: '#FFFFFF',
   padding: '8px 12px',
   borderRadius: 10,
   border: 'none',
@@ -383,8 +383,8 @@ const btnBurgundy = {
 };
 
 const btnGray = {
-  background: '#8a5560',
-  color: '#fff',
+  background: '#404040',
+  color: '#FFFFFF',
   padding: '8px 12px',
   borderRadius: 10,
   border: 'none',
@@ -393,25 +393,25 @@ const btnGray = {
 };
 
 const btnGlass = {
-  background: 'rgba(255, 255, 255,0.12)',
-  border: '1px solid rgba(61, 15, 24,0.35)',
-  color: '#fdfbf7',
+  background: 'rgba(255,255,255,0.12)',
+  border: '1px solid rgba(30,41,59,0.35)',
+  color: '#E8E2D6',
   padding: '8px 12px',
   borderRadius: 10,
   cursor: 'pointer',
   fontWeight: 700,
-  boxShadow: '0 0 12px rgba(61, 15, 24,0.25)',
+  boxShadow: '0 0 12px rgba(30,41,59,0.25)',
 };
 
 const btnRoyal = {
-  background: 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
-  color: '#1f1116',
+  background: 'linear-gradient(135deg, #1E293B, #1E293B)',
+  color: '#202A3A',
   padding: '10px 14px',
   borderRadius: 12,
-  border: '1px solid rgba(251, 240, 240,0.45)',
+  border: '1px solid rgba(239,233,223,0.45)',
   cursor: 'pointer',
   fontWeight: 900,
-  boxShadow: '0 0 25px rgba(61, 15, 24,0.45)',
+  boxShadow: '0 0 25px rgba(30,41,59,0.45)',
 };
 
 const btnDisabled = {
@@ -429,43 +429,43 @@ const denied = {
 const loadingBox = {
   padding: '2rem',
   textAlign: 'center',
-  color: '#f3e0dd',
+  color: '#E8E2D6',
   fontSize: 20,
 };
 
 const alertError = {
-  background: 'rgba(61, 15, 24,0.18)',
-  border: '1px solid rgba(61, 15, 24,0.45)',
-  color: '#f3e0dd',
+  background: 'rgba(30,41,59,0.18)',
+  border: '1px solid rgba(30,41,59,0.45)',
+  color: '#E8E2D6',
   padding: '10px 12px',
   borderRadius: 12,
   marginTop: 10,
   marginBottom: 10,
-  boxShadow: '0 0 12px rgba(61, 15, 24,0.35)',
+  boxShadow: '0 0 12px rgba(30,41,59,0.35)',
 };
 
 const alertOk = {
-  background: 'rgba(31, 17, 22,0.18)',
-  border: '1px solid rgba(31, 17, 22,0.45)',
-  color: '#eae3d9',
+  background: 'rgba(32,42,58,0.18)',
+  border: '1px solid rgba(32,42,58,0.45)',
+  color: '#E8E2D6',
   padding: '10px 12px',
   borderRadius: 12,
   marginTop: 10,
   marginBottom: 10,
-  boxShadow: '0 0 12px rgba(31, 17, 22,0.35)',
+  boxShadow: '0 0 12px rgba(32,42,58,0.35)',
 };
 
 const emptyBox = {
   padding: '0.8rem',
-  color: '#ddd',
+  color: '#D5D0C5',
   fontStyle: 'italic',
 };
 
 const textarea = {
   width: '100%',
-  background: 'rgba(255, 255, 255,0.06)',
-  color: '#fff',
-  border: '1px solid rgba(61, 15, 24,0.35)',
+  background: 'rgba(255,255,255,0.06)',
+  color: '#FFFFFF',
+  border: '1px solid rgba(30,41,59,0.35)',
   borderRadius: 10,
   padding: '10px 12px',
   outline: 'none',
@@ -475,9 +475,9 @@ const textarea = {
 };
 
 const searchInput = {
-  background: 'rgba(255, 255, 255,0.06)',
-  color: '#fff',
-  border: '1px solid rgba(61, 15, 24,0.35)',
+  background: 'rgba(255,255,255,0.06)',
+  color: '#FFFFFF',
+  border: '1px solid rgba(30,41,59,0.35)',
   borderRadius: 10,
   padding: '8px 12px',
   outline: 'none',

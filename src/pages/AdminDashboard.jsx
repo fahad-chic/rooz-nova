@@ -299,9 +299,9 @@ const AdminDashboard = () => {
               width: 38,
               height: 38,
               zIndex: 5,
-              background: 'rgba(255, 255, 255,0.08)',
-              borderColor: 'rgba(255, 255, 255,0.25)',
-              color: '#fff',
+              background: 'rgba(255,255,255,0.08)',
+              borderColor: 'rgba(255,255,255,0.25)',
+              color: '#FFFFFF',
               boxShadow: 'none',
               top: 0,
             }}
@@ -394,7 +394,7 @@ const AdminDashboard = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               <StatCard title="المنتجات" value={formatNumber(stats.products)} icon={Package} color="border-pink-500 text-pink-500" />
-              <StatCard title="الطلبات" value={formatNumber(stats.orders)} icon={ShoppingCart} color="border-[#6b1d2f] text-[#6b1d2f]" />
+              <StatCard title="الطلبات" value={formatNumber(stats.orders)} icon={ShoppingCart} color="border-[#1E293B] text-[#1E293B]" />
               <StatCard title="المستخدمين" value={formatNumber(stats.users)} icon={Users} color="border-green-500 text-green-500" />
               <StatCard title="الإيرادات" value={formatPrice(stats.revenue)} icon={DollarSign} color="border-yellow-500 text-yellow-500" />
             </div>
@@ -462,7 +462,7 @@ const AdminDashboard = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { tab: 'products', icon: Plus, color: 'text-pink-500', label: 'إضافة منتج' },
-                { tab: 'banners', icon: Image, color: 'text-[#6b1d2f]', label: 'إضافة إعلان' },
+                { tab: 'banners', icon: Image, color: 'text-[#1E293B]', label: 'إضافة إعلان' },
                 { tab: 'categories', icon: Store, color: 'text-green-500', label: 'إدارة التصنيفات' },
                 { tab: 'security', icon: Shield, color: 'text-yellow-500', label: 'الأمان' }
               ].map((q) => (
@@ -580,7 +580,7 @@ const ProductsManager = ({ onUpdate }) => {
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex items-center justify-center gap-2">
-                        <button onClick={() => { setEditing(p); setShowForm(true) }} type="button" className="p-2 hover:bg-[#6b1d2f]/20 rounded-lg text-[#6b1d2f]">
+                        <button onClick={() => { setEditing(p); setShowForm(true) }} type="button" className="p-2 hover:bg-[#1E293B]/20 rounded-lg text-[#1E293B]">
                           <Edit size={18} />
                         </button>
                         <button onClick={() => handleDelete(p.id)} type="button" className="p-2 hover:bg-red-500/20 rounded-lg text-red-400">

@@ -156,9 +156,9 @@ const LoadingScreen = () => (
       justifyContent: 'center',
       alignItems: 'center',
       height: '100vh',
-      color: '#6b1d2f',
+      color: '#1E293B',
       fontSize: '1.5rem',
-      fontFamily: 'Cairo',
+      fontFamily: 'Tajawal',
       direction: 'rtl',
     }}
   >
@@ -210,7 +210,7 @@ const UnauthorizedPage = () => {
         alignItems: 'center',
         justifyContent: 'center',
         padding: '2rem 1rem',
-        fontFamily: 'Cairo, sans-serif',
+        fontFamily: 'Tajawal',
         direction: 'rtl',
       }}
     >
@@ -219,11 +219,11 @@ const UnauthorizedPage = () => {
           maxWidth: 460,
           width: '100%',
           textAlign: 'center',
-          background: 'linear-gradient(160deg, #fdfbf7, #fdfbf7)',
-          border: '2px solid #6b1d2f',
+          background: 'linear-gradient(160deg, #E8E2D6, #E8E2D6)',
+          border: '2px solid #1E293B',
           borderRadius: 20,
           padding: '2.2rem 1.6rem',
-          boxShadow: '0 18px 50px rgba(31, 17, 22,0.22)',
+          boxShadow: '0 18px 50px rgba(32,42,58,0.22)',
         }}
       >
         <div
@@ -235,8 +235,8 @@ const UnauthorizedPage = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            background: 'linear-gradient(135deg, #6b1d2f, #3d0f18)',
-            boxShadow: '0 8px 22px rgba(61, 15, 24,0.35)',
+            background: 'linear-gradient(135deg, #1E293B, #1E293B)',
+            boxShadow: '0 8px 22px rgba(30,41,59,0.35)',
             fontSize: 30,
           }}
         >
@@ -246,7 +246,7 @@ const UnauthorizedPage = () => {
         <h1
           style={{
             margin: '0 0 10px',
-            color: '#3d0f18',
+            color: '#1E293B',
             fontWeight: 900,
             fontSize: '1.4rem',
           }}
@@ -257,7 +257,7 @@ const UnauthorizedPage = () => {
         <p
           style={{
             margin: 0,
-            color: '#1f1116',
+            color: '#202A3A',
             fontWeight: 600,
             lineHeight: 1.9,
             fontSize: '0.95rem',
@@ -418,6 +418,44 @@ function AppContent() {
       delete window.__ROOZ_NAV__;
     };
   }, [navigate]);
+
+  // تفاعل وهج الخلفية مع المؤشر + إيقاف الحركة عند إخفاء الصفحة.
+  // للأجهزة ذات المؤشر الدقيق فقط، ويكتب متغيّرات CSS مباشرة (بلا re-render)،
+  // وينظّف كل المستمعات عند الإزالة.
+  const pearlLayerRef = useRef(null);
+  useEffect(() => {
+    const el = pearlLayerRef.current;
+    if (!el) return undefined;
+    const mq = window.matchMedia;
+    const reduceMotion = mq && mq('(prefers-reduced-motion: reduce)').matches;
+
+    // إيقاف/استئناف حركة الأشكال مع خفاء التبويب => لا استهلاك في الخلفية
+    const onVisibility = () => el.classList.toggle('rzp-paused', document.hidden);
+    document.addEventListener('visibilitychange', onVisibility);
+    onVisibility();
+
+    const finePointer = mq && mq('(hover: hover) and (pointer: fine)').matches;
+    let onMove;
+    let raf = 0;
+    if (finePointer && !reduceMotion) {
+      el.classList.add('is-interactive');
+      onMove = (e) => {
+        if (raf) return;
+        raf = window.requestAnimationFrame(() => {
+          raf = 0;
+          el.style.setProperty('--rzp-mx', `${e.clientX}px`);
+          el.style.setProperty('--rzp-my', `${e.clientY}px`);
+        });
+      };
+      window.addEventListener('pointermove', onMove, { passive: true });
+    }
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibility);
+      if (onMove) window.removeEventListener('pointermove', onMove);
+      if (raf) window.cancelAnimationFrame(raf);
+      el.classList.remove('is-interactive');
+    };
+  }, []);
 
   // حفظ آخر مسار داخلي قبل الصفحة الحالية (ليستخدمه زر الرجوع بأمان
   // بدل navigate(-1) الذي قد يعيد لصفحة خاطئة أو خارج الموقع)
@@ -1245,6 +1283,15 @@ function AppContent() {
      MAIN APPLICATION
      ======================================================= */
 
+  // كثافة الخلفية اللؤلؤية حسب الصفحة (واجهة فقط — لا يمسّ التوجيه أو المنطق)
+  const pearlSurface = (() => {
+    const p = location.pathname;
+    if (p === '/' || p === '/dashboard' || p === '/home') return 'home';
+    if (p.startsWith('/catalog') || p.startsWith('/branches') || p === '/products') return 'catalog';
+    if (p.startsWith('/haraj') || p.startsWith('/ads') || p.startsWith('/advertisements') || p === '/ad/:id') return 'haraj';
+    return 'none';
+  })();
+
   return (
     <div
       dir="rtl"
@@ -1257,12 +1304,30 @@ function AppContent() {
         background:
           location.pathname === '/login'
             ? 'transparent'
-            : 'linear-gradient(180deg, #fdfbf7 0%, #fdfbf7 55%, #fdfbf7 100%)',
-        color: '#1f1116',
+            : 'linear-gradient(180deg, #E8E2D6 0%, #E8E2D6 55%, #E8E2D6 100%)',
+        color: '#202A3A',
         fontFamily: 'Tajawal',
         position: 'relative',
       }}
     >
+      {/* =================================================
+          طبقة خلفية لؤلؤية ثلاثية الأبعاد (زخرفية بحتة)
+          ثابتة، pointer-events:none، خلف كل المحتوى (z-index:0)
+          ================================================= */}
+      <div
+        ref={pearlLayerRef}
+        className="rz-pearl-layer"
+        data-pearl={pearlSurface}
+        aria-hidden="true"
+      >
+        <div className="rz-pearl-blob b1" />
+        <div className="rz-pearl-blob b2" />
+        <div className="rz-pearl-blob b3" />
+        <div className="rz-pearl-blob b4" />
+        <div className="rz-pearl-grid" />
+        <div className="rz-pearl-veil" />
+      </div>
+
       {/* =================================================
           Visitor Welcome Popup
           ================================================= */}
@@ -1276,7 +1341,7 @@ function AppContent() {
             width: "100%",
             height: "100%",
             background:
-              "rgba(31, 17, 22,0.5)",
+              "rgba(32,42,58,0.5)",
             display: "flex",
             justifyContent:
               "center",
@@ -1296,15 +1361,15 @@ function AppContent() {
             aria-modal="true"
             aria-label="نموذج دخول الزائر"
             style={{
-              background: "#fff",
+              background: "#FFFFFF",
               padding: "25px",
               borderRadius: "12px",
               width: "90%",
               maxWidth: "380px",
               textAlign: "center",
               boxShadow:
-                "0 0 15px rgba(31, 17, 22,0.2)",
-              color: "#000",
+                "0 0 15px rgba(32,42,58,0.2)",
+              color: "#202A3A",
             }}
             onClick={(event) =>
               event.stopPropagation()
@@ -1316,7 +1381,7 @@ function AppContent() {
                 onClick={closeWelcomeModal}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgba(31, 17, 22,0.06)',
+                  background: 'rgba(32,42,58,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -1326,7 +1391,7 @@ function AppContent() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#000',
+                  color: '#202A3A',
                 }}
               >
                 <X size={16} />
@@ -1366,7 +1431,7 @@ function AppContent() {
                 padding: "12px",
                 borderRadius: "8px",
                 border:
-                  "1px solid #ccc",
+                  "1px solid #D5D0C5",
                 marginBottom: "15px",
                 fontSize: "16px",
               }}
@@ -1379,8 +1444,8 @@ function AppContent() {
               style={{
                 width: "100%",
                 padding: "12px",
-                background: "#000",
-                color: "#fff",
+                background: "#202A3A",
+                color: "#FFFFFF",
                 borderRadius: "8px",
                 border: "none",
                 marginBottom: "10px",
@@ -1398,8 +1463,8 @@ function AppContent() {
               style={{
                 width: "100%",
                 padding: "12px",
-                background: "#8f2a40",
-                color: "#fff",
+                background: "#1E293B",
+                color: "#FFFFFF",
                 borderRadius: "8px",
                 border: "none",
                 marginBottom: "10px",
@@ -1444,9 +1509,9 @@ function AppContent() {
         }
 
 @keyframes roozCrown3D {
-  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgba(61, 15, 24,0.9)); }
-  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgba(61, 15, 24,1)); }
-  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgba(61, 15, 24,0.9)); }
+  0%   { transform: perspective(600px) rotateY(0deg) scale(1); filter: drop-shadow(0 0 4px rgba(30,41,59,0.9)); }
+  50%  { transform: perspective(600px) rotateY(360deg) scale(1.12); filter: drop-shadow(0 0 14px rgba(30,41,59,1)); }
+  100% { transform: perspective(600px) rotateY(720deg) scale(1); filter: drop-shadow(0 0 4px rgba(30,41,59,0.9)); }
 }
 
 @keyframes roozStar3D {
@@ -1508,17 +1573,17 @@ function AppContent() {
               maxWidth: 420,
               marginInline: 'auto',
               background:
-                'linear-gradient(150deg, #1f1116, #000)',
+                'linear-gradient(150deg, #202A3A, #202A3A)',
               border:
-                '1px solid rgba(61, 15, 24, 0.55)',
+                '1px solid rgba(30,41,59, 0.55)',
               borderRadius: 16,
               padding:
                 '18px 20px',
               fontFamily:
                 'Tajawal, sans-serif',
-              color: '#f3e0dd',
+              color: '#E8E2D6',
               boxShadow:
-                '0 18px 50px rgba(31, 17, 22,0.65)',
+                '0 18px 50px rgba(32,42,58,0.65)',
             }}
           >
             <div
@@ -1531,11 +1596,11 @@ function AppContent() {
             >
               <Clock
                 size={30}
-                color="#6b1d2f"
+                color="#1E293B"
               />
               <strong
                 style={{
-                  color: '#6b1d2f',
+                  color: '#1E293B',
                   fontSize: 15,
                   fontWeight: 900,
                 }}
@@ -1564,7 +1629,7 @@ function AppContent() {
                   display: 'block',
                   marginTop: 8,
                   fontSize: 12,
-                  color: '#6b1d2f',
+                  color: '#1E293B',
                 }}
               >
                 سيتم إخراجك تلقائياً عند انتهاء الوقت.
@@ -1600,17 +1665,17 @@ function AppContent() {
               background:
                 guestRemaining <=
                 10000
-                  ? 'linear-gradient(90deg, rgba(61, 15, 24,0.97), rgba(61, 15, 24,0.92))'
-                  : 'linear-gradient(90deg, #1f1116, #6b1d2f)',
-              color: '#ffffff',
+                  ? 'linear-gradient(90deg, rgba(30,41,59,0.97), rgba(30,41,59,0.92))'
+                  : 'linear-gradient(90deg, #202A3A, #1E293B)',
+              color: '#FFFFFF',
               padding: '0 1rem',
               textAlign: 'center',
               fontWeight: 800,
               fontSize: '0.9rem',
               boxShadow:
-                '0 2px 10px rgba(31, 17, 22,0.3)',
+                '0 2px 10px rgba(32,42,58,0.3)',
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal',
               boxSizing: 'border-box',
             }}
           >
@@ -1646,7 +1711,7 @@ function AppContent() {
               position: 'fixed',
               inset: 0,
               background:
-                'rgba(31, 17, 22,0.8)',
+                'rgba(32,42,58,0.8)',
               display: 'flex',
               alignItems: 'center',
               justifyContent:
@@ -1654,23 +1719,23 @@ function AppContent() {
               zIndex: 15000,
               padding: 16,
               fontFamily:
-                'Cairo, sans-serif',
+                'Tajawal',
             }}
           >
             <div
               style={{
-                background: '#111',
+                background: '#202A3A',
                 border:
-                  '1px solid rgba(61, 15, 24,0.4)',
+                  '1px solid rgba(30,41,59,0.4)',
                 borderRadius: 16,
                 padding:
                   '2rem 1.5rem',
                 maxWidth: 420,
                 width: '100%',
                 textAlign: 'center',
-                color: '#f3e0dd',
+                color: '#E8E2D6',
                 boxShadow:
-                  '0 20px 60px rgba(31, 17, 22,0.6)',
+                  '0 20px 60px rgba(32,42,58,0.6)',
               }}
             >
               <div
@@ -1684,13 +1749,13 @@ function AppContent() {
               >
                 <Clock
                   size={48}
-                  color="#6b1d2f"
+                  color="#1E293B"
                 />
               </div>
 
               <h2
                 style={{
-                  color: '#6b1d2f',
+                  color: '#1E293B',
                   fontSize: 22,
                   fontWeight: 700,
                   marginBottom: 12,
@@ -1701,7 +1766,7 @@ function AppContent() {
 
               <p
                 style={{
-                  color: '#ccc',
+                  color: '#D5D0C5',
                   fontSize: 15,
                   marginBottom: 20,
                   lineHeight: 1.6,
@@ -1736,8 +1801,8 @@ function AppContent() {
                   width: '100%',
                   padding: '13px',
                   background:
-                    'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
-                  color: '#fff',
+                    'linear-gradient(135deg, #1E293B, #1E293B)',
+                  color: '#FFFFFF',
                   border: 'none',
                   borderRadius: 10,
                   fontWeight: 700,
@@ -1768,9 +1833,9 @@ function AppContent() {
                   padding: '13px',
                   background:
                     'transparent',
-                  color: '#6b1d2f',
+                  color: '#1E293B',
                   border:
-                    '1px solid rgba(61, 15, 24,0.4)',
+                    '1px solid rgba(30,41,59,0.4)',
                   borderRadius: 10,
                   fontWeight: 700,
                   fontSize: 15,
@@ -1887,10 +1952,10 @@ function AppContent() {
               height: '60px',
               overflow: 'hidden',
               display: 'block',
-              background: 'linear-gradient(90deg, #1f1116 0%, #1f1116 40%, #1f1116 60%, #1f1116 100%)',
-              borderTop: '2px solid #6b1d2f',
-              borderBottom: '2px solid #6b1d2f',
-              boxShadow: '0 12px 32px rgba(31, 17, 22,0.6), 0 0 22px rgba(61, 15, 24,0.25)',
+              background: 'linear-gradient(90deg, #202A3A 0%, #202A3A 40%, #202A3A 60%, #202A3A 100%)',
+              borderTop: '2px solid #1E293B',
+              borderBottom: '2px solid #1E293B',
+              boxShadow: '0 12px 32px rgba(32,42,58,0.6), 0 0 22px rgba(30,41,59,0.25)',
               zIndex: 80,
               flexShrink: 0,
             }}
@@ -1927,16 +1992,16 @@ function AppContent() {
                     flexShrink: 0,
                     padding: '0 60px',
                     whiteSpace: 'nowrap',
-                    fontFamily: 'Cairo, "Noto Sans Arabic", Tahoma, sans-serif',
+                    fontFamily: 'Tajawal, "Noto Sans Arabic", Tahoma, sans-serif',
                     fontSize: 'clamp(1.15rem, 2.5vw, 1.55rem)',
                     fontWeight: 900,
-                    WebkitTextStroke: '0.4px rgba(61, 15, 24,0.5)',
+                    WebkitTextStroke: '0.4px rgba(30,41,59,0.5)',
                     lineHeight: '60px',
                     direction: 'rtl',
                     unicodeBidi: 'isolate',
-                    color: '#6b1d2f',
-                    WebkitTextFillColor: '#6b1d2f',
-                    textShadow: '0 1px 2px #000',
+                    color: '#1E293B',
+                    WebkitTextFillColor: '#1E293B',
+                    textShadow: '0 1px 2px #202A3A',
                   }}
                 >
                   {ownerWelcomeBanner?.msg || OWNER_WELCOME_MESSAGE}
