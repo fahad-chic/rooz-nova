@@ -1739,7 +1739,7 @@ const RoyalHarajPage = () => {
                 borderRadius: 14,
                 padding: '1rem',
                 cursor: 'pointer',
-                color: '#202A3A',
+                color: '#FFFFFF',
                 fontSize: '0.9rem',
                 fontWeight: 800,
                 fontFamily:

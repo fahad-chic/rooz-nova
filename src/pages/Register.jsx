@@ -551,7 +551,7 @@ const submitBtn = {
   padding: '13px 14px',
   background:
     'linear-gradient(135deg, #1E293B 0%, #1E293B 48%, #1E293B 100%)',
-  color: '#202A3A',
+  color: '#FFFFFF',
   border: '1px solid rgba(239,233,223,0.45)',
   borderRadius: 12,
   fontWeight: 800,

@@ -29,7 +29,7 @@ const OwnerEditBadge = ({ to, label = 'تعديل' }) => {
         alignItems: 'center',
         gap: 5,
         background: 'linear-gradient(135deg, #1E293B, #1E293B)',
-        color: '#202A3A',
+        color: '#FFFFFF',
         border: '1.5px solid #1E293B',
         borderRadius: 999,
         padding: '5px 11px',

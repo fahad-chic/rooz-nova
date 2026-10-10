@@ -160,7 +160,7 @@ const BroadcastModal = ({ onClose }) => {
             justifyContent: 'center',
             gap: 8,
             background: 'linear-gradient(135deg, #1E293B 0%, #1E293B 100%)',
-            color: '#202A3A',
+            color: '#FFFFFF',
             border: 'none',
             borderRadius: 12,
             padding: '0.8rem',

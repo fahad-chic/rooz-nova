@@ -181,7 +181,18 @@ const ContactPage = () => {
         >
           <button
             type="button"
-            onClick={() => navigate(-1)}
+            onClick={() => {
+              const prev =
+                typeof window !== 'undefined' &&
+                (window.history.state?.usr?.prevPath || null);
+              if (prev) {
+                navigate(prev);
+              } else if (typeof window !== 'undefined' && window.history.length > 1) {
+                navigate(-1);
+              } else {
+                navigate('/contact', { replace: true });
+              }
+            }}
             aria-label="العودة إلى الصفحة السابقة"
             style={{
               ...buttonBaseStyle,
@@ -347,7 +358,7 @@ const ContactPage = () => {
                           'linear-gradient(135deg, #1E293B 0%, #1E293B 100%)',
                         borderRadius: 10,
                         gap: '0.5rem',
-                        color: '#202A3A',
+                        color: '#FFFFFF',
                       }}
                     >
                       <Phone size={18} aria-hidden="true" />
@@ -477,7 +488,7 @@ const ContactPage = () => {
               borderRadius: 16,
               padding: '1.25rem',
               gap: '1rem',
-              color: '#202A3A',
+              color: '#FFFFFF',
               boxShadow: '0 8px 24px rgba(30,41,59, 0.3)',
             }}
           >

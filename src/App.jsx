@@ -1995,13 +1995,13 @@ function AppContent() {
                     fontFamily: 'Tajawal, "Noto Sans Arabic", Tahoma, sans-serif',
                     fontSize: 'clamp(1.15rem, 2.5vw, 1.55rem)',
                     fontWeight: 900,
-                    WebkitTextStroke: '0.4px rgba(30,41,59,0.5)',
+                    WebkitTextStroke: '0.4px rgba(227,200,120,0.5)',
                     lineHeight: '60px',
                     direction: 'rtl',
                     unicodeBidi: 'isolate',
-                    color: '#1E293B',
-                    WebkitTextFillColor: '#1E293B',
-                    textShadow: '0 1px 2px #202A3A',
+                    color: '#E3C878',
+                    WebkitTextFillColor: '#E3C878',
+                    textShadow: '0 1px 2px rgba(0,0,0,0.45)',
                   }}
                 >
                   {ownerWelcomeBanner?.msg || OWNER_WELCOME_MESSAGE}

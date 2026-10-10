@@ -192,7 +192,7 @@ const ChatPage = ({ chatPartnerId, adId, setCurrentPage }) => {
           <button
             type="button"
             onClick={() => setCurrentPage('dashboard')}
-            style={{ marginTop: 16, padding: '10px 22px', borderRadius: 10, border: 'none', background: 'linear-gradient(135deg,#1E293B,#1E293B)', color: '#202A3A', fontWeight: 800, cursor: 'pointer' }}
+            style={{ marginTop: 16, padding: '10px 22px', borderRadius: 10, border: 'none', background: 'linear-gradient(135deg,#1E293B,#1E293B)', color: '#FFFFFF', fontWeight: 800, cursor: 'pointer' }}
           >
             العودة للرئيسية
           </button>

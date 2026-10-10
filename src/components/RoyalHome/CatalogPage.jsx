@@ -130,6 +130,15 @@ const CatalogPage = () => {
   useEffect(() => {
     const findCatalogInfo = () => {
       for (const section of ROYAL_SECTIONS) {
+        // دعم روابط على مستوى القسم الرئيسي (مثل /catalog/abayas, /catalog/bags, /catalog/perfumes)
+        if (section.id === catalogId) {
+          return {
+            catalogId: section.id,
+            name: section.title,
+            section: section.title,
+            sectionColor: section.color,
+          };
+        }
         for (const branch of section.branches || []) {
           if (branch.catalogId === catalogId) {
             return {
@@ -563,7 +572,7 @@ const CatalogPage = () => {
                   'linear-gradient(135deg, #1E293B, #1E293B)',
                 border: 'none',
                 borderRadius: 12,
-                color: '#202A3A',
+                color: '#FFFFFF',
                 fontWeight: 700,
                 fontSize: '0.9rem',
                 cursor: 'pointer',
@@ -632,7 +641,7 @@ const CatalogPage = () => {
                   'linear-gradient(135deg, #1E293B, #1E293B)',
                 border: 'none',
                 borderRadius: 12,
-                color: '#202A3A',
+                color: '#FFFFFF',
                 fontWeight: 700,
                 cursor: 'pointer',
                 fontFamily: 'Tajawal',
@@ -943,7 +952,7 @@ const DisplaySettingsModal = ({
                 'linear-gradient(135deg, #1E293B, #1E293B)',
               border: 'none',
               borderRadius: 12,
-              color: '#202A3A',
+              color: '#FFFFFF',
               fontWeight: 700,
               fontSize: '1rem',
               cursor: 'pointer',
@@ -1365,7 +1374,7 @@ const AddProductModal = ({
                   : 'linear-gradient(135deg, #1E293B, #1E293B)',
                 border: 'none',
                 borderRadius: 12,
-                color: '#202A3A',
+                color: '#FFFFFF',
                 fontWeight: 700,
                 fontSize: '1rem',
                 cursor: saving ? 'not-allowed' : 'pointer',

@@ -193,7 +193,7 @@ const AIChatWidget = ({
             padding: '0.95rem 1rem',
             background:
               'linear-gradient(135deg, #202A3A 0%, #202A3A 55%, #202A3A 100%)',
-            color: '#1E293B',
+            color: '#FFFFFF',
             display: 'flex',
             alignItems: 'center',
             gap: '0.7rem',

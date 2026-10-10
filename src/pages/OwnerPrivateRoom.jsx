@@ -2730,7 +2730,7 @@ const MessagesPanel = ({
               type="button"
               onClick={() => openChat(chat)}
               className="px-3 py-1.5 rounded-lg text-xs font-bold"
-              style={{ background: 'linear-gradient(135deg,#1E293B,#1E293B)', color: '#202A3A', border: 'none', cursor: 'pointer' }}
+              style={{ background: 'linear-gradient(135deg,#1E293B,#1E293B)', color: '#FFFFFF', border: 'none', cursor: 'pointer' }}
             >
               فتح المحادثة
             </button>
