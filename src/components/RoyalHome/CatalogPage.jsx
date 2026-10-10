@@ -327,15 +327,15 @@ const CatalogPage = () => {
             display: 'flex',
             alignItems: 'center',
             gap: '0.5rem',
-            background: 'rgba(61, 15, 24, 0.12)',
-            border: '1px solid rgba(61, 15, 24, 0.35)',
+            background: 'rgba(30,41,59, 0.12)',
+            border: '1px solid rgba(30,41,59, 0.35)',
             borderRadius: 12,
             padding: '0.45rem 0.9rem',
-            color: '#6b1d2f',
+            color: '#1E293B',
             fontSize: '0.85rem',
             cursor: 'pointer',
             marginBottom: '0.75rem',
-            fontFamily: 'Cairo, sans-serif',
+            fontFamily: 'Tajawal',
             fontWeight: 800,
           }}
         >
@@ -347,14 +347,14 @@ const CatalogPage = () => {
         <div
           style={{
             background:
-              'linear-gradient(145deg, rgba(253, 251, 247, 0.98), rgba(253, 251, 247, 0.92))',
-            border: `1px solid rgba(61, 15, 24, 0.35)`,
+              'linear-gradient(145deg, rgba(232,226,214, 0.98), rgba(232,226,214, 0.92))',
+            border: `1px solid rgba(30,41,59, 0.35)`,
             borderRadius: 20,
             padding: '1.5rem',
             textAlign: 'center',
             overflowX: 'hidden',
             boxShadow: `0 8px 32px ${
-              catalogInfo?.sectionColor || '#6b1d2f'
+              catalogInfo?.sectionColor || '#1E293B'
             }20`,
           }}
         >
@@ -363,10 +363,10 @@ const CatalogPage = () => {
               margin: 0,
               fontSize: '2rem',
               fontWeight: 900,
-              background: 'linear-gradient(180deg, #6b1d2f, #6b1d2f)',
+              background: 'linear-gradient(180deg, #1E293B, #1E293B)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal',
             }}
           >
             {catalogInfo?.name || CATALOG_NAME_MAP[catalogId] || catalogId?.replace(/-/g, ' ')}
@@ -376,9 +376,9 @@ const CatalogPage = () => {
             <p
               style={{
                 margin: '0.5rem 0 0',
-                color: '#6b1d2f',
+                color: '#1E293B',
                 fontSize: '0.9rem',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal',
               }}
             >
               {catalogInfo.section}
@@ -392,14 +392,14 @@ const CatalogPage = () => {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.6rem',
-                background: 'rgba(107, 29, 47, 0.10)',
-                border: '1px solid rgba(107, 29, 47, 0.28)',
+                background: 'rgba(30,41,59, 0.10)',
+                border: '1px solid rgba(30,41,59, 0.28)',
                 borderRadius: 999,
                 padding: '0.4rem 0.5rem 0.4rem 0.9rem',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal',
               }}
             >
-              <span style={{ color: '#6b1d2f', fontSize: '0.85rem', fontWeight: 800 }}>
+              <span style={{ color: '#1E293B', fontSize: '0.85rem', fontWeight: 800 }}>
                 {activeSubName ? `${activeSubName} — ` : ''}
                 المقاس: {activeSize}
               </span>
@@ -407,8 +407,8 @@ const CatalogPage = () => {
                 type="button"
                 onClick={() => navigate(`/catalog/${catalogId}`, { replace: true })}
                 style={{
-                  background: '#6b1d2f',
-                  color: '#fdfbf7',
+                  background: '#1E293B',
+                  color: '#E8E2D6',
                   border: 'none',
                   borderRadius: 999,
                   padding: '0.25rem 0.7rem',
@@ -436,7 +436,7 @@ const CatalogPage = () => {
           flexWrap: 'wrap',
           gap: '1rem',
           marginBottom: '2rem',
-          background: 'rgba(253, 251, 247, 0.85)',
+          background: 'rgba(232,226,214, 0.85)',
           padding: '1rem',
           borderRadius: 16,
         }}
@@ -452,10 +452,10 @@ const CatalogPage = () => {
         >
           <span
             style={{
-              color: '#888',
+              color: '#404040',
               fontSize: '0.85rem',
               marginLeft: '0.5rem',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal',
             }}
           >
             شكل العرض:
@@ -465,7 +465,7 @@ const CatalogPage = () => {
             style={{
               display: 'flex',
               gap: '0.3rem',
-              background: 'rgba(255, 255, 255,0.05)',
+              background: 'rgba(255,255,255,0.05)',
               padding: '0.3rem',
               borderRadius: 12,
               flexWrap: 'wrap',
@@ -484,17 +484,17 @@ const CatalogPage = () => {
                     padding: '0.5rem 0.8rem',
                     background:
                       cardStyle === key
-                        ? 'rgba(61, 15, 24, 0.3)'
+                        ? 'rgba(30,41,59, 0.3)'
                         : 'transparent',
                     border: 'none',
                     borderRadius: 8,
                     cursor: 'pointer',
                     color:
-                      cardStyle === key ? '#6b1d2f' : '#888',
+                      cardStyle === key ? '#1E293B' : '#404040',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '0.3rem',
-                    fontFamily: 'Cairo, sans-serif',
+                    fontFamily: 'Tajawal',
                     fontSize: '0.8rem',
                   }}
                 >
@@ -509,9 +509,9 @@ const CatalogPage = () => {
         {/* عدد المنتجات */}
         <p
           style={{
-            color: '#888',
+            color: '#404040',
             fontSize: '0.9rem',
-            fontFamily: 'Cairo, sans-serif',
+            fontFamily: 'Tajawal',
             margin: 0,
           }}
         >
@@ -535,14 +535,14 @@ const CatalogPage = () => {
                 alignItems: 'center',
                 gap: '0.5rem',
                 padding: '0.6rem 1rem',
-                background: 'rgba(61, 15, 24, 0.2)',
-                border: '1px solid rgba(61, 15, 24, 0.4)',
+                background: 'rgba(30,41,59, 0.2)',
+                border: '1px solid rgba(30,41,59, 0.4)',
                 borderRadius: 12,
-                color: '#6b1d2f',
+                color: '#1E293B',
                 fontWeight: 600,
                 fontSize: '0.85rem',
                 cursor: 'pointer',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal',
               }}
             >
               <Settings size={16} />
@@ -560,14 +560,14 @@ const CatalogPage = () => {
                 gap: '0.5rem',
                 padding: '0.6rem 1.2rem',
                 background:
-                  'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
+                  'linear-gradient(135deg, #1E293B, #1E293B)',
                 border: 'none',
                 borderRadius: 12,
-                color: '#000',
+                color: '#202A3A',
                 fontWeight: 700,
                 fontSize: '0.9rem',
                 cursor: 'pointer',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal',
               }}
             >
               <Plus size={18} />
@@ -583,8 +583,8 @@ const CatalogPage = () => {
           style={{
             textAlign: 'center',
             padding: '4rem',
-            color: '#888',
-            fontFamily: 'Cairo, sans-serif',
+            color: '#404040',
+            fontFamily: 'Tajawal',
           }}
         >
           جاري التحميل...
@@ -596,10 +596,10 @@ const CatalogPage = () => {
             margin: '0 auto',
             textAlign: 'center',
             padding: '4rem',
-            color: '#888',
-            background: 'rgba(255, 255, 255,0.02)',
+            color: '#404040',
+            background: 'rgba(255,255,255,0.02)',
             borderRadius: 16,
-            border: '2px dashed rgba(255, 255, 255,0.1)',
+            border: '2px dashed rgba(255,255,255,0.1)',
           }}
         >
           <p
@@ -615,7 +615,7 @@ const CatalogPage = () => {
             style={{
               margin: 0,
               fontSize: '1.1rem',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal',
             }}
           >
             لا توجد منتجات في هذا القسم حالياً
@@ -629,13 +629,13 @@ const CatalogPage = () => {
                 marginTop: '1rem',
                 padding: '0.75rem 1.5rem',
                 background:
-                  'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
+                  'linear-gradient(135deg, #1E293B, #1E293B)',
                 border: 'none',
                 borderRadius: 12,
-                color: '#000',
+                color: '#202A3A',
                 fontWeight: 700,
                 cursor: 'pointer',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal',
               }}
             >
               أضف أول منتج
@@ -736,7 +736,7 @@ const DisplaySettingsModal = ({
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgba(31, 17, 22,0.85)',
+        background: 'rgba(32,42,58,0.85)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -749,8 +749,8 @@ const DisplaySettingsModal = ({
         dir="rtl"
         style={{
           background:
-            'linear-gradient(145deg, #1f1116, #1f1116)',
-          border: '2px solid #6b1d2f',
+            'linear-gradient(145deg, #202A3A, #202A3A)',
+          border: '2px solid #1E293B',
           borderRadius: 24,
           padding: '2rem',
           maxWidth: 500,
@@ -764,9 +764,9 @@ const DisplaySettingsModal = ({
           <h2
             style={{
               margin: 0,
-              color: '#6b1d2f',
+              color: '#1E293B',
               fontSize: '1.3rem',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal',
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
@@ -786,11 +786,11 @@ const DisplaySettingsModal = ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              background: 'rgba(61, 15, 24,0.15)',
-              border: '1px solid rgba(61, 15, 24,0.4)',
+              background: 'rgba(30,41,59,0.15)',
+              border: '1px solid rgba(30,41,59,0.4)',
               borderRadius: 10,
               cursor: 'pointer',
-              color: '#6b1d2f',
+              color: '#1E293B',
             }}
           >
             <X size={18} />
@@ -801,9 +801,9 @@ const DisplaySettingsModal = ({
           <label
             style={{
               display: 'block',
-              color: '#aaa',
+              color: '#404040',
               marginBottom: '0.5rem',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal',
             }}
           >
             شكل عرض المنتجات:
@@ -835,23 +835,23 @@ const DisplaySettingsModal = ({
                       padding: '0.75rem',
                       background:
                         localSettings.displayStyle === key
-                          ? 'rgba(61, 15, 24, 0.3)'
-                          : 'rgba(255, 255, 255,0.05)',
+                          ? 'rgba(30,41,59, 0.3)'
+                          : 'rgba(255,255,255,0.05)',
                       border:
                         localSettings.displayStyle === key
-                          ? '2px solid #6b1d2f'
-                          : '1px solid rgba(255, 255, 255,0.2)',
+                          ? '2px solid #1E293B'
+                          : '1px solid rgba(255,255,255,0.2)',
                       borderRadius: 12,
                       color:
                         localSettings.displayStyle === key
-                          ? '#6b1d2f'
-                          : '#aaa',
+                          ? '#1E293B'
+                          : '#404040',
                       cursor: 'pointer',
                       display: 'flex',
                       flexDirection: 'column',
                       alignItems: 'center',
                       gap: '0.3rem',
-                      fontFamily: 'Cairo, sans-serif',
+                      fontFamily: 'Tajawal',
                       fontSize: '0.8rem',
                     }}
                   >
@@ -877,9 +877,9 @@ const DisplaySettingsModal = ({
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
-              color: '#fff',
+              color: '#FFFFFF',
               cursor: 'pointer',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal',
             }}
           >
             <input
@@ -904,9 +904,9 @@ const DisplaySettingsModal = ({
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
-              color: '#fff',
+              color: '#FFFFFF',
               cursor: 'pointer',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal',
             }}
           >
             <input
@@ -940,14 +940,14 @@ const DisplaySettingsModal = ({
               flex: 1,
               padding: '0.85rem',
               background:
-                'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
+                'linear-gradient(135deg, #1E293B, #1E293B)',
               border: 'none',
               borderRadius: 12,
-              color: '#000',
+              color: '#202A3A',
               fontWeight: 700,
               fontSize: '1rem',
               cursor: 'pointer',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -965,13 +965,13 @@ const DisplaySettingsModal = ({
               flex: 1,
               padding: '0.85rem',
               background: 'transparent',
-              border: '1px solid #666',
+              border: '1px solid #202A3A',
               borderRadius: 12,
-              color: '#aaa',
+              color: '#404040',
               fontWeight: 600,
               fontSize: '1rem',
               cursor: 'pointer',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal',
             }}
           >
             إلغاء
@@ -1085,12 +1085,12 @@ const AddProductModal = ({
   const inputStyle = {
     width: '100%',
     padding: '0.85rem',
-    background: 'rgba(255, 255, 255,0.05)',
-    border: '1px solid rgba(255, 255, 255,0.2)',
+    background: 'rgba(255,255,255,0.05)',
+    border: '1px solid rgba(255,255,255,0.2)',
     borderRadius: 12,
-    color: '#fff',
+    color: '#FFFFFF',
     fontSize: '1rem',
-    fontFamily: 'Cairo, sans-serif',
+    fontFamily: 'Tajawal',
     boxSizing: 'border-box',
   };
 
@@ -1099,7 +1099,7 @@ const AddProductModal = ({
       style={{
         position: 'fixed',
         inset: 0,
-        background: 'rgba(31, 17, 22,0.85)',
+        background: 'rgba(32,42,58,0.85)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -1112,8 +1112,8 @@ const AddProductModal = ({
         dir="rtl"
         style={{
           background:
-            'linear-gradient(145deg, #1f1116, #1f1116)',
-          border: '2px solid #6b1d2f',
+            'linear-gradient(145deg, #202A3A, #202A3A)',
+          border: '2px solid #1E293B',
           borderRadius: 24,
           padding: '2rem',
           maxWidth: 550,
@@ -1127,9 +1127,9 @@ const AddProductModal = ({
           <h2
             style={{
               margin: 0,
-              color: '#6b1d2f',
+              color: '#1E293B',
               fontSize: '1.3rem',
-              fontFamily: 'Cairo, sans-serif',
+              fontFamily: 'Tajawal',
             }}
           >
             {editingProduct
@@ -1147,11 +1147,11 @@ const AddProductModal = ({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              background: 'rgba(61, 15, 24,0.15)',
-              border: '1px solid rgba(61, 15, 24,0.4)',
+              background: 'rgba(30,41,59,0.15)',
+              border: '1px solid rgba(30,41,59,0.4)',
               borderRadius: 10,
               cursor: 'pointer',
-              color: '#6b1d2f',
+              color: '#1E293B',
             }}
           >
             <X size={18} />
@@ -1161,12 +1161,12 @@ const AddProductModal = ({
         {catalogName && (
           <div
             style={{
-              background: 'rgba(61, 15, 24, 0.1)',
+              background: 'rgba(30,41,59, 0.1)',
               padding: '0.75rem',
               borderRadius: 10,
               marginBottom: '1rem',
               textAlign: 'center',
-              color: '#6b1d2f',
+              color: '#1E293B',
               fontFamily: 'Tajawal, sans-serif',
               fontSize: '0.9rem',
             }}
@@ -1180,9 +1180,9 @@ const AddProductModal = ({
             <label
               style={{
                 display: 'block',
-                color: '#aaa',
+                color: '#404040',
                 marginBottom: '0.3rem',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal',
               }}
             >
               اسم المنتج *
@@ -1215,9 +1215,9 @@ const AddProductModal = ({
               <label
                 style={{
                   display: 'block',
-                  color: '#aaa',
+                  color: '#404040',
                   marginBottom: '0.3rem',
-                  fontFamily: 'Cairo, sans-serif',
+                  fontFamily: 'Tajawal',
                 }}
               >
                 السعر (ر.س) *
@@ -1244,9 +1244,9 @@ const AddProductModal = ({
               <label
                 style={{
                   display: 'block',
-                  color: '#aaa',
+                  color: '#404040',
                   marginBottom: '0.3rem',
-                  fontFamily: 'Cairo, sans-serif',
+                  fontFamily: 'Tajawal',
                 }}
               >
                 المقاس
@@ -1271,9 +1271,9 @@ const AddProductModal = ({
             <label
               style={{
                 display: 'block',
-                color: '#aaa',
+                color: '#404040',
                 marginBottom: '0.3rem',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal',
               }}
             >
               رابط الصورة
@@ -1297,9 +1297,9 @@ const AddProductModal = ({
             <label
               style={{
                 display: 'block',
-                color: '#aaa',
+                color: '#404040',
                 marginBottom: '0.3rem',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal',
               }}
             >
               الوصف
@@ -1326,9 +1326,9 @@ const AddProductModal = ({
             <label
               style={{
                 display: 'block',
-                color: '#aaa',
+                color: '#404040',
                 marginBottom: '0.3rem',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal',
               }}
             >
               رقم واتساب للشراء
@@ -1361,15 +1361,15 @@ const AddProductModal = ({
                 flex: 1,
                 padding: '0.85rem',
                 background: saving
-                  ? 'rgba(61, 15, 24,0.5)'
-                  : 'linear-gradient(135deg, #6b1d2f, #6b1d2f)',
+                  ? 'rgba(30,41,59,0.5)'
+                  : 'linear-gradient(135deg, #1E293B, #1E293B)',
                 border: 'none',
                 borderRadius: 12,
-                color: '#000',
+                color: '#202A3A',
                 fontWeight: 700,
                 fontSize: '1rem',
                 cursor: saving ? 'not-allowed' : 'pointer',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal',
               }}
             >
               {saving
@@ -1387,13 +1387,13 @@ const AddProductModal = ({
                 flex: 1,
                 padding: '0.85rem',
                 background: 'transparent',
-                border: '1px solid #666',
+                border: '1px solid #202A3A',
                 borderRadius: 12,
-                color: '#aaa',
+                color: '#404040',
                 fontWeight: 600,
                 fontSize: '1rem',
                 cursor: saving ? 'not-allowed' : 'pointer',
-                fontFamily: 'Cairo, sans-serif',
+                fontFamily: 'Tajawal',
               }}
             >
               إلغاء
