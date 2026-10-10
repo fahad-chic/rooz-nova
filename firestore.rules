@@ -1,393 +1,392 @@
-rules_version = ‘2’;
+rules_version = '2';
 service cloud.firestore {
-match /databases/{database}/documents {
+  match /databases/{database}/documents {
 
-// ============ الدوال المساعدة ============
-function isSignedIn() {
-  return request.auth != null;
-}
+    // ============ الدوال المساعدة ============
+    function isSignedIn() {
+      return request.auth != null;
+    }
 
-function isOwner() {
-  return isSignedIn() &&
-    request.auth.token.email in [
-      'f882771f@gmail.com',
-      'kal6667222@gmail.com'
-    ];
-}
+    function isOwner() {
+      return isSignedIn() &&
+        request.auth.token.email in [
+          'f882771f@gmail.com',
+          'kal6667222@gmail.com'
+        ];
+    }
 
-// ============ نظام الصلاحيات المجهري (Micro-RBAC) ============
-// المنح تُقرأ من rbac/{uid} — القراءة من الخادم في كل عملية، فأي تلاعب
-// بكود المتصفح (إظهار زر مخفي) لا يمنح قدرة فعلية: القاعدة ترفض الكتابة.
-// الحساب المجمّد (suspended) تُسحب منه كل الصلاحيات فوراً.
-// SUPER_ADMIN_FULL_ACCESS يفتح كل الصلاحيات الأخرى.
-function rbacPath() {
-  return /databases/$(database)/documents/rbac/$(request.auth.uid);
-}
+    // ============ نظام الصلاحيات المجهري (Micro-RBAC) ============
+    // المنح تُقرأ من rbac/{uid} — القراءة من الخادم في كل عملية، فأي تلاعب
+    // بكود المتصفح (إظهار زر مخفي) لا يمنح قدرة فعلية: القاعدة ترفض الكتابة.
+    // الحساب المجمّد (suspended) تُسحب منه كل الصلاحيات فوراً.
+    // SUPER_ADMIN_FULL_ACCESS يفتح كل الصلاحيات الأخرى.
+    function rbacPath() {
+      return /databases/$(database)/documents/rbac/$(request.auth.uid);
+    }
 
-// && تعمل بقصر الدارة (short-circuit) في قواعد Firestore، فيصل get()
-// فقط عند وجود الوثيقة — ونداءات get المتكررة لنفس المسار تُحسب قراءة واحدة.
-function hasPerm(key) {
-  return isOwner() || (
-    isSignedIn() && exists(rbacPath()) &&
-    get(rbacPath()).data.get('suspended', false) != true &&
-    (get(rbacPath()).data.get('grants', {}).get(key, false) == true ||
-     get(rbacPath()).data.get('grants', {}).get('SUPER_ADMIN_FULL_ACCESS', false) == true)
-  );
-}
+    // && تعمل بقصر الدارة (short-circuit) في قواعد Firestore، فيصل get()
+    // فقط عند وجود الوثيقة — ونداءات get المتكررة لنفس المسار تُحسب قراءة واحدة.
+    function hasPerm(key) {
+      return isOwner() || (
+        isSignedIn() && exists(rbacPath()) &&
+        get(rbacPath()).data.get('suspended', false) != true &&
+        (get(rbacPath()).data.get('grants', {}).get(key, false) == true ||
+         get(rbacPath()).data.get('grants', {}).get('SUPER_ADMIN_FULL_ACCESS', false) == true)
+      );
+    }
 
-function hasUserAdminPerm() {
-  return hasPerm('BAN_USER_TEMPORARY') || hasPerm('BAN_USER_PERMANENT')
-      || hasPerm('UNBAN_USER_RESTORE') || hasPerm('MANAGE_USER_VERIFICATION')
-      || hasPerm('FORCE_LOGOUT_SESSION') || hasPerm('SUSPEND_SUB_ADMIN_ACCOUNT');
-}
+    function hasUserAdminPerm() {
+      return hasPerm('BAN_USER_TEMPORARY') || hasPerm('BAN_USER_PERMANENT')
+          || hasPerm('UNBAN_USER_RESTORE') || hasPerm('MANAGE_USER_VERIFICATION')
+          || hasPerm('FORCE_LOGOUT_SESSION') || hasPerm('SUSPEND_SUB_ADMIN_ACCOUNT');
+    }
 
-function hasCatalogPerm() {
-  return hasPerm('CREATE_NEW_CATALOG') || hasPerm('DELETE_MAIN_CATALOG')
-      || hasPerm('EDIT_CATALOG_PRICING') || hasPerm('MANAGE_CATALOG_TAGS');
-}
+    function hasCatalogPerm() {
+      return hasPerm('CREATE_NEW_CATALOG') || hasPerm('DELETE_MAIN_CATALOG')
+          || hasPerm('EDIT_CATALOG_PRICING') || hasPerm('MANAGE_CATALOG_TAGS');
+    }
 
-function hasInlineStylePerm() {
-  return hasPerm('INLINE_STYLE_COLOR') || hasPerm('INLINE_FONT_CUSTOMIZE')
-      || hasPerm('INLINE_BOX_SHAPE_MOD') || hasPerm('INLINE_TICKER_CONTROL')
-      || hasPerm('INLINE_ELEMENT_DELETE') || hasPerm('INLINE_IMAGE_DESIGN_MOD')
-      || hasPerm('INLINE_IMAGE_REPLACE');
-}
+    function hasInlineStylePerm() {
+      return hasPerm('INLINE_STYLE_COLOR') || hasPerm('INLINE_FONT_CUSTOMIZE')
+          || hasPerm('INLINE_BOX_SHAPE_MOD') || hasPerm('INLINE_TICKER_CONTROL')
+          || hasPerm('INLINE_ELEMENT_DELETE') || hasPerm('INLINE_IMAGE_DESIGN_MOD')
+          || hasPerm('INLINE_IMAGE_REPLACE');
+    }
 
-// ============ مصفوفة الصلاحيات نفسها — محجوبة ============
-// القراءة: المالك أو صاحب الوثيقة فقط (لا يطّلع مشرف على مصفوفة غيره).
-// الكتابة: المالك فقط — أي منح ذاتي من حساب آخر مرفوض خادمياً.
-match /rbac/{uid} {
-  allow read: if isOwner() || (isSignedIn() && request.auth.uid == uid);
-  allow write: if isOwner();
-}
+    // ============ مصفوفة الصلاحيات نفسها — محجوبة ============
+    // القراءة: المالك أو صاحب الوثيقة فقط (لا يطّلع مشرف على مصفوفة غيره).
+    // الكتابة: المالك فقط — أي منح ذاتي من حساب آخر مرفوض خادمياً.
+    match /rbac/{uid} {
+      allow read: if isOwner() || (isSignedIn() && request.auth.uid == uid);
+      allow write: if isOwner();
+    }
 
-// ============ إعلانات حراج ============
-match /haraj_ads/{adId} {
-  allow read: if isSignedIn();
-  allow create: if request.resource.data.keys().hasAll(['title', 'price'])
-                && request.resource.data.status == 'active';
-  // العدّادات (views) مفتوحة؛ الاعتماد/التعديل الإجباري/التمييز/نقل الملكية
-  // للمالك أو من يملك الصلاحية المجهرة المقابلة فقط.
-  allow update: if isOwner()
-                || request.resource.data.diff(resource.data)
-                      .affectedKeys().hasOnly(['views', 'updatedAt'])
-                || hasPerm('HARAJ_POST_FORCE_EDIT')
-                || hasPerm('HARAJ_POST_APPROVE')
-                || hasPerm('HARAJ_POST_FEATURE')
-                || hasPerm('TRANSFER_POST_OWNERSHIP')
-                || hasPerm('HARAJ_POST_RESTORE');
-  allow delete: if isOwner() || hasPerm('HARAJ_POST_DELETE');
-}
+    // ============ إعلانات حراج ============
+    match /haraj_ads/{adId} {
+      allow read: if isSignedIn();
+      allow create: if request.resource.data.keys().hasAll(['title', 'price'])
+                    && request.resource.data.status == 'active';
+      // العدّادات (views) مفتوحة؛ الاعتماد/التعديل الإجباري/التمييز/نقل الملكية
+      // للمالك أو من يملك الصلاحية المجهرة المقابلة فقط.
+      allow update: if isOwner()
+                    || request.resource.data.diff(resource.data)
+                          .affectedKeys().hasOnly(['views', 'updatedAt'])
+                    || hasPerm('HARAJ_POST_FORCE_EDIT')
+                    || hasPerm('HARAJ_POST_APPROVE')
+                    || hasPerm('HARAJ_POST_FEATURE')
+                    || hasPerm('TRANSFER_POST_OWNERSHIP')
+                    || hasPerm('HARAJ_POST_RESTORE');
+      allow delete: if isOwner() || hasPerm('HARAJ_POST_DELETE');
+    }
 
-// ============ مستخدمو حراج ============
-match /haraj_users/{userId} {
-  allow read: if isSignedIn();
-  allow create: if isSignedIn()
-                && request.resource.data.keys().hasAll(['name', 'phone']);
-  allow update, delete: if isOwner() || hasUserAdminPerm();
-}
+    // ============ مستخدمو حراج ============
+    match /haraj_users/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn()
+                    && request.resource.data.keys().hasAll(['name', 'phone']);
+      allow update, delete: if isOwner() || hasUserAdminPerm();
+    }
 
-// ============ البث الملكي ============
-match /broadcasts/{docId} {
-  allow read: if true;
-  allow create, update, delete: if isOwner();
-}
+    // ============ البث الملكي ============
+    match /broadcasts/{docId} {
+      allow read: if true;
+      allow create, update, delete: if isOwner();
+    }
 
-// ============ المستخدمون ============
-match /users/{userId} {
-  allow read: if isOwner()
-              || (isSignedIn() && request.auth.uid == userId);
-  allow create: if isSignedIn() && request.auth.uid == userId
-                && (!request.resource.data.keys().hasAny(['role'])
-                    || request.resource.data.role == 'user');
-  // المفوَّضون (حظر/توثيق/تجميد) يعدّلون الحالة لكن لا يمسّون الدور —
-  // تغيير role حكر على المالك وحده حتى لا يتصعّد مشرف بنفسه.
-  allow update: if isOwner()
-                || (isSignedIn() && request.auth.uid == userId
-                    && request.resource.data.diff(resource.data)
-                         .affectedKeys().hasNone(['role', 'status', 'banned']))
-                || (hasUserAdminPerm()
-                    && request.resource.data.diff(resource.data)
-                         .affectedKeys().hasNone(['role']));
-  allow delete: if isOwner();
-}
-
-// ============ المنتجات والفروع (الكتالوج) ============
-match /products/{docId} {
-  allow read: if true;
-  allow write: if isOwner() || hasCatalogPerm();
-}
-
-match /branches/{docId} {
-  allow read: if true;
-  allow write: if isOwner() || hasPerm('UPDATE_GLOBAL_SETTINGS');
-}
-
-// ============ الزوار ============
-match /visitors/{docId} {
-  allow create: if isSignedIn();
-  allow read, update, delete: if isOwner() || hasPerm('MONITOR_USER_TRAFFIC_LIVE');
-}
-
-// ============ السجلات ============
-match /logs/{docId} {
-  allow create: if isSignedIn();
-  allow read, update, delete: if isOwner()
-                              || hasPerm('VIEW_SYSTEM_AUDIT_LOGS')
-                              || hasPerm('FIREBASE_MUTATION_LOGS');
-}
-
-match /error_logs/{docId} {
-  allow create: if isSignedIn();
-  allow read, update, delete: if isOwner() || hasPerm('VIEW_SYSTEM_AUDIT_LOGS');
-}
-
-match /security_logs/{docId} {
-  allow create: if isSignedIn();
-  allow read, update, delete: if isOwner()
-                              || hasPerm('VIEW_SYSTEM_AUDIT_LOGS')
-                              || hasPerm('TRACK_FAILED_LOGINS');
-}
-
-// ============ الإشعارات ============
-match /notifications/{docId} {
-  allow read: if isOwner();
-  allow create: if isSignedIn();
-  allow update, delete: if isOwner();
-}
-
-// ============ الرسائل والدردشة — مراقبة الرسائل بصلاحية مجهرة ============
-match /messages/{docId} {
-  allow read: if isOwner()
-              || hasPerm('MONITOR_PRIVATE_MESSAGES')
-              || (isSignedIn() && (resource.data.senderId == request.auth.uid
-                                   || resource.data.receiverId == request.auth.uid));
-  allow create: if isSignedIn();
-  allow update, delete: if isOwner() || hasPerm('MONITOR_PRIVATE_MESSAGES');
-}
-
-match /privateMessages/{docId} {
-  allow read: if isOwner()
-              || hasPerm('MONITOR_PRIVATE_MESSAGES')
-              || (isSignedIn() && (resource.data.senderId == request.auth.uid
-                                   || resource.data.receiverId == request.auth.uid));
-  allow create: if isSignedIn();
-  allow update, delete: if isOwner() || hasPerm('MONITOR_PRIVATE_MESSAGES');
-}
-
-// محادثات خاصة بين المعلن والمشتري — المالك فقط يراقب الكل
-// المعرّف chatId يحتوي مفاتيح المشاركين (صعب التخمين)
-// القراءة العامة ممنوعة؛ المالك / MONITOR فقط يستعرضون كل المحادثات
-match /chats/{chatId} {
-  allow create: if isSignedIn();
-  // قائمة كل المحادثات: المالك فقط عملياً من الواجهة
-  // القراءة بالمعرّف السري متاحة للموقّع (المشتري/البائع عبر chatId)
-  allow read: if isSignedIn();
-  allow update: if isSignedIn();
-  allow delete: if isOwner() || hasPerm('MONITOR_PRIVATE_MESSAGES');
-
-  match /messages/{msgId} {
-    // المعرّف السري chatId هو حاجز الحماية الأساسي
-    // المالك / MONITOR يراقبون من غرفة صاحب الموقع
-    allow create: if isSignedIn();
-    allow read: if isSignedIn();
-    allow update, delete: if isOwner() || hasPerm('MONITOR_PRIVATE_MESSAGES');
-  }
-}
-
-// ============ الطلبات ============
-match /orders/{docId} {
-  allow read: if isOwner()
-              || (isSignedIn() && resource.data.userId == request.auth.uid);
-  allow create: if isSignedIn();
-  allow update, delete: if isOwner();
-}
-
-// ============ الشكاوى ============
-match /complaints/{docId} {
-  allow create: if isSignedIn();
-  allow read, update, delete: if isOwner();
-}
-
-// ============ الإعلانات العامة ============
-match /advertisements/{docId} {
-  allow read: if true;
-  allow write: if isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT');
-}
-
-match /ads/{docId} {
-  allow read: if true;
-  allow write: if isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT');
-}
-
-// ============ الموظفون — الرواتب والملفات بصلاحيات مجهرة ============
-match /employees/{docId} {
-  allow read: if isOwner()
-              || hasPerm('VIEW_EMPLOYEE_SALARIES')
-              || hasPerm('ADD_NEW_EMPLOYEE')
-              || hasPerm('EDIT_EMPLOYEE_PROFILE')
-              || hasPerm('TRACK_EMPLOYEE_LIVE_SESSIONS');
-  allow write: if isOwner()
-               || hasPerm('ADD_NEW_EMPLOYEE')
-               || hasPerm('EDIT_EMPLOYEE_PROFILE');
-}
-
-// ============ التقارير ============
-match /reports/{docId} {
-  allow create: if isSignedIn();
-  allow read, update, delete: if isOwner() || hasPerm('VIEW_SYSTEM_AUDIT_LOGS');
-}
-
-// ============ جلسات الزوار ============
-match /guestSessions/{docId} {
-  allow create: if isSignedIn();
-  allow read, update, delete: if isOwner();
-}
-
-// ============ لوحة المالك ============
-match /admin/{docId} {
-  allow read: if isOwner();
-  allow write: if isOwner();
-}
-
-// ============ البانرات والتصنيفات والكوبونات ============
-match /banners/{docId} {
-  allow read: if isSignedIn();
-  allow write: if isOwner() || hasPerm('MANAGE_NAVIGATION_MENU');
-}
-
-match /categories/{docId} {
-  allow read: if isSignedIn();
-  allow write: if isOwner() || hasCatalogPerm();
-}
-
-match /coupons/{docId} {
-  allow read, write: if isOwner();
-}
-
-// ============ السلة والمفضلة ============
-match /cart/{userId}/{item=**} {
-  allow read, write: if isOwner()
-                     || (isSignedIn() && request.auth.uid == userId);
-}
-
-match /favorites/{userId}/{item=**} {
-  allow read, write: if isOwner()
-                     || (isSignedIn() && request.auth.uid == userId);
-}
-
-// ============ التقييمات ============
-match /reviews/{docId} {
-  allow read: if true;
-  allow create: if isSignedIn();
-  allow update, delete: if isOwner();
-}
-
-// ============ إعدادات المتجر — مفصّلة حسب الوثيقة والصلاحية ============
-match /settings/{docId} {
-  allow read: if true;
-  allow write: if isOwner()
-               || (docId == 'siteTexts' && hasPerm('INLINE_TEXT_EDIT'))
-               || (docId == 'inlineStyles' && hasInlineStylePerm())
-               || (docId == 'maintenance' && hasPerm('TOGGLE_MAINTENANCE_MODE'))
-               || (docId == 'cacheBuster' && hasPerm('FLUSH_SYSTEM_CACHE'))
-               || (docId == 'navigation' && hasPerm('MANAGE_NAVIGATION_MENU'))
-               || (docId == 'snippets' && hasPerm('CODE_SNIPPET_INJECTION'))
-               || hasPerm('UPDATE_GLOBAL_SETTINGS');
-}
-
-// ============ تعليقات الرئيسية وحراج ============
-match /comments/{docId} {
-  allow read: if true;
-
-  // إنشاء التعليق للزوار/المستخدمين كما كان.
-  allow create: if request.resource.data.keys().hasAll(['text']);
-
-  // التعديل:
-  // - المالك يستطيع تعديل كل شيء.
-  // - صاحب HARAJ_COMMENT_EDIT يستطيع تعديل التعليق،
-  //   لكن لا يستطيع تغيير حالة status.
-  // - تحديث likes فقط يبقى مسموحاً.
-  allow update: if isOwner()
-                || (
-                  hasPerm('HARAJ_COMMENT_EDIT') &&
-                  !request.resource.data.diff(resource.data)
-                    .affectedKeys().hasAny(['status'])
-                )
-                || request.resource.data.diff(resource.data)
-                     .affectedKeys().hasOnly(['likes']);
-
-  // الحذف: المالك فقط.
-  // لا توجد أي صلاحية RBAC أخرى تسمح بحذف التعليقات.
-  allow delete: if isOwner();
-}
-
-// ============ طلبات الفستان (wanted_dresses) — عام + خاص ============
-// الوثيقة العامة تحمل ownerUid (معرّف مبهم) فقط لربط الملكية، بلا هاتف/بريد.
-// البيانات الشخصية في وثيقة فرعية محصورة private/{uid}. لا تُترك بيانات يتيمة:
-// لا يُسمح بحذف الوثيقة العامة ما دامت وثيقتها الخاصة موجودة (يجب حذف الخاصة أولاً).
-match /wanted_dresses/{docId} {
-  allow read: if isSignedIn();
-  allow create: if isSignedIn()
-                && request.resource.data.keys().hasAll(['title','status','ownerUid'])
-                && request.resource.data.keys().hasOnly([
-                     'title','color','budget','eventDate','bust','waist','hip',
-                     'length','notes','status','userName','ownerUid','createdAt'
-                   ])
-                && request.resource.data.ownerUid == request.auth.uid;
-  // تعديل: المالك/المخوّل فقط.
-  allow update: if isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT');
-  // حذف: صاحب الطلب/المالك/المخوّل، وبشرط ألا تبقى وثيقة خاصة (منع البيانات اليتيمة).
-  allow delete: if isSignedIn()
-                && (isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT')
-                    || resource.data.ownerUid == request.auth.uid)
-                && !exists(/databases/$(database)/documents/wanted_dresses/$(docId)/private/$(resource.data.ownerUid));
-
-  // البيانات الشخصية: تسجيل دخول إلزامي + ملكية الطلب + جوال سعودي صالح.
-  match /private/{privateId} {
-    allow read: if isSignedIn()
-                && (privateId == request.auth.uid
-                    || isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT'));
-    allow create: if isSignedIn()
-                  && privateId == request.auth.uid
-                  && get(/databases/$(database)/documents/wanted_dresses/$(docId)).data.ownerUid == request.auth.uid
-                  && request.resource.data.keys().hasAll(['userPhone'])
-                  && request.resource.data.keys().hasOnly(['userPhone','userEmail','createdAt'])
-                  && request.resource.data.userPhone is string
-                  && request.resource.data.userPhone.matches('^05[0-9]{8}$');
-    // التحديث يبقي الجوال صالحاً ويمنع حذفه/إفراغه؛ صاحب الطلب يحقّله مع تعديل بريده فقط.
-    allow update: if isSignedIn()
-                  && request.resource.data.keys().hasAll(['userPhone'])
-                  && request.resource.data.userPhone is string
-                  && request.resource.data.userPhone.matches('^05[0-9]{8}$')
-                  && (
-                       (privateId == request.auth.uid
+    // ============ المستخدمون ============
+    match /users/{userId} {
+      allow read: if isOwner()
+                  || (isSignedIn() && request.auth.uid == userId);
+      allow create: if isSignedIn() && request.auth.uid == userId
+                    && (!request.resource.data.keys().hasAny(['role'])
+                        || request.resource.data.role == 'user');
+      // المفوَّضون (حظر/توثيق/تجميد) يعدّلون الحالة لكن لا يمسّون الدور —
+      // تغيير role حكر على المالك وحده حتى لا يتصعّد مشرف بنفسه.
+      allow update: if isOwner()
+                    || (isSignedIn() && request.auth.uid == userId
                         && request.resource.data.diff(resource.data)
-                             .affectedKeys().hasOnly(['userPhone','userEmail']))
-                       || isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT')
-                     );
-    // حذف البيانات الخاصة: المالك/المخوّل أو صاحب الطلب نفسه (لتمكين الحذف المتسلسل).
-    allow delete: if isSignedIn()
-                  && (isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT')
-                      || privateId == request.auth.uid);
+                             .affectedKeys().hasNone(['role', 'status', 'banned']))
+                    || (hasUserAdminPerm()
+                        && request.resource.data.diff(resource.data)
+                             .affectedKeys().hasNone(['role']));
+      allow delete: if isOwner();
+    }
+
+    // ============ المنتجات والفروع (الكتالوج) ============
+    match /products/{docId} {
+      allow read: if true;
+      allow write: if isOwner() || hasCatalogPerm();
+    }
+
+    match /branches/{docId} {
+      allow read: if true;
+      allow write: if isOwner() || hasPerm('UPDATE_GLOBAL_SETTINGS');
+    }
+
+    // ============ الزوار ============
+    match /visitors/{docId} {
+      allow create: if isSignedIn();
+      allow read, update, delete: if isOwner() || hasPerm('MONITOR_USER_TRAFFIC_LIVE');
+    }
+
+    // ============ السجلات ============
+    match /logs/{docId} {
+      allow create: if isSignedIn();
+      allow read, update, delete: if isOwner()
+                                  || hasPerm('VIEW_SYSTEM_AUDIT_LOGS')
+                                  || hasPerm('FIREBASE_MUTATION_LOGS');
+    }
+
+    match /error_logs/{docId} {
+      allow create: if isSignedIn();
+      allow read, update, delete: if isOwner() || hasPerm('VIEW_SYSTEM_AUDIT_LOGS');
+    }
+
+    match /security_logs/{docId} {
+      allow create: if isSignedIn();
+      allow read, update, delete: if isOwner()
+                                  || hasPerm('VIEW_SYSTEM_AUDIT_LOGS')
+                                  || hasPerm('TRACK_FAILED_LOGINS');
+    }
+
+    // ============ الإشعارات ============
+    match /notifications/{docId} {
+      allow read: if isOwner();
+      allow create: if isSignedIn();
+      allow update, delete: if isOwner();
+    }
+
+    // ============ الرسائل والدردشة — مراقبة الرسائل بصلاحية مجهرة ============
+    match /messages/{docId} {
+      allow read: if isOwner()
+                  || hasPerm('MONITOR_PRIVATE_MESSAGES')
+                  || (isSignedIn() && (resource.data.senderId == request.auth.uid
+                                       || resource.data.receiverId == request.auth.uid));
+      allow create: if isSignedIn();
+      allow update, delete: if isOwner() || hasPerm('MONITOR_PRIVATE_MESSAGES');
+    }
+
+    match /privateMessages/{docId} {
+      allow read: if isOwner()
+                  || hasPerm('MONITOR_PRIVATE_MESSAGES')
+                  || (isSignedIn() && (resource.data.senderId == request.auth.uid
+                                       || resource.data.receiverId == request.auth.uid));
+      allow create: if isSignedIn();
+      allow update, delete: if isOwner() || hasPerm('MONITOR_PRIVATE_MESSAGES');
+    }
+
+    // محادثات خاصة بين المعلن والمشتري — المالك فقط يراقب الكل
+    // المعرّف chatId يحتوي مفاتيح المشاركين (صعب التخمين)
+    // القراءة العامة ممنوعة؛ المالك / MONITOR فقط يستعرضون كل المحادثات
+    match /chats/{chatId} {
+      allow create: if isSignedIn();
+      // قائمة كل المحادثات: المالك فقط عملياً من الواجهة
+      // القراءة بالمعرّف السري متاحة للموقّع (المشتري/البائع عبر chatId)
+      allow read: if isSignedIn();
+      allow update: if isSignedIn();
+      allow delete: if isOwner() || hasPerm('MONITOR_PRIVATE_MESSAGES');
+
+      match /messages/{msgId} {
+        // المعرّف السري chatId هو حاجز الحماية الأساسي
+        // المالك / MONITOR يراقبون من غرفة صاحب الموقع
+        allow create: if isSignedIn();
+        allow read: if isSignedIn();
+        allow update, delete: if isOwner() || hasPerm('MONITOR_PRIVATE_MESSAGES');
+      }
+    }
+
+    // ============ الطلبات ============
+    match /orders/{docId} {
+      allow read: if isOwner()
+                  || (isSignedIn() && resource.data.userId == request.auth.uid);
+      allow create: if isSignedIn();
+      allow update, delete: if isOwner();
+    }
+
+    // ============ الشكاوى ============
+    match /complaints/{docId} {
+      allow create: if isSignedIn();
+      allow read, update, delete: if isOwner();
+    }
+
+    // ============ الإعلانات العامة ============
+    match /advertisements/{docId} {
+      allow read: if true;
+      allow write: if isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT');
+    }
+
+    match /ads/{docId} {
+      allow read: if true;
+      allow write: if isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT');
+    }
+
+    // ============ الموظفون — الرواتب والملفات بصلاحيات مجهرة ============
+    match /employees/{docId} {
+      allow read: if isOwner()
+                  || hasPerm('VIEW_EMPLOYEE_SALARIES')
+                  || hasPerm('ADD_NEW_EMPLOYEE')
+                  || hasPerm('EDIT_EMPLOYEE_PROFILE')
+                  || hasPerm('TRACK_EMPLOYEE_LIVE_SESSIONS');
+      allow write: if isOwner()
+                   || hasPerm('ADD_NEW_EMPLOYEE')
+                   || hasPerm('EDIT_EMPLOYEE_PROFILE');
+    }
+
+    // ============ التقارير ============
+    match /reports/{docId} {
+      allow create: if isSignedIn();
+      allow read, update, delete: if isOwner() || hasPerm('VIEW_SYSTEM_AUDIT_LOGS');
+    }
+
+    // ============ جلسات الزوار ============
+    match /guestSessions/{docId} {
+      allow create: if isSignedIn();
+      allow read, update, delete: if isOwner();
+    }
+
+    // ============ لوحة المالك ============
+    match /admin/{docId} {
+      allow read: if isOwner();
+      allow write: if isOwner();
+    }
+
+    // ============ البانرات والتصنيفات والكوبونات ============
+    match /banners/{docId} {
+      allow read: if isSignedIn();
+      allow write: if isOwner() || hasPerm('MANAGE_NAVIGATION_MENU');
+    }
+
+    match /categories/{docId} {
+      allow read: if isSignedIn();
+      allow write: if isOwner() || hasCatalogPerm();
+    }
+
+    match /coupons/{docId} {
+      allow read, write: if isOwner();
+    }
+
+    // ============ السلة والمفضلة ============
+    match /cart/{userId}/{item=**} {
+      allow read, write: if isOwner()
+                         || (isSignedIn() && request.auth.uid == userId);
+    }
+
+    match /favorites/{userId}/{item=**} {
+      allow read, write: if isOwner()
+                         || (isSignedIn() && request.auth.uid == userId);
+    }
+
+    // ============ التقييمات ============
+    match /reviews/{docId} {
+      allow read: if true;
+      allow create: if isSignedIn();
+      allow update, delete: if isOwner();
+    }
+
+    // ============ إعدادات المتجر — مفصّلة حسب الوثيقة والصلاحية ============
+    match /settings/{docId} {
+      allow read: if true;
+      allow write: if isOwner()
+                   || (docId == 'siteTexts' && hasPerm('INLINE_TEXT_EDIT'))
+                   || (docId == 'inlineStyles' && hasInlineStylePerm())
+                   || (docId == 'maintenance' && hasPerm('TOGGLE_MAINTENANCE_MODE'))
+                   || (docId == 'cacheBuster' && hasPerm('FLUSH_SYSTEM_CACHE'))
+                   || (docId == 'navigation' && hasPerm('MANAGE_NAVIGATION_MENU'))
+                   || (docId == 'snippets' && hasPerm('CODE_SNIPPET_INJECTION'))
+                   || hasPerm('UPDATE_GLOBAL_SETTINGS');
+    }
+
+    // ============ تعليقات الرئيسية وحراج ============
+    match /comments/{docId} {
+      allow read: if true;
+
+      // إنشاء التعليق للزوار/المستخدمين كما كان.
+      allow create: if request.resource.data.keys().hasAll(['text']);
+
+      // التعديل:
+      // - المالك يستطيع تعديل كل شيء.
+      // - صاحب HARAJ_COMMENT_EDIT يستطيع تعديل التعليق،
+      //   لكن لا يستطيع تغيير حالة status.
+      // - تحديث likes فقط يبقى مسموحاً.
+      allow update: if isOwner()
+                    || (
+                      hasPerm('HARAJ_COMMENT_EDIT') &&
+                      !request.resource.data.diff(resource.data)
+                        .affectedKeys().hasAny(['status'])
+                    )
+                    || request.resource.data.diff(resource.data)
+                         .affectedKeys().hasOnly(['likes']);
+
+      // الحذف: المالك فقط.
+      // لا توجد أي صلاحية RBAC أخرى تسمح بحذف التعليقات.
+      allow delete: if isOwner();
+    }
+
+    // ============ طلبات الفستان (wanted_dresses) — عام + خاص ============
+    // الوثيقة العامة تحمل ownerUid (معرّف مبهم) فقط لربط الملكية، بلا هاتف/بريد.
+    // البيانات الشخصية في وثيقة فرعية محصورة private/{uid}. لا تُترك بيانات يتيمة:
+    // لا يُسمح بحذف الوثيقة العامة ما دامت وثيقتها الخاصة موجودة (يجب حذف الخاصة أولاً).
+    match /wanted_dresses/{docId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn()
+                    && request.resource.data.keys().hasAll(['title','status','ownerUid'])
+                    && request.resource.data.keys().hasOnly([
+                         'title','color','budget','eventDate','bust','waist','hip',
+                         'length','notes','status','userName','ownerUid','createdAt'
+                       ])
+                    && request.resource.data.ownerUid == request.auth.uid;
+      // تعديل: المالك/المخوّل فقط.
+      allow update: if isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT');
+      // حذف: صاحب الطلب/المالك/المخوّل، وبشرط ألا تبقى وثيقة خاصة (منع البيانات اليتيمة).
+      allow delete: if isSignedIn()
+                    && (isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT')
+                        || resource.data.ownerUid == request.auth.uid)
+                    && !exists(/databases/$(database)/documents/wanted_dresses/$(docId)/private/$(resource.data.ownerUid));
+
+      // البيانات الشخصية: تسجيل دخول إلزامي + ملكية الطلب + جوال سعودي صالح.
+      match /private/{privateId} {
+        allow read: if isSignedIn()
+                    && (privateId == request.auth.uid
+                        || isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT'));
+        allow create: if isSignedIn()
+                      && privateId == request.auth.uid
+                      && get(/databases/$(database)/documents/wanted_dresses/$(docId)).data.ownerUid == request.auth.uid
+                      && request.resource.data.keys().hasAll(['userPhone'])
+                      && request.resource.data.keys().hasOnly(['userPhone','userEmail','createdAt'])
+                      && request.resource.data.userPhone is string
+                      && request.resource.data.userPhone.matches('^05[0-9]{8}$');
+        // التحديث يبقي الجوال صالحاً ويمنع حذفه/إفراغه؛ صاحب الطلب يحقّله مع تعديل بريده فقط.
+        allow update: if isSignedIn()
+                      && request.resource.data.keys().hasAll(['userPhone'])
+                      && request.resource.data.userPhone is string
+                      && request.resource.data.userPhone.matches('^05[0-9]{8}$')
+                      && (
+                           (privateId == request.auth.uid
+                            && request.resource.data.diff(resource.data)
+                                 .affectedKeys().hasOnly(['userPhone','userEmail']))
+                           || isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT')
+                         );
+        // حذف البيانات الخاصة: المالك/المخوّل أو صاحب الطلب نفسه (لتمكين الحذف المتسلسل).
+        allow delete: if isSignedIn()
+                      && (isOwner() || hasPerm('HARAJ_POST_FORCE_EDIT')
+                          || privateId == request.auth.uid);
+      }
+    }
+
+    // ============ مشتركو نشرة العروض ============
+    match /subscribers/{emailId} {
+      allow create: if request.resource.data.keys().hasAll(['email']);
+      allow read, update, delete: if isOwner();
+    }
+
+    // ============ أرشيف المحذوفات السري ============
+    match /deleted_archive/{docId} {
+      allow read, write: if isOwner() || hasPerm('RECOVER_DELETED_ITEMS_ARCHIVE');
+    }
+
+    // ============ أي وثيقة أخرى — للمالك فقط (وضع آمن) ============
+    match /{document=**} {
+      allow read, write: if isOwner();
+    }
   }
-}
-
-// ============ مشتركو نشرة العروض ============
-match /subscribers/{emailId} {
-  allow create: if request.resource.data.keys().hasAll(['email']);
-  allow read, update, delete: if isOwner();
-}
-
-// ============ أرشيف المحذوفات السري ============
-match /deleted_archive/{docId} {
-  allow read, write: if isOwner() || hasPerm('RECOVER_DELETED_ITEMS_ARCHIVE');
-}
-
-// ============ أي وثيقة أخرى — للمالك فقط (وضع آمن) ============
-match /{document=**} {
-  allow read, write: if isOwner();
-}
-
-}
 }
