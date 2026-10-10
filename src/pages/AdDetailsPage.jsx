@@ -163,7 +163,9 @@ export default function AdDetailsPage() {
 
   const sellerKey = useMemo(() => {
     if (!ad) return '';
-    return String(ad.userId || ad.userPhone || ad.userEmail || ad.userName || 'seller');
+    // V2/V3: نحافظ على مفتاح الهاتف في chatId (توافق مع المحادثات القائمة)،
+    // فالمعرف القديم harajUserId/الهاتف هو الأقرب لهوية البائع عبر الأجهزة.
+    return String(ad.harajUserId || ad.userPhone || ad.userId || ad.userEmail || ad.userName || 'seller');
   }, [ad]);
 
   const buyerKey = useMemo(() => {
@@ -235,13 +237,8 @@ export default function AdDetailsPage() {
     if (!text || !chatId || !db || sending) return;
     setSending(true);
     try {
-      await addDoc(collection(db, 'chats', chatId, 'messages'), {
-        text,
-        senderKey: buyerKey,
-        senderName: harajUser?.name || harajUser?.userName || 'زائر',
-        createdAt: serverTimestamp(),
-      });
-
+      // V1: يجب إنشاء وثيقة المحادثة (بالهوية) قبل أول رسالة، لأن قاعدة رسائل
+      // المحادثة تشترط وجود وثيقة المحادثة وأن يكون المُرسل مشاركاً فيها.
       try {
         await setDoc(
           doc(db, 'chats', chatId),
@@ -253,6 +250,8 @@ export default function AdDetailsPage() {
             buyerName: harajUser?.name || 'زائر',
             buyerUid: auth?.currentUser?.uid || '',
             participantUids: auth?.currentUser?.uid ? [auth.currentUser.uid] : [],
+            // V1: هوية البائع الحقيقية = ad.userId (uid مصادقة)، ليتمكن من القراءة.
+            sellerUid: ad.userId || '',
             lastMessage: text,
             updatedAt: serverTimestamp(),
             isPrivate: true,
@@ -263,6 +262,13 @@ export default function AdDetailsPage() {
       } catch {
         /* وثيقة الملخص غير حرج */
       }
+
+      await addDoc(collection(db, 'chats', chatId, 'messages'), {
+        text,
+        senderKey: buyerKey,
+        senderName: harajUser?.name || harajUser?.userName || 'زائر',
+        createdAt: serverTimestamp(),
+      });
 
       setDraft('');
     } catch {

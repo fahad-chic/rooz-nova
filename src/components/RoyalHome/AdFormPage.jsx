@@ -397,13 +397,19 @@ const AdFormPage = () => {
           harajUser.userRegion ||
           '',
         /*
-         * حفظ معرف المستخدم إن كان موجودًا في نظام التسجيل الحالي.
+         * V3: userId = معرّف مصادقة Firebase (uid) لتفعيل ملكية الإعلان في
+         * القواعد؛ والمعرّف القديم لنظام تسجيل حراج يُحفظ في harajUserId.
          */
         userId:
+          auth?.currentUser?.uid ||
           harajUser.uid ||
           harajUser.userId ||
           harajUser.id ||
-          auth?.currentUser?.uid ||
+          '',
+        harajUserId:
+          harajUser.uid ||
+          harajUser.userId ||
+          harajUser.id ||
           '',
       };
       await addDoc(
