@@ -131,19 +131,19 @@ service cloud.firestore {
 
     // ============ السجلات ============
     match /logs/{docId} {
-      allow create: if true;
+      allow create: if isSignedIn();
       allow read, update, delete: if isOwner()
                                   || hasPerm('VIEW_SYSTEM_AUDIT_LOGS')
                                   || hasPerm('FIREBASE_MUTATION_LOGS');
     }
 
     match /error_logs/{docId} {
-      allow create: if true;
+      allow create: if isSignedIn();
       allow read, update, delete: if isOwner() || hasPerm('VIEW_SYSTEM_AUDIT_LOGS');
     }
 
     match /security_logs/{docId} {
-      allow create: if true;
+      allow create: if isSignedIn();
       allow read, update, delete: if isOwner()
                                   || hasPerm('VIEW_SYSTEM_AUDIT_LOGS')
                                   || hasPerm('TRACK_FAILED_LOGINS');
@@ -246,7 +246,7 @@ service cloud.firestore {
 
     // ============ لوحة المالك ============
     match /admin/{docId} {
-      allow read: if isSignedIn();
+      allow read: if isOwner();
       allow write: if isOwner();
     }
 
