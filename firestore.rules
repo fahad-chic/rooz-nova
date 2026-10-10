@@ -53,6 +53,19 @@ service cloud.firestore {
           || hasPerm('INLINE_IMAGE_REPLACE');
     }
 
+    // ============ هوية مشارك المحادثة (V1) ============
+    // لا يكفي كون المستخدم مُسجّلاً: يجب أن يكون uid مطابقاً لأحد المشاركين
+    // المسجّلين في وثيقة المحادثة (participantUids) أو مشتريها (buyerUid).
+    // ملاحظة: هذه الهوية تُكتب من العميل عند إنشاء المحادثة (جلسة مجهولة)،
+    // لذا فهي تمنع فضول المستخدم العادي ولا تعتمد على سرية chatId.
+    function isChatParticipant(chatId) {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/chats/$(chatId))
+        && ( request.auth.uid in get(/databases/$(database)/documents/chats/$(chatId)).data.get('participantUids', [])
+             || get(/databases/$(database)/documents/chats/$(chatId)).data.get('buyerUid', '') == request.auth.uid
+             || get(/databases/$(database)/documents/chats/$(chatId)).data.get('sellerUid', '') == request.auth.uid );
+    }
+
     // ============ مصفوفة الصلاحيات نفسها — محجوبة ============
     // القراءة: المالك أو صاحب الوثيقة فقط (لا يطّلع مشرف على مصفوفة غيره).
     // الكتابة: المالك فقط — أي منح ذاتي من حساب آخر مرفوض خادمياً.
@@ -62,13 +75,32 @@ service cloud.firestore {
     }
 
     // ============ إعلانات حراج ============
+    // V3: محتوى الإعلان (العنوان/الوصف/السعر/الحقول) لا يعدّله إلا مالكه
+    // (userId == request.auth.uid) أو المالك/الفوّض. المزايدة (currentBid/bids)
+    // والوساطة (escrow) ومشاهدات (views) سلوك قائم مفتوح للمسجّلين — لم يُقفل.
     match /haraj_ads/{adId} {
+      function isAdOwner() {
+        return isSignedIn()
+          && resource.data.get('userId', '') != ''
+          && resource.data.userId == request.auth.uid;
+      }
       allow read: if isSignedIn();
-      allow create: if request.resource.data.keys().hasAll(['title', 'price'])
-                    && request.resource.data.status == 'active';
-      // العدّادات (views) مفتوحة؛ الاعتماد/التعديل الإجباري/التمييز/نقل الملكية
-      // للمالك أو من يملك الصلاحية المجهرة المقابلة فقط.
+      allow create: if isSignedIn()
+                    && request.resource.data.keys().hasAll(['title', 'price'])
+                    && request.resource.data.status == 'active'
+                    && request.resource.data.userId == request.auth.uid;
       allow update: if isOwner()
+                    || ( isAdOwner()
+                         && request.resource.data.diff(resource.data)
+                              .affectedKeys().hasOnly(['title','price','description','condition',
+                                                       'location','city','size','defects','images',
+                                                       'imageCount','measurements','motionFrames',
+                                                       'motionDuration','isAuction','auctionEndsAt',
+                                                       'updatedAt']) )
+                    // المزايدة العامة وخطوات الوساطة (سلوك قائم — للمسجّلين)
+                    || ( isSignedIn()
+                         && request.resource.data.diff(resource.data)
+                              .affectedKeys().hasOnly(['currentBid','bids','updatedAt','auctionEndsAt','escrow']) )
                     || request.resource.data.diff(resource.data)
                           .affectedKeys().hasOnly(['views', 'updatedAt'])
                     || hasPerm('HARAJ_POST_FORCE_EDIT')
@@ -76,10 +108,13 @@ service cloud.firestore {
                     || hasPerm('HARAJ_POST_FEATURE')
                     || hasPerm('TRANSFER_POST_OWNERSHIP')
                     || hasPerm('HARAJ_POST_RESTORE');
-      allow delete: if isOwner() || hasPerm('HARAJ_POST_DELETE');
+      allow delete: if isOwner() || isAdOwner() || hasPerm('HARAJ_POST_DELETE');
     }
 
     // ============ مستخدمو حراج ============
+    // V2: تعذّر تقييد قراءة haraj_users دون كسر «تسجيل الدخول بالهاتف»
+    // (استعلام where يتطلب اجتياز قاعدة القراءة — أُثبت بالمحاكي). لذلك تبقى
+    // القراءة للمسجّلين كما هي، وإغلاق V2 يتطلب ترحيلاً/دالة بحث (خارج النطاق).
     match /haraj_users/{userId} {
       allow read: if isSignedIn();
       allow create: if isSignedIn()
@@ -175,22 +210,30 @@ service cloud.firestore {
       allow update, delete: if isOwner() || hasPerm('MONITOR_PRIVATE_MESSAGES');
     }
 
-    // محادثات خاصة بين المعلن والمشتري — المالك فقط يراقب الكل
-    // المعرّف chatId يحتوي مفاتيح المشاركين (صعب التخمين)
-    // القراءة العامة ممنوعة؛ المالك / MONITOR فقط يستعرضون كل المحادثات
+    // محادثات خاصة بين المعلن والمشتري - V1: تقييد بالهوية الفعلية للمشاركين
+    // لا يُعتمد على سرية chatId كحماية: القراءة/الكتابة للمشارك المؤكّد
+    // (participantUids/buyerUid) أو المالك/المراقب فقط.
     match /chats/{chatId} {
       allow create: if isSignedIn();
-      // قائمة كل المحادثات: المالك فقط عملياً من الواجهة
-      // القراءة بالمعرّف السري متاحة للموقّع (المشتري/البائع عبر chatId)
-      allow read: if isSignedIn();
-      allow update: if isSignedIn();
+      allow read: if isOwner()
+                  || hasPerm('MONITOR_PRIVATE_MESSAGES')
+                  || isChatParticipant(chatId);
+      // المشارك المسجّل يمكنه تحديث الملخص (المشتري يوسّع المشاركين عند أول رسالة)
+      allow update: if isOwner()
+                    || hasPerm('MONITOR_PRIVATE_MESSAGES')
+                    || ( isChatParticipant(chatId)
+                         && request.resource.data.keys().hasOnly(
+                              ['adId','adTitle','sellerKey','buyerKey','buyerName','buyerUid',
+                               'sellerUid','participantUids','lastMessage','updatedAt','isPrivate','type','status']) );
       allow delete: if isOwner() || hasPerm('MONITOR_PRIVATE_MESSAGES');
 
       match /messages/{msgId} {
-        // المعرّف السري chatId هو حاجز الحماية الأساسي
-        // المالك / MONITOR يراقبون من غرفة صاحب الموقع
-        allow create: if isSignedIn();
-        allow read: if isSignedIn();
+        allow create: if isOwner()
+                      || hasPerm('MONITOR_PRIVATE_MESSAGES')
+                      || isChatParticipant(chatId);
+        allow read: if isOwner()
+                    || hasPerm('MONITOR_PRIVATE_MESSAGES')
+                    || isChatParticipant(chatId);
         allow update, delete: if isOwner() || hasPerm('MONITOR_PRIVATE_MESSAGES');
       }
     }
