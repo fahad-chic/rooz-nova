@@ -183,9 +183,13 @@ const ContactPage = () => {
             type="button"
             onClick={() => {
               const prev =
-                typeof window !== 'undefined' &&
-                (window.history.state?.usr?.prevPath || null);
-              if (prev) {
+                (typeof window !== 'undefined' &&
+                  (window.history.state?.usr?.prevPath ||
+                    window.history.state?.prevPath)) ||
+                null;
+              const path =
+                typeof window !== 'undefined' ? window.location.pathname : '/contact';
+              if (prev && prev !== path) {
                 navigate(prev);
               } else if (typeof window !== 'undefined' && window.history.length > 1) {
                 navigate(-1);
