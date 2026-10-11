@@ -131,7 +131,7 @@ export const BranchesManagement = () => {
         .management-title {
           font-size: 1.5rem;
           font-weight: 700;
-          color: #1E293B;
+          color: #E8E2D6 !important;
         }
 
         .add-btn {
@@ -167,7 +167,7 @@ export const BranchesManagement = () => {
           background: #202A3A;
           padding: 0.9rem;
           font-size: 0.9rem;
-          color: #1E293B;
+          color: #E8E2D6 !important;
           text-align: left;
         }
 
@@ -184,7 +184,7 @@ export const BranchesManagement = () => {
         .type-badge {
           display: inline-block;
           background: rgba(30,41,59,0.15);
-          color: #1E293B;
+          color: #E8E2D6;
           padding: 0.24rem 0.6rem;
           border-radius: 999px;
           font-size: 0.76rem;
@@ -199,9 +199,9 @@ export const BranchesManagement = () => {
           font-weight: 700;
         }
 
-        .status-active { background: rgba(32,42,58,0.2); color: #202A3A; }
-        .status-warning { background: rgba(30,41,59,0.2); color: #1E293B; }
-        .status-danger { background: rgba(30,41,59,0.2); color: #1E293B; }
+        .status-active { background: rgba(32,42,58,0.2); color: #E8E2D6; }
+        .status-warning { background: rgba(30,41,59,0.2); color: #E8E2D6; }
+        .status-danger { background: rgba(30,41,59,0.2); color: #E8E2D6; }
 
         .action-cell {
           display: flex;
@@ -250,7 +250,7 @@ export const BranchesManagement = () => {
         .modal-header {
           font-size: 1.2rem;
           font-weight: 700;
-          color: #1E293B;
+          color: #E8E2D6;
           margin-bottom: 0.9rem;
         }
 
@@ -324,7 +324,7 @@ export const BranchesManagement = () => {
           <tbody>
             {branches.length === 0 ? (
               <tr>
-                <td colSpan="6" style={{ textAlign: 'center', color: '#404040', padding: '2rem' }}>
+                <td colSpan="6" style={{ textAlign: 'center', color: '#E8E2D6', padding: '2rem' }}>
                   لا توجد فروع
                 </td>
               </tr>
@@ -393,7 +393,7 @@ export const BranchesManagement = () => {
                 onClick={() => { setShowForm(false); setEditingBranch(null); }}
                 aria-label="إغلاق"
                 style={{
-                  background: 'rgba(32,42,58,0.06)',
+                  background: 'rgba(255,255,255,0.06)',
                   border: 'none',
                   borderRadius: 8,
                   width: 30,
@@ -403,7 +403,7 @@ export const BranchesManagement = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#202A3A',
+                  color: '#E8E2D6',
                 }}
               >
                 <X size={17} />

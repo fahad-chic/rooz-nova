@@ -149,6 +149,40 @@
     linear-gradient(180deg, rgba(244,240,232, 0.20) 0%, rgba(232,226,214, 0.34) 100%);
 }
 
+/* ---------- خطوط ناعمة متدفقة (عمق ثلاثي الأبعاد، خفيفة) ---------- */
+.rz-pearl-flow {
+  position: absolute;
+  inset: -12%;
+  pointer-events: none;
+  opacity: 0.42;
+  background:
+    radial-gradient(120% 80% at 12% 18%, rgba(184, 164, 122, 0.18) 0%, transparent 58%),
+    radial-gradient(120% 80% at 88% 82%, rgba(30, 41, 59, 0.10) 0%, transparent 60%),
+    repeating-linear-gradient(115deg,
+      rgba(184, 164, 122, 0.14) 0px,
+      rgba(184, 164, 122, 0.14) 1.5px,
+      transparent 1.5px,
+      transparent 30px),
+    repeating-linear-gradient(65deg,
+      rgba(32, 42, 58, 0.08) 0px,
+      rgba(32, 42, 58, 0.08) 1.5px,
+      transparent 1.5px,
+      transparent 42px);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 42%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.25) 62%, transparent 88%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 42%, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.25) 62%, transparent 88%);
+  transform: translateZ(0);
+  animation: rzp-flow-drift 96s ease-in-out infinite alternate;
+}
+.rz-pearl-layer[data-pearl="haraj"] .rz-pearl-flow { opacity: 0.5; }
+.rz-pearl-layer[data-pearl="catalog"] .rz-pearl-flow { opacity: 0.24; }
+.rz-pearl-layer[data-pearl="home"] .rz-pearl-flow { opacity: 0.38; }
+.rz-pearl-layer[data-pearl="none"] .rz-pearl-flow { opacity: 0.2; }
+
+@keyframes rzp-flow-drift {
+  from { transform: translate3d(-1.5%, -1%, 0) scale(1.03); }
+  to   { transform: translate3d(1.5%, 1%, 0) scale(1.06); }
+}
+
 /* ---------- الشبكة الهندسية المضيئة ---------- */
 .rz-pearl-grid {
   position: absolute;
@@ -240,7 +274,8 @@
 @media (prefers-reduced-motion: reduce) {
   .rz-pearl-blob,
   .rz-pearl-blob::before,
-  .rz-pearl-blob::after {
+  .rz-pearl-blob::after,
+  .rz-pearl-flow {
     animation: none !important;
     transition: none !important;
     transform: none !important;
@@ -266,11 +301,14 @@
   /* شبكة أخف: كلفة رسم أقل */
   .rz-pearl-layer[data-pearl="catalog"] .rz-pearl-grid,
   .rz-pearl-layer[data-pearl="home"] .rz-pearl-grid { opacity: 0.22; }
+  /* خطوط متدفقة أخف وأبطأ على الجوال */
+  .rz-pearl-layer[data-pearl] .rz-pearl-flow { opacity: 0.22; animation-duration: 140s; }
 }
 
 /* الأجهزة المحدودة جدًا: خلفية ثابتة أنيقة بلا حركة (هوية محفوظة) */
 @media (max-width: 480px) {
   .rz-pearl-blob.b2 { display: none; }
   .rz-pearl-blob { animation: none !important; }
+  .rz-pearl-layer[data-pearl] .rz-pearl-flow { animation: none !important; opacity: 0.18; }
 }
 

@@ -67,8 +67,8 @@ export const EmployeesPage = () => {
           gap: 0.75rem;
         }
 
-        .employees-title { font-size: 1.35rem; font-weight: 700; color: #E8E2D6; }
-        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #1E293B, #1E293B); color:#202A3A; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; cursor:pointer; }
+        .employees-title { font-size: 1.35rem; font-weight: 700; color: #E8E2D6 !important; }
+        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #1E293B, #1E293B); color:#FFFFFF; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; cursor:pointer; }
 
         .tabs {
           display: flex;
@@ -113,7 +113,7 @@ export const EmployeesPage = () => {
 
         thead {
           background: #202A3A;
-          color: #1E293B;
+          color: #E8E2D6;
         }
 
         th {
@@ -121,6 +121,7 @@ export const EmployeesPage = () => {
           text-align: right;
           font-weight: 600;
           border-bottom: 2px solid #1E293B;
+          color: #E8E2D6 !important;
         }
 
         td {
@@ -290,7 +291,7 @@ export const EmployeesPage = () => {
 
         .modal-btn-submit {
           background: linear-gradient(135deg, #1E293B, #1E293B);
-          color: #202A3A;
+          color: #FFFFFF;
         }
 
         @media (max-width: 640px) {
@@ -455,7 +456,7 @@ export const EmployeesPage = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   cursor: 'pointer',
-                  color: '#202A3A',
+                  color: '#FFFFFF',
                 }}
               >
                 <X size={17} />

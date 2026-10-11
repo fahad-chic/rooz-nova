@@ -1324,6 +1324,7 @@ function AppContent() {
         <div className="rz-pearl-blob b2" />
         <div className="rz-pearl-blob b3" />
         <div className="rz-pearl-blob b4" />
+        <div className="rz-pearl-flow" />
         <div className="rz-pearl-grid" />
         <div className="rz-pearl-veil" />
       </div>
@@ -1596,11 +1597,11 @@ function AppContent() {
             >
               <Clock
                 size={30}
-                color="#1E293B"
+                color="#B8A47A"
               />
               <strong
                 style={{
-                  color: '#1E293B',
+                  color: '#E8E2D6',
                   fontSize: 15,
                   fontWeight: 900,
                 }}
@@ -1615,6 +1616,7 @@ function AppContent() {
                 fontSize: 14,
                 lineHeight: 1.7,
                 textAlign: 'right',
+                color: '#E8E2D6',
               }}
             >
               صديقنا العزيز: نفيدك بأن دخولك
@@ -1629,7 +1631,7 @@ function AppContent() {
                   display: 'block',
                   marginTop: 8,
                   fontSize: 12,
-                  color: '#1E293B',
+                  color: '#B8A47A',
                 }}
               >
                 سيتم إخراجك تلقائياً عند انتهاء الوقت.
