@@ -423,7 +423,7 @@ const HarajUserRegistration = ({ isOpen, onClose, onSuccess }) => {
               cursor: agreed ? 'pointer' : 'not-allowed',
               fontSize: '1rem',
               fontWeight: 700,
-              color: agreed ? '#202A3A' : '#404040',
+              color: agreed ? '#FFFFFF' : '#404040',
               fontFamily: 'Tajawal, sans-serif',
               transition: 'all 0.2s ease',
               display: 'flex',

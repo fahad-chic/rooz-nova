@@ -1324,6 +1324,7 @@ function AppContent() {
         <div className="rz-pearl-blob b2" />
         <div className="rz-pearl-blob b3" />
         <div className="rz-pearl-blob b4" />
+        <div className="rz-pearl-flow" />
         <div className="rz-pearl-grid" />
         <div className="rz-pearl-veil" />
       </div>
@@ -1596,11 +1597,11 @@ function AppContent() {
             >
               <Clock
                 size={30}
-                color="#1E293B"
+                color="#B8A47A"
               />
               <strong
                 style={{
-                  color: '#1E293B',
+                  color: '#E8E2D6',
                   fontSize: 15,
                   fontWeight: 900,
                 }}
@@ -1615,6 +1616,7 @@ function AppContent() {
                 fontSize: 14,
                 lineHeight: 1.7,
                 textAlign: 'right',
+                color: '#E8E2D6',
               }}
             >
               صديقنا العزيز: نفيدك بأن دخولك
@@ -1629,7 +1631,7 @@ function AppContent() {
                   display: 'block',
                   marginTop: 8,
                   fontSize: 12,
-                  color: '#1E293B',
+                  color: '#B8A47A',
                 }}
               >
                 سيتم إخراجك تلقائياً عند انتهاء الوقت.
@@ -1995,13 +1997,13 @@ function AppContent() {
                     fontFamily: 'Tajawal, "Noto Sans Arabic", Tahoma, sans-serif',
                     fontSize: 'clamp(1.15rem, 2.5vw, 1.55rem)',
                     fontWeight: 900,
-                    WebkitTextStroke: '0.4px rgba(30,41,59,0.5)',
+                    WebkitTextStroke: '0.4px rgba(227,200,120,0.5)',
                     lineHeight: '60px',
                     direction: 'rtl',
                     unicodeBidi: 'isolate',
-                    color: '#1E293B',
-                    WebkitTextFillColor: '#1E293B',
-                    textShadow: '0 1px 2px #202A3A',
+                    color: '#E3C878',
+                    WebkitTextFillColor: '#E3C878',
+                    textShadow: '0 1px 2px rgba(0,0,0,0.45)',
                   }}
                 >
                   {ownerWelcomeBanner?.msg || OWNER_WELCOME_MESSAGE}

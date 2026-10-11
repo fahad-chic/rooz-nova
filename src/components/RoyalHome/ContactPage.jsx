@@ -181,7 +181,22 @@ const ContactPage = () => {
         >
           <button
             type="button"
-            onClick={() => navigate(-1)}
+            onClick={() => {
+              const prev =
+                (typeof window !== 'undefined' &&
+                  (window.history.state?.usr?.prevPath ||
+                    window.history.state?.prevPath)) ||
+                null;
+              const path =
+                typeof window !== 'undefined' ? window.location.pathname : '/contact';
+              if (prev && prev !== path) {
+                navigate(prev);
+              } else if (typeof window !== 'undefined' && window.history.length > 1) {
+                navigate(-1);
+              } else {
+                navigate('/contact', { replace: true });
+              }
+            }}
             aria-label="العودة إلى الصفحة السابقة"
             style={{
               ...buttonBaseStyle,
@@ -347,14 +362,14 @@ const ContactPage = () => {
                           'linear-gradient(135deg, #1E293B 0%, #1E293B 100%)',
                         borderRadius: 10,
                         gap: '0.5rem',
-                        color: '#202A3A',
+                        color: '#FFFFFF',
                       }}
                     >
                       <Phone size={18} aria-hidden="true" />
 
                       <span
                         style={{
-                          color: '#202A3A',
+                          color: '#FFFFFF',
                           fontWeight: 700,
                           fontSize: '0.85rem',
                         }}
@@ -477,13 +492,13 @@ const ContactPage = () => {
               borderRadius: 16,
               padding: '1.25rem',
               gap: '1rem',
-              color: '#202A3A',
+              color: '#FFFFFF',
               boxShadow: '0 8px 24px rgba(30,41,59, 0.3)',
             }}
           >
             <Camera
               size={34}
-              color="#202A3A"
+              color="#FFFFFF"
               aria-hidden="true"
             />
 
@@ -498,7 +513,7 @@ const ContactPage = () => {
                   margin: 0,
                   fontSize: '1.1rem',
                   fontWeight: 800,
-                  color: '#202A3A',
+                  color: '#FFFFFF',
                   lineHeight: 1.5,
                 }}
               >
@@ -509,7 +524,7 @@ const ContactPage = () => {
                 style={{
                   margin: '0.25rem 0 0',
                   fontSize: '0.85rem',
-                  color: 'rgba(32,42,58,0.7)',
+                  color: 'rgba(255,255,255,0.8)',
                 }}
               >
                 @{CONTACT_INFO.snapchat.username}
@@ -680,7 +695,7 @@ const ContactPage = () => {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       gap: '0.5rem',
-                      background: 'linear-gradient(145deg, rgba(30,41,59, 0.16), rgba(30,41,59, 0.26))',
+                      background: '#1E293B',
                       borderRadius: 10,
                       padding: '0.6rem 0.85rem',
                     }}
@@ -691,7 +706,7 @@ const ContactPage = () => {
                         minWidth: 0,
                         fontSize: 'clamp(0.72rem, 2.8vw, 0.9rem)',
                         fontWeight: 600,
-                        color: GOLD_LIGHT,
+                        color: '#E8E2D6',
                         fontFamily:
                           'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
                         direction: 'ltr',
@@ -756,7 +771,7 @@ const ContactPage = () => {
                       alignItems: 'center',
                       justifyContent: 'space-between',
                       gap: '0.5rem',
-                      background: 'linear-gradient(145deg, rgba(30,41,59, 0.16), rgba(30,41,59, 0.26))',
+                      background: '#1E293B',
                       borderRadius: 10,
                       padding: '0.6rem 0.85rem',
                     }}
@@ -767,7 +782,7 @@ const ContactPage = () => {
                         minWidth: 0,
                         fontSize: 'clamp(0.72rem, 2.8vw, 0.9rem)',
                         fontWeight: 600,
-                        color: GOLD_LIGHT,
+                        color: '#E8E2D6',
                         fontFamily:
                           'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace',
                         direction: 'ltr',

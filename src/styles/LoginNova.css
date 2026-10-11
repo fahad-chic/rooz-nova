@@ -126,7 +126,7 @@
   color: #404040 !important;
   line-height: 1.4 !important;
 }
-.rl-card--big .rl-card-sub { color: #404040 !important; }
+.rl-card--big .rl-card-sub { color: #E8E2D6 !important; }
 .rl-card-phrase {
   font-size: 0.66rem !important;
   font-weight: 300 !important;
@@ -183,9 +183,9 @@
   transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
 }
 .rl-input-wrap:focus-within {
-  border-color: #1E293B !important;
+  border-color: #B8A47A !important;
   background: #F1ECE3 !important;
-  box-shadow: 0 0 0 3px rgba(30,41,59, 0.14) !important;
+  box-shadow: 0 0 0 3px rgba(184,164,122, 0.20) !important;
 }
 .rl-input {
   flex: 1 !important; border: none !important; outline: none !important; background: transparent !important;

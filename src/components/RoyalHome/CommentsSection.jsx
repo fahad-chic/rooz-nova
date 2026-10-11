@@ -293,7 +293,7 @@ const CommentsSection = () => {
               style={{
                 flexShrink: 0,
                 background: 'linear-gradient(135deg, #1E293B, #1E293B)',
-                color: '#202A3A',
+                color: '#FFFFFF',
                 fontSize: '0.65rem',
                 fontWeight: 800,
                 padding: '2px 7px',
@@ -544,7 +544,7 @@ const CommentsSection = () => {
                     marginTop: 16,
                     width: '100%',
                     background: 'linear-gradient(135deg, #1E293B, #1E293B)',
-                    color: '#202A3A',
+                    color: '#FFFFFF',
                     border: 'none',
                     borderRadius: 10,
                     padding: '0.55rem',
@@ -674,7 +674,10 @@ const CommentsSection = () => {
                         form.name.trim() && form.text.trim() && !isSubmitting
                           ? 'linear-gradient(135deg, #1E293B, #1E293B)'
                           : '#E8E2D6',
-                      color: '#202A3A',
+                      color:
+                        form.name.trim() && form.text.trim() && !isSubmitting
+                          ? '#FFFFFF'
+                          : '#202A3A',
                       border: 'none',
                       borderRadius: 10,
                       padding: '0.6rem',

@@ -71,7 +71,7 @@ export const BranchDetail = () => {
       <div style={{ padding: '2rem', textAlign: 'center', color: '#202A3A' }}>
         <p>لم يتم العثور على الفرع</p>
         <button
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/branches')}
           style={{
             marginTop: '1rem',
             padding: '0.75rem 1.5rem',
@@ -83,7 +83,7 @@ export const BranchDetail = () => {
             fontWeight: 700
           }}
         >
-          العودة
+          العودة إلى الفروع
         </button>
       </div>
     );
@@ -381,9 +381,9 @@ export const BranchDetail = () => {
         }
       `}</style>
 
-      <button className="back-button" onClick={() => navigate('/')}>
+      <button className="back-button" onClick={() => navigate('/branches')}>
         <ArrowLeft size={18} />
-        العودة إلى لوحة التحكم
+        العودة إلى الفروع
       </button>
 
       <div className="detail-header">

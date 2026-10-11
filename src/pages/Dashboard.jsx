@@ -585,7 +585,7 @@ const Dashboard = () => {
               onClick={() => navigate('/complaints')}
               style={{
                 background: 'linear-gradient(135deg, #1E293B, #1E293B)',
-                color: '#202A3A',
+                color: '#FFFFFF',
                 border: 'none',
                 padding: '0.6rem 1.1rem',
                 borderRadius: 999,
@@ -1082,7 +1082,7 @@ const Dashboard = () => {
               onClick={() => navigate('/branches')}
               style={{
                 background: 'linear-gradient(135deg, #1E293B, #1E293B)',
-                color: '#202A3A',
+                color: '#FFFFFF',
                 border: 'none',
                 padding: '0.65rem 1.1rem',
                 borderRadius: 12,

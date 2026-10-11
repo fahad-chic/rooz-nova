@@ -266,7 +266,7 @@
   cursor: pointer;
   display: grid;
   place-items: center;
-  color: #202A3A;
+  color: #FFFFFF;
   background: linear-gradient(
     135deg,
     #B8A47A 0%,
@@ -628,7 +628,7 @@
   border-radius: 999px;
   font-size: 0.72rem;
   font-weight: 900;
-  color: #202A3A;
+  color: #FFFFFF;
   background: linear-gradient(
     135deg,
     #B8A47A,
@@ -858,7 +858,7 @@
   font-family: inherit;
   font-size: 0.95rem;
   font-weight: 900;
-  color: #202A3A;
+  color: #FFFFFF;
   padding: 0.7rem 2.2rem;
   border-radius: 999px;
   background: linear-gradient(

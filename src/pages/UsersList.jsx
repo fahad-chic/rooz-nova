@@ -311,7 +311,7 @@ const titleIcon = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  color: '#202A3A',
+  color: '#FFFFFF',
   background:
     'linear-gradient(135deg, #1E293B 0%, #1E293B 48%, #1E293B 100%)',
   boxShadow: '0 6px 18px rgba(30,41,59,0.14)',
@@ -445,7 +445,7 @@ const avatarInitials = {
   justifyContent: 'center',
   background:
     'linear-gradient(135deg, #1E293B 0%, #1E293B 50%, #1E293B 100%)',
-  color: '#202A3A',
+  color: '#FFFFFF',
   fontWeight: 900,
   fontSize: 17,
   fontFamily: 'Tajawal, Tajawal, sans-serif',
@@ -525,7 +525,7 @@ const btnChat = {
   ...btnBase,
   background:
     'linear-gradient(135deg, #1E293B 0%, #1E293B 50%, #1E293B 100%)',
-  color: '#202A3A',
+  color: '#FFFFFF',
   borderColor: 'rgba(184,164,122,0.25)',
 };
 

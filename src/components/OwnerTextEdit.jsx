@@ -63,7 +63,7 @@ const OwnerTextEdit = ({ textKey, defaultValue }) => {
           borderRadius: 8,
           border: '1.5px solid rgba(30,41,59,0.85)',
           background: 'linear-gradient(135deg, #202A3A, #202A3A)',
-          color: '#1E293B',
+          color: '#FFFFFF',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

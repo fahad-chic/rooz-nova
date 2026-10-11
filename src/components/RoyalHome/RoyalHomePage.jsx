@@ -646,7 +646,7 @@ const RoyalHomePage = () => {
                 marginTop: '0.9rem',
                 width: '100%',
                 background: 'linear-gradient(135deg,#1E293B,#1E293B)',
-                color: '#202A3A',
+                color: '#FFFFFF',
                 border: 'none',
                 borderRadius: 10,
                 padding: '0.5rem',

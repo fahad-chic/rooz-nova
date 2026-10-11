@@ -80,8 +80,8 @@ export const AdvertisementsPage = () => {
           border-radius: 16px;
         }
 
-        .ads-title { font-size: 1.35rem; font-weight: 700; color: #E8E2D6; }
-        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #1E293B, #1E293B); color:#202A3A; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; }
+        .ads-title { font-size: 1.35rem; font-weight: 700; color: #E8E2D6 !important; }
+        .add-btn { display:flex; align-items:center; gap:0.4rem; background: linear-gradient(135deg, #1E293B, #1E293B); color:#FFFFFF; border:none; padding:0.65rem 1rem; border-radius:999px; font-weight:700; font-size:0.9rem; }
 
         .ads-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
         .ad-card {
@@ -147,12 +147,12 @@ export const AdvertisementsPage = () => {
 
         .ad-status.active {
           background: rgba(32,42,58, 0.1);
-          color: #202A3A;
+          color: #E8E2D6;
         }
 
         .ad-status.inactive {
           background: rgba(30,41,59, 0.1);
-          color: #1E293B;
+          color: #E8E2D6;
         }
 
         .ad-actions {
@@ -279,7 +279,7 @@ export const AdvertisementsPage = () => {
 
         .modal-btn-submit {
           background: #1E293B;
-          color: #202A3A;
+          color: #FFFFFF;
         }
 
         .modal-btn-submit:hover {

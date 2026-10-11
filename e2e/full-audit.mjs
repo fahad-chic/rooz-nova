@@ -141,7 +141,7 @@ for (const r of matrix.guestOwnerRedirect) {
   else add('ok', 'login/logo', 'الشعار شفاف بلا مربع');
 
   const bg = await page.evaluate(() => getComputedStyle(document.querySelector('.rl-root')).backgroundColor);
-  add(bg === 'rgb(249, 249, 249)' ? 'ok' : 'error', 'login/bg', 'الخلفية ' + bg);
+  add(bg === 'rgb(255, 255, 255)' ? 'ok' : 'error', 'login/bg', 'الخلفية ' + bg);
 
   const diagVisible = await page.evaluate(() => document.body.innerText.includes('سجل التشخيص'));
   add(diagVisible ? 'error' : 'ok', 'login/diagnostics', diagVisible ? 'سجل التشخيص ما زال ظاهراً' : 'سجل التشخيص أُزيل');
@@ -168,7 +168,7 @@ for (const r of matrix.guestOwnerRedirect) {
   await page.locator('#email').focus();
   await page.waitForTimeout(500);
   const border = await page.evaluate(() => getComputedStyle(document.querySelector('.rl-input-wrap')).borderColor);
-  add(border === 'rgb(201, 162, 75)' ? 'ok' : 'warn', 'login/input', 'إطار التركيز ' + border);
+  add(border === 'rgb(184, 164, 122)' ? 'ok' : 'warn', 'login/input', 'إطار التركيز ' + border);
   const radius = await page.evaluate(() => getComputedStyle(document.querySelector('.rl-input-wrap')).borderTopLeftRadius);
   add(radius === '8px' ? 'ok' : 'warn', 'login/input', 'استدارة الحقل ' + radius);
 

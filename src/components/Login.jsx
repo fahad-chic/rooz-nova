@@ -153,12 +153,12 @@ const Login = () => {
   const [guestEmail, setGuestEmail] = useState('');
   const [guestEntryOpen, setGuestEntryOpen] = useState(false);
 
-  // لون خلفية الصفحة مباشرة عند ظهورها — رخام أسود لامع
+  // خلفية الصفحة عند ظهورها — لؤلؤية فاتحة منسجمة مع هوية ROOZ
   useEffect(() => {
     const previous = document.body.style.background;
 
     document.body.style.background =
-      'linear-gradient(150deg, rgba(255,255,255,0.02) 0%, transparent 45%, rgba(255,255,255,0.01) 65%, transparent 100%), radial-gradient(1100px 600px at 80% -15%, rgba(30,41,59,0.16), transparent  60%), radial-gradient(700px 400px at 15% 25%, rgba(30,41,59,0.10), transparent  55%), repeating-linear-gradient(115deg, rgba(255,255,255,0.03) 0 1px, transparent  1px 4px), repeating-linear-gradient(25deg, rgba(255,255,255,0.02) 0 1px, transparent  1px 6px), linear-gradient(180deg, #202A3A 0%, #202A3A 40%, #202A3A 75%, #202A3A 100%)';
+      'radial-gradient(1100px 600px at 80% -15%, rgba(184,164,122,0.10), transparent 60%), radial-gradient(700px 400px at 15% 25%, rgba(32,42,58,0.06), transparent 55%), linear-gradient(180deg, #E8E2D6 0%, #E8E2D6 45%, #F1ECE3 100%)';
 
     return () => {
       document.body.style.background = previous;
@@ -1136,7 +1136,7 @@ const Login = () => {
                   ®️
                 </span>
 
-                <span style={{ color: '#202A3A', fontWeight: 900 }}>المالك الرئيسي</span>
+                <span style={{ color: '#FFFFFF', fontWeight: 900 }}>المالك الرئيسي</span>
 
                 <button
                   type="button"
@@ -1885,7 +1885,7 @@ const Login = () => {
                       border: 'none',
                       background:
                         'linear-gradient(135deg, #1E293B, #1E293B)',
-                      color: '#202A3A',
+                      color: '#FFFFFF',
                       fontWeight: 900,
                       fontSize: 14,
                       cursor:

@@ -139,7 +139,7 @@ select:focus {
   padding: 0.85rem 1.4rem;
   background:
     linear-gradient(135deg, #1E293B 0%, #1E293B 45%, #1E293B 100%);
-  color: #202A3A;
+  color: #FFFFFF;
   border: 1px solid rgba(239,233,223,0.55);
   border-radius: 14px;
   font-size: 0.95rem;
@@ -182,8 +182,8 @@ select:focus {
 
 .btn-here {
   background:
-    linear-gradient(135deg, #E8E2D6 0%, #E8E2D6 45%, #1E293B 100%);
-  color: #202A3A;
+    linear-gradient(135deg, #B8A47A 0%, #1E293B 55%, #1E293B 100%);
+  color: #FFFFFF;
 }
 
 /* زر الصفحة التالية */
